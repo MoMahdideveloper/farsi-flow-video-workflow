@@ -416,6 +416,10 @@ function findNode(snapshot, predicate) {
 export function countIngredientChips(snapshot) {
   // Each attached image chip exposes a thumbnail and/or a remove ("cancel") control.
   // Count both kinds separately and take the larger, so a chip is never double-counted.
+  if (!Array.isArray(snapshot?.frames) || snapshot.frames.length === 0 ||
+      snapshot.frames.some((f) => !f.tree || typeof f.tree !== 'object')) {
+    throw new Error('Cannot count ingredients: missing or malformed page snapshot');
+  }
   let imgs = 0;
   let removers = 0;
   for (const frame of snapshot?.frames || []) {
@@ -440,13 +444,10 @@ function sha256File(path) {
   }
 }
 
-function trace(event, data = {}) {
+export function trace(event, data = {}, destination = TRACE_PATH) {
   const row = { ts: new Date().toISOString(), run: RUN_ID, event, ...data };
-  try {
-    appendFileSync(TRACE_PATH, JSON.stringify(row) + '\n', 'utf8');
-  } catch (e) {
-    console.warn(`  [trace] could not write ${TRACE_PATH}: ${e.message}`);
-  }
+  // An untraceable submission is not safe: fail before spending generation credits.
+  appendFileSync(destination, JSON.stringify(row) + '\n', 'utf8');
 }
 
 const isPromptTextbox = (n) =>
@@ -473,30 +474,33 @@ function copyImageToClipboard(imagePath) {
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
-async function submitSingleClip(mcp, item, ctx = {}) {
+async function submitSingleClipImpl(mcp, item, ctx = {}) {
+  const record = ctx.trace || trace;
+  const pause = ctx.sleep || sleep;
+  const copyImage = ctx.copyImage || copyImageToClipboard;
   const base = { part: ctx.part, clip: item.clip, kf: item.kf || null };
   // A clip with a keyframe is NEVER allowed to degrade to 0-ingredient Text-to-Video.
   if (item.kf && item.noImage) {
-    trace('reject', { ...base, reason: 'item has kf AND noImage; refusing silent Text-to-Video' });
+    record('reject', { ...base, reason: 'item has kf AND noImage; refusing silent Text-to-Video' });
     throw new Error(`Clip ${item.clip}: kf is set but noImage=true — refusing Text-to-Video fallback`);
   }
   const skipImage = !item.kf;
   if (skipImage && !item.allowTextOnly) {
-    trace('reject', { ...base, reason: 'no kf and allowTextOnly not set' });
+    record('reject', { ...base, reason: 'no kf and allowTextOnly not set' });
     throw new Error(`Clip ${item.clip}: no keyframe; set allowTextOnly:true to submit Text-to-Video on purpose`);
   }
   if (!skipImage) {
     if (!existsSync(item.kf)) {
-      trace('reject', { ...base, reason: 'keyframe file missing' });
+      record('reject', { ...base, reason: 'keyframe file missing' });
       throw new Error(`Clip ${item.clip}: keyframe not found: ${item.kf}`);
     }
     base.kf_sha256 = sha256File(item.kf); // read-only fingerprint; keyframe is never modified
   }
-  trace('start', { ...base, mode: skipImage ? 'text_to_video_explicit' : 'image_to_video', prompt_chars: item.prompt.length });
+  record('start', { ...base, mode: skipImage ? 'text_to_video_explicit' : 'image_to_video', prompt_chars: item.prompt.length });
   console.log(`\n=== Submitting Clip ${item.clip}: ${skipImage ? '(TEXT-ONLY, explicit)' : item.kf} ===`);
   if (!skipImage) {
-    copyImageToClipboard(item.kf);
-    trace('clipboard_image', base);
+    copyImage(item.kf);
+    record('clipboard_image', base);
     console.log(`  [1/5] Copied image to clipboard: ${item.kf}`);
   }
 
@@ -516,15 +520,15 @@ async function submitSingleClip(mcp, item, ctx = {}) {
       findNode(snap, (n) => n.ref && n.tag === 'mat-icon' && String(n.text || '').trim() === 'cancel');
     if (!target) break;
     console.log(`  [!] Clearing leftover prompt/chips (chips=${chipsBefore}, try ${clearTry}, ${target.ref})...`);
-    trace('clear_leftover', { ...base, try: clearTry, chips: chipsBefore });
+    record('clear_leftover', { ...base, try: clearTry, chips: chipsBefore });
     await mcp.callTool('browser_click', {
       profileId: PROFILE_ID,
       tabId: TAB_ID,
       ref: target.ref,
     });
-    await sleep(1200);
+    await pause(1200);
   }
-  trace('preflight_chips', { ...base, chips: chipsBefore });
+  record('preflight_chips', { ...base, chips: chipsBefore });
   if (chipsBefore !== 0) {
     throw new Error(
       `Clip ${item.clip}: composer still has ${chipsBefore} ingredient chip(s) before paste (MULTI_INGREDIENT_CONTAMINATION guard)`
@@ -554,7 +558,16 @@ async function submitSingleClip(mcp, item, ctx = {}) {
         tabId: TAB_ID,
         ref: promptBox.ref,
       });
-      await sleep(600);
+      await pause(600);
+
+      const beforePaste = await mcp.callTool('browser_observe_page', {
+        profileId: PROFILE_ID, tabId: TAB_ID,
+      });
+      const beforePasteChips = countIngredientChips(beforePaste);
+      record('pre_paste_chips', { ...base, try: pasteTry, chips: beforePasteChips });
+      if (beforePasteChips !== 0) {
+        throw new Error(`Clip ${item.clip}: need 0 chips immediately before every paste, found ${beforePasteChips}`);
+      }
 
       await mcp.callTool('browser_press_key', {
         profileId: PROFILE_ID,
@@ -567,7 +580,7 @@ async function submitSingleClip(mcp, item, ctx = {}) {
       );
 
       for (let attempt = 1; attempt <= 10; attempt++) {
-        await sleep(1500);
+        await pause(1500);
         const s = await mcp.callTool('browser_observe_page', {
           profileId: PROFILE_ID,
           tabId: TAB_ID,
@@ -576,7 +589,7 @@ async function submitSingleClip(mcp, item, ctx = {}) {
         const cancelIcon = findNode(s, (n) => n.tag === 'mat-icon' && n.text === 'cancel');
         const chips = countIngredientChips(s);
         if ((clearBtn || cancelIcon) && chips >= 1) {
-          trace('paste_chips', { ...base, try: pasteTry, attempt, chips });
+          record('paste_chips', { ...base, try: pasteTry, attempt, chips });
           if (chips !== 1) {
             throw new Error(`Clip ${item.clip}: expected exactly 1 ingredient chip after paste, found ${chips}`);
           }
@@ -587,7 +600,7 @@ async function submitSingleClip(mcp, item, ctx = {}) {
       }
     }
     if (!uploadedSnap) {
-      trace('fail', { ...base, reason: 'keyframe upload not confirmed (no fallback to Text-to-Video)' });
+      record('fail', { ...base, reason: 'keyframe upload not confirmed (no fallback to Text-to-Video)' });
       throw new Error(`Timed out waiting for keyframe image to upload for Clip ${item.clip}`);
     }
   }
@@ -615,7 +628,7 @@ async function submitSingleClip(mcp, item, ctx = {}) {
     console.log(
       `  [4/5] Typed prompt (${item.prompt.length} chars, try ${typeTry}) into ${updatedPromptBox.ref}`
     );
-    await sleep(1000);
+    await pause(1000);
 
     const checkSnap = await mcp.callTool('browser_observe_page', {
       profileId: PROFILE_ID,
@@ -644,11 +657,12 @@ async function submitSingleClip(mcp, item, ctx = {}) {
             profileId: PROFILE_ID,
             tabId: TAB_ID,
           });
-    if (!skipImage) {
+    {
       const chipsNow = countIngredientChips(curSnap);
-      trace('pre_submit_chips', { ...base, try: submitTry, chips: chipsNow });
-      if (chipsNow !== 1) {
-        throw new Error(`Clip ${item.clip}: ${chipsNow} ingredient chips right before Start (need exactly 1)`);
+      record('pre_submit_chips', { ...base, try: submitTry, chips: chipsNow });
+      const requiredChips = skipImage ? 0 : 1;
+      if (chipsNow !== requiredChips) {
+        throw new Error(`Clip ${item.clip}: ${chipsNow} ingredient chips right before Start (need exactly ${requiredChips})`);
       }
     }
     const startBtn = findNode(curSnap, isStartButton);
@@ -662,7 +676,7 @@ async function submitSingleClip(mcp, item, ctx = {}) {
       ref: startBtn.ref,
     });
     console.log(`  [5/5] Clicked "Start generation" (${startBtn.ref}, try ${submitTry})!`);
-    await sleep(3500);
+    await pause(3500);
 
     const afterSnap = await mcp.callTool('browser_observe_page', {
       profileId: PROFILE_ID,
@@ -671,13 +685,22 @@ async function submitSingleClip(mcp, item, ctx = {}) {
     const stillHasClear = findNode(afterSnap, isClearButton);
     if (!stillHasClear) {
       console.log(`  [OK] Confirmed prompt submitted and cleared!`);
-      trace('submitted', { ...base, try: submitTry });
+      record('submitted', { ...base, try: submitTry });
       return true;
     }
     console.log(`  [!] Prompt still has Clear button after click (try ${submitTry}), retrying...`);
   }
-  trace('fail', { ...base, reason: 'submission not confirmed after 3 tries' });
+  record('fail', { ...base, reason: 'submission not confirmed after 3 tries' });
   throw new Error(`Clip ${item.clip}: submission not confirmed`);
+}
+
+export async function submitSingleClip(mcp, item, ctx = {}) {
+  try {
+    return await submitSingleClipImpl(mcp, item, ctx);
+  } catch (error) {
+    (ctx.trace || trace)('fail', { part: ctx.part, clip: item.clip, reason: error.message });
+    throw error;
+  }
 }
 
 async function main() {
