@@ -1626,6 +1626,16 @@ def inpaint_source_subtitle_band(rgb: np.ndarray) -> np.ndarray:
     return np.clip(out, 0, 255).astype(np.uint8)
 
 
+def audio_stream_sha256(path: Path) -> str:
+    """Hash compressed audio packet payloads, not the containing MP4 file."""
+    raw = run(ffmpeg_cmd("-i", str(path), "-map", "0:a:0", "-c:a", "copy",
+                         "-f", "hash", "-hash", "sha256", "pipe:1"),
+              capture=True, what="hash native audio stream").stdout.decode().strip()
+    if not re.fullmatch(r"SHA256=[0-9a-fA-F]{64}", raw):
+        raise PipelineError(f"could not hash audio stream: {path}")
+    return raw.partition("=")[2].lower()
+
+
 def extract_source_fallback_clip(source_video: Path, source_span: tuple[float, float],
                                  flow_audio_mp4: Path, out_mp4: Path, *, video: Optional[dict] = None,
                                  anchor_sec: float = 0.0, inpaint: bool = True) -> dict:
@@ -1637,13 +1647,23 @@ def extract_source_fallback_clip(source_video: Path, source_span: tuple[float, f
     held when the speech window is longer than the span."""
     video = _merged(VIDEO_DEFAULTS, video)
     w, h, fps = int(video["width"]), int(video["height"]), float(video["fps"])
-    s0, s1 = float(source_span[0]), float(source_span[1])
+    span = _parse_span(source_span, "fallback")
+    if span is None:
+        raise PipelineError("fallback source_span is required")
+    s0, s1 = span
+    if out_mp4.resolve() in (source_video.resolve(), flow_audio_mp4.resolve()):
+        raise PipelineError("fallback output would overwrite an input source")
+    validate_source_timeline(Path(flow_audio_mp4), video)
     flow_dur = media_duration(Path(flow_audio_mp4))
-    src_dur = media_duration(Path(source_video))
-    if s0 >= src_dur:
-        raise PipelineError(f"source_span {source_span} starts beyond {Path(source_video).name} ({src_dur:.2f}s)")
-    s1 = min(s1, src_dur)
-    lead = max(0.0, anchor_sec)                     # hold first span frame before the anchor
+    src_probe = probe_media(Path(source_video))["video"]
+    if not src_probe:
+        raise PipelineError("source_span needs a source video stream")
+    src_dur = src_probe["duration"]
+    if not 0 <= s0 < s1 <= src_dur:
+        raise PipelineError(f"source_span {source_span} outside {Path(source_video).name} ({src_dur:.2f}s)")
+    if not math.isfinite(anchor_sec) or not 0 <= anchor_sec < flow_dur:
+        raise PipelineError("fallback anchor_sec must be inside the Flow timeline")
+    lead = anchor_sec                     # hold first span frame before the anchor
     span_len = s1 - s0
     tail = max(0.0, flow_dur - lead - span_len)     # hold last span frame after the span
     n_frames = max(1, int(math.ceil(flow_dur * fps - 1e-9)))
@@ -1665,30 +1685,58 @@ def extract_source_fallback_clip(source_video: Path, source_span: tuple[float, f
                            stdin=subprocess.PIPE, stdout=subprocess.DEVNULL, stderr=errf)
     fsz, written, inpainted = w * h * 3, 0, 0
     assert dec.stdout is not None and enc.stdin is not None
-    while True:
-        buf = dec.stdout.read(fsz)
-        if len(buf) < fsz:
-            break
-        frame = np.frombuffer(buf, np.uint8).reshape(h, w, 3)
-        if inpaint:
-            new = inpaint_source_subtitle_band(frame)
-            inpainted += int(not np.array_equal(new, frame))
-            frame = new
-        enc.stdin.write(frame.tobytes())
-        written += 1
-    enc.stdin.close()
-    dec.wait()
-    enc.wait()
-    errf.seek(0)
-    err = errf.read()
-    errf.close()
-    if enc.returncode != 0 or written == 0:
-        raise PipelineError(f"source fallback encode failed: {err.decode('utf-8', 'replace')[-400:]}")
-    os.replace(tmp, out_mp4)
+    try:
+        while True:
+            buf = dec.stdout.read(fsz)
+            if not buf:
+                break
+            if len(buf) != fsz:
+                raise PipelineError("source fallback decoder returned a partial frame")
+            frame = np.frombuffer(buf, np.uint8).reshape(h, w, 3)
+            if inpaint:
+                new = inpaint_source_subtitle_band(frame)
+                inpainted += int(not np.array_equal(new, frame))
+                frame = new
+            enc.stdin.write(frame.tobytes())
+            written += 1
+        enc.stdin.close()
+        dec.wait(timeout=60)
+        enc.wait(timeout=60)
+        errf.seek(0)
+        err = errf.read()
+        if dec.returncode != 0 or enc.returncode != 0 or written != n_frames:
+            raise PipelineError(f"source fallback failed: decoder={dec.returncode}, encoder={enc.returncode}, "
+                                f"frames={written}/{n_frames}: {err.decode('utf-8', 'replace')[-400:]}")
+        probe = probe_media(tmp)
+        v, a = probe["video"], probe["audio"]
+        if not v or not a or (v["width"], v["height"]) != (w, h) or abs(v["fps"] - fps) > .01 \
+                or abs(v["duration"] - flow_dur) > 1 / fps + .01 \
+                or abs(v["duration"] - a["duration"]) >= DRIFT_TOLERANCE or audio_pts_gaps(tmp):
+            raise PipelineError("source fallback media verification failed; previous output kept")
+        audio_hash = audio_stream_sha256(Path(flow_audio_mp4))
+        output_audio_hash = audio_stream_sha256(tmp)
+        if audio_hash != output_audio_hash:
+            raise PipelineError("source fallback changed the native Flow audio stream")
+        os.replace(tmp, out_mp4)
+    except (BrokenPipeError, subprocess.TimeoutExpired) as exc:
+        raise PipelineError(f"source fallback subprocess failed: {exc}") from exc
+    finally:
+        for proc in (dec, enc):
+            if proc.poll() is None:
+                proc.kill()
+            proc.wait()
+        dec.stdout.close()
+        if not enc.stdin.closed:
+            enc.stdin.close()
+        errf.close()
+        tmp.unlink(missing_ok=True)
     return {"mode": "source_bridge_video_with_flow_audio", "source_video": str(source_video),
             "source_span": [s0, round(s1, 3)], "flow_audio": str(flow_audio_mp4),
             "flow_audio_sha256": sha256_file(Path(flow_audio_mp4)), "anchor_sec": round(lead, 3),
             "frames": written, "frames_inpainted": inpainted, "duration": round(flow_dur, 4),
+            "verified": True, "flow_audio_stream_sha256": audio_hash,
+            "output_audio_stream_sha256": output_audio_hash,
+            "source_span_bounds_verified": True, "source_duration": src_dur,
             "output": str(out_mp4)}
 
 
