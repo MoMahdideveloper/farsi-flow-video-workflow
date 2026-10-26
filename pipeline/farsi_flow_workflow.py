@@ -1538,3 +1538,100 @@ def speech_audit(ep: Episode, *, only: Optional[set[str]] = None) -> dict:
     results, _, _ = run_clips(ep, render=False, only=only)
     qa = write_qa_report(ep, results, None, None, None, {}, "speech-audit")
     return {"results": results, "qa_report": qa}
+
+
+# ---------------------------------------------------------------- clipboard --
+_PS_SET_IMAGE = ("Add-Type -AssemblyName System.Windows.Forms; Add-Type -AssemblyName System.Drawing; "
+                 "$img = [System.Drawing.Image]::FromFile($env:FFW_IMG); "
+                 "[System.Windows.Forms.Clipboard]::SetImage($img); $img.Dispose()")
+
+
+def verify_keyframe(path: Path, require_portrait: bool = True) -> dict:
+    """Decode the keyframe fully and check 9:16 (±2 %) before it goes to Flow."""
+    with Image.open(path) as im:
+        im.load()
+        w, h = im.size
+        fmt = im.format
+    ratio = w / h if h else 0.0
+    info = {"path": str(path), "sha256": sha256_file(path), "format": fmt, "size": [w, h],
+            "ratio": round(ratio, 4), "is_9x16": abs(ratio - 9 / 16) <= 0.02 * 9 / 16}
+    if require_portrait and not info["is_9x16"]:
+        raise PipelineError(f"{path.name} is {w}x{h} (ratio {ratio:.3f}); expected 9:16 -- "
+                            "pass --allow-any-ratio to override")
+    return info
+
+
+def copy_image_to_clipboard(path: Path, dry_run: bool = False) -> str:
+    """Windows: System.Windows.Forms.Clipboard::SetImage (STA PowerShell).
+    macOS: osascript «class PNGf».  Linux: wl-copy / xclip as image/png."""
+    path = path.resolve()
+    sysname = platform.system()
+    if sysname == "Windows":
+        cmd, env = ["powershell", "-NoProfile", "-STA", "-Command", _PS_SET_IMAGE], {"FFW_IMG": str(path)}
+    elif sysname == "Darwin":
+        cmd, env = ["osascript", "-e", f'set the clipboard to (read (POSIX file "{path}") as «class PNGf»)'], {}
+    elif shutil.which("wl-copy"):
+        cmd, env = ["wl-copy", "--type", "image/png"], {}
+    elif shutil.which("xclip"):
+        cmd, env = ["xclip", "-selection", "clipboard", "-t", "image/png", "-i", str(path)], {}
+    else:
+        raise PipelineError("no clipboard tool (need PowerShell, osascript, wl-copy or xclip)")
+    if dry_run:
+        return "DRY-RUN: " + " ".join(cmd)
+    data = None
+    if cmd[0] == "wl-copy":  # wl-copy reads the PNG bytes from stdin
+        buf = io.BytesIO()
+        with Image.open(path) as im:
+            im.save(buf, "PNG")
+        data = buf.getvalue()
+    elif sysname == "Darwin" and path.suffix.lower() != ".png":  # «class PNGf» needs a PNG file
+        tmp = Path(tempfile.gettempdir()) / f"ffw_clip_{os.getpid()}.png"
+        with Image.open(path) as im:
+            im.save(tmp, "PNG")
+        cmd[-1] = f'set the clipboard to (read (POSIX file "{tmp}") as «class PNGf»)'
+    proc = subprocess.run(cmd, input=data, env={**os.environ, **env}, capture_output=True)
+    if proc.returncode != 0:
+        raise PipelineError(f"clipboard image failed: {proc.stderr.decode('utf-8', 'replace')[-400:]}")
+    return " ".join(cmd[:2])
+
+
+def copy_text_to_clipboard(text: str, dry_run: bool = False) -> str:
+    """Windows clip.exe needs UTF-16LE (+BOM) for Persian; others take UTF-8."""
+    sysname = platform.system()
+    if sysname == "Windows":
+        cmd, data = ["clip"], b"\xff\xfe" + text.encode("utf-16le")
+    elif sysname == "Darwin":
+        cmd, data = ["pbcopy"], text.encode("utf-8")
+    elif shutil.which("wl-copy"):
+        cmd, data = ["wl-copy"], text.encode("utf-8")
+    elif shutil.which("xclip"):
+        cmd, data = ["xclip", "-selection", "clipboard"], text.encode("utf-8")
+    elif shutil.which("xsel"):
+        cmd, data = ["xsel", "--clipboard", "--input"], text.encode("utf-8")
+    else:
+        raise PipelineError("no clipboard tool (need clip, pbcopy, wl-copy, xclip or xsel)")
+    if dry_run:
+        return "DRY-RUN: " + " ".join(cmd)
+    env = {**os.environ, "LANG": os.environ.get("LANG", "en_US.UTF-8")} if sysname == "Darwin" else None
+    proc = subprocess.run(cmd, input=data, env=env, capture_output=True)
+    if proc.returncode != 0:
+        raise PipelineError(f"clipboard text failed: {proc.stderr.decode('utf-8', 'replace')[-400:]}")
+    return cmd[0]
+
+
+def load_prompts(path: Path) -> dict[str, dict]:
+    """Prompt library JSON: {"prompts": {key: "text" | {"text":..., ...}}}."""
+    data = json.loads(path.read_text("utf-8-sig"))
+    raw = data.get("prompts", data)
+    out = {}
+    for k, v in raw.items():
+        if k.startswith("_"):
+            continue
+        out[k] = v if isinstance(v, dict) else {"text": v}
+        if not str(out[k].get("text") or "").strip():
+            raise PipelineError(f"prompt {k!r} has no text")
+    return out
+
+
+def default_prompts_path() -> Path:
+    return Path(__file__).resolve().parent / "prompts" / "ugly_chef_flow_prompts.json"
