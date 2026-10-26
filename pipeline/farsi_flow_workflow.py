@@ -1432,3 +1432,109 @@ def write_contact_sheet(ep: Episode, video: Path, points: list[tuple[float, str]
         dst.parent.mkdir(parents=True, exist_ok=True)
         sheet.save(dst, "JPEG", quality=88)
     return dst
+
+
+def clip_report(ep: Episode, r: ClipResult) -> dict:
+    a = r.analysis or {}
+    out: dict[str, Any] = {
+        "id": r.clip.id, "index": r.clip.index, "provenance": r.provenance, "plan": r.plan,
+        "speech": {k: a.get(k) for k in ("source_duration", "noise_floor_dbfs", "threshold_dbfs",
+                                          "peak_dbfs", "first_speech_sec", "last_speech_sec",
+                                          "speech_segments", "cuts_speech", "warning") if k in a},
+        "final_window_speech": r.final_check, "lock_trim": r.clip.lock_trim, "notes": r.clip.notes}
+    if r.subbed:
+        out.update(duration=r.duration, frames=r.frames, subtitles=r.cue_checks,
+                   overlays=[{"kind": o.kind, "start": o.start, "end": o.end, "speaker": o.speaker,
+                              **{k: o.meta[k] for k in ("box", "font_size", "lines", "fits_width",
+                                                       "inside_frame")}} for o in r.overlays],
+                   outputs=[str(p) for p in r.subbed], srt=[str(p) for p in r.srt],
+                   media=av_checks(ep, r.subbed[0], r.duration))
+        for p in r.subbed[1:]:
+            out.setdefault("mirror_sha256_match", []).append(sha256_file(p) == out["media"]["sha256"])
+    return out
+
+
+def gate(status: bool) -> str:
+    return "pass" if status else "fail"
+
+
+def write_qa_report(ep: Episode, results: list[ClipResult], font: Optional[str], base: Optional[dict],
+                    master: Optional[dict], extras: dict, command: str) -> Path:
+    """qa_report.json: automatic checks with pass/fail, human gates 'pending'."""
+    clips = [clip_report(ep, r) for r in results]
+    media_ok = all(c.get("media", {}).get("pass", True) for c in clips)
+    subs_ok = all(s["in_bounds"] and not s["overlaps_previous"] for c in clips for s in c.get("subtitles", []))
+    pills_ok = all(o["fits_width"] and o["inside_frame"] for c in clips for o in c.get("overlays", []))
+    speech_ok = all(not (c["final_window_speech"] or {}).get("cuts_speech") for c in clips)
+    automatic = {"per_clip_media": gate(media_ok), "subtitle_bounds": gate(subs_ok),
+                 "pill_layout": gate(pills_ok), "speech_safe_trim": gate(speech_ok)}
+    if base:
+        automatic["base_media"] = gate(base["qa"]["pass"])
+    if master:
+        automatic["master_media"] = gate(master["qa"]["pass"])
+        automatic["master_single_cta"] = gate(not master.get("cta_used") or
+                                              abs(master["duration"] - base["duration"] -  # type: ignore[index]
+                                                  master["cta_duration"]) < 1.5 / float(ep.video["fps"]))
+    report = {
+        "pipeline": "farsi_flow_workflow", "pipeline_version": PIPELINE_VERSION, "command": command,
+        "generated_utc": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+        "host": {"python": platform.python_version(), "platform": platform.platform(),
+                 "shaping_engine": shaping_engine(), "raqm": features.check("raqm")},
+        "episode_id": ep.episode_id, "title_fa": ep.title_fa,
+        "manifest": {"path": str(ep.manifest_path), "sha256": ep.manifest_sha256},
+        "font": {"path": font, "sha256": sha256_file(Path(font)) if font else None},
+        "settings": {"video": ep.video, "audio": ep.audio, "speech": ep.speech, "subtitle_style": ep.subs,
+                     "badge": ep.badge},
+        "clips": clips,
+        "base": None if not base else {"path": str(base["path"]), "duration": base["duration"],
+                                       "clip_offsets": base["offsets"], "cue_count": len(base["cues"]),
+                                       "media": base["qa"]},
+        "master": None if not master else {k: (str(v) if isinstance(v, Path) else v)
+                                           for k, v in master.items() if k != "qa"} | {"media": master["qa"]},
+        "deliverables": {k: str(v) for k, v in extras.items()},
+        "gates": {"automatic": automatic,
+                  "human_review": {"listen_every_clip_edges": "pending", "listen_final_master": "pending",
+                                   "transcript_word_for_word": "pending", "visual_frame_review": "pending",
+                                   "voice_continuity": "pending"}},
+        "overall_automatic": "pass" if all(v == "pass" for v in automatic.values()) else "fail",
+        "warnings": ep.warnings,
+        "note": "Amplitude speech detection locates candidates only; it does not prove a sentence "
+                "finished. Human/audio-capable review gates stay 'pending' until signed off.",
+    }
+    dst = ep.out_dir / ("qa_report.json" if command == "build" else f"qa_report_{command}.json")
+    dst.parent.mkdir(parents=True, exist_ok=True)
+    tmp = dst.with_suffix(".tmp")
+    tmp.write_text(json.dumps(report, indent=2, ensure_ascii=False), "utf-8")
+    os.replace(tmp, dst)
+    return dst
+
+
+# ----------------------------------------------------------- top-level flows --
+def build_episode(ep: Episode, *, no_cta: bool = False, force: bool = False,
+                  contact: bool = True) -> dict:
+    """Full pipeline: per-clip subbed clips -> Base -> Master -> SRT/audit/contact/QA."""
+    results, font, _ = run_clips(ep, force=force, render=True)
+    base = assemble_base(ep, results, force)
+    master = assemble_master(ep, base, font, no_cta=no_cta, force=force)
+    extras: dict[str, Any] = {"base_mp4": base["path"], "base_srt": ep.out_dir / f"{ep.base_name}.srt",
+                              "master_mp4": master["path"], "master_srt": master["srt"],
+                              "audit_mp3": write_audit_mp3(ep, master["path"], force)}
+    if contact:
+        extras["contact_sheet"] = write_contact_sheet(ep, master["path"], contact_points(ep, base, master))
+    extras["clips_subbed"] = ", ".join(str(r.subbed[0]) for r in results)
+    qa = write_qa_report(ep, results, font, base, master, extras, "build")
+    return {"results": results, "base": base, "master": master, "extras": extras, "qa_report": qa}
+
+
+def sub_clips_only(ep: Episode, *, force: bool = False, only: Optional[set[str]] = None) -> dict:
+    results, font, _ = run_clips(ep, force=force, render=True, only=only)
+    qa = write_qa_report(ep, results, font, None, None,
+                         {"clips_subbed": ", ".join(str(p) for r in results for p in r.subbed)},
+                         "sub-clips-only")
+    return {"results": results, "qa_report": qa}
+
+
+def speech_audit(ep: Episode, *, only: Optional[set[str]] = None) -> dict:
+    results, _, _ = run_clips(ep, render=False, only=only)
+    qa = write_qa_report(ep, results, None, None, None, {}, "speech-audit")
+    return {"results": results, "qa_report": qa}
