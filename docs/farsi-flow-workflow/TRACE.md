@@ -47,3 +47,5 @@ arabic-reshaper 3.0.1, python-bidi 0.6.12, no OpenCV (pipeline deliberately does
 - 2026-10-26T13:00Z · `049acb25878ddcd404b4e14801b99a2086ade011` · Stage 2: fix(stage2): validate inputs, protect sources, hash cached media, support --manifest and honest CLI failures
 
 - 2026-10-26T13:01Z · `00f4786f97db41c6f5c8c579b2532ce9592d34f6` · Stage 2: fix(stage2): retain exact audio trims, audit splice boundaries, and expose complete scoped QA status
+
+- 2026-10-26T13:02Z · `07fb355c6973b16d234aedcb26dbdf72431675bf` · Stage 2: fix(stage2): preserve Series1 curated trim windows with warn mode and explicit listening gate
