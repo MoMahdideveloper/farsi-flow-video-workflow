@@ -927,3 +927,78 @@ def test_stage2_node_submitter_regressions():
     assert shutil.which('node'), 'Node is required for Flow submitter guard verification'
     proc = command(['node', '--test', ROOT / 'tests/js/submit_flow_batch.test.mjs'])
     assert b'fail 0' in proc.stdout
+
+
+# Stage 2 continuation: exercise actual CLI failure paths, not just trace helpers.
+@pytest.mark.parametrize('change', [
+    {'keyframe': None}, {'expected_speakers': []}, {'story_beat': ''},
+])
+def test_stage2_incomplete_story_metadata_fails_trace_cli(stage2_media, tmp_path, change):
+    data = stage2_manifest(stage2_media, tmp_path)
+    data['clips'][0].update(change)
+    path = save_manifest(tmp_path / 'metadata.json', data)
+    out = tmp_path / 'trace.json'
+    cli(path, 'trace-audit', '--no-live', '--out-json', out, expected=1)
+    report = json.loads(out.read_text())
+    assert report['audit_passed'] is False and report['all_passed'] is False
+    assert fw.STEP_NAMES[0] in report['blocking_steps']
+    assert set(report['clips'][0]['step_trace']) == set(fw.STEP_NAMES)
+
+
+@pytest.mark.parametrize('missing_keyframe', [True, False])
+def test_stage2_actual_build_cannot_sign_off_unresolved_visuals(stage2_media, tmp_path, missing_keyframe):
+    data = stage2_manifest(stage2_media, tmp_path)
+    if missing_keyframe:
+        data['clips'][0]['keyframe'] = str(tmp_path / 'absent.png')
+    else:
+        data['fallback_to_source_on_visual_fail'] = False
+    path = save_manifest(tmp_path / 'blocked.json', data)
+    cli(path, 'build', '--no-cta', '--no-contact', expected=1)
+    report = json.loads((Path(data['out_dir']) / 'qa_report.json').read_text())
+    assert report['all_passed'] is False and report['publication_status'] == 'fail'
+    assert report['gates']['automatic']['visual_continuity_resolved'] == 'fail'
+    assert report['clips'][0]['fallback']['resolved'] is False
+    if missing_keyframe:
+        assert report['gates']['automatic']['keyframe_preflight'] == 'fail'
+
+
+def test_stage2_matching_flow_picture_is_not_replaced(stage2_media, tmp_path):
+    _, flow, _, kfs, _ = stage2_media
+    data = stage2_manifest(stage2_media, tmp_path)
+    data['clips'][0]['keyframe'] = str(kfs['other'])  # exact matching magenta frame
+    data['source_video'] = str(tmp_path / 'unneeded-source.mp4')
+    before = {p: fw.sha256_file(p) for p in [flow, *kfs.values()]}
+    path = save_manifest(tmp_path / 'matching.json', data)
+    cli(path, 'build', '--no-cta', '--no-contact')
+    report = json.loads((Path(data['out_dir']) / 'qa_report.json').read_text())
+    assert report['all_passed'] and report['visual_continuity_passed']
+    assert report['clips'][0]['fallback']['resolution'] == 'flow_clip'
+    assert report['publication_status'] == 'pending', 'automatic checks are not human approval'
+    assert all(v == 'pending' for v in report['gates']['human_review'].values())
+    assert not list(Path(data['out_dir']).rglob('*source_bridge.mp4'))
+    assert before == {p: fw.sha256_file(p) for p in before}
+
+
+def test_stage2_hybrid_corrupt_cache_is_rebuilt(stage2_media, tmp_path):
+    data = stage2_manifest(stage2_media, tmp_path)
+    path = save_manifest(tmp_path / 'cache.json', data)
+    cli(path, 'build', '--no-cta', '--no-contact')
+    qa = Path(data['out_dir']) / 'qa_report.json'
+    report = json.loads(qa.read_text())
+    bridge = Path(report['clips'][0]['provenance']['analysed'])
+    bridge.write_bytes(b'corrupted cached video')
+    cli(path, 'build', '--no-cta', '--no-contact')
+    report = json.loads(qa.read_text())
+    assert report['all_passed']
+    extraction = report['clips'][0]['fallback']['extraction']
+    assert extraction['verified']
+    assert audio_stream_hash(bridge) == audio_stream_hash(stage2_media[1])
+    assert fw.probe_media(bridge)['video']['duration'] == pytest.approx(10, abs=1/24)
+
+
+@pytest.mark.parametrize('entry', [None, [], good_probe(num_sampled_frames=True),
+                                  good_probe(l1_vs_keyframe_start=-1),
+                                  good_probe(l1_vs_keyframe_end=256)])
+def test_stage2_invalid_probe_shapes_and_ranges_fail_closed(entry):
+    with pytest.raises(fw.PipelineError, match='probe'):
+        fw.evaluate_probe_entry(entry)
