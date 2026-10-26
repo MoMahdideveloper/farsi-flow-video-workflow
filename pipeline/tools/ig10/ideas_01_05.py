@@ -1,150 +1,310 @@
-"""Ideas 1-5 (AI-video use cases for ordinary people). Single source of truth
-for both the Markdown doc and the JSON manifest. Shot tuple layout:
-(duration_sec, visual_prompt_flow, motion_prompt_flow, spoken_fa, [subtitle pills])."""
+"""Audited idea source; regenerate both Markdown and manifest after edits."""
 
-STYLE = ("3D Pixar-style animation, soft cinematic lighting, vertical 9:16, "
-         "warm Iranian everyday setting, expressive faces, shallow depth of field")
-
-IDEAS = [
- {"idea_id": "IG10_01", "segment": "online_shop_and_local_store_owners", "keyword": "تیزر",
-  "title_fa": "بدون دوربین، مدل و آتلیه، با ۱ عکس موبایل تیزر تبلیغاتی میلیونی برای مغازه و آنلاین‌شاپت بساز!",
-  "persona_fa": "صاحب بوتیک لباس، کفش‌فروش، عطرفروش یا آنلاین‌شاپ اینستاگرامی که فقط یک گوشی دارد.",
-  "pain_fa": "عکاسی صنعتی و مدل و آتلیه برای هر محصول چند میلیون خرج دارد؛ عکس‌های ساده موبایلی دیده نمی‌شوند و رقیب‌ها با ویدیوهای شیک فروش را می‌برند.",
-  "trigger": "حسادت مثبت به رقیب + ترس از جا ماندن (FOMO) + صرفه‌جویی پول",
-  "hook_visual": "Split screen: left a dull, badly lit phone photo of a sneaker on a shop counter; right the SAME sneaker exploding into a glossy cinematic 3D ad with gold light rays. A red stamp reads 'هزینه آتلیه: ۰ تومان'.",
-  "hook_fa": "این عکس رو با گوشی خودم گرفتم... این یکی تبلیغش شد. فقط سی ثانیه!",
-  "before_fa": "عکس معمولی موبایل از یک کفش روی پیشخوان مغازه، نور زرد و پس‌زمینه شلوغ.",
-  "after_fa": "تیزر ۸ ثانیه‌ای سینمایی: کفش روی سکوی براق می‌چرخد، قطرات آب و نور طلایی، اسم برند به فارسی — آماده استوری و ریلز.",
-  "products": ["draft_83353025-b540-45aa-ac1f-624f826a4098", "draft_0794ef61-67db-4aa0-9cd6-0977addacf48",
-               "draft_17d3b365-2e40-400d-be39-d6e7e159aa14", "draft_ee59478a-977e-42ca-b176-9ceb0def34c8"],
-  "shots": [
-   (8, f"{STYLE}. A tired Iranian boutique owner (40s, mustache, apron) holds a phone, photographing a sneaker on a messy shop counter under yellow fluorescent light. Next to him a rival shop's phone screen shows a slick luxury ad.",
-    "Slow push-in on his frustrated face; he sighs and lowers the phone. Character says in Persian (Farsi): \"این عکس رو با گوشی خودم گرفتم... هیچکس لایکش نمی‌کنه!\"",
-    "این عکس رو با گوشی خودم گرفتم... هیچکس لایکش نمی‌کنه!", ["عکس موبایلی = ۳ تا لایک 😩"]),
-   (8, f"{STYLE}. Close-up of the phone screen: the dull sneaker photo is dragged into an AI video app; a glowing 'Image to Video' button.",
-    "Finger taps the button; the photo ripples like liquid and particles of golden light swirl out of the screen. Narrator says in Persian (Farsi): \"فقط عکس رو دادم به هوش مصنوعی و نوشتم: تبلیغ لوکس سینمایی.\"",
-    "فقط عکس رو دادم به هوش مصنوعی و نوشتم: تبلیغ لوکس سینمایی.", ["۱ عکس + ۱ جمله ✍️"]),
-   (8, "Ultra-premium product commercial: the same white sneaker rotates on a glossy black pedestal, water droplets frozen mid-air, golden rim light, slow-motion fabric details, 9:16, photoreal.",
-    "Orbiting camera 180 degrees around the sneaker, slow motion, light rays sweep across. No dialogue, dramatic whoosh sound design.",
-    "(صدای افکت سینمایی)", ["۳۰ ثانیه بعد 👇", "تیزر میلیونی بدون آتلیه ✨"]),
-   (8, f"{STYLE}. The boutique owner now smiling, phone buzzing with Instagram notifications and DM bubbles saying 'قیمت؟' and 'سایز ۴۲ دارین؟'.",
-    "Notifications pop rapidly around his head; he laughs and high-fives his teenage daughter. Character says in Persian (Farsi): \"از دیروز تا حالا چهل تا دایرکت قیمت گرفتم!\"",
-    "از دیروز تا حالا چهل تا دایرکت قیمت گرفتم!", ["دایرکت‌ها ترکید 📩"]),
-   (8, f"{STYLE}. The owner holds his phone toward camera showing kelidbox.com with Kling AI and CapCut Pro cards, an Enamad trust badge and a '۴ قسط' label.",
-    "He winks at the camera. Character says in Persian (Farsi): \"اکانت‌هاش رو از کلیدباکس گرفتم. زیر همین پست بنویس تیزر، لینک رو برات می‌فرستم.\"",
-    "اکانت‌هاش رو از کلیدباکس گرفتم. زیر همین پست بنویس «تیزر»، لینک رو برات می‌فرستم.", ["کامنت بنویس: تیزر 👇", "کد WELCOME10 + ۴ قسط"]),
-  ]},
- {"idea_id": "IG10_02", "segment": "shy_creators_and_housewives_faceless", "keyword": "انیمیشن",
-  "title_fa": "خجالت می‌کشی جلوی دوربین بیای؟ پیج بدون چهره (Faceless) بساز و مثل همین پیج کلیدباکس با انیمیشن هوش مصنوعی ویو و درآمد بگیر!",
-  "persona_fa": "خانم خانه‌دار، دانشجوی خجالتی یا کارمندی که دوست دارد پیج بزند ولی نمی‌خواهد چهره یا صدایش دیده شود.",
-  "pain_fa": "فکر می‌کند برای ویو گرفتن باید جلوی دوربین برقصد یا حرف بزند؛ از قضاوت فامیل و همکار می‌ترسد.",
-  "trigger": "کنجکاوی پشت‌صحنه + اثبات اجتماعی (همین سریال‌هایی که دیدی)",
-  "hook_visual": "The famous Pineapple husband and Strawberry wife from @kelidbox_com freeze mid-argument; the camera pulls back to reveal it's playing on a laptop in a cozy kitchen, a woman's hands (face never shown) typing beside a cup of tea.",
-  "hook_fa": "این آناناس و توت‌فرنگی رو یادته؟ هیچ آدمی جلوی دوربین نیومد!",
-  "before_fa": "یک ایده داستانی در دفترچه: «زن و شوهری که سر عکس خانوادگی دعوا می‌کنند.»",
-  "after_fa": "قسمت ۴۰ ثانیه‌ای انیمیشن سه‌بعدی با دوبله فارسی و زیرنویس — همان فرمتی که در گرید @kelidbox_com منتشر شده.",
-  "products": ["chatgpt-plus", "draft_0794ef61-67db-4aa0-9cd6-0977addacf48", "draft_3e11fcb0-a761-4391-bf06-4cc4284fd5c0"],
-  "shots": [
-   (8, f"{STYLE}. Anthropomorphic pineapple husband and strawberry wife arguing in a living room (the @kelidbox_com 'Fruits of Power' characters). The frame freezes.",
-    "Freeze-frame, then camera pulls back through a laptop screen into a cozy Iranian kitchen; only a woman's hands and a tea glass are visible. Narrator (female) says in Persian (Farsi): \"این آناناس و توت‌فرنگی رو یادته؟ هیچ آدمی جلوی دوربین نیومد!\"",
-    "این آناناس و توت‌فرنگی رو یادته؟ هیچ آدمی جلوی دوربین نیومد!", ["بدون چهره 🙈", "بدون دوربین 🎥❌"]),
-   (8, "Over-the-shoulder view (no face) of hands typing a Persian story idea into a chat AI on a laptop; the AI replies with a 5-scene script in Persian.",
-    "Text streams quickly on screen, warm lamp light. Narrator says in Persian (Farsi): \"اول ایده‌م رو به چت‌جی‌پی‌تی گفتم، سناریو پنج صحنه‌ای رو نوشت.\"",
-    "اول ایده‌م رو به چت‌جی‌پی‌تی گفتم، سناریوی پنج صحنه‌ای رو نوشت.", ["۱. سناریو با ChatGPT ✍️"]),
-   (8, "Screen recording style: a scene prompt pasted into Google Flow; a 3D Pixar pineapple character renders frame by frame from a grey clay draft into full color.",
-    "Time-lapse render, progress bar fills, colors bloom. Narrator says in Persian (Farsi): \"بعد توی گوگل فلو، هر صحنه رو با یک جمله ساختم.\"",
-    "بعد توی گوگل فلو، هر صحنه رو با یک جمله ساختم.", ["۲. انیمیشن با Google Flow 🎬"]),
-   (8, f"{STYLE}. The finished strawberry character on screen lip-syncs a Persian line; an audio waveform glows beside it; Instagram view counter climbs rapidly.",
-    "View counter animates upward, heart icons float. Narrator says in Persian (Farsi): \"صداهای فارسی رو با الون‌لبز ساختم. حالا ویو می‌گیرم، بدون اینکه کسی منو بشناسه.\"",
-    "صداهای فارسی رو با ElevenLabs ساختم. حالا ویو می‌گیرم، بدون اینکه کسی منو بشناسه.", ["۳. صدای فارسی با ElevenLabs 🎙️"]),
-   (8, f"{STYLE}. The pineapple and strawberry characters step out of the laptop onto the kitchen table holding a tiny sign 'kelidbox.com' with an Enamad badge.",
-    "Both characters wave at camera. Strawberry says in Persian (Farsi): \"هر سه اکانت تو کلیدباکسه. کامنت بنویس انیمیشن تا لینک و کد تخفیف رو بفرستیم!\"",
-    "هر سه اکانت تو کلیدباکسه. کامنت بنویس «انیمیشن» تا لینک و کد تخفیف رو بفرستیم!", ["کامنت: انیمیشن 👇", "WELCOME10 + ۴ قسط"]),
-  ]},
-]
-
-IDEAS += [
- {"idea_id": "IG10_03", "segment": "doctors_lawyers_coaches_real_estate_busy_sellers", "keyword": "مجری",
-  "title_fa": "بدون اینکه ۱ دقیقه جلوی دوربین بشینی، مجری هوش مصنوعی با صدای فارسی برایت ریلز آموزشی و فروش می‌سازه!",
-  "persona_fa": "دندانپزشک، وکیل، مشاور املاک، کوچ یا فروشنده پرمشغله‌ای که می‌داند ریلز آموزشی مشتری می‌آورد ولی وقت ضبط ندارد.",
-  "pain_fa": "هر ریلز یعنی یک ساعت ضبط، تپق، نور بد و تدوین؛ در نتیجه پیج ماه‌ها خاک می‌خورد.",
-  "trigger": "کمبود وقت + اعتبار حرفه‌ای + «این آدم واقعی نیست؟!»",
-  "hook_visual": "A confident presenter in a white doctor's coat speaks to camera; mid-sentence the image glitches and reveals a wireframe avatar — while the real dentist is shown asleep on the clinic couch.",
-  "hook_fa": "این دکتر الان داره حرف می‌زنه... ولی خودش خوابه!",
-  "before_fa": "یک متن ۵ خطی تایپ‌شده درباره «۳ اشتباه در مسواک زدن».",
-  "after_fa": "ریلز ۴۰ ثانیه‌ای با مجری دیجیتال، لب‌خوانی دقیق فارسی، زیرنویس و کاور برند — بدون یک ثانیه ضبط.",
-  "products": ["draft_12bb11ac-8ac4-4875-8529-8a756991a70b", "draft_3e11fcb0-a761-4391-bf06-4cc4284fd5c0",
-               "chatgpt-plus", "canva-pro"],
-  "shots": [
-   (8, "Photoreal vertical shot of a friendly Iranian dentist presenter (30s, white coat, clean modern clinic) speaking to camera; subtle digital glitch lines.",
-    "Mid-sentence the frame glitches and reveals a glowing wireframe face for one beat, then cuts to the real dentist asleep on a clinic couch. Narrator says in Persian (Farsi): \"این دکتر الان داره حرف می‌زنه... ولی خودش خوابه!\"",
-    "این دکتر الان داره حرف می‌زنه... ولی خودش خوابه!", ["این مجری واقعی نیست 😳"]),
-   (8, f"{STYLE}. The dentist character, exhausted, surrounded by a ring light, a camera on tripod, and a pile of failed takes labeled 'تپق ۱۲'.",
-    "Fast comedic montage of bloopers, papers flying. Character says in Persian (Farsi): \"هر ریلز یه ساعت ضبط و تپق... دیگه وقت نداشتم!\"",
-    "هر ریلز یه ساعت ضبط و تپق... دیگه وقت نداشتم!", ["۱ ساعت ضبط برای ۱ ریلز؟ 😮‍💨"]),
-   (8, "Clean laptop UI close-up: a 5-line Persian script written by an AI chat, pasted into an avatar video tool; a Persian voice clone waveform appears.",
-    "Cursor clicks 'Generate'; waveform pulses; avatar thumbnail starts moving. Narrator says in Persian (Farsi): \"متن رو چت‌جی‌پی‌تی نوشت، صدای خودم رو یه بار دادم، مجری ساخته شد.\"",
-    "متن رو ChatGPT نوشت، صدای خودم رو یه بار دادم، مجری ساخته شد.", ["متن ✍️ ← صدا 🎙️ ← مجری 🧑‍⚕️"]),
-   (8, "Phone mockup showing three finished branded reels (dentist, lawyer, real-estate agent avatars) with Persian title covers designed in a template editor.",
-    "Swipe between the three reels; likes and 'نوبت میخوام' DMs pop. Narrator says in Persian (Farsi): \"وکیل، مشاور املاک، کوچ... همه میتونن هفته‌ای ده تا ریلز داشته باشن.\"",
-    "وکیل، مشاور املاک، کوچ... همه می‌تونن هفته‌ای ده تا ریلز داشته باشن.", ["هفته‌ای ۱۰ ریلز بدون ضبط 📈"]),
-   (8, "The AI dentist avatar now stands beside a kelidbox.com screen showing HeyGen, ElevenLabs, ChatGPT and Canva cards, Enamad seal and '۴ قسط بدون بهره'.",
-    "Avatar gestures toward the screen. Avatar says in Persian (Farsi): \"این چهار اکانت رو از کلیدباکس بگیر. کامنت بنویس مجری، لینک و کد تخفیف میاد تو دایرکتت.\"",
-    "این چهار اکانت رو از کلیدباکس بگیر. کامنت بنویس «مجری»، لینک و کد تخفیف میاد تو دایرکتت.", ["کامنت: مجری 👇", "WELCOME10 + ۴ قسط"]),
-  ]},
- {"idea_id": "IG10_04", "segment": "mass_appeal_emotional_gift_song_video", "keyword": "تولد",
-  "title_fa": "برای تولد، سالگرد ازدواج یا سورپرایز عشقت، یک آهنگ و موزیک‌ویدیوی سه‌بعدی اختصاصی با اسم و خاطرات خودش بساز!",
-  "persona_fa": "هر کسی که تولد همسر، مادر، دوست یا سالگرد ازدواج پیش رو دارد و دنبال کادوی خاص و احساسی است.",
-  "pain_fa": "کادوهای تکراری (گل، ادکلن) هیجان ندارند؛ سفارش آهنگ اختصاصی به خواننده چند ده میلیون خرج دارد.",
-  "trigger": "احساس، اشک شوق و میل به دیده شدن در استوری (UGC قابل اشتراک)",
-  "hook_visual": "A woman opens her phone at a birthday table, hears a song singing HER name 'سارا' in Persian, and bursts into happy tears; balloons in the background.",
-  "hook_fa": "شوهرش یه آهنگ با اسم خودش براش ساخت... ببین چیکار کرد!",
-  "before_fa": "سه خط خاطره: «اولین دیدار در کافه، سفر شمال، اسمش سارا است.»",
-  "after_fa": "آهنگ پاپ فارسی ۲ دقیقه‌ای با اسم سارا + موزیک‌ویدیوی سه‌بعدی از همان خاطرات (کافه، دریای شمال).",
-  "products": ["draft_a817f7f0-7513-497c-af44-0cd2863f6045", "draft_11fa376d-8e22-44d8-9bca-7830c1f6b9da", "midjourney-pro"],
-  "shots": [
-   (8, f"{STYLE}. A young Iranian woman named Sara at a candle-lit birthday table looks at a phone; tears of joy, her husband watching nervously behind a balloon.",
-    "Slow push-in on her emotional face as soft Persian pop music plays. Narrator says in Persian (Farsi): \"شوهرش یه آهنگ با اسم خودش براش ساخت... ببین چیکار کرد!\"",
-    "شوهرش یه آهنگ با اسم خودش براش ساخت... ببین چیکار کرد!", ["آهنگی با اسم خودش 🎶❤️"]),
-   (8, f"{STYLE}. Flashback: the husband secretly typing three memories into a music AI app at night on the sofa: 'کافه، سفر شمال، سارا'.",
-    "Typing close-up, then a glowing music waveform rises from the phone. Husband says in Persian (Farsi): \"فقط سه تا خاطره نوشتم و گفتم یه آهنگ عاشقانه با اسم سارا بساز.\"",
-    "فقط سه تا خاطره نوشتم و گفتم یه آهنگ عاشقانه با اسم سارا بساز.", ["۳ خاطره ← ۱ آهنگ 🎵"]),
-   (8, f"{STYLE}. A 3D Pixar couple version of Sara and husband meeting in a cozy Tehran cafe, then walking on a misty Caspian beach in the north of Iran.",
-    "Dreamy dolly shot, cherry petals and sea mist, music swells. Persian lyrics are sung (Farsi): \"سارا، تو اون کافه دلم رو بردی...\"",
-    "سارا، تو اون کافه دلم رو بردی...", ["موزیک‌ویدیو از خاطرات خودتون 🎬"]),
-   (8, f"{STYLE}. Back to the birthday table: Sara hugs her husband; family members film with phones; an Instagram story with the song gets many replies.",
-    "Group cheer, confetti falls. Sara says in Persian (Farsi): \"بهترین کادوی عمرم بود! همه فامیل استوری کردن!\"",
-    "بهترین کادوی عمرم بود! همه فامیل استوری کردن!", ["بهترین کادوی عمرش 🎁"]),
-   (8, f"{STYLE}. The husband holds a gift box that opens to reveal glowing kelidbox.com cards for Suno AI and PixVerse, an Enamad seal and '۴ قسط'.",
-    "Box opens with sparkles toward the camera. Husband says in Persian (Farsi): \"تو هم برای عشقت بساز. کامنت بنویس تولد تا لینک و کد تخفیف رو بفرستیم.\"",
-    "تو هم برای عشقت بساز. کامنت بنویس «تولد» تا لینک و کد تخفیف رو بفرستیم.", ["کامنت: تولد 👇", "WELCOME10 + ۴ قسط"]),
-  ]},
- {"idea_id": "IG10_05", "segment": "parents_kids_and_teachers", "keyword": "نقاشی",
-  "title_fa": "نقاشی بچه‌ات رو بفرست تا هوش مصنوعی تبدیلش کنه به کارتون سه‌بعدی سخنگو با اسم خودش!",
-  "persona_fa": "پدر و مادرهای کودک ۴ تا ۱۰ ساله و معلم‌های دبستان/مهدکودک که دنبال سرگرمی سالم و خلاق هستند.",
-  "pain_fa": "بچه‌ها ساعت‌ها کارتون تکراری می‌بینند؛ نقاشی‌هایشان در کشو گم می‌شود؛ معلم‌ها برای کلاس محتوای جذاب ندارند.",
-  "trigger": "عشق والدین + ذوق کودک + اشتراک‌گذاری در گروه‌های خانوادگی",
-  "hook_visual": "A crayon drawing of a purple dinosaur on a fridge suddenly blinks, peels off the paper as a 3D cartoon, and says the child's name; a 6-year-old girl screams with joy.",
-  "hook_fa": "این دایناسور رو دخترم کشیده بود... حالا اسمش رو صدا می‌زنه!",
-  "before_fa": "نقاشی مداد شمعی یک دایناسور بنفش روی کاغذ A4، چسبیده به یخچال.",
-  "after_fa": "کارتون سه‌بعدی ۸ ثانیه‌ای که همان دایناسور (با همان رنگ و شکل) راه می‌رود و می‌گوید: «سلام نیلا! بیا با هم بازی کنیم!»",
-  "products": ["draft_0794ef61-67db-4aa0-9cd6-0977addacf48", "draft_8ddf9af6-ea31-4aa5-89f4-d5b6a1ef7b4f",
-               "draft_11fa376d-8e22-44d8-9bca-7830c1f6b9da", "draft_75a7b397-5b21-46ee-81a6-e134abb55ab1"],
-  "shots": [
-   (8, "A child's crayon drawing of a purple dinosaur taped to a fridge in an Iranian apartment kitchen; a 6-year-old girl named Nila watches.",
-    "The drawing blinks, peels off the paper and becomes a soft 3D Pixar-style cartoon dinosaur that waves; Nila screams with joy. Narrator (mother) says in Persian (Farsi): \"این دایناسور رو دخترم کشیده بود... حالا اسمش رو صدا می‌زنه!\"",
-    "این دایناسور رو دخترم کشیده بود... حالا اسمش رو صدا می‌زنه!", ["نقاشی بچه‌م زنده شد! 🦖"]),
-   (8, "Over-the-shoulder: a mother's phone photographs the crayon drawing; the photo is uploaded into Google Gemini with a Persian prompt.",
-    "Photo slides into the app, sparkles. Mother says in Persian (Farsi): \"از نقاشی عکس گرفتم و به جمنای گفتم همین رو سه‌بعدی کن، دقیقاً با همین رنگ‌ها.\"",
-    "از نقاشی عکس گرفتم و به Gemini گفتم همین رو سه‌بعدی کن، دقیقاً با همین رنگ‌ها.", ["۱. عکس نقاشی 📸", "۲. سه‌بعدی با Gemini ✨"]),
-   (8, f"{STYLE}. The purple 3D dinosaur (same shape as the crayon drawing, chunky legs, uneven spikes) walks through a colorful paper-craft forest.",
-    "Bouncy walk cycle, camera tracks alongside. Dinosaur says in Persian (Farsi) with a cute voice: \"سلام نیلا! بیا با هم بازی کنیم!\"",
-    "سلام نیلا! بیا با هم بازی کنیم!", ["۳. انیمیشن با Hailuo / PixVerse 🎬"]),
-   (8, f"{STYLE}. A primary-school classroom: a kind female teacher projects students' drawings turned into talking 3D cartoons; kids cheer; a quiz game screen follows.",
-    "Kids jump and raise hands. Teacher says in Persian (Farsi): \"نقاشی همه بچه‌ها رو کارتون کردم و باهاش مسابقه کلاسی ساختم!\"",
-    "نقاشی همه بچه‌ها رو کارتون کردم و باهاش مسابقه کلاسی ساختم!", ["معلم‌ها هم عاشقش شدن 👩‍🏫"]),
-   (8, f"{STYLE}. Nila hugs the 3D dinosaur on the sofa; the mother holds a phone showing kelidbox.com with Gemini, Hailuo and PixVerse cards, Enamad seal and '۴ قسط'.",
-    "Dinosaur winks at camera. Mother says in Persian (Farsi): \"تو هم نقاشی بچه‌ت رو زنده کن. کامنت بنویس نقاشی تا لینک و کد تخفیف رو بفرستیم.\"",
-    "تو هم نقاشی بچه‌ت رو زنده کن. کامنت بنویس «نقاشی» تا لینک و کد تخفیف رو بفرستیم.", ["کامنت: نقاشی 👇", "WELCOME10 + ۴ قسط"]),
-  ]},
-]
+IDEAS = [{'idea_id': 'IG10_01',
+  'segment': 'online_shop_and_local_store_owners',
+  'keyword': 'تیزر',
+  'title_fa': 'با یک عکس محصول، نمونه تیزر فروشگاهت را بساز',
+  'persona_fa': 'صاحب بوتیک لباس، کفش\u200cفروش، عطرفروش یا آنلاین\u200cشاپ اینستاگرامی که فقط یک گوشی دارد.',
+  'pain_fa': 'عکاسی صنعتی و مدل و آتلیه برای هر محصول چند میلیون خرج دارد؛ عکس\u200cهای ساده موبایلی دیده '
+             'نمی\u200cشوند و رقیب\u200cها با ویدیوهای شیک فروش را می\u200cبرند.',
+  'trigger': 'حسادت مثبت به رقیب + ترس از جا ماندن (FOMO) + صرفه\u200cجویی پول',
+  'hook_visual': 'Split screen: left a dull, badly lit phone photo of a sneaker on a shop counter; right the SAME '
+                 "sneaker exploding into a glossy cinematic 3D ad with gold light rays. A red stamp reads 'هزینه "
+                 "آتلیه: ۰ تومان'. Show the transformation in the FIRST 3 seconds; do not render text in the "
+                 'generated image.',
+  'hook_fa': 'این عکس، تبلیغ شد!',
+  'before_fa': 'عکس معمولی موبایل از یک کفش روی پیشخوان مغازه، نور زرد و پس\u200cزمینه شلوغ.',
+  'after_fa': 'تیزر ۸ ثانیه\u200cای سینمایی: کفش روی سکوی براق می\u200cچرخد، قطرات آب و نور طلایی، اسم برند به '
+              'فارسی — آماده استوری و ریلز.',
+  'products': ['draft_83353025-b540-45aa-ac1f-624f826a4098',
+               'draft_0794ef61-67db-4aa0-9cd6-0977addacf48',
+               'draft_17d3b365-2e40-400d-be39-d6e7e159aa14'],
+  'shots': [(8,
+             'Split screen: left a dull, badly lit phone photo of a sneaker on a shop counter; right the SAME '
+             "sneaker exploding into a glossy cinematic 3D ad with gold light rays. A red stamp reads 'هزینه "
+             "آتلیه: ۰ تومان'. Show the transformation in the FIRST 3 seconds; do not render text in the "
+             'generated image.',
+             '0–3s: reveal the hook immediately. Say in Persian (Farsi): "این عکس، تبلیغ شد!". 3–8s: hold on the '
+             'result; no extra dialogue.',
+             'این عکس، تبلیغ شد!',
+             ['این عکس، تبلیغ شد!']),
+            (8,
+             '3D Pixar-style animation, soft cinematic lighting, vertical 9:16, warm Iranian everyday setting, '
+             'expressive faces, shallow depth of field. Close-up of the phone screen: the dull sneaker photo is '
+             "dragged into an AI video app; a glowing 'Image to Video' button.",
+             'Finger taps the button; the photo ripples like liquid and particles of golden light swirl out of '
+             'the screen. Narrator says in Persian (Farsi): "فقط عکس رو دادم به هوش مصنوعی و نوشتم: تبلیغ لوکس '
+             'سینمایی."',
+             'فقط عکس رو دادم به هوش مصنوعی و نوشتم: تبلیغ لوکس سینمایی.',
+             ['۱ عکس + ۱ جمله ✍️']),
+            (8,
+             'Ultra-premium product commercial: the same white sneaker rotates on a glossy black pedestal, water '
+             'droplets frozen mid-air, golden rim light, slow-motion fabric details, 9:16, photoreal.',
+             'Orbiting camera 180 degrees around the sneaker, slow motion, light rays sweep across. No dialogue, '
+             'dramatic whoosh sound design.',
+             '(صدای افکت سینمایی)',
+             ['۳۰ ثانیه بعد 👇', 'تیزر میلیونی بدون آتلیه ✨']),
+            (8,
+             '3D Pixar-style animation, soft cinematic lighting, vertical 9:16, warm Iranian everyday setting, '
+             'expressive faces, shallow depth of field. The boutique owner now smiling, phone buzzing with '
+             "Instagram notifications and DM bubbles saying 'قیمت؟' and 'سایز ۴۲ دارین؟'.",
+             'Notifications pop rapidly around his head; he laughs and high-fives his teenage daughter. Character '
+             'says in Persian (Farsi): "از دیروز تا حالا چهل تا دایرکت قیمت گرفتم!"',
+             'از دیروز تا حالا چهل تا دایرکت قیمت گرفتم!',
+             ['دایرکت\u200cها ترکید 📩']),
+            (8,
+             'Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL '
+             'product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text.',
+             'Slow push-in. Say in Persian (Farsi): "«تیزر» رو کامنت کن؛ لینک و شرایط خرید رو بگیر.". Leave space '
+             'for RTL overlays.',
+             '«تیزر» رو کامنت کن؛ لینک و شرایط خرید رو بگیر.',
+             ['کامنت: تیزر',
+              'WELCOME10 • ۱۰٪ تا ۱۵۰٬۰۰۰ تومان',
+              'حداقل خرید: ۱۰۰٬۰۰۰ تومان',
+              '۴ قسط ترب\u200cپی / دیجی\u200cپی؛ طبق شرایط درگاه'])],
+  'primary_product_id': 'draft_0794ef61-67db-4aa0-9cd6-0977addacf48'},
+ {'idea_id': 'IG10_02',
+  'segment': 'shy_creators_and_housewives_faceless',
+  'keyword': 'انیمیشن',
+  'title_fa': 'از یک ایده، انیمیشن بدون چهره بساز',
+  'persona_fa': 'خانم خانه\u200cدار، دانشجوی خجالتی یا کارمندی که دوست دارد پیج بزند ولی نمی\u200cخواهد چهره یا '
+                'صدایش دیده شود.',
+  'pain_fa': 'فکر می\u200cکند برای ویو گرفتن باید جلوی دوربین برقصد یا حرف بزند؛ از قضاوت فامیل و همکار '
+             'می\u200cترسد.',
+  'trigger': 'کنجکاوی پشت\u200cصحنه + اثبات اجتماعی (همین سریال\u200cهایی که دیدی)',
+  'hook_visual': 'The famous Pineapple husband and Strawberry wife from @kelidbox_com freeze mid-argument; the '
+                 "camera pulls back to reveal it's playing on a laptop in a cozy kitchen, a woman's hands (face "
+                 'never shown) typing beside a cup of tea. Show the transformation in the FIRST 3 seconds; do not '
+                 'render text in the generated image.',
+  'hook_fa': 'این کارتون، بدون دوربینه!',
+  'before_fa': 'یک ایده داستانی در دفترچه: «زن و شوهری که سر عکس خانوادگی دعوا می\u200cکنند.»',
+  'after_fa': 'قسمت ۴۰ ثانیه\u200cای انیمیشن سه\u200cبعدی با دوبله فارسی و زیرنویس — همان فرمتی که در گرید '
+              '@kelidbox_com منتشر شده.',
+  'products': ['chatgpt-plus',
+               'draft_0794ef61-67db-4aa0-9cd6-0977addacf48',
+               'draft_3e11fcb0-a761-4391-bf06-4cc4284fd5c0'],
+  'shots': [(8,
+             'The famous Pineapple husband and Strawberry wife from @kelidbox_com freeze mid-argument; the camera '
+             "pulls back to reveal it's playing on a laptop in a cozy kitchen, a woman's hands (face never shown) "
+             'typing beside a cup of tea. Show the transformation in the FIRST 3 seconds; do not render text in '
+             'the generated image.',
+             '0–3s: reveal the hook immediately. Say in Persian (Farsi): "این کارتون، بدون دوربینه!". 3–8s: hold '
+             'on the result; no extra dialogue.',
+             'این کارتون، بدون دوربینه!',
+             ['این کارتون، بدون دوربینه!']),
+            (8,
+             'Over-the-shoulder view (no face) of hands typing a Persian story idea into a chat AI on a laptop; '
+             'the AI replies with a 5-scene script in Persian.',
+             'Text streams quickly on screen, warm lamp light. Narrator says in Persian (Farsi): "اول ایده\u200cم '
+             'رو به چت\u200cجی\u200cپی\u200cتی گفتم، سناریو پنج صحنه\u200cای رو نوشت."',
+             'اول ایده\u200cم رو به چت\u200cجی\u200cپی\u200cتی گفتم، سناریوی پنج صحنه\u200cای رو نوشت.',
+             ['۱. سناریو با ChatGPT ✍️']),
+            (8,
+             'Screen recording style: a scene prompt pasted into Google Flow; a 3D Pixar pineapple character '
+             'renders frame by frame from a grey clay draft into full color.',
+             'Time-lapse render, progress bar fills, colors bloom. Narrator says in Persian (Farsi): "بعد توی '
+             'گوگل فلو، هر صحنه رو با یک جمله ساختم."',
+             'بعد توی گوگل فلو، هر صحنه رو با یک جمله ساختم.',
+             ['۲. انیمیشن با Google Flow 🎬']),
+            (8,
+             '3D Pixar-style animation, soft cinematic lighting, vertical 9:16, warm Iranian everyday setting, '
+             'expressive faces, shallow depth of field. The finished strawberry character on screen lip-syncs a '
+             'Persian line; an audio waveform glows beside it; Instagram view counter climbs rapidly.',
+             'View counter animates upward, heart icons float. Narrator says in Persian (Farsi): "صداهای فارسی رو '
+             'با الون\u200cلبز ساختم. حالا ویو می\u200cگیرم، بدون اینکه کسی منو بشناسه."',
+             'صداهای فارسی رو با ElevenLabs ساختم. حالا ویو می\u200cگیرم، بدون اینکه کسی منو بشناسه.',
+             ['۳. صدای فارسی با ElevenLabs 🎙️']),
+            (8,
+             'Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL '
+             'product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text.',
+             'Slow push-in. Say in Persian (Farsi): "«انیمیشن» رو کامنت کن؛ لینک و شرایط خرید رو بگیر.". Leave '
+             'space for RTL overlays.',
+             '«انیمیشن» رو کامنت کن؛ لینک و شرایط خرید رو بگیر.',
+             ['کامنت: انیمیشن',
+              'WELCOME10 • ۱۰٪ تا ۱۵۰٬۰۰۰ تومان',
+              'حداقل خرید: ۱۰۰٬۰۰۰ تومان',
+              '۴ قسط ترب\u200cپی / دیجی\u200cپی؛ طبق شرایط درگاه'])],
+  'primary_product_id': 'draft_0794ef61-67db-4aa0-9cd6-0977addacf48'},
+ {'idea_id': 'IG10_03',
+  'segment': 'doctors_lawyers_coaches_real_estate_busy_sellers',
+  'keyword': 'مجری',
+  'title_fa': 'متن آموزشی را با مجری دیجیتال نمایش بده',
+  'persona_fa': 'دندانپزشک، وکیل، مشاور املاک، کوچ یا فروشنده پرمشغله\u200cای که می\u200cداند ریلز آموزشی مشتری '
+                'می\u200cآورد ولی وقت ضبط ندارد.',
+  'pain_fa': 'هر ریلز یعنی یک ساعت ضبط، تپق، نور بد و تدوین؛ در نتیجه پیج ماه\u200cها خاک می\u200cخورد.',
+  'trigger': 'کمبود وقت + اعتبار حرفه\u200cای + «این آدم واقعی نیست؟!»',
+  'hook_visual': "A confident presenter in a white doctor's coat speaks to camera; mid-sentence the image "
+                 'glitches and reveals a wireframe avatar — while the real dentist is shown asleep on the clinic '
+                 'couch. Show the transformation in the FIRST 3 seconds; do not render text in the generated '
+                 'image.',
+  'hook_fa': 'این مجری، واقعی نیست!',
+  'before_fa': 'یک متن ۵ خطی تایپ\u200cشده درباره «۳ اشتباه در مسواک زدن».',
+  'after_fa': 'نمونه ریلز با مجری دیجیتال؛ کیفیت فارسی و لب\u200cخوانی باید با پلن منتخب آزمایش شود. چهره و صدا '
+              'فقط با رضایت صاحب آن.',
+  'products': ['draft_12bb11ac-8ac4-4875-8529-8a756991a70b',
+               'draft_3e11fcb0-a761-4391-bf06-4cc4284fd5c0',
+               'chatgpt-plus',
+               'canva-pro'],
+  'shots': [(8,
+             "A confident presenter in a white doctor's coat speaks to camera; mid-sentence the image glitches "
+             'and reveals a wireframe avatar — while the real dentist is shown asleep on the clinic couch. Show '
+             'the transformation in the FIRST 3 seconds; do not render text in the generated image.',
+             '0–3s: reveal the hook immediately. Say in Persian (Farsi): "این مجری، واقعی نیست!". 3–8s: hold on '
+             'the result; no extra dialogue.',
+             'این مجری، واقعی نیست!',
+             ['این مجری، واقعی نیست!']),
+            (8,
+             '3D Pixar-style animation, soft cinematic lighting, vertical 9:16, warm Iranian everyday setting, '
+             'expressive faces, shallow depth of field. The dentist character, exhausted, surrounded by a ring '
+             "light, a camera on tripod, and a pile of failed takes labeled 'تپق ۱۲'.",
+             'Fast comedic montage of bloopers, papers flying. Character says in Persian (Farsi): "هر ریلز یه '
+             'ساعت ضبط و تپق... دیگه وقت نداشتم!"',
+             'هر ریلز یه ساعت ضبط و تپق... دیگه وقت نداشتم!',
+             ['۱ ساعت ضبط برای ۱ ریلز؟ 😮\u200d💨']),
+            (8,
+             'Clean laptop UI close-up: a 5-line Persian script written by an AI chat, pasted into an avatar '
+             'video tool; a Persian voice clone waveform appears.',
+             "Cursor clicks 'Generate'; waveform pulses; avatar thumbnail starts moving. Narrator says in Persian "
+             '(Farsi): "متن رو چت\u200cجی\u200cپی\u200cتی نوشت، صدای خودم رو یه بار دادم، مجری ساخته شد."',
+             'متن رو ChatGPT نوشت، صدای خودم رو یه بار دادم، مجری ساخته شد.',
+             ['متن ✍️ ← صدا 🎙️ ← مجری 🧑\u200d⚕️']),
+            (8,
+             'Phone mockup showing three finished branded reels (dentist, lawyer, real-estate agent avatars) with '
+             'Persian title covers designed in a template editor.',
+             "Swipe between the three reels; likes and 'نوبت میخوام' DMs pop. Narrator says in Persian (Farsi): "
+             '"وکیل، مشاور املاک، کوچ... همه میتونن هفته\u200cای ده تا ریلز داشته باشن."',
+             'وکیل، مشاور املاک، کوچ... همه می\u200cتونن هفته\u200cای ده تا ریلز داشته باشن.',
+             ['هفته\u200cای ۱۰ ریلز بدون ضبط 📈']),
+            (8,
+             'Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL '
+             'product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text.',
+             'Slow push-in. Say in Persian (Farsi): "«مجری» رو کامنت کن؛ لینک و شرایط خرید رو بگیر.". Leave space '
+             'for RTL overlays.',
+             '«مجری» رو کامنت کن؛ لینک و شرایط خرید رو بگیر.',
+             ['کامنت: مجری',
+              'WELCOME10 • ۱۰٪ تا ۱۵۰٬۰۰۰ تومان',
+              'حداقل خرید: ۱۰۰٬۰۰۰ تومان',
+              '۴ قسط ترب\u200cپی / دیجی\u200cپی؛ طبق شرایط درگاه'])],
+  'primary_product_id': 'draft_12bb11ac-8ac4-4875-8529-8a756991a70b'},
+ {'idea_id': 'IG10_04',
+  'segment': 'mass_appeal_emotional_gift_song_video',
+  'keyword': 'تولد',
+  'title_fa': 'آهنگ هدیه با اسم و خاطره بساز؛ ویدیو مرحله بعد',
+  'persona_fa': 'هر کسی که تولد همسر، مادر، دوست یا سالگرد ازدواج پیش رو دارد و دنبال کادوی خاص و احساسی است.',
+  'pain_fa': 'کادوهای تکراری (گل، ادکلن) هیجان ندارند؛ سفارش آهنگ اختصاصی به خواننده چند ده میلیون خرج دارد.',
+  'trigger': 'احساس، اشک شوق و میل به دیده شدن در استوری (UGC قابل اشتراک)',
+  'hook_visual': "A woman opens her phone at a birthday table, hears a song singing HER name 'سارا' in Persian, "
+                 'and bursts into happy tears; balloons in the background. Show the transformation in the FIRST 3 '
+                 'seconds; do not render text in the generated image.',
+  'hook_fa': 'آهنگ با اسم خودت!',
+  'before_fa': 'سه خط خاطره: «اولین دیدار در کافه، سفر شمال، اسمش سارا است.»',
+  'after_fa': 'آهنگ پاپ فارسی ۲ دقیقه\u200cای با اسم سارا + موزیک\u200cویدیوی سه\u200cبعدی از همان خاطرات (کافه، '
+              'دریای شمال).',
+  'products': ['draft_a817f7f0-7513-497c-af44-0cd2863f6045',
+               'draft_11fa376d-8e22-44d8-9bca-7830c1f6b9da',
+               'midjourney-pro'],
+  'shots': [(8,
+             "A woman opens her phone at a birthday table, hears a song singing HER name 'سارا' in Persian, and "
+             'bursts into happy tears; balloons in the background. Show the transformation in the FIRST 3 '
+             'seconds; do not render text in the generated image.',
+             '0–3s: reveal the hook immediately. Say in Persian (Farsi): "آهنگ با اسم خودت!". 3–8s: hold on the '
+             'result; no extra dialogue.',
+             'آهنگ با اسم خودت!',
+             ['آهنگ با اسم خودت!']),
+            (8,
+             '3D Pixar-style animation, soft cinematic lighting, vertical 9:16, warm Iranian everyday setting, '
+             'expressive faces, shallow depth of field. Flashback: the husband secretly typing three memories '
+             "into a music AI app at night on the sofa: 'کافه، سفر شمال، سارا'.",
+             'Typing close-up, then a glowing music waveform rises from the phone. Husband says in Persian '
+             '(Farsi): "فقط سه تا خاطره نوشتم و گفتم یه آهنگ عاشقانه با اسم سارا بساز."',
+             'فقط سه تا خاطره نوشتم و گفتم یه آهنگ عاشقانه با اسم سارا بساز.',
+             ['۳ خاطره ← ۱ آهنگ 🎵']),
+            (8,
+             '3D Pixar-style animation, soft cinematic lighting, vertical 9:16, warm Iranian everyday setting, '
+             'expressive faces, shallow depth of field. A 3D Pixar couple version of Sara and husband meeting in '
+             'a cozy Tehran cafe, then walking on a misty Caspian beach in the north of Iran.',
+             'Dreamy dolly shot, cherry petals and sea mist, music swells. Persian lyrics are sung (Farsi): '
+             '"سارا، تو اون کافه دلم رو بردی..."',
+             'سارا، تو اون کافه دلم رو بردی...',
+             ['موزیک\u200cویدیو از خاطرات خودتون 🎬']),
+            (8,
+             '3D Pixar-style animation, soft cinematic lighting, vertical 9:16, warm Iranian everyday setting, '
+             'expressive faces, shallow depth of field. Back to the birthday table: Sara hugs her husband; family '
+             'members film with phones; an Instagram story with the song gets many replies.',
+             'Group cheer, confetti falls. Sara says in Persian (Farsi): "بهترین کادوی عمرم بود! همه فامیل استوری '
+             'کردن!"',
+             'بهترین کادوی عمرم بود! همه فامیل استوری کردن!',
+             ['بهترین کادوی عمرش 🎁']),
+            (8,
+             'Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL '
+             'product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text.',
+             'Slow push-in. Say in Persian (Farsi): "«تولد» رو کامنت کن؛ لینک و شرایط خرید رو بگیر.". Leave space '
+             'for RTL overlays.',
+             '«تولد» رو کامنت کن؛ لینک و شرایط خرید رو بگیر.',
+             ['کامنت: تولد',
+              'WELCOME10 • ۱۰٪ تا ۱۵۰٬۰۰۰ تومان',
+              'حداقل خرید: ۱۰۰٬۰۰۰ تومان',
+              '۴ قسط ترب\u200cپی / دیجی\u200cپی؛ طبق شرایط درگاه'])],
+  'primary_product_id': 'draft_a817f7f0-7513-497c-af44-0cd2863f6045'},
+ {'idea_id': 'IG10_05',
+  'segment': 'parents_kids_and_teachers',
+  'keyword': 'نقاشی',
+  'title_fa': 'نقاشی کودک را با اجازه والدین متحرک کن',
+  'persona_fa': 'پدر و مادرهای کودک ۴ تا ۱۰ ساله و معلم\u200cهای دبستان/مهدکودک که دنبال سرگرمی سالم و خلاق '
+                'هستند.',
+  'pain_fa': 'بچه\u200cها ساعت\u200cها کارتون تکراری می\u200cبینند؛ نقاشی\u200cهایشان در کشو گم می\u200cشود؛ '
+             'معلم\u200cها برای کلاس محتوای جذاب ندارند.',
+  'trigger': 'عشق والدین + ذوق کودک + اشتراک\u200cگذاری در گروه\u200cهای خانوادگی',
+  'hook_visual': 'A crayon drawing of a purple dinosaur on a fridge suddenly blinks, peels off the paper as a 3D '
+                 "cartoon, and says the child's name; a 6-year-old girl screams with joy. Show the transformation "
+                 'in the FIRST 3 seconds; do not render text in the generated image.',
+  'hook_fa': 'نقاشی بچه\u200cات زنده شد!',
+  'before_fa': 'نقاشی مداد شمعی یک دایناسور بنفش روی کاغذ A4، چسبیده به یخچال.',
+  'after_fa': 'کارتون سه\u200cبعدی ۸ ثانیه\u200cای که همان دایناسور (با همان رنگ و شکل) راه می\u200cرود و '
+              'می\u200cگوید: «سلام نیلا! بیا با هم بازی کنیم!»',
+  'products': ['draft_0794ef61-67db-4aa0-9cd6-0977addacf48',
+               'draft_8ddf9af6-ea31-4aa5-89f4-d5b6a1ef7b4f',
+               'draft_11fa376d-8e22-44d8-9bca-7830c1f6b9da'],
+  'shots': [(8,
+             'A crayon drawing of a purple dinosaur on a fridge suddenly blinks, peels off the paper as a 3D '
+             "cartoon, and says the child's name; a 6-year-old girl screams with joy. Show the transformation in "
+             'the FIRST 3 seconds; do not render text in the generated image.',
+             '0–3s: reveal the hook immediately. Say in Persian (Farsi): "نقاشی بچه\u200cات زنده شد!". 3–8s: hold '
+             'on the result; no extra dialogue.',
+             'نقاشی بچه\u200cات زنده شد!',
+             ['نقاشی بچه\u200cات زنده شد!']),
+            (8,
+             "Over-the-shoulder: a mother's phone photographs the crayon drawing; the photo is uploaded into "
+             'Google Gemini with a Persian prompt.',
+             'Photo slides into the app, sparkles. Mother says in Persian (Farsi): "از نقاشی عکس گرفتم و به جمنای '
+             'گفتم همین رو سه\u200cبعدی کن، دقیقاً با همین رنگ\u200cها."',
+             'از نقاشی عکس گرفتم و به Gemini گفتم همین رو سه\u200cبعدی کن، دقیقاً با همین رنگ\u200cها.',
+             ['۱. عکس نقاشی 📸', '۲. سه\u200cبعدی با Gemini ✨']),
+            (8,
+             '3D Pixar-style animation, soft cinematic lighting, vertical 9:16, warm Iranian everyday setting, '
+             'expressive faces, shallow depth of field. The purple 3D dinosaur (same shape as the crayon drawing, '
+             'chunky legs, uneven spikes) walks through a colorful paper-craft forest.',
+             'Bouncy walk cycle, camera tracks alongside. Dinosaur says in Persian (Farsi) with a cute voice: '
+             '"سلام نیلا! بیا با هم بازی کنیم!"',
+             'سلام نیلا! بیا با هم بازی کنیم!',
+             ['۳. انیمیشن با Hailuo / PixVerse 🎬']),
+            (8,
+             '3D Pixar-style animation, soft cinematic lighting, vertical 9:16, warm Iranian everyday setting, '
+             'expressive faces, shallow depth of field. A primary-school classroom: a kind female teacher '
+             "projects students' drawings turned into talking 3D cartoons; kids cheer; a quiz game screen "
+             'follows.',
+             'Kids jump and raise hands. Teacher says in Persian (Farsi): "نقاشی همه بچه\u200cها رو کارتون کردم و '
+             'باهاش مسابقه کلاسی ساختم!"',
+             'نقاشی همه بچه\u200cها رو کارتون کردم و باهاش مسابقه کلاسی ساختم!',
+             ['معلم\u200cها هم عاشقش شدن 👩\u200d🏫']),
+            (8,
+             'Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL '
+             'product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text.',
+             'Slow push-in. Say in Persian (Farsi): "«نقاشی» رو کامنت کن؛ لینک و شرایط خرید رو بگیر.". Leave '
+             'space for RTL overlays.',
+             '«نقاشی» رو کامنت کن؛ لینک و شرایط خرید رو بگیر.',
+             ['کامنت: نقاشی',
+              'WELCOME10 • ۱۰٪ تا ۱۵۰٬۰۰۰ تومان',
+              'حداقل خرید: ۱۰۰٬۰۰۰ تومان',
+              '۴ قسط ترب\u200cپی / دیجی\u200cپی؛ طبق شرایط درگاه'])],
+  'primary_product_id': 'draft_0794ef61-67db-4aa0-9cd6-0977addacf48'}]
