@@ -193,6 +193,7 @@ VIDEO_DEFAULTS = {"width": DEFAULT_WIDTH, "height": DEFAULT_HEIGHT, "fps": DEFAU
 AUDIO_DEFAULTS = {"loudnorm": DEFAULT_LOUDNORM, "sample_rate": 48000, "channels": 2,
                   "bitrate": "192k", "audit_bitrate": "128k"}
 SPEECH_DEFAULTS = {"speech_safe": "auto_expand", "threshold_dbfs": -38.0, "noise_margin_db": 10.0,
+                   "peak_margin_db": 12.0,
                    "frame_ms": 20, "min_speech_ms": 60, "merge_gap_ms": 250,
                    "pre_handle": 0.20, "post_handle": 0.35, "splice_crossfade": 0.02}
 SUB_DEFAULTS = {"time_base": "trim_local", "y_ratio": 0.84, "font_size": 27, "min_font_size": 16,
@@ -482,10 +483,18 @@ def _runs(mask: np.ndarray) -> list[tuple[int, int]]:
 
 def detect_speech_segments(db: np.ndarray, cfg: dict) -> tuple[list[tuple[float, float]], dict]:
     """Threshold frames at max(threshold_dbfs, noise_floor + margin), drop blips
-    shorter than min_speech_ms, merge gaps shorter than merge_gap_ms."""
+    shorter than min_speech_ms, merge gaps shorter than merge_gap_ms.
+
+    The adaptive term is capped at peak - peak_margin_db: on dense-dialogue
+    clips (speech in >90% of frames) the 10th-percentile "floor" IS speech,
+    and an uncapped threshold would sit above the peak and report no speech
+    at all -- silently disabling speech-safe trimming."""
     fs = cfg["frame_ms"] / 1000.0
     floor = float(np.percentile(db, 10)) if db.size else -120.0
-    thr = max(float(cfg["threshold_dbfs"]), min(floor + float(cfg["noise_margin_db"]), -20.0))
+    peak = float(db.max()) if db.size else -120.0
+    adaptive = min(floor + float(cfg["noise_margin_db"]), -20.0,
+                   peak - float(cfg.get("peak_margin_db", 12.0)))
+    thr = max(float(cfg["threshold_dbfs"]), adaptive)
     runs = [r for r in _runs(db > thr) if (r[1] - r[0]) * fs * 1000 >= cfg["min_speech_ms"]]
     merged: list[list[int]] = []
     for a, b in runs:
@@ -495,7 +504,7 @@ def detect_speech_segments(db: np.ndarray, cfg: dict) -> tuple[list[tuple[float,
             merged.append([a, b])
     segs = [(round(a * fs, 3), round(b * fs, 3)) for a, b in merged]
     stats = {"noise_floor_dbfs": round(floor, 2), "threshold_dbfs": round(thr, 2),
-             "peak_dbfs": round(float(db.max()) if db.size else -120.0, 2)}
+             "peak_dbfs": round(peak, 2)}
     return segs, stats
 
 
