@@ -61,3 +61,5 @@ arabic-reshaper 3.0.1, python-bidi 0.6.12, no OpenCV (pipeline deliberately does
 - 2026-10-26T13:06Z · `b0a245e3d0b77a7f7337ee439b943e28e3c082ec` · Stage 2: test(stage2): add invalid-input, speech-tail, source-protection, Windows clipboard, and shaping regressions
 
 - 2026-10-26T13:08Z · `d9aa7ce12469abbd89958cc67df74eb712ec5867` · Stage 2: fix(stage2): verify per-clip temporary media before promotion and gate stream start alignment
+
+- 2026-10-26T13:08Z · `0a4893b23dda15e737f0c114fdec11d586fadf7b` · Stage 2: chore(stage2): exclude Python and pytest runtime caches
