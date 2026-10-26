@@ -45,3 +45,5 @@ arabic-reshaper 3.0.1, python-bidi 0.6.12, no OpenCV (pipeline deliberately does
 - 2026-10-26T13:00Z · `8355b20` · 01-opus55-architecture-spec.md synced to v1.0.1: version header, audio_contiguous added to per-clip/Base/Master gates, §9 lists both Stage 1 fixes (aa196bb speech threshold, 5572fbe loudnorm PTS hole) + re-verification on v1.0.1 (clip_01/03 contiguous, drift <1 ms, all gates pass). Stage 1 COMPLETE
 
 - 2026-10-26T13:00Z · `049acb25878ddcd404b4e14801b99a2086ade011` · Stage 2: fix(stage2): validate inputs, protect sources, hash cached media, support --manifest and honest CLI failures
+
+- 2026-10-26T13:01Z · `00f4786f97db41c6f5c8c579b2532ce9592d34f6` · Stage 2: fix(stage2): retain exact audio trims, audit splice boundaries, and expose complete scoped QA status
