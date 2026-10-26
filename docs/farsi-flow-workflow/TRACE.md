@@ -19,3 +19,4 @@ arabic-reshaper 3.0.1, python-bidi 0.6.12, no OpenCV (pipeline deliberately does
 - 2026-10-26T12:01Z · `62aa669` · Created TRACE.md with Stage 1 plan + environment probe
 - 2026-10-26T12:08Z · `3518b28` · farsi_flow_workflow.py chunk 1/8: module header, defaults, subprocess/ffprobe/sha256/SRT helpers
 - 2026-10-26T12:19Z · `b0b8bcd` · farsi_flow_workflow.py chunk 2: Cue/ClipSpec/Episode dataclasses, defaults tables, speech_safe modes (auto_expand|warn|off), ${VAR} path resolution w/ Windows->POSIX remap
+- 2026-10-26T12:22Z · `dd8579d` · farsi_flow_workflow.py chunk 3: load_manifest() with CLI overrides, cue/segment/speaker validation, clip source resolution
