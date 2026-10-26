@@ -55,3 +55,5 @@ arabic-reshaper 3.0.1, python-bidi 0.6.12, no OpenCV (pipeline deliberately does
 - 2026-10-26T13:03Z · `42fa0b07c788a7a4d42055d6c6129b8e769cb8e1` · Stage 2: test(stage2): add real 720x1280 24fps harmonic-audio fixtures and end-to-end build harness
 
 - 2026-10-26T13:04Z · `fad7d6d8b345dba0f2259472ae99d7669d7cc43c` · Stage 2: test(stage2): assert audio provenance, all deliverables, burned pixels, idempotency, and speech modes
+
+- 2026-10-26T13:05Z · `e664cb8ce9ed152a4ccdaef7cdd5617784d0f0f6` · Stage 2: test(stage2): cover exact raw splice and fallback, CTA transitions, cache tampering, and Windows manifest paths
