@@ -69,3 +69,5 @@ arabic-reshaper 3.0.1, python-bidi 0.6.12, no OpenCV (pipeline deliberately does
 - 2026-10-26T13:11Z · `0e55bcc02bd05f4144dd853039938105e95e1fa6` · Stage 2: fix(test): dedent fenced reference snippets before AST verification
 
 - 2026-10-26T13:18Z · `3299a763c1987a72b55ce4118fc0f7af759d1291` · Stage 2 resumed: fix(stage2): audit outer splice cuts and reject unsafe source timing or short inputs
+
+- 2026-10-26T13:18Z · `5703f45cbaf48a30b64c93e0623cede971edf9a7` · Stage 2 resumed: fix(stage2): apply native source timeline validation before raw-original splicing
