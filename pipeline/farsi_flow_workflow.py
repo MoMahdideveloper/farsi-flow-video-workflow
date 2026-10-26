@@ -1575,6 +1575,8 @@ def copy_image_to_clipboard(path: Path, dry_run: bool = False) -> str:
     elif shutil.which("xclip"):
         cmd, env = ["xclip", "-selection", "clipboard", "-t", "image/png", "-i", str(path)], {}
     else:
+        if dry_run:  # verification already passed; just report the missing tool
+            return "DRY-RUN: no clipboard tool on this host (needs PowerShell, osascript, wl-copy or xclip)"
         raise PipelineError("no clipboard tool (need PowerShell, osascript, wl-copy or xclip)")
     if dry_run:
         return "DRY-RUN: " + " ".join(cmd)
@@ -1609,6 +1611,8 @@ def copy_text_to_clipboard(text: str, dry_run: bool = False) -> str:
     elif shutil.which("xsel"):
         cmd, data = ["xsel", "--clipboard", "--input"], text.encode("utf-8")
     else:
+        if dry_run:
+            return "DRY-RUN: no clipboard tool on this host (needs clip, pbcopy, wl-copy, xclip or xsel)"
         raise PipelineError("no clipboard tool (need clip, pbcopy, wl-copy, xclip or xsel)")
     if dry_run:
         return "DRY-RUN: " + " ".join(cmd)
