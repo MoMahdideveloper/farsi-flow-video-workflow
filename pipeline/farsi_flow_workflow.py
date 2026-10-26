@@ -324,3 +324,127 @@ def resolve_path(value: Any, variables: dict[str, str], rel_to: Path) -> Optiona
         s = s.replace("\\", "/")
     p = Path(s)
     return p if p.is_absolute() else (rel_to / p).resolve()
+
+
+def _merged(defaults: dict, *overrides: Optional[dict]) -> dict:
+    out = dict(defaults)
+    for o in overrides:
+        if o:
+            out.update({k: v for k, v in o.items() if v is not None})
+    return out
+
+
+def _parse_segments(raw: Any, where: str) -> Optional[list[tuple[float, float]]]:
+    if raw in (None, [], ""):
+        return None
+    segs: list[tuple[float, float]] = []
+    for i, seg in enumerate(raw):
+        if not (isinstance(seg, (list, tuple)) and len(seg) == 2):
+            raise PipelineError(f"{where}.splice_segments[{i}] must be [start, end]")
+        s0, s1 = float(seg[0]), float(seg[1])
+        if not (0.0 <= s0 < s1):
+            raise PipelineError(f"{where}.splice_segments[{i}]: need 0 <= start < end")
+        if segs and s0 < segs[-1][1]:
+            raise PipelineError(f"{where}.splice_segments must be ascending and non-overlapping")
+        segs.append((round(s0, 3), round(s1, 3)))
+    return segs
+
+
+def load_manifest(path: Path, overrides: Optional[dict] = None) -> Episode:
+    """Parse + validate an episode manifest JSON.  ``overrides`` (from the CLI)
+    may carry: vars, clips_dir, out_dir, font, cta_video, no_cta, speech_safe."""
+    ov = overrides or {}
+    path = Path(path).resolve()
+    raw_bytes = path.read_bytes()
+    try:
+        data = json.loads(raw_bytes.decode("utf-8-sig"))
+    except json.JSONDecodeError as exc:
+        raise PipelineError(f"{path.name}: invalid JSON ({exc})") from exc
+    if not isinstance(data, dict):
+        raise PipelineError(f"{path.name}: top level must be an object")
+    episode_id = str(data.get("episode_id") or "").strip()
+    if not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9_\-]*", episode_id):
+        raise PipelineError(f"{path.name}: episode_id must be [A-Za-z0-9_-]+ (got {episode_id!r})")
+
+    variables = {str(k): str(v) for k, v in (data.get("variables") or {}).items()}
+    variables.update(ov.get("vars") or {})
+    variables.setdefault("MANIFEST_DIR", str(path.parent))
+    rel = path.parent
+
+    clips_dir = resolve_path(ov.get("clips_dir") or data.get("clips_dir"), variables, rel)
+    out_dir = resolve_path(ov.get("out_dir") or data.get("out_dir"), variables, rel)
+    if clips_dir is None or out_dir is None:
+        raise PipelineError(f"{path.name}: clips_dir and out_dir are required")
+    font = ov.get("font") or data.get("font_path")
+    font_path = str(resolve_path(font, variables, rel)) if font else None
+
+    cta_video = None
+    if not ov.get("no_cta"):
+        cta_video = resolve_path(ov.get("cta_video") or data.get("cta_video"), variables, rel)
+    cta_speaker = str(data.get("cta_speaker") or "").upper()
+    cta_subs = []
+    for i, c in enumerate(data.get("cta_subtitles") or []):
+        cue = Cue.parse(c, f"cta_subtitles[{i}]")
+        cue.speaker = cue.speaker or cta_speaker
+        cta_subs.append(cue)
+
+    speech = _merged(SPEECH_DEFAULTS, data.get("speech"))
+    speech["speech_safe"] = normalize_speech_mode(ov.get("speech_safe") or speech.get("speech_safe"))
+    subs_cfg = _merged(SUB_DEFAULTS, data.get("subtitle_style"))
+    if subs_cfg["time_base"] not in ("trim_local", "source"):
+        raise PipelineError("subtitle_style.time_base must be 'trim_local' or 'source'")
+    badge = None
+    if data.get("badge"):
+        badge = _merged(BADGE_DEFAULTS, data["badge"])
+        badge.setdefault("text", data.get("title_fa", ""))
+        if not str(badge.get("text") or "").strip():
+            badge = None
+
+    voices = {str(k).upper(): v for k, v in (data.get("voices") or {}).items()}
+    clips: list[ClipSpec] = []
+    seen: set[str] = set()
+    for i, c in enumerate(data.get("clips") or [], 1):
+        where = f"clips[{i - 1}]"
+        if not isinstance(c, dict) or not c.get("file"):
+            raise PipelineError(f"{where}: needs at least a 'file'")
+        cid = str(c.get("id") or f"clip_{i:02d}")
+        if cid in seen:
+            raise PipelineError(f"{where}: duplicate clip id {cid}")
+        seen.add(cid)
+        t_in = float(c.get("trim_in", 0.0) or 0.0)
+        t_out = c.get("trim_out")
+        t_out = None if t_out is None else float(t_out)
+        if t_in < 0 or (t_out is not None and t_out <= t_in):
+            raise PipelineError(f"{where}: need 0 <= trim_in < trim_out (got {t_in}..{t_out})")
+        cues = [Cue.parse(s, f"{where}.subtitles[{j}]") for j, s in enumerate(c.get("subtitles") or [])]
+        for cue in cues:
+            if cue.speaker and voices and cue.speaker not in voices:
+                raise PipelineError(f"{where}: speaker {cue.speaker!r} not declared in voices")
+        mode = ov.get("speech_safe") or c.get("speech_safe", speech["speech_safe"])
+        clips.append(ClipSpec(
+            index=i, id=cid, file=str(c["file"]), trim_in=round(t_in, 3),
+            trim_out=None if t_out is None else round(t_out, 3), subtitles=cues,
+            raw_orig_file=c.get("raw_orig_file"),
+            splice_segments=_parse_segments(c.get("splice_segments"), where),
+            speech_safe=normalize_speech_mode(mode), lock_trim=bool(c.get("lock_trim", False)),
+            notes=str(c.get("notes") or "")))
+    if not clips:
+        raise PipelineError(f"{path.name}: no clips defined")
+
+    return Episode(
+        manifest_path=path, manifest_sha256=hashlib.sha256(raw_bytes).hexdigest(),
+        episode_id=episode_id, title_fa=str(data.get("title_fa") or ""),
+        clips_dir=clips_dir, out_dir=out_dir, font_path=font_path,
+        cta_video=cta_video, cta_subtitles=cta_subs,
+        video=_merged(VIDEO_DEFAULTS, data.get("video")),
+        audio=_merged(AUDIO_DEFAULTS, data.get("audio")),
+        speech=speech, subs=subs_cfg, badge=badge, voices=voices, clips=clips,
+        outputs=dict(data.get("outputs") or {}))
+
+
+def clip_source_paths(ep: Episode, clip: ClipSpec) -> tuple[Path, Optional[Path]]:
+    """(file path, raw_orig path) resolved against clips_dir."""
+    def res(name: str) -> Path:
+        p = Path(name)
+        return p if p.is_absolute() or is_foreign_windows_path(name) else ep.clips_dir / p
+    return res(clip.file), (res(clip.raw_orig_file) if clip.raw_orig_file else None)
