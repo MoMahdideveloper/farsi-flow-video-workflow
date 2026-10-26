@@ -15,16 +15,36 @@
     "SRC": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\straw.berryjammin"
   },
   "clips_dir": "${BASE}\\part5\\flow_clips",
-  "out_dir": "${BASE}\\05_final_masters",
+  "out_dir": "${BASE}\\05_final_masters\\part5",
   "font_path": "${CHEF_BASE}\\03_farsi_audio_tts\\Vazirmatn-Bold.ttf",
   "cta_video": "${BASE}\\part1\\flow_clips\\cta_kelidbox_s2.mp4",
   "cta_speaker": "DUKE",
   "cta_subtitles": [
-    {"start": 0.25, "end": 3.35, "text": "برای دیدن قسمت بعدی همین الان پیج رو فالو کن!"},
-    {"start": 3.5, "end": 7.85, "text": "راستی کل این انیمیشن با اکانت‌های هوش مصنوعی سایت کلیدباکس ساخته شده!"}
+    {
+      "start": 0.25,
+      "end": 3.35,
+      "text": "برای دیدن قسمت بعدی همین الان پیج رو فالو کن!"
+    },
+    {
+      "start": 3.5,
+      "end": 7.85,
+      "text": "راستی کل این انیمیشن با اکانت‌های هوش مصنوعی سایت کلیدباکس ساخته شده!"
+    }
   ],
-  "video": {"width": 720, "height": 1280, "fps": 24, "crf": 18, "preset": "fast", "scale_mode": "fill"},
-  "audio": {"loudnorm": "loudnorm=I=-14:TP=-1.5:LRA=11", "sample_rate": 48000, "channels": 2, "bitrate": "192k"},
+  "video": {
+    "width": 720,
+    "height": 1280,
+    "fps": 24,
+    "crf": 18,
+    "preset": "fast",
+    "scale_mode": "fill"
+  },
+  "audio": {
+    "loudnorm": "loudnorm=I=-14:TP=-1.5:LRA=11",
+    "sample_rate": 48000,
+    "channels": 2,
+    "bitrate": "192k"
+  },
   "speech": {
     "speech_safe": "auto_expand",
     "threshold_dbfs": -38.0,
@@ -46,7 +66,11 @@
     "end": 3.5,
     "y_center": 130,
     "font_size": 28,
-    "color": [255, 225, 110],
+    "color": [
+      255,
+      225,
+      110
+    ],
     "clip_index": 1
   },
   "outputs": {
@@ -55,85 +79,212 @@
     "cta_burn_subtitles": true,
     "cta_loudnorm": true,
     "publish_caption_fa": "فینال نفس‌گیر سریال میوه‌های قدرت! 🔥🎬\nبعد از افشای راز گذشته لمونلا و بخشش بزرگوارانه دوک بادمجان، حال لمونلا ناگهان به هم خورد و اورژانسی به بیمارستان منتقل شد... 🚑🏥\nاما وقتی دکتر گلابی پرونده اسکن رو باز کرد، شوک نهایی به همه‌شون وارد شد: لمونلا یه بچه نداره... بلکه «سه‌قلو» بارداره! 😱👶👶👶",
-    "caption_optional_speakers": ["BANANA"]
+    "caption_optional_speakers": [
+      "BANANA"
+    ]
   },
   "voices": {
-    "DUKE": {"name_fa": "دوک بادمجان", "color": [210, 165, 255], "source": "google_flow_native"},
-    "LEMON": {"name_fa": "لمونلا", "color": [255, 235, 110], "source": "google_flow_native"},
-    "BANANA": {"name_fa": "موز طلایی", "color": [255, 200, 95], "source": "google_flow_native"},
-    "STRAW": {"name_fa": "کنتس توت‌فرنگی", "color": [255, 150, 195], "source": "google_flow_native"},
-    "FIG": {"name_fa": "انجیر سیاه / رییس مافیا / رئیس مافیا", "color": [180, 220, 255], "source": "google_flow_native"},
-    "PEACH": {"name_fa": "دکتر گلابی / دکتر هلو", "color": [150, 255, 190], "source": "google_flow_native"}
+    "DUKE": {
+      "name_fa": "دوک بادمجان",
+      "color": [
+        210,
+        165,
+        255
+      ],
+      "source": "google_flow_native"
+    },
+    "LEMON": {
+      "name_fa": "لمونلا",
+      "color": [
+        255,
+        235,
+        110
+      ],
+      "source": "google_flow_native"
+    },
+    "BANANA": {
+      "name_fa": "موز طلایی",
+      "color": [
+        255,
+        200,
+        95
+      ],
+      "source": "google_flow_native"
+    },
+    "STRAW": {
+      "name_fa": "کنتس توت‌فرنگی",
+      "color": [
+        255,
+        150,
+        195
+      ],
+      "source": "google_flow_native"
+    },
+    "FIG": {
+      "name_fa": "انجیر سیاه / رییس مافیا / رئیس مافیا",
+      "color": [
+        180,
+        220,
+        255
+      ],
+      "source": "google_flow_native"
+    },
+    "PEACH": {
+      "name_fa": "دکتر گلابی / دکتر هلو",
+      "color": [
+        150,
+        255,
+        190
+      ],
+      "source": "google_flow_native"
+    }
   },
   "clips": [
     {
       "id": "clip_01",
       "file": "clip_01.mp4",
       "keyframe": "${BASE}\\part5\\keyframes\\KF_01.jpg",
-      "expected_speakers": ["BANANA"],
+      "expected_speakers": [
+        "BANANA"
+      ],
       "story_beat": "Banana: was I just another mistake?",
-      "source_span": [7.2, 10.8],
+      "source_span": [
+        7.2,
+        10.8
+      ],
       "trim_in": 0.0,
       "trim_out": 9.95,
-      "subtitles": [[0.25, 9.6, "BANANA", "پس یعنی منم برات فقط یه اشتباهِ دیگه بودم لمونلا؟!"]]
+      "subtitles": [
+        [
+          0.25,
+          9.6,
+          "BANANA",
+          "پس یعنی منم برات فقط یه اشتباهِ دیگه بودم لمونلا؟!"
+        ]
+      ]
     },
     {
       "id": "clip_02",
       "file": "clip_02.mp4",
       "keyframe": "${BASE}\\part5\\keyframes\\KF_02.jpg",
-      "expected_speakers": ["DUKE"],
+      "expected_speakers": [
+        "DUKE"
+      ],
       "story_beat": "Duke learns Lemonella's past with Shadow Fig",
-      "source_span": [10.8, 20.8],
+      "source_span": [
+        10.8,
+        20.8
+      ],
       "trim_in": 0.0,
       "trim_out": 9.95,
-      "subtitles": [[0.25, 9.6, "DUKE", "تو قبل از من با اون رابطه داشتی؟! چرا این راز رو پنهان کردی؟!"]]
+      "subtitles": [
+        [
+          0.25,
+          9.6,
+          "DUKE",
+          "تو قبل از من با اون رابطه داشتی؟! چرا این راز رو پنهان کردی؟!"
+        ]
+      ]
     },
     {
       "id": "clip_03",
       "file": "clip_03.mp4",
       "keyframe": "${BASE}\\part5\\keyframes\\KF_03.jpg",
-      "expected_speakers": ["LEMON"],
+      "expected_speakers": [
+        "LEMON"
+      ],
       "story_beat": "Lemonella's dark past in Shadow Fig's casino world",
-      "source_span": [31.3, 41.3],
+      "source_span": [
+        31.3,
+        41.3
+      ],
       "trim_in": 0.0,
       "trim_out": 9.95,
-      "subtitles": [[0.25, 9.6, "LEMON", "قبل از دوک، من توی اون شهر غریب تنها بودم و هیچ چاره‌ای نداشتم!"]]
+      "subtitles": [
+        [
+          0.25,
+          9.6,
+          "LEMON",
+          "قبل از دوک، من توی اون شهر غریب تنها بودم و هیچ چاره‌ای نداشتم!"
+        ]
+      ]
     },
     {
       "id": "clip_04",
       "file": "clip_04.mp4",
       "keyframe": "${BASE}\\part5\\keyframes\\KF_04.jpg",
-      "expected_speakers": ["DUKE"],
+      "expected_speakers": [
+        "DUKE"
+      ],
       "story_beat": "Duke forgives: he doesn't care who loved her before",
-      "source_span": [45.8, 55.8],
+      "source_span": [
+        45.8,
+        55.8
+      ],
       "trim_in": 0.0,
       "trim_out": 9.95,
-      "subtitles": [[0.25, 9.6, "DUKE", "برام مهم نیست قبل از من کی توی گذشته‌ت بوده... من از تو و بچه‌مون محافظت می‌کنم!"]]
+      "subtitles": [
+        [
+          0.25,
+          9.6,
+          "DUKE",
+          "برام مهم نیست قبل از من کی توی گذشته‌ت بوده... من از تو و بچه‌مون محافظت می‌کنم!"
+        ]
+      ]
     },
     {
       "id": "clip_05",
       "file": "clip_05.mp4",
       "keyframe": "${BASE}\\part5\\keyframes\\KF_05.jpg",
-      "expected_speakers": ["DUKE"],
+      "expected_speakers": [
+        "DUKE"
+      ],
       "story_beat": "Lemonella collapses; Duke calls the emergency services",
-      "source_span": [60.2, 69.9],
+      "source_span": [
+        60.2,
+        69.9
+      ],
       "trim_in": 0.0,
       "trim_out": 9.95,
-      "subtitles": [[0.25, 9.6, "DUKE", "تحمل کن عزیزم! سریع زنگ بزنید به اورژانس و بیمارستان!"]]
+      "subtitles": [
+        [
+          0.25,
+          9.6,
+          "DUKE",
+          "تحمل کن عزیزم! سریع زنگ بزنید به اورژانس و بیمارستان!"
+        ]
+      ]
     },
     {
       "id": "clip_06",
       "file": "clip_06.mp4",
       "keyframe": "${BASE}\\part5\\keyframes\\KF_06.jpg",
-      "expected_speakers": ["PEACH"],
+      "expected_speakers": [
+        "PEACH"
+      ],
       "story_beat": "Hospital ultrasound: Dr. Pear reveals triplets",
-      "source_span": [69.9, 79.9],
+      "source_span": [
+        69.9,
+        74.6
+      ],
       "trim_in": 0.0,
       "trim_out": 9.95,
       "subtitles": [
-        [0.25, 4.8, "PEACH", "متاسفانه اسکن‌ها یه چیز غیرمنتظره رو نشون میدن..."],
-        [5.0, 9.65, "PEACH", "توی شکمت سه تا بچه‌ست! سه‌قلو بارداری!"]
-      ]
+        [
+          0.25,
+          4.8,
+          "PEACH",
+          "متاسفانه اسکن‌ها یه چیز غیرمنتظره رو نشون میدن..."
+        ],
+        [
+          5.0,
+          9.65,
+          "PEACH",
+          "توی شکمت سه تا بچه‌ست! سه‌قلو بارداری!"
+        ]
+      ],
+      "notes": "Stage 2 conservatively bounds the terminal span using original contact-sheet timestamps. Part 2 uses the 16-midpoint sampler duration lower bound; Parts 3-5 end before the last observed frame. Exact cut and speech fit need source-host review."
     }
-  ]
+  ],
+  "source_span_review_note": "Candidate source windows, not verified scene boundaries. Validate against the original MP4 duration and review narrative coverage on the media host before publication. Stage 2 uses strict bounds: no silent clamp."
 }
