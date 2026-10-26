@@ -521,10 +521,11 @@ def decode_pcm(path: Path, sr: int = ANALYSIS_SR, channels: int = 1) -> np.ndarr
 def frame_dbfs(pcm: np.ndarray, sr: int = ANALYSIS_SR, frame_ms: int = 20) -> np.ndarray:
     """Short-time RMS energy in dBFS over non-overlapping frames."""
     n = max(1, int(sr * frame_ms / 1000))
-    usable = (len(pcm) // n) * n
-    if usable == 0:
+    if not len(pcm):
         return np.full(1, -120.0, dtype=np.float32)
-    frames = pcm[:usable].reshape(-1, n).astype(np.float64)
+    # Keep partial tail frames: a quiet final consonant must not disappear.
+    padded = np.pad(pcm, (0, (-len(pcm)) % n))
+    frames = padded.reshape(-1, n).astype(np.float64)
     rms = np.sqrt(np.mean(frames * frames, axis=1))
     return (20.0 * np.log10(np.maximum(rms, 1e-6))).astype(np.float32)
 
@@ -582,6 +583,7 @@ def analyze_clip_speech(mp4_path: Path, trim_in: float = 0.0, trim_out: Optional
     src_dur = media_duration(Path(mp4_path))
     db = frame_dbfs(pcm, ANALYSIS_SR, int(cfg["frame_ms"]))
     segs, stats = detect_speech_segments(db, cfg)
+    segs = [(a, round(min(b, src_dur), 4)) for a, b in segs if a < src_dur]
     t_out = src_dur if trim_out is None else float(trim_out)
     first = segs[0][0] if segs else None
     last = min(segs[-1][1], src_dur) if segs else None
@@ -651,42 +653,39 @@ def plan_trim(clip: ClipSpec, analysis: Optional[dict], src_dur: float, cfg: dic
 
 
 def frame_quantize(dur: float, fps: float) -> tuple[int, float]:
-    """Whole frames for a duration; returns (frames, quantised seconds)."""
-    n = max(1, int(round(dur * fps)))
+    """Round UP to whole frames; never remove requested tail audio."""
+    n = max(1, int(math.ceil(dur * fps - 1e-9)))
     return n, n / fps
 
 
 # -------------------------------------------------------- splice + normalise --
 def splice_clip(src: Path, segments: list[tuple[float, float]], dst: Path, cfg: dict,
                 video: dict) -> Path:
-    """Join source segments on one timeline.  Video: frame trims + concat.
-    Audio: each join gets a centred `acrossfade=d` (segments are widened by d/2
-    around the join), then padded/trimmed to the exact video length."""
+    """Keep exact requested intervals; crossfade audio by d, then pad only
+    the tail to whole video frames. Never read audio from the removed gap.
+    Crossfade timing is recorded explicitly; internal cuts require listening."""
     d = float(cfg.get("splice_crossfade", 0.02))
     src_dur = media_duration(src)
-    segs = [(a, min(b, src_dur)) for a, b in segments if a < src_dur]
-    if not segs:
-        raise PipelineError(f"splice: no segment of {segments} inside {src.name} ({src_dur:.2f}s)")
+    if any(a < 0 or b > src_dur + 0.001 or b <= a for a, b in segments):
+        raise PipelineError(f"splice interval outside source duration {src_dur:.4f}s")
+    if d and any(b - a <= d for a, b in segments):
+        raise PipelineError("splice intervals must be longer than the crossfade")
     fps = float(video["fps"])
+    n, q = frame_quantize(sum(b - a for a, b in segments), fps)
     parts, alabels, vlabels = [], [], []
-    total = 0.0
-    for i, (a, b) in enumerate(segs):
-        n, q = frame_quantize(b - a, fps)
-        total += q
-        parts.append(f"[0:v]trim=start={a:.4f}:end={a + q:.4f},setpts=PTS-STARTPTS,fps={fps:g}[v{i}]")
-        a0 = a - (d / 2 if i > 0 else 0.0)
-        a1 = a + q + (d / 2 if i < len(segs) - 1 else 0.0)
-        parts.append(f"[0:a]atrim=start={max(0.0, a0):.4f}:end={min(src_dur, a1):.4f},"
-                     f"asetpts=PTS-STARTPTS,aresample=48000[a{i}]")
-        vlabels.append(f"[v{i}]")
-        alabels.append(f"[a{i}]")
-    parts.append("".join(vlabels) + f"concat=n={len(segs)}:v=1:a=0[v]")
+    for i, (a, b) in enumerate(segments):
+        parts.append(f"[0:v]trim=start={a:.4f}:end={b:.4f},setpts=PTS-STARTPTS[v{i}]")
+        parts.append(f"[0:a]atrim=start={a:.4f}:end={b:.4f},"
+                     f"asetpts=N/SR/TB,aresample=48000[a{i}]")
+        vlabels.append(f"[v{i}]"); alabels.append(f"[a{i}]")
+    parts.append("".join(vlabels) + f"concat=n={len(segments)}:v=1:a=0,"
+                 f"fps={fps:g},tpad=stop_mode=clone:stop_duration=1,trim=end_frame={n}[v]")
     cur = alabels[0]
-    for i in range(1, len(segs)):
+    for i in range(1, len(segments)):
         nxt = f"[x{i}]"
-        parts.append(f"{cur}{alabels[i]}acrossfade=d={d:g}:c1=tri:c2=tri{nxt}")
-        cur = nxt
-    parts.append(f"{cur}apad,atrim=end={total:.4f}[a]")
+        filt = f"acrossfade=d={d:g}:c1=tri:c2=tri" if d else "concat=n=2:v=0:a=1"
+        parts.append(f"{cur}{alabels[i]}{filt}{nxt}"); cur = nxt
+    parts.append(f"{cur}asetpts=N/SR/TB,apad,atrim=end_sample={round(q * 48000)}[a]")
     dst.parent.mkdir(parents=True, exist_ok=True)
     tmp = dst.with_name(dst.stem + ".tmp" + dst.suffix)
     run(ffmpeg_cmd("-i", str(src), "-filter_complex", ";".join(parts), "-map", "[v]", "-map", "[a]",
@@ -717,9 +716,9 @@ def normalize_clip(src: Path, t_in: float, t_out: float, dst_mp4: Path, dst_wav:
     fps = float(video["fps"])
     n, q = frame_quantize(t_out - t_in, fps)
     sr, ch = int(audio["sample_rate"]), int(audio["channels"])
-    fc = (f"[0:v]trim=start={t_in:.4f}:end={t_in + q:.4f},setpts=PTS-STARTPTS,{_scale_filter(video)},"
+    fc = (f"[0:v]trim=start={t_in:.4f}:end={t_out:.4f},setpts=PTS-STARTPTS,{_scale_filter(video)},"
           f"fps={fps:g},tpad=stop_mode=clone:stop_duration=1,trim=end_frame={n},format=yuv420p[v];"
-          f"[0:a]atrim=start={t_in:.4f}:end={t_in + q:.4f},asetpts=PTS-STARTPTS,{audio['loudnorm']},"
+          f"[0:a]atrim=start={t_in:.4f}:end={t_out:.4f},asetpts=PTS-STARTPTS,{audio['loudnorm']},"
           f"aresample={sr},aformat=sample_fmts=fltp:channel_layouts={'stereo' if ch == 2 else 'mono'},"
           f"asetpts=N/SR/TB,apad,atrim=end_sample={int(round(q * sr))},asplit=2[a1][a2]")
     for p in (dst_mp4, dst_wav):
@@ -1025,6 +1024,16 @@ def prepare_source(ep: Episode, clip: ClipSpec, work: Path, force: bool = False)
                 cache_write(spliced, key, source=str(raw_p))
             prov.update(mode="spliced", source=str(raw_p), source_sha256=raw_sha,
                         segments=[list(s) for s in clip.splice_segments], analysed=str(spliced))
+            raw_analysis = analyze_clip_speech(raw_p, cfg=ep.speech)
+            spans = raw_analysis["speech_segments"]
+            boundaries = [t for i, (a, b) in enumerate(clip.splice_segments)
+                          for t in ([a] if i else []) + ([b] if i < len(clip.splice_segments)-1 else [])]
+            d = float(ep.speech["splice_crossfade"])
+            prov["splice_audit"] = {
+                "raw_speech": raw_analysis, "crossfade_sec": d,
+                "audio_overlap_sec": d * (len(clip.splice_segments)-1),
+                "boundaries": [{"at_sec": t, "touches_speech": any(
+                    a < t + d and b > t - d for a, b in spans)} for t in boundaries]}
             return spliced, prov
         if file_p.is_file():
             msg = (f"{clip.id}: raw_orig_file {clip.raw_orig_file!r} not found; using {file_p.name} "
@@ -1138,6 +1147,9 @@ class ClipResult:
 def plan_clip(ep: Episode, clip: ClipSpec, work: Path, force: bool = False) -> ClipResult:
     """Source prep + speech analysis + speech-safe trim plan (no rendering)."""
     src, prov = prepare_source(ep, clip, work, force)
+    source_probe = probe_media(src)
+    if not source_probe["video"] or not source_probe["audio"]:
+        raise PipelineError(f"{clip.id}: Flow source must contain video AND original audio")
     src_dur = media_duration(src)
     req_out = src_dur if clip.trim_out is None else min(clip.trim_out, src_dur)
     analysis = None
@@ -1181,6 +1193,8 @@ def render_clip(ep: Episode, res: ClipResult, work: Path, font_path: str,
             p.name: sha256_file(p) for p in (res.norm_mp4, res.norm_wav)})
     rec = json.loads(_record_path(res.norm_mp4).read_text("utf-8"))
     res.frames, res.duration = int(rec["frames"]), float(rec["duration"])
+    res.plan["render_duration"] = res.duration
+    res.plan["tail_padding_sec"] = round(res.duration - (t_out - t_in), 4)
 
     res.cues, res.cue_checks = local_cues(ep, clip, res.plan, res.analysis, res.duration)
     for chk in res.cue_checks:
@@ -1513,7 +1527,8 @@ def write_contact_sheet(ep: Episode, video: Path, points: list[tuple[float, str]
     dst = ep.out_dir / f"qa_{ep.episode_id}_contact.jpg"
     fps = float(ep.video["fps"])
     nframes = max(1, int(probe_media(video)["video"]["frames"] or 0) or 10 ** 9)
-    idx = sorted({min(nframes - 1, max(0, int(round(t * fps)))) for t, _ in points}) or [0]
+    points = points or [(0.0, "STORY")]
+    idx = sorted({min(nframes - 1, max(0, int(round(t * fps)))) for t, _ in points})
     with tempfile.TemporaryDirectory(prefix="ffw_contact_") as td:
         sel = "+".join(f"eq(n\\,{i})" for i in idx)
         run(ffmpeg_cmd("-i", str(video), "-vf", f"select='{sel}',scale={thumb_w}:-2",
@@ -1542,9 +1557,7 @@ def clip_report(ep: Episode, r: ClipResult) -> dict:
     a = r.analysis or {}
     out: dict[str, Any] = {
         "id": r.clip.id, "index": r.clip.index, "provenance": r.provenance, "plan": r.plan,
-        "speech": {k: a.get(k) for k in ("source_duration", "noise_floor_dbfs", "threshold_dbfs",
-                                          "peak_dbfs", "first_speech_sec", "last_speech_sec",
-                                          "speech_segments", "cuts_speech", "warning") if k in a},
+        "speech": a,
         "final_window_speech": r.final_check, "lock_trim": r.clip.lock_trim, "notes": r.clip.notes}
     if r.subbed:
         out.update(duration=r.duration, frames=r.frames, subtitles=r.cue_checks,
@@ -1569,9 +1582,22 @@ def write_qa_report(ep: Episode, results: list[ClipResult], font: Optional[str],
     media_ok = all(c.get("media", {}).get("pass", True) for c in clips)
     subs_ok = all(s["in_bounds"] and not s["overlaps_previous"] for c in clips for s in c.get("subtitles", []))
     pills_ok = all(o["fits_width"] and o["inside_frame"] for c in clips for o in c.get("overlays", []))
-    speech_ok = all(not (c["final_window_speech"] or {}).get("cuts_speech") for c in clips)
+    speech_ok = all(c["final_window_speech"] is not None and
+                    not c["final_window_speech"].get("cuts_speech") for c in clips)
+    mirrors_ok = all(len(r.subbed) == len(clip_output_paths(ep, r.clip, f"{r.clip.id}_subbed.mp4"))
+                     and all(sha256_file(p) == sha256_file(r.subbed[0]) for p in r.subbed)
+                     for r in results) if font else True
+    splice_ok = all(not b["touches_speech"] for c in clips
+                    for b in c["provenance"].get("splice_audit", {}).get("boundaries", []))
     automatic = {"per_clip_media": gate(media_ok), "subtitle_bounds": gate(subs_ok),
-                 "pill_layout": gate(pills_ok), "speech_safe_trim": gate(speech_ok)}
+                 "pill_layout": gate(pills_ok), "speech_safe_trim": gate(speech_ok),
+                 "per_clip_mirrors": gate(mirrors_ok), "splice_boundaries": gate(splice_ok),
+                 "speech_detected": gate(all(r.analysis and (r.analysis["speech_segments"] or
+                                                               not r.clip.subtitles) for r in results))}
+    if command == "speech-audit":
+        automatic = {k: v for k, v in automatic.items() if k.startswith("speech_") or k == "splice_boundaries"}
+    else:
+        automatic["persian_shaping"] = gate(shaping_engine() != "none")
     if base:
         automatic["base_media"] = gate(base["qa"]["pass"])
     if master:
@@ -1579,7 +1605,15 @@ def write_qa_report(ep: Episode, results: list[ClipResult], font: Optional[str],
         automatic["master_single_cta"] = gate(not master.get("cta_used") or
                                               abs(master["duration"] - base["duration"] -  # type: ignore[index]
                                                   master["cta_duration"]) < 1.5 / float(ep.video["fps"]))
+    if master and master.get("cta_used"):
+        automatic["cta_subtitle_bounds"] = gate(all(
+            0 <= c.start < c.end <= master["cta_duration"] + 0.001 and
+            (i == 0 or c.start >= ep.cta_subtitles[i-1].end)
+            for i, c in enumerate(ep.cta_subtitles)))
+    status = "pass" if all(v == "pass" for v in automatic.values()) else "fail"
     report = {
+        "overall_status": status, "overall_status_scope": "automatic_checks_only",
+        "publication_status": "pending" if status == "pass" else "fail",
         "pipeline": "farsi_flow_workflow", "pipeline_version": PIPELINE_VERSION, "command": command,
         "generated_utc": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
         "host": {"python": platform.python_version(), "platform": platform.platform(),
@@ -1600,7 +1634,7 @@ def write_qa_report(ep: Episode, results: list[ClipResult], font: Optional[str],
                   "human_review": {"listen_every_clip_edges": "pending", "listen_final_master": "pending",
                                    "transcript_word_for_word": "pending", "visual_frame_review": "pending",
                                    "voice_continuity": "pending"}},
-        "overall_automatic": "pass" if all(v == "pass" for v in automatic.values()) else "fail",
+        "overall_automatic": status,
         "warnings": ep.warnings,
         "note": "Amplitude speech detection locates candidates only; it does not prove a sentence "
                 "finished. Human/audio-capable review gates stay 'pending' until signed off.",
