@@ -1,0 +1,93 @@
+{
+  "_comment": "The Ugly Face Chef / سرآشپز زشت - Part 2 (Google Flow native Farsi). Ported 1:1 from 06_assemble_part2_flow_master.py + the Part 2 CTA step of 10_append_kelidbox_flow_cta.py (cta_kelidbox_agnes_subbed.mp4, subs_a). episode_id 'Part2' keeps the existing Master_Part2_Flow_Native_Farsi.mp4 name. On Linux/macOS remap the Windows root, e.g. --var BASE=/data/ugly-face-chef-farsi",
+  "schema_version": 1,
+  "series": "ugly_face_chef",
+  "episode_id": "Part2",
+  "title_fa": "قسمت دوم: سرآشپز زشت",
+  "title_en": "The Ugly Face Chef - Part 2",
+  "variables": {
+    "BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\ugly-face-chef-farsi"
+  },
+  "clips_dir": "${BASE}\\part2\\flow_clips",
+  "out_dir": "${BASE}\\05_final_masters",
+  "font_path": "${BASE}\\03_farsi_audio_tts\\Vazirmatn-Bold.ttf",
+  "cta_video": "${BASE}\\05_final_masters\\cta_kelidbox_agnes_subbed.mp4",
+  "cta_speaker": "AGNES",
+  "cta_subtitles": [
+    {"start": 0.10, "end": 3.60, "text": "برای دیدن قسمت بعدی همین الان پیج رو فالو کن!"},
+    {"start": 3.80, "end": 7.85, "text": "راستی کل این انیمیشن با اکانت‌های هوش مصنوعی سایت کلیدباکس ساخته شده!"}
+  ],
+  "video": {"width": 720, "height": 1280, "fps": 24, "crf": 18, "preset": "fast", "scale_mode": "fill"},
+  "audio": {"loudnorm": "loudnorm=I=-14:TP=-1.5:LRA=11", "sample_rate": 48000, "channels": 2, "bitrate": "192k"},
+  "speech": {"speech_safe": "auto_expand", "threshold_dbfs": -38.0, "pre_handle": 0.20, "post_handle": 0.35,
+             "splice_crossfade": 0.02},
+  "subtitle_style": {"time_base": "trim_local", "y_ratio": 0.84, "font_size": 27, "min_font_size": 16,
+                     "max_text_margin": 84, "max_lines": 2},
+  "badge": {"text": "قسمت دوم: سرآشپز زشت", "start": 0.0, "end": 3.5, "y_center": 130, "font_size": 28,
+            "color": [255, 225, 110], "clip_index": 1},
+  "outputs": {"per_clip_location": "both", "base_mode": "timeline", "cta_burn_subtitles": false,
+              "cta_loudnorm": false},
+  "voices": {
+    "AGNES":  {"name_fa": "آگنس",        "color": [255, 230, 150], "source": "google_flow_native",
+               "tts_fallback": {"voice": "fa-IR-DilaraNeural", "rate": "+0%",  "pitch": "+10Hz"}},
+    "MAYA":   {"name_fa": "مایا",        "color": [255, 195, 110], "source": "google_flow_native",
+               "tts_fallback": {"voice": "fa-IR-DilaraNeural", "rate": "+10%", "pitch": "-6Hz"}},
+    "TONY":   {"name_fa": "تونی",        "color": [255, 140, 140], "source": "google_flow_native",
+               "tts_fallback": {"voice": "fa-IR-FaridNeural",  "rate": "+12%", "pitch": "+12Hz"}},
+    "HENRY":  {"name_fa": "سرآشپز هنری", "color": [165, 255, 175], "source": "google_flow_native",
+               "tts_fallback": {"voice": "fa-IR-FaridNeural",  "rate": "-4%",  "pitch": "-14Hz"}},
+    "DOC":    {"name_fa": "دکتر",        "color": [160, 235, 255], "source": "google_flow_native",
+               "tts_fallback": {"voice": "fa-IR-FaridNeural",  "rate": "-6%",  "pitch": "-8Hz"}},
+    "HOST":   {"name_fa": "مجری",        "color": [255, 215, 90],  "source": "google_flow_native",
+               "tts_fallback": {"voice": "fa-IR-FaridNeural",  "rate": "+10%", "pitch": "+6Hz"}},
+    "CRITIC": {"name_fa": "منتقد غذا",   "color": [200, 220, 255], "source": "google_flow_native",
+               "tts_fallback": {"voice": "fa-IR-FaridNeural",  "rate": "-5%",  "pitch": "-18Hz"}}
+  },
+  "continuity": {
+    "character_state_entry": "Agnes: scarred face, no mask, stained pale-pink apron (Part 1-2 state)",
+    "story_facts": {"surgery_cost_usd": 7000, "contest_prize": "equals the surgery cost"},
+    "name_normalisation": {"MAYA": "مایا (English source later calls her Britney; keep مایا in every part)"}
+  },
+  "clips": [
+    {
+      "id": "clip_01", "file": "clip_01.mp4", "trim_in": 0.00, "trim_out": 8.30,
+      "subtitles": [
+        [0.15, 4.05, "DOC",   "این عمل ریسک بالایی داره و هزینه‌ش هفت هزار دلاره."],
+        [4.70, 8.10, "AGNES", "هفت هزار دلار؟! من فقط یه کمک‌آشپزم!"]
+      ]
+    },
+    {
+      "id": "clip_02", "file": "clip_02.mp4", "trim_in": 1.50, "trim_out": 6.50,
+      "subtitles": [
+        [0.40, 3.80, "AGNES", "کاش منم خوشگل بودم..."]
+      ]
+    },
+    {
+      "id": "clip_03", "file": "clip_03.mp4", "trim_in": 1.50, "trim_out": 8.21,
+      "subtitles": [
+        [0.30, 3.10, "AGNES", "مسابقه بزرگ آشپزی؟!"],
+        [3.20, 6.55, "AGNES", "جایزه‌ش دقیقاً همون پولیه که واسه عمل صورتم لازم دارم!"]
+      ]
+    },
+    {
+      "id": "clip_04", "file": "clip_04.mp4", "trim_in": 0.80, "trim_out": 7.50,
+      "subtitles": [
+        [0.20, 3.60, "AGNES", "سرآشپز هنری، می‌شه این جمعه رو مرخصی بگیرم؟"],
+        [4.10, 6.40, "HENRY", "البته آگنس، مشکلی نیست!"]
+      ]
+    },
+    {
+      "id": "clip_05", "file": "clip_05.mp4", "trim_in": 1.20, "trim_out": 9.80,
+      "subtitles": [
+        [0.30, 4.25, "TONY",  "مرخصی واسه چی؟ می‌خوای بری مسابقه ملکه زیبایی شرکت کنی؟!"],
+        [4.65, 8.45, "MAYA",  "آره، جایزه ترسناک‌ترین صورت سال رو می‌بره!"]
+      ]
+    },
+    {
+      "id": "clip_06", "file": "clip_06.mp4", "trim_in": 1.20, "trim_out": 7.60,
+      "subtitles": [
+        [0.30, 6.00, "AGNES", "صبر کنید و ببینید... من برنده این مسابقه می‌شم و به همه‌تون نشون می‌دم!"]
+      ]
+    }
+  ]
+}
