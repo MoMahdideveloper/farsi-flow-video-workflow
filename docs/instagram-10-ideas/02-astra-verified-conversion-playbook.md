@@ -317,3 +317,83 @@ Each message includes ONE primary product. Prices are deliberately kept out of D
 برای پرداخت ۴ قسط، بعد از انتخاب پلن در تسویه ترب‌پی یا دیجی‌پی رو انتخاب کن و مراحل اعتبار رو انجام بده. مبلغ نهایی، امکان ترکیب کد و قسط، سررسیدها و زمان تحویل رو قبل پرداخت بررسی کن؛ شرایط هر پلن و اعتبار ملاکه.
 
 اگه درباره انتخاب پلن سؤال داری، همین‌جا بپرس؛ برای توقف پیام‌ها بنویس «توقف».
+
+## 4. 30-day content calendar
+
+Day 1 is the next approved launch day, **not a fixed UTC publish time**. Select slots from account Insights in the team's local timezone. Every row is one main asset; supporting Stories reuse that asset. Plan one main asset daily only if production quality and response capacity hold; otherwise preserve this sequence across more days rather than publishing unfinished work.
+
+**Mix:** 10 original use-case/conversion Reels + 1 data-selected conversion variant, 10 viral 3D story episodes, 9 trust/tutorial/review assets. This is a test allocation, not a proven ideal ratio. Sequence the first three conversion Reels as IG10_01 → IG10_02 → IG10_06.
+
+| Day | Format | Main asset / exact creative direction | Bridge / single CTA | Daily Story support | Primary review metric |
+|---|---|---|---|---|---|
+| 1 | Viral 3D | Fruits of Power: strawberry discovers pineapple's secret family portrait | «فردا ببین از یک عکس چی می‌سازیم» | Poll: فروشگاه داری؟ | 3-second hold, shares |
+| 2 | Conversion | IG10_01: one shoe photo → ad, same product details | «تیزر» | Real before/after and primary product | Qualified DM conversations |
+| 3 | Viral 3D | Fruits of Power: the portrait turns out to be a surprise gift | «خالق این صحنه جلوی دوربین نبود» | Hands-only behind the scenes | Profile visits per reach |
+| 4 | Conversion | IG10_02: faceless animation from two lines | «انیمیشن» | Creator setup without sensitive account data | DM-to-product-click rate |
+| 5 | Viral 3D | Ugly Chef: Agnes gets an impossible presentation deadline | «فردا از صفحه سفید شروع می‌کنیم» | Deadline poll | Shares, saves |
+| 6 | Conversion | IG10_06: text → reviewed slide draft | «اسلاید» | One corrected factual error | Qualified DMs, purchases |
+| 7 | Support | Week-1 review + pin three profile assets | «کدوم کاربرد به کارت میاد؟» | Answer actual objections; no invented customer proof | Funnel drop-off by idea |
+| 8 | Viral 3D | Fruits of Power: a child's drawing seems to move | «فردا نسخه کاربردی این صحنه» | Parent-only creativity poll | Retention, shares |
+| 9 | Conversion | IG10_05: drawing → short cartoon | «نقاشی» | Parent consent and privacy reminder | Saves, qualified DMs |
+| 10 | Support | Trust highlight: real Enamad verification path | «قبل خرید، اطلاعات فروشگاه رو بررسی کن» | Product delivery/terms example | Support questions resolved |
+| 11 | Viral 3D | Family cartoon stops at the funniest moment for an ad | «برای تماشای بی‌وقفه چه گزینه‌ای هست؟» | Ad interruption poll | Profile visits |
+| 12 | Conversion | IG10_09: YouTube use case, correct primary price | «بدون تبلیغ» | Plan/region limits, not blanket all-service promise | Product clicks, purchases |
+| 13 | Support | Tutorial: how to choose a plan without buying every tool | «کاربردت رو در پاسخ استوری بگو» | One tool vs optional alternatives | Qualified replies |
+| 14 | Viral 3D | Cartoon wallet gets confused by a long invoice | «قیمت نهایی رو فردا حساب می‌کنیم» | No fabricated tax percentages | Retention |
+| 15 | Conversion | IG10_08: actual plan, capped coupon and checkout terms | «قیمت» | 380,000 × 10% example, no live quote | Checkout starts per click |
+| 16 | Support | Four-installment highlight using actual checkout screens | «شرایط اعتبار و سررسید رو بخون» | Do not imply four full months of deferral | Payment objections resolved |
+| 17 | Viral 3D | Fruits of Power: a birthday song reveals a shared memory | «این بار هدیه با اسم خودت» | Music-consent reminder | Shares |
+| 18 | Conversion | IG10_04: custom song, video is optional extra | «تولد» | Song-only starting scope | Qualified DMs, purchase value |
+| 19 | Support | Three-minute tutorial from pinned post 2 | «انیمیشن» | Rendering time may vary | Tutorial completion, saves |
+| 20 | Viral 3D | Ugly Chef: Agnes redesigns a cafe menu before applying | «اول نمونه‌کار، بعد پیشنهاد همکاری» | No bank SMS or fake testimonial | Profile visits |
+| 21 | Conversion | IG10_07: cafe sample portfolio, no income guarantee | «درآمد» | Scope and revision checklist | Qualified work-use DMs |
+| 22 | Support | WELCOME10 highlight: cap, threshold and final total | «قیمت» | Explain cap on a 1,710,000 example | Fewer coupon misunderstandings |
+| 23 | Viral 3D | Adult gamer reaches a shop selling the wrong region | «قبل خرید، نسخه و ریجن» | Parent/guardian reminder for minors | Shares, saves |
+| 24 | Conversion | IG10_10: Global CP compatibility checks | «گیم» | No ping/skill/credit guarantee | Compatible-product clicks |
+| 25 | Support | Behind the scenes: AI labels and voice/image consent | «برای انتخاب کاربرد، پاسخ بده» | Never clone someone without permission | Useful replies |
+| 26 | Viral 3D | A fictional presenter glitches into a clearly digital avatar | «مجری دیجیتال چه محدودیتی داره؟» | Avatar/AI disclosure | Profile visits |
+| 27 | Conversion | IG10_03: short script → avatar, Persian output checked | «مجری» | Show actual tested result, not perfect-lip-sync promise | High-intent DMs |
+| 28 | Support | FAQ from real DMs; update weak links and plan wording | «سؤالت رو همین‌جا بپرس» | Human answers; redact private info | Open issues resolved |
+| 29 | Conversion variant | Repeat the best qualified-conversion idea with one new hook | Keep that idea's exact keyword | Same product, offer and attribution rule | Comparable funnel conversion |
+| 30 | Support | Month recap and next-cycle editorial decision | «کدوم کاربرد رو بیشتر آموزش بدیم؟» | Real results only; disclose small sample | Paid orders, refunds, margin |
+
+### Weekly rhythm and decision rules
+
+- Week 1: establish use-case relevance; launch the first three Reels and watch where interested viewers stop. Do not interpret 77 historical followers as a current live count.
+- Week 2: test family/parent benefits while refreshing trust and plan clarity. Keep entertainment offers distinct from creation tools.
+- Week 3: address payment objections, gifts and freelance samples. Measure actual purchase intent rather than “درآمد” comments alone.
+- Week 4 + days 29–30: region-safe gaming, premium avatar use case, FAQ and a single-variable creative retest. Repeat only what the evidence supports.
+- Review Reels after comparable 24h and 72h windows and orders over a proposed 7-day attribution window. These are internal reporting choices, not platform messaging permissions.
+- With small counts, report numerators and denominators, not just percentages. Do not name a winning creative from one purchase. A practical provisional floor is 20 delivered requested DMs per variant; if volume is lower, extend the test and use qualitative replies. This is not a statistical significance threshold.
+
+## 5. Measurement and launch checklist
+
+### Funnel event map (proposed; not installed)
+
+| Stage | Event / metric | Source / definition | What a drop-off suggests |
+|---|---|---|---|
+| Attention | reach, 3-second views, completion, saves | Instagram Insights where available; do not substitute plays for people | Weak first frame or mismatched hook |
+| Intent | unique keyword commenters / reach | Per-Reel trigger logs; dedupe users | Result is entertaining but benefit unclear |
+| Delivery | requested DM delivered / triggered | Actual send status, not public-reply count | Permissions, trigger or deliverability failure |
+| Click | unique product clicks / delivered DMs | Verified button tracking, without personal data in URLs | Wrong product, weak clarity or broken link |
+| Checkout | checkout starts / product sessions | Store analytics if available | Price/plan mismatch or checkout friction |
+| Purchase | paid orders / attributable product sessions | Confirmed paid order status, not click or checkout completion screenshot | Eligibility/payment/delivery concerns |
+| Quality | net revenue, refunds, support burden | Orders less refunds; exclude taxes/fees as appropriate | Wrong expectations or unsuitable plan |
+
+UTM proposal, only after verifying destination support: `utm_source=instagram`, `utm_medium=organic_social`, `utm_campaign=ig10_20261026`, `utm_content=IG10_01` (replace ID per Reel). Keep campaign-level coupon WELCOME10 distinct from attribution: shared-code orders alone cannot identify which Reel converted. Do not place names or private message contents into UTM values. Preserve incoming query parameters when adding tags.
+
+Use a consistent 7-day last-click rule for internal comparison; record direct/unattributed purchases separately. If store instrumentation cannot connect sessions to orders, report clicks and paid orders separately—do not fabricate a conversion rate. Prefer paid orders, net revenue and fit over views alone.
+
+### Launch gates
+
+- [ ] Replace and verify all candidate product permalinks against the exact ID/title and selected plan on mobile; only then enable DM buttons.
+- [ ] Confirm current price, plan access to demonstrated features, regions, delivery time, TorobPay / DigiPay eligibility, fees, due dates and coupon stacking in the real checkout. This is a prelaunch operator gate, not an instruction to fetch external pages during this offline audit.
+- [ ] Confirm Enamad details via the real site's badge; use current screen recording, never a generated seal.
+- [ ] Use authorized original characters/assets, music and voices. Medical/legal scripts need subject-matter review; digital avatars must not impersonate real professionals without permission.
+- [ ] Keep child information private, obtain parental permission for drawings, and do not market credit to minors.
+- [ ] Time the native-Farsi opening at ≤3 seconds in the actual audio. A seven-word limit is a writing guardrail, not proof of timing.
+- [ ] Check all spoken lines against the 8-second shots; shorten copy rather than speed up unnaturally. Full coupon conditions belong in the caption/DM where legible.
+- [ ] Rebuild RTL overlays in editing; check reading order, punctuation, Latin WELCOME10, safe areas and contrast on a phone. First-shot cues are 0–3s; remaining cues are planning placeholders.
+- [ ] Convert the planning manifest into real rendered clips and the pipeline's clip-level schema; the existing planning JSON cannot directly render final video.
+- [ ] Test trigger, no-duplicate send, button destination, user opt-in, failure fallback, stop words and human handoff in the connected automation account before enabling.
+- [ ] Archive offline verification in the [Stage 2 trace](TRACE.md); run the [pytest suite](../../tests/test_instagram_10_ideas_manifest.py). Passing tests does not validate live URLs, sales lift, rendering quality or platform policy.
