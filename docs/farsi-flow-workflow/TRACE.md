@@ -65,3 +65,5 @@ arabic-reshaper 3.0.1, python-bidi 0.6.12, no OpenCV (pipeline deliberately does
 - 2026-10-26T13:08Z · `0a4893b23dda15e737f0c114fdec11d586fadf7b` · Stage 2: chore(stage2): exclude Python and pytest runtime caches
 
 - 2026-10-26T13:09Z · `5c0a3bb0d2265f8a7aff15796b729580151c6700` · Stage 2: test(stage2): verify six-clip Series1 build, verbatim reference dialogue, and failed-promotion safety
+
+- 2026-10-26T13:11Z · `0e55bcc02bd05f4144dd853039938105e95e1fa6` · Stage 2: fix(test): dedent fenced reference snippets before AST verification
