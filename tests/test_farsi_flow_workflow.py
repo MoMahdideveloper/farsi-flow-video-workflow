@@ -418,6 +418,11 @@ def test_all_six_series1_clips_with_shipped_windows(media):
     clips.mkdir()
     for i, clip in enumerate(data["clips"], 1):
         centers = [clip["trim_in"] + (c[0]+c[1])/2 for c in clip["subtitles"]]
+        # This fixture verifies fixed shipped windows. Keep synthetic bursts and
+        # required handles INSIDE those windows; otherwise auto_expand correctly
+        # widens clip_03 and the old fixed-duration assertion is self-contradictory.
+        # Unsafe-window expansion is tested independently above, never disabled.
+        centers = [min(max(c, clip["trim_in"] + .55), clip["trim_out"] - .70) for c in centers]
         spans = [(c-.20, c+.20) for c in centers]
         synth(clips / clip["file"], 280+i*40, clip["trim_out"]+.5, spans)
         if clip.get("raw_orig_file"):
@@ -861,3 +866,64 @@ def test_stage2_keyframe_preflight_collision_and_pacing_gaps(stage2_media, tmp_p
                        plan={'duration': 10, 'final': [0, 10]}, fallback=None)
     assert tr[fw.STEP_NAMES[3]]['dead_air_sec'] == 8
     assert tr[fw.STEP_NAMES[3]]['flags'] == ['DEAD_AIR_PACING']
+
+
+def test_stage2_no_executable_forbidden_keyframe_sanitizer():
+    import ast
+    forbidden = 'sanitize_' + 'part3_keyframes'
+    files = command(['git', '-C', ROOT, 'ls-files', '*.py']).stdout.decode().splitlines()
+    for name in files:
+        tree = ast.parse((ROOT / name).read_text('utf-8-sig'))
+        for node in ast.walk(tree):
+            if isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef)):
+                assert node.name != forbidden, name
+            if isinstance(node, ast.Call):
+                assert getattr(node.func, 'id', getattr(node.func, 'attr', None)) != forbidden, name
+
+
+def test_stage2_series_outputs_do_not_collide_and_terminal_spans_fit_evidence():
+    episodes = [fw.load_manifest(ROOT / f'pipeline/manifests/fruits_of_power_part{p}.json')
+                for p in range(1, 6)]
+    assert len({ep.out_dir for ep in episodes}) == 5
+    # Rounded last timestamps from original contact sheets; sampler used 16
+    # midpoint samples. This is a conservative duration lower bound, NOT ffprobe.
+    for p, last_label in [(2, 72.6), (3, 60.6), (4, 66.2), (5, 74.7)]:
+        lower_bound = (last_label - .05) * 32 / 31
+        assert all(c.source_span[1] < lower_bound for c in episodes[p-1].clips)
+
+
+def test_stage2_source_band_inpaint_is_local_and_does_not_mutate_input(stage2_media):
+    _, _, source, _, _ = stage2_media
+    frame = rgb_frame(source, 2.5)
+    before = frame.copy()
+    out = fw.inpaint_source_subtitle_band(frame)
+    np.testing.assert_array_equal(frame, before)
+    mask = np.zeros(frame.shape[:2], dtype=bool)
+    mask[int(320*.73):int(320*.89), int(180*.08):int(180*.92)] = True
+    np.testing.assert_array_equal(frame[~mask], out[~mask])
+    assert not np.array_equal(frame, out)
+
+
+def test_stage2_audio_mismatch_does_not_replace_previous_render(stage2_media, tmp_path, monkeypatch):
+    _, flow, source, _, video = stage2_media
+    hashes = iter(['a'*64, 'b'*64])
+    monkeypatch.setattr(fw, 'audio_stream_sha256', lambda _: next(hashes))
+    out = tmp_path / 'previous.mp4'
+    out.write_bytes(b'keep previous')
+    with pytest.raises(fw.PipelineError, match='changed the native Flow audio'):
+        fw.extract_source_fallback_clip(source, (2, 4), flow, out, video=video)
+    assert out.read_bytes() == b'keep previous'
+    assert not (tmp_path / 'previous.tmp.mp4').exists()
+
+
+def test_stage2_narrative_keyframe_outputs_are_protected(stage2_media, tmp_path):
+    data = stage2_manifest(stage2_media, tmp_path)
+    data['clips'][0]['keyframe'] = str(Path(data['out_dir']) / 'clips_subbed/clip_01_subbed.mp4')
+    with pytest.raises(fw.PipelineError, match='overwrite'):
+        fw.load_manifest(save_manifest(tmp_path / 'overwrite.json', data))
+
+
+def test_stage2_node_submitter_regressions():
+    assert shutil.which('node'), 'Node is required for Flow submitter guard verification'
+    proc = command(['node', '--test', ROOT / 'tests/js/submit_flow_batch.test.mjs'])
+    assert b'fail 0' in proc.stdout
