@@ -42,6 +42,7 @@ import time
 from dataclasses import dataclass, field, asdict
 from pathlib import Path
 from typing import Any, Iterable, Optional
+from types import SimpleNamespace
 
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont, features
@@ -128,22 +129,31 @@ def _fps_value(rate: str | None) -> float:
     return float(num) / float(den or 1) if float(den or 1) else 0.0
 
 
+def _probe_number(value: Any, default: float = 0.0) -> float:
+    try:
+        number = float(value)
+        return number if math.isfinite(number) else default
+    except (TypeError, ValueError):
+        return default
+
+
 def probe_media(path: Path) -> dict:
     """Condensed ffprobe summary: first video/audio stream + durations."""
     info = ffprobe_json(path)
-    fmt_dur = float(info.get("format", {}).get("duration", 0.0) or 0.0)
+    fmt_dur = _probe_number(info.get("format", {}).get("duration"))
     out: dict[str, Any] = {"path": str(path), "format_duration": round(fmt_dur, 4),
                            "video": None, "audio": None}
     for st in info.get("streams", []):
         kind = st.get("codec_type")
         if kind not in ("video", "audio") or out[kind] is not None:
             continue
-        dur = float(st.get("duration", 0.0) or 0.0) or fmt_dur
-        entry = {"codec": st.get("codec_name"), "duration": round(dur, 4)}
+        dur = _probe_number(st.get("duration")) or fmt_dur
+        entry = {"codec": st.get("codec_name"), "duration": round(dur, 4),
+                 "start_time": _probe_number(st.get("start_time"))}
         if kind == "video":
             entry.update(width=st.get("width"), height=st.get("height"),
                          fps=round(_fps_value(st.get("avg_frame_rate") or st.get("r_frame_rate")), 3),
-                         pix_fmt=st.get("pix_fmt"), frames=int(st.get("nb_frames", 0) or 0))
+                         pix_fmt=st.get("pix_fmt"), frames=int(_probe_number(st.get("nb_frames"))))
         else:
             entry.update(sample_rate=int(st.get("sample_rate", 0) or 0),
                          channels=int(st.get("channels", 0) or 0))
@@ -732,7 +742,11 @@ def normalize_clip(src: Path, t_in: float, t_out: float, dst_mp4: Path, dst_wav:
                    "-movflags", "+faststart", str(tmp_mp4),
                    "-map", "[a2]", "-c:a", "pcm_s16le", "-ar", str(sr), "-ac", str(ch), str(tmp_wav)),
         what=f"normalize {src.name}")
-    os.replace(tmp_mp4, dst_mp4)
+    # Verify the rendered MP4 and PCM sidecar before replacing good media.
+    wav_probe = probe_media(tmp_wav)["audio"]
+    if not wav_probe or abs(wav_probe["duration"] - q) > 1 / sr + .0001:
+        raise PipelineError("normalise: PCM sidecar duration mismatch")
+    promote(SimpleNamespace(video=video, audio=audio), tmp_mp4, dst_mp4, q, "normalise")
     os.replace(tmp_wav, dst_wav)
     return {"frames": n, "duration": round(q, 4)}
 
@@ -1106,7 +1120,8 @@ def overlay_chain(base: str, overlays: list[Overlay], first_input: int,
     return parts, cur
 
 
-def render_subbed_clip(norm_mp4: Path, overlays: list[Overlay], dst: Path, video: dict) -> Path:
+def render_subbed_clip(norm_mp4: Path, overlays: list[Overlay], dst: Path, video: dict,
+                       audio: Optional[dict] = None) -> Path:
     """Burn the overlays onto the normalised clip and MUX ITS ORIGINAL FLOW
     AUDIO by stream copy (-map 0:a:0 -c:a copy): subtitles + native audio."""
     args: list[str] = ["-i", str(norm_mp4)]
@@ -1120,7 +1135,8 @@ def render_subbed_clip(norm_mp4: Path, overlays: list[Overlay], dst: Path, video
                    "-c:v", "libx264", "-preset", str(video["preset"]), "-crf", str(video["crf"]),
                    "-pix_fmt", "yuv420p", "-r", f"{float(video['fps']):g}", "-c:a", "copy",
                    "-movflags", "+faststart", str(tmp)), what=f"subtitle burn {dst.name}")
-    os.replace(tmp, dst)
+    promote(SimpleNamespace(video=video, audio=audio or AUDIO_DEFAULTS), tmp, dst,
+            media_duration(norm_mp4), "subtitled clip")
     return dst
 
 
@@ -1150,6 +1166,8 @@ def plan_clip(ep: Episode, clip: ClipSpec, work: Path, force: bool = False) -> C
     source_probe = probe_media(src)
     if not source_probe["video"] or not source_probe["audio"]:
         raise PipelineError(f"{clip.id}: Flow source must contain video AND original audio")
+    if abs(source_probe["video"]["duration"] - source_probe["audio"]["duration"]) >= DRIFT_TOLERANCE:
+        raise PipelineError(f"{clip.id}: source A/V duration mismatch; repair before trimming")
     src_dur = media_duration(src)
     req_out = src_dur if clip.trim_out is None else min(clip.trim_out, src_dur)
     analysis = None
@@ -1212,7 +1230,7 @@ def render_clip(ep: Episode, res: ClipResult, work: Path, font_path: str,
     primary = targets[0]
     if force or not cache_ok([primary], sub_key):
         log(f"{clip.id}: burn {len(res.overlays)} overlay(s) + mux original Flow audio -> {primary}")
-        render_subbed_clip(res.norm_mp4, res.overlays, primary, ep.video)
+        render_subbed_clip(res.norm_mp4, res.overlays, primary, ep.video, ep.audio)
         cache_write(primary, sub_key, clip=clip.id, frames=res.frames, duration=res.duration)
     res.subbed = [primary]
     srt_cues = [(c.start, c.end, c.text) for c in res.cues]
@@ -1264,7 +1282,7 @@ def audio_pts_gaps(path: Path, tol_sec: float = 0.002) -> list[dict]:
     out = run([FFPROBE, "-v", "error", "-select_streams", "a:0", "-show_entries",
                "packet=pts_time,duration_time", "-of", "csv=p=0", str(path)],
               capture=True, what="ffprobe packets").stdout.decode("utf-8", "replace")
-    rows = [r.split(",")[:2] for r in out.splitlines() if r.strip()]
+    rows = [r.split(",")[:2] for r in out.splitlines() if len(r.split(",")) >= 2]
     pk = [(float(a), float(b)) for a, b in rows if a not in ("", "N/A") and b not in ("", "N/A")]
     if len(pk) < 3:
         return []
@@ -1296,6 +1314,8 @@ def av_checks(ep: Episode, path: Path, expected: Optional[float] = None) -> dict
                                 and a["channels"] == int(ep.audio["channels"])}
     drift = round(abs(v["duration"] - a["duration"]), 4) if v and a else None
     c["av_drift_ok"] = drift is not None and drift < DRIFT_TOLERANCE
+    c["av_start_aligned"] = bool(v and a) and abs(v["start_time"] - a["start_time"]) < 1 / fps
+    c["starts_at_zero"] = bool(v and a) and max(abs(v["start_time"]), abs(a["start_time"])) < 1 / fps
     gaps = audio_pts_gaps(path) if a else []
     c["audio_contiguous"] = bool(a) and not gaps
     if expected is not None:
