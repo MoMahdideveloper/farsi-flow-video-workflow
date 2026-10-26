@@ -69,7 +69,7 @@ except ImportError:  # pragma: no cover
     except ImportError:
         get_display = None
 
-PIPELINE_VERSION = "1.2.1"
+PIPELINE_VERSION = "1.2.2"
 ANALYSIS_SR = 16000  # speech analysis: 16 kHz mono PCM
 
 # ----------------------------------------------------------------- defaults --
@@ -1328,7 +1328,10 @@ def plan_clip(ep: Episode, clip: ClipSpec, work: Path, force: bool = False) -> C
         ep.warnings.append(f"{clip.id}: video replaced by source_span {list(clip.source_span)} "  # type: ignore[arg-type]
                            f"({', '.join(visual['flags'])}); native Flow audio kept")
     elif fallback["resolution"] == "unresolved_visual_fail":
-        ep.warnings.append(f"{clip.id}: visual continuity FAILED {visual['flags']} -- {fallback['reason']}")
+        # Missing evidence is itself a blocking diagnostic, not a crash while
+        # formatting the warning. Preserve the failure through to qa_report.
+        flags = (visual or {}).get("flags", ["VISUAL_EVIDENCE_MISSING"])
+        ep.warnings.append(f"{clip.id}: visual continuity FAILED {flags} -- {fallback['reason']}")
     final = window_speech_check(analysis, *plan["final"]) if analysis else None
     for n in plan["notes"]:
         log(f"{clip.id}: {n}")
