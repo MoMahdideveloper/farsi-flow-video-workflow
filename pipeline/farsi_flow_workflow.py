@@ -1703,9 +1703,13 @@ def write_qa_report(ep: Episode, results: list[ClipResult], font: Optional[str],
     }
     dst = ep.out_dir / ("qa_report.json" if command == "build" else f"qa_report_{command}.json")
     dst.parent.mkdir(parents=True, exist_ok=True)
+    payload = json.dumps(report, indent=2, ensure_ascii=False)
     tmp = dst.with_suffix(".tmp")
-    tmp.write_text(json.dumps(report, indent=2, ensure_ascii=False), "utf-8")
+    tmp.write_text(payload, "utf-8")
     os.replace(tmp, dst)
+    if command == "build":
+        ep_dst = ep.out_dir / f"qa_report_{ep.episode_id}.json"
+        ep_dst.write_text(payload, "utf-8")
     return dst
 
 

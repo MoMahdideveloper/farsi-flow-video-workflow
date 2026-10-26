@@ -1,0 +1,82 @@
+{
+  "_comment": "Series 1 Part 3 - What's Her Number? (Google Flow native Farsi). Ported 1:1 from assemble_series1_part3_flow_master.py.",
+  "schema_version": 1,
+  "episode_id": "Series1_Part3",
+  "title_fa": "قسمت سوم: راز عدد بی‌نهایت",
+  "title_en": "What's Her Number? - Part 3",
+  "variables": {
+    "BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series1-whats-her-number-farsi",
+    "CHEF_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\ugly-face-chef-farsi"
+  },
+  "clips_dir": "${BASE}\\03_flow_clips\\part3",
+  "out_dir": "${BASE}\\05_final_masters",
+  "font_path": "${CHEF_BASE}\\03_farsi_audio_tts\\Vazirmatn-Bold.ttf",
+  "cta_video": "${CHEF_BASE}\\05_final_masters\\cta_kelidbox_agnes_subbed.mp4",
+  "cta_speaker": "ELLA",
+  "cta_subtitles": [
+    {"start": 0.10, "end": 3.60, "text": "برای دیدن سریال‌های بعدی همین الان پیج رو فالو کن!"},
+    {"start": 3.80, "end": 7.85, "text": "راستی کل این انیمیشن با اکانت‌های هوش مصنوعی سایت کلیدباکس ساخته شده!"}
+  ],
+  "video": {"width": 720, "height": 1280, "fps": 24, "crf": 18, "preset": "fast", "scale_mode": "fill"},
+  "audio": {"loudnorm": "loudnorm=I=-14:TP=-1.5:LRA=11", "sample_rate": 48000, "channels": 2, "bitrate": "192k"},
+  "speech": {"speech_safe": "auto_expand", "threshold_dbfs": -38.0, "pre_handle": 0.20, "post_handle": 0.35,
+             "splice_crossfade": 0.02},
+  "subtitle_style": {"time_base": "trim_local", "y_ratio": 0.84, "font_size": 27, "min_font_size": 16,
+                     "max_text_margin": 84, "max_lines": 2},
+  "badge": {"text": "قسمت سوم: راز عدد بی‌نهایت", "start": 0.0, "end": 3.5, "y_center": 130, "font_size": 28,
+            "color": [255, 225, 110], "clip_index": 1},
+  "outputs": {"per_clip_location": "both", "base_mode": "timeline", "cta_burn_subtitles": false,
+              "cta_loudnorm": false},
+  "voices": {
+    "MOM":   {"name_fa": "مامان",      "color": [215, 165, 255], "source": "google_flow_native"},
+    "DOC":   {"name_fa": "دکتر",       "color": [165, 255, 185], "source": "google_flow_native"},
+    "DOC_P": {"name_fa": "دکتر بنفش",  "color": [205, 175, 255], "source": "google_flow_native"},
+    "CHLOE": {"name_fa": "کلویی",      "color": [255, 165, 210], "source": "google_flow_native"},
+    "LIAM":  {"name_fa": "لیام",       "color": [255, 220, 110], "source": "google_flow_native"},
+    "ELLA":  {"name_fa": "الا",        "color": [130, 255, 220], "source": "google_flow_native"}
+  },
+  "clips": [
+    {
+      "id": "clip_01", "file": "clip_01.mp4", "trim_in": 0.00, "trim_out": null,
+      "subtitles": [
+        [0.40, 6.05, "DOC",   "توی این پرونده نوشته روز اول عدد تو بی‌نهایت بود و عدد خواهرت صفر!"],
+        [6.50, 9.20, "ELLA",  "یعنی ده امتیاز کلویی مال من بوده؟"]
+      ]
+    },
+    {
+      "id": "clip_02", "file": "clip_02.mp4", "trim_in": 0.00, "trim_out": null,
+      "subtitles": [
+        [0.60, 5.10, "ELLA",  "اون عدد ده روی پیشونی کلویی از روز اول مال من بوده!"],
+        [5.45, 8.95, "CHLOE", "دروغ می‌گه مامان! نذار امتیازم رو ازم بگیرن!"]
+      ]
+    },
+    {
+      "id": "clip_03", "file": "clip_03.mp4", "trim_in": 0.00, "trim_out": null,
+      "subtitles": [
+        [1.60, 4.65, "DOC",   "سیستم مرکزی عددهای واقعی رو برگردوند."],
+        [5.10, 8.60, "DOC",   "امتیاز دزدی خواهرت پاک شد و برگشت روی صفر!"]
+      ]
+    },
+    {
+      "id": "clip_04", "file": "clip_04.mp4", "trim_in": 0.00, "trim_out": null,
+      "subtitles": [
+        [1.45, 4.45, "CHLOE", "کل شهر فهمیدن عدد واقعیت صفر بوده..."],
+        [4.90, 8.60, "CHLOE", "و تمام این مدت امتیاز خواهرت رو دزدیده بودی!"]
+      ]
+    },
+    {
+      "id": "clip_05", "file": "clip_05.mp4", "trim_in": 0.00, "trim_out": null,
+      "subtitles": [
+        [0.95, 6.10, "MOM",   "منو ببخش دخترم، بزرگ‌ترین اشتباه زندگیم رو کردم."],
+        [6.50, 9.85, "ELLA",  "بخشیدمت مامان، عدد هیچ‌وقت ارزش واقعی آدم‌ها رو مشخص نمی‌کنه."]
+      ]
+    },
+    {
+      "id": "clip_06", "file": "clip_06.mp4", "trim_in": 0.00, "trim_out": null,
+      "subtitles": [
+        [1.10, 5.30, "LIAM",  "بهت گفتم که، تو برای من از روز اول بی‌نهایت بودی!"],
+        [5.95, 9.55, "ELLA",  "مرسی که قبل از دیدن عددم، خودِ واقعیم رو دیدی!"]
+      ]
+    }
+  ]
+}
