@@ -671,3 +671,95 @@ def test_stage2_partial_probe_cli_must_fail(tmp_path):
     proc = command([sys.executable, SCRIPT, 'trace-all-parts', '--probe-json', path,
                     '--out-json', tmp_path / 'out.json'], expected=1)
     assert b'clip_06' in proc.stderr and b'probe' in proc.stderr
+
+
+@pytest.fixture(scope='module')
+def stage2_media(tmp_path_factory):
+    root = tmp_path_factory.mktemp('stage2 media')
+    video = {**fw.VIDEO_DEFAULTS, 'width': 180, 'height': 320, 'preset': 'ultrafast'}
+    voice = '(0.12*sin(2*PI*310*t))*(between(t,2,5))'
+    flow = root / 'flow.mp4'
+    command([fw.FFMPEG, '-v', 'error', '-y', '-f', 'lavfi', '-i', 'color=c=magenta:s=180x320:r=24:d=10',
+             '-f', 'lavfi', '-i', f"aevalsrc='{voice}':s=48000:d=10", '-c:v', 'libx264',
+             '-threads', '2', '-preset', 'ultrafast', '-c:a', 'aac', '-ac', '2', flow])
+    source = root / 'original.mp4'
+    font, _ = fw.resolve_font()
+    command([fw.FFMPEG, '-v', 'error', '-y', '-f', 'lavfi', '-i', 'color=c=red:s=180x320:r=24:d=2',
+             '-f', 'lavfi', '-i', 'color=c=blue:s=180x320:r=24:d=2',
+             '-f', 'lavfi', '-i', 'color=c=green:s=180x320:r=24:d=2',
+             '-f', 'lavfi', '-i', 'sine=frequency=880:sample_rate=48000:duration=6',
+             '-filter_complex', f"[0:v][1:v][2:v]concat=n=3:v=1:a=0,drawtext=fontfile='{font}':"
+             "text='English':fontcolor=white:fontsize=16:x=(w-tw)/2:y=h*0.78[v]",
+             '-map', '[v]', '-map', '3:a', '-c:v', 'libx264', '-threads', '2', '-preset', 'ultrafast',
+             '-c:a', 'aac', '-ac', '2', source])
+    kfs = {}
+    for name, color in [('own', 'blue'), ('other', 'magenta'), ('start', 'red')]:
+        kfs[name] = root / f'{name}.png'
+        Image.new('RGB', (180, 320), color).save(kfs[name])
+    return root, flow, source, kfs, video
+
+
+def rgb_frame(path, sec, w=180, h=320):
+    data = command([fw.FFMPEG, '-v', 'error', '-ss', str(sec), '-i', path, '-frames:v', '1',
+                    '-f', 'rawvideo', '-pix_fmt', 'rgb24', 'pipe:1']).stdout
+    return np.frombuffer(data, np.uint8).reshape(h, w, 3)
+
+
+def audio_stream_hash(path):
+    return command([fw.FFMPEG, '-v', 'error', '-i', path, '-map', '0:a:0', '-c:a', 'copy',
+                    '-f', 'streamhash', '-hash', 'sha256', 'pipe:1']).stdout
+
+
+def test_stage2_live_visual_detection_and_keyframe_immutability(stage2_media):
+    _, flow, source, kfs, _ = stage2_media
+    before = {p: fw.sha256_file(p) for p in kfs.values()}
+    match = fw.analyze_clip_visuals(flow, kfs['other'], clip_id='other')
+    assert match['evaluation']['passed']
+    bad = fw.analyze_clip_visuals(flow, kfs['own'], kfs, clip_id='own')
+    assert set(bad['evaluation']['flags']) == {'KEYFRAME_MISMATCH', 'MULTI_INGREDIENT_CONTAMINATION'}
+    cut = fw.analyze_clip_visuals(source, kfs['start'], clip_id='start')
+    assert 'INTERNAL_SCENE_CUT' in cut['evaluation']['flags']
+    assert cut['detected_scene_cuts_sec'] == [2, 4]
+    assert before == {p: fw.sha256_file(p) for p in kfs.values()}
+
+
+def test_stage2_ten_second_clip_tight_trim_keeps_all_active_audio(stage2_media):
+    _, flow, _, _, _ = stage2_media
+    speech = fw.analyze_clip_speech(flow)
+    clip = fw.ClipSpec(1, 'clip_01', str(flow), 0, 10, [])
+    plan = fw.plan_trim(clip, speech, 10, fw.SPEECH_DEFAULTS)
+    tight = fw.apply_tight_speech_trim(plan, speech['first_speech_sec'], speech['last_speech_sec'], fw.SPEECH_DEFAULTS)
+    assert 3.5 <= tight['duration'] <= 3.65
+    assert tight['final'][0] <= speech['first_speech_sec'] - .19
+    assert tight['final'][1] >= speech['last_speech_sec'] + .34
+    assert not fw.window_speech_check(speech, *tight['final'])['cuts_speech']
+    assert plan['final'] == [0, 10], 'caller plan mutated'
+    assert tight['subtitle_shift'] == -tight['final'][0]
+
+
+def test_stage2_hybrid_real_video_source_span_inpaint_and_original_audio(stage2_media, tmp_path):
+    _, flow, source, kfs, video = stage2_media
+    originals = {p: fw.sha256_file(p) for p in [flow, source, *kfs.values()]}
+    out = tmp_path / 'fallback.mp4'
+    rec = fw.extract_source_fallback_clip(source, (2, 4), flow, out, video=video, anchor_sec=1.8)
+    assert rec['verified'] and rec['frames'] == 240 and rec['frames_inpainted'] > 0
+    assert rec['source_span'] == [2, 4]
+    assert rec['flow_audio_stream_sha256'] == rec['output_audio_stream_sha256']
+    assert audio_stream_hash(flow) == audio_stream_hash(out) != audio_stream_hash(source)
+    np.testing.assert_array_equal(fw.decode_pcm(flow), fw.decode_pcm(out))
+    original, replacement = rgb_frame(source, 2.5), rgb_frame(out, 2.3)
+    assert np.abs(original[:220].astype(float) - replacement[:220]).mean() < 2
+    assert np.abs(rgb_frame(flow, 2.3).astype(float) - replacement).mean() > 30
+    assert (replacement[235:280].mean(axis=2) > 200).sum() < (original[235:280].mean(axis=2) > 200).sum()
+    assert fw.media_duration(out) == pytest.approx(10, abs=1/24)
+    assert originals == {p: fw.sha256_file(p) for p in originals}
+
+
+@pytest.mark.parametrize('span', [(-1, 2), (3, 3), (4, 2), (5, 8), (6, 7)])
+def test_stage2_fallback_refuses_invalid_source_spans(stage2_media, tmp_path, span):
+    _, flow, source, _, video = stage2_media
+    out = tmp_path / 'keep.mp4'
+    out.write_bytes(b'previous-good-output')
+    with pytest.raises(fw.PipelineError, match='source_span'):
+        fw.extract_source_fallback_clip(source, span, flow, out, video=video)
+    assert out.read_bytes() == b'previous-good-output'
