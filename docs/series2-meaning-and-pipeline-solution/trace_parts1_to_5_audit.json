@@ -1,6 +1,6 @@
 {
-  "generated_utc": "2026-10-26T21:41:08Z",
-  "pipeline_version": "1.2.0",
+  "generated_utc": "2026-10-26T21:59:42Z",
+  "pipeline_version": "1.2.1",
   "probe_json": "docs/series2-meaning-and-pipeline-solution/parts1_to_5_clips_probe.json",
   "policy": {
     "keyframes": "read-only, never defaced",
@@ -9,8 +9,10 @@
   "summary": {
     "clips_total": 30,
     "clips_failed_visual": 13,
-    "clips_resolved_by_source_bridge": 13,
-    "clips_unresolved": 0,
+    "clips_planned_source_bridge": 13,
+    "clips_resolved_by_source_bridge": 0,
+    "clips_unresolved": 13,
+    "clips_without_recovery_plan": 0,
     "flag_counts": {
       "KEYFRAME_MISMATCH": 12,
       "MULTI_INGREDIENT_CONTAMINATION": 3,
@@ -48,6 +50,8 @@
         8.5
       ],
       "resolution": "source_bridge_fallback",
+      "resolved": false,
+      "plan_available": true,
       "fallback_source_span": [
         5.8,
         10.4
@@ -64,10 +68,12 @@
         "KEYFRAME_DRIFT"
       ],
       "suggested_visual_trim": [
-        0.5,
-        10.0
+        0.0,
+        0.0
       ],
       "resolution": "source_bridge_fallback",
+      "resolved": false,
+      "plan_available": true,
       "fallback_source_span": [
         10.4,
         14.6
@@ -86,6 +92,8 @@
         10.0
       ],
       "resolution": "source_bridge_fallback",
+      "resolved": false,
+      "plan_available": true,
       "fallback_source_span": [
         14.6,
         18.7
@@ -102,6 +110,8 @@
         10.0
       ],
       "resolution": "flow_clip",
+      "resolved": true,
+      "plan_available": true,
       "fallback_source_span": null
     },
     {
@@ -117,6 +127,8 @@
         10.0
       ],
       "resolution": "flow_clip",
+      "resolved": true,
+      "plan_available": true,
       "fallback_source_span": null
     },
     {
@@ -132,6 +144,8 @@
         10.0
       ],
       "resolution": "source_bridge_fallback",
+      "resolved": false,
+      "plan_available": true,
       "fallback_source_span": [
         47.9,
         57.9
@@ -148,6 +162,8 @@
         10.0
       ],
       "resolution": "flow_clip",
+      "resolved": true,
+      "plan_available": true,
       "fallback_source_span": null
     },
     {
@@ -161,6 +177,8 @@
         10.0
       ],
       "resolution": "flow_clip",
+      "resolved": true,
+      "plan_available": true,
       "fallback_source_span": null
     },
     {
@@ -174,6 +192,8 @@
         10.0
       ],
       "resolution": "flow_clip",
+      "resolved": true,
+      "plan_available": true,
       "fallback_source_span": null
     },
     {
@@ -189,6 +209,8 @@
         10.0
       ],
       "resolution": "source_bridge_fallback",
+      "resolved": false,
+      "plan_available": true,
       "fallback_source_span": [
         35.1,
         45.1
@@ -209,6 +231,8 @@
         10.0
       ],
       "resolution": "source_bridge_fallback",
+      "resolved": false,
+      "plan_available": true,
       "fallback_source_span": [
         58.5,
         68.5
@@ -225,6 +249,8 @@
         10.0
       ],
       "resolution": "flow_clip",
+      "resolved": true,
+      "plan_available": true,
       "fallback_source_span": null
     },
     {
@@ -238,6 +264,8 @@
         10.0
       ],
       "resolution": "flow_clip",
+      "resolved": true,
+      "plan_available": true,
       "fallback_source_span": null
     },
     {
@@ -251,6 +279,8 @@
         10.0
       ],
       "resolution": "flow_clip",
+      "resolved": true,
+      "plan_available": true,
       "fallback_source_span": null
     },
     {
@@ -264,6 +294,8 @@
         10.0
       ],
       "resolution": "flow_clip",
+      "resolved": true,
+      "plan_available": true,
       "fallback_source_span": null
     },
     {
@@ -279,6 +311,8 @@
         10.0
       ],
       "resolution": "source_bridge_fallback",
+      "resolved": false,
+      "plan_available": true,
       "fallback_source_span": [
         33.3,
         41.1
@@ -295,6 +329,8 @@
         10.0
       ],
       "resolution": "flow_clip",
+      "resolved": true,
+      "plan_available": true,
       "fallback_source_span": null
     },
     {
@@ -308,6 +344,8 @@
         10.0
       ],
       "resolution": "flow_clip",
+      "resolved": true,
+      "plan_available": true,
       "fallback_source_span": null
     },
     {
@@ -321,6 +359,8 @@
         10.0
       ],
       "resolution": "flow_clip",
+      "resolved": true,
+      "plan_available": true,
       "fallback_source_span": null
     },
     {
@@ -334,6 +374,8 @@
         10.0
       ],
       "resolution": "flow_clip",
+      "resolved": true,
+      "plan_available": true,
       "fallback_source_span": null
     },
     {
@@ -347,12 +389,14 @@
         10.0
       ],
       "resolution": "flow_clip",
+      "resolved": true,
+      "plan_available": true,
       "fallback_source_span": null
     },
     {
       "part": "part4",
       "clip": "clip_04",
-      "story_beat": "Storm rises over the mansion; Shadow Fig dictates terms",
+      "story_beat": "Lemonella reacts to the ultrasound; the source span continues to Shadow Fig dictating terms",
       "flags": [
         "KEYFRAME_MISMATCH",
         "INTERNAL_SCENE_CUT"
@@ -363,6 +407,8 @@
         10.0
       ],
       "resolution": "source_bridge_fallback",
+      "resolved": false,
+      "plan_available": true,
       "fallback_source_span": [
         32.0,
         42.0
@@ -379,6 +425,8 @@
         10.0
       ],
       "resolution": "flow_clip",
+      "resolved": true,
+      "plan_available": true,
       "fallback_source_span": null
     },
     {
@@ -396,9 +444,11 @@
         8.5
       ],
       "resolution": "source_bridge_fallback",
+      "resolved": false,
+      "plan_available": true,
       "fallback_source_span": [
         61.9,
-        71.9
+        66.1
       ]
     },
     {
@@ -414,6 +464,8 @@
         10.0
       ],
       "resolution": "source_bridge_fallback",
+      "resolved": false,
+      "plan_available": true,
       "fallback_source_span": [
         7.2,
         10.8
@@ -432,6 +484,8 @@
         10.0
       ],
       "resolution": "source_bridge_fallback",
+      "resolved": false,
+      "plan_available": true,
       "fallback_source_span": [
         10.8,
         20.8
@@ -450,6 +504,8 @@
         10.0
       ],
       "resolution": "source_bridge_fallback",
+      "resolved": false,
+      "plan_available": true,
       "fallback_source_span": [
         31.3,
         41.3
@@ -466,6 +522,8 @@
         10.0
       ],
       "resolution": "flow_clip",
+      "resolved": true,
+      "plan_available": true,
       "fallback_source_span": null
     },
     {
@@ -479,6 +537,8 @@
         10.0
       ],
       "resolution": "flow_clip",
+      "resolved": true,
+      "plan_available": true,
       "fallback_source_span": null
     },
     {
@@ -494,9 +554,11 @@
         10.0
       ],
       "resolution": "source_bridge_fallback",
+      "resolved": false,
+      "plan_available": true,
       "fallback_source_span": [
         69.9,
-        79.9
+        74.6
       ]
     }
   ],
@@ -505,7 +567,7 @@
       "episode_id": "FruitsOfPower_Part1",
       "title_fa": "قسمت اول: خیانت در عمارت بارانی",
       "mode": "probe_json",
-      "pipeline_version": "1.2.0",
+      "pipeline_version": "1.2.1",
       "source_video": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\straw.berryjammin\\14_2026-10-19_DeqOJQTqU1S.mp4",
       "fallback_to_source_on_visual_fail": true,
       "tight_speech_trim": true,
@@ -723,9 +785,9 @@
                 "KEYFRAME_DRIFT"
               ],
               "passed": false,
-              "suggested_visual_trim_in": 0.5,
-              "suggested_visual_trim_out": 10.0,
-              "suggested_visual_duration": 9.5,
+              "suggested_visual_trim_in": 0.0,
+              "suggested_visual_trim_out": 0.0,
+              "suggested_visual_duration": 0.0,
               "thresholds": {
                 "keyframe": 32.0,
                 "jump": 32.0,
@@ -887,7 +949,7 @@
           }
         },
         "step_5_hybrid_bridge_and_fallback_resolution": {
-          "status": "pass",
+          "status": "planned",
           "fallback_clips": [
             "clip_01",
             "clip_02",
@@ -897,7 +959,10 @@
           "clips": {
             "clip_01": {
               "resolution": "source_bridge_fallback",
-              "resolved": true,
+              "resolved": false,
+              "plan_available": true,
+              "status": "planned",
+              "reason": "source extraction and media verification not run",
               "video_from": {
                 "source_video": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\straw.berryjammin\\14_2026-10-19_DeqOJQTqU1S.mp4",
                 "source_span": [
@@ -906,12 +971,14 @@
                 ]
               },
               "audio_from": "native Google Flow Farsi audio of clip_01.mp4",
-              "source_on_host": false,
-              "status": "pass"
+              "source_on_host": false
             },
             "clip_02": {
               "resolution": "source_bridge_fallback",
-              "resolved": true,
+              "resolved": false,
+              "plan_available": true,
+              "status": "planned",
+              "reason": "source extraction and media verification not run",
               "video_from": {
                 "source_video": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\straw.berryjammin\\14_2026-10-19_DeqOJQTqU1S.mp4",
                 "source_span": [
@@ -920,12 +987,14 @@
                 ]
               },
               "audio_from": "native Google Flow Farsi audio of clip_02.mp4",
-              "source_on_host": false,
-              "status": "pass"
+              "source_on_host": false
             },
             "clip_03": {
               "resolution": "source_bridge_fallback",
-              "resolved": true,
+              "resolved": false,
+              "plan_available": true,
+              "status": "planned",
+              "reason": "source extraction and media verification not run",
               "video_from": {
                 "source_video": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\straw.berryjammin\\14_2026-10-19_DeqOJQTqU1S.mp4",
                 "source_span": [
@@ -934,22 +1003,26 @@
                 ]
               },
               "audio_from": "native Google Flow Farsi audio of clip_03.mp4",
-              "source_on_host": false,
-              "status": "pass"
+              "source_on_host": false
             },
             "clip_04": {
               "resolution": "flow_clip",
               "resolved": true,
+              "plan_available": true,
               "status": "pass"
             },
             "clip_05": {
               "resolution": "flow_clip",
               "resolved": true,
+              "plan_available": true,
               "status": "pass"
             },
             "clip_06": {
               "resolution": "source_bridge_fallback",
-              "resolved": true,
+              "resolved": false,
+              "plan_available": true,
+              "status": "planned",
+              "reason": "source extraction and media verification not run",
               "video_from": {
                 "source_video": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\straw.berryjammin\\14_2026-10-19_DeqOJQTqU1S.mp4",
                 "source_span": [
@@ -958,21 +1031,23 @@
                 ]
               },
               "audio_from": "native Google Flow Farsi audio of clip_06.mp4",
-              "source_on_host": false,
-              "status": "pass"
+              "source_on_host": false
             }
           }
         },
         "step_6_mux_and_master_verification": {
           "status": "not_run",
           "visual_continuity_passed": false,
-          "visual_continuity_resolved": true
+          "visual_continuity_resolved": false
         }
       },
       "visual_continuity_passed": false,
-      "visual_continuity_resolved": true,
+      "visual_continuity_resolved": false,
       "blocking_steps": [],
-      "all_passed": true,
+      "audit_passed": true,
+      "all_passed": false,
+      "verification_scope": "diagnostic_only",
+      "publication_status": "pending_human_review",
       "probe_part": "part1",
       "clips": [
         {
@@ -1016,7 +1091,10 @@
           },
           "step_5_hybrid_bridge_and_fallback_resolution": {
             "resolution": "source_bridge_fallback",
-            "resolved": true,
+            "resolved": false,
+            "plan_available": true,
+            "status": "planned",
+            "reason": "source extraction and media verification not run",
             "video_from": {
               "source_video": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\straw.berryjammin\\14_2026-10-19_DeqOJQTqU1S.mp4",
               "source_span": [
@@ -1025,11 +1103,109 @@
               ]
             },
             "audio_from": "native Google Flow Farsi audio of clip_01.mp4",
-            "source_on_host": false,
-            "status": "pass"
+            "source_on_host": false
           },
           "step_6_mux_and_master_verification": {
             "status": "not_run"
+          },
+          "step_1_story_beat_and_character_lock": {
+            "story_beat": "Duke screams in the rainy pool: betrayal discovered",
+            "expected_speakers": [
+              "DUKE"
+            ],
+            "cue_speakers": [
+              "DUKE"
+            ],
+            "unexpected_speakers": [],
+            "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part1\\keyframes\\KF_01.jpg",
+            "source_span": [
+              5.8,
+              10.4
+            ],
+            "flags": [],
+            "status": "pass"
+          },
+          "step_2_keyframe_preflight": {
+            "status": "skipped_not_on_host",
+            "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part1\\keyframes\\KF_01.jpg"
+          },
+          "step_trace": {
+            "step_1_story_beat_and_character_lock": {
+              "story_beat": "Duke screams in the rainy pool: betrayal discovered",
+              "expected_speakers": [
+                "DUKE"
+              ],
+              "cue_speakers": [
+                "DUKE"
+              ],
+              "unexpected_speakers": [],
+              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part1\\keyframes\\KF_01.jpg",
+              "source_span": [
+                5.8,
+                10.4
+              ],
+              "flags": [],
+              "status": "pass"
+            },
+            "step_2_keyframe_preflight": {
+              "status": "skipped_not_on_host",
+              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part1\\keyframes\\KF_01.jpg"
+            },
+            "step_3_visual_continuity_audit": {
+              "status": "fail",
+              "clip_id": "clip_01",
+              "flags": [
+                "KEYFRAME_MISMATCH",
+                "MULTI_INGREDIENT_CONTAMINATION",
+                "INTERNAL_SCENE_CUT"
+              ],
+              "warnings": [],
+              "passed": false,
+              "suggested_visual_trim_in": 0.0,
+              "suggested_visual_trim_out": 8.5,
+              "suggested_visual_duration": 8.5,
+              "thresholds": {
+                "keyframe": 32.0,
+                "jump": 32.0,
+                "contamination_margin": 5.0
+              },
+              "metrics": {
+                "l1_vs_keyframe_start": 57.73,
+                "l1_vs_keyframe_mean": 57.18,
+                "l1_vs_keyframe_end": 61.02,
+                "closest_other_keyframe": "clip_04",
+                "closest_other_keyframe_l1_start": 35.99,
+                "max_internal_jump_l1": 51.65,
+                "max_internal_jump_time_sec": 9.0,
+                "scene_cuts_sec": [
+                  9.0
+                ]
+              },
+              "source": "probe_json"
+            },
+            "step_4_acoustic_speech_and_pacing": {
+              "status": "skipped",
+              "tight_speech_trim": true
+            },
+            "step_5_hybrid_bridge_and_fallback_resolution": {
+              "resolution": "source_bridge_fallback",
+              "resolved": false,
+              "plan_available": true,
+              "status": "planned",
+              "reason": "source extraction and media verification not run",
+              "video_from": {
+                "source_video": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\straw.berryjammin\\14_2026-10-19_DeqOJQTqU1S.mp4",
+                "source_span": [
+                  5.8,
+                  10.4
+                ]
+              },
+              "audio_from": "native Google Flow Farsi audio of clip_01.mp4",
+              "source_on_host": false
+            },
+            "step_6_mux_and_master_verification": {
+              "status": "not_run"
+            }
           }
         },
         {
@@ -1045,9 +1221,9 @@
               "KEYFRAME_DRIFT"
             ],
             "passed": false,
-            "suggested_visual_trim_in": 0.5,
-            "suggested_visual_trim_out": 10.0,
-            "suggested_visual_duration": 9.5,
+            "suggested_visual_trim_in": 0.0,
+            "suggested_visual_trim_out": 0.0,
+            "suggested_visual_duration": 0.0,
             "thresholds": {
               "keyframe": 32.0,
               "jump": 32.0,
@@ -1073,7 +1249,10 @@
           },
           "step_5_hybrid_bridge_and_fallback_resolution": {
             "resolution": "source_bridge_fallback",
-            "resolved": true,
+            "resolved": false,
+            "plan_available": true,
+            "status": "planned",
+            "reason": "source extraction and media verification not run",
             "video_from": {
               "source_video": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\straw.berryjammin\\14_2026-10-19_DeqOJQTqU1S.mp4",
               "source_span": [
@@ -1082,11 +1261,113 @@
               ]
             },
             "audio_from": "native Google Flow Farsi audio of clip_02.mp4",
-            "source_on_host": false,
-            "status": "pass"
+            "source_on_host": false
           },
           "step_6_mux_and_master_verification": {
             "status": "not_run"
+          },
+          "step_1_story_beat_and_character_lock": {
+            "story_beat": "Lemonella reveals pregnancy; plots with Banana on the yellow sports car",
+            "expected_speakers": [
+              "LEMON",
+              "BANANA"
+            ],
+            "cue_speakers": [
+              "BANANA",
+              "LEMON"
+            ],
+            "unexpected_speakers": [],
+            "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part1\\keyframes\\KF_02.jpg",
+            "source_span": [
+              10.4,
+              14.6
+            ],
+            "flags": [],
+            "status": "pass"
+          },
+          "step_2_keyframe_preflight": {
+            "status": "skipped_not_on_host",
+            "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part1\\keyframes\\KF_02.jpg"
+          },
+          "step_trace": {
+            "step_1_story_beat_and_character_lock": {
+              "story_beat": "Lemonella reveals pregnancy; plots with Banana on the yellow sports car",
+              "expected_speakers": [
+                "LEMON",
+                "BANANA"
+              ],
+              "cue_speakers": [
+                "BANANA",
+                "LEMON"
+              ],
+              "unexpected_speakers": [],
+              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part1\\keyframes\\KF_02.jpg",
+              "source_span": [
+                10.4,
+                14.6
+              ],
+              "flags": [],
+              "status": "pass"
+            },
+            "step_2_keyframe_preflight": {
+              "status": "skipped_not_on_host",
+              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part1\\keyframes\\KF_02.jpg"
+            },
+            "step_3_visual_continuity_audit": {
+              "status": "fail",
+              "clip_id": "clip_02",
+              "flags": [
+                "INTERNAL_SCENE_CUT"
+              ],
+              "warnings": [
+                "KEYFRAME_DRIFT"
+              ],
+              "passed": false,
+              "suggested_visual_trim_in": 0.0,
+              "suggested_visual_trim_out": 0.0,
+              "suggested_visual_duration": 0.0,
+              "thresholds": {
+                "keyframe": 32.0,
+                "jump": 32.0,
+                "contamination_margin": 5.0
+              },
+              "metrics": {
+                "l1_vs_keyframe_start": 9.55,
+                "l1_vs_keyframe_mean": 39.25,
+                "l1_vs_keyframe_end": 39.64,
+                "closest_other_keyframe": "clip_04",
+                "closest_other_keyframe_l1_start": 52.17,
+                "max_internal_jump_l1": 42.21,
+                "max_internal_jump_time_sec": 0.5,
+                "scene_cuts_sec": [
+                  0.5
+                ]
+              },
+              "source": "probe_json"
+            },
+            "step_4_acoustic_speech_and_pacing": {
+              "status": "skipped",
+              "tight_speech_trim": true
+            },
+            "step_5_hybrid_bridge_and_fallback_resolution": {
+              "resolution": "source_bridge_fallback",
+              "resolved": false,
+              "plan_available": true,
+              "status": "planned",
+              "reason": "source extraction and media verification not run",
+              "video_from": {
+                "source_video": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\straw.berryjammin\\14_2026-10-19_DeqOJQTqU1S.mp4",
+                "source_span": [
+                  10.4,
+                  14.6
+                ]
+              },
+              "audio_from": "native Google Flow Farsi audio of clip_02.mp4",
+              "source_on_host": false
+            },
+            "step_6_mux_and_master_verification": {
+              "status": "not_run"
+            }
           }
         },
         {
@@ -1126,7 +1407,10 @@
           },
           "step_5_hybrid_bridge_and_fallback_resolution": {
             "resolution": "source_bridge_fallback",
-            "resolved": true,
+            "resolved": false,
+            "plan_available": true,
+            "status": "planned",
+            "reason": "source extraction and media verification not run",
             "video_from": {
               "source_video": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\straw.berryjammin\\14_2026-10-19_DeqOJQTqU1S.mp4",
               "source_span": [
@@ -1135,11 +1419,105 @@
               ]
             },
             "audio_from": "native Google Flow Farsi audio of clip_03.mp4",
-            "source_on_host": false,
-            "status": "pass"
+            "source_on_host": false
           },
           "step_6_mux_and_master_verification": {
             "status": "not_run"
+          },
+          "step_1_story_beat_and_character_lock": {
+            "story_beat": "Duke reads the phone message 'Last night was wild' and suspects Lemonella",
+            "expected_speakers": [
+              "DUKE"
+            ],
+            "cue_speakers": [
+              "DUKE"
+            ],
+            "unexpected_speakers": [],
+            "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part1\\keyframes\\KF_03.jpg",
+            "source_span": [
+              14.6,
+              18.7
+            ],
+            "flags": [],
+            "status": "pass"
+          },
+          "step_2_keyframe_preflight": {
+            "status": "skipped_not_on_host",
+            "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part1\\keyframes\\KF_03.jpg"
+          },
+          "step_trace": {
+            "step_1_story_beat_and_character_lock": {
+              "story_beat": "Duke reads the phone message 'Last night was wild' and suspects Lemonella",
+              "expected_speakers": [
+                "DUKE"
+              ],
+              "cue_speakers": [
+                "DUKE"
+              ],
+              "unexpected_speakers": [],
+              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part1\\keyframes\\KF_03.jpg",
+              "source_span": [
+                14.6,
+                18.7
+              ],
+              "flags": [],
+              "status": "pass"
+            },
+            "step_2_keyframe_preflight": {
+              "status": "skipped_not_on_host",
+              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part1\\keyframes\\KF_03.jpg"
+            },
+            "step_3_visual_continuity_audit": {
+              "status": "fail",
+              "clip_id": "clip_03",
+              "flags": [
+                "KEYFRAME_MISMATCH"
+              ],
+              "warnings": [],
+              "passed": false,
+              "suggested_visual_trim_in": 0.0,
+              "suggested_visual_trim_out": 10.0,
+              "suggested_visual_duration": 10.0,
+              "thresholds": {
+                "keyframe": 32.0,
+                "jump": 32.0,
+                "contamination_margin": 5.0
+              },
+              "metrics": {
+                "l1_vs_keyframe_start": 59.1,
+                "l1_vs_keyframe_mean": 59.69,
+                "l1_vs_keyframe_end": 60.46,
+                "closest_other_keyframe": "clip_01",
+                "closest_other_keyframe_l1_start": 59.85,
+                "max_internal_jump_l1": 8.23,
+                "max_internal_jump_time_sec": 6.0,
+                "scene_cuts_sec": []
+              },
+              "source": "probe_json"
+            },
+            "step_4_acoustic_speech_and_pacing": {
+              "status": "skipped",
+              "tight_speech_trim": true
+            },
+            "step_5_hybrid_bridge_and_fallback_resolution": {
+              "resolution": "source_bridge_fallback",
+              "resolved": false,
+              "plan_available": true,
+              "status": "planned",
+              "reason": "source extraction and media verification not run",
+              "video_from": {
+                "source_video": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\straw.berryjammin\\14_2026-10-19_DeqOJQTqU1S.mp4",
+                "source_span": [
+                  14.6,
+                  18.7
+                ]
+              },
+              "audio_from": "native Google Flow Farsi audio of clip_03.mp4",
+              "source_on_host": false
+            },
+            "step_6_mux_and_master_verification": {
+              "status": "not_run"
+            }
           }
         },
         {
@@ -1178,10 +1556,94 @@
           "step_5_hybrid_bridge_and_fallback_resolution": {
             "resolution": "flow_clip",
             "resolved": true,
+            "plan_available": true,
             "status": "pass"
           },
           "step_6_mux_and_master_verification": {
             "status": "not_run"
+          },
+          "step_1_story_beat_and_character_lock": {
+            "story_beat": "Duke arrives with purple roses and drops them on seeing the kiss",
+            "expected_speakers": [
+              "DUKE"
+            ],
+            "cue_speakers": [
+              "DUKE"
+            ],
+            "unexpected_speakers": [],
+            "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part1\\keyframes\\KF_04.jpg",
+            "source_span": [
+              18.7,
+              28.7
+            ],
+            "flags": [],
+            "status": "pass"
+          },
+          "step_2_keyframe_preflight": {
+            "status": "skipped_not_on_host",
+            "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part1\\keyframes\\KF_04.jpg"
+          },
+          "step_trace": {
+            "step_1_story_beat_and_character_lock": {
+              "story_beat": "Duke arrives with purple roses and drops them on seeing the kiss",
+              "expected_speakers": [
+                "DUKE"
+              ],
+              "cue_speakers": [
+                "DUKE"
+              ],
+              "unexpected_speakers": [],
+              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part1\\keyframes\\KF_04.jpg",
+              "source_span": [
+                18.7,
+                28.7
+              ],
+              "flags": [],
+              "status": "pass"
+            },
+            "step_2_keyframe_preflight": {
+              "status": "skipped_not_on_host",
+              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part1\\keyframes\\KF_04.jpg"
+            },
+            "step_3_visual_continuity_audit": {
+              "status": "pass",
+              "clip_id": "clip_04",
+              "flags": [],
+              "warnings": [],
+              "passed": true,
+              "suggested_visual_trim_in": 0.0,
+              "suggested_visual_trim_out": 10.0,
+              "suggested_visual_duration": 10.0,
+              "thresholds": {
+                "keyframe": 32.0,
+                "jump": 32.0,
+                "contamination_margin": 5.0
+              },
+              "metrics": {
+                "l1_vs_keyframe_start": 11.04,
+                "l1_vs_keyframe_mean": 15.7,
+                "l1_vs_keyframe_end": 15.37,
+                "closest_other_keyframe": "clip_03",
+                "closest_other_keyframe_l1_start": 38.84,
+                "max_internal_jump_l1": 11.1,
+                "max_internal_jump_time_sec": 1.5,
+                "scene_cuts_sec": []
+              },
+              "source": "probe_json"
+            },
+            "step_4_acoustic_speech_and_pacing": {
+              "status": "skipped",
+              "tight_speech_trim": true
+            },
+            "step_5_hybrid_bridge_and_fallback_resolution": {
+              "resolution": "flow_clip",
+              "resolved": true,
+              "plan_available": true,
+              "status": "pass"
+            },
+            "step_6_mux_and_master_verification": {
+              "status": "not_run"
+            }
           }
         },
         {
@@ -1222,10 +1684,96 @@
           "step_5_hybrid_bridge_and_fallback_resolution": {
             "resolution": "flow_clip",
             "resolved": true,
+            "plan_available": true,
             "status": "pass"
           },
           "step_6_mux_and_master_verification": {
             "status": "not_run"
+          },
+          "step_1_story_beat_and_character_lock": {
+            "story_beat": "Banana gloats in the rain: the Duke's fortune is now his",
+            "expected_speakers": [
+              "BANANA"
+            ],
+            "cue_speakers": [
+              "BANANA"
+            ],
+            "unexpected_speakers": [],
+            "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part1\\keyframes\\KF_05.jpg",
+            "source_span": [
+              39.5,
+              47.9
+            ],
+            "flags": [],
+            "status": "pass"
+          },
+          "step_2_keyframe_preflight": {
+            "status": "skipped_not_on_host",
+            "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part1\\keyframes\\KF_05.jpg"
+          },
+          "step_trace": {
+            "step_1_story_beat_and_character_lock": {
+              "story_beat": "Banana gloats in the rain: the Duke's fortune is now his",
+              "expected_speakers": [
+                "BANANA"
+              ],
+              "cue_speakers": [
+                "BANANA"
+              ],
+              "unexpected_speakers": [],
+              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part1\\keyframes\\KF_05.jpg",
+              "source_span": [
+                39.5,
+                47.9
+              ],
+              "flags": [],
+              "status": "pass"
+            },
+            "step_2_keyframe_preflight": {
+              "status": "skipped_not_on_host",
+              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part1\\keyframes\\KF_05.jpg"
+            },
+            "step_3_visual_continuity_audit": {
+              "status": "pass",
+              "clip_id": "clip_05",
+              "flags": [],
+              "warnings": [
+                "KEYFRAME_DRIFT"
+              ],
+              "passed": true,
+              "suggested_visual_trim_in": 0.0,
+              "suggested_visual_trim_out": 10.0,
+              "suggested_visual_duration": 10.0,
+              "thresholds": {
+                "keyframe": 32.0,
+                "jump": 32.0,
+                "contamination_margin": 5.0
+              },
+              "metrics": {
+                "l1_vs_keyframe_start": 19.51,
+                "l1_vs_keyframe_mean": 40.74,
+                "l1_vs_keyframe_end": 41.33,
+                "closest_other_keyframe": "clip_06",
+                "closest_other_keyframe_l1_start": 54.1,
+                "max_internal_jump_l1": 30.61,
+                "max_internal_jump_time_sec": 0.5,
+                "scene_cuts_sec": []
+              },
+              "source": "probe_json"
+            },
+            "step_4_acoustic_speech_and_pacing": {
+              "status": "skipped",
+              "tight_speech_trim": true
+            },
+            "step_5_hybrid_bridge_and_fallback_resolution": {
+              "resolution": "flow_clip",
+              "resolved": true,
+              "plan_available": true,
+              "status": "pass"
+            },
+            "step_6_mux_and_master_verification": {
+              "status": "not_run"
+            }
           }
         },
         {
@@ -1265,7 +1813,10 @@
           },
           "step_5_hybrid_bridge_and_fallback_resolution": {
             "resolution": "source_bridge_fallback",
-            "resolved": true,
+            "resolved": false,
+            "plan_available": true,
+            "status": "planned",
+            "reason": "source extraction and media verification not run",
             "video_from": {
               "source_video": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\straw.berryjammin\\14_2026-10-19_DeqOJQTqU1S.mp4",
               "source_span": [
@@ -1274,11 +1825,105 @@
               ]
             },
             "audio_from": "native Google Flow Farsi audio of clip_06.mp4",
-            "source_on_host": false,
-            "status": "pass"
+            "source_on_host": false
           },
           "step_6_mux_and_master_verification": {
             "status": "not_run"
+          },
+          "step_1_story_beat_and_character_lock": {
+            "story_beat": "Duke watches the fountain kiss from the balcony at night and breaks down",
+            "expected_speakers": [
+              "DUKE"
+            ],
+            "cue_speakers": [
+              "DUKE"
+            ],
+            "unexpected_speakers": [],
+            "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part1\\keyframes\\KF_06.jpg",
+            "source_span": [
+              47.9,
+              57.9
+            ],
+            "flags": [],
+            "status": "pass"
+          },
+          "step_2_keyframe_preflight": {
+            "status": "skipped_not_on_host",
+            "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part1\\keyframes\\KF_06.jpg"
+          },
+          "step_trace": {
+            "step_1_story_beat_and_character_lock": {
+              "story_beat": "Duke watches the fountain kiss from the balcony at night and breaks down",
+              "expected_speakers": [
+                "DUKE"
+              ],
+              "cue_speakers": [
+                "DUKE"
+              ],
+              "unexpected_speakers": [],
+              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part1\\keyframes\\KF_06.jpg",
+              "source_span": [
+                47.9,
+                57.9
+              ],
+              "flags": [],
+              "status": "pass"
+            },
+            "step_2_keyframe_preflight": {
+              "status": "skipped_not_on_host",
+              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part1\\keyframes\\KF_06.jpg"
+            },
+            "step_3_visual_continuity_audit": {
+              "status": "fail",
+              "clip_id": "clip_06",
+              "flags": [
+                "KEYFRAME_MISMATCH"
+              ],
+              "warnings": [],
+              "passed": false,
+              "suggested_visual_trim_in": 0.0,
+              "suggested_visual_trim_out": 10.0,
+              "suggested_visual_duration": 10.0,
+              "thresholds": {
+                "keyframe": 32.0,
+                "jump": 32.0,
+                "contamination_margin": 5.0
+              },
+              "metrics": {
+                "l1_vs_keyframe_start": 48.89,
+                "l1_vs_keyframe_mean": 49.34,
+                "l1_vs_keyframe_end": 48.92,
+                "closest_other_keyframe": "clip_03",
+                "closest_other_keyframe_l1_start": 54.86,
+                "max_internal_jump_l1": 10.63,
+                "max_internal_jump_time_sec": 8.0,
+                "scene_cuts_sec": []
+              },
+              "source": "probe_json"
+            },
+            "step_4_acoustic_speech_and_pacing": {
+              "status": "skipped",
+              "tight_speech_trim": true
+            },
+            "step_5_hybrid_bridge_and_fallback_resolution": {
+              "resolution": "source_bridge_fallback",
+              "resolved": false,
+              "plan_available": true,
+              "status": "planned",
+              "reason": "source extraction and media verification not run",
+              "video_from": {
+                "source_video": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\straw.berryjammin\\14_2026-10-19_DeqOJQTqU1S.mp4",
+                "source_span": [
+                  47.9,
+                  57.9
+                ]
+              },
+              "audio_from": "native Google Flow Farsi audio of clip_06.mp4",
+              "source_on_host": false
+            },
+            "step_6_mux_and_master_verification": {
+              "status": "not_run"
+            }
           }
         }
       ],
@@ -1288,7 +1933,7 @@
       "episode_id": "FruitsOfPower_Part2",
       "title_fa": "قسمت دوم: راز پاکت آزمایش دی‌ان‌ای",
       "mode": "probe_json",
-      "pipeline_version": "1.2.0",
+      "pipeline_version": "1.2.1",
       "source_video": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\straw.berryjammin\\13_2026-10-19_Der6ej5KRCT.mp4",
       "fallback_to_source_on_visual_fail": true,
       "tight_speech_trim": true,
@@ -1391,7 +2036,7 @@
               "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part2\\keyframes\\KF_06.jpg",
               "source_span": [
                 72.6,
-                82.6
+                74.0
               ],
               "flags": []
             }
@@ -1666,7 +2311,7 @@
           }
         },
         "step_5_hybrid_bridge_and_fallback_resolution": {
-          "status": "pass",
+          "status": "planned",
           "fallback_clips": [
             "clip_04",
             "clip_05"
@@ -1675,21 +2320,27 @@
             "clip_01": {
               "resolution": "flow_clip",
               "resolved": true,
+              "plan_available": true,
               "status": "pass"
             },
             "clip_02": {
               "resolution": "flow_clip",
               "resolved": true,
+              "plan_available": true,
               "status": "pass"
             },
             "clip_03": {
               "resolution": "flow_clip",
               "resolved": true,
+              "plan_available": true,
               "status": "pass"
             },
             "clip_04": {
               "resolution": "source_bridge_fallback",
-              "resolved": true,
+              "resolved": false,
+              "plan_available": true,
+              "status": "planned",
+              "reason": "source extraction and media verification not run",
               "video_from": {
                 "source_video": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\straw.berryjammin\\13_2026-10-19_Der6ej5KRCT.mp4",
                 "source_span": [
@@ -1698,12 +2349,14 @@
                 ]
               },
               "audio_from": "native Google Flow Farsi audio of clip_04.mp4",
-              "source_on_host": false,
-              "status": "pass"
+              "source_on_host": false
             },
             "clip_05": {
               "resolution": "source_bridge_fallback",
-              "resolved": true,
+              "resolved": false,
+              "plan_available": true,
+              "status": "planned",
+              "reason": "source extraction and media verification not run",
               "video_from": {
                 "source_video": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\straw.berryjammin\\13_2026-10-19_Der6ej5KRCT.mp4",
                 "source_span": [
@@ -1712,12 +2365,12 @@
                 ]
               },
               "audio_from": "native Google Flow Farsi audio of clip_05.mp4",
-              "source_on_host": false,
-              "status": "pass"
+              "source_on_host": false
             },
             "clip_06": {
               "resolution": "flow_clip",
               "resolved": true,
+              "plan_available": true,
               "status": "pass"
             }
           }
@@ -1725,13 +2378,16 @@
         "step_6_mux_and_master_verification": {
           "status": "not_run",
           "visual_continuity_passed": false,
-          "visual_continuity_resolved": true
+          "visual_continuity_resolved": false
         }
       },
       "visual_continuity_passed": false,
-      "visual_continuity_resolved": true,
+      "visual_continuity_resolved": false,
       "blocking_steps": [],
-      "all_passed": true,
+      "audit_passed": true,
+      "all_passed": false,
+      "verification_scope": "diagnostic_only",
+      "publication_status": "pending_human_review",
       "probe_part": "part2",
       "clips": [
         {
@@ -1770,10 +2426,94 @@
           "step_5_hybrid_bridge_and_fallback_resolution": {
             "resolution": "flow_clip",
             "resolved": true,
+            "plan_available": true,
             "status": "pass"
           },
           "step_6_mux_and_master_verification": {
             "status": "not_run"
+          },
+          "step_1_story_beat_and_character_lock": {
+            "story_beat": "Banana celebrates the night out with the Duke's money",
+            "expected_speakers": [
+              "BANANA"
+            ],
+            "cue_speakers": [
+              "BANANA"
+            ],
+            "unexpected_speakers": [],
+            "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part2\\keyframes\\KF_01.jpg",
+            "source_span": [
+              7.0,
+              17.0
+            ],
+            "flags": [],
+            "status": "pass"
+          },
+          "step_2_keyframe_preflight": {
+            "status": "skipped_not_on_host",
+            "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part2\\keyframes\\KF_01.jpg"
+          },
+          "step_trace": {
+            "step_1_story_beat_and_character_lock": {
+              "story_beat": "Banana celebrates the night out with the Duke's money",
+              "expected_speakers": [
+                "BANANA"
+              ],
+              "cue_speakers": [
+                "BANANA"
+              ],
+              "unexpected_speakers": [],
+              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part2\\keyframes\\KF_01.jpg",
+              "source_span": [
+                7.0,
+                17.0
+              ],
+              "flags": [],
+              "status": "pass"
+            },
+            "step_2_keyframe_preflight": {
+              "status": "skipped_not_on_host",
+              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part2\\keyframes\\KF_01.jpg"
+            },
+            "step_3_visual_continuity_audit": {
+              "status": "pass",
+              "clip_id": "clip_01",
+              "flags": [],
+              "warnings": [],
+              "passed": true,
+              "suggested_visual_trim_in": 0.0,
+              "suggested_visual_trim_out": 10.0,
+              "suggested_visual_duration": 10.0,
+              "thresholds": {
+                "keyframe": 32.0,
+                "jump": 32.0,
+                "contamination_margin": 5.0
+              },
+              "metrics": {
+                "l1_vs_keyframe_start": 16.14,
+                "l1_vs_keyframe_mean": 27.32,
+                "l1_vs_keyframe_end": 23.08,
+                "closest_other_keyframe": "clip_03",
+                "closest_other_keyframe_l1_start": 51.24,
+                "max_internal_jump_l1": 26.45,
+                "max_internal_jump_time_sec": 9.0,
+                "scene_cuts_sec": []
+              },
+              "source": "probe_json"
+            },
+            "step_4_acoustic_speech_and_pacing": {
+              "status": "skipped",
+              "tight_speech_trim": true
+            },
+            "step_5_hybrid_bridge_and_fallback_resolution": {
+              "resolution": "flow_clip",
+              "resolved": true,
+              "plan_available": true,
+              "status": "pass"
+            },
+            "step_6_mux_and_master_verification": {
+              "status": "not_run"
+            }
           }
         },
         {
@@ -1812,10 +2552,94 @@
           "step_5_hybrid_bridge_and_fallback_resolution": {
             "resolution": "flow_clip",
             "resolved": true,
+            "plan_available": true,
             "status": "pass"
           },
           "step_6_mux_and_master_verification": {
             "status": "not_run"
+          },
+          "step_1_story_beat_and_character_lock": {
+            "story_beat": "Duke alone in the mansion, burning in loneliness",
+            "expected_speakers": [
+              "DUKE"
+            ],
+            "cue_speakers": [
+              "DUKE"
+            ],
+            "unexpected_speakers": [],
+            "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part2\\keyframes\\KF_02.jpg",
+            "source_span": [
+              21.1,
+              30.4
+            ],
+            "flags": [],
+            "status": "pass"
+          },
+          "step_2_keyframe_preflight": {
+            "status": "skipped_not_on_host",
+            "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part2\\keyframes\\KF_02.jpg"
+          },
+          "step_trace": {
+            "step_1_story_beat_and_character_lock": {
+              "story_beat": "Duke alone in the mansion, burning in loneliness",
+              "expected_speakers": [
+                "DUKE"
+              ],
+              "cue_speakers": [
+                "DUKE"
+              ],
+              "unexpected_speakers": [],
+              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part2\\keyframes\\KF_02.jpg",
+              "source_span": [
+                21.1,
+                30.4
+              ],
+              "flags": [],
+              "status": "pass"
+            },
+            "step_2_keyframe_preflight": {
+              "status": "skipped_not_on_host",
+              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part2\\keyframes\\KF_02.jpg"
+            },
+            "step_3_visual_continuity_audit": {
+              "status": "pass",
+              "clip_id": "clip_02",
+              "flags": [],
+              "warnings": [],
+              "passed": true,
+              "suggested_visual_trim_in": 0.0,
+              "suggested_visual_trim_out": 10.0,
+              "suggested_visual_duration": 10.0,
+              "thresholds": {
+                "keyframe": 32.0,
+                "jump": 32.0,
+                "contamination_margin": 5.0
+              },
+              "metrics": {
+                "l1_vs_keyframe_start": 5.28,
+                "l1_vs_keyframe_mean": 8.74,
+                "l1_vs_keyframe_end": 11.07,
+                "closest_other_keyframe": "clip_03",
+                "closest_other_keyframe_l1_start": 30.2,
+                "max_internal_jump_l1": 8.59,
+                "max_internal_jump_time_sec": 5.5,
+                "scene_cuts_sec": []
+              },
+              "source": "probe_json"
+            },
+            "step_4_acoustic_speech_and_pacing": {
+              "status": "skipped",
+              "tight_speech_trim": true
+            },
+            "step_5_hybrid_bridge_and_fallback_resolution": {
+              "resolution": "flow_clip",
+              "resolved": true,
+              "plan_available": true,
+              "status": "pass"
+            },
+            "step_6_mux_and_master_verification": {
+              "status": "not_run"
+            }
           }
         },
         {
@@ -1854,10 +2678,94 @@
           "step_5_hybrid_bridge_and_fallback_resolution": {
             "resolution": "flow_clip",
             "resolved": true,
+            "plan_available": true,
             "status": "pass"
           },
           "step_6_mux_and_master_verification": {
             "status": "not_run"
+          },
+          "step_1_story_beat_and_character_lock": {
+            "story_beat": "Countess Strawberry comforts Duke (the photo that sparks jealousy)",
+            "expected_speakers": [
+              "STRAW"
+            ],
+            "cue_speakers": [
+              "STRAW"
+            ],
+            "unexpected_speakers": [],
+            "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part2\\keyframes\\KF_03.jpg",
+            "source_span": [
+              30.4,
+              35.1
+            ],
+            "flags": [],
+            "status": "pass"
+          },
+          "step_2_keyframe_preflight": {
+            "status": "skipped_not_on_host",
+            "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part2\\keyframes\\KF_03.jpg"
+          },
+          "step_trace": {
+            "step_1_story_beat_and_character_lock": {
+              "story_beat": "Countess Strawberry comforts Duke (the photo that sparks jealousy)",
+              "expected_speakers": [
+                "STRAW"
+              ],
+              "cue_speakers": [
+                "STRAW"
+              ],
+              "unexpected_speakers": [],
+              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part2\\keyframes\\KF_03.jpg",
+              "source_span": [
+                30.4,
+                35.1
+              ],
+              "flags": [],
+              "status": "pass"
+            },
+            "step_2_keyframe_preflight": {
+              "status": "skipped_not_on_host",
+              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part2\\keyframes\\KF_03.jpg"
+            },
+            "step_3_visual_continuity_audit": {
+              "status": "pass",
+              "clip_id": "clip_03",
+              "flags": [],
+              "warnings": [],
+              "passed": true,
+              "suggested_visual_trim_in": 0.0,
+              "suggested_visual_trim_out": 10.0,
+              "suggested_visual_duration": 10.0,
+              "thresholds": {
+                "keyframe": 32.0,
+                "jump": 32.0,
+                "contamination_margin": 5.0
+              },
+              "metrics": {
+                "l1_vs_keyframe_start": 5.79,
+                "l1_vs_keyframe_mean": 21.44,
+                "l1_vs_keyframe_end": 22.69,
+                "closest_other_keyframe": "clip_02",
+                "closest_other_keyframe_l1_start": 30.13,
+                "max_internal_jump_l1": 21.67,
+                "max_internal_jump_time_sec": 1.0,
+                "scene_cuts_sec": []
+              },
+              "source": "probe_json"
+            },
+            "step_4_acoustic_speech_and_pacing": {
+              "status": "skipped",
+              "tight_speech_trim": true
+            },
+            "step_5_hybrid_bridge_and_fallback_resolution": {
+              "resolution": "flow_clip",
+              "resolved": true,
+              "plan_available": true,
+              "status": "pass"
+            },
+            "step_6_mux_and_master_verification": {
+              "status": "not_run"
+            }
           }
         },
         {
@@ -1897,7 +2805,10 @@
           },
           "step_5_hybrid_bridge_and_fallback_resolution": {
             "resolution": "source_bridge_fallback",
-            "resolved": true,
+            "resolved": false,
+            "plan_available": true,
+            "status": "planned",
+            "reason": "source extraction and media verification not run",
             "video_from": {
               "source_video": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\straw.berryjammin\\13_2026-10-19_Der6ej5KRCT.mp4",
               "source_span": [
@@ -1906,11 +2817,105 @@
               ]
             },
             "audio_from": "native Google Flow Farsi audio of clip_04.mp4",
-            "source_on_host": false,
-            "status": "pass"
+            "source_on_host": false
           },
           "step_6_mux_and_master_verification": {
             "status": "not_run"
+          },
+          "step_1_story_beat_and_character_lock": {
+            "story_beat": "Lemonella sees Duke with Countess Strawberry and burns with jealousy",
+            "expected_speakers": [
+              "LEMON"
+            ],
+            "cue_speakers": [
+              "LEMON"
+            ],
+            "unexpected_speakers": [],
+            "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part2\\keyframes\\KF_04.jpg",
+            "source_span": [
+              35.1,
+              45.1
+            ],
+            "flags": [],
+            "status": "pass"
+          },
+          "step_2_keyframe_preflight": {
+            "status": "skipped_not_on_host",
+            "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part2\\keyframes\\KF_04.jpg"
+          },
+          "step_trace": {
+            "step_1_story_beat_and_character_lock": {
+              "story_beat": "Lemonella sees Duke with Countess Strawberry and burns with jealousy",
+              "expected_speakers": [
+                "LEMON"
+              ],
+              "cue_speakers": [
+                "LEMON"
+              ],
+              "unexpected_speakers": [],
+              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part2\\keyframes\\KF_04.jpg",
+              "source_span": [
+                35.1,
+                45.1
+              ],
+              "flags": [],
+              "status": "pass"
+            },
+            "step_2_keyframe_preflight": {
+              "status": "skipped_not_on_host",
+              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part2\\keyframes\\KF_04.jpg"
+            },
+            "step_3_visual_continuity_audit": {
+              "status": "fail",
+              "clip_id": "clip_04",
+              "flags": [
+                "KEYFRAME_MISMATCH"
+              ],
+              "warnings": [],
+              "passed": false,
+              "suggested_visual_trim_in": 0.0,
+              "suggested_visual_trim_out": 10.0,
+              "suggested_visual_duration": 10.0,
+              "thresholds": {
+                "keyframe": 32.0,
+                "jump": 32.0,
+                "contamination_margin": 5.0
+              },
+              "metrics": {
+                "l1_vs_keyframe_start": 60.2,
+                "l1_vs_keyframe_mean": 61.81,
+                "l1_vs_keyframe_end": 61.46,
+                "closest_other_keyframe": "clip_01",
+                "closest_other_keyframe_l1_start": 65.88,
+                "max_internal_jump_l1": 17.26,
+                "max_internal_jump_time_sec": 3.5,
+                "scene_cuts_sec": []
+              },
+              "source": "probe_json"
+            },
+            "step_4_acoustic_speech_and_pacing": {
+              "status": "skipped",
+              "tight_speech_trim": true
+            },
+            "step_5_hybrid_bridge_and_fallback_resolution": {
+              "resolution": "source_bridge_fallback",
+              "resolved": false,
+              "plan_available": true,
+              "status": "planned",
+              "reason": "source extraction and media verification not run",
+              "video_from": {
+                "source_video": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\straw.berryjammin\\13_2026-10-19_Der6ej5KRCT.mp4",
+                "source_span": [
+                  35.1,
+                  45.1
+                ]
+              },
+              "audio_from": "native Google Flow Farsi audio of clip_04.mp4",
+              "source_on_host": false
+            },
+            "step_6_mux_and_master_verification": {
+              "status": "not_run"
+            }
           }
         },
         {
@@ -1954,7 +2959,10 @@
           },
           "step_5_hybrid_bridge_and_fallback_resolution": {
             "resolution": "source_bridge_fallback",
-            "resolved": true,
+            "resolved": false,
+            "plan_available": true,
+            "status": "planned",
+            "reason": "source extraction and media verification not run",
             "video_from": {
               "source_video": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\straw.berryjammin\\13_2026-10-19_Der6ej5KRCT.mp4",
               "source_span": [
@@ -1963,11 +2971,113 @@
               ]
             },
             "audio_from": "native Google Flow Farsi audio of clip_05.mp4",
-            "source_on_host": false,
-            "status": "pass"
+            "source_on_host": false
           },
           "step_6_mux_and_master_verification": {
             "status": "not_run"
+          },
+          "step_1_story_beat_and_character_lock": {
+            "story_beat": "The DNA test envelope is opened: Banana asks what it says",
+            "expected_speakers": [
+              "BANANA",
+              "LEMON"
+            ],
+            "cue_speakers": [
+              "BANANA",
+              "LEMON"
+            ],
+            "unexpected_speakers": [],
+            "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part2\\keyframes\\KF_05.jpg",
+            "source_span": [
+              58.5,
+              68.5
+            ],
+            "flags": [],
+            "status": "pass"
+          },
+          "step_2_keyframe_preflight": {
+            "status": "skipped_not_on_host",
+            "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part2\\keyframes\\KF_05.jpg"
+          },
+          "step_trace": {
+            "step_1_story_beat_and_character_lock": {
+              "story_beat": "The DNA test envelope is opened: Banana asks what it says",
+              "expected_speakers": [
+                "BANANA",
+                "LEMON"
+              ],
+              "cue_speakers": [
+                "BANANA",
+                "LEMON"
+              ],
+              "unexpected_speakers": [],
+              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part2\\keyframes\\KF_05.jpg",
+              "source_span": [
+                58.5,
+                68.5
+              ],
+              "flags": [],
+              "status": "pass"
+            },
+            "step_2_keyframe_preflight": {
+              "status": "skipped_not_on_host",
+              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part2\\keyframes\\KF_05.jpg"
+            },
+            "step_3_visual_continuity_audit": {
+              "status": "fail",
+              "clip_id": "clip_05",
+              "flags": [
+                "KEYFRAME_MISMATCH",
+                "MULTI_INGREDIENT_CONTAMINATION",
+                "INTERNAL_SCENE_CUT"
+              ],
+              "warnings": [],
+              "passed": false,
+              "suggested_visual_trim_in": 0.5,
+              "suggested_visual_trim_out": 10.0,
+              "suggested_visual_duration": 9.5,
+              "thresholds": {
+                "keyframe": 32.0,
+                "jump": 32.0,
+                "contamination_margin": 5.0
+              },
+              "metrics": {
+                "l1_vs_keyframe_start": 67.86,
+                "l1_vs_keyframe_mean": 49.77,
+                "l1_vs_keyframe_end": 49.91,
+                "closest_other_keyframe": "clip_06",
+                "closest_other_keyframe_l1_start": 12.03,
+                "max_internal_jump_l1": 62.74,
+                "max_internal_jump_time_sec": 0.5,
+                "scene_cuts_sec": [
+                  0.5
+                ]
+              },
+              "source": "probe_json"
+            },
+            "step_4_acoustic_speech_and_pacing": {
+              "status": "skipped",
+              "tight_speech_trim": true
+            },
+            "step_5_hybrid_bridge_and_fallback_resolution": {
+              "resolution": "source_bridge_fallback",
+              "resolved": false,
+              "plan_available": true,
+              "status": "planned",
+              "reason": "source extraction and media verification not run",
+              "video_from": {
+                "source_video": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\straw.berryjammin\\13_2026-10-19_Der6ej5KRCT.mp4",
+                "source_span": [
+                  58.5,
+                  68.5
+                ]
+              },
+              "audio_from": "native Google Flow Farsi audio of clip_05.mp4",
+              "source_on_host": false
+            },
+            "step_6_mux_and_master_verification": {
+              "status": "not_run"
+            }
           }
         },
         {
@@ -2006,10 +3116,94 @@
           "step_5_hybrid_bridge_and_fallback_resolution": {
             "resolution": "flow_clip",
             "resolved": true,
+            "plan_available": true,
             "status": "pass"
           },
           "step_6_mux_and_master_verification": {
             "status": "not_run"
+          },
+          "step_1_story_beat_and_character_lock": {
+            "story_beat": "Lemonella shocked by the DNA result",
+            "expected_speakers": [
+              "LEMON"
+            ],
+            "cue_speakers": [
+              "LEMON"
+            ],
+            "unexpected_speakers": [],
+            "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part2\\keyframes\\KF_06.jpg",
+            "source_span": [
+              72.6,
+              74.0
+            ],
+            "flags": [],
+            "status": "pass"
+          },
+          "step_2_keyframe_preflight": {
+            "status": "skipped_not_on_host",
+            "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part2\\keyframes\\KF_06.jpg"
+          },
+          "step_trace": {
+            "step_1_story_beat_and_character_lock": {
+              "story_beat": "Lemonella shocked by the DNA result",
+              "expected_speakers": [
+                "LEMON"
+              ],
+              "cue_speakers": [
+                "LEMON"
+              ],
+              "unexpected_speakers": [],
+              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part2\\keyframes\\KF_06.jpg",
+              "source_span": [
+                72.6,
+                74.0
+              ],
+              "flags": [],
+              "status": "pass"
+            },
+            "step_2_keyframe_preflight": {
+              "status": "skipped_not_on_host",
+              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part2\\keyframes\\KF_06.jpg"
+            },
+            "step_3_visual_continuity_audit": {
+              "status": "pass",
+              "clip_id": "clip_06",
+              "flags": [],
+              "warnings": [],
+              "passed": true,
+              "suggested_visual_trim_in": 0.0,
+              "suggested_visual_trim_out": 10.0,
+              "suggested_visual_duration": 10.0,
+              "thresholds": {
+                "keyframe": 32.0,
+                "jump": 32.0,
+                "contamination_margin": 5.0
+              },
+              "metrics": {
+                "l1_vs_keyframe_start": 9.76,
+                "l1_vs_keyframe_mean": 22.91,
+                "l1_vs_keyframe_end": 29.58,
+                "closest_other_keyframe": "clip_03",
+                "closest_other_keyframe_l1_start": 53.09,
+                "max_internal_jump_l1": 19.25,
+                "max_internal_jump_time_sec": 5.5,
+                "scene_cuts_sec": []
+              },
+              "source": "probe_json"
+            },
+            "step_4_acoustic_speech_and_pacing": {
+              "status": "skipped",
+              "tight_speech_trim": true
+            },
+            "step_5_hybrid_bridge_and_fallback_resolution": {
+              "resolution": "flow_clip",
+              "resolved": true,
+              "plan_available": true,
+              "status": "pass"
+            },
+            "step_6_mux_and_master_verification": {
+              "status": "not_run"
+            }
           }
         }
       ],
@@ -2019,7 +3213,7 @@
       "episode_id": "FruitsOfPower_Part3",
       "title_fa": "قسمت سوم: سایه انجیر سیاه",
       "mode": "probe_json",
-      "pipeline_version": "1.2.0",
+      "pipeline_version": "1.2.1",
       "source_video": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\straw.berryjammin\\12_2026-10-19_DesSYDvhdpd.mp4",
       "fallback_to_source_on_visual_fail": true,
       "tight_speech_trim": true,
@@ -2122,7 +3316,7 @@
               "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part3\\keyframes\\KF_06.jpg",
               "source_span": [
                 56.7,
-                66.7
+                60.5
               ],
               "flags": []
             }
@@ -2392,7 +3586,7 @@
           }
         },
         "step_5_hybrid_bridge_and_fallback_resolution": {
-          "status": "pass",
+          "status": "planned",
           "fallback_clips": [
             "clip_04"
           ],
@@ -2400,21 +3594,27 @@
             "clip_01": {
               "resolution": "flow_clip",
               "resolved": true,
+              "plan_available": true,
               "status": "pass"
             },
             "clip_02": {
               "resolution": "flow_clip",
               "resolved": true,
+              "plan_available": true,
               "status": "pass"
             },
             "clip_03": {
               "resolution": "flow_clip",
               "resolved": true,
+              "plan_available": true,
               "status": "pass"
             },
             "clip_04": {
               "resolution": "source_bridge_fallback",
-              "resolved": true,
+              "resolved": false,
+              "plan_available": true,
+              "status": "planned",
+              "reason": "source extraction and media verification not run",
               "video_from": {
                 "source_video": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\straw.berryjammin\\12_2026-10-19_DesSYDvhdpd.mp4",
                 "source_span": [
@@ -2423,17 +3623,18 @@
                 ]
               },
               "audio_from": "native Google Flow Farsi audio of clip_04.mp4",
-              "source_on_host": false,
-              "status": "pass"
+              "source_on_host": false
             },
             "clip_05": {
               "resolution": "flow_clip",
               "resolved": true,
+              "plan_available": true,
               "status": "pass"
             },
             "clip_06": {
               "resolution": "flow_clip",
               "resolved": true,
+              "plan_available": true,
               "status": "pass"
             }
           }
@@ -2441,13 +3642,16 @@
         "step_6_mux_and_master_verification": {
           "status": "not_run",
           "visual_continuity_passed": false,
-          "visual_continuity_resolved": true
+          "visual_continuity_resolved": false
         }
       },
       "visual_continuity_passed": false,
-      "visual_continuity_resolved": true,
+      "visual_continuity_resolved": false,
       "blocking_steps": [],
-      "all_passed": true,
+      "audit_passed": true,
+      "all_passed": false,
+      "verification_scope": "diagnostic_only",
+      "publication_status": "pending_human_review",
       "probe_part": "part3",
       "clips": [
         {
@@ -2486,10 +3690,94 @@
           "step_5_hybrid_bridge_and_fallback_resolution": {
             "resolution": "flow_clip",
             "resolved": true,
+            "plan_available": true,
             "status": "pass"
           },
           "step_6_mux_and_master_verification": {
             "status": "not_run"
+          },
+          "step_1_story_beat_and_character_lock": {
+            "story_beat": "Lemonella: the baby is a boy; wishes the truth were known",
+            "expected_speakers": [
+              "LEMON"
+            ],
+            "cue_speakers": [
+              "LEMON"
+            ],
+            "unexpected_speakers": [],
+            "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part3\\keyframes\\KF_01.jpg",
+            "source_span": [
+              5.9,
+              15.9
+            ],
+            "flags": [],
+            "status": "pass"
+          },
+          "step_2_keyframe_preflight": {
+            "status": "skipped_not_on_host",
+            "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part3\\keyframes\\KF_01.jpg"
+          },
+          "step_trace": {
+            "step_1_story_beat_and_character_lock": {
+              "story_beat": "Lemonella: the baby is a boy; wishes the truth were known",
+              "expected_speakers": [
+                "LEMON"
+              ],
+              "cue_speakers": [
+                "LEMON"
+              ],
+              "unexpected_speakers": [],
+              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part3\\keyframes\\KF_01.jpg",
+              "source_span": [
+                5.9,
+                15.9
+              ],
+              "flags": [],
+              "status": "pass"
+            },
+            "step_2_keyframe_preflight": {
+              "status": "skipped_not_on_host",
+              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part3\\keyframes\\KF_01.jpg"
+            },
+            "step_3_visual_continuity_audit": {
+              "status": "pass",
+              "clip_id": "clip_01",
+              "flags": [],
+              "warnings": [],
+              "passed": true,
+              "suggested_visual_trim_in": 0.0,
+              "suggested_visual_trim_out": 10.0,
+              "suggested_visual_duration": 10.0,
+              "thresholds": {
+                "keyframe": 32.0,
+                "jump": 32.0,
+                "contamination_margin": 5.0
+              },
+              "metrics": {
+                "l1_vs_keyframe_start": 5.49,
+                "l1_vs_keyframe_mean": 17.97,
+                "l1_vs_keyframe_end": 19.89,
+                "closest_other_keyframe": "clip_05",
+                "closest_other_keyframe_l1_start": 51.35,
+                "max_internal_jump_l1": 13.41,
+                "max_internal_jump_time_sec": 1.0,
+                "scene_cuts_sec": []
+              },
+              "source": "probe_json"
+            },
+            "step_4_acoustic_speech_and_pacing": {
+              "status": "skipped",
+              "tight_speech_trim": true
+            },
+            "step_5_hybrid_bridge_and_fallback_resolution": {
+              "resolution": "flow_clip",
+              "resolved": true,
+              "plan_available": true,
+              "status": "pass"
+            },
+            "step_6_mux_and_master_verification": {
+              "status": "not_run"
+            }
           }
         },
         {
@@ -2528,10 +3816,98 @@
           "step_5_hybrid_bridge_and_fallback_resolution": {
             "resolution": "flow_clip",
             "resolved": true,
+            "plan_available": true,
             "status": "pass"
           },
           "step_6_mux_and_master_verification": {
             "status": "not_run"
+          },
+          "step_1_story_beat_and_character_lock": {
+            "story_beat": "Lemonella confronts Banana with the DNA proof; Banana laughs",
+            "expected_speakers": [
+              "LEMON",
+              "BANANA"
+            ],
+            "cue_speakers": [
+              "BANANA",
+              "LEMON"
+            ],
+            "unexpected_speakers": [],
+            "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part3\\keyframes\\KF_02.jpg",
+            "source_span": [
+              17.6,
+              26.8
+            ],
+            "flags": [],
+            "status": "pass"
+          },
+          "step_2_keyframe_preflight": {
+            "status": "skipped_not_on_host",
+            "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part3\\keyframes\\KF_02.jpg"
+          },
+          "step_trace": {
+            "step_1_story_beat_and_character_lock": {
+              "story_beat": "Lemonella confronts Banana with the DNA proof; Banana laughs",
+              "expected_speakers": [
+                "LEMON",
+                "BANANA"
+              ],
+              "cue_speakers": [
+                "BANANA",
+                "LEMON"
+              ],
+              "unexpected_speakers": [],
+              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part3\\keyframes\\KF_02.jpg",
+              "source_span": [
+                17.6,
+                26.8
+              ],
+              "flags": [],
+              "status": "pass"
+            },
+            "step_2_keyframe_preflight": {
+              "status": "skipped_not_on_host",
+              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part3\\keyframes\\KF_02.jpg"
+            },
+            "step_3_visual_continuity_audit": {
+              "status": "pass",
+              "clip_id": "clip_02",
+              "flags": [],
+              "warnings": [],
+              "passed": true,
+              "suggested_visual_trim_in": 0.0,
+              "suggested_visual_trim_out": 10.0,
+              "suggested_visual_duration": 10.0,
+              "thresholds": {
+                "keyframe": 32.0,
+                "jump": 32.0,
+                "contamination_margin": 5.0
+              },
+              "metrics": {
+                "l1_vs_keyframe_start": 15.25,
+                "l1_vs_keyframe_mean": 29.23,
+                "l1_vs_keyframe_end": 30.07,
+                "closest_other_keyframe": "clip_06",
+                "closest_other_keyframe_l1_start": 39.67,
+                "max_internal_jump_l1": 17.04,
+                "max_internal_jump_time_sec": 0.5,
+                "scene_cuts_sec": []
+              },
+              "source": "probe_json"
+            },
+            "step_4_acoustic_speech_and_pacing": {
+              "status": "skipped",
+              "tight_speech_trim": true
+            },
+            "step_5_hybrid_bridge_and_fallback_resolution": {
+              "resolution": "flow_clip",
+              "resolved": true,
+              "plan_available": true,
+              "status": "pass"
+            },
+            "step_6_mux_and_master_verification": {
+              "status": "not_run"
+            }
           }
         },
         {
@@ -2570,10 +3946,94 @@
           "step_5_hybrid_bridge_and_fallback_resolution": {
             "resolution": "flow_clip",
             "resolved": true,
+            "plan_available": true,
             "status": "pass"
           },
           "step_6_mux_and_master_verification": {
             "status": "not_run"
+          },
+          "step_1_story_beat_and_character_lock": {
+            "story_beat": "Duke shows Lemonella the gold nursery plan for the heir",
+            "expected_speakers": [
+              "DUKE"
+            ],
+            "cue_speakers": [
+              "DUKE"
+            ],
+            "unexpected_speakers": [],
+            "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part3\\keyframes\\KF_03.jpg",
+            "source_span": [
+              26.8,
+              33.3
+            ],
+            "flags": [],
+            "status": "pass"
+          },
+          "step_2_keyframe_preflight": {
+            "status": "skipped_not_on_host",
+            "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part3\\keyframes\\KF_03.jpg"
+          },
+          "step_trace": {
+            "step_1_story_beat_and_character_lock": {
+              "story_beat": "Duke shows Lemonella the gold nursery plan for the heir",
+              "expected_speakers": [
+                "DUKE"
+              ],
+              "cue_speakers": [
+                "DUKE"
+              ],
+              "unexpected_speakers": [],
+              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part3\\keyframes\\KF_03.jpg",
+              "source_span": [
+                26.8,
+                33.3
+              ],
+              "flags": [],
+              "status": "pass"
+            },
+            "step_2_keyframe_preflight": {
+              "status": "skipped_not_on_host",
+              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part3\\keyframes\\KF_03.jpg"
+            },
+            "step_3_visual_continuity_audit": {
+              "status": "pass",
+              "clip_id": "clip_03",
+              "flags": [],
+              "warnings": [],
+              "passed": true,
+              "suggested_visual_trim_in": 0.0,
+              "suggested_visual_trim_out": 10.0,
+              "suggested_visual_duration": 10.0,
+              "thresholds": {
+                "keyframe": 32.0,
+                "jump": 32.0,
+                "contamination_margin": 5.0
+              },
+              "metrics": {
+                "l1_vs_keyframe_start": 7.38,
+                "l1_vs_keyframe_mean": 18.66,
+                "l1_vs_keyframe_end": 20.67,
+                "closest_other_keyframe": "clip_04",
+                "closest_other_keyframe_l1_start": 44.58,
+                "max_internal_jump_l1": 13.41,
+                "max_internal_jump_time_sec": 0.5,
+                "scene_cuts_sec": []
+              },
+              "source": "probe_json"
+            },
+            "step_4_acoustic_speech_and_pacing": {
+              "status": "skipped",
+              "tight_speech_trim": true
+            },
+            "step_5_hybrid_bridge_and_fallback_resolution": {
+              "resolution": "flow_clip",
+              "resolved": true,
+              "plan_available": true,
+              "status": "pass"
+            },
+            "step_6_mux_and_master_verification": {
+              "status": "not_run"
+            }
           }
         },
         {
@@ -2613,7 +4073,10 @@
           },
           "step_5_hybrid_bridge_and_fallback_resolution": {
             "resolution": "source_bridge_fallback",
-            "resolved": true,
+            "resolved": false,
+            "plan_available": true,
+            "status": "planned",
+            "reason": "source extraction and media verification not run",
             "video_from": {
               "source_video": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\straw.berryjammin\\12_2026-10-19_DesSYDvhdpd.mp4",
               "source_span": [
@@ -2622,11 +4085,105 @@
               ]
             },
             "audio_from": "native Google Flow Farsi audio of clip_04.mp4",
-            "source_on_host": false,
-            "status": "pass"
+            "source_on_host": false
           },
           "step_6_mux_and_master_verification": {
             "status": "not_run"
+          },
+          "step_1_story_beat_and_character_lock": {
+            "story_beat": "Mafia boss Shadow Fig appears in the rain with Lemonella's past",
+            "expected_speakers": [
+              "FIG"
+            ],
+            "cue_speakers": [
+              "FIG"
+            ],
+            "unexpected_speakers": [],
+            "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part3\\keyframes\\KF_04.jpg",
+            "source_span": [
+              33.3,
+              41.1
+            ],
+            "flags": [],
+            "status": "pass"
+          },
+          "step_2_keyframe_preflight": {
+            "status": "skipped_not_on_host",
+            "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part3\\keyframes\\KF_04.jpg"
+          },
+          "step_trace": {
+            "step_1_story_beat_and_character_lock": {
+              "story_beat": "Mafia boss Shadow Fig appears in the rain with Lemonella's past",
+              "expected_speakers": [
+                "FIG"
+              ],
+              "cue_speakers": [
+                "FIG"
+              ],
+              "unexpected_speakers": [],
+              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part3\\keyframes\\KF_04.jpg",
+              "source_span": [
+                33.3,
+                41.1
+              ],
+              "flags": [],
+              "status": "pass"
+            },
+            "step_2_keyframe_preflight": {
+              "status": "skipped_not_on_host",
+              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part3\\keyframes\\KF_04.jpg"
+            },
+            "step_3_visual_continuity_audit": {
+              "status": "fail",
+              "clip_id": "clip_04",
+              "flags": [
+                "KEYFRAME_MISMATCH"
+              ],
+              "warnings": [],
+              "passed": false,
+              "suggested_visual_trim_in": 0.0,
+              "suggested_visual_trim_out": 10.0,
+              "suggested_visual_duration": 10.0,
+              "thresholds": {
+                "keyframe": 32.0,
+                "jump": 32.0,
+                "contamination_margin": 5.0
+              },
+              "metrics": {
+                "l1_vs_keyframe_start": 45.36,
+                "l1_vs_keyframe_mean": 45.46,
+                "l1_vs_keyframe_end": 45.32,
+                "closest_other_keyframe": "clip_03",
+                "closest_other_keyframe_l1_start": 47.41,
+                "max_internal_jump_l1": 7.68,
+                "max_internal_jump_time_sec": 7.0,
+                "scene_cuts_sec": []
+              },
+              "source": "probe_json"
+            },
+            "step_4_acoustic_speech_and_pacing": {
+              "status": "skipped",
+              "tight_speech_trim": true
+            },
+            "step_5_hybrid_bridge_and_fallback_resolution": {
+              "resolution": "source_bridge_fallback",
+              "resolved": false,
+              "plan_available": true,
+              "status": "planned",
+              "reason": "source extraction and media verification not run",
+              "video_from": {
+                "source_video": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\straw.berryjammin\\12_2026-10-19_DesSYDvhdpd.mp4",
+                "source_span": [
+                  33.3,
+                  41.1
+                ]
+              },
+              "audio_from": "native Google Flow Farsi audio of clip_04.mp4",
+              "source_on_host": false
+            },
+            "step_6_mux_and_master_verification": {
+              "status": "not_run"
+            }
           }
         },
         {
@@ -2665,10 +4222,94 @@
           "step_5_hybrid_bridge_and_fallback_resolution": {
             "resolution": "flow_clip",
             "resolved": true,
+            "plan_available": true,
             "status": "pass"
           },
           "step_6_mux_and_master_verification": {
             "status": "not_run"
+          },
+          "step_1_story_beat_and_character_lock": {
+            "story_beat": "Lemonella decides to flee before the Duke finds out",
+            "expected_speakers": [
+              "LEMON"
+            ],
+            "cue_speakers": [
+              "LEMON"
+            ],
+            "unexpected_speakers": [],
+            "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part3\\keyframes\\KF_05.jpg",
+            "source_span": [
+              41.1,
+              51.1
+            ],
+            "flags": [],
+            "status": "pass"
+          },
+          "step_2_keyframe_preflight": {
+            "status": "skipped_not_on_host",
+            "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part3\\keyframes\\KF_05.jpg"
+          },
+          "step_trace": {
+            "step_1_story_beat_and_character_lock": {
+              "story_beat": "Lemonella decides to flee before the Duke finds out",
+              "expected_speakers": [
+                "LEMON"
+              ],
+              "cue_speakers": [
+                "LEMON"
+              ],
+              "unexpected_speakers": [],
+              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part3\\keyframes\\KF_05.jpg",
+              "source_span": [
+                41.1,
+                51.1
+              ],
+              "flags": [],
+              "status": "pass"
+            },
+            "step_2_keyframe_preflight": {
+              "status": "skipped_not_on_host",
+              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part3\\keyframes\\KF_05.jpg"
+            },
+            "step_3_visual_continuity_audit": {
+              "status": "pass",
+              "clip_id": "clip_05",
+              "flags": [],
+              "warnings": [],
+              "passed": true,
+              "suggested_visual_trim_in": 0.0,
+              "suggested_visual_trim_out": 10.0,
+              "suggested_visual_duration": 10.0,
+              "thresholds": {
+                "keyframe": 32.0,
+                "jump": 32.0,
+                "contamination_margin": 5.0
+              },
+              "metrics": {
+                "l1_vs_keyframe_start": 10.95,
+                "l1_vs_keyframe_mean": 24.43,
+                "l1_vs_keyframe_end": 30.09,
+                "closest_other_keyframe": "clip_06",
+                "closest_other_keyframe_l1_start": 44.5,
+                "max_internal_jump_l1": 17.72,
+                "max_internal_jump_time_sec": 3.5,
+                "scene_cuts_sec": []
+              },
+              "source": "probe_json"
+            },
+            "step_4_acoustic_speech_and_pacing": {
+              "status": "skipped",
+              "tight_speech_trim": true
+            },
+            "step_5_hybrid_bridge_and_fallback_resolution": {
+              "resolution": "flow_clip",
+              "resolved": true,
+              "plan_available": true,
+              "status": "pass"
+            },
+            "step_6_mux_and_master_verification": {
+              "status": "not_run"
+            }
           }
         },
         {
@@ -2707,10 +4348,94 @@
           "step_5_hybrid_bridge_and_fallback_resolution": {
             "resolution": "flow_clip",
             "resolved": true,
+            "plan_available": true,
             "status": "pass"
           },
           "step_6_mux_and_master_verification": {
             "status": "not_run"
+          },
+          "step_1_story_beat_and_character_lock": {
+            "story_beat": "Shadow Fig holds the glass-slipper evidence: the past is exposed",
+            "expected_speakers": [
+              "FIG"
+            ],
+            "cue_speakers": [
+              "FIG"
+            ],
+            "unexpected_speakers": [],
+            "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part3\\keyframes\\KF_06.jpg",
+            "source_span": [
+              56.7,
+              60.5
+            ],
+            "flags": [],
+            "status": "pass"
+          },
+          "step_2_keyframe_preflight": {
+            "status": "skipped_not_on_host",
+            "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part3\\keyframes\\KF_06.jpg"
+          },
+          "step_trace": {
+            "step_1_story_beat_and_character_lock": {
+              "story_beat": "Shadow Fig holds the glass-slipper evidence: the past is exposed",
+              "expected_speakers": [
+                "FIG"
+              ],
+              "cue_speakers": [
+                "FIG"
+              ],
+              "unexpected_speakers": [],
+              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part3\\keyframes\\KF_06.jpg",
+              "source_span": [
+                56.7,
+                60.5
+              ],
+              "flags": [],
+              "status": "pass"
+            },
+            "step_2_keyframe_preflight": {
+              "status": "skipped_not_on_host",
+              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part3\\keyframes\\KF_06.jpg"
+            },
+            "step_3_visual_continuity_audit": {
+              "status": "pass",
+              "clip_id": "clip_06",
+              "flags": [],
+              "warnings": [],
+              "passed": true,
+              "suggested_visual_trim_in": 0.0,
+              "suggested_visual_trim_out": 10.0,
+              "suggested_visual_duration": 10.0,
+              "thresholds": {
+                "keyframe": 32.0,
+                "jump": 32.0,
+                "contamination_margin": 5.0
+              },
+              "metrics": {
+                "l1_vs_keyframe_start": 6.04,
+                "l1_vs_keyframe_mean": 8.26,
+                "l1_vs_keyframe_end": 8.19,
+                "closest_other_keyframe": "clip_04",
+                "closest_other_keyframe_l1_start": 16.51,
+                "max_internal_jump_l1": 6.32,
+                "max_internal_jump_time_sec": 0.5,
+                "scene_cuts_sec": []
+              },
+              "source": "probe_json"
+            },
+            "step_4_acoustic_speech_and_pacing": {
+              "status": "skipped",
+              "tight_speech_trim": true
+            },
+            "step_5_hybrid_bridge_and_fallback_resolution": {
+              "resolution": "flow_clip",
+              "resolved": true,
+              "plan_available": true,
+              "status": "pass"
+            },
+            "step_6_mux_and_master_verification": {
+              "status": "not_run"
+            }
           }
         }
       ],
@@ -2720,7 +4445,7 @@
       "episode_id": "FruitsOfPower_Part4",
       "title_fa": "قسمت چهارم: قرارداد پنهانی و تهدید بزرگ",
       "mode": "probe_json",
-      "pipeline_version": "1.2.0",
+      "pipeline_version": "1.2.1",
       "source_video": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\straw.berryjammin\\11_2026-10-19_DesSgm3hnHy.mp4",
       "fallback_to_source_on_visual_fail": true,
       "tight_speech_trim": true,
@@ -2780,7 +4505,7 @@
               "flags": []
             },
             "clip_04": {
-              "story_beat": "Storm rises over the mansion; Shadow Fig dictates terms",
+              "story_beat": "Lemonella reacts to the ultrasound; the source span continues to Shadow Fig dictating terms",
               "expected_speakers": [
                 "LEMON"
               ],
@@ -2823,7 +4548,7 @@
               "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part4\\keyframes\\KF_06.jpg",
               "source_span": [
                 61.9,
-                71.9
+                66.1
               ],
               "flags": []
             }
@@ -3093,7 +4818,7 @@
           }
         },
         "step_5_hybrid_bridge_and_fallback_resolution": {
-          "status": "pass",
+          "status": "planned",
           "fallback_clips": [
             "clip_04",
             "clip_06"
@@ -3102,21 +4827,27 @@
             "clip_01": {
               "resolution": "flow_clip",
               "resolved": true,
+              "plan_available": true,
               "status": "pass"
             },
             "clip_02": {
               "resolution": "flow_clip",
               "resolved": true,
+              "plan_available": true,
               "status": "pass"
             },
             "clip_03": {
               "resolution": "flow_clip",
               "resolved": true,
+              "plan_available": true,
               "status": "pass"
             },
             "clip_04": {
               "resolution": "source_bridge_fallback",
-              "resolved": true,
+              "resolved": false,
+              "plan_available": true,
+              "status": "planned",
+              "reason": "source extraction and media verification not run",
               "video_from": {
                 "source_video": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\straw.berryjammin\\11_2026-10-19_DesSgm3hnHy.mp4",
                 "source_span": [
@@ -3125,40 +4856,45 @@
                 ]
               },
               "audio_from": "native Google Flow Farsi audio of clip_04.mp4",
-              "source_on_host": false,
-              "status": "pass"
+              "source_on_host": false
             },
             "clip_05": {
               "resolution": "flow_clip",
               "resolved": true,
+              "plan_available": true,
               "status": "pass"
             },
             "clip_06": {
               "resolution": "source_bridge_fallback",
-              "resolved": true,
+              "resolved": false,
+              "plan_available": true,
+              "status": "planned",
+              "reason": "source extraction and media verification not run",
               "video_from": {
                 "source_video": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\straw.berryjammin\\11_2026-10-19_DesSgm3hnHy.mp4",
                 "source_span": [
                   61.9,
-                  71.9
+                  66.1
                 ]
               },
               "audio_from": "native Google Flow Farsi audio of clip_06.mp4",
-              "source_on_host": false,
-              "status": "pass"
+              "source_on_host": false
             }
           }
         },
         "step_6_mux_and_master_verification": {
           "status": "not_run",
           "visual_continuity_passed": false,
-          "visual_continuity_resolved": true
+          "visual_continuity_resolved": false
         }
       },
       "visual_continuity_passed": false,
-      "visual_continuity_resolved": true,
+      "visual_continuity_resolved": false,
       "blocking_steps": [],
-      "all_passed": true,
+      "audit_passed": true,
+      "all_passed": false,
+      "verification_scope": "diagnostic_only",
+      "publication_status": "pending_human_review",
       "probe_part": "part4",
       "clips": [
         {
@@ -3197,10 +4933,94 @@
           "step_5_hybrid_bridge_and_fallback_resolution": {
             "resolution": "flow_clip",
             "resolved": true,
+            "plan_available": true,
             "status": "pass"
           },
           "step_6_mux_and_master_verification": {
             "status": "not_run"
+          },
+          "step_1_story_beat_and_character_lock": {
+            "story_beat": "Lemonella tearfully confesses her betrayal to Duke",
+            "expected_speakers": [
+              "LEMON"
+            ],
+            "cue_speakers": [
+              "LEMON"
+            ],
+            "unexpected_speakers": [],
+            "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part4\\keyframes\\KF_01.jpg",
+            "source_span": [
+              10.7,
+              18.0
+            ],
+            "flags": [],
+            "status": "pass"
+          },
+          "step_2_keyframe_preflight": {
+            "status": "skipped_not_on_host",
+            "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part4\\keyframes\\KF_01.jpg"
+          },
+          "step_trace": {
+            "step_1_story_beat_and_character_lock": {
+              "story_beat": "Lemonella tearfully confesses her betrayal to Duke",
+              "expected_speakers": [
+                "LEMON"
+              ],
+              "cue_speakers": [
+                "LEMON"
+              ],
+              "unexpected_speakers": [],
+              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part4\\keyframes\\KF_01.jpg",
+              "source_span": [
+                10.7,
+                18.0
+              ],
+              "flags": [],
+              "status": "pass"
+            },
+            "step_2_keyframe_preflight": {
+              "status": "skipped_not_on_host",
+              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part4\\keyframes\\KF_01.jpg"
+            },
+            "step_3_visual_continuity_audit": {
+              "status": "pass",
+              "clip_id": "clip_01",
+              "flags": [],
+              "warnings": [],
+              "passed": true,
+              "suggested_visual_trim_in": 0.0,
+              "suggested_visual_trim_out": 10.0,
+              "suggested_visual_duration": 10.0,
+              "thresholds": {
+                "keyframe": 32.0,
+                "jump": 32.0,
+                "contamination_margin": 5.0
+              },
+              "metrics": {
+                "l1_vs_keyframe_start": 9.24,
+                "l1_vs_keyframe_mean": 21.2,
+                "l1_vs_keyframe_end": 19.46,
+                "closest_other_keyframe": "clip_03",
+                "closest_other_keyframe_l1_start": 40.4,
+                "max_internal_jump_l1": 17.8,
+                "max_internal_jump_time_sec": 1.0,
+                "scene_cuts_sec": []
+              },
+              "source": "probe_json"
+            },
+            "step_4_acoustic_speech_and_pacing": {
+              "status": "skipped",
+              "tight_speech_trim": true
+            },
+            "step_5_hybrid_bridge_and_fallback_resolution": {
+              "resolution": "flow_clip",
+              "resolved": true,
+              "plan_available": true,
+              "status": "pass"
+            },
+            "step_6_mux_and_master_verification": {
+              "status": "not_run"
+            }
           }
         },
         {
@@ -3239,10 +5059,98 @@
           "step_5_hybrid_bridge_and_fallback_resolution": {
             "resolution": "flow_clip",
             "resolved": true,
+            "plan_available": true,
             "status": "pass"
           },
           "step_6_mux_and_master_verification": {
             "status": "not_run"
+          },
+          "step_1_story_beat_and_character_lock": {
+            "story_beat": "Duke surprises Lemonella with a signed contract",
+            "expected_speakers": [
+              "LEMON",
+              "DUKE"
+            ],
+            "cue_speakers": [
+              "DUKE",
+              "LEMON"
+            ],
+            "unexpected_speakers": [],
+            "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part4\\keyframes\\KF_02.jpg",
+            "source_span": [
+              18.0,
+              27.7
+            ],
+            "flags": [],
+            "status": "pass"
+          },
+          "step_2_keyframe_preflight": {
+            "status": "skipped_not_on_host",
+            "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part4\\keyframes\\KF_02.jpg"
+          },
+          "step_trace": {
+            "step_1_story_beat_and_character_lock": {
+              "story_beat": "Duke surprises Lemonella with a signed contract",
+              "expected_speakers": [
+                "LEMON",
+                "DUKE"
+              ],
+              "cue_speakers": [
+                "DUKE",
+                "LEMON"
+              ],
+              "unexpected_speakers": [],
+              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part4\\keyframes\\KF_02.jpg",
+              "source_span": [
+                18.0,
+                27.7
+              ],
+              "flags": [],
+              "status": "pass"
+            },
+            "step_2_keyframe_preflight": {
+              "status": "skipped_not_on_host",
+              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part4\\keyframes\\KF_02.jpg"
+            },
+            "step_3_visual_continuity_audit": {
+              "status": "pass",
+              "clip_id": "clip_02",
+              "flags": [],
+              "warnings": [],
+              "passed": true,
+              "suggested_visual_trim_in": 0.0,
+              "suggested_visual_trim_out": 10.0,
+              "suggested_visual_duration": 10.0,
+              "thresholds": {
+                "keyframe": 32.0,
+                "jump": 32.0,
+                "contamination_margin": 5.0
+              },
+              "metrics": {
+                "l1_vs_keyframe_start": 9.01,
+                "l1_vs_keyframe_mean": 18.42,
+                "l1_vs_keyframe_end": 18.17,
+                "closest_other_keyframe": "clip_03",
+                "closest_other_keyframe_l1_start": 44.61,
+                "max_internal_jump_l1": 9.85,
+                "max_internal_jump_time_sec": 3.5,
+                "scene_cuts_sec": []
+              },
+              "source": "probe_json"
+            },
+            "step_4_acoustic_speech_and_pacing": {
+              "status": "skipped",
+              "tight_speech_trim": true
+            },
+            "step_5_hybrid_bridge_and_fallback_resolution": {
+              "resolution": "flow_clip",
+              "resolved": true,
+              "plan_available": true,
+              "status": "pass"
+            },
+            "step_6_mux_and_master_verification": {
+              "status": "not_run"
+            }
           }
         },
         {
@@ -3281,15 +5189,99 @@
           "step_5_hybrid_bridge_and_fallback_resolution": {
             "resolution": "flow_clip",
             "resolved": true,
+            "plan_available": true,
             "status": "pass"
           },
           "step_6_mux_and_master_verification": {
             "status": "not_run"
+          },
+          "step_1_story_beat_and_character_lock": {
+            "story_beat": "Countess Strawberry tempts the lonely Duke",
+            "expected_speakers": [
+              "STRAW"
+            ],
+            "cue_speakers": [
+              "STRAW"
+            ],
+            "unexpected_speakers": [],
+            "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part4\\keyframes\\KF_03.jpg",
+            "source_span": [
+              27.7,
+              32.0
+            ],
+            "flags": [],
+            "status": "pass"
+          },
+          "step_2_keyframe_preflight": {
+            "status": "skipped_not_on_host",
+            "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part4\\keyframes\\KF_03.jpg"
+          },
+          "step_trace": {
+            "step_1_story_beat_and_character_lock": {
+              "story_beat": "Countess Strawberry tempts the lonely Duke",
+              "expected_speakers": [
+                "STRAW"
+              ],
+              "cue_speakers": [
+                "STRAW"
+              ],
+              "unexpected_speakers": [],
+              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part4\\keyframes\\KF_03.jpg",
+              "source_span": [
+                27.7,
+                32.0
+              ],
+              "flags": [],
+              "status": "pass"
+            },
+            "step_2_keyframe_preflight": {
+              "status": "skipped_not_on_host",
+              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part4\\keyframes\\KF_03.jpg"
+            },
+            "step_3_visual_continuity_audit": {
+              "status": "pass",
+              "clip_id": "clip_03",
+              "flags": [],
+              "warnings": [],
+              "passed": true,
+              "suggested_visual_trim_in": 0.0,
+              "suggested_visual_trim_out": 10.0,
+              "suggested_visual_duration": 10.0,
+              "thresholds": {
+                "keyframe": 32.0,
+                "jump": 32.0,
+                "contamination_margin": 5.0
+              },
+              "metrics": {
+                "l1_vs_keyframe_start": 6.71,
+                "l1_vs_keyframe_mean": 22.68,
+                "l1_vs_keyframe_end": 25.0,
+                "closest_other_keyframe": "clip_01",
+                "closest_other_keyframe_l1_start": 42.36,
+                "max_internal_jump_l1": 25.91,
+                "max_internal_jump_time_sec": 1.0,
+                "scene_cuts_sec": []
+              },
+              "source": "probe_json"
+            },
+            "step_4_acoustic_speech_and_pacing": {
+              "status": "skipped",
+              "tight_speech_trim": true
+            },
+            "step_5_hybrid_bridge_and_fallback_resolution": {
+              "resolution": "flow_clip",
+              "resolved": true,
+              "plan_available": true,
+              "status": "pass"
+            },
+            "step_6_mux_and_master_verification": {
+              "status": "not_run"
+            }
           }
         },
         {
           "clip_id": "clip_04",
-          "story_beat": "Storm rises over the mansion; Shadow Fig dictates terms",
+          "story_beat": "Lemonella reacts to the ultrasound; the source span continues to Shadow Fig dictating terms",
           "step_3_visual_continuity_audit": {
             "status": "fail",
             "clip_id": "clip_04",
@@ -3327,7 +5319,10 @@
           },
           "step_5_hybrid_bridge_and_fallback_resolution": {
             "resolution": "source_bridge_fallback",
-            "resolved": true,
+            "resolved": false,
+            "plan_available": true,
+            "status": "planned",
+            "reason": "source extraction and media verification not run",
             "video_from": {
               "source_video": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\straw.berryjammin\\11_2026-10-19_DesSgm3hnHy.mp4",
               "source_span": [
@@ -3336,11 +5331,108 @@
               ]
             },
             "audio_from": "native Google Flow Farsi audio of clip_04.mp4",
-            "source_on_host": false,
-            "status": "pass"
+            "source_on_host": false
           },
           "step_6_mux_and_master_verification": {
             "status": "not_run"
+          },
+          "step_1_story_beat_and_character_lock": {
+            "story_beat": "Lemonella reacts to the ultrasound; the source span continues to Shadow Fig dictating terms",
+            "expected_speakers": [
+              "LEMON"
+            ],
+            "cue_speakers": [
+              "LEMON"
+            ],
+            "unexpected_speakers": [],
+            "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part4\\keyframes\\KF_04.jpg",
+            "source_span": [
+              32.0,
+              42.0
+            ],
+            "flags": [],
+            "status": "pass"
+          },
+          "step_2_keyframe_preflight": {
+            "status": "skipped_not_on_host",
+            "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part4\\keyframes\\KF_04.jpg"
+          },
+          "step_trace": {
+            "step_1_story_beat_and_character_lock": {
+              "story_beat": "Lemonella reacts to the ultrasound; the source span continues to Shadow Fig dictating terms",
+              "expected_speakers": [
+                "LEMON"
+              ],
+              "cue_speakers": [
+                "LEMON"
+              ],
+              "unexpected_speakers": [],
+              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part4\\keyframes\\KF_04.jpg",
+              "source_span": [
+                32.0,
+                42.0
+              ],
+              "flags": [],
+              "status": "pass"
+            },
+            "step_2_keyframe_preflight": {
+              "status": "skipped_not_on_host",
+              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part4\\keyframes\\KF_04.jpg"
+            },
+            "step_3_visual_continuity_audit": {
+              "status": "fail",
+              "clip_id": "clip_04",
+              "flags": [
+                "KEYFRAME_MISMATCH",
+                "INTERNAL_SCENE_CUT"
+              ],
+              "warnings": [],
+              "passed": false,
+              "suggested_visual_trim_in": 1.5,
+              "suggested_visual_trim_out": 10.0,
+              "suggested_visual_duration": 8.5,
+              "thresholds": {
+                "keyframe": 32.0,
+                "jump": 32.0,
+                "contamination_margin": 5.0
+              },
+              "metrics": {
+                "l1_vs_keyframe_start": 43.33,
+                "l1_vs_keyframe_mean": 43.05,
+                "l1_vs_keyframe_end": 42.98,
+                "closest_other_keyframe": "clip_05",
+                "closest_other_keyframe_l1_start": 55.17,
+                "max_internal_jump_l1": 38.16,
+                "max_internal_jump_time_sec": 1.5,
+                "scene_cuts_sec": [
+                  1.5
+                ]
+              },
+              "source": "probe_json"
+            },
+            "step_4_acoustic_speech_and_pacing": {
+              "status": "skipped",
+              "tight_speech_trim": true
+            },
+            "step_5_hybrid_bridge_and_fallback_resolution": {
+              "resolution": "source_bridge_fallback",
+              "resolved": false,
+              "plan_available": true,
+              "status": "planned",
+              "reason": "source extraction and media verification not run",
+              "video_from": {
+                "source_video": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\straw.berryjammin\\11_2026-10-19_DesSgm3hnHy.mp4",
+                "source_span": [
+                  32.0,
+                  42.0
+                ]
+              },
+              "audio_from": "native Google Flow Farsi audio of clip_04.mp4",
+              "source_on_host": false
+            },
+            "step_6_mux_and_master_verification": {
+              "status": "not_run"
+            }
           }
         },
         {
@@ -3379,10 +5471,94 @@
           "step_5_hybrid_bridge_and_fallback_resolution": {
             "resolution": "flow_clip",
             "resolved": true,
+            "plan_available": true,
             "status": "pass"
           },
           "step_6_mux_and_master_verification": {
             "status": "not_run"
+          },
+          "step_1_story_beat_and_character_lock": {
+            "story_beat": "Lemonella vs Countess Strawberry confrontation",
+            "expected_speakers": [
+              "LEMON"
+            ],
+            "cue_speakers": [
+              "LEMON"
+            ],
+            "unexpected_speakers": [],
+            "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part4\\keyframes\\KF_05.jpg",
+            "source_span": [
+              49.1,
+              59.1
+            ],
+            "flags": [],
+            "status": "pass"
+          },
+          "step_2_keyframe_preflight": {
+            "status": "skipped_not_on_host",
+            "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part4\\keyframes\\KF_05.jpg"
+          },
+          "step_trace": {
+            "step_1_story_beat_and_character_lock": {
+              "story_beat": "Lemonella vs Countess Strawberry confrontation",
+              "expected_speakers": [
+                "LEMON"
+              ],
+              "cue_speakers": [
+                "LEMON"
+              ],
+              "unexpected_speakers": [],
+              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part4\\keyframes\\KF_05.jpg",
+              "source_span": [
+                49.1,
+                59.1
+              ],
+              "flags": [],
+              "status": "pass"
+            },
+            "step_2_keyframe_preflight": {
+              "status": "skipped_not_on_host",
+              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part4\\keyframes\\KF_05.jpg"
+            },
+            "step_3_visual_continuity_audit": {
+              "status": "pass",
+              "clip_id": "clip_05",
+              "flags": [],
+              "warnings": [],
+              "passed": true,
+              "suggested_visual_trim_in": 0.0,
+              "suggested_visual_trim_out": 10.0,
+              "suggested_visual_duration": 10.0,
+              "thresholds": {
+                "keyframe": 32.0,
+                "jump": 32.0,
+                "contamination_margin": 5.0
+              },
+              "metrics": {
+                "l1_vs_keyframe_start": 15.15,
+                "l1_vs_keyframe_mean": 17.19,
+                "l1_vs_keyframe_end": 22.38,
+                "closest_other_keyframe": "clip_03",
+                "closest_other_keyframe_l1_start": 43.3,
+                "max_internal_jump_l1": 18.5,
+                "max_internal_jump_time_sec": 1.5,
+                "scene_cuts_sec": []
+              },
+              "source": "probe_json"
+            },
+            "step_4_acoustic_speech_and_pacing": {
+              "status": "skipped",
+              "tight_speech_trim": true
+            },
+            "step_5_hybrid_bridge_and_fallback_resolution": {
+              "resolution": "flow_clip",
+              "resolved": true,
+              "plan_available": true,
+              "status": "pass"
+            },
+            "step_6_mux_and_master_verification": {
+              "status": "not_run"
+            }
           }
         },
         {
@@ -3426,20 +5602,121 @@
           },
           "step_5_hybrid_bridge_and_fallback_resolution": {
             "resolution": "source_bridge_fallback",
-            "resolved": true,
+            "resolved": false,
+            "plan_available": true,
+            "status": "planned",
+            "reason": "source extraction and media verification not run",
             "video_from": {
               "source_video": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\straw.berryjammin\\11_2026-10-19_DesSgm3hnHy.mp4",
               "source_span": [
                 61.9,
-                71.9
+                66.1
               ]
             },
             "audio_from": "native Google Flow Farsi audio of clip_06.mp4",
-            "source_on_host": false,
-            "status": "pass"
+            "source_on_host": false
           },
           "step_6_mux_and_master_verification": {
             "status": "not_run"
+          },
+          "step_1_story_beat_and_character_lock": {
+            "story_beat": "Attackers reach the mansion; Duke shields Lemonella",
+            "expected_speakers": [
+              "DUKE"
+            ],
+            "cue_speakers": [
+              "DUKE"
+            ],
+            "unexpected_speakers": [],
+            "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part4\\keyframes\\KF_06.jpg",
+            "source_span": [
+              61.9,
+              66.1
+            ],
+            "flags": [],
+            "status": "pass"
+          },
+          "step_2_keyframe_preflight": {
+            "status": "skipped_not_on_host",
+            "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part4\\keyframes\\KF_06.jpg"
+          },
+          "step_trace": {
+            "step_1_story_beat_and_character_lock": {
+              "story_beat": "Attackers reach the mansion; Duke shields Lemonella",
+              "expected_speakers": [
+                "DUKE"
+              ],
+              "cue_speakers": [
+                "DUKE"
+              ],
+              "unexpected_speakers": [],
+              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part4\\keyframes\\KF_06.jpg",
+              "source_span": [
+                61.9,
+                66.1
+              ],
+              "flags": [],
+              "status": "pass"
+            },
+            "step_2_keyframe_preflight": {
+              "status": "skipped_not_on_host",
+              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part4\\keyframes\\KF_06.jpg"
+            },
+            "step_3_visual_continuity_audit": {
+              "status": "fail",
+              "clip_id": "clip_06",
+              "flags": [
+                "KEYFRAME_MISMATCH",
+                "MULTI_INGREDIENT_CONTAMINATION",
+                "INTERNAL_SCENE_CUT"
+              ],
+              "warnings": [],
+              "passed": false,
+              "suggested_visual_trim_in": 0.0,
+              "suggested_visual_trim_out": 8.5,
+              "suggested_visual_duration": 8.5,
+              "thresholds": {
+                "keyframe": 32.0,
+                "jump": 32.0,
+                "contamination_margin": 5.0
+              },
+              "metrics": {
+                "l1_vs_keyframe_start": 56.56,
+                "l1_vs_keyframe_mean": 54.59,
+                "l1_vs_keyframe_end": 61.35,
+                "closest_other_keyframe": "clip_01",
+                "closest_other_keyframe_l1_start": 44.69,
+                "max_internal_jump_l1": 47.28,
+                "max_internal_jump_time_sec": 9.0,
+                "scene_cuts_sec": [
+                  9.0
+                ]
+              },
+              "source": "probe_json"
+            },
+            "step_4_acoustic_speech_and_pacing": {
+              "status": "skipped",
+              "tight_speech_trim": true
+            },
+            "step_5_hybrid_bridge_and_fallback_resolution": {
+              "resolution": "source_bridge_fallback",
+              "resolved": false,
+              "plan_available": true,
+              "status": "planned",
+              "reason": "source extraction and media verification not run",
+              "video_from": {
+                "source_video": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\straw.berryjammin\\11_2026-10-19_DesSgm3hnHy.mp4",
+                "source_span": [
+                  61.9,
+                  66.1
+                ]
+              },
+              "audio_from": "native Google Flow Farsi audio of clip_06.mp4",
+              "source_on_host": false
+            },
+            "step_6_mux_and_master_verification": {
+              "status": "not_run"
+            }
           }
         }
       ],
@@ -3449,7 +5726,7 @@
       "episode_id": "FruitsOfPower_Part5",
       "title_fa": "قسمت پنجم: شوک سه‌قلوها در بیمارستان (فینال)",
       "mode": "probe_json",
-      "pipeline_version": "1.2.0",
+      "pipeline_version": "1.2.1",
       "source_video": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\straw.berryjammin\\10_2026-10-20_DeugJXCPEYM.mp4",
       "fallback_to_source_on_visual_fail": true,
       "tight_speech_trim": true,
@@ -3550,7 +5827,7 @@
               "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\keyframes\\KF_06.jpg",
               "source_span": [
                 69.9,
-                79.9
+                74.6
               ],
               "flags": []
             }
@@ -3828,7 +6105,7 @@
           }
         },
         "step_5_hybrid_bridge_and_fallback_resolution": {
-          "status": "pass",
+          "status": "planned",
           "fallback_clips": [
             "clip_01",
             "clip_02",
@@ -3838,7 +6115,10 @@
           "clips": {
             "clip_01": {
               "resolution": "source_bridge_fallback",
-              "resolved": true,
+              "resolved": false,
+              "plan_available": true,
+              "status": "planned",
+              "reason": "source extraction and media verification not run",
               "video_from": {
                 "source_video": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\straw.berryjammin\\10_2026-10-20_DeugJXCPEYM.mp4",
                 "source_span": [
@@ -3847,12 +6127,14 @@
                 ]
               },
               "audio_from": "native Google Flow Farsi audio of clip_01.mp4",
-              "source_on_host": false,
-              "status": "pass"
+              "source_on_host": false
             },
             "clip_02": {
               "resolution": "source_bridge_fallback",
-              "resolved": true,
+              "resolved": false,
+              "plan_available": true,
+              "status": "planned",
+              "reason": "source extraction and media verification not run",
               "video_from": {
                 "source_video": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\straw.berryjammin\\10_2026-10-20_DeugJXCPEYM.mp4",
                 "source_span": [
@@ -3861,12 +6143,14 @@
                 ]
               },
               "audio_from": "native Google Flow Farsi audio of clip_02.mp4",
-              "source_on_host": false,
-              "status": "pass"
+              "source_on_host": false
             },
             "clip_03": {
               "resolution": "source_bridge_fallback",
-              "resolved": true,
+              "resolved": false,
+              "plan_available": true,
+              "status": "planned",
+              "reason": "source extraction and media verification not run",
               "video_from": {
                 "source_video": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\straw.berryjammin\\10_2026-10-20_DeugJXCPEYM.mp4",
                 "source_span": [
@@ -3875,45 +6159,51 @@
                 ]
               },
               "audio_from": "native Google Flow Farsi audio of clip_03.mp4",
-              "source_on_host": false,
-              "status": "pass"
+              "source_on_host": false
             },
             "clip_04": {
               "resolution": "flow_clip",
               "resolved": true,
+              "plan_available": true,
               "status": "pass"
             },
             "clip_05": {
               "resolution": "flow_clip",
               "resolved": true,
+              "plan_available": true,
               "status": "pass"
             },
             "clip_06": {
               "resolution": "source_bridge_fallback",
-              "resolved": true,
+              "resolved": false,
+              "plan_available": true,
+              "status": "planned",
+              "reason": "source extraction and media verification not run",
               "video_from": {
                 "source_video": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\straw.berryjammin\\10_2026-10-20_DeugJXCPEYM.mp4",
                 "source_span": [
                   69.9,
-                  79.9
+                  74.6
                 ]
               },
               "audio_from": "native Google Flow Farsi audio of clip_06.mp4",
-              "source_on_host": false,
-              "status": "pass"
+              "source_on_host": false
             }
           }
         },
         "step_6_mux_and_master_verification": {
           "status": "not_run",
           "visual_continuity_passed": false,
-          "visual_continuity_resolved": true
+          "visual_continuity_resolved": false
         }
       },
       "visual_continuity_passed": false,
-      "visual_continuity_resolved": true,
+      "visual_continuity_resolved": false,
       "blocking_steps": [],
-      "all_passed": true,
+      "audit_passed": true,
+      "all_passed": false,
+      "verification_scope": "diagnostic_only",
+      "publication_status": "pending_human_review",
       "probe_part": "part5",
       "clips": [
         {
@@ -3953,7 +6243,10 @@
           },
           "step_5_hybrid_bridge_and_fallback_resolution": {
             "resolution": "source_bridge_fallback",
-            "resolved": true,
+            "resolved": false,
+            "plan_available": true,
+            "status": "planned",
+            "reason": "source extraction and media verification not run",
             "video_from": {
               "source_video": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\straw.berryjammin\\10_2026-10-20_DeugJXCPEYM.mp4",
               "source_span": [
@@ -3962,11 +6255,105 @@
               ]
             },
             "audio_from": "native Google Flow Farsi audio of clip_01.mp4",
-            "source_on_host": false,
-            "status": "pass"
+            "source_on_host": false
           },
           "step_6_mux_and_master_verification": {
             "status": "not_run"
+          },
+          "step_1_story_beat_and_character_lock": {
+            "story_beat": "Banana: was I just another mistake?",
+            "expected_speakers": [
+              "BANANA"
+            ],
+            "cue_speakers": [
+              "BANANA"
+            ],
+            "unexpected_speakers": [],
+            "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\keyframes\\KF_01.jpg",
+            "source_span": [
+              7.2,
+              10.8
+            ],
+            "flags": [],
+            "status": "pass"
+          },
+          "step_2_keyframe_preflight": {
+            "status": "skipped_not_on_host",
+            "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\keyframes\\KF_01.jpg"
+          },
+          "step_trace": {
+            "step_1_story_beat_and_character_lock": {
+              "story_beat": "Banana: was I just another mistake?",
+              "expected_speakers": [
+                "BANANA"
+              ],
+              "cue_speakers": [
+                "BANANA"
+              ],
+              "unexpected_speakers": [],
+              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\keyframes\\KF_01.jpg",
+              "source_span": [
+                7.2,
+                10.8
+              ],
+              "flags": [],
+              "status": "pass"
+            },
+            "step_2_keyframe_preflight": {
+              "status": "skipped_not_on_host",
+              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\keyframes\\KF_01.jpg"
+            },
+            "step_3_visual_continuity_audit": {
+              "status": "fail",
+              "clip_id": "clip_01",
+              "flags": [
+                "KEYFRAME_MISMATCH"
+              ],
+              "warnings": [],
+              "passed": false,
+              "suggested_visual_trim_in": 0.0,
+              "suggested_visual_trim_out": 10.0,
+              "suggested_visual_duration": 10.0,
+              "thresholds": {
+                "keyframe": 32.0,
+                "jump": 32.0,
+                "contamination_margin": 5.0
+              },
+              "metrics": {
+                "l1_vs_keyframe_start": 54.69,
+                "l1_vs_keyframe_mean": 54.02,
+                "l1_vs_keyframe_end": 52.6,
+                "closest_other_keyframe": "clip_05",
+                "closest_other_keyframe_l1_start": 59.24,
+                "max_internal_jump_l1": 25.87,
+                "max_internal_jump_time_sec": 3.0,
+                "scene_cuts_sec": []
+              },
+              "source": "probe_json"
+            },
+            "step_4_acoustic_speech_and_pacing": {
+              "status": "skipped",
+              "tight_speech_trim": true
+            },
+            "step_5_hybrid_bridge_and_fallback_resolution": {
+              "resolution": "source_bridge_fallback",
+              "resolved": false,
+              "plan_available": true,
+              "status": "planned",
+              "reason": "source extraction and media verification not run",
+              "video_from": {
+                "source_video": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\straw.berryjammin\\10_2026-10-20_DeugJXCPEYM.mp4",
+                "source_span": [
+                  7.2,
+                  10.8
+                ]
+              },
+              "audio_from": "native Google Flow Farsi audio of clip_01.mp4",
+              "source_on_host": false
+            },
+            "step_6_mux_and_master_verification": {
+              "status": "not_run"
+            }
           }
         },
         {
@@ -4006,7 +6393,10 @@
           },
           "step_5_hybrid_bridge_and_fallback_resolution": {
             "resolution": "source_bridge_fallback",
-            "resolved": true,
+            "resolved": false,
+            "plan_available": true,
+            "status": "planned",
+            "reason": "source extraction and media verification not run",
             "video_from": {
               "source_video": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\straw.berryjammin\\10_2026-10-20_DeugJXCPEYM.mp4",
               "source_span": [
@@ -4015,11 +6405,105 @@
               ]
             },
             "audio_from": "native Google Flow Farsi audio of clip_02.mp4",
-            "source_on_host": false,
-            "status": "pass"
+            "source_on_host": false
           },
           "step_6_mux_and_master_verification": {
             "status": "not_run"
+          },
+          "step_1_story_beat_and_character_lock": {
+            "story_beat": "Duke learns Lemonella's past with Shadow Fig",
+            "expected_speakers": [
+              "DUKE"
+            ],
+            "cue_speakers": [
+              "DUKE"
+            ],
+            "unexpected_speakers": [],
+            "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\keyframes\\KF_02.jpg",
+            "source_span": [
+              10.8,
+              20.8
+            ],
+            "flags": [],
+            "status": "pass"
+          },
+          "step_2_keyframe_preflight": {
+            "status": "skipped_not_on_host",
+            "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\keyframes\\KF_02.jpg"
+          },
+          "step_trace": {
+            "step_1_story_beat_and_character_lock": {
+              "story_beat": "Duke learns Lemonella's past with Shadow Fig",
+              "expected_speakers": [
+                "DUKE"
+              ],
+              "cue_speakers": [
+                "DUKE"
+              ],
+              "unexpected_speakers": [],
+              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\keyframes\\KF_02.jpg",
+              "source_span": [
+                10.8,
+                20.8
+              ],
+              "flags": [],
+              "status": "pass"
+            },
+            "step_2_keyframe_preflight": {
+              "status": "skipped_not_on_host",
+              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\keyframes\\KF_02.jpg"
+            },
+            "step_3_visual_continuity_audit": {
+              "status": "fail",
+              "clip_id": "clip_02",
+              "flags": [
+                "KEYFRAME_MISMATCH"
+              ],
+              "warnings": [],
+              "passed": false,
+              "suggested_visual_trim_in": 0.0,
+              "suggested_visual_trim_out": 10.0,
+              "suggested_visual_duration": 10.0,
+              "thresholds": {
+                "keyframe": 32.0,
+                "jump": 32.0,
+                "contamination_margin": 5.0
+              },
+              "metrics": {
+                "l1_vs_keyframe_start": 38.66,
+                "l1_vs_keyframe_mean": 40.68,
+                "l1_vs_keyframe_end": 39.86,
+                "closest_other_keyframe": "clip_04",
+                "closest_other_keyframe_l1_start": 46.39,
+                "max_internal_jump_l1": 21.38,
+                "max_internal_jump_time_sec": 2.5,
+                "scene_cuts_sec": []
+              },
+              "source": "probe_json"
+            },
+            "step_4_acoustic_speech_and_pacing": {
+              "status": "skipped",
+              "tight_speech_trim": true
+            },
+            "step_5_hybrid_bridge_and_fallback_resolution": {
+              "resolution": "source_bridge_fallback",
+              "resolved": false,
+              "plan_available": true,
+              "status": "planned",
+              "reason": "source extraction and media verification not run",
+              "video_from": {
+                "source_video": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\straw.berryjammin\\10_2026-10-20_DeugJXCPEYM.mp4",
+                "source_span": [
+                  10.8,
+                  20.8
+                ]
+              },
+              "audio_from": "native Google Flow Farsi audio of clip_02.mp4",
+              "source_on_host": false
+            },
+            "step_6_mux_and_master_verification": {
+              "status": "not_run"
+            }
           }
         },
         {
@@ -4059,7 +6543,10 @@
           },
           "step_5_hybrid_bridge_and_fallback_resolution": {
             "resolution": "source_bridge_fallback",
-            "resolved": true,
+            "resolved": false,
+            "plan_available": true,
+            "status": "planned",
+            "reason": "source extraction and media verification not run",
             "video_from": {
               "source_video": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\straw.berryjammin\\10_2026-10-20_DeugJXCPEYM.mp4",
               "source_span": [
@@ -4068,11 +6555,105 @@
               ]
             },
             "audio_from": "native Google Flow Farsi audio of clip_03.mp4",
-            "source_on_host": false,
-            "status": "pass"
+            "source_on_host": false
           },
           "step_6_mux_and_master_verification": {
             "status": "not_run"
+          },
+          "step_1_story_beat_and_character_lock": {
+            "story_beat": "Lemonella's dark past in Shadow Fig's casino world",
+            "expected_speakers": [
+              "LEMON"
+            ],
+            "cue_speakers": [
+              "LEMON"
+            ],
+            "unexpected_speakers": [],
+            "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\keyframes\\KF_03.jpg",
+            "source_span": [
+              31.3,
+              41.3
+            ],
+            "flags": [],
+            "status": "pass"
+          },
+          "step_2_keyframe_preflight": {
+            "status": "skipped_not_on_host",
+            "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\keyframes\\KF_03.jpg"
+          },
+          "step_trace": {
+            "step_1_story_beat_and_character_lock": {
+              "story_beat": "Lemonella's dark past in Shadow Fig's casino world",
+              "expected_speakers": [
+                "LEMON"
+              ],
+              "cue_speakers": [
+                "LEMON"
+              ],
+              "unexpected_speakers": [],
+              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\keyframes\\KF_03.jpg",
+              "source_span": [
+                31.3,
+                41.3
+              ],
+              "flags": [],
+              "status": "pass"
+            },
+            "step_2_keyframe_preflight": {
+              "status": "skipped_not_on_host",
+              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\keyframes\\KF_03.jpg"
+            },
+            "step_3_visual_continuity_audit": {
+              "status": "fail",
+              "clip_id": "clip_03",
+              "flags": [
+                "KEYFRAME_MISMATCH"
+              ],
+              "warnings": [],
+              "passed": false,
+              "suggested_visual_trim_in": 0.0,
+              "suggested_visual_trim_out": 10.0,
+              "suggested_visual_duration": 10.0,
+              "thresholds": {
+                "keyframe": 32.0,
+                "jump": 32.0,
+                "contamination_margin": 5.0
+              },
+              "metrics": {
+                "l1_vs_keyframe_start": 48.96,
+                "l1_vs_keyframe_mean": 49.64,
+                "l1_vs_keyframe_end": 50.08,
+                "closest_other_keyframe": "clip_04",
+                "closest_other_keyframe_l1_start": 48.71,
+                "max_internal_jump_l1": 11.64,
+                "max_internal_jump_time_sec": 4.0,
+                "scene_cuts_sec": []
+              },
+              "source": "probe_json"
+            },
+            "step_4_acoustic_speech_and_pacing": {
+              "status": "skipped",
+              "tight_speech_trim": true
+            },
+            "step_5_hybrid_bridge_and_fallback_resolution": {
+              "resolution": "source_bridge_fallback",
+              "resolved": false,
+              "plan_available": true,
+              "status": "planned",
+              "reason": "source extraction and media verification not run",
+              "video_from": {
+                "source_video": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\straw.berryjammin\\10_2026-10-20_DeugJXCPEYM.mp4",
+                "source_span": [
+                  31.3,
+                  41.3
+                ]
+              },
+              "audio_from": "native Google Flow Farsi audio of clip_03.mp4",
+              "source_on_host": false
+            },
+            "step_6_mux_and_master_verification": {
+              "status": "not_run"
+            }
           }
         },
         {
@@ -4111,10 +6692,94 @@
           "step_5_hybrid_bridge_and_fallback_resolution": {
             "resolution": "flow_clip",
             "resolved": true,
+            "plan_available": true,
             "status": "pass"
           },
           "step_6_mux_and_master_verification": {
             "status": "not_run"
+          },
+          "step_1_story_beat_and_character_lock": {
+            "story_beat": "Duke forgives: he doesn't care who loved her before",
+            "expected_speakers": [
+              "DUKE"
+            ],
+            "cue_speakers": [
+              "DUKE"
+            ],
+            "unexpected_speakers": [],
+            "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\keyframes\\KF_04.jpg",
+            "source_span": [
+              45.8,
+              55.8
+            ],
+            "flags": [],
+            "status": "pass"
+          },
+          "step_2_keyframe_preflight": {
+            "status": "skipped_not_on_host",
+            "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\keyframes\\KF_04.jpg"
+          },
+          "step_trace": {
+            "step_1_story_beat_and_character_lock": {
+              "story_beat": "Duke forgives: he doesn't care who loved her before",
+              "expected_speakers": [
+                "DUKE"
+              ],
+              "cue_speakers": [
+                "DUKE"
+              ],
+              "unexpected_speakers": [],
+              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\keyframes\\KF_04.jpg",
+              "source_span": [
+                45.8,
+                55.8
+              ],
+              "flags": [],
+              "status": "pass"
+            },
+            "step_2_keyframe_preflight": {
+              "status": "skipped_not_on_host",
+              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\keyframes\\KF_04.jpg"
+            },
+            "step_3_visual_continuity_audit": {
+              "status": "pass",
+              "clip_id": "clip_04",
+              "flags": [],
+              "warnings": [],
+              "passed": true,
+              "suggested_visual_trim_in": 0.0,
+              "suggested_visual_trim_out": 10.0,
+              "suggested_visual_duration": 10.0,
+              "thresholds": {
+                "keyframe": 32.0,
+                "jump": 32.0,
+                "contamination_margin": 5.0
+              },
+              "metrics": {
+                "l1_vs_keyframe_start": 5.35,
+                "l1_vs_keyframe_mean": 11.3,
+                "l1_vs_keyframe_end": 13.06,
+                "closest_other_keyframe": "clip_02",
+                "closest_other_keyframe_l1_start": 36.3,
+                "max_internal_jump_l1": 13.9,
+                "max_internal_jump_time_sec": 8.5,
+                "scene_cuts_sec": []
+              },
+              "source": "probe_json"
+            },
+            "step_4_acoustic_speech_and_pacing": {
+              "status": "skipped",
+              "tight_speech_trim": true
+            },
+            "step_5_hybrid_bridge_and_fallback_resolution": {
+              "resolution": "flow_clip",
+              "resolved": true,
+              "plan_available": true,
+              "status": "pass"
+            },
+            "step_6_mux_and_master_verification": {
+              "status": "not_run"
+            }
           }
         },
         {
@@ -4153,10 +6818,94 @@
           "step_5_hybrid_bridge_and_fallback_resolution": {
             "resolution": "flow_clip",
             "resolved": true,
+            "plan_available": true,
             "status": "pass"
           },
           "step_6_mux_and_master_verification": {
             "status": "not_run"
+          },
+          "step_1_story_beat_and_character_lock": {
+            "story_beat": "Lemonella collapses; Duke calls the emergency services",
+            "expected_speakers": [
+              "DUKE"
+            ],
+            "cue_speakers": [
+              "DUKE"
+            ],
+            "unexpected_speakers": [],
+            "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\keyframes\\KF_05.jpg",
+            "source_span": [
+              60.2,
+              69.9
+            ],
+            "flags": [],
+            "status": "pass"
+          },
+          "step_2_keyframe_preflight": {
+            "status": "skipped_not_on_host",
+            "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\keyframes\\KF_05.jpg"
+          },
+          "step_trace": {
+            "step_1_story_beat_and_character_lock": {
+              "story_beat": "Lemonella collapses; Duke calls the emergency services",
+              "expected_speakers": [
+                "DUKE"
+              ],
+              "cue_speakers": [
+                "DUKE"
+              ],
+              "unexpected_speakers": [],
+              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\keyframes\\KF_05.jpg",
+              "source_span": [
+                60.2,
+                69.9
+              ],
+              "flags": [],
+              "status": "pass"
+            },
+            "step_2_keyframe_preflight": {
+              "status": "skipped_not_on_host",
+              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\keyframes\\KF_05.jpg"
+            },
+            "step_3_visual_continuity_audit": {
+              "status": "pass",
+              "clip_id": "clip_05",
+              "flags": [],
+              "warnings": [],
+              "passed": true,
+              "suggested_visual_trim_in": 0.0,
+              "suggested_visual_trim_out": 10.0,
+              "suggested_visual_duration": 10.0,
+              "thresholds": {
+                "keyframe": 32.0,
+                "jump": 32.0,
+                "contamination_margin": 5.0
+              },
+              "metrics": {
+                "l1_vs_keyframe_start": 8.8,
+                "l1_vs_keyframe_mean": 18.53,
+                "l1_vs_keyframe_end": 19.14,
+                "closest_other_keyframe": "clip_02",
+                "closest_other_keyframe_l1_start": 43.18,
+                "max_internal_jump_l1": 20.07,
+                "max_internal_jump_time_sec": 2.5,
+                "scene_cuts_sec": []
+              },
+              "source": "probe_json"
+            },
+            "step_4_acoustic_speech_and_pacing": {
+              "status": "skipped",
+              "tight_speech_trim": true
+            },
+            "step_5_hybrid_bridge_and_fallback_resolution": {
+              "resolution": "flow_clip",
+              "resolved": true,
+              "plan_available": true,
+              "status": "pass"
+            },
+            "step_6_mux_and_master_verification": {
+              "status": "not_run"
+            }
           }
         },
         {
@@ -4196,24 +6945,124 @@
           },
           "step_5_hybrid_bridge_and_fallback_resolution": {
             "resolution": "source_bridge_fallback",
-            "resolved": true,
+            "resolved": false,
+            "plan_available": true,
+            "status": "planned",
+            "reason": "source extraction and media verification not run",
             "video_from": {
               "source_video": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\straw.berryjammin\\10_2026-10-20_DeugJXCPEYM.mp4",
               "source_span": [
                 69.9,
-                79.9
+                74.6
               ]
             },
             "audio_from": "native Google Flow Farsi audio of clip_06.mp4",
-            "source_on_host": false,
-            "status": "pass"
+            "source_on_host": false
           },
           "step_6_mux_and_master_verification": {
             "status": "not_run"
+          },
+          "step_1_story_beat_and_character_lock": {
+            "story_beat": "Hospital ultrasound: Dr. Pear reveals triplets",
+            "expected_speakers": [
+              "PEACH"
+            ],
+            "cue_speakers": [
+              "PEACH"
+            ],
+            "unexpected_speakers": [],
+            "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\keyframes\\KF_06.jpg",
+            "source_span": [
+              69.9,
+              74.6
+            ],
+            "flags": [],
+            "status": "pass"
+          },
+          "step_2_keyframe_preflight": {
+            "status": "skipped_not_on_host",
+            "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\keyframes\\KF_06.jpg"
+          },
+          "step_trace": {
+            "step_1_story_beat_and_character_lock": {
+              "story_beat": "Hospital ultrasound: Dr. Pear reveals triplets",
+              "expected_speakers": [
+                "PEACH"
+              ],
+              "cue_speakers": [
+                "PEACH"
+              ],
+              "unexpected_speakers": [],
+              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\keyframes\\KF_06.jpg",
+              "source_span": [
+                69.9,
+                74.6
+              ],
+              "flags": [],
+              "status": "pass"
+            },
+            "step_2_keyframe_preflight": {
+              "status": "skipped_not_on_host",
+              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\keyframes\\KF_06.jpg"
+            },
+            "step_3_visual_continuity_audit": {
+              "status": "fail",
+              "clip_id": "clip_06",
+              "flags": [
+                "KEYFRAME_MISMATCH"
+              ],
+              "warnings": [],
+              "passed": false,
+              "suggested_visual_trim_in": 0.0,
+              "suggested_visual_trim_out": 10.0,
+              "suggested_visual_duration": 10.0,
+              "thresholds": {
+                "keyframe": 32.0,
+                "jump": 32.0,
+                "contamination_margin": 5.0
+              },
+              "metrics": {
+                "l1_vs_keyframe_start": 72.32,
+                "l1_vs_keyframe_mean": 71.28,
+                "l1_vs_keyframe_end": 71.41,
+                "closest_other_keyframe": "clip_05",
+                "closest_other_keyframe_l1_start": 91.83,
+                "max_internal_jump_l1": 9.15,
+                "max_internal_jump_time_sec": 9.5,
+                "scene_cuts_sec": []
+              },
+              "source": "probe_json"
+            },
+            "step_4_acoustic_speech_and_pacing": {
+              "status": "skipped",
+              "tight_speech_trim": true
+            },
+            "step_5_hybrid_bridge_and_fallback_resolution": {
+              "resolution": "source_bridge_fallback",
+              "resolved": false,
+              "plan_available": true,
+              "status": "planned",
+              "reason": "source extraction and media verification not run",
+              "video_from": {
+                "source_video": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\straw.berryjammin\\10_2026-10-20_DeugJXCPEYM.mp4",
+                "source_span": [
+                  69.9,
+                  74.6
+                ]
+              },
+              "audio_from": "native Google Flow Farsi audio of clip_06.mp4",
+              "source_on_host": false
+            },
+            "step_6_mux_and_master_verification": {
+              "status": "not_run"
+            }
           }
         }
       ],
       "manifest": "fruits_of_power_part5.json"
     }
-  ]
+  ],
+  "audit_passed": true,
+  "all_passed": false,
+  "verification_scope": "probe_metrics_and_recovery_plan_not_render_signoff"
 }
