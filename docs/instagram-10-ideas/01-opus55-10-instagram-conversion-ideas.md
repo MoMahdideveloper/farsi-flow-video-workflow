@@ -4,15 +4,20 @@
 > Rule of every reel: *show a normal person's problem → show the AI result in 5 seconds → show the exact KelidBox accounts that did it → one comment keyword.*
 > Ideas 1–7 answer **"What can an ordinary person do / earn with AI video & AI accounts?"**; ideas 8–10 bridge the 3D-animation style to price-trust, entertainment and gaming accounts.
 
-**Data rules.** Product IDs, titles and "از … تومان" prices come from the seeded live snapshot
-(`00-kelidbox-instagram-and-catalog-context.md`). Where the Stage-1 brief quoted a different price,
-the **snapshot price wins** and the brief figure is listed under *Brief discrepancy*. Products not present in the
-snapshot (CapCut Pro, Wordwall Pro, Office 365 + OneDrive) are marked ⚠️ *unverified* for Stage 2 (Astra).
-Coupon: `WELCOME10` = 10% off, max ۱۵۰٬۰۰۰ Toman, min order ۱۰۰٬۰۰۰ Toman (from brief). Installments: 4 parts, zero interest.
+**Stage 2 audit:** Product IDs and starting prices are checked offline against the
+[seeded catalog](00-kelidbox-instagram-and-catalog-context.md), not re-fetched live.
+Unseeded CapCut Pro, Wordwall Pro and Office 365 listings were removed.
+Coupon: WELCOME10 = 10% off, max ۱۵۰٬۰۰۰ Toman, minimum order ۱۰۰٬۰۰۰ Toman;
+TorobPay / DigiPay four installments are user-confirmed in the Stage-2 brief.
+Eligibility, fees, due dates, coupon stacking and delivery follow the actual checkout.
+Candidate product links are NOT verified permalinks; do not enable automation until checked.
+No guaranteed income, production time, instant fulfillment, interest-free credit or performance.
 
 **Shared production spec (all reels):** 9:16, 720×1280 @ 24 fps, 5 shots × 8 s = 40 s, Google Flow (Veo) native Farsi
 audio, RTL Vazirmatn-Bold subtitle pills, last shot = CTA (no separate KelidBox CTA clip appended). The machine-readable
-version is `pipeline/manifests/instagram_10_conversion_ideas.json`.
+version is the [planning manifest](../../pipeline/manifests/instagram_10_conversion_ideas.json).
+It is NOT a clip-level render input: render clips, then adapt and retime cues. Hooks have a 3-second script budget, not measured audio.
+Spoken copy needs a native-Farsi timing pass. Add Persian UI text/subtitles in editing; never trust generated text or badges.
 
 | # | Idea | Segment | Keyword |
 |---|------|---------|---------|
@@ -97,16 +102,18 @@ Slow push-in. Say in Persian (Farsi): "«تیزر» رو کامنت کن؛ لی�
 ```
 
 ### (f) Featured KelidBox accounts, price anchor & CTA
-| Product | id | From (Toman) | WELCOME10 saving | 4 × installment |
+| Product | id | Snapshot from (Toman) | WELCOME10 saving | Illustrative price / 4, before discount or fees |
 |---|---|---|---|---|
-| اشتراک Kling AI Standard و Pro — حساب جدید ۱ ماهه | `draft_83353025-b540-45aa-ac1f-624f826a4098` | ۴٬۰۱۰٬۰۰۰ | ۱۵۰٬۰۰۰ | ۱٬۰۰۲٬۵۰۰ |
-| اشتراک Google AI Pro (Gemini) + ۵ ترابایت — ۶ ماهه روی جیمیل شما | `draft_0794ef61-67db-4aa0-9cd6-0977addacf48` | ۱٬۷۱۰٬۰۰۰ | ۱۵۰٬۰۰۰ | ۴۲۷٬۵۰۰ |
-| اشتراک Runway ML Standard و Pro — ساخت ویدیو با هوش مصنوعی | `draft_17d3b365-2e40-400d-be39-d6e7e159aa14` | ۸٬۸۲۰٬۰۰۰ | ۱۵۰٬۰۰۰ | ۲٬۲۰۵٬۰۰۰ |
+| [اشتراک Kling AI Standard و Pro — حساب جدید ۱ ماهه](https://kelidbox.com/product/draft_83353025-b540-45aa-ac1f-624f826a4098) (candidate URL) | `draft_83353025-b540-45aa-ac1f-624f826a4098` | ۴٬۰۱۰٬۰۰۰ | ۱۵۰٬۰۰۰ | ۱٬۰۰۲٬۵۰۰ |
+| [اشتراک Google AI Pro (Gemini) + ۵ ترابایت — ۶ ماهه روی جیمیل شما](https://kelidbox.com/product/draft_0794ef61-67db-4aa0-9cd6-0977addacf48) (candidate URL) | `draft_0794ef61-67db-4aa0-9cd6-0977addacf48` | ۱٬۷۱۰٬۰۰۰ | ۱۵۰٬۰۰۰ | ۴۲۷٬۵۰۰ |
+| [اشتراک Runway ML Standard و Pro — ساخت ویدیو با هوش مصنوعی](https://kelidbox.com/product/draft_17d3b365-2e40-400d-be39-d6e7e159aa14) (candidate URL) | `draft_17d3b365-2e40-400d-be39-d6e7e159aa14` | ۸٬۸۲۰٬۰۰۰ | ۱۵۰٬۰۰۰ | ۲٬۲۰۵٬۰۰۰ |
+
+Installment division is arithmetic only, not an approved repayment schedule. Primary product: draft_0794ef61-67db-4aa0-9cd6-0977addacf48; others optional/alternatives, not a bundle.
 
 *Brief discrepancy (snapshot price used):* draft_83353025-b540-45aa-ac1f-624f826a4098: brief said 850,000
 
 - **Comment keyword:** `تیزر`
-- **CTA caption (Farsi):** زیر همین پست کلمه «تیزر» رو کامنت کن تا لینک مستقیم کلیدباکس رو دایرکت بگیری. شروع قیمت از ۱٬۷۱۰٬۰۰۰ تومان؛ با کد WELCOME10 تا ۱۵۰٬۰۰۰ تومان تخفیف (خرید بالای ۱۰۰٬۰۰۰ تومان) و پرداخت ۴ قسط بدون بهره با ترب‌پی / اسنپ‌پی / دیجی‌پی. خرید ۲ کلیکی، نماد اعتماد اینماد، تحویل فوری.
+- **CTA caption (Farsi):** کلمه «تیزر» رو کامنت کن تا لینک و راهنمای خرید رو بگیری. محصول اصلی: اشتراک Google AI Pro (Gemini) + ۵ ترابایت — ۶ ماهه روی جیمیل شما؛ قیمت ثبت‌شده از ۱٬۷۱۰٬۰۰۰ تومان (قیمت همین محصول، نه هزینه همه ابزارهای دمو؛ قیمت روز و پلن را در صفحه ببین). کد WELCOME10: ده درصد (۱۰٪) تخفیف تا سقف ۱۵۰٬۰۰۰ تومان، حداقل سفارش ۱۰۰٬۰۰۰ تومان. در تسویه، پرداخت ۴ قسط با ترب‌پی / دیجی‌پی را طبق شرایط اعتبار انتخاب کن؛ مبلغ نهایی، امکان ترکیب کد و قسط، سررسیدها و زمان تحویل را پیش از پرداخت بررسی کن.
 
 ---
 
@@ -178,16 +185,18 @@ Slow push-in. Say in Persian (Farsi): "«انیمیشن» رو کامنت کن؛
 ```
 
 ### (f) Featured KelidBox accounts, price anchor & CTA
-| Product | id | From (Toman) | WELCOME10 saving | 4 × installment |
+| Product | id | Snapshot from (Toman) | WELCOME10 saving | Illustrative price / 4, before discount or fees |
 |---|---|---|---|---|
-| اشتراک ChatGPT | `chatgpt-plus` | ۳٬۷۴۰٬۰۰۰ | ۱۵۰٬۰۰۰ | ۹۳۵٬۰۰۰ |
-| اشتراک Google AI Pro (Gemini) + ۵ ترابایت — ۶ ماهه روی جیمیل شما | `draft_0794ef61-67db-4aa0-9cd6-0977addacf48` | ۱٬۷۱۰٬۰۰۰ | ۱۵۰٬۰۰۰ | ۴۲۷٬۵۰۰ |
-| اشتراک ElevenLabs — پلن‌های Starter و Creator | `draft_3e11fcb0-a761-4391-bf06-4cc4284fd5c0` | ۲٬۹۹۰٬۰۰۰ | ۱۵۰٬۰۰۰ | ۷۴۷٬۵۰۰ |
+| [اشتراک ChatGPT](https://kelidbox.com/product/chatgpt-plus) (candidate URL) | `chatgpt-plus` | ۳٬۷۴۰٬۰۰۰ | ۱۵۰٬۰۰۰ | ۹۳۵٬۰۰۰ |
+| [اشتراک Google AI Pro (Gemini) + ۵ ترابایت — ۶ ماهه روی جیمیل شما](https://kelidbox.com/product/draft_0794ef61-67db-4aa0-9cd6-0977addacf48) (candidate URL) | `draft_0794ef61-67db-4aa0-9cd6-0977addacf48` | ۱٬۷۱۰٬۰۰۰ | ۱۵۰٬۰۰۰ | ۴۲۷٬۵۰۰ |
+| [اشتراک ElevenLabs — پلن‌های Starter و Creator](https://kelidbox.com/product/draft_3e11fcb0-a761-4391-bf06-4cc4284fd5c0) (candidate URL) | `draft_3e11fcb0-a761-4391-bf06-4cc4284fd5c0` | ۲٬۹۹۰٬۰۰۰ | ۱۵۰٬۰۰۰ | ۷۴۷٬۵۰۰ |
+
+Installment division is arithmetic only, not an approved repayment schedule. Primary product: draft_0794ef61-67db-4aa0-9cd6-0977addacf48; others optional/alternatives, not a bundle.
 
 *Brief discrepancy (snapshot price used):* chatgpt-plus: brief said 390,000
 
 - **Comment keyword:** `انیمیشن`
-- **CTA caption (Farsi):** زیر همین پست کلمه «انیمیشن» رو کامنت کن تا لینک مستقیم کلیدباکس رو دایرکت بگیری. شروع قیمت از ۱٬۷۱۰٬۰۰۰ تومان؛ با کد WELCOME10 تا ۱۵۰٬۰۰۰ تومان تخفیف (خرید بالای ۱۰۰٬۰۰۰ تومان) و پرداخت ۴ قسط بدون بهره با ترب‌پی / اسنپ‌پی / دیجی‌پی. خرید ۲ کلیکی، نماد اعتماد اینماد، تحویل فوری.
+- **CTA caption (Farsi):** کلمه «انیمیشن» رو کامنت کن تا لینک و راهنمای خرید رو بگیری. محصول اصلی: اشتراک Google AI Pro (Gemini) + ۵ ترابایت — ۶ ماهه روی جیمیل شما؛ قیمت ثبت‌شده از ۱٬۷۱۰٬۰۰۰ تومان (قیمت همین محصول، نه هزینه همه ابزارهای دمو؛ قیمت روز و پلن را در صفحه ببین). کد WELCOME10: ده درصد (۱۰٪) تخفیف تا سقف ۱۵۰٬۰۰۰ تومان، حداقل سفارش ۱۰۰٬۰۰۰ تومان. در تسویه، پرداخت ۴ قسط با ترب‌پی / دیجی‌پی را طبق شرایط اعتبار انتخاب کن؛ مبلغ نهایی، امکان ترکیب کد و قسط، سررسیدها و زمان تحویل را پیش از پرداخت بررسی کن.
 
 ---
 
@@ -259,17 +268,19 @@ Slow push-in. Say in Persian (Farsi): "«مجری» رو کامنت کن؛ لی�
 ```
 
 ### (f) Featured KelidBox accounts, price anchor & CTA
-| Product | id | From (Toman) | WELCOME10 saving | 4 × installment |
+| Product | id | Snapshot from (Toman) | WELCOME10 saving | Illustrative price / 4, before discount or fees |
 |---|---|---|---|---|
-| اشتراک HeyGen Creator و Pro — حساب جدید ۱ ماهه | `draft_12bb11ac-8ac4-4875-8529-8a756991a70b` | ۸٬۷۳۰٬۰۰۰ | ۱۵۰٬۰۰۰ | ۲٬۱۸۲٬۵۰۰ |
-| اشتراک ElevenLabs — پلن‌های Starter و Creator | `draft_3e11fcb0-a761-4391-bf06-4cc4284fd5c0` | ۲٬۹۹۰٬۰۰۰ | ۱۵۰٬۰۰۰ | ۷۴۷٬۵۰۰ |
-| اشتراک ChatGPT | `chatgpt-plus` | ۳٬۷۴۰٬۰۰۰ | ۱۵۰٬۰۰۰ | ۹۳۵٬۰۰۰ |
-| اشتراک Canva | `canva-pro` | ۳۸۰٬۰۰۰ | ۳۸٬۰۰۰ | ۹۵٬۰۰۰ |
+| [اشتراک HeyGen Creator و Pro — حساب جدید ۱ ماهه](https://kelidbox.com/product/draft_12bb11ac-8ac4-4875-8529-8a756991a70b) (candidate URL) | `draft_12bb11ac-8ac4-4875-8529-8a756991a70b` | ۸٬۷۳۰٬۰۰۰ | ۱۵۰٬۰۰۰ | ۲٬۱۸۲٬۵۰۰ |
+| [اشتراک ElevenLabs — پلن‌های Starter و Creator](https://kelidbox.com/product/draft_3e11fcb0-a761-4391-bf06-4cc4284fd5c0) (candidate URL) | `draft_3e11fcb0-a761-4391-bf06-4cc4284fd5c0` | ۲٬۹۹۰٬۰۰۰ | ۱۵۰٬۰۰۰ | ۷۴۷٬۵۰۰ |
+| [اشتراک ChatGPT](https://kelidbox.com/product/chatgpt-plus) (candidate URL) | `chatgpt-plus` | ۳٬۷۴۰٬۰۰۰ | ۱۵۰٬۰۰۰ | ۹۳۵٬۰۰۰ |
+| [اشتراک Canva](https://kelidbox.com/product/canva-pro) (candidate URL) | `canva-pro` | ۳۸۰٬۰۰۰ | ۳۸٬۰۰۰ | ۹۵٬۰۰۰ |
+
+Installment division is arithmetic only, not an approved repayment schedule. Primary product: draft_12bb11ac-8ac4-4875-8529-8a756991a70b; others optional/alternatives, not a bundle.
 
 *Brief discrepancy (snapshot price used):* chatgpt-plus: brief said 390,000; canva-pro: brief said 230,000
 
 - **Comment keyword:** `مجری`
-- **CTA caption (Farsi):** زیر همین پست کلمه «مجری» رو کامنت کن تا لینک مستقیم کلیدباکس رو دایرکت بگیری. شروع قیمت از ۳۸۰٬۰۰۰ تومان؛ با کد WELCOME10 تا ۱۵۰٬۰۰۰ تومان تخفیف (خرید بالای ۱۰۰٬۰۰۰ تومان) و پرداخت ۴ قسط بدون بهره با ترب‌پی / اسنپ‌پی / دیجی‌پی. خرید ۲ کلیکی، نماد اعتماد اینماد، تحویل فوری.
+- **CTA caption (Farsi):** کلمه «مجری» رو کامنت کن تا لینک و راهنمای خرید رو بگیری. محصول اصلی: اشتراک HeyGen Creator و Pro — حساب جدید ۱ ماهه؛ قیمت ثبت‌شده از ۸٬۷۳۰٬۰۰۰ تومان (قیمت همین محصول، نه هزینه همه ابزارهای دمو؛ قیمت روز و پلن را در صفحه ببین). کد WELCOME10: ده درصد (۱۰٪) تخفیف تا سقف ۱۵۰٬۰۰۰ تومان، حداقل سفارش ۱۰۰٬۰۰۰ تومان. در تسویه، پرداخت ۴ قسط با ترب‌پی / دیجی‌پی را طبق شرایط اعتبار انتخاب کن؛ مبلغ نهایی، امکان ترکیب کد و قسط، سررسیدها و زمان تحویل را پیش از پرداخت بررسی کن.
 
 ---
 
@@ -341,16 +352,18 @@ Slow push-in. Say in Persian (Farsi): "«تولد» رو کامنت کن؛ لی�
 ```
 
 ### (f) Featured KelidBox accounts, price anchor & CTA
-| Product | id | From (Toman) | WELCOME10 saving | 4 × installment |
+| Product | id | Snapshot from (Toman) | WELCOME10 saving | Illustrative price / 4, before discount or fees |
 |---|---|---|---|---|
-| اشتراک Suno AI Pro و Premier — روی حساب شما | `draft_a817f7f0-7513-497c-af44-0cd2863f6045` | ۴٬۸۵۰٬۰۰۰ | ۱۵۰٬۰۰۰ | ۱٬۲۱۲٬۵۰۰ |
-| اشتراک PixVerse AI — تولید ویدیو و انیمیشن با هوش مصنوعی | `draft_11fa376d-8e22-44d8-9bca-7830c1f6b9da` | ۹٬۶۰۰٬۰۰۰ | ۱۵۰٬۰۰۰ | ۲٬۴۰۰٬۰۰۰ |
-| اشتراک Midjourney (ساخت تصویر با هوش مصنوعی) | `midjourney-pro` | ۶٬۱۸۰٬۰۰۰ | ۱۵۰٬۰۰۰ | ۱٬۵۴۵٬۰۰۰ |
+| [اشتراک Suno AI Pro و Premier — روی حساب شما](https://kelidbox.com/product/draft_a817f7f0-7513-497c-af44-0cd2863f6045) (candidate URL) | `draft_a817f7f0-7513-497c-af44-0cd2863f6045` | ۴٬۸۵۰٬۰۰۰ | ۱۵۰٬۰۰۰ | ۱٬۲۱۲٬۵۰۰ |
+| [اشتراک PixVerse AI — تولید ویدیو و انیمیشن با هوش مصنوعی](https://kelidbox.com/product/draft_11fa376d-8e22-44d8-9bca-7830c1f6b9da) (candidate URL) | `draft_11fa376d-8e22-44d8-9bca-7830c1f6b9da` | ۹٬۶۰۰٬۰۰۰ | ۱۵۰٬۰۰۰ | ۲٬۴۰۰٬۰۰۰ |
+| [اشتراک Midjourney (ساخت تصویر با هوش مصنوعی)](https://kelidbox.com/product/midjourney-pro) (candidate URL) | `midjourney-pro` | ۶٬۱۸۰٬۰۰۰ | ۱۵۰٬۰۰۰ | ۱٬۵۴۵٬۰۰۰ |
+
+Installment division is arithmetic only, not an approved repayment schedule. Primary product: draft_a817f7f0-7513-497c-af44-0cd2863f6045; others optional/alternatives, not a bundle.
 
 *Brief discrepancy (snapshot price used):* midjourney-pro: brief said 720,000
 
 - **Comment keyword:** `تولد`
-- **CTA caption (Farsi):** زیر همین پست کلمه «تولد» رو کامنت کن تا لینک مستقیم کلیدباکس رو دایرکت بگیری. شروع قیمت از ۴٬۸۵۰٬۰۰۰ تومان؛ با کد WELCOME10 تا ۱۵۰٬۰۰۰ تومان تخفیف (خرید بالای ۱۰۰٬۰۰۰ تومان) و پرداخت ۴ قسط بدون بهره با ترب‌پی / اسنپ‌پی / دیجی‌پی. خرید ۲ کلیکی، نماد اعتماد اینماد، تحویل فوری.
+- **CTA caption (Farsi):** کلمه «تولد» رو کامنت کن تا لینک و راهنمای خرید رو بگیری. محصول اصلی: اشتراک Suno AI Pro و Premier — روی حساب شما؛ قیمت ثبت‌شده از ۴٬۸۵۰٬۰۰۰ تومان (قیمت همین محصول، نه هزینه همه ابزارهای دمو؛ قیمت روز و پلن را در صفحه ببین). کد WELCOME10: ده درصد (۱۰٪) تخفیف تا سقف ۱۵۰٬۰۰۰ تومان، حداقل سفارش ۱۰۰٬۰۰۰ تومان. در تسویه، پرداخت ۴ قسط با ترب‌پی / دیجی‌پی را طبق شرایط اعتبار انتخاب کن؛ مبلغ نهایی، امکان ترکیب کد و قسط، سررسیدها و زمان تحویل را پیش از پرداخت بررسی کن.
 
 ---
 
@@ -422,14 +435,16 @@ Slow push-in. Say in Persian (Farsi): "«نقاشی» رو کامنت کن؛ ل�
 ```
 
 ### (f) Featured KelidBox accounts, price anchor & CTA
-| Product | id | From (Toman) | WELCOME10 saving | 4 × installment |
+| Product | id | Snapshot from (Toman) | WELCOME10 saving | Illustrative price / 4, before discount or fees |
 |---|---|---|---|---|
-| اشتراک Google AI Pro (Gemini) + ۵ ترابایت — ۶ ماهه روی جیمیل شما | `draft_0794ef61-67db-4aa0-9cd6-0977addacf48` | ۱٬۷۱۰٬۰۰۰ | ۱۵۰٬۰۰۰ | ۴۲۷٬۵۰۰ |
-| اشتراک Hailuo AI (MiniMax) — ساخت ویدیوهای واقع‌گرایانه با هوش مصنوعی | `draft_8ddf9af6-ea31-4aa5-89f4-d5b6a1ef7b4f` | ۲٬۶۴۰٬۰۰۰ | ۱۵۰٬۰۰۰ | ۶۶۰٬۰۰۰ |
-| اشتراک PixVerse AI — تولید ویدیو و انیمیشن با هوش مصنوعی | `draft_11fa376d-8e22-44d8-9bca-7830c1f6b9da` | ۹٬۶۰۰٬۰۰۰ | ۱۵۰٬۰۰۰ | ۲٬۴۰۰٬۰۰۰ |
+| [اشتراک Google AI Pro (Gemini) + ۵ ترابایت — ۶ ماهه روی جیمیل شما](https://kelidbox.com/product/draft_0794ef61-67db-4aa0-9cd6-0977addacf48) (candidate URL) | `draft_0794ef61-67db-4aa0-9cd6-0977addacf48` | ۱٬۷۱۰٬۰۰۰ | ۱۵۰٬۰۰۰ | ۴۲۷٬۵۰۰ |
+| [اشتراک Hailuo AI (MiniMax) — ساخت ویدیوهای واقع‌گرایانه با هوش مصنوعی](https://kelidbox.com/product/draft_8ddf9af6-ea31-4aa5-89f4-d5b6a1ef7b4f) (candidate URL) | `draft_8ddf9af6-ea31-4aa5-89f4-d5b6a1ef7b4f` | ۲٬۶۴۰٬۰۰۰ | ۱۵۰٬۰۰۰ | ۶۶۰٬۰۰۰ |
+| [اشتراک PixVerse AI — تولید ویدیو و انیمیشن با هوش مصنوعی](https://kelidbox.com/product/draft_11fa376d-8e22-44d8-9bca-7830c1f6b9da) (candidate URL) | `draft_11fa376d-8e22-44d8-9bca-7830c1f6b9da` | ۹٬۶۰۰٬۰۰۰ | ۱۵۰٬۰۰۰ | ۲٬۴۰۰٬۰۰۰ |
+
+Installment division is arithmetic only, not an approved repayment schedule. Primary product: draft_0794ef61-67db-4aa0-9cd6-0977addacf48; others optional/alternatives, not a bundle.
 
 - **Comment keyword:** `نقاشی`
-- **CTA caption (Farsi):** زیر همین پست کلمه «نقاشی» رو کامنت کن تا لینک مستقیم کلیدباکس رو دایرکت بگیری. شروع قیمت از ۱٬۷۱۰٬۰۰۰ تومان؛ با کد WELCOME10 تا ۱۵۰٬۰۰۰ تومان تخفیف (خرید بالای ۱۰۰٬۰۰۰ تومان) و پرداخت ۴ قسط بدون بهره با ترب‌پی / اسنپ‌پی / دیجی‌پی. خرید ۲ کلیکی، نماد اعتماد اینماد، تحویل فوری.
+- **CTA caption (Farsi):** کلمه «نقاشی» رو کامنت کن تا لینک و راهنمای خرید رو بگیری. محصول اصلی: اشتراک Google AI Pro (Gemini) + ۵ ترابایت — ۶ ماهه روی جیمیل شما؛ قیمت ثبت‌شده از ۱٬۷۱۰٬۰۰۰ تومان (قیمت همین محصول، نه هزینه همه ابزارهای دمو؛ قیمت روز و پلن را در صفحه ببین). کد WELCOME10: ده درصد (۱۰٪) تخفیف تا سقف ۱۵۰٬۰۰۰ تومان، حداقل سفارش ۱۰۰٬۰۰۰ تومان. در تسویه، پرداخت ۴ قسط با ترب‌پی / دیجی‌پی را طبق شرایط اعتبار انتخاب کن؛ مبلغ نهایی، امکان ترکیب کد و قسط، سررسیدها و زمان تحویل را پیش از پرداخت بررسی کن.
 
 ---
 
@@ -501,17 +516,19 @@ Slow push-in. Say in Persian (Farsi): "«اسلاید» رو کامنت کن؛ �
 ```
 
 ### (f) Featured KelidBox accounts, price anchor & CTA
-| Product | id | From (Toman) | WELCOME10 saving | 4 × installment |
+| Product | id | Snapshot from (Toman) | WELCOME10 saving | Illustrative price / 4, before discount or fees |
 |---|---|---|---|---|
-| اشتراک Gamma AI Plus و Pro — حساب آماده ۱ ماهه | `draft_3492cbe3-b83d-408e-8ff1-c2f635dcf811` | ۲٬۲۰۰٬۰۰۰ | ۱۵۰٬۰۰۰ | ۵۵۰٬۰۰۰ |
-| اشتراک Claude Pro (Anthropic) | `claude-pro` | ۹٬۲۶۰٬۰۰۰ | ۱۵۰٬۰۰۰ | ۲٬۳۱۵٬۰۰۰ |
-| اشتراک ChatGPT | `chatgpt-plus` | ۳٬۷۴۰٬۰۰۰ | ۱۵۰٬۰۰۰ | ۹۳۵٬۰۰۰ |
-| اشتراک PLAUD AI Pro و Unlimited — رونویسی و خلاصه‌سازی جلسات با هوش مصنوعی | `draft_31ded853-61a6-47d9-b604-8b21c6283217` | ۱۶٬۶۳۰٬۰۰۰ | ۱۵۰٬۰۰۰ | ۴٬۱۵۷٬۵۰۰ |
+| [اشتراک Gamma AI Plus و Pro — حساب آماده ۱ ماهه](https://kelidbox.com/product/draft_3492cbe3-b83d-408e-8ff1-c2f635dcf811) (candidate URL) | `draft_3492cbe3-b83d-408e-8ff1-c2f635dcf811` | ۲٬۲۰۰٬۰۰۰ | ۱۵۰٬۰۰۰ | ۵۵۰٬۰۰۰ |
+| [اشتراک Claude Pro (Anthropic)](https://kelidbox.com/product/claude-pro) (candidate URL) | `claude-pro` | ۹٬۲۶۰٬۰۰۰ | ۱۵۰٬۰۰۰ | ۲٬۳۱۵٬۰۰۰ |
+| [اشتراک ChatGPT](https://kelidbox.com/product/chatgpt-plus) (candidate URL) | `chatgpt-plus` | ۳٬۷۴۰٬۰۰۰ | ۱۵۰٬۰۰۰ | ۹۳۵٬۰۰۰ |
+| [اشتراک PLAUD AI Pro و Unlimited — رونویسی و خلاصه‌سازی جلسات با هوش مصنوعی](https://kelidbox.com/product/draft_31ded853-61a6-47d9-b604-8b21c6283217) (candidate URL) | `draft_31ded853-61a6-47d9-b604-8b21c6283217` | ۱۶٬۶۳۰٬۰۰۰ | ۱۵۰٬۰۰۰ | ۴٬۱۵۷٬۵۰۰ |
+
+Installment division is arithmetic only, not an approved repayment schedule. Primary product: draft_3492cbe3-b83d-408e-8ff1-c2f635dcf811; others optional/alternatives, not a bundle.
 
 *Brief discrepancy (snapshot price used):* chatgpt-plus: brief said 390,000; claude-pro: brief said 440,000
 
 - **Comment keyword:** `اسلاید`
-- **CTA caption (Farsi):** زیر همین پست کلمه «اسلاید» رو کامنت کن تا لینک مستقیم کلیدباکس رو دایرکت بگیری. شروع قیمت از ۲٬۲۰۰٬۰۰۰ تومان؛ با کد WELCOME10 تا ۱۵۰٬۰۰۰ تومان تخفیف (خرید بالای ۱۰۰٬۰۰۰ تومان) و پرداخت ۴ قسط بدون بهره با ترب‌پی / اسنپ‌پی / دیجی‌پی. خرید ۲ کلیکی، نماد اعتماد اینماد، تحویل فوری.
+- **CTA caption (Farsi):** کلمه «اسلاید» رو کامنت کن تا لینک و راهنمای خرید رو بگیری. محصول اصلی: اشتراک Gamma AI Plus و Pro — حساب آماده ۱ ماهه؛ قیمت ثبت‌شده از ۲٬۲۰۰٬۰۰۰ تومان (قیمت همین محصول، نه هزینه همه ابزارهای دمو؛ قیمت روز و پلن را در صفحه ببین). کد WELCOME10: ده درصد (۱۰٪) تخفیف تا سقف ۱۵۰٬۰۰۰ تومان، حداقل سفارش ۱۰۰٬۰۰۰ تومان. در تسویه، پرداخت ۴ قسط با ترب‌پی / دیجی‌پی را طبق شرایط اعتبار انتخاب کن؛ مبلغ نهایی، امکان ترکیب کد و قسط، سررسیدها و زمان تحویل را پیش از پرداخت بررسی کن.
 
 ---
 
@@ -583,16 +600,18 @@ Slow push-in. Say in Persian (Farsi): "«درآمد» رو کامنت کن؛ ل�
 ```
 
 ### (f) Featured KelidBox accounts, price anchor & CTA
-| Product | id | From (Toman) | WELCOME10 saving | 4 × installment |
+| Product | id | Snapshot from (Toman) | WELCOME10 saving | Illustrative price / 4, before discount or fees |
 |---|---|---|---|---|
-| اشتراک Canva | `canva-pro` | ۳۸۰٬۰۰۰ | ۳۸٬۰۰۰ | ۹۵٬۰۰۰ |
-| اشتراک Picsart Pro — ویرایش عکس و ویدیو با هوش مصنوعی | `draft_cb39433a-d659-4cea-affe-1de803238eeb` | ۴۲۰٬۰۰۰ | ۴۲٬۰۰۰ | ۱۰۵٬۰۰۰ |
-| اشتراک Magnific AI (Freepik) — افزایش کیفیت تصویر و دانلود فایل‌های گرافیکی | `draft_8f001536-6d8a-4996-84ab-fcc126fbdb1e` | ۹۵۰٬۰۰۰ | ۹۵٬۰۰۰ | ۲۳۷٬۵۰۰ |
+| [اشتراک Canva](https://kelidbox.com/product/canva-pro) (candidate URL) | `canva-pro` | ۳۸۰٬۰۰۰ | ۳۸٬۰۰۰ | ۹۵٬۰۰۰ |
+| [اشتراک Picsart Pro — ویرایش عکس و ویدیو با هوش مصنوعی](https://kelidbox.com/product/draft_cb39433a-d659-4cea-affe-1de803238eeb) (candidate URL) | `draft_cb39433a-d659-4cea-affe-1de803238eeb` | ۴۲۰٬۰۰۰ | ۴۲٬۰۰۰ | ۱۰۵٬۰۰۰ |
+| [اشتراک Magnific AI (Freepik) — افزایش کیفیت تصویر و دانلود فایل‌های گرافیکی](https://kelidbox.com/product/draft_8f001536-6d8a-4996-84ab-fcc126fbdb1e) (candidate URL) | `draft_8f001536-6d8a-4996-84ab-fcc126fbdb1e` | ۹۵۰٬۰۰۰ | ۹۵٬۰۰۰ | ۲۳۷٬۵۰۰ |
+
+Installment division is arithmetic only, not an approved repayment schedule. Primary product: canva-pro; others optional/alternatives, not a bundle.
 
 *Brief discrepancy (snapshot price used):* canva-pro: brief said 230,000
 
 - **Comment keyword:** `درآمد`
-- **CTA caption (Farsi):** زیر همین پست کلمه «درآمد» رو کامنت کن تا لینک مستقیم کلیدباکس رو دایرکت بگیری. شروع قیمت از ۳۸۰٬۰۰۰ تومان؛ با کد WELCOME10 تا ۱۵۰٬۰۰۰ تومان تخفیف (خرید بالای ۱۰۰٬۰۰۰ تومان) و پرداخت ۴ قسط بدون بهره با ترب‌پی / اسنپ‌پی / دیجی‌پی. خرید ۲ کلیکی، نماد اعتماد اینماد، تحویل فوری.
+- **CTA caption (Farsi):** کلمه «درآمد» رو کامنت کن تا لینک و راهنمای خرید رو بگیری. محصول اصلی: اشتراک Canva؛ قیمت ثبت‌شده از ۳۸۰٬۰۰۰ تومان (قیمت همین محصول، نه هزینه همه ابزارهای دمو؛ قیمت روز و پلن را در صفحه ببین). کد WELCOME10: ده درصد (۱۰٪) تخفیف تا سقف ۱۵۰٬۰۰۰ تومان، حداقل سفارش ۱۰۰٬۰۰۰ تومان. در تسویه، پرداخت ۴ قسط با ترب‌پی / دیجی‌پی را طبق شرایط اعتبار انتخاب کن؛ مبلغ نهایی، امکان ترکیب کد و قسط، سررسیدها و زمان تحویل را پیش از پرداخت بررسی کن.
 
 ---
 
@@ -664,16 +683,18 @@ Slow push-in. Say in Persian (Farsi): "«قیمت» رو کامنت کن؛ لی�
 ```
 
 ### (f) Featured KelidBox accounts, price anchor & CTA
-| Product | id | From (Toman) | WELCOME10 saving | 4 × installment |
+| Product | id | Snapshot from (Toman) | WELCOME10 saving | Illustrative price / 4, before discount or fees |
 |---|---|---|---|---|
-| اشتراک ChatGPT | `chatgpt-plus` | ۳٬۷۴۰٬۰۰۰ | ۱۵۰٬۰۰۰ | ۹۳۵٬۰۰۰ |
-| اشتراک Google AI Pro (Gemini) + ۵ ترابایت — ۶ ماهه روی جیمیل شما | `draft_0794ef61-67db-4aa0-9cd6-0977addacf48` | ۱٬۷۱۰٬۰۰۰ | ۱۵۰٬۰۰۰ | ۴۲۷٬۵۰۰ |
-| اشتراک Canva | `canva-pro` | ۳۸۰٬۰۰۰ | ۳۸٬۰۰۰ | ۹۵٬۰۰۰ |
+| [اشتراک ChatGPT](https://kelidbox.com/product/chatgpt-plus) (candidate URL) | `chatgpt-plus` | ۳٬۷۴۰٬۰۰۰ | ۱۵۰٬۰۰۰ | ۹۳۵٬۰۰۰ |
+| [اشتراک Google AI Pro (Gemini) + ۵ ترابایت — ۶ ماهه روی جیمیل شما](https://kelidbox.com/product/draft_0794ef61-67db-4aa0-9cd6-0977addacf48) (candidate URL) | `draft_0794ef61-67db-4aa0-9cd6-0977addacf48` | ۱٬۷۱۰٬۰۰۰ | ۱۵۰٬۰۰۰ | ۴۲۷٬۵۰۰ |
+| [اشتراک Canva](https://kelidbox.com/product/canva-pro) (candidate URL) | `canva-pro` | ۳۸۰٬۰۰۰ | ۳۸٬۰۰۰ | ۹۵٬۰۰۰ |
+
+Installment division is arithmetic only, not an approved repayment schedule. Primary product: canva-pro; others optional/alternatives, not a bundle.
 
 *Brief discrepancy (snapshot price used):* chatgpt-plus: brief said 390,000; canva-pro: brief said 230,000
 
 - **Comment keyword:** `قیمت`
-- **CTA caption (Farsi):** زیر همین پست کلمه «قیمت» رو کامنت کن تا لینک مستقیم کلیدباکس رو دایرکت بگیری. شروع قیمت از ۳۸۰٬۰۰۰ تومان؛ با کد WELCOME10 تا ۱۵۰٬۰۰۰ تومان تخفیف (خرید بالای ۱۰۰٬۰۰۰ تومان) و پرداخت ۴ قسط بدون بهره با ترب‌پی / اسنپ‌پی / دیجی‌پی. خرید ۲ کلیکی، نماد اعتماد اینماد، تحویل فوری.
+- **CTA caption (Farsi):** کلمه «قیمت» رو کامنت کن تا لینک و راهنمای خرید رو بگیری. محصول اصلی: اشتراک Canva؛ قیمت ثبت‌شده از ۳۸۰٬۰۰۰ تومان (قیمت همین محصول، نه هزینه همه ابزارهای دمو؛ قیمت روز و پلن را در صفحه ببین). کد WELCOME10: ده درصد (۱۰٪) تخفیف تا سقف ۱۵۰٬۰۰۰ تومان، حداقل سفارش ۱۰۰٬۰۰۰ تومان. در تسویه، پرداخت ۴ قسط با ترب‌پی / دیجی‌پی را طبق شرایط اعتبار انتخاب کن؛ مبلغ نهایی، امکان ترکیب کد و قسط، سررسیدها و زمان تحویل را پیش از پرداخت بررسی کن.
 
 ---
 
@@ -745,17 +766,19 @@ Slow push-in. Say in Persian (Farsi): "«بدون تبلیغ» رو کامنت �
 ```
 
 ### (f) Featured KelidBox accounts, price anchor & CTA
-| Product | id | From (Toman) | WELCOME10 saving | 4 × installment |
+| Product | id | Snapshot from (Toman) | WELCOME10 saving | Illustrative price / 4, before discount or fees |
 |---|---|---|---|---|
-| اشتراک YouTube Premium + YouTube Music | `youtube-premium` | ۴٬۳۶۰٬۰۰۰ | ۱۵۰٬۰۰۰ | ۱٬۰۹۰٬۰۰۰ |
-| اشتراک Spotify | `spotify-premium` | ۱٬۰۶۰٬۰۰۰ | ۱۰۶٬۰۰۰ | ۲۶۵٬۰۰۰ |
-| اکانت Netflix 4K Ultra HD (پروفایل اختصاصی) | `netflix-4k` | ۱٬۰۶۰٬۰۰۰ | ۱۰۶٬۰۰۰ | ۲۶۵٬۰۰۰ |
-| اشتراک Disney+ Premium 4K — دسترسی به فیلم و سریال‌های دیزنی، مارول و پیکسار | `draft_7aa99417-2013-4c23-b0de-b1075feb7fa1` | ۷۵۰٬۰۰۰ | ۷۵٬۰۰۰ | ۱۸۷٬۵۰۰ |
+| [اشتراک YouTube Premium + YouTube Music](https://kelidbox.com/product/youtube-premium) (candidate URL) | `youtube-premium` | ۴٬۳۶۰٬۰۰۰ | ۱۵۰٬۰۰۰ | ۱٬۰۹۰٬۰۰۰ |
+| [اشتراک Spotify](https://kelidbox.com/product/spotify-premium) (candidate URL) | `spotify-premium` | ۱٬۰۶۰٬۰۰۰ | ۱۰۶٬۰۰۰ | ۲۶۵٬۰۰۰ |
+| [اکانت Netflix 4K Ultra HD (پروفایل اختصاصی)](https://kelidbox.com/product/netflix-4k) (candidate URL) | `netflix-4k` | ۱٬۰۶۰٬۰۰۰ | ۱۰۶٬۰۰۰ | ۲۶۵٬۰۰۰ |
+| [اشتراک Disney+ Premium 4K — دسترسی به فیلم و سریال‌های دیزنی، مارول و پیکسار](https://kelidbox.com/product/draft_7aa99417-2013-4c23-b0de-b1075feb7fa1) (candidate URL) | `draft_7aa99417-2013-4c23-b0de-b1075feb7fa1` | ۷۵۰٬۰۰۰ | ۷۵٬۰۰۰ | ۱۸۷٬۵۰۰ |
+
+Installment division is arithmetic only, not an approved repayment schedule. Primary product: youtube-premium; others optional/alternatives, not a bundle.
 
 *Brief discrepancy (snapshot price used):* youtube-premium: brief said 175,000; spotify-premium: brief said 165,000; netflix-4k: brief said 290,000
 
 - **Comment keyword:** `بدون تبلیغ`
-- **CTA caption (Farsi):** زیر همین پست کلمه «بدون تبلیغ» رو کامنت کن تا لینک مستقیم کلیدباکس رو دایرکت بگیری. شروع قیمت از ۷۵۰٬۰۰۰ تومان؛ با کد WELCOME10 تا ۱۵۰٬۰۰۰ تومان تخفیف (خرید بالای ۱۰۰٬۰۰۰ تومان) و پرداخت ۴ قسط بدون بهره با ترب‌پی / اسنپ‌پی / دیجی‌پی. خرید ۲ کلیکی، نماد اعتماد اینماد، تحویل فوری.
+- **CTA caption (Farsi):** کلمه «بدون تبلیغ» رو کامنت کن تا لینک و راهنمای خرید رو بگیری. محصول اصلی: اشتراک YouTube Premium + YouTube Music؛ قیمت ثبت‌شده از ۴٬۳۶۰٬۰۰۰ تومان (قیمت همین محصول، نه هزینه همه ابزارهای دمو؛ قیمت روز و پلن را در صفحه ببین). کد WELCOME10: ده درصد (۱۰٪) تخفیف تا سقف ۱۵۰٬۰۰۰ تومان، حداقل سفارش ۱۰۰٬۰۰۰ تومان. در تسویه، پرداخت ۴ قسط با ترب‌پی / دیجی‌پی را طبق شرایط اعتبار انتخاب کن؛ مبلغ نهایی، امکان ترکیب کد و قسط، سررسیدها و زمان تحویل را پیش از پرداخت بررسی کن.
 
 ---
 
@@ -827,16 +850,18 @@ Slow push-in. Say in Persian (Farsi): "«گیم» رو کامنت کن؛ لین�
 ```
 
 ### (f) Featured KelidBox accounts, price anchor & CTA
-| Product | id | From (Toman) | WELCOME10 saving | 4 × installment |
+| Product | id | Snapshot from (Toman) | WELCOME10 saving | Illustrative price / 4, before discount or fees |
 |---|---|---|---|---|
-| سی‌پی کالاف دیوتی موبایل — نسخه Global، شارژ دستی Activision | `cod-mobile-cp` | ۱٬۱۴۰٬۰۰۰ | ۱۱۴٬۰۰۰ | ۲۸۵٬۰۰۰ |
-| گیفت کارت Roblox | `roblox-robux` | ۶٬۱۹۰٬۰۰۰ | ۱۵۰٬۰۰۰ | ۱٬۵۴۷٬۵۰۰ |
-| ولورانت پوینت (Valorant Points - VP) | `valorant-points` | ۲٬۱۹۰٬۰۰۰ | ۱۵۰٬۰۰۰ | ۵۴۷٬۵۰۰ |
-| تلگرام استارز (Telegram Stars ⭐) | `telegram-stars` | ۶۷۰٬۰۰۰ | ۶۷٬۰۰۰ | ۱۶۷٬۵۰۰ |
-| گیفت کارت Steam | `steam-gift-card` | ۱٬۸۴۰٬۰۰۰ | ۱۵۰٬۰۰۰ | ۴۶۰٬۰۰۰ |
-| کد اشتراک ExitLag — رایانه، مناطق پشتیبانی‌شده شامل ایران | `draft_551f9b12-deb2-45dd-a9db-322719caa601` | ۲٬۴۲۰٬۰۰۰ | ۱۵۰٬۰۰۰ | ۶۰۵٬۰۰۰ |
+| [سی‌پی کالاف دیوتی موبایل — نسخه Global، شارژ دستی Activision](https://kelidbox.com/product/cod-mobile-cp) (candidate URL) | `cod-mobile-cp` | ۱٬۱۴۰٬۰۰۰ | ۱۱۴٬۰۰۰ | ۲۸۵٬۰۰۰ |
+| [گیفت کارت Roblox](https://kelidbox.com/product/roblox-robux) (candidate URL) | `roblox-robux` | ۶٬۱۹۰٬۰۰۰ | ۱۵۰٬۰۰۰ | ۱٬۵۴۷٬۵۰۰ |
+| [ولورانت پوینت (Valorant Points - VP)](https://kelidbox.com/product/valorant-points) (candidate URL) | `valorant-points` | ۲٬۱۹۰٬۰۰۰ | ۱۵۰٬۰۰۰ | ۵۴۷٬۵۰۰ |
+| [تلگرام استارز (Telegram Stars ⭐)](https://kelidbox.com/product/telegram-stars) (candidate URL) | `telegram-stars` | ۶۷۰٬۰۰۰ | ۶۷٬۰۰۰ | ۱۶۷٬۵۰۰ |
+| [گیفت کارت Steam](https://kelidbox.com/product/steam-gift-card) (candidate URL) | `steam-gift-card` | ۱٬۸۴۰٬۰۰۰ | ۱۵۰٬۰۰۰ | ۴۶۰٬۰۰۰ |
+| [کد اشتراک ExitLag — رایانه، مناطق پشتیبانی‌شده شامل ایران](https://kelidbox.com/product/draft_551f9b12-deb2-45dd-a9db-322719caa601) (candidate URL) | `draft_551f9b12-deb2-45dd-a9db-322719caa601` | ۲٬۴۲۰٬۰۰۰ | ۱۵۰٬۰۰۰ | ۶۰۵٬۰۰۰ |
+
+Installment division is arithmetic only, not an approved repayment schedule. Primary product: cod-mobile-cp; others optional/alternatives, not a bundle.
 
 *Brief discrepancy (snapshot price used):* cod-mobile-cp: brief said 68,000; roblox-robux: brief said 295,000; valorant-points: brief said 195,000; telegram-stars: brief said 135,000
 
 - **Comment keyword:** `گیم`
-- **CTA caption (Farsi):** زیر همین پست کلمه «گیم» رو کامنت کن تا لینک مستقیم کلیدباکس رو دایرکت بگیری. شروع قیمت از ۶۷۰٬۰۰۰ تومان؛ با کد WELCOME10 تا ۱۵۰٬۰۰۰ تومان تخفیف (خرید بالای ۱۰۰٬۰۰۰ تومان) و پرداخت ۴ قسط بدون بهره با ترب‌پی / اسنپ‌پی / دیجی‌پی. خرید ۲ کلیکی، نماد اعتماد اینماد، تحویل فوری.
+- **CTA caption (Farsi):** کلمه «گیم» رو کامنت کن تا لینک و راهنمای خرید رو بگیری. محصول اصلی: سی‌پی کالاف دیوتی موبایل — نسخه Global، شارژ دستی Activision؛ قیمت ثبت‌شده از ۱٬۱۴۰٬۰۰۰ تومان (قیمت همین محصول، نه هزینه همه ابزارهای دمو؛ قیمت روز و پلن را در صفحه ببین). کد WELCOME10: ده درصد (۱۰٪) تخفیف تا سقف ۱۵۰٬۰۰۰ تومان، حداقل سفارش ۱۰۰٬۰۰۰ تومان. در تسویه، پرداخت ۴ قسط با ترب‌پی / دیجی‌پی را طبق شرایط اعتبار انتخاب کن؛ مبلغ نهایی، امکان ترکیب کد و قسط، سررسیدها و زمان تحویل را پیش از پرداخت بررسی کن.
