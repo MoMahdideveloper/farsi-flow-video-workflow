@@ -895,3 +895,151 @@ def build_overlays(ep: Episode, cues: list[Cue], clip_dur: float, png_dir: Path,
                                text_color=ep.color_for(cue.speaker), max_lines=int(st["max_lines"]))
         out.append(Overlay(round(s0, 3), round(s1, 3), "sub", cue.speaker, cue.text, meta))
     return out
+
+
+# ------------------------------------------------- build cache / provenance --
+def fingerprint(obj: Any) -> str:
+    return hashlib.sha256(json.dumps(obj, sort_keys=True, default=str,
+                                     ensure_ascii=False).encode("utf-8")).hexdigest()
+
+
+def _record_path(p: Path) -> Path:
+    return p.with_name(p.name + ".build.json")
+
+
+def cache_ok(outputs: list[Path], key: str) -> bool:
+    """True when every output exists and its build record carries ``key``."""
+    rec = _record_path(outputs[0])
+    if not rec.is_file() or not all(p.is_file() and p.stat().st_size > 0 for p in outputs):
+        return False
+    try:
+        return json.loads(rec.read_text("utf-8")).get("key") == key
+    except (OSError, json.JSONDecodeError):
+        return False
+
+
+def cache_write(output: Path, key: str, **extra: Any) -> None:
+    rec = {"key": key, "pipeline_version": PIPELINE_VERSION, "sha256": sha256_file(output),
+           "written_utc": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()), **extra}
+    _record_path(output).write_text(json.dumps(rec, indent=2, ensure_ascii=False), "utf-8")
+
+
+def atomic_copy(src: Path, dst: Path) -> Path:
+    dst.parent.mkdir(parents=True, exist_ok=True)
+    tmp = dst.with_name(dst.stem + ".tmp" + dst.suffix)
+    shutil.copy2(src, tmp)
+    os.replace(tmp, dst)
+    return dst
+
+
+def work_dir(ep: Episode) -> Path:
+    return ep.out_dir / "_work" / ep.episode_id
+
+
+def prepare_source(ep: Episode, clip: ClipSpec, work: Path, force: bool = False) -> tuple[Path, dict]:
+    """Resolve the exact source for a clip.  With ``splice_segments``: splice
+    ``raw_orig_file`` into the work dir (sources stay immutable -- clip_03.mp4
+    is never overwritten); if the raw original is missing but ``file`` exists,
+    ``file`` is taken as the already-spliced cut (recorded as a warning)."""
+    file_p, raw_p = clip_source_paths(ep, clip)
+    prov: dict[str, Any] = {"file": str(file_p), "raw_orig_file": str(raw_p) if raw_p else None}
+    if clip.splice_segments:
+        if raw_p is not None and raw_p.is_file():
+            raw_sha = sha256_file(raw_p)
+            spliced = work / f"{clip.id}_spliced.mov"
+            key = fingerprint({"src": raw_sha, "segs": clip.splice_segments, "v": PIPELINE_VERSION,
+                               "xf": ep.speech["splice_crossfade"], "fps": ep.video["fps"]})
+            if force or not cache_ok([spliced], key):
+                log(f"{clip.id}: splicing {raw_p.name} segments {clip.splice_segments}")
+                splice_clip(raw_p, clip.splice_segments, spliced, ep.speech, ep.video)
+                cache_write(spliced, key, source=str(raw_p))
+            prov.update(mode="spliced", source=str(raw_p), source_sha256=raw_sha,
+                        segments=[list(s) for s in clip.splice_segments], analysed=str(spliced))
+            return spliced, prov
+        if file_p.is_file():
+            msg = (f"{clip.id}: raw_orig_file {clip.raw_orig_file!r} not found; using {file_p.name} "
+                   f"as the pre-spliced cut (splice_segments not re-applied)")
+            ep.warnings.append(msg)
+            prov["warning"] = msg
+        else:
+            raise PipelineError(f"{clip.id}: neither raw_orig_file {raw_p} nor file {file_p} exists")
+    if not file_p.is_file():
+        raise PipelineError(f"{clip.id}: source not found: {file_p}")
+    prov.update(mode=prov.get("mode", "pre_spliced_file" if clip.splice_segments else "direct"),
+                source=str(file_p), source_sha256=sha256_file(file_p), analysed=str(file_p))
+    return file_p, prov
+
+
+def window_speech_check(analysis: dict, t_in: float, t_out: float) -> dict:
+    """Re-evaluate the speech diagnostics for the FINAL trim window."""
+    segs = [tuple(s) for s in analysis.get("speech_segments") or []]
+    first, last = analysis.get("first_speech_sec"), analysis.get("last_speech_sec")
+    dur = float(analysis.get("source_duration") or t_out)
+    res = {"trim_in_inside_speech": any(a < t_in < b for a, b in segs),
+           "trim_out_inside_speech": any(a < t_out < b for a, b in segs),
+           "speech_dropped_sec": round(_speech_inside(segs, 0.0, t_in) + _speech_inside(segs, t_out, dur), 3),
+           "pre_handle_sec": None if first is None else round(first - t_in, 3),
+           "post_handle_sec": None if last is None else round(t_out - last, 3)}
+    res["cuts_speech"] = bool(res["trim_in_inside_speech"] or res["trim_out_inside_speech"]
+                              or res["speech_dropped_sec"] > 0)
+    return res
+
+
+def local_cues(ep: Episode, clip: ClipSpec, plan: dict, analysis: Optional[dict],
+               clip_dur: float) -> tuple[list[Cue], list[dict]]:
+    """Map manifest cues onto the rendered clip's timeline + bounds/speech checks.
+    trim_local: local = cue + subtitle_shift   (cues authored vs. requested trim_in)
+    source:     local = cue - final_trim_in    (cues authored in source seconds)"""
+    t_in = plan["final"][0]
+    segs = [(a - t_in, b - t_in) for a, b in (analysis or {}).get("speech_segments") or []]
+    out, checks = [], []
+    prev_end = -1.0
+    for cue in clip.subtitles:
+        off = plan["subtitle_shift"] if ep.subs["time_base"] == "trim_local" else -t_in
+        s0, s1 = round(cue.start + off, 3), round(cue.end + off, 3)
+        chk: dict[str, Any] = {"text": cue.text, "speaker": cue.speaker, "authored": [cue.start, cue.end],
+                               "local": [s0, s1], "in_bounds": s0 >= -1e-3 and s1 <= clip_dur + 1e-3}
+        if not chk["in_bounds"]:
+            s0, s1 = max(0.0, s0), min(clip_dur, s1)
+            chk["clamped_to"] = [round(s0, 3), round(s1, 3)]
+        chk["overlaps_previous"] = s0 < prev_end - 1e-3
+        span = max(1e-6, s1 - s0)
+        chk["speech_energy_ratio"] = round(_speech_inside(segs, s0, s1) / span, 3) if segs else None
+        if chk["speech_energy_ratio"] is not None and chk["speech_energy_ratio"] < 0.2:
+            chk["note"] = "little speech energy under this cue - verify wording/timing by ear"
+        checks.append(chk)
+        prev_end = max(prev_end, s1)
+        if s1 > s0:
+            out.append(Cue(round(s0, 3), round(s1, 3), cue.speaker, cue.text))
+    return out, checks
+
+
+def overlay_chain(base: str, overlays: list[Overlay], first_input: int,
+                  offset: float = 0.0) -> tuple[list[str], str]:
+    """ffmpeg overlay chain; each PNG is enabled on between(t, start, end)."""
+    parts, cur = [], base
+    for k, ov in enumerate(overlays):
+        nxt = f"[ov{k}]"
+        s0, s1 = ov.start + offset, ov.end + offset
+        parts.append(f"{cur}[{first_input + k}:v]overlay=x={ov.meta['x']}:y={ov.meta['y']}:"
+                     f"eof_action=repeat:enable='between(t,{s0:.4f},{s1:.4f})'{nxt}")
+        cur = nxt
+    return parts, cur
+
+
+def render_subbed_clip(norm_mp4: Path, overlays: list[Overlay], dst: Path, video: dict) -> Path:
+    """Burn the overlays onto the normalised clip and MUX ITS ORIGINAL FLOW
+    AUDIO by stream copy (-map 0:a:0 -c:a copy): subtitles + native audio."""
+    args: list[str] = ["-i", str(norm_mp4)]
+    for ov in overlays:
+        args += ["-i", ov.meta["png"]]
+    parts, cur = overlay_chain("[0:v]", overlays, 1)
+    parts.append(f"{cur}format=yuv420p[v]")
+    tmp = dst.with_name(dst.stem + ".tmp.mp4")
+    dst.parent.mkdir(parents=True, exist_ok=True)
+    run(ffmpeg_cmd(*args, "-filter_complex", ";".join(parts), "-map", "[v]", "-map", "0:a:0",
+                   "-c:v", "libx264", "-preset", str(video["preset"]), "-crf", str(video["crf"]),
+                   "-pix_fmt", "yuv420p", "-r", f"{float(video['fps']):g}", "-c:a", "copy",
+                   "-movflags", "+faststart", str(tmp)), what=f"subtitle burn {dst.name}")
+    os.replace(tmp, dst)
+    return dst
