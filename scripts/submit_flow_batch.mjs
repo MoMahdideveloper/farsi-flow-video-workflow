@@ -2,11 +2,21 @@
 /**
  * Automated Google Flow Keyframe + Native Farsi Prompt Batch Submitter via Profile Bridge MCP.
  *
+ * Guarantees: chips===0 before paste, chips===1 after paste and before Start; a clip with `kf`
+ *   never falls back to 0-ingredient Text-to-Video; every step -> flow_submission_trace.jsonl
+ *   (override with FLOW_TRACE_PATH). Keyframes are read-only (sha256 logged, never modified).
+ *
  * Usage:
  *   node scripts/submit_flow_batch.mjs --part fop_part1 [--clip 1] [--start-clip 1] [--profile <id>] [--tab <id>]
  */
 
 import { spawn, spawnSync } from 'node:child_process';
+import { appendFileSync, existsSync, readFileSync } from 'node:fs';
+import { createHash } from 'node:crypto';
+
+// Every submission step is appended here (one JSON object per line).
+const TRACE_PATH = process.env.FLOW_TRACE_PATH || 'flow_submission_trace.jsonl';
+let RUN_ID = new Date().toISOString();
 
 let PROFILE_ID = process.env.FLOW_PROFILE_ID || '731e6d16-b95b-480f-a245-cb443411400d';
 let TAB_ID = Number(process.env.FLOW_TAB_ID || 612095035);
@@ -93,7 +103,7 @@ const BATCHES = {
   fop_part1: [
     {
       clip: 1,
-      kf: `${FOP_DIR}\\part1\\keyframes\\KF_03.jpg`,
+      kf: `${FOP_DIR}\\part1\\keyframes\\KF_01.jpg`,
       prompt:
         '3D stylized cartoon animation, static medium shot keeping the character in frame the entire time (no camera cuts), anthropomorphic purple eggplant aristocrat man (Duke Eggplant) in a dark purple velvet tuxedo standing in the rain at night looking up at the sky in shock and speaking in native Persian (Farsi) with a deep emotional male voice: «چرا؟! چطور تونست به من خیانت کنه و قلبمو بشکنه؟!» Zero on-screen subtitles.',
     },
@@ -120,6 +130,12 @@ const BATCHES = {
       kf: `${FOP_DIR}\\part1\\keyframes\\KF_05.jpg`,
       prompt:
         '3D stylized cartoon animation, static medium shot keeping the character in frame the entire time (no camera cuts), flashy anthropomorphic banana man in a yellow leather jacket, gold chain necklace, and dark sunglasses sitting in a yellow car at night in the rain. Banana Man speaks in native Persian (Farsi) with a smug arrogant male voice: «بارون رو ببین... حالا تمام دارایی و زندگیت مال منه، دوک!» Zero on-screen subtitles.',
+    },
+    {
+      clip: 6,
+      kf: `${FOP_DIR}\\part1\\keyframes\\KF_06.jpg`,
+      prompt:
+        '3D stylized cartoon animation, static medium shot keeping the character in frame the entire time (no camera cuts), anthropomorphic purple eggplant aristocrat man (Duke Eggplant) in a dark purple velvet tuxedo standing on his mansion balcony at night in the rain, looking down heartbroken toward the fountain below. Duke Eggplant speaks in native Persian (Farsi) with a broken weeping male voice: «چرا من؟! خدایا چرا؟! دیگه طاقت دیدن این خیانت رو ندارم!» Zero on-screen subtitles.',
     },
   ],
   fop_part2: [
@@ -149,7 +165,7 @@ const BATCHES = {
     },
     {
       clip: 5,
-      kf: `${FOP_DIR}\\part2\\keyframes\\KF_01.jpg`,
+      kf: `${FOP_DIR}\\part2\\keyframes\\KF_05.jpg`,
       prompt:
         '3D stylized cartoon animation, static medium two-shot keeping both characters in frame the entire time (no camera cuts), flashy anthropomorphic banana man in a yellow leather jacket and sunglasses and glamorous yellow lemon woman (Lemonella) in a gold gown talking seriously in a luxury hallway about an envelope. First Banana Man speaks in native Persian (Farsi) with a serious male voice: «چی شده؟ توی اون پاکت آزمایش چی نوشته؟» Then Lemonella replies in native Persian (Farsi) with an emotional female voice: «چطور روت میشه حقیقت رو انکار کنی؟! این برگه همه‌چیز رو ثابت می‌کنه!» Zero on-screen subtitles.',
     },
@@ -169,7 +185,7 @@ const BATCHES = {
     },
     {
       clip: 2,
-      kf: `${FOP_DIR}\\part2\\keyframes\\KF_01.jpg`,
+      kf: `${FOP_DIR}\\part3\\keyframes\\KF_02.jpg`,
       prompt:
         '3D stylized cartoon animation, static medium two-shot keeping both characters in frame the entire time (no camera cuts), flashy anthropomorphic banana man in a yellow leather jacket and dark sunglasses smiling confidently in the foreground while glamorous yellow lemon woman (Lemonella) in a gold gown holds a paper behind him. First Lemonella speaks in native Persian (Farsi) with a serious female voice: «آزمایش همه‌چیز رو ثابت کرد!» Then Banana Man replies in native Persian (Farsi) with a confident laughing male voice: «هاهاها! که چی مثلاً؟!» Zero on-screen subtitles.',
     },
@@ -181,7 +197,7 @@ const BATCHES = {
     },
     {
       clip: 4,
-      kf: `${FOP_DIR}\\part1\\keyframes\\KF_03.jpg`,
+      kf: `${FOP_DIR}\\part3\\keyframes\\KF_04.jpg`,
       prompt:
         '3D stylized cartoon animation, static medium shot keeping the character in frame the entire time (no camera cuts), an anthropomorphic dark purple aristocrat man in a dark suit stands outside in the rain at night looking toward an illuminated luxury mansion window and speaks in native Persian (Farsi) with a deep mysterious male voice: «پس فکر کردی می‌تونی از گذشته فرار کنی لمونلا؟ و اونا به هیچ‌چیز شک نکردن؟» Zero on-screen subtitles.',
     },
@@ -193,7 +209,7 @@ const BATCHES = {
     },
     {
       clip: 6,
-      kf: `${FOP_DIR}\\part1\\keyframes\\KF_03.jpg`,
+      kf: `${FOP_DIR}\\part3\\keyframes\\KF_06.jpg`,
       prompt:
         '3D stylized cartoon animation, static medium close-up keeping the character in frame the entire time (no camera cuts), an anthropomorphic dark purple aristocrat man in a dark suit smiles confidently inside a dimly lit luxury mansion room at night and speaks in native Persian (Farsi) with a deep serious male voice: «فکر کردی می‌تونی واقعیت رو پنهان کنی عزیزم؟ تمام مدارک دست منه!» Zero on-screen subtitles.',
     },
@@ -231,7 +247,7 @@ const BATCHES = {
     },
     {
       clip: 6,
-      kf: `${FOP_DIR}\\part4\\keyframes\\KF_01.jpg`,
+      kf: `${FOP_DIR}\\part4\\keyframes\\KF_06.jpg`,
       prompt:
         '3D stylized cartoon animation, static medium two-shot keeping both characters in frame the entire time (no camera cuts), Duke Eggplant in a dark purple velvet tuxedo holds and protects Lemonella in a gold gown inside the mansion hall during a dramatic storm and speaks in native Persian (Farsi) with an urgent protective male voice: «محکم منو بگیر لمونلا! اون‌ها به عمارت رسیدن!» Zero on-screen subtitles.',
     },
@@ -239,19 +255,19 @@ const BATCHES = {
   fop_part5: [
     {
       clip: 1,
-      kf: `${FOP_DIR}\\part1\\keyframes\\KF_05.jpg`,
+      kf: `${FOP_DIR}\\part5\\keyframes\\KF_01.jpg`,
       prompt:
         '3D stylized cartoon animation, static medium close-up keeping the character in frame the entire time (no camera cuts), flashy anthropomorphic banana man in a yellow leather jacket and dark sunglasses sits in a neon lounge at night looking bitter and upset and speaks in native Persian (Farsi) with a bitter upset male voice: «پس یعنی منم برات فقط یه اشتباهِ دیگه بودم لمونلا؟!» Zero on-screen subtitles.',
     },
     {
       clip: 2,
-      kf: `${FOP_DIR}\\part1\\keyframes\\KF_03.jpg`,
+      kf: `${FOP_DIR}\\part5\\keyframes\\KF_02.jpg`,
       prompt:
         '3D stylized cartoon animation, static medium close-up keeping the character in frame the entire time (no camera cuts), anthropomorphic purple eggplant aristocrat (Duke Eggplant) in a dark purple velvet tuxedo looks down in shock in his luxury mansion and speaks in native Persian (Farsi) with a stunned male voice: «تو قبل از من با اون رابطه داشتی؟! چرا این راز رو پنهان کردی؟!» Zero on-screen subtitles.',
     },
     {
       clip: 3,
-      kf: `${FOP_DIR}\\part3\\keyframes\\KF_05.jpg`,
+      kf: `${FOP_DIR}\\part5\\keyframes\\KF_03.jpg`,
       prompt:
         '3D stylized cartoon animation, static medium close-up keeping the character in frame the entire time (no camera cuts), glamorous yellow lemon woman (Lemonella) in a gold gown stands in a dark luxury hall looking worried and emotional and speaks in native Persian (Farsi) with a worried emotional female voice: «قبل از دوک، من توی اون شهر غریب تنها بودم و هیچ چاره‌ای نداشتم!» Zero on-screen subtitles.',
     },
@@ -390,6 +406,49 @@ function findNode(snapshot, predicate) {
   return null;
 }
 
+/**
+ * Count image "ingredient" chips currently attached to the Flow composer.
+ * A chip is an attached image tile: its remove control is a `cancel` mat-icon
+ * (or a button named Remove/Delete image / حذف تصویر), or an <img>/image node
+ * inside the composer whose name mentions ingredient/uploaded image.
+ * Returns max(#thumbnails, #remove controls) so one chip is counted once.
+ */
+export function countIngredientChips(snapshot) {
+  // Each attached image chip exposes a thumbnail and/or a remove ("cancel") control.
+  // Count both kinds separately and take the larger, so a chip is never double-counted.
+  let imgs = 0;
+  let removers = 0;
+  for (const frame of snapshot?.frames || []) {
+    for (const n of flattenNodes(frame.tree)) {
+      const name = String(n.name || '');
+      if ((n.role === 'img' || n.tag === 'img') && /ingredient|uploaded image|تصویر بارگذاری/i.test(name)) imgs++;
+      else if (
+        (n.tag === 'mat-icon' && String(n.text || '').trim() === 'cancel') ||
+        (n.role === 'button' && /^(remove|delete) (image|ingredient)|حذف (تصویر|عکس)/i.test(name))
+      )
+        removers++;
+    }
+  }
+  return Math.max(imgs, removers);
+}
+
+function sha256File(path) {
+  try {
+    return createHash('sha256').update(readFileSync(path)).digest('hex');
+  } catch {
+    return null;
+  }
+}
+
+function trace(event, data = {}) {
+  const row = { ts: new Date().toISOString(), run: RUN_ID, event, ...data };
+  try {
+    appendFileSync(TRACE_PATH, JSON.stringify(row) + '\n', 'utf8');
+  } catch (e) {
+    console.warn(`  [trace] could not write ${TRACE_PATH}: ${e.message}`);
+  }
+}
+
 const isPromptTextbox = (n) =>
   n.role === 'textbox' &&
   (n.name === 'What do you want to create?' || n.name === 'چه چیزی می‌خواهید بسازید؟');
@@ -414,30 +473,62 @@ function copyImageToClipboard(imagePath) {
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
-async function submitSingleClip(mcp, item, forceNoImage = false) {
-  const skipImage = Boolean(item.noImage || forceNoImage);
-  console.log(`\n=== Submitting Clip ${item.clip}: ${skipImage ? '(TEXT-ONLY)' : item.kf} ===`);
+async function submitSingleClip(mcp, item, ctx = {}) {
+  const base = { part: ctx.part, clip: item.clip, kf: item.kf || null };
+  // A clip with a keyframe is NEVER allowed to degrade to 0-ingredient Text-to-Video.
+  if (item.kf && item.noImage) {
+    trace('reject', { ...base, reason: 'item has kf AND noImage; refusing silent Text-to-Video' });
+    throw new Error(`Clip ${item.clip}: kf is set but noImage=true — refusing Text-to-Video fallback`);
+  }
+  const skipImage = !item.kf;
+  if (skipImage && !item.allowTextOnly) {
+    trace('reject', { ...base, reason: 'no kf and allowTextOnly not set' });
+    throw new Error(`Clip ${item.clip}: no keyframe; set allowTextOnly:true to submit Text-to-Video on purpose`);
+  }
+  if (!skipImage) {
+    if (!existsSync(item.kf)) {
+      trace('reject', { ...base, reason: 'keyframe file missing' });
+      throw new Error(`Clip ${item.clip}: keyframe not found: ${item.kf}`);
+    }
+    base.kf_sha256 = sha256File(item.kf); // read-only fingerprint; keyframe is never modified
+  }
+  trace('start', { ...base, mode: skipImage ? 'text_to_video_explicit' : 'image_to_video', prompt_chars: item.prompt.length });
+  console.log(`\n=== Submitting Clip ${item.clip}: ${skipImage ? '(TEXT-ONLY, explicit)' : item.kf} ===`);
   if (!skipImage) {
     copyImageToClipboard(item.kf);
+    trace('clipboard_image', base);
     console.log(`  [1/5] Copied image to clipboard: ${item.kf}`);
   }
 
-  // Ensure prompt box is 100% empty before pasting a new image
+  // Ensure the composer is 100% empty (no prompt, NO leftover ingredient chips)
   let snap = null;
-  for (let clearTry = 1; clearTry <= 4; clearTry++) {
+  let chipsBefore = -1;
+  for (let clearTry = 1; clearTry <= 6; clearTry++) {
     snap = await mcp.callTool('browser_observe_page', {
       profileId: PROFILE_ID,
       tabId: TAB_ID,
     });
+    chipsBefore = countIngredientChips(snap);
     const leftoverClear = findNode(snap, isClearButton);
-    if (!leftoverClear) break;
-    console.log(`  [!] Clearing leftover prompt (try ${clearTry}, ${leftoverClear.ref})...`);
+    if (!leftoverClear && chipsBefore === 0) break;
+    const target =
+      leftoverClear ||
+      findNode(snap, (n) => n.ref && n.tag === 'mat-icon' && String(n.text || '').trim() === 'cancel');
+    if (!target) break;
+    console.log(`  [!] Clearing leftover prompt/chips (chips=${chipsBefore}, try ${clearTry}, ${target.ref})...`);
+    trace('clear_leftover', { ...base, try: clearTry, chips: chipsBefore });
     await mcp.callTool('browser_click', {
       profileId: PROFILE_ID,
       tabId: TAB_ID,
-      ref: leftoverClear.ref,
+      ref: target.ref,
     });
     await sleep(1200);
+  }
+  trace('preflight_chips', { ...base, chips: chipsBefore });
+  if (chipsBefore !== 0) {
+    throw new Error(
+      `Clip ${item.clip}: composer still has ${chipsBefore} ingredient chip(s) before paste (MULTI_INGREDIENT_CONTAMINATION guard)`
+    );
   }
 
   let uploadedSnap = null;
@@ -483,7 +574,12 @@ async function submitSingleClip(mcp, item, forceNoImage = false) {
         });
         const clearBtn = findNode(s, isClearButton);
         const cancelIcon = findNode(s, (n) => n.tag === 'mat-icon' && n.text === 'cancel');
-        if (clearBtn || cancelIcon) {
+        const chips = countIngredientChips(s);
+        if ((clearBtn || cancelIcon) && chips >= 1) {
+          trace('paste_chips', { ...base, try: pasteTry, attempt, chips });
+          if (chips !== 1) {
+            throw new Error(`Clip ${item.clip}: expected exactly 1 ingredient chip after paste, found ${chips}`);
+          }
           uploadedSnap = s;
           console.log(`  [3/5] Image upload confirmed on attempt ${attempt} (try ${pasteTry})!`);
           break;
@@ -491,6 +587,7 @@ async function submitSingleClip(mcp, item, forceNoImage = false) {
       }
     }
     if (!uploadedSnap) {
+      trace('fail', { ...base, reason: 'keyframe upload not confirmed (no fallback to Text-to-Video)' });
       throw new Error(`Timed out waiting for keyframe image to upload for Clip ${item.clip}`);
     }
   }
@@ -547,6 +644,13 @@ async function submitSingleClip(mcp, item, forceNoImage = false) {
             profileId: PROFILE_ID,
             tabId: TAB_ID,
           });
+    if (!skipImage) {
+      const chipsNow = countIngredientChips(curSnap);
+      trace('pre_submit_chips', { ...base, try: submitTry, chips: chipsNow });
+      if (chipsNow !== 1) {
+        throw new Error(`Clip ${item.clip}: ${chipsNow} ingredient chips right before Start (need exactly 1)`);
+      }
+    }
     const startBtn = findNode(curSnap, isStartButton);
     if (!startBtn) {
       throw new Error('Could not find "Start generation" button');
@@ -567,10 +671,13 @@ async function submitSingleClip(mcp, item, forceNoImage = false) {
     const stillHasClear = findNode(afterSnap, isClearButton);
     if (!stillHasClear) {
       console.log(`  [OK] Confirmed prompt submitted and cleared!`);
-      break;
+      trace('submitted', { ...base, try: submitTry });
+      return true;
     }
     console.log(`  [!] Prompt still has Clear button after click (try ${submitTry}), retrying...`);
   }
+  trace('fail', { ...base, reason: 'submission not confirmed after 3 tries' });
+  throw new Error(`Clip ${item.clip}: submission not confirmed`);
 }
 
 async function main() {
@@ -594,6 +701,8 @@ async function main() {
     ? batch.filter((x) => x.clip === clipFilter)
     : batch.filter((x) => x.clip >= startClip && x.clip <= endClip);
 
+  RUN_ID = `${part}-${new Date().toISOString()}`;
+  trace('batch_start', { part, clips: items.map((x) => x.clip), trace_path: TRACE_PATH });
   const mcp = new McpClient();
   try {
     await mcp.init();
@@ -617,8 +726,9 @@ async function main() {
       await sleep(1000);
     }
     for (const item of items) {
-      await submitSingleClip(mcp, item);
+      await submitSingleClip(mcp, item, { part });
     }
+    trace('batch_done', { part, submitted: items.length });
     console.log(`\nALL ${items.length} CLIPS FOR ${part} SUBMITTED SUCCESSFULLY!`);
   } finally {
     try {
@@ -633,7 +743,10 @@ async function main() {
   }
 }
 
-main().catch((err) => {
+const isMain = process.argv[1] && import.meta.url.endsWith(process.argv[1].replace(/\\/g, '/').split('/').pop());
+if (isMain) main().catch((err) => {
   console.error('FATAL:', err);
   process.exit(1);
 });
+
+export { BATCHES };
