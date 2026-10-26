@@ -763,3 +763,101 @@ def test_stage2_fallback_refuses_invalid_source_spans(stage2_media, tmp_path, sp
     with pytest.raises(fw.PipelineError, match='source_span'):
         fw.extract_source_fallback_clip(source, span, flow, out, video=video)
     assert out.read_bytes() == b'previous-good-output'
+
+
+def stage2_manifest(stage2_media, tmp_path):
+    _, flow, source, kfs, video = stage2_media
+    return {
+        'schema_version': 1, 'episode_id': 'Stage2', 'clips_dir': str(flow.parent),
+        'out_dir': str(tmp_path / 'out'), 'source_video': str(source),
+        'story_summary_fa': 'آزمون', 'fallback_to_source_on_visual_fail': True,
+        'tight_speech_trim': True, 'video': video,
+        'voices': {'TEST': {'name_fa': 'آزمون'}},
+        'clips': [{'id': 'clip_01', 'file': flow.name, 'trim_in': 0, 'trim_out': 10,
+                   'keyframe': str(kfs['own']), 'expected_speakers': ['TEST'],
+                   'story_beat': 'Synthetic source scene replaces corrupt Flow picture',
+                   'source_span': [2, 4], 'subtitles': [[2, 5, 'TEST', 'سلام']]}],
+    }
+
+
+def test_stage2_hybrid_orchestration_build_and_cache(stage2_media, tmp_path):
+    data = stage2_manifest(stage2_media, tmp_path)
+    path = save_manifest(tmp_path / 'hybrid.json', data)
+    cli(path, 'build', '--no-cta', '--no-contact')
+    report = json.loads((Path(data['out_dir']) / 'qa_report.json').read_text())
+    assert report['all_passed'] and report['visual_continuity_resolved']
+    assert not report['visual_continuity_passed']
+    assert report['publication_status'] == 'pending'
+    clip = report['clips'][0]
+    assert clip['fallback']['resolved'] and clip['fallback']['extraction']['verified']
+    assert clip['provenance']['visual_fallback']
+    assert not clip['final_window_speech']['cuts_speech']
+    assert 3.5 <= clip['duration'] <= 3.7
+    trace = json.loads((Path(data['out_dir']) / 'trace_Stage2.json').read_text())
+    assert set(trace['clips'][0]['step_trace']) == set(fw.STEP_NAMES)
+    bridge = Path(clip['provenance']['analysed'])
+    before = (fw.sha256_file(bridge), bridge.stat().st_mtime_ns)
+    cli(path, 'build', '--no-cta', '--no-contact')
+    assert before == (fw.sha256_file(bridge), bridge.stat().st_mtime_ns)
+
+
+@pytest.mark.parametrize('change', [
+    {'fallback_to_source_on_visual_fail': 'false'}, {'tight_speech_trim': 'true'},
+    {'visual_gate': {'sample_fps': 0}}, {'visual_gate': {'keyframe_threshold': float('nan')}},
+    {'visual_gate': {'thumb_size': [0, 128]}}, {'source_video': None},
+])
+def test_stage2_invalid_narrative_schema_rejected(stage2_media, tmp_path, change):
+    data = {**stage2_manifest(stage2_media, tmp_path), **change}
+    with pytest.raises(fw.PipelineError):
+        fw.load_manifest(save_manifest(tmp_path / 'bad.json', data))
+
+
+@pytest.mark.parametrize('change', [
+    {'expected_speakers': 'TEST'}, {'tight_speech_trim': 'false'},
+    {'source_span': ['not-number', 4]}, {'source_span': [float('nan'), 4]},
+    {'source_span': [4, 4]}, {'source_span': None},
+])
+def test_stage2_invalid_clip_schema_rejected(stage2_media, tmp_path, change):
+    data = stage2_manifest(stage2_media, tmp_path)
+    data['clips'][0].update(change)
+    with pytest.raises(fw.PipelineError):
+        fw.load_manifest(save_manifest(tmp_path / 'bad.json', data))
+
+
+def test_stage2_missing_visual_or_disabled_fallback_blocks_build(stage2_media, tmp_path):
+    data = stage2_manifest(stage2_media, tmp_path)
+    data['clips'][0]['keyframe'] = str(tmp_path / 'missing.png')
+    ep = fw.load_manifest(save_manifest(tmp_path / 'missing.json', data))
+    tr = fw.trace_audit(ep)
+    assert not tr['audit_passed'] and not tr['visual_continuity_resolved']
+    data['clips'][0]['keyframe'] = str(stage2_media[3]['own'])
+    data['fallback_to_source_on_visual_fail'] = False
+    ep = fw.load_manifest(save_manifest(tmp_path / 'disabled.json', data))
+    assert not fw.trace_audit(ep)['audit_passed']
+
+
+@pytest.mark.parametrize('first,last', [(0, .1), (9.9, 10), (4, 4.1), (0, 10)])
+def test_stage2_tight_minimum_and_edges(first, last):
+    clip = fw.ClipSpec(1, 'clip_01', 'clip.mp4', 0, 10, [])
+    plan = fw.plan_trim(clip, None, 10, fw.SPEECH_DEFAULTS)
+    tight = fw.apply_tight_speech_trim(plan, first, last, fw.SPEECH_DEFAULTS)
+    assert 0 <= tight['final'][0] <= first <= last <= tight['final'][1] <= 10
+    assert tight['duration'] >= fw.TIGHT_MIN_DURATION
+    plan['mode'] = 'locked'
+    assert fw.apply_tight_speech_trim(plan, first, last, fw.SPEECH_DEFAULTS) == plan
+    assert fw.apply_tight_speech_trim(plan, None, None, fw.SPEECH_DEFAULTS) == plan
+
+
+def test_stage2_keyframe_preflight_collision_and_pacing_gaps(stage2_media, tmp_path):
+    data = stage2_manifest(stage2_media, tmp_path)
+    data['voices']['OTHER'] = {'name_fa': 'دیگر'}
+    duplicate = {**data['clips'][0], 'id': 'clip_02', 'expected_speakers': ['OTHER'], 'subtitles': []}
+    data['clips'].append(duplicate)
+    ep = fw.load_manifest(save_manifest(tmp_path / 'collision.json', data))
+    assert fw.step1_story_lock(ep)['collisions']
+    assert fw.step2_keyframe_preflight(ep)['status'] == 'pass'
+    speech = {'first_speech_sec': 0, 'last_speech_sec': 10, 'speech_segments': [[0, 1], [9, 10]]}
+    tr = fw.clip_trace(ep, ep.clips[0], visual=None, speech=speech,
+                       plan={'duration': 10, 'final': [0, 10]}, fallback=None)
+    assert tr[fw.STEP_NAMES[3]]['dead_air_sec'] == 8
+    assert tr[fw.STEP_NAMES[3]]['flags'] == ['DEAD_AIR_PACING']
