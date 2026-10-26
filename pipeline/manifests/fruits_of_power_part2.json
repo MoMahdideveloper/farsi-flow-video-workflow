@@ -15,16 +15,36 @@
     "SRC": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\straw.berryjammin"
   },
   "clips_dir": "${BASE}\\part2\\flow_clips",
-  "out_dir": "${BASE}\\05_final_masters",
+  "out_dir": "${BASE}\\05_final_masters\\part2",
   "font_path": "${CHEF_BASE}\\03_farsi_audio_tts\\Vazirmatn-Bold.ttf",
   "cta_video": "${BASE}\\part1\\flow_clips\\cta_kelidbox_s2.mp4",
   "cta_speaker": "DUKE",
   "cta_subtitles": [
-    {"start": 0.25, "end": 3.35, "text": "برای دیدن قسمت بعدی همین الان پیج رو فالو کن!"},
-    {"start": 3.5, "end": 7.85, "text": "راستی کل این انیمیشن با اکانت‌های هوش مصنوعی سایت کلیدباکس ساخته شده!"}
+    {
+      "start": 0.25,
+      "end": 3.35,
+      "text": "برای دیدن قسمت بعدی همین الان پیج رو فالو کن!"
+    },
+    {
+      "start": 3.5,
+      "end": 7.85,
+      "text": "راستی کل این انیمیشن با اکانت‌های هوش مصنوعی سایت کلیدباکس ساخته شده!"
+    }
   ],
-  "video": {"width": 720, "height": 1280, "fps": 24, "crf": 18, "preset": "fast", "scale_mode": "fill"},
-  "audio": {"loudnorm": "loudnorm=I=-14:TP=-1.5:LRA=11", "sample_rate": 48000, "channels": 2, "bitrate": "192k"},
+  "video": {
+    "width": 720,
+    "height": 1280,
+    "fps": 24,
+    "crf": 18,
+    "preset": "fast",
+    "scale_mode": "fill"
+  },
+  "audio": {
+    "loudnorm": "loudnorm=I=-14:TP=-1.5:LRA=11",
+    "sample_rate": 48000,
+    "channels": 2,
+    "bitrate": "192k"
+  },
   "speech": {
     "speech_safe": "auto_expand",
     "threshold_dbfs": -38.0,
@@ -46,7 +66,11 @@
     "end": 3.5,
     "y_center": 130,
     "font_size": 28,
-    "color": [255, 225, 110],
+    "color": [
+      255,
+      225,
+      110
+    ],
     "clip_index": 1
   },
   "outputs": {
@@ -58,85 +82,214 @@
     "caption_optional_speakers": []
   },
   "voices": {
-    "DUKE": {"name_fa": "دوک بادمجان", "color": [210, 165, 255], "source": "google_flow_native"},
-    "LEMON": {"name_fa": "لمونلا", "color": [255, 235, 110], "source": "google_flow_native"},
-    "BANANA": {"name_fa": "موز طلایی", "color": [255, 200, 95], "source": "google_flow_native"},
-    "STRAW": {"name_fa": "کنتس توت‌فرنگی", "color": [255, 150, 195], "source": "google_flow_native"},
-    "FIG": {"name_fa": "انجیر سیاه / رییس مافیا / رئیس مافیا", "color": [180, 220, 255], "source": "google_flow_native"},
-    "PEACH": {"name_fa": "دکتر گلابی / دکتر هلو", "color": [150, 255, 190], "source": "google_flow_native"}
+    "DUKE": {
+      "name_fa": "دوک بادمجان",
+      "color": [
+        210,
+        165,
+        255
+      ],
+      "source": "google_flow_native"
+    },
+    "LEMON": {
+      "name_fa": "لمونلا",
+      "color": [
+        255,
+        235,
+        110
+      ],
+      "source": "google_flow_native"
+    },
+    "BANANA": {
+      "name_fa": "موز طلایی",
+      "color": [
+        255,
+        200,
+        95
+      ],
+      "source": "google_flow_native"
+    },
+    "STRAW": {
+      "name_fa": "کنتس توت‌فرنگی",
+      "color": [
+        255,
+        150,
+        195
+      ],
+      "source": "google_flow_native"
+    },
+    "FIG": {
+      "name_fa": "انجیر سیاه / رییس مافیا / رئیس مافیا",
+      "color": [
+        180,
+        220,
+        255
+      ],
+      "source": "google_flow_native"
+    },
+    "PEACH": {
+      "name_fa": "دکتر گلابی / دکتر هلو",
+      "color": [
+        150,
+        255,
+        190
+      ],
+      "source": "google_flow_native"
+    }
   },
   "clips": [
     {
       "id": "clip_01",
       "file": "clip_01.mp4",
       "keyframe": "${BASE}\\part2\\keyframes\\KF_01.jpg",
-      "expected_speakers": ["BANANA"],
+      "expected_speakers": [
+        "BANANA"
+      ],
       "story_beat": "Banana celebrates the night out with the Duke's money",
-      "source_span": [7.0, 17.0],
+      "source_span": [
+        7.0,
+        17.0
+      ],
       "trim_in": 0.0,
       "trim_out": 9.95,
-      "subtitles": [[0.25, 9.6, "BANANA", "بزن بریم! امشب شبِ ماست! با پول‌های دوک کل شهر رو می‌خریم!"]]
+      "subtitles": [
+        [
+          0.25,
+          9.6,
+          "BANANA",
+          "بزن بریم! امشب شبِ ماست! با پول‌های دوک کل شهر رو می‌خریم!"
+        ]
+      ]
     },
     {
       "id": "clip_02",
       "file": "clip_02.mp4",
       "keyframe": "${BASE}\\part2\\keyframes\\KF_02.jpg",
-      "expected_speakers": ["DUKE"],
+      "expected_speakers": [
+        "DUKE"
+      ],
       "story_beat": "Duke alone in the mansion, burning in loneliness",
-      "source_span": [21.1, 30.4],
+      "source_span": [
+        21.1,
+        30.4
+      ],
       "trim_in": 0.0,
       "trim_out": 9.95,
       "subtitles": [
-        [0.25, 4.8, "DUKE", "همه فکر می‌کنن من همه‌چیز دارم..."],
-        [5.0, 9.6, "DUKE", "ولی توی تنهایی خودم دارم می‌سوزم!"]
+        [
+          0.25,
+          4.8,
+          "DUKE",
+          "همه فکر می‌کنن من همه‌چیز دارم..."
+        ],
+        [
+          5.0,
+          9.6,
+          "DUKE",
+          "ولی توی تنهایی خودم دارم می‌سوزم!"
+        ]
       ]
     },
     {
       "id": "clip_03",
       "file": "clip_03.mp4",
       "keyframe": "${BASE}\\part2\\keyframes\\KF_03.jpg",
-      "expected_speakers": ["STRAW"],
+      "expected_speakers": [
+        "STRAW"
+      ],
       "story_beat": "Countess Strawberry comforts Duke (the photo that sparks jealousy)",
-      "source_span": [30.4, 35.1],
+      "source_span": [
+        30.4,
+        35.1
+      ],
       "trim_in": 0.0,
       "trim_out": 9.95,
-      "subtitles": [[0.25, 9.6, "STRAW", "دوک عزیزم، اون لیاقت عشق تو رو نداشت... بذار من مرهم قلبت باشم."]]
+      "subtitles": [
+        [
+          0.25,
+          9.6,
+          "STRAW",
+          "دوک عزیزم، اون لیاقت عشق تو رو نداشت... بذار من مرهم قلبت باشم."
+        ]
+      ]
     },
     {
       "id": "clip_04",
       "file": "clip_04.mp4",
       "keyframe": "${BASE}\\part2\\keyframes\\KF_04.jpg",
-      "expected_speakers": ["LEMON"],
+      "expected_speakers": [
+        "LEMON"
+      ],
       "story_beat": "Lemonella sees Duke with Countess Strawberry and burns with jealousy",
-      "source_span": [35.1, 45.1],
+      "source_span": [
+        35.1,
+        45.1
+      ],
       "trim_in": 0.0,
       "trim_out": 9.95,
-      "subtitles": [[0.25, 9.6, "LEMON", "نه... امکان نداره دوک با کنتس توت‌فرنگی دیده شده باشه!"]]
+      "subtitles": [
+        [
+          0.25,
+          9.6,
+          "LEMON",
+          "نه... امکان نداره دوک با کنتس توت‌فرنگی دیده شده باشه!"
+        ]
+      ]
     },
     {
       "id": "clip_05",
       "file": "clip_05.mp4",
       "keyframe": "${BASE}\\part2\\keyframes\\KF_05.jpg",
-      "expected_speakers": ["BANANA", "LEMON"],
+      "expected_speakers": [
+        "BANANA",
+        "LEMON"
+      ],
       "story_beat": "The DNA test envelope is opened: Banana asks what it says",
-      "source_span": [58.5, 68.5],
+      "source_span": [
+        58.5,
+        68.5
+      ],
       "trim_in": 0.0,
       "trim_out": 9.95,
       "subtitles": [
-        [0.2, 4.3, "BANANA", "چی شده؟ توی اون پاکت آزمایش چی نوشته؟"],
-        [4.5, 9.65, "LEMON", "چطور روت میشه حقیقت رو انکار کنی؟! این برگه همه‌چیز رو ثابت می‌کنه!"]
+        [
+          0.2,
+          4.3,
+          "BANANA",
+          "چی شده؟ توی اون پاکت آزمایش چی نوشته؟"
+        ],
+        [
+          4.5,
+          9.65,
+          "LEMON",
+          "چطور روت میشه حقیقت رو انکار کنی؟! این برگه همه‌چیز رو ثابت می‌کنه!"
+        ]
       ]
     },
     {
       "id": "clip_06",
       "file": "clip_06.mp4",
       "keyframe": "${BASE}\\part2\\keyframes\\KF_06.jpg",
-      "expected_speakers": ["LEMON"],
+      "expected_speakers": [
+        "LEMON"
+      ],
       "story_beat": "Lemonella shocked by the DNA result",
-      "source_span": [72.6, 82.6],
+      "source_span": [
+        72.6,
+        74.0
+      ],
       "trim_in": 0.0,
       "trim_out": 9.95,
-      "subtitles": [[0.25, 9.6, "LEMON", "وای خدای من، نه... امکان نداره نتیجه آزمایش دی‌ان‌ای این باشه!"]]
+      "subtitles": [
+        [
+          0.25,
+          9.6,
+          "LEMON",
+          "وای خدای من، نه... امکان نداره نتیجه آزمایش دی‌ان‌ای این باشه!"
+        ]
+      ],
+      "notes": "Stage 2 conservatively bounds the terminal span using original contact-sheet timestamps. Part 2 uses the 16-midpoint sampler duration lower bound; Parts 3-5 end before the last observed frame. Exact cut and speech fit need source-host review."
     }
-  ]
+  ],
+  "source_span_review_note": "Candidate source windows, not verified scene boundaries. Validate against the original MP4 duration and review narrative coverage on the media host before publication. Stage 2 uses strict bounds: no silent clamp."
 }
