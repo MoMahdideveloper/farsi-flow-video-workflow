@@ -674,6 +674,7 @@ def splice_clip(src: Path, segments: list[tuple[float, float]], dst: Path, cfg: 
     """Keep exact requested intervals; crossfade audio by d, then pad only
     the tail to whole video frames. Never read audio from the removed gap.
     Crossfade timing is recorded explicitly; internal cuts require listening."""
+    validate_source_timeline(src, video)  # raw originals must be safe BEFORE PTS resets
     d = float(cfg.get("splice_crossfade", 0.02))
     src_dur = media_duration(src)
     if any(a < 0 or b > src_dur + 0.001 or b <= a for a, b in segments):
@@ -1177,20 +1178,26 @@ class ClipResult:
     srt: list[Path] = field(default_factory=list)
 
 
+def validate_source_timeline(src: Path, video: dict) -> dict:
+    """Reject missing native streams, drift or offsets before any timestamp reset."""
+    p = probe_media(src)
+    if not p["video"] or not p["audio"]:
+        raise PipelineError(f"{src.name}: Flow source must contain video AND original audio")
+    if abs(p["video"]["duration"] - p["audio"]["duration"]) >= DRIFT_TOLERANCE:
+        raise PipelineError(f"{src.name}: source A/V duration mismatch; repair before trimming")
+    starts = [p[k]["start_time"] for k in ("video", "audio")]
+    if max(abs(t) for t in starts) >= 1 / float(video["fps"]):
+        raise PipelineError(f"{src.name}: source stream start offsets {starts}; "
+                            "repair the source timeline before trimming (no silent A/V retiming)")
+    if abs(starts[0] - starts[1]) >= 1 / float(video["fps"]):
+        raise PipelineError(f"{src.name}: source A/V starts misaligned; repair before trimming")
+    return p
+
+
 def plan_clip(ep: Episode, clip: ClipSpec, work: Path, force: bool = False) -> ClipResult:
     """Source prep + speech analysis + speech-safe trim plan (no rendering)."""
     src, prov = prepare_source(ep, clip, work, force)
-    source_probe = probe_media(src)
-    if not source_probe["video"] or not source_probe["audio"]:
-        raise PipelineError(f"{clip.id}: Flow source must contain video AND original audio")
-    if abs(source_probe["video"]["duration"] - source_probe["audio"]["duration"]) >= DRIFT_TOLERANCE:
-        raise PipelineError(f"{clip.id}: source A/V duration mismatch; repair before trimming")
-    starts = [source_probe[k]["start_time"] for k in ("video", "audio")]
-    if max(abs(t) for t in starts) >= 1 / float(ep.video["fps"]):
-        raise PipelineError(f"{clip.id}: source stream start offsets {starts}; "
-                            "repair the source timeline before trimming (no silent A/V retiming)")
-    if abs(starts[0] - starts[1]) >= 1 / float(ep.video["fps"]):
-        raise PipelineError(f"{clip.id}: source A/V starts misaligned; repair before trimming")
+    validate_source_timeline(src, ep.video)
     src_dur = media_duration(src)
     req_out = src_dur if clip.trim_out is None else min(clip.trim_out, src_dur)
     analysis = None
