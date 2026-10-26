@@ -1,6 +1,7 @@
 {
   "_comment": "Series 1 Part 1 - What's Her Number? (Google Flow native Farsi). Ported 1:1 from assemble_series1_part1_flow_master.py. On Linux/macOS remap the Windows roots, e.g. --var BASE=/data/series1-whats-her-number-farsi --var CHEF_BASE=/data/ugly-face-chef-farsi",
   "schema_version": 1,
+  "speech_review_note": "Curated trim windows are preserved exactly. Full acoustic diagnostics are recorded; detected cuts fail automatic QA without changing these windows. Use --speech-safe auto_expand for widening. Real Persian listening and source-edge review remain mandatory; energy detection cannot certify zero mid-word cuts.",
   "episode_id": "Series1_Part1",
   "title_fa": "قسمت اول: عدد سرنوشت",
   "title_en": "What's Her Number? - Part 1",
@@ -19,7 +20,7 @@
   ],
   "video": {"width": 720, "height": 1280, "fps": 24, "crf": 18, "preset": "fast", "scale_mode": "fill"},
   "audio": {"loudnorm": "loudnorm=I=-14:TP=-1.5:LRA=11", "sample_rate": 48000, "channels": 2, "bitrate": "192k"},
-  "speech": {"speech_safe": "auto_expand", "threshold_dbfs": -38.0, "pre_handle": 0.20, "post_handle": 0.35,
+  "speech": {"speech_safe": "warn", "threshold_dbfs": -38.0, "pre_handle": 0.20, "post_handle": 0.35,
              "splice_crossfade": 0.02},
   "subtitle_style": {"time_base": "trim_local", "y_ratio": 0.84, "font_size": 27, "min_font_size": 16,
                      "max_text_margin": 84, "max_lines": 2},
