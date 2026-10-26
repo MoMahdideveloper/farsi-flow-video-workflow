@@ -86,3 +86,94 @@ Coverage includes:
 - Verbatim reference-script dialogue/trim comparison, failed-render promotion protection, and unavailable ffprobe fields.
 - The 13 newly added outer-edge, strict source-bound and pre-reset stream-offset regression cases.
 
+## 5. Reproducible verification result
+
+**PASS — 47 passed, 0 failed, 0 skipped; exit code 0; 162.37 seconds (2m42s).**
+
+Exact final command (run from the repository root):
+
+```bash
+pytest tests/test_farsi_flow_workflow.py -v
+```
+
+The [committed test transcript](https://github.com/MoMahdideveloper/farsi-flow-video-workflow/blob/main/docs/farsi-flow-workflow/02-astra-pytest-results.txt) contains every collected result. Baseline recovery also passed 34/34 in 153.74 s; the isolated new regressions passed 13/13 in 10.89 s.
+
+Environment: Linux, Python 3.12.3, pytest 9.1.1, ffmpeg/ffprobe 6.1.1, NumPy 2.5.4, Pillow 13.0.0 with libraqm, Noto Sans Arabic Bold. This run exercised the **raqm** shaping path. The optional reshaper/bidi packages and the actual Windows/Vazirmatn combination were not installed on this runner and are not claimed as executed here.
+
+Tested code/manifest/test content was hashed before the final run and checked unchanged afterwards. Subsequent commits add only the test transcript, this report and trace entries.
+
+| Tested file | SHA-256 |
+|---|---|
+| [farsi_flow_workflow.py](https://github.com/MoMahdideveloper/farsi-flow-video-workflow/blob/main/pipeline/farsi_flow_workflow.py) | `88e41f0575879962a96754ec09601eaaa45ad372608127a709a2ce6faea33374` |
+| [series1_part1_whats_her_number.json](https://github.com/MoMahdideveloper/farsi-flow-video-workflow/blob/main/pipeline/manifests/series1_part1_whats_her_number.json) | `5410a4580bc2f72d695a698576dc5e5b36d7c13e9dec769642104e14f5541b76` |
+| [ugly_chef_part2.json](https://github.com/MoMahdideveloper/farsi-flow-video-workflow/blob/main/pipeline/manifests/ugly_chef_part2.json) | `bb2c7f60553f6a970cd2aa1e74d41e7cf96b20924fa3df64dbfed3a84f877957` |
+| [test_farsi_flow_workflow.py](https://github.com/MoMahdideveloper/farsi-flow-video-workflow/blob/main/tests/test_farsi_flow_workflow.py) | `9cf0f420025c6b7f1ba31e14fad6378e9bfdee33653e1a927c5de02a8dde7c81` |
+
+### Measured fixture results
+
+| Fixture | Clips | Base | Master | Master SRT cues | Maximum per-clip A/V drift |
+|---|---:|---:|---:|---:|---:|
+| Three-clip portrait fixture | 3 | 17.4999 s | 19.1249 s | 7 | 0.0003 s |
+| Six-clip Series 1 fixture | 6 | 50.3750 s | 58.3750 s | 17 | 0.0007 s |
+
+The six-clip contact sheet was also visually inspected: the badge, joined Persian text, colored pills and both CTA subtitles are visible within the portrait frames. This synthetic still-grid check does not establish real-footage lip-sync or character continuity.
+
+Fixture QA reports say `overall_status = "pass"` and `overall_automatic = "pass"`; all relevant automatic gates pass. `overall_status_scope` is `automatic_checks_only`, `publication_status` remains `pending`, and all five human-review gates remain `pending`. The unsafe fixtures intentionally produce fail statuses and nonzero CLI exits, which the tests assert.
+
+## 6. Windows execution and release gate
+
+Use a Python 3.10+ environment with ffmpeg and ffprobe on PATH, including libx264, AAC and libmp3lame support. Install the preferred Persian font and the following Python dependencies. Commands assume the repository root, not the clips directory:
+
+```powershell
+py -m pip install numpy Pillow arabic-reshaper python-bidi fonttools pytest
+ffmpeg -version
+ffprobe -version
+
+# Audit first; this preserves the Series 1 curated windows.
+py pipeline\farsi_flow_workflow.py speech-audit --manifest pipeline\manifests\series1_part1_whats_her_number.json --json
+
+# Render the exact requested manifest and both per-clip output locations.
+py pipeline\farsi_flow_workflow.py build --manifest pipeline\manifests\series1_part1_whats_her_number.json
+
+# Only when deliberately choosing widened trims instead of the curated windows:
+py pipeline\farsi_flow_workflow.py build --manifest pipeline\manifests\series1_part1_whats_her_number.json --speech-safe auto_expand
+```
+
+The [Series 1 manifest](https://github.com/MoMahdideveloper/farsi-flow-video-workflow/blob/main/pipeline/manifests/series1_part1_whats_her_number.json) supplies the Windows source/output/font/CTA locations. The [Ugly Chef manifest](https://github.com/MoMahdideveloper/farsi-flow-video-workflow/blob/main/pipeline/manifests/ugly_chef_part2.json) defaults to auto-expansion. Both retain the reference dialogue and trim values.
+
+Before publishing real footage:
+
+1. Confirm the exact downloaded originals and CTA; do not select wildcard/newest downloads.
+2. Require a passing acoustic/technical report. A short source, cut speech, unsafe splice or stream-timing mismatch must not be overridden merely to obtain a green result.
+3. Listen to both ends of every source and rendered clip, all joins and the entire encoded Master, especially clip 03's join. Check complete Persian words/sentences, voice continuity, clicks and A/V/lip-sync.
+4. Compare subtitles word-for-word with actual speech, not just with generation prompts or reference scripts.
+5. Inspect real frames against character/location references and review subtitle shaping with the Windows font.
+6. Tie the separate sign-off to the report's exact source/output hashes. Regenerate any already-truncated source; padding and auto-expansion cannot restore missing speech.
+
+Known limits: RMS is not semantic VAD/ASR; short/quiet consonants can evade thresholds, and music/SFX can trigger them. Raw-file edges require listening even when no edit crosses detected energy. The required 20 ms audio overlap and video-frame sampling need join-level A/V review. The script does not ingest or certify a human sign-off; reruns continue to mark those gates pending. Synthetic tests and mocked Windows calls do not establish actual Windows execution or real-episode publication readiness.
+
+## 7. Complete function audit inventory
+
+Names below are generated from the final Python AST and grouped by implementation section. Each definition was inspected for its inputs, outputs, media/path handling and failure behavior; targeted tests cover the critical contracts, not every possible configuration.
+
+| Section | Definitions inspected |
+|---|---|
+| helpers | `log`, `run`, `ffmpeg_cmd`, `ffprobe_json`, `_fps_value`, `_probe_number`, `probe_media`, `media_duration`, `sha256_file`, `fmt_srt`, `write_srt` |
+| manifest | `normalize_speech_mode`, `Cue.parse`, `Episode.base_name`, `Episode.master_name`, `Episode.color_for`, `_expand`, `_expand.sub`, `is_foreign_windows_path`, `resolve_path`, `_merged`, `_parse_segments`, `load_manifest`, `validate_settings`, `clip_source_paths`, `clip_source_paths.res` |
+| speech boundary analyzer | `decode_pcm`, `frame_dbfs`, `_runs`, `detect_speech_segments`, `_speech_inside`, `analyze_clip_speech`, `analyze_clip_speech.inside` |
+| speech-safe trimming | `plan_trim`, `frame_quantize` |
+| splice + normalise | `splice_clip`, `_scale_filter`, `normalize_clip` |
+| Persian RTL typography | `shaping_engine`, `shape_fa`, `font_has_persian`, `resolve_font`, `load_font`, `_measure`, `_split_two_lines`, `fit_text`, `draw_rtl_pill`, `render_pill_png`, `subtitle_y`, `build_overlays` |
+| build cache / provenance | `fingerprint`, `_record_path`, `cache_ok`, `cache_write`, `atomic_copy`, `work_dir`, `prepare_source`, `splice_boundary_checks`, `window_speech_check`, `local_cues`, `overlay_chain`, `render_subbed_clip` |
+| per-clip orchestration | `validate_source_timeline`, `plan_clip`, `clip_output_paths`, `render_clip`, `run_clips` |
+| verification (ffprobe) | `audio_pts_gaps`, `av_checks`, `promote` |
+| Base master | `timeline`, `assemble_base` |
+| CTA + Master | `normalize_cta`, `assemble_master` |
+| QA deliverables | `write_audit_mp3`, `contact_points`, `_label_font`, `write_contact_sheet`, `clip_report`, `gate`, `write_qa_report` |
+| top-level flows | `build_episode`, `sub_clips_only`, `speech_audit` |
+| clipboard | `verify_keyframe`, `copy_image_to_clipboard`, `copy_text_to_clipboard`, `load_prompts`, `default_prompts_path` |
+| CLI | `_kv`, `_manifest_args`, `build_parser`, `_overrides`, `_only`, `_print_audit`, `main` |
+
+## 8. Handoff
+
+Automated Stage 2 verification is complete for the tested implementation and synthetic fixtures. Code, manifests, tests, verification transcript and this report are on [main](https://github.com/MoMahdideveloper/farsi-flow-video-workflow/tree/main). The append-only [trace](https://github.com/MoMahdideveloper/farsi-flow-video-workflow/blob/main/docs/farsi-flow-workflow/TRACE.md) records each content commit and push sequence. Actual Windows-footage listening/visual approval is a separate, still-pending release gate.
