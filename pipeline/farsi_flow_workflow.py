@@ -58,7 +58,7 @@ except ImportError:  # pragma: no cover
     except ImportError:
         get_display = None
 
-PIPELINE_VERSION = "1.0.0"
+PIPELINE_VERSION = "1.0.1"
 ANALYSIS_SR = 16000  # speech analysis: 16 kHz mono PCM
 
 # ----------------------------------------------------------------- defaults --
@@ -665,7 +665,7 @@ def normalize_clip(src: Path, t_in: float, t_out: float, dst_mp4: Path, dst_wav:
           f"fps={fps:g},tpad=stop_mode=clone:stop_duration=1,trim=end_frame={n},format=yuv420p[v];"
           f"[0:a]atrim=start={t_in:.4f}:end={t_in + q:.4f},asetpts=PTS-STARTPTS,{audio['loudnorm']},"
           f"aresample={sr},aformat=sample_fmts=fltp:channel_layouts={'stereo' if ch == 2 else 'mono'},"
-          f"apad,atrim=end_sample={int(round(q * sr))},asplit=2[a1][a2]")
+          f"asetpts=N/SR/TB,apad,atrim=end_sample={int(round(q * sr))},asplit=2[a1][a2]")
     for p in (dst_mp4, dst_wav):
         p.parent.mkdir(parents=True, exist_ok=True)
     tmp_mp4 = dst_mp4.with_name(dst_mp4.stem + ".tmp.mp4")
@@ -1177,9 +1177,35 @@ def run_clips(ep: Episode, force: bool = False, render: bool = True,
 
 
 # ------------------------------------------------- verification (ffprobe) --
+def audio_pts_gaps(path: Path, tol_sec: float = 0.002) -> list[dict]:
+    """Audio timeline holes: pts jumps between packets, or a (non-final)
+    packet whose duration deviates from the codec frame (AAC: 1024 samples) --
+    the mp4 muxer often records a filter-graph pts hole as one stretched
+    packet.  Either plays as a silent gap and shifts every later sample against
+    the video, which a container-duration drift check alone can hide."""
+    out = run([FFPROBE, "-v", "error", "-select_streams", "a:0", "-show_entries",
+               "packet=pts_time,duration_time", "-of", "csv=p=0", str(path)],
+              capture=True, what="ffprobe packets").stdout.decode("utf-8", "replace")
+    rows = [r.split(",")[:2] for r in out.splitlines() if r.strip()]
+    pk = [(float(a), float(b)) for a, b in rows if a not in ("", "N/A") and b not in ("", "N/A")]
+    if len(pk) < 3:
+        return []
+    nominal = float(np.median([d for _, d in pk]))
+    gaps = []
+    for i, ((t0, d0), (t1, _)) in enumerate(zip(pk, pk[1:])):
+        hole = t1 - (t0 + d0)
+        if abs(hole) > tol_sec:
+            gaps.append({"at_sec": round(t0 + d0, 4), "gap_sec": round(hole, 4), "kind": "pts_jump"})
+        elif i > 0 and abs(d0 - nominal) > tol_sec:  # i == 0 may be the encoder-priming packet
+            gaps.append({"at_sec": round(t0 + nominal, 4), "gap_sec": round(d0 - nominal, 4),
+                         "kind": "stretched_packet"})
+    return gaps
+
+
 def av_checks(ep: Episode, path: Path, expected: Optional[float] = None) -> dict:
     """ffprobe gate: h264 WxH @ fps video + aac 48 kHz stereo audio, A/V drift
-    < 0.15 s, and (optionally) duration within ~1.5 frames of ``expected``."""
+    < 0.15 s, gap-free audio packet timestamps, and (optionally) duration
+    within ~1.5 frames of ``expected``."""
     p = probe_media(path)
     v, a = p["video"], p["audio"]
     fps = float(ep.video["fps"])
@@ -1192,9 +1218,12 @@ def av_checks(ep: Episode, path: Path, expected: Optional[float] = None) -> dict
                                 and a["channels"] == int(ep.audio["channels"])}
     drift = round(abs(v["duration"] - a["duration"]), 4) if v and a else None
     c["av_drift_ok"] = drift is not None and drift < DRIFT_TOLERANCE
+    gaps = audio_pts_gaps(path) if a else []
+    c["audio_contiguous"] = bool(a) and not gaps
     if expected is not None:
         c["duration_ok"] = bool(v) and abs(v["duration"] - expected) <= 1.5 / fps + 0.02
     return {"path": str(path), "sha256": sha256_file(path), "probe": p, "av_drift_sec": drift,
+            "audio_pts_gaps": gaps,
             "expected_duration": None if expected is None else round(expected, 4),
             "checks": c, "pass": all(c.values())}
 
@@ -1307,7 +1336,7 @@ def normalize_cta(ep: Episode, cta: Path, font_path: Optional[str], force: bool 
     parts.append(f"{cur}format=yuv420p[v]")
     parts.append(f"{a_in}asetpts=PTS-STARTPTS,{ep.audio['loudnorm'] + ',' if lnorm else ''}"
                  f"aresample={sr},aformat=sample_fmts=fltp:channel_layouts=stereo,"
-                 f"apad,atrim=end_sample={int(round(q * sr))}[a]")
+                 f"asetpts=N/SR/TB,apad,atrim=end_sample={int(round(q * sr))}[a]")
     tmp = out.with_name("cta_norm.tmp.mov")
     run(ffmpeg_cmd(*args, "-filter_complex", ";".join(parts), "-map", "[v]", "-map", "[a]",
                    "-c:v", "libx264", "-preset", str(ep.video["preset"]), "-crf", str(ep.video["work_crf"]),
