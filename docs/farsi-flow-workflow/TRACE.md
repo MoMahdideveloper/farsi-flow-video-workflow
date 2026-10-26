@@ -21,3 +21,4 @@ arabic-reshaper 3.0.1, python-bidi 0.6.12, no OpenCV (pipeline deliberately does
 - 2026-10-26T12:19Z · `b0b8bcd` · farsi_flow_workflow.py chunk 2: Cue/ClipSpec/Episode dataclasses, defaults tables, speech_safe modes (auto_expand|warn|off), ${VAR} path resolution w/ Windows->POSIX remap
 - 2026-10-26T12:22Z · `dd8579d` · farsi_flow_workflow.py chunk 3: load_manifest() with CLI overrides, cue/segment/speaker validation, clip source resolution
 - 2026-10-26T12:24Z · `80210b0` · farsi_flow_workflow.py chunk 4: analyze_clip_speech() — 16 kHz PCM decode, 20 ms RMS dBFS, adaptive floor + -38 dBFS threshold, speech segments, first/last speech, trim-cuts-speech diagnostics
+- 2026-10-26T12:27Z · `a8e08fd` · farsi_flow_workflow.py chunk 5: plan_trim() auto_expand/warn/lock, frame-quantised splice_clip() w/ centred acrossfade=0.02, normalize_clip() 720x1280@24 loudnorm 48k stereo AAC + PCM sidecar (verified on synthetic 10s clip: 184/168 frames, A/V equal)
