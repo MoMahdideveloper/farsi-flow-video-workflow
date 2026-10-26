@@ -51,3 +51,5 @@ arabic-reshaper 3.0.1, python-bidi 0.6.12, no OpenCV (pipeline deliberately does
 - 2026-10-26T13:02Z · `07fb355c6973b16d234aedcb26dbdf72431675bf` · Stage 2: fix(stage2): preserve Series1 curated trim windows with warn mode and explicit listening gate
 
 - 2026-10-26T13:02Z · `266bf66a2b2f88dbc169952ad2ac471af2a3379c` · Stage 2: docs(stage2): document Ugly Chef auto-expansion limits and native-audio listening requirements
+
+- 2026-10-26T13:03Z · `42fa0b07c788a7a4d42055d6c6129b8e769cb8e1` · Stage 2: test(stage2): add real 720x1280 24fps harmonic-audio fixtures and end-to-end build harness
