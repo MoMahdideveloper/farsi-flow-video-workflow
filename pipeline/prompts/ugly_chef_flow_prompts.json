@@ -1,0 +1,52 @@
+{
+  "_comment": "Google Flow (Veo) scene prompts for The Ugly Face Chef, ported verbatim from set_flow_clipboard.py. Used by: farsi_flow_workflow.py clipboard-prompt <key>. Keyframes must come from the Character/Location Sheets (Gate 2); after generation, transcribe what Flow actually said - never copy these prompt lines into subtitles (Gate 3).",
+  "series": "ugly_face_chef",
+  "reference_sheets": {
+    "characters": ["FLOW_SHEET_01_AGNES.jpg", "FLOW_SHEET_02_TONY.jpg", "FLOW_SHEET_03_MAYA.jpg", "FLOW_SHEET_04_HENRY.jpg"],
+    "locations": ["FLOW_LOC_01_PREP_KITCHEN.jpg", "FLOW_LOC_02_BREAK_TABLE.jpg", "FLOW_LOC_03_PANTRY_AISLE.jpg"]
+  },
+  "prompts": {
+    "sc1_bullying": {
+      "scene": "Scene 1 - prep kitchen bullying",
+      "speakers": ["MAYA", "TONY"],
+      "location_sheet": "FLOW_LOC_01_PREP_KITCHEN.jpg",
+      "dialogue_fa": ["هی آگنس! فکری به حال این قیافه‌ت کردی؟", "واقعاً! همین که نگاهت می‌کنم اشتهام کور می‌شه!"],
+      "text": "Create a 9:16 vertical 3D Pixar animated video from this image. The smooth yellow mango female chef in white giggles behind her hand and speaks in native Persian (Farsi): «هی آگنس! فکری به حال این قیافه‌ت کردی؟» Then the plump red tomato chef in black smirks and speaks in native Persian (Farsi): «واقعاً! همین که نگاهت می‌کنم اشتهام کور می‌شه!» The sad blemished pear girl slicing cucumbers looks down tearfully. Expressive lip-sync in Persian, warm cinematic kitchen lighting."
+    },
+    "sc1_henry_scolds": {
+      "scene": "Scene 1 - Henry scolds Tony",
+      "speakers": ["HENRY"],
+      "location_sheet": "FLOW_LOC_01_PREP_KITCHEN.jpg",
+      "dialogue_fa": ["ساکت شید! شما اینجایید که آشپزی کنید یا مسخره بازی دربیارید؟ زود برگردید سر کارتون!"],
+      "text": "Create a 9:16 vertical 3D Pixar animated video from this image. The giant muscular green broccoli head chef points angrily at the sweating red tomato chef and shouts in authoritative native Persian (Farsi): «ساکت شید! شما اینجایید که آشپزی کنید یا مسخره بازی دربیارید؟ زود برگردید سر کارتون!» The red tomato chef gulps in fear while the small pear girl watches in shock. Expressive Persian lip-sync, dramatic kitchen lighting."
+    },
+    "sc2_break_table": {
+      "scene": "Scene 2 - break table mockery, Henry clears the room",
+      "speakers": ["TONY", "MAYA", "HENRY"],
+      "location_sheet": "FLOW_LOC_02_BREAK_TABLE.jpg",
+      "dialogue_fa": ["آشپزی مال آدمای خوش‌قیافه‌ست، نه تو! تو فقط باید ظرف بشوری!", "کافیه! همه برن بیرون به جز آگنس!"],
+      "text": "Create a 9:16 vertical 3D Pixar animated video from this image. At the kitchen break table, the red tomato chef and yellow mango chef point and laugh at the crying pear girl, speaking in native Persian (Farsi): «آشپزی مال آدمای خوش‌قیافه‌ست، نه تو! تو فقط باید ظرف بشوری!» In the background doorway, the muscular broccoli head chef steps forward angrily and shouts in native Persian (Farsi): «کافیه! همه برن بیرون به جز آگنس!»"
+    },
+    "sc3_pantry_comfort": {
+      "scene": "Scene 3 - Henry comforts Agnes in the pantry",
+      "speakers": ["HENRY"],
+      "location_sheet": "FLOW_LOC_03_PANTRY_AISLE.jpg",
+      "dialogue_fa": ["به حرفاشون گوش نکن آگنس. استعداد واقعی توی قلب و دستای توئه، نه توی ظاهرت. یه روز همه طعم غذای تو رو می‌فهمن."],
+      "text": "Create a 9:16 vertical 3D Pixar animated video from this image. In the warm dimly lit pantry aisle, the muscular green broccoli head chef kneels beside the crying pear girl, places a gentle hand on her shoulder, and speaks warmly in native Persian (Farsi): «به حرفاشون گوش نکن آگنس. استعداد واقعی توی قلب و دستای توئه، نه توی ظاهرت. یه روز همه طعم غذای تو رو می‌فهمن.» The pear girl looks up at him with hopeful tearful eyes."
+    },
+    "sc3_agnes_vow": {
+      "scene": "Scene 3 - Agnes vows to become the best chef",
+      "speakers": ["AGNES"],
+      "location_sheet": "FLOW_LOC_03_PANTRY_AISLE.jpg",
+      "dialogue_fa": ["حق با سرآشپزه... من تسلیم نمی‌شم. به همه‌شون ثابت می‌کنم که بهترین سرآشپز می‌شم!"],
+      "text": "Create a 9:16 vertical 3D Pixar animated video from this image. Standing alone in the warm pantry aisle under the tungsten bulb, the small blemished pear girl wipes away her tear, smiles with fierce determination, and speaks softly in native Persian (Farsi): «حق با سرآشپزه... من تسلیم نمی‌شم. به همه‌شون ثابت می‌کنم که بهترین سرآشپز می‌شم!» Subtle cinematic push-in camera movement."
+    },
+    "opt2_extracted_sc1": {
+      "scene": "Option 2 - animate an extracted source frame (Scene 1)",
+      "speakers": ["TONY", "MAYA"],
+      "location_sheet": "FLOW_LOC_01_PREP_KITCHEN.jpg",
+      "dialogue_fa": ["هی آگنس! فکری به حال این قیافه‌ت کردی؟ همین که نگاهت می‌کنم اشتهام کور می‌شه!"],
+      "text": "Animate this exact 9:16 3D frame into a video with native Persian (Farsi) dialogue. The red tomato chef in black and yellow mango chef in white mock the sad blemished pear girl slicing cucumbers, speaking in native Persian (Farsi): «هی آگنس! فکری به حال این قیافه‌ت کردی؟ همین که نگاهت می‌کنم اشتهام کور می‌شه!» The pear girl looks down sadly while slicing cucumbers."
+    }
+  }
+}
