@@ -1635,3 +1635,147 @@ def load_prompts(path: Path) -> dict[str, dict]:
 
 def default_prompts_path() -> Path:
     return Path(__file__).resolve().parent / "prompts" / "ugly_chef_flow_prompts.json"
+
+
+# ---------------------------------------------------------------------- CLI --
+def _kv(items: Optional[list[str]]) -> dict[str, str]:
+    out = {}
+    for it in items or []:
+        k, sep, v = it.partition("=")
+        if not sep or not k:
+            raise PipelineError(f"--var expects NAME=VALUE (got {it!r})")
+        out[k.strip()] = v
+    return out
+
+
+def _manifest_args(p: argparse.ArgumentParser, cta: bool = True) -> None:
+    p.add_argument("manifest", type=Path, help="episode manifest JSON")
+    p.add_argument("--var", action="append", metavar="NAME=VALUE",
+                   help="override a manifest ${VAR} (e.g. BASE=/data/series1); repeatable")
+    p.add_argument("--clips-dir", help="override clips_dir")
+    p.add_argument("--out-dir", help="override out_dir")
+    p.add_argument("--font", help="Persian TTF (default: manifest font_path, then system fonts)")
+    p.add_argument("--speech-safe", choices=SPEECH_MODES, help="override speech_safe for all clips")
+    p.add_argument("--only", help="comma-separated clip ids or 1-based indexes")
+    if cta:
+        p.add_argument("--cta-video", help="override cta_video")
+        p.add_argument("--no-cta", action="store_true", help="Master = Base (no CTA appended)")
+    p.add_argument("--force", action="store_true", help="ignore build cache, re-render everything")
+
+
+def build_parser() -> argparse.ArgumentParser:
+    ap = argparse.ArgumentParser(prog="farsi_flow_workflow",
+                                 description="Farsi Google Flow viral-series workflow (config-driven).")
+    ap.add_argument("--ffmpeg", help="ffmpeg binary (default: $FFMPEG_BIN or ffmpeg)")
+    ap.add_argument("--ffprobe", help="ffprobe binary (default: $FFPROBE_BIN or ffprobe)")
+    ap.add_argument("-v", "--verbose", action="store_true", help="echo every ffmpeg command")
+    ap.add_argument("--version", action="version", version=f"%(prog)s {PIPELINE_VERSION}")
+    sub = ap.add_subparsers(dest="command", required=True)
+
+    b = sub.add_parser("build", help="per-clip subbed clips + Base + Master + SRT/audit/contact/QA")
+    _manifest_args(b)
+    b.add_argument("--no-contact", action="store_true", help="skip qa_<episode>_contact.jpg")
+
+    s = sub.add_parser("speech-audit", help="speech-boundary analysis + trim plan only (no render)")
+    _manifest_args(s, cta=False)
+    s.add_argument("--json", action="store_true", help="print the per-clip report as JSON")
+
+    c = sub.add_parser("sub-clips-only", help="per-clip subtitled clips WITH original Flow audio only")
+    _manifest_args(c, cta=False)
+
+    ci = sub.add_parser("clipboard-image", help="copy a verified 9:16 keyframe to the clipboard")
+    ci.add_argument("image", type=Path)
+    ci.add_argument("--allow-any-ratio", action="store_true")
+    ci.add_argument("--dry-run", action="store_true", help="verify + show the command, don't copy")
+
+    cp = sub.add_parser("clipboard-prompt", help="copy a Google Flow scene prompt to the clipboard")
+    cp.add_argument("key", nargs="?", help="prompt key (omit with --list)")
+    cp.add_argument("--prompts", type=Path, default=None, help="prompt library JSON")
+    cp.add_argument("--list", action="store_true", help="list prompt keys")
+    cp.add_argument("--print", dest="print_text", action="store_true", help="also print the prompt")
+    cp.add_argument("--dry-run", action="store_true")
+    return ap
+
+
+def _overrides(a: argparse.Namespace) -> dict:
+    return {"vars": _kv(a.var), "clips_dir": a.clips_dir, "out_dir": a.out_dir, "font": a.font,
+            "speech_safe": a.speech_safe, "cta_video": getattr(a, "cta_video", None),
+            "no_cta": getattr(a, "no_cta", False)}
+
+
+def _only(a: argparse.Namespace) -> Optional[set[str]]:
+    return {x.strip() for x in a.only.split(",") if x.strip()} if getattr(a, "only", None) else None
+
+
+def _print_audit(results: list[ClipResult]) -> None:
+    print(f"{'clip':<10}{'src dur':>8}{'speech':>17}{'requested':>17}{'final':>17}  mode / notes")
+    for r in results:
+        a = r.analysis or {}
+        sp = (f"{a['first_speech_sec']:.2f}-{a['last_speech_sec']:.2f}"
+              if a.get("first_speech_sec") is not None else "none")
+        rq, fn = r.plan["requested"], r.plan["final"]
+        flag = " CUTS-SPEECH" if (r.final_check or {}).get("cuts_speech") else ""
+        print(f"{r.clip.id:<10}{r.plan['source_duration']:>8.2f}{sp:>17}"
+              f"{rq[0]:>8.2f}-{rq[1]:<8.2f}{fn[0]:>8.2f}-{fn[1]:<8.2f}  {r.plan['mode']}{flag}")
+        for n in r.plan["notes"]:
+            print(f"{'':<10}  - {n}")
+
+
+def main(argv: Optional[list[str]] = None) -> int:
+    global FFMPEG, FFPROBE, VERBOSE
+    a = build_parser().parse_args(argv)
+    FFMPEG, FFPROBE, VERBOSE = a.ffmpeg or FFMPEG, a.ffprobe or FFPROBE, a.verbose
+    try:
+        if a.command == "clipboard-image":
+            info = verify_keyframe(a.image, require_portrait=not a.allow_any_ratio)
+            how = copy_image_to_clipboard(a.image, dry_run=a.dry_run)
+            log(f"keyframe {a.image.name} {info['size'][0]}x{info['size'][1]} sha256={info['sha256'][:12]} -> {how}")
+            return 0
+        if a.command == "clipboard-prompt":
+            prompts = load_prompts(a.prompts or default_prompts_path())
+            if a.list or not a.key:
+                for k, v in prompts.items():
+                    print(f"{k:<24} {len(v['text']):>4} chars  {v.get('scene', '')}")
+                return 0 if a.list else 2
+            if a.key not in prompts:
+                raise PipelineError(f"unknown prompt {a.key!r}; known: {', '.join(prompts)}")
+            text = prompts[a.key]["text"]
+            how = copy_text_to_clipboard(text, dry_run=a.dry_run)
+            log(f"clipboard set to prompt: {a.key} ({len(text)} chars) via {how}")
+            if a.print_text:
+                print(text)
+            return 0
+        if shutil.which(FFMPEG) is None or shutil.which(FFPROBE) is None:
+            raise PipelineError(f"ffmpeg/ffprobe not found ({FFMPEG}, {FFPROBE}); use --ffmpeg/--ffprobe")
+        ep = load_manifest(a.manifest, _overrides(a))
+        log(f"episode {ep.episode_id}: {len(ep.clips)} clips, clips_dir={ep.clips_dir}, out_dir={ep.out_dir}")
+        if a.command == "speech-audit":
+            res = speech_audit(ep, only=_only(a))
+            if a.json:
+                print(json.dumps([clip_report(ep, r) for r in res["results"]], indent=2, ensure_ascii=False))
+            else:
+                _print_audit(res["results"])
+            log(f"report: {res['qa_report']}")
+        elif a.command == "sub-clips-only":
+            res = sub_clips_only(ep, force=a.force, only=_only(a))
+            for r in res["results"]:
+                log(f"{r.clip.id}: {r.duration:.3f}s -> " + " | ".join(str(p) for p in r.subbed))
+            log(f"report: {res['qa_report']}")
+        else:
+            if _only(a):
+                raise PipelineError("--only applies to speech-audit / sub-clips-only (build needs every clip)")
+            res = build_episode(ep, no_cta=a.no_cta, force=a.force, contact=not a.no_contact)
+            m = res["master"]
+            log(f"Base   {res['base']['path']} ({res['base']['duration']:.3f}s)")
+            log(f"Master {m['path']} ({m['duration']:.3f}s, CTA={'yes' if m['cta_used'] else 'no'})")
+            log(f"report: {res['qa_report']}")
+        for w in ep.warnings:
+            log(f"WARNING: {w}")
+        return 0
+    except PipelineError as exc:
+        log(f"ERROR: {exc}")
+        return 1
+
+
+if __name__ == "__main__":
+    sys.exit(main())
