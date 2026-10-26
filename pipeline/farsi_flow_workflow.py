@@ -59,7 +59,7 @@ except ImportError:  # pragma: no cover
     except ImportError:
         get_display = None
 
-PIPELINE_VERSION = "1.1.0"
+PIPELINE_VERSION = "1.1.1"
 ANALYSIS_SR = 16000  # speech analysis: 16 kHz mono PCM
 
 # ----------------------------------------------------------------- defaults --
@@ -635,8 +635,8 @@ def plan_trim(clip: ClipSpec, analysis: Optional[dict], src_dur: float, cfg: dic
     req_out = src_dur if clip.trim_out is None else clip.trim_out
     notes: list[str] = []
     if req_out > src_dur + 1e-3:
-        notes.append(f"trim_out {req_out:.3f} > source duration {src_dur:.3f}; clamped")
-        req_out = src_dur
+        raise PipelineError(f"{clip.id}: trim_out {req_out:.3f} exceeds source duration "
+                            f"{src_dur:.3f}; refusing to silently shorten the curated window")
     if req_in >= req_out:
         raise PipelineError(f"{clip.id}: trim_in {req_in} >= usable trim_out {req_out}")
     new_in, new_out = req_in, req_out
@@ -1040,14 +1040,11 @@ def prepare_source(ep: Episode, clip: ClipSpec, work: Path, force: bool = False)
                         segments=[list(s) for s in clip.splice_segments], analysed=str(spliced))
             raw_analysis = analyze_clip_speech(raw_p, cfg=ep.speech)
             spans = raw_analysis["speech_segments"]
-            boundaries = [t for i, (a, b) in enumerate(clip.splice_segments)
-                          for t in ([a] if i else []) + ([b] if i < len(clip.splice_segments)-1 else [])]
             d = float(ep.speech["splice_crossfade"])
             prov["splice_audit"] = {
                 "raw_speech": raw_analysis, "crossfade_sec": d,
                 "audio_overlap_sec": d * (len(clip.splice_segments)-1),
-                "boundaries": [{"at_sec": t, "touches_speech": any(
-                    a < t + d and b > t - d for a, b in spans)} for t in boundaries]}
+                "boundaries": splice_boundary_checks(clip.splice_segments, spans, d)}
             return spliced, prov
         if file_p.is_file():
             msg = (f"{clip.id}: raw_orig_file {clip.raw_orig_file!r} not found; using {file_p.name} "
@@ -1061,6 +1058,26 @@ def prepare_source(ep: Episode, clip: ClipSpec, work: Path, force: bool = False)
     prov.update(mode=prov.get("mode", "pre_spliced_file" if clip.splice_segments else "direct"),
                 source=str(file_p), source_sha256=sha256_file(file_p), analysed=str(file_p))
     return file_p, prov
+
+
+def splice_boundary_checks(segments: list[tuple[float, float]],
+                           spans: list, crossfade: float) -> list[dict]:
+    """Audit ALL kept segment edges, including the outer head and tail cuts.
+
+    Internal joins also inspect the crossfade neighborhood. Checking only
+    joins would miss a word truncated at the last retained segment's end.
+    Speech at the raw file's own edges still requires listening/regeneration.
+    """
+    boundaries = []
+    for i, (lo, hi) in enumerate(segments):
+        for edge, t in (("start", lo), ("end", hi)):
+            internal = (edge == "start" and i > 0) or (edge == "end" and i < len(segments)-1)
+            radius = crossfade if internal else 0.0
+            boundaries.append({"segment_index": i, "edge": edge, "at_sec": t,
+                               "crossfade_neighborhood_sec": radius,
+                               "touches_speech": any(a < t + radius and b > t - radius
+                                                     for a, b in spans)})
+    return boundaries
 
 
 def window_speech_check(analysis: dict, t_in: float, t_out: float) -> dict:
@@ -1168,6 +1185,12 @@ def plan_clip(ep: Episode, clip: ClipSpec, work: Path, force: bool = False) -> C
         raise PipelineError(f"{clip.id}: Flow source must contain video AND original audio")
     if abs(source_probe["video"]["duration"] - source_probe["audio"]["duration"]) >= DRIFT_TOLERANCE:
         raise PipelineError(f"{clip.id}: source A/V duration mismatch; repair before trimming")
+    starts = [source_probe[k]["start_time"] for k in ("video", "audio")]
+    if max(abs(t) for t in starts) >= 1 / float(ep.video["fps"]):
+        raise PipelineError(f"{clip.id}: source stream start offsets {starts}; "
+                            "repair the source timeline before trimming (no silent A/V retiming)")
+    if abs(starts[0] - starts[1]) >= 1 / float(ep.video["fps"]):
+        raise PipelineError(f"{clip.id}: source A/V starts misaligned; repair before trimming")
     src_dur = media_duration(src)
     req_out = src_dur if clip.trim_out is None else min(clip.trim_out, src_dur)
     analysis = None
