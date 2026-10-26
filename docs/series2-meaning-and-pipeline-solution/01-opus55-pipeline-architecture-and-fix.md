@@ -44,7 +44,7 @@ manifest (story_summary_fa, source_video, per-clip keyframe/expected_speakers/st
 
 ### 2.2 Hybrid source bridge (`extract_source_fallback_clip`)
 When `fallback_to_source_on_visual_fail: true` and a clip fails step 3:
-- **Video** comes from `source_video[source_span]` (the original straw.berryjammin MP4), with the English subtitle band removed by `inpaint_source_subtitle_band(rgb)` (numpy-only, bright-glyph mask inside 73–89 % height, filled from neighbouring rows).
+- **Video** comes from `source_video[source_span]` (the original straw.berryjammin MP4), with the English subtitle band removed by `inpaint_source_subtitle_band(rgb)` (numpy-only, bright-glyph mask inside the subtitle band, masked pixels rebuilt by row + column linear interpolation).
 - **Audio** is the untouched native Google Flow Farsi track of `clip_XX.mp4`, and its sha256 is unchanged.
 - The output keeps the Flow clip's exact duration, so the speech-safe / tight trim plan and the Farsi subtitle timing still apply. If the span is shorter than the speech window, its first and last frames are held.
 
