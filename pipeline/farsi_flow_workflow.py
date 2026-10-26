@@ -17,6 +17,16 @@ Subcommands
     sub-clips-only    per-clip subtitled+audio clips only (no Base / Master)
     clipboard-image   copy a verified 9:16 keyframe to the OS clipboard
     clipboard-prompt  copy a Google Flow scene prompt to the OS clipboard
+    trace-audit       6-stage step trace for one manifest (live MP4s or a probe JSON)
+    trace-all-parts   6-stage step trace for Fruits of Power Parts 1-5 from a probe JSON
+
+v1.2 adds the narrative-continuity layer: per-clip keyframe / speaker / story
+beat metadata, a visual continuity gate (KEYFRAME_MISMATCH,
+MULTI_INGREDIENT_CONTAMINATION, INTERNAL_SCENE_CUT), tight speech pacing, and
+a hybrid source-bridge fallback that swaps a visually broken Flow video stream
+for the subtitle-inpainted original episode span while KEEPING the native
+Flow Farsi audio.  Keyframes are read-only inputs: they are hashed and
+compared, never drawn on, blurred or otherwise modified.
 
 Requirements: Python 3.10+, ffmpeg + ffprobe on PATH (or --ffmpeg/--ffprobe),
 numpy, Pillow.  arabic-reshaper + python-bidi are used when present (needed
@@ -59,7 +69,7 @@ except ImportError:  # pragma: no cover
     except ImportError:
         get_display = None
 
-PIPELINE_VERSION = "1.1.1"
+PIPELINE_VERSION = "1.2.0"
 ANALYSIS_SR = 16000  # speech analysis: 16 kHz mono PCM
 
 # ----------------------------------------------------------------- defaults --
@@ -212,6 +222,11 @@ BADGE_DEFAULTS = {"start": 0.0, "end": 3.5, "y_center": 130, "font_size": 28,
                   "color": [255, 225, 110], "clip_index": 1}
 CTA_DEFAULT_COLOR = (255, 230, 150)
 DRIFT_TOLERANCE = 0.15
+VISUAL_DEFAULTS = {"keyframe_threshold": 32.0, "jump_threshold": 32.0, "contamination_margin": 5.0,
+                   "sample_fps": 2.0, "thumb_size": [72, 128]}
+TIGHT_MIN_DURATION = 2.2       # seconds: a tight-trimmed talking clip is never shorter
+DEAD_AIR_LIMIT = 3.5           # seconds of non-speech beyond the line before DEAD_AIR_PACING
+FAIL_FLAGS = ("KEYFRAME_MISMATCH", "MULTI_INGREDIENT_CONTAMINATION", "INTERNAL_SCENE_CUT")
 _WIN_ABS = re.compile(r"^[A-Za-z]:[\\/]")
 _VAR = re.compile(r"\$\{(\w+)\}")
 
@@ -270,6 +285,12 @@ class ClipSpec:
     lock_trim: bool = False
     allow_speech_splice: bool = False
     notes: str = ""
+    # v1.2 narrative-continuity metadata
+    keyframe: Optional[Path] = None
+    expected_speakers: list[str] = field(default_factory=list)
+    story_beat: str = ""
+    source_span: Optional[tuple[float, float]] = None
+    tight_speech_trim: Optional[bool] = None
 
 
 @dataclass
@@ -292,6 +313,13 @@ class Episode:
     clips: list[ClipSpec]
     outputs: dict = field(default_factory=dict)
     warnings: list[str] = field(default_factory=list)
+    # v1.2 hybrid source-bridge / pacing settings
+    source_video: Optional[Path] = None
+    story_summary_fa: str = ""
+    fallback_to_source_on_visual_fail: bool = False
+    tight_speech_trim: bool = False
+    visual: dict = field(default_factory=dict)
+    probe: Optional[dict] = None  # per-clip probe entries (headless visual audit)
 
     @property
     def base_name(self) -> str:
@@ -363,6 +391,18 @@ def _parse_segments(raw: Any, where: str) -> Optional[list[tuple[float, float]]]
             raise PipelineError(f"{where}.splice_segments must be ascending and non-overlapping")
         segs.append((round(s0, 3), round(s1, 3)))
     return segs
+
+
+def _parse_span(raw: Any, where: str) -> Optional[tuple[float, float]]:
+    """``source_span: [start_sec, end_sec]`` in the ORIGINAL episode video."""
+    if raw in (None, [], ""):
+        return None
+    if not (isinstance(raw, (list, tuple)) and len(raw) == 2):
+        raise PipelineError(f"{where}.source_span must be [start_sec, end_sec]")
+    s0, s1 = float(raw[0]), float(raw[1])
+    if not (math.isfinite(s0) and math.isfinite(s1) and 0.0 <= s0 < s1):
+        raise PipelineError(f"{where}.source_span: need 0 <= start < end (got {raw})")
+    return round(s0, 3), round(s1, 3)
 
 
 def load_manifest(path: Path, overrides: Optional[dict] = None) -> Episode:
@@ -448,7 +488,15 @@ def load_manifest(path: Path, overrides: Optional[dict] = None) -> Episode:
             splice_segments=_parse_segments(c.get("splice_segments"), where),
             speech_safe=normalize_speech_mode(mode), lock_trim=bool(c.get("lock_trim", False)),
             allow_speech_splice=bool(c.get("allow_speech_splice", False)),
-            notes=str(c.get("notes") or "")))
+            notes=str(c.get("notes") or ""),
+            keyframe=resolve_path(c.get("keyframe"), variables, rel),
+            expected_speakers=[str(x).upper() for x in (c.get("expected_speakers") or [])],
+            story_beat=str(c.get("story_beat") or ""),
+            source_span=_parse_span(c.get("source_span"), where),
+            tight_speech_trim=None if c.get("tight_speech_trim") is None else bool(c["tight_speech_trim"])))
+        for spk in clips[-1].expected_speakers:
+            if voices and spk not in voices:
+                raise PipelineError(f"{where}: expected speaker {spk!r} not declared in voices")
     if not clips:
         raise PipelineError(f"{path.name}: no clips defined")
 
@@ -460,7 +508,12 @@ def load_manifest(path: Path, overrides: Optional[dict] = None) -> Episode:
         video=_merged(VIDEO_DEFAULTS, data.get("video")),
         audio=_merged(AUDIO_DEFAULTS, data.get("audio")),
         speech=speech, subs=subs_cfg, badge=badge, voices=voices, clips=clips,
-        outputs=dict(data.get("outputs") or {}))
+        outputs=dict(data.get("outputs") or {}),
+        source_video=resolve_path(ov.get("source_video") or data.get("source_video"), variables, rel),
+        story_summary_fa=str(data.get("story_summary_fa") or ""),
+        fallback_to_source_on_visual_fail=bool(data.get("fallback_to_source_on_visual_fail", False)),
+        tight_speech_trim=bool(data.get("tight_speech_trim", False)),
+        visual=_merged(VISUAL_DEFAULTS, data.get("visual_gate")))
     validate_settings(ep)
     return ep
 
@@ -1121,6 +1174,10 @@ def local_cues(ep: Episode, clip: ClipSpec, plan: dict, analysis: Optional[dict]
         if not chk["in_bounds"]:
             s0, s1 = max(0.0, s0), min(clip_dur, s1)
             chk["clamped_to"] = [round(s0, 3), round(s1, 3)]
+            if plan.get("tight_speech_trim") and s1 - s0 > 0.3:
+                # tight pacing trims the dead air the cue was authored over: expected, not an error
+                chk["in_bounds"] = True
+                chk["tight_trim_clamped"] = True
         chk["overlaps_previous"] = s0 < prev_end - 1e-3
         span = max(1e-6, s1 - s0)
         chk["speech_energy_ratio"] = round(_speech_inside(segs, s0, s1) / span, 3) if segs else None
@@ -1184,6 +1241,8 @@ class ClipResult:
     overlays: list[Overlay] = field(default_factory=list)
     subbed: list[Path] = field(default_factory=list)
     srt: list[Path] = field(default_factory=list)
+    visual: Optional[dict] = None      # step 3 evaluation of the ORIGINAL Flow clip
+    fallback: Optional[dict] = None    # step 5 resolution (+ extraction record)
 
 
 def validate_source_timeline(src: Path, video: dict) -> dict:
@@ -1212,6 +1271,32 @@ def plan_clip(ep: Episode, clip: ClipSpec, work: Path, force: bool = False) -> C
     if clip.speech_safe != "off" or clip.lock_trim:
         analysis = analyze_clip_speech(src, clip.trim_in, req_out, ep.speech)
     plan = plan_trim(clip, analysis, src_dur, ep.speech)
+    if analysis and tight_enabled(ep, clip):
+        plan = apply_tight_speech_trim(plan, analysis.get("first_speech_sec"),
+                                       analysis.get("last_speech_sec"), ep.speech)
+    visual = clip_visual_gate(ep, clip, src)
+    fallback = resolve_fallback(ep, clip, visual)
+    if fallback["resolution"] == "source_bridge_fallback":
+        if not fallback.get("source_on_host"):
+            raise PipelineError(f"{clip.id}: visual gate failed ({', '.join(visual['flags'])}) and "
+                                f"source_video {ep.source_video} is not on this host")
+        fb_mp4 = work / f"{clip.id}_source_bridge.mp4"
+        key = fingerprint({"src": sha256_file(Path(ep.source_video)), "span": clip.source_span,  # type: ignore[arg-type]
+                           "audio": sha256_file(src), "anchor": plan["final"][0], "video": ep.video,
+                           "v": PIPELINE_VERSION})
+        if force or not cache_ok([fb_mp4], key):
+            log(f"{clip.id}: visual gate {visual['flags']} -> source bridge {clip.source_span} "
+                f"from {Path(ep.source_video).name} + native Flow audio")  # type: ignore[arg-type]
+            rec = extract_source_fallback_clip(Path(ep.source_video), clip.source_span, src, fb_mp4,  # type: ignore[arg-type]
+                                               video=ep.video, anchor_sec=plan["final"][0])
+            cache_write(fb_mp4, key, **rec)
+        fallback["extraction"] = json.loads(_record_path(fb_mp4).read_text("utf-8"))
+        prov.update(visual_fallback=True, flow_clip=str(src), analysed=str(fb_mp4))
+        src = fb_mp4
+        ep.warnings.append(f"{clip.id}: video replaced by source_span {list(clip.source_span)} "  # type: ignore[arg-type]
+                           f"({', '.join(visual['flags'])}); native Flow audio kept")
+    elif fallback["resolution"] == "unresolved_visual_fail":
+        ep.warnings.append(f"{clip.id}: visual continuity FAILED {visual['flags']} -- {fallback['reason']}")
     final = window_speech_check(analysis, *plan["final"]) if analysis else None
     for n in plan["notes"]:
         log(f"{clip.id}: {n}")
@@ -1220,7 +1305,22 @@ def plan_clip(ep: Episode, clip: ClipSpec, work: Path, force: bool = False) -> C
     if final and final["cuts_speech"]:
         ep.warnings.append(f"{clip.id}: final trim {plan['final']} still touches speech energy "
                            f"(mode={plan['mode']}) - listen to both edges")
-    return ClipResult(clip, src, prov, analysis, plan, final)
+    return ClipResult(clip, src, prov, analysis, plan, final, visual=visual, fallback=fallback)
+
+
+def clip_visual_gate(ep: Episode, clip: ClipSpec, src: Path) -> Optional[dict]:
+    """Step 3 for one clip: probe-JSON entry (headless) or live frame sampling."""
+    v = ep.visual
+    kw = dict(keyframe_threshold=v["keyframe_threshold"], jump_threshold=v["jump_threshold"],
+              contamination_margin=v["contamination_margin"])
+    if ep.probe and clip.id in ep.probe:
+        return {**evaluate_probe_entry(ep.probe[clip.id], clip_id=clip.id, **kw), "source": "probe_json"}
+    if clip.keyframe is not None and Path(clip.keyframe).is_file():
+        kfs = {c.id: c.keyframe for c in ep.clips}
+        res = analyze_clip_visuals(src, clip.keyframe, kfs, sample_fps=v["sample_fps"],
+                                   size=tuple(v["thumb_size"]), clip_id=clip.id, **kw)
+        return {**res["evaluation"], "source": "live_mp4"}
+    return None
 
 
 def clip_output_paths(ep: Episode, clip: ClipSpec, name: str) -> list[Path]:
@@ -1308,6 +1408,295 @@ def run_clips(ep: Episode, force: bool = False, render: bool = True,
     if not results:
         raise PipelineError("--only matched no clips")
     return results, font_path, font_notes
+
+
+# ------------------------------------------- visual continuity gate (v1.2) --
+# Keyframes are READ-ONLY inputs here: they are opened, downscaled in memory
+# and compared.  Nothing in this module ever draws on, blurs, boxes or
+# rewrites a keyframe file.  (No `sanitize_*_keyframes` -- by design.)
+def _thumb_rgb(img: Image.Image, size: tuple[int, int]) -> np.ndarray:
+    return np.asarray(img.convert("RGB").resize(tuple(size), Image.BILINEAR), dtype=np.float32)
+
+
+def load_keyframe_thumb(path: Path, size: tuple[int, int] = (72, 128)) -> np.ndarray:
+    with Image.open(path) as im:
+        im.load()
+        return _thumb_rgb(im, size)
+
+
+def l1(a: np.ndarray, b: np.ndarray) -> float:
+    """Mean absolute RGB difference on a 0..255 scale (same metric as the probe JSON)."""
+    return round(float(np.mean(np.abs(a.astype(np.float32) - b.astype(np.float32)))), 2)
+
+
+def sample_video_thumbs(mp4_path: Path, sample_fps: float = 2.0,
+                        size: tuple[int, int] = (72, 128)) -> list[np.ndarray]:
+    w, h = int(size[0]), int(size[1])
+    proc = run(ffmpeg_cmd("-i", str(mp4_path), "-map", "0:v:0", "-an",
+                          "-vf", f"fps={sample_fps:g},scale={w}:{h}:flags=bilinear",
+                          "-f", "rawvideo", "-pix_fmt", "rgb24", "pipe:1"),
+               capture=True, what=f"sample frames {Path(mp4_path).name}")
+    n = len(proc.stdout) // (w * h * 3)
+    arr = np.frombuffer(proc.stdout[: n * w * h * 3], dtype=np.uint8).reshape(n, h, w, 3)
+    return [f.astype(np.float32) for f in arr]
+
+
+def analyze_clip_visuals(mp4_path: Path, keyframe_path: Optional[Path] = None,
+                         all_keyframes: Optional[dict[str, Path]] = None,
+                         sample_fps: float = 2.0, size: tuple[int, int] = (72, 128),
+                         jump_threshold: float = 32.0, clip_id: str = "",
+                         **eval_kw: Any) -> dict:
+    """Live visual probe of one Flow clip: L1 distance of sampled frames to its
+    own keyframe, to every OTHER keyframe of the episode (leftover-chip
+    contamination) and frame-to-frame jumps (hard internal cuts).  Produces the
+    same schema as ``parts1_to_5_clips_probe.json`` plus ``evaluate_probe_entry``."""
+    frames = sample_video_thumbs(Path(mp4_path), sample_fps, size)
+    if not frames:
+        raise PipelineError(f"{Path(mp4_path).name}: no video frames decoded")
+    entry: dict[str, Any] = {"file": Path(mp4_path).name, "num_sampled_frames": len(frames),
+                             "sample_fps": sample_fps}
+    if keyframe_path is not None and Path(keyframe_path).is_file():
+        kf = load_keyframe_thumb(Path(keyframe_path), size)
+        d = [l1(f, kf) for f in frames]
+        entry.update(l1_vs_keyframe_mean=round(float(np.mean(d)), 2),
+                     l1_vs_keyframe_start=d[0], l1_vs_keyframe_end=d[-1])
+    others = {k: p for k, p in (all_keyframes or {}).items()
+              if k != clip_id and p is not None and Path(p).is_file()
+              and (keyframe_path is None or Path(p).resolve() != Path(keyframe_path).resolve())}
+    if others:
+        dist = {k: l1(frames[0], load_keyframe_thumb(Path(p), size)) for k, p in others.items()}
+        best = min(dist, key=dist.get)
+        entry.update(closest_other_keyframe=best, closest_other_keyframe_l1_start=dist[best])
+    jumps = [l1(frames[i], frames[i - 1]) for i in range(1, len(frames))]
+    if jumps:
+        j = int(np.argmax(jumps))
+        entry.update(max_internal_jump_l1=jumps[j], max_internal_jump_time_sec=round((j + 1) / sample_fps, 2))
+    entry["detected_scene_cuts_sec"] = [round((i + 1) / sample_fps, 2)
+                                        for i, v in enumerate(jumps) if v > jump_threshold]
+    entry["evaluation"] = evaluate_probe_entry(entry, clip_id=clip_id, jump_threshold=jump_threshold,
+                                               sample_fps=sample_fps, **eval_kw)
+    return entry
+
+
+def evaluate_probe_entry(probe_entry: dict, *, clip_id: str = "", keyframe_threshold: float = 32.0,
+                         jump_threshold: float = 32.0, contamination_margin: float = 5.0,
+                         sample_fps: Optional[float] = None,
+                         clip_duration: Optional[float] = None) -> dict:
+    """Pure function (no media needed): turns one probe entry into gate flags.
+
+    KEYFRAME_MISMATCH               l1_start > thr AND l1_mean > thr
+                                    (keyframe dropped -> 0-ingredient T2V hallucination)
+    MULTI_INGREDIENT_CONTAMINATION  closest_other_l1_start + margin < l1_start
+                                    (a leftover composer chip steered the clip)
+    INTERNAL_SCENE_CUT              max_internal_jump_l1 > jump_thr  (+ suggested visual trim)
+    KEYFRAME_DRIFT (warning only)   start locked but the clip ends far from the keyframe."""
+    e = probe_entry or {}
+    fps = float(sample_fps or e.get("sample_fps") or 2.0)
+    n = int(e.get("num_sampled_frames") or 0)
+    dur = float(clip_duration if clip_duration is not None else (n / fps if n else 10.0))
+    step = 1.0 / fps
+    flags: list[str] = []
+    warnings: list[str] = []
+    start, mean, end = (e.get(k) for k in ("l1_vs_keyframe_start", "l1_vs_keyframe_mean", "l1_vs_keyframe_end"))
+    other = e.get("closest_other_keyframe_l1_start")
+    jump = e.get("max_internal_jump_l1")
+    if start is None:
+        warnings.append("NO_KEYFRAME_REFERENCE")
+    else:
+        if start > keyframe_threshold and (mean is None or mean > keyframe_threshold):
+            flags.append("KEYFRAME_MISMATCH")
+        if other is not None and float(other) + contamination_margin < float(start):
+            flags.append("MULTI_INGREDIENT_CONTAMINATION")
+        if start <= keyframe_threshold and end is not None and end > keyframe_threshold:
+            warnings.append("KEYFRAME_DRIFT")
+    cuts = sorted(float(c) for c in (e.get("detected_scene_cuts_sec") or []))
+    if jump is not None and float(jump) > jump_threshold:
+        flags.append("INTERNAL_SCENE_CUT")
+        t = e.get("max_internal_jump_time_sec")
+        if t is not None and not any(abs(float(t) - c) < 1e-6 for c in cuts):
+            cuts = sorted(cuts + [float(t)])
+    trim_in, trim_out = 0.0, round(dur, 3)
+    if "INTERNAL_SCENE_CUT" in flags and cuts:
+        bounds = [0.0] + cuts + [dur]
+        segs = [(bounds[i], bounds[i + 1] - (step if i + 1 < len(bounds) - 1 else 0.0))
+                for i in range(len(bounds) - 1)]
+        segs = [(a, b) for a, b in segs if b > a]
+        start_locked = start is not None and start <= keyframe_threshold
+        # keep the segment that still shows the keyframe scene (the first one) when
+        # the start is locked; otherwise keep the longest coherent segment
+        pick = segs[0] if start_locked and segs else max(segs, key=lambda s: s[1] - s[0], default=(0.0, dur))
+        trim_in, trim_out = round(pick[0], 3), round(pick[1], 3)
+    return {"clip_id": clip_id or e.get("file", ""), "flags": flags, "warnings": warnings,
+            "passed": not flags, "suggested_visual_trim_in": trim_in,
+            "suggested_visual_trim_out": trim_out,
+            "suggested_visual_duration": round(trim_out - trim_in, 3),
+            "thresholds": {"keyframe": keyframe_threshold, "jump": jump_threshold,
+                           "contamination_margin": contamination_margin},
+            "metrics": {k: e.get(k) for k in ("l1_vs_keyframe_start", "l1_vs_keyframe_mean",
+                                               "l1_vs_keyframe_end", "closest_other_keyframe",
+                                               "closest_other_keyframe_l1_start", "max_internal_jump_l1",
+                                               "max_internal_jump_time_sec")} | {"scene_cuts_sec": cuts}}
+
+
+# -------------------------------- source subtitle-band inpaint + fallback --
+SUB_BAND_Y = (0.73, 0.89)
+SUB_BAND_X = (0.08, 0.92)
+
+
+def _dilate(mask: np.ndarray, r: int) -> np.ndarray:
+    out = mask.copy()
+    for dy in range(-r, r + 1):
+        for dx in range(-r, r + 1):
+            if dy or dx:
+                out |= np.roll(np.roll(mask, dy, 0), dx, 1)
+    return out
+
+
+def subtitle_text_mask(band: np.ndarray) -> np.ndarray:
+    """Burned-in white / yellow subtitle glyphs (+ dark outline) inside the band."""
+    r, g, b = (band[..., i].astype(np.int16) for i in range(3))
+    white = (r > 210) & (g > 210) & (b > 210)
+    yellow = (r > 200) & (g > 170) & (b < 140) & (r - b > 90)
+    return _dilate(white | yellow, 3)
+
+
+def inpaint_source_subtitle_band(rgb: np.ndarray) -> np.ndarray:
+    """Remove burned-in English subtitles from a SOURCE EPISODE video frame.
+
+    numpy-only: masked pixels are rebuilt by row-wise linear interpolation
+    between the nearest unmasked neighbours, averaged with a column-wise pass,
+    so the band blends into the scene; the Farsi pill is later drawn on top.
+    Applied to source-video frames for the hybrid bridge only -- never to the
+    Flow keyframes."""
+    out = np.array(rgb, dtype=np.float32, copy=True)
+    h, w = out.shape[:2]
+    y0, y1 = int(h * SUB_BAND_Y[0]), int(h * SUB_BAND_Y[1])
+    x0, x1 = int(w * SUB_BAND_X[0]), int(w * SUB_BAND_X[1])
+    band = out[y0:y1, x0:x1]
+    mask = subtitle_text_mask(band)
+    if mask.sum() < 12:
+        return np.asarray(rgb).copy()
+
+    def fill(arr: np.ndarray, m: np.ndarray) -> np.ndarray:  # interpolate along axis 1
+        res = arr.copy()
+        xs = np.arange(arr.shape[1])
+        for i in np.flatnonzero(m.any(axis=1)):
+            keep = ~m[i]
+            if keep.sum() < 2:
+                continue
+            for c in range(3):
+                res[i, m[i], c] = np.interp(xs[m[i]], xs[keep], arr[i, keep, c])
+        return res
+
+    horiz = fill(band, mask)
+    vert = fill(band.transpose(1, 0, 2), mask.T).transpose(1, 0, 2)
+    rows_ok = mask.T.sum(axis=1) < mask.shape[0] - 1  # columns with any unmasked pixel
+    blend = np.where(rows_ok[None, :, None], 0.5 * horiz + 0.5 * vert, horiz)
+    band[mask] = blend[mask]
+    out[y0:y1, x0:x1] = band
+    return np.clip(out, 0, 255).astype(np.uint8)
+
+
+def extract_source_fallback_clip(source_video: Path, source_span: tuple[float, float],
+                                 flow_audio_mp4: Path, out_mp4: Path, *, video: Optional[dict] = None,
+                                 anchor_sec: float = 0.0, inpaint: bool = True) -> dict:
+    """Hybrid bridge: VIDEO = original episode ``source_span`` (subtitle band
+    inpainted), AUDIO = the untouched native Google Flow Farsi track of
+    ``flow_audio_mp4``.  The output has exactly the Flow clip's duration so the
+    existing speech-safe / tight trim plan applies unchanged; the source span
+    starts at ``anchor_sec`` (the planned trim-in) and its first/last frame is
+    held when the speech window is longer than the span."""
+    video = _merged(VIDEO_DEFAULTS, video)
+    w, h, fps = int(video["width"]), int(video["height"]), float(video["fps"])
+    s0, s1 = float(source_span[0]), float(source_span[1])
+    flow_dur = media_duration(Path(flow_audio_mp4))
+    src_dur = media_duration(Path(source_video))
+    if s0 >= src_dur:
+        raise PipelineError(f"source_span {source_span} starts beyond {Path(source_video).name} ({src_dur:.2f}s)")
+    s1 = min(s1, src_dur)
+    lead = max(0.0, anchor_sec)                     # hold first span frame before the anchor
+    span_len = s1 - s0
+    tail = max(0.0, flow_dur - lead - span_len)     # hold last span frame after the span
+    n_frames = max(1, int(math.ceil(flow_dur * fps - 1e-9)))
+    vf = (f"trim=start={s0:.4f}:end={s1:.4f},setpts=PTS-STARTPTS,{_scale_filter(video)},fps={fps:g},"
+          f"tpad=start_mode=clone:start_duration={lead:.4f}:stop_mode=clone:stop_duration={tail + 1:.4f},"
+          f"trim=end_frame={n_frames},format=rgb24")
+    dec = subprocess.Popen(ffmpeg_cmd("-i", str(source_video), "-map", "0:v:0", "-an", "-vf", vf,
+                                      "-f", "rawvideo", "-pix_fmt", "rgb24", "pipe:1"),
+                           stdout=subprocess.PIPE, stderr=subprocess.DEVNULL)
+    out_mp4.parent.mkdir(parents=True, exist_ok=True)
+    tmp = out_mp4.with_name(out_mp4.stem + ".tmp.mp4")
+    errf = tempfile.TemporaryFile()
+    enc = subprocess.Popen(ffmpeg_cmd("-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{w}x{h}",
+                                      "-r", f"{fps:g}", "-i", "pipe:0", "-i", str(flow_audio_mp4),
+                                      "-map", "0:v:0", "-map", "1:a:0", "-c:v", "libx264",
+                                      "-preset", str(video["preset"]), "-crf", str(video["work_crf"]),
+                                      "-pix_fmt", "yuv420p", "-c:a", "copy", "-t", f"{flow_dur:.4f}",
+                                      "-movflags", "+faststart", str(tmp)),
+                           stdin=subprocess.PIPE, stdout=subprocess.DEVNULL, stderr=errf)
+    fsz, written, inpainted = w * h * 3, 0, 0
+    assert dec.stdout is not None and enc.stdin is not None
+    while True:
+        buf = dec.stdout.read(fsz)
+        if len(buf) < fsz:
+            break
+        frame = np.frombuffer(buf, np.uint8).reshape(h, w, 3)
+        if inpaint:
+            new = inpaint_source_subtitle_band(frame)
+            inpainted += int(not np.array_equal(new, frame))
+            frame = new
+        enc.stdin.write(frame.tobytes())
+        written += 1
+    enc.stdin.close()
+    dec.wait()
+    enc.wait()
+    errf.seek(0)
+    err = errf.read()
+    errf.close()
+    if enc.returncode != 0 or written == 0:
+        raise PipelineError(f"source fallback encode failed: {err.decode('utf-8', 'replace')[-400:]}")
+    os.replace(tmp, out_mp4)
+    return {"mode": "source_bridge_video_with_flow_audio", "source_video": str(source_video),
+            "source_span": [s0, round(s1, 3)], "flow_audio": str(flow_audio_mp4),
+            "flow_audio_sha256": sha256_file(Path(flow_audio_mp4)), "anchor_sec": round(lead, 3),
+            "frames": written, "frames_inpainted": inpainted, "duration": round(flow_dur, 4),
+            "output": str(out_mp4)}
+
+
+# ------------------------------------------------------ tight speech pacing --
+def tight_enabled(ep: Episode, clip: ClipSpec) -> bool:
+    return ep.tight_speech_trim if clip.tight_speech_trim is None else bool(clip.tight_speech_trim)
+
+
+def apply_tight_speech_trim(plan: dict, first: Optional[float], last: Optional[float], cfg: dict,
+                            min_duration: float = TIGHT_MIN_DURATION) -> dict:
+    """[max(trim_in, first - pre), min(trim_out, last + post)], never < min_duration.
+    Subtitle shift is recomputed so trim-local cues stay glued to the audio."""
+    if first is None or last is None or plan.get("mode") == "locked":
+        return plan
+    t_in, t_out = plan["final"]
+    new_in = max(t_in, first - float(cfg["pre_handle"]))
+    new_out = min(t_out, last + float(cfg["post_handle"]))
+    if new_out - new_in < min_duration:                 # grow symmetrically inside the window
+        pad = (min_duration - (new_out - new_in)) / 2
+        new_in, new_out = max(t_in, new_in - pad), min(t_out, new_out + pad)
+        if new_out - new_in < min_duration:
+            new_in, new_out = (t_in, min(t_out, t_in + min_duration)) if new_in <= t_in + 1e-6 \
+                else (max(t_in, t_out - min_duration), t_out)
+    new_in, new_out = round(new_in, 3), round(new_out, 3)
+    if (new_in, new_out) == (t_in, t_out):
+        return plan
+    out = dict(plan)
+    out["notes"] = list(plan["notes"]) + [
+        f"tight_speech_trim {t_in:.3f}-{t_out:.3f} -> {new_in:.3f}-{new_out:.3f} "
+        f"(speech {first:.3f}-{last:.3f}, dead air {t_out - t_in - (last - first):.2f}s -> "
+        f"{new_out - new_in - (last - first):.2f}s)"]
+    out["pre_tight"] = [t_in, t_out]
+    out["final"] = [new_in, new_out]
+    out["duration"] = round(new_out - new_in, 3)
+    out["subtitle_shift"] = round(plan["requested"][0] - new_in, 3)
+    out["tight_speech_trim"] = True
+    return out
 
 
 # ------------------------------------------------- verification (ffprobe) --
@@ -1617,7 +2006,11 @@ def clip_report(ep: Episode, r: ClipResult) -> dict:
         "id": r.clip.id, "index": r.clip.index, "provenance": r.provenance, "plan": r.plan,
         "speech": a,
         "final_window_speech": r.final_check, "lock_trim": r.clip.lock_trim,
-        "allow_speech_splice": r.clip.allow_speech_splice, "notes": r.clip.notes}
+        "allow_speech_splice": r.clip.allow_speech_splice, "notes": r.clip.notes,
+        "story_beat": r.clip.story_beat, "expected_speakers": r.clip.expected_speakers,
+        "keyframe": str(r.clip.keyframe) if r.clip.keyframe else None,
+        "source_span": list(r.clip.source_span) if r.clip.source_span else None,
+        "visual": r.visual, "fallback": r.fallback}
     if r.subbed:
         out.update(duration=r.duration, frames=r.frames, subtitles=r.cue_checks,
                    overlays=[{"kind": o.kind, "start": o.start, "end": o.end, "speaker": o.speaker,
@@ -1672,7 +2065,17 @@ def write_qa_report(ep: Episode, results: list[ClipResult], font: Optional[str],
             0 <= c.start < c.end <= master["cta_duration"] + 0.001 and
             (i == 0 or c.start >= ep.cta_subtitles[i-1].end)
             for i, c in enumerate(ep.cta_subtitles)))
+    narrative = narrative_mode(ep)
+    traces = [clip_trace(ep, r.clip, visual=r.visual, speech=r.analysis, plan=r.plan, fallback=r.fallback,
+                         media=c.get("media")) for r, c in zip(results, clips)]
+    trace = episode_trace(ep, traces, mode=command, master=master)
+    if narrative:
+        automatic["story_beat_lock"] = gate(trace["step_trace"][STEP_NAMES[0]]["status"] == "pass")
+        automatic["keyframe_preflight"] = gate(trace["step_trace"][STEP_NAMES[1]]["status"] != "fail")
+        automatic["visual_continuity_resolved"] = gate(trace["visual_continuity_resolved"])
+        automatic["dead_air_pacing"] = gate(trace["step_trace"][STEP_NAMES[3]]["status"] != "fail")
     status = "pass" if all(v == "pass" for v in automatic.values()) else "fail"
+    trace["all_passed"] = status == "pass"
     report = {
         "overall_status": status, "overall_status_scope": "automatic_checks_only",
         "publication_status": "pending" if status == "pass" else "fail",
@@ -1697,6 +2100,10 @@ def write_qa_report(ep: Episode, results: list[ClipResult], font: Optional[str],
                                    "transcript_word_for_word": "pending", "visual_frame_review": "pending",
                                    "voice_continuity": "pending"}},
         "overall_automatic": status,
+        "visual_continuity_passed": trace["visual_continuity_passed"],
+        "visual_continuity_resolved": trace["visual_continuity_resolved"],
+        "all_passed": status == "pass",
+        "step_trace": trace["step_trace"],
         "warnings": ep.warnings,
         "note": "Amplitude speech detection locates candidates only; it does not prove a sentence "
                 "finished. Human/audio-capable review gates stay 'pending' until signed off.",
@@ -1710,6 +2117,260 @@ def write_qa_report(ep: Episode, results: list[ClipResult], font: Optional[str],
     if command == "build":
         ep_dst = ep.out_dir / f"qa_report_{ep.episode_id}.json"
         ep_dst.write_text(payload, "utf-8")
+    write_json_atomic(ep.out_dir / f"trace_{ep.episode_id}.json", {**trace, "clips": traces})
+    return dst
+
+
+def narrative_mode(ep: Episode) -> bool:
+    """Story gates are enforced once a manifest opts into v1.2 metadata."""
+    return bool(ep.source_video or ep.story_summary_fa or
+                any(c.keyframe or c.story_beat or c.expected_speakers for c in ep.clips))
+
+
+# ------------------------------------------------- 6-stage step trace (v1.2) --
+STEP_NAMES = ("step_1_story_beat_and_character_lock", "step_2_keyframe_preflight",
+              "step_3_visual_continuity_audit", "step_4_acoustic_speech_and_pacing",
+              "step_5_hybrid_bridge_and_fallback_resolution", "step_6_mux_and_master_verification")
+
+
+def _name_aliases(name_fa: str) -> list[str]:
+    return [p.strip() for p in re.split(r"[/|،,]", name_fa or "") if p.strip()]
+
+
+def keyframe_identity(clip: ClipSpec) -> Optional[str]:
+    """sha256 of the keyframe when it is on this host, else its normalised path."""
+    if clip.keyframe is None:
+        return None
+    if Path(clip.keyframe).is_file():
+        return "sha256:" + sha256_file(Path(clip.keyframe))
+    return "path:" + str(clip.keyframe).replace("\\", "/").lower()
+
+
+def step1_story_lock(ep: Episode) -> dict:
+    """Metadata completeness, speaker consistency and CHARACTER_KEYFRAME_COLLISION."""
+    per_clip, flags = {}, []
+    ids: dict[str, list[ClipSpec]] = {}
+    for c in ep.clips:
+        missing = [k for k, v in (("keyframe", c.keyframe), ("expected_speakers", c.expected_speakers),
+                                  ("story_beat", c.story_beat)) if not v]
+        cue_speakers = sorted({q.speaker for q in c.subtitles if q.speaker})
+        unexpected = [s for s in cue_speakers if c.expected_speakers and s not in c.expected_speakers]
+        cf = [f"MISSING_{k.upper()}" for k in missing]
+        if unexpected:
+            cf.append("SPEAKER_NOT_EXPECTED")
+        per_clip[c.id] = {"story_beat": c.story_beat, "expected_speakers": c.expected_speakers,
+                          "cue_speakers": cue_speakers, "unexpected_speakers": unexpected,
+                          "keyframe": str(c.keyframe) if c.keyframe else None,
+                          "source_span": list(c.source_span) if c.source_span else None, "flags": cf}
+        kid = keyframe_identity(c)
+        if kid:
+            ids.setdefault(kid, []).append(c)
+    collisions = []
+    for kid, group in ids.items():
+        for i, a in enumerate(group):
+            for b in group[i + 1:]:
+                if a.expected_speakers and b.expected_speakers and \
+                        not set(a.expected_speakers) & set(b.expected_speakers):
+                    collisions.append({"keyframe": kid, "clips": [a.id, b.id],
+                                       "speakers": [a.expected_speakers, b.expected_speakers]})
+                    for x in (a, b):
+                        if "CHARACTER_KEYFRAME_COLLISION" not in per_clip[x.id]["flags"]:
+                            per_clip[x.id]["flags"].append("CHARACTER_KEYFRAME_COLLISION")
+    caption = ep.outputs.get("publish_caption_fa") or ""
+    name_checks = {}
+    used = sorted({s for c in ep.clips for s in c.expected_speakers + [q.speaker for q in c.subtitles] if s})
+    for spk in used:
+        name = str((ep.voices.get(spk) or {}).get("name_fa") or "")
+        aliases = _name_aliases(name)
+        chk = {"name_fa": name, "aliases": aliases, "declared": bool(name)}
+        if caption:
+            chk["in_publish_caption"] = any(a in caption for a in aliases)
+        name_checks[spk] = chk
+        if not name:
+            flags.append(f"SPEAKER_NAME_MISSING:{spk}")
+        if caption and spk in (s for c in ep.clips for s in c.expected_speakers) and \
+                not chk["in_publish_caption"] and spk not in ep.outputs.get("caption_optional_speakers", []):
+            flags.append(f"SPEAKER_CAPTION_MISMATCH:{spk}")
+    failed = bool(collisions) or any(p["flags"] for p in per_clip.values()) or bool(flags)
+    return {"status": "fail" if failed else "pass", "story_summary_fa": ep.story_summary_fa,
+            "clips": per_clip, "collisions": collisions, "speaker_names": name_checks, "flags": flags}
+
+
+def step2_keyframe_preflight(ep: Episode) -> dict:
+    per_clip, status = {}, "pass"
+    for c in ep.clips:
+        if c.keyframe is None:
+            per_clip[c.id] = {"status": "fail", "reason": "no keyframe declared"}
+            status = "fail"
+            continue
+        if not Path(c.keyframe).is_file():
+            per_clip[c.id] = {"status": "skipped_not_on_host", "keyframe": str(c.keyframe)}
+            status = "skipped" if status == "pass" else status
+            continue
+        try:
+            info = verify_keyframe(Path(c.keyframe))
+            per_clip[c.id] = {"status": "pass", **info, "modified": False}
+        except (PipelineError, OSError) as exc:
+            per_clip[c.id] = {"status": "fail", "keyframe": str(c.keyframe), "reason": str(exc)}
+            status = "fail"
+    return {"status": status, "clips": per_clip,
+            "policy": "keyframes are read-only: verified + hashed, never drawn on / blurred / boxed"}
+
+
+def resolve_fallback(ep: Episode, clip: ClipSpec, visual: Optional[dict]) -> dict:
+    """Decide what VIDEO the clip uses: Flow clip, or original source span."""
+    failed = bool(visual and visual.get("flags"))
+    if not failed:
+        return {"resolution": "flow_clip", "resolved": True}
+    if not ep.fallback_to_source_on_visual_fail:
+        return {"resolution": "unresolved_visual_fail", "resolved": False,
+                "reason": "fallback_to_source_on_visual_fail is false"}
+    if ep.source_video is None or clip.source_span is None:
+        return {"resolution": "unresolved_visual_fail", "resolved": False,
+                "reason": "needs episode source_video and clip source_span"}
+    return {"resolution": "source_bridge_fallback", "resolved": True,
+            "video_from": {"source_video": str(ep.source_video), "source_span": list(clip.source_span)},
+            "audio_from": "native Google Flow Farsi audio of " + clip.file,
+            "source_on_host": Path(ep.source_video).is_file()}
+
+
+def clip_trace(ep: Episode, clip: ClipSpec, *, visual: Optional[dict], speech: Optional[dict],
+               plan: Optional[dict], fallback: Optional[dict], media: Optional[dict] = None) -> dict:
+    s4: dict[str, Any] = {"status": "skipped", "tight_speech_trim": tight_enabled(ep, clip)}
+    if speech and speech.get("first_speech_sec") is not None and plan:
+        first, last = speech["first_speech_sec"], speech["last_speech_sec"]
+        dur = plan["duration"]
+        dead = round(dur - (last - first), 3)
+        s4.update(status="pass", first_speech_sec=first, last_speech_sec=last,
+                  speech_duration_sec=round(last - first, 3), trimmed_duration_sec=dur,
+                  dead_air_sec=dead, final_trim=plan["final"], pre_tight=plan.get("pre_tight"),
+                  flags=["DEAD_AIR_PACING"] if dead > DEAD_AIR_LIMIT else [])
+        if s4["flags"]:
+            s4["status"] = "fail"
+    elif speech is not None:
+        s4.update(status="fail", flags=["NO_SPEECH_DETECTED"])
+    s5 = dict(fallback or resolve_fallback(ep, clip, visual))
+    s5.setdefault("status", "pass" if s5.get("resolved") else "fail")
+    s6 = {"status": "pass" if media and media.get("pass") else ("fail" if media else "not_run")}
+    if media:
+        s6["media"] = media
+    return {"clip_id": clip.id, "story_beat": clip.story_beat,
+            "step_3_visual_continuity_audit": {"status": "skipped" if visual is None else
+                                               ("pass" if visual["passed"] else "fail"), **(visual or {})},
+            "step_4_acoustic_speech_and_pacing": s4,
+            "step_5_hybrid_bridge_and_fallback_resolution": s5,
+            "step_6_mux_and_master_verification": s6}
+
+
+def episode_trace(ep: Episode, clip_traces: list[dict], *, mode: str,
+                  master: Optional[dict] = None) -> dict:
+    s1, s2 = step1_story_lock(ep), step2_keyframe_preflight(ep)
+    vis = [t["step_3_visual_continuity_audit"] for t in clip_traces]
+    raw_ok = all(v["status"] != "fail" for v in vis)
+    resolved = all(t["step_5_hybrid_bridge_and_fallback_resolution"].get("resolved") for t in clip_traces)
+    pacing = [t["step_4_acoustic_speech_and_pacing"] for t in clip_traces]
+    s6 = {"status": "not_run" if master is None else ("pass" if master.get("qa", {}).get("pass") else "fail"),
+          "visual_continuity_passed": raw_ok, "visual_continuity_resolved": resolved}
+    steps = {
+        STEP_NAMES[0]: s1, STEP_NAMES[1]: s2,
+        STEP_NAMES[2]: {"status": "pass" if raw_ok else "fail",
+                        "failed_clips": [t["clip_id"] for t in clip_traces
+                                         if t["step_3_visual_continuity_audit"]["status"] == "fail"],
+                        "clips": {t["clip_id"]: t["step_3_visual_continuity_audit"] for t in clip_traces}},
+        STEP_NAMES[3]: {"status": "skipped" if all(p["status"] == "skipped" for p in pacing) else
+                        ("fail" if any(p["status"] == "fail" for p in pacing) else "pass"),
+                        "clips": {t["clip_id"]: t["step_4_acoustic_speech_and_pacing"] for t in clip_traces}},
+        STEP_NAMES[4]: {"status": "pass" if resolved else "fail",
+                        "fallback_clips": [t["clip_id"] for t in clip_traces
+                                           if t["step_5_hybrid_bridge_and_fallback_resolution"]["resolution"]
+                                           == "source_bridge_fallback"],
+                        "clips": {t["clip_id"]: t["step_5_hybrid_bridge_and_fallback_resolution"]
+                                  for t in clip_traces}},
+        STEP_NAMES[5]: s6,
+    }
+    blocking = [n for n in (STEP_NAMES[0], STEP_NAMES[3], STEP_NAMES[4]) if steps[n]["status"] == "fail"]
+    if master is not None and s6["status"] == "fail":
+        blocking.append(STEP_NAMES[5])
+    if s2["status"] == "fail":
+        blocking.append(STEP_NAMES[1])
+    return {"episode_id": ep.episode_id, "title_fa": ep.title_fa, "mode": mode,
+            "pipeline_version": PIPELINE_VERSION, "source_video": str(ep.source_video) if ep.source_video else None,
+            "fallback_to_source_on_visual_fail": ep.fallback_to_source_on_visual_fail,
+            "tight_speech_trim": ep.tight_speech_trim, "step_trace": steps,
+            "visual_continuity_passed": raw_ok, "visual_continuity_resolved": resolved,
+            "blocking_steps": blocking, "all_passed": not blocking}
+
+
+def probe_entries_for(ep: Episode, probe: dict, part: Optional[str] = None) -> tuple[str, dict]:
+    parts = probe.get("parts", probe)
+    if part is None:
+        m = re.search(r"part(\d+)", ep.episode_id, re.I)
+        part = f"part{m.group(1)}" if m else None
+    if not part or part not in parts:
+        raise PipelineError(f"probe JSON has no entry for {part!r} (have {sorted(parts)})")
+    return part, parts[part]
+
+
+def trace_audit(ep: Episode, *, probe: Optional[dict] = None, part: Optional[str] = None,
+                live: bool = True) -> dict:
+    """Headless (probe JSON) or live (MP4s on host) 6-stage trace without rendering."""
+    entries, used_part = {}, None
+    if probe is not None:
+        used_part, entries = probe_entries_for(ep, probe, part)
+    vcfg = ep.visual
+    kfs = {c.id: c.keyframe for c in ep.clips}
+    traces = []
+    for c in ep.clips:
+        visual = speech = plan = None
+        file_p, _ = clip_source_paths(ep, c)
+        if c.id in entries:
+            visual = evaluate_probe_entry(entries[c.id], clip_id=c.id,
+                                          keyframe_threshold=vcfg["keyframe_threshold"],
+                                          jump_threshold=vcfg["jump_threshold"],
+                                          contamination_margin=vcfg["contamination_margin"])
+            visual["source"] = "probe_json"
+        elif live and file_p.is_file() and c.keyframe and Path(c.keyframe).is_file():
+            v = analyze_clip_visuals(file_p, c.keyframe, kfs, sample_fps=vcfg["sample_fps"],
+                                     size=tuple(vcfg["thumb_size"]), jump_threshold=vcfg["jump_threshold"],
+                                     clip_id=c.id, keyframe_threshold=vcfg["keyframe_threshold"],
+                                     contamination_margin=vcfg["contamination_margin"])
+            visual = {**v["evaluation"], "source": "live_mp4"}
+        if live and file_p.is_file():
+            src_dur = media_duration(file_p)
+            speech = analyze_clip_speech(file_p, c.trim_in, c.trim_out, ep.speech)
+            plan = plan_trim(c, speech, src_dur, ep.speech)
+            if tight_enabled(ep, c):
+                plan = apply_tight_speech_trim(plan, speech.get("first_speech_sec"),
+                                               speech.get("last_speech_sec"), ep.speech)
+        traces.append(clip_trace(ep, c, visual=visual, speech=speech, plan=plan, fallback=None))
+    out = episode_trace(ep, traces, mode="probe_json" if probe is not None else "live_mp4")
+    out["probe_part"] = used_part
+    out["clips"] = traces
+    return out
+
+
+def print_trace_table(tr: dict) -> None:
+    print(f"\n{tr['episode_id']}  ({tr['mode']}, part={tr.get('probe_part')})  all_passed={tr['all_passed']}")
+    print(f"  {'clip':<8}{'kf_start':>9}{'kf_mean':>8}{'other':>14}{'jump@t':>13}  "
+          f"{'flags':<58}{'resolution':<24}source_span")
+    for t in tr["clips"]:
+        v = t["step_3_visual_continuity_audit"]
+        m = v.get("metrics") or {}
+        oth = f"{m.get('closest_other_keyframe') or '-'}:{m.get('closest_other_keyframe_l1_start') or '-'}"
+        jmp = f"{m.get('max_internal_jump_l1') or '-'}@{m.get('max_internal_jump_time_sec') or '-'}"
+        r = t["step_5_hybrid_bridge_and_fallback_resolution"]
+        span = (r.get("video_from") or {}).get("source_span", "")
+        print(f"  {t['clip_id']:<8}{m.get('l1_vs_keyframe_start') or '-':>9}{m.get('l1_vs_keyframe_mean') or '-':>8}"
+              f"{oth:>14}{jmp:>13}  {','.join(v.get('flags', [])) or 'ok':<58}{r['resolution']:<24}{span}")
+    if tr["blocking_steps"]:
+        print(f"  blocking: {', '.join(tr['blocking_steps'])}")
+
+
+def write_json_atomic(dst: Path, obj: Any) -> Path:
+    dst.parent.mkdir(parents=True, exist_ok=True)
+    tmp = dst.with_suffix(dst.suffix + ".tmp")
+    tmp.write_text(json.dumps(obj, indent=2, ensure_ascii=False) + "\n", "utf-8")
+    os.replace(tmp, dst)
     return dst
 
 
@@ -1904,6 +2565,21 @@ def build_parser() -> argparse.ArgumentParser:
     cp.add_argument("--list", action="store_true", help="list prompt keys")
     cp.add_argument("--print", dest="print_text", action="store_true", help="also print the prompt")
     cp.add_argument("--dry-run", action="store_true")
+
+    ta = sub.add_parser("trace-audit", help="6-stage step trace for one manifest (no rendering)")
+    _manifest_args(ta, cta=False)
+    ta.add_argument("--probe-json", type=Path, help="headless visual probe (parts1_to_5_clips_probe.json)")
+    ta.add_argument("--part", help="probe part key, e.g. part3 (default: from episode_id)")
+    ta.add_argument("--out-json", type=Path, help="write the trace JSON here")
+    ta.add_argument("--no-live", action="store_true", help="never touch MP4s even if present")
+
+    tp = sub.add_parser("trace-all-parts", help="6-stage trace for Fruits of Power Parts 1-5 from a probe JSON")
+    tp.add_argument("--probe-json", type=Path, required=True)
+    tp.add_argument("--out-json", type=Path, required=True)
+    tp.add_argument("--manifest-glob", default="fruits_of_power_part*.json",
+                    help="glob under pipeline/manifests (default: fruits_of_power_part*.json)")
+    tp.add_argument("--manifests-dir", type=Path, default=Path(__file__).resolve().parent / "manifests")
+    tp.add_argument("--var", action="append", metavar="NAME=VALUE")
     return ap
 
 
@@ -1929,6 +2605,46 @@ def _print_audit(results: list[ClipResult]) -> None:
               f"{rq[0]:>8.2f}-{rq[1]:<8.2f}{fn[0]:>8.2f}-{fn[1]:<8.2f}  {r.plan['mode']}{flag}")
         for n in r.plan["notes"]:
             print(f"{'':<10}  - {n}")
+
+
+def _load_probe(path: Path) -> dict:
+    data = json.loads(Path(path).read_text("utf-8-sig"))
+    if not isinstance(data, dict) or not isinstance(data.get("parts", data), dict):
+        raise PipelineError(f"{path}: probe JSON must be {{'parts': {{'partN': {{clip_id: entry}}}}}}")
+    return data
+
+
+def trace_all_parts(probe_path: Path, out_json: Path, manifests: list[Path],
+                    variables: Optional[dict] = None) -> dict:
+    probe = _load_probe(probe_path)
+    episodes, rows = [], []
+    for mpath in manifests:
+        ep = load_manifest(mpath, {"vars": variables or {}})
+        tr = trace_audit(ep, probe=probe, live=False)
+        tr["manifest"] = str(mpath.name)
+        episodes.append(tr)
+        for t in tr["clips"]:
+            v = t["step_3_visual_continuity_audit"]
+            r = t["step_5_hybrid_bridge_and_fallback_resolution"]
+            rows.append({"part": tr["probe_part"], "clip": t["clip_id"], "story_beat": t["story_beat"],
+                         "flags": v.get("flags", []), "warnings": v.get("warnings", []),
+                         "suggested_visual_trim": [v.get("suggested_visual_trim_in"),
+                                                   v.get("suggested_visual_trim_out")],
+                         "resolution": r["resolution"],
+                         "fallback_source_span": (r.get("video_from") or {}).get("source_span")})
+    failed = [r for r in rows if r["flags"]]
+    summary = {"clips_total": len(rows), "clips_failed_visual": len(failed),
+               "clips_resolved_by_source_bridge": sum(r["resolution"] == "source_bridge_fallback" for r in failed),
+               "clips_unresolved": sum(r["resolution"] == "unresolved_visual_fail" for r in rows),
+               "flag_counts": {f: sum(f in r["flags"] for r in rows) for f in FAIL_FLAGS},
+               "failed_clips": [f"{r['part']}/{r['clip']}" for r in failed]}
+    out = {"generated_utc": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+           "pipeline_version": PIPELINE_VERSION, "probe_json": str(probe_path),
+           "policy": {"keyframes": "read-only, never defaced",
+                      "fallback": "failed Flow VIDEO -> subtitle-inpainted source_span; Flow Farsi AUDIO kept"},
+           "summary": summary, "table": rows, "episodes": episodes}
+    write_json_atomic(out_json, out)
+    return out
 
 
 def main(argv: Optional[list[str]] = None) -> int:
@@ -1958,6 +2674,30 @@ def main(argv: Optional[list[str]] = None) -> int:
             if a.print_text:
                 print(text)
             return 0
+        if a.command == "trace-all-parts":
+            mans = sorted(Path(a.manifests_dir).glob(a.manifest_glob))
+            if not mans:
+                raise PipelineError(f"no manifests match {a.manifest_glob} in {a.manifests_dir}")
+            out = trace_all_parts(a.probe_json, a.out_json, mans, _kv(a.var))
+            for tr in out["episodes"]:
+                print_trace_table(tr)
+            sm = out["summary"]
+            log(f"{sm['clips_failed_visual']}/{sm['clips_total']} clips failed the visual gate; "
+                f"{sm['clips_resolved_by_source_bridge']} resolved by source bridge, "
+                f"{sm['clips_unresolved']} unresolved -> {a.out_json}")
+            return 0
+        if a.command == "trace-audit":
+            if bool(a.manifest) == bool(a.manifest_option):
+                raise PipelineError("provide exactly one manifest: positional or --manifest PATH")
+            ep = load_manifest(a.manifest or a.manifest_option, _overrides(a))
+            live = not a.no_live and shutil.which(FFMPEG) is not None
+            tr = trace_audit(ep, probe=_load_probe(a.probe_json) if a.probe_json else None,
+                             part=a.part, live=live)
+            print_trace_table(tr)
+            if a.out_json:
+                write_json_atomic(a.out_json, tr)
+                log(f"trace: {a.out_json}")
+            return 0 if tr["all_passed"] else 1
         if shutil.which(FFMPEG) is None or shutil.which(FFPROBE) is None:
             raise PipelineError(f"ffmpeg/ffprobe not found ({FFMPEG}, {FFPROBE}); use --ffmpeg/--ffprobe")
         if bool(a.manifest) == bool(a.manifest_option):
