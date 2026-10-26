@@ -149,8 +149,8 @@
       ],
       "story_beat": "Banana: was I just another mistake?",
       "source_span": [
-        7.2,
-        10.8
+        2.8,
+        6.8
       ],
       "trim_in": 0.0,
       "trim_out": 9.95,
@@ -172,8 +172,8 @@
       ],
       "story_beat": "Duke learns Lemonella's past with Shadow Fig",
       "source_span": [
-        10.8,
-        20.8
+        7.9,
+        15.7
       ],
       "trim_in": 0.0,
       "trim_out": 9.95,
@@ -195,8 +195,8 @@
       ],
       "story_beat": "Lemonella's dark past in Shadow Fig's casino world",
       "source_span": [
-        31.3,
-        41.3
+        29.3,
+        37.1
       ],
       "trim_in": 0.0,
       "trim_out": 9.95,
@@ -218,8 +218,8 @@
       ],
       "story_beat": "Duke forgives: he doesn't care who loved her before",
       "source_span": [
-        45.8,
-        55.8
+        45.2,
+        53.2
       ],
       "trim_in": 0.0,
       "trim_out": 9.95,
@@ -241,8 +241,8 @@
       ],
       "story_beat": "Lemonella collapses; Duke calls the emergency services",
       "source_span": [
-        60.2,
-        69.9
+        53.2,
+        61.2
       ],
       "trim_in": 0.0,
       "trim_out": 9.95,
@@ -264,8 +264,8 @@
       ],
       "story_beat": "Hospital ultrasound: Dr. Pear reveals triplets",
       "source_span": [
-        69.9,
-        74.6
+        69.3,
+        76.8
       ],
       "trim_in": 0.0,
       "trim_out": 9.95,

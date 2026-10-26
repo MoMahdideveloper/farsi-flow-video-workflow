@@ -147,8 +147,8 @@
       ],
       "story_beat": "Banana celebrates the night out with the Duke's money",
       "source_span": [
-        7.0,
-        17.0
+        5.0,
+        8.2
       ],
       "trim_in": 0.0,
       "trim_out": 9.95,
@@ -170,8 +170,8 @@
       ],
       "story_beat": "Duke alone in the mansion, burning in loneliness",
       "source_span": [
-        21.1,
-        30.4
+        19.0,
+        27.0
       ],
       "trim_in": 0.0,
       "trim_out": 9.95,
@@ -199,8 +199,8 @@
       ],
       "story_beat": "Countess Strawberry comforts Duke (the photo that sparks jealousy)",
       "source_span": [
-        30.4,
-        35.1
+        27.0,
+        35.0
       ],
       "trim_in": 0.0,
       "trim_out": 9.95,
@@ -223,7 +223,7 @@
       "story_beat": "Lemonella sees Duke with Countess Strawberry and burns with jealousy",
       "source_span": [
         35.1,
-        45.1
+        42.9
       ],
       "trim_in": 0.0,
       "trim_out": 9.95,
@@ -246,8 +246,8 @@
       ],
       "story_beat": "The DNA test envelope is opened: Banana asks what it says",
       "source_span": [
-        58.5,
-        68.5
+        51.1,
+        58.9
       ],
       "trim_in": 0.0,
       "trim_out": 9.95,
@@ -275,8 +275,8 @@
       ],
       "story_beat": "Lemonella shocked by the DNA result",
       "source_span": [
-        72.6,
-        74.0
+        67.0,
+        73.9
       ],
       "trim_in": 0.0,
       "trim_out": 9.95,

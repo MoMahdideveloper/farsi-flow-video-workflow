@@ -147,8 +147,8 @@
       ],
       "story_beat": "Duke screams in the rainy pool: betrayal discovered",
       "source_span": [
-        5.8,
-        10.4
+        0.2,
+        6.5
       ],
       "trim_in": 0.0,
       "trim_out": 9.95,
@@ -171,8 +171,8 @@
       ],
       "story_beat": "Lemonella reveals pregnancy; plots with Banana on the yellow sports car",
       "source_span": [
-        10.4,
-        14.6
+        26.7,
+        34.5
       ],
       "trim_in": 0.0,
       "trim_out": 9.95,
@@ -200,8 +200,8 @@
       ],
       "story_beat": "Duke reads the phone message 'Last night was wild' and suspects Lemonella",
       "source_span": [
-        14.6,
-        18.7
+        10.7,
+        18.5
       ],
       "trim_in": 0.0,
       "trim_out": 9.95,
@@ -223,8 +223,8 @@
       ],
       "story_beat": "Duke arrives with purple roses and drops them on seeing the kiss",
       "source_span": [
-        18.7,
-        28.7
+        18.6,
+        23.6
       ],
       "trim_in": 0.0,
       "trim_out": 9.95,
@@ -252,8 +252,8 @@
       ],
       "story_beat": "Banana gloats in the rain: the Duke's fortune is now his",
       "source_span": [
-        39.5,
-        47.9
+        37.4,
+        42.6
       ],
       "trim_in": 0.0,
       "trim_out": 9.95,
@@ -275,8 +275,8 @@
       ],
       "story_beat": "Duke watches the fountain kiss from the balcony at night and breaks down",
       "source_span": [
-        47.9,
-        57.9
+        42.7,
+        50.5
       ],
       "trim_in": 0.5,
       "trim_out": 9.5,

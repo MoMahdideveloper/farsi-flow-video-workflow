@@ -149,8 +149,8 @@
       ],
       "story_beat": "Lemonella: the baby is a boy; wishes the truth were known",
       "source_span": [
-        5.9,
-        15.9
+        3.2,
+        7.0
       ],
       "trim_in": 0.0,
       "trim_out": 9.95,
@@ -173,8 +173,8 @@
       ],
       "story_beat": "Lemonella confronts Banana with the DNA proof; Banana laughs",
       "source_span": [
-        17.6,
-        26.8
+        7.1,
+        17.8
       ],
       "trim_in": 0.0,
       "trim_out": 9.95,
@@ -191,7 +191,8 @@
           "BANANA",
           "هاهاها! که چی مثلاً؟!"
         ]
-      ]
+      ],
+      "notes": "force_source_bridge: replace sanitized hat/sunglasses Flow clip with clean original 3D DNA confrontation scene"
     },
     {
       "id": "clip_03",
@@ -202,8 +203,8 @@
       ],
       "story_beat": "Duke shows Lemonella the gold nursery plan for the heir",
       "source_span": [
-        26.8,
-        33.3
+        22.0,
+        27.6
       ],
       "trim_in": 0.0,
       "trim_out": 9.95,
@@ -225,8 +226,8 @@
       ],
       "story_beat": "Mafia boss Shadow Fig appears in the rain with Lemonella's past",
       "source_span": [
-        33.3,
-        41.1
+        30.5,
+        38.3
       ],
       "trim_in": 0.0,
       "trim_out": 9.95,
@@ -248,8 +249,8 @@
       ],
       "story_beat": "Lemonella decides to flee before the Duke finds out",
       "source_span": [
-        41.1,
-        51.1
+        38.4,
+        41.8
       ],
       "trim_in": 0.0,
       "trim_out": 9.95,
@@ -271,8 +272,8 @@
       ],
       "story_beat": "Shadow Fig holds the glass-slipper evidence: the past is exposed",
       "source_span": [
-        56.7,
-        60.5
+        55.4,
+        62.3
       ],
       "trim_in": 0.0,
       "trim_out": 9.95,
@@ -284,7 +285,7 @@
           "فکر کردی می‌تونی واقعیت رو پنهان کنی عزیزم؟ تمام مدارک دست منه!"
         ]
       ],
-      "notes": "Stage 2 conservatively bounds the terminal span using original contact-sheet timestamps. Part 2 uses the 16-midpoint sampler duration lower bound; Parts 3-5 end before the last observed frame. Exact cut and speech fit need source-host review."
+      "notes": "force_source_bridge: replace monocle-edited Flow clip with clean original 3D Shadow Fig evidence scene"
     }
   ],
   "source_span_review_note": "Candidate source windows, not verified scene boundaries. Validate against the original MP4 duration and review narrative coverage on the media host before publication. Stage 2 uses strict bounds: no silent clamp."

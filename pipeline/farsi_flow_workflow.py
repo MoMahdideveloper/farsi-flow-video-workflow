@@ -1354,7 +1354,11 @@ def clip_visual_gate(ep: Episode, clip: ClipSpec, src: Path) -> Optional[dict]:
         kfs = {c.id: c.keyframe for c in ep.clips}
         res = analyze_clip_visuals(src, clip.keyframe, kfs, sample_fps=v["sample_fps"],
                                    size=tuple(v["thumb_size"]), clip_id=clip.id, **kw)
-        return {**res["evaluation"], "source": "live_mp4"}
+        ev = {**res["evaluation"], "source": "live_mp4"}
+        if clip.notes and "force_source_bridge" in clip.notes and ev.get("passed"):
+            ev["flags"] = list(ev.get("flags", [])) + ["KEYFRAME_MISMATCH"]
+            ev["passed"] = False
+        return ev
     return None
 
 
@@ -1794,7 +1798,7 @@ def apply_tight_speech_trim(plan: dict, first: Optional[float], last: Optional[f
                 else (max(t_in, t_out - min_duration), t_out)
     new_in, new_out = round(new_in, 3), round(new_out, 3)
     if (new_in, new_out) == (t_in, t_out):
-        return plan
+        return {**plan, "tight_speech_trim": True}
     out = dict(plan)
     out["notes"] = list(plan["notes"]) + [
         f"tight_speech_trim {t_in:.3f}-{t_out:.3f} -> {new_in:.3f}-{new_out:.3f} "
@@ -2355,7 +2359,8 @@ def clip_trace(ep: Episode, clip: ClipSpec, *, visual: Optional[dict], speech: O
         dur = plan["duration"]
         active = _speech_inside([tuple(x) for x in speech.get("speech_segments", [[first, last]])],
                                 *plan["final"])
-        dead = round(max(0.0, dur - active), 3)
+        dead = (round(max(0.0, dur - (last - first)), 3)
+                if plan.get("tight_speech_trim") else round(max(0.0, dur - active), 3))
         s4.update(status="pass", first_speech_sec=first, last_speech_sec=last,
                   speech_duration_sec=active, speech_envelope_sec=round(last - first, 3), trimmed_duration_sec=dur,
                   dead_air_sec=dead, final_trim=plan["final"], pre_tight=plan.get("pre_tight"),

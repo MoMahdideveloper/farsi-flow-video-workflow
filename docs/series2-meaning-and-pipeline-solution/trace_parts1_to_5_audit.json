@@ -1,7 +1,7 @@
 {
-  "generated_utc": "2026-10-26T22:10:09Z",
+  "generated_utc": "2026-10-26T22:17:19Z",
   "pipeline_version": "1.2.2",
-  "probe_json": "docs/series2-meaning-and-pipeline-solution/parts1_to_5_clips_probe.json",
+  "probe_json": "docs\\series2-meaning-and-pipeline-solution\\parts1_to_5_clips_probe.json",
   "policy": {
     "keyframes": "read-only, never defaced",
     "fallback": "failed Flow VIDEO -> subtitle-inpainted source_span; Flow Farsi AUDIO kept"
@@ -705,31 +705,85 @@
           "flags": []
         },
         "step_2_keyframe_preflight": {
-          "status": "skipped",
+          "status": "pass",
           "clips": {
             "clip_01": {
-              "status": "skipped_not_on_host",
-              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part1\\keyframes\\KF_01.jpg"
+              "status": "pass",
+              "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part1\\keyframes\\KF_01.jpg",
+              "sha256": "bafe87acc708274dda4f2a00d9d833a5d39dcaeda28fb10aafaa86a37a2c40aa",
+              "format": "JPEG",
+              "size": [
+                576,
+                1024
+              ],
+              "ratio": 0.5625,
+              "is_9x16": true,
+              "modified": false
             },
             "clip_02": {
-              "status": "skipped_not_on_host",
-              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part1\\keyframes\\KF_02.jpg"
+              "status": "pass",
+              "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part1\\keyframes\\KF_02.jpg",
+              "sha256": "1558a00f1e1a0e07b30cb5a245fa55a670522232267921f2c18cdae80b178efe",
+              "format": "JPEG",
+              "size": [
+                576,
+                1024
+              ],
+              "ratio": 0.5625,
+              "is_9x16": true,
+              "modified": false
             },
             "clip_03": {
-              "status": "skipped_not_on_host",
-              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part1\\keyframes\\KF_03.jpg"
+              "status": "pass",
+              "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part1\\keyframes\\KF_03.jpg",
+              "sha256": "c2ba1b7aefe8dda50b1f491d0942a177e48732ad607b3b098047ef70f43bb4ec",
+              "format": "JPEG",
+              "size": [
+                576,
+                1024
+              ],
+              "ratio": 0.5625,
+              "is_9x16": true,
+              "modified": false
             },
             "clip_04": {
-              "status": "skipped_not_on_host",
-              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part1\\keyframes\\KF_04.jpg"
+              "status": "pass",
+              "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part1\\keyframes\\KF_04.jpg",
+              "sha256": "34296ad4eadbd38a24494061a9cd5ea211657efc466f01e7dc7e1f1fd954f5f4",
+              "format": "JPEG",
+              "size": [
+                576,
+                1024
+              ],
+              "ratio": 0.5625,
+              "is_9x16": true,
+              "modified": false
             },
             "clip_05": {
-              "status": "skipped_not_on_host",
-              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part1\\keyframes\\KF_05.jpg"
+              "status": "pass",
+              "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part1\\keyframes\\KF_05.jpg",
+              "sha256": "2538e16c38d022201c1d1985ab04eafe87b7bf96fe6322bc5d15a2cc5f32b6ad",
+              "format": "JPEG",
+              "size": [
+                576,
+                1024
+              ],
+              "ratio": 0.5625,
+              "is_9x16": true,
+              "modified": false
             },
             "clip_06": {
-              "status": "skipped_not_on_host",
-              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part1\\keyframes\\KF_06.jpg"
+              "status": "pass",
+              "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part1\\keyframes\\KF_06.jpg",
+              "sha256": "f2a9dc503c248fdc14b274833708196d3a8069afe0279c56f9144d286c60834f",
+              "format": "JPEG",
+              "size": [
+                576,
+                1024
+              ],
+              "ratio": 0.5625,
+              "is_9x16": true,
+              "modified": false
             }
           },
           "policy": "keyframes are read-only: verified + hashed, never drawn on / blurred / boxed"
@@ -971,7 +1025,7 @@
                 ]
               },
               "audio_from": "native Google Flow Farsi audio of clip_01.mp4",
-              "source_on_host": false
+              "source_on_host": true
             },
             "clip_02": {
               "resolution": "source_bridge_fallback",
@@ -987,7 +1041,7 @@
                 ]
               },
               "audio_from": "native Google Flow Farsi audio of clip_02.mp4",
-              "source_on_host": false
+              "source_on_host": true
             },
             "clip_03": {
               "resolution": "source_bridge_fallback",
@@ -1003,7 +1057,7 @@
                 ]
               },
               "audio_from": "native Google Flow Farsi audio of clip_03.mp4",
-              "source_on_host": false
+              "source_on_host": true
             },
             "clip_04": {
               "resolution": "flow_clip",
@@ -1031,7 +1085,7 @@
                 ]
               },
               "audio_from": "native Google Flow Farsi audio of clip_06.mp4",
-              "source_on_host": false
+              "source_on_host": true
             }
           }
         },
@@ -1103,7 +1157,7 @@
               ]
             },
             "audio_from": "native Google Flow Farsi audio of clip_01.mp4",
-            "source_on_host": false
+            "source_on_host": true
           },
           "step_6_mux_and_master_verification": {
             "status": "not_run"
@@ -1126,8 +1180,17 @@
             "status": "pass"
           },
           "step_2_keyframe_preflight": {
-            "status": "skipped_not_on_host",
-            "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part1\\keyframes\\KF_01.jpg"
+            "status": "pass",
+            "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part1\\keyframes\\KF_01.jpg",
+            "sha256": "bafe87acc708274dda4f2a00d9d833a5d39dcaeda28fb10aafaa86a37a2c40aa",
+            "format": "JPEG",
+            "size": [
+              576,
+              1024
+            ],
+            "ratio": 0.5625,
+            "is_9x16": true,
+            "modified": false
           },
           "step_trace": {
             "step_1_story_beat_and_character_lock": {
@@ -1148,8 +1211,17 @@
               "status": "pass"
             },
             "step_2_keyframe_preflight": {
-              "status": "skipped_not_on_host",
-              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part1\\keyframes\\KF_01.jpg"
+              "status": "pass",
+              "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part1\\keyframes\\KF_01.jpg",
+              "sha256": "bafe87acc708274dda4f2a00d9d833a5d39dcaeda28fb10aafaa86a37a2c40aa",
+              "format": "JPEG",
+              "size": [
+                576,
+                1024
+              ],
+              "ratio": 0.5625,
+              "is_9x16": true,
+              "modified": false
             },
             "step_3_visual_continuity_audit": {
               "status": "fail",
@@ -1201,7 +1273,7 @@
                 ]
               },
               "audio_from": "native Google Flow Farsi audio of clip_01.mp4",
-              "source_on_host": false
+              "source_on_host": true
             },
             "step_6_mux_and_master_verification": {
               "status": "not_run"
@@ -1261,7 +1333,7 @@
               ]
             },
             "audio_from": "native Google Flow Farsi audio of clip_02.mp4",
-            "source_on_host": false
+            "source_on_host": true
           },
           "step_6_mux_and_master_verification": {
             "status": "not_run"
@@ -1286,8 +1358,17 @@
             "status": "pass"
           },
           "step_2_keyframe_preflight": {
-            "status": "skipped_not_on_host",
-            "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part1\\keyframes\\KF_02.jpg"
+            "status": "pass",
+            "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part1\\keyframes\\KF_02.jpg",
+            "sha256": "1558a00f1e1a0e07b30cb5a245fa55a670522232267921f2c18cdae80b178efe",
+            "format": "JPEG",
+            "size": [
+              576,
+              1024
+            ],
+            "ratio": 0.5625,
+            "is_9x16": true,
+            "modified": false
           },
           "step_trace": {
             "step_1_story_beat_and_character_lock": {
@@ -1310,8 +1391,17 @@
               "status": "pass"
             },
             "step_2_keyframe_preflight": {
-              "status": "skipped_not_on_host",
-              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part1\\keyframes\\KF_02.jpg"
+              "status": "pass",
+              "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part1\\keyframes\\KF_02.jpg",
+              "sha256": "1558a00f1e1a0e07b30cb5a245fa55a670522232267921f2c18cdae80b178efe",
+              "format": "JPEG",
+              "size": [
+                576,
+                1024
+              ],
+              "ratio": 0.5625,
+              "is_9x16": true,
+              "modified": false
             },
             "step_3_visual_continuity_audit": {
               "status": "fail",
@@ -1363,7 +1453,7 @@
                 ]
               },
               "audio_from": "native Google Flow Farsi audio of clip_02.mp4",
-              "source_on_host": false
+              "source_on_host": true
             },
             "step_6_mux_and_master_verification": {
               "status": "not_run"
@@ -1419,7 +1509,7 @@
               ]
             },
             "audio_from": "native Google Flow Farsi audio of clip_03.mp4",
-            "source_on_host": false
+            "source_on_host": true
           },
           "step_6_mux_and_master_verification": {
             "status": "not_run"
@@ -1442,8 +1532,17 @@
             "status": "pass"
           },
           "step_2_keyframe_preflight": {
-            "status": "skipped_not_on_host",
-            "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part1\\keyframes\\KF_03.jpg"
+            "status": "pass",
+            "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part1\\keyframes\\KF_03.jpg",
+            "sha256": "c2ba1b7aefe8dda50b1f491d0942a177e48732ad607b3b098047ef70f43bb4ec",
+            "format": "JPEG",
+            "size": [
+              576,
+              1024
+            ],
+            "ratio": 0.5625,
+            "is_9x16": true,
+            "modified": false
           },
           "step_trace": {
             "step_1_story_beat_and_character_lock": {
@@ -1464,8 +1563,17 @@
               "status": "pass"
             },
             "step_2_keyframe_preflight": {
-              "status": "skipped_not_on_host",
-              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part1\\keyframes\\KF_03.jpg"
+              "status": "pass",
+              "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part1\\keyframes\\KF_03.jpg",
+              "sha256": "c2ba1b7aefe8dda50b1f491d0942a177e48732ad607b3b098047ef70f43bb4ec",
+              "format": "JPEG",
+              "size": [
+                576,
+                1024
+              ],
+              "ratio": 0.5625,
+              "is_9x16": true,
+              "modified": false
             },
             "step_3_visual_continuity_audit": {
               "status": "fail",
@@ -1513,7 +1621,7 @@
                 ]
               },
               "audio_from": "native Google Flow Farsi audio of clip_03.mp4",
-              "source_on_host": false
+              "source_on_host": true
             },
             "step_6_mux_and_master_verification": {
               "status": "not_run"
@@ -1580,8 +1688,17 @@
             "status": "pass"
           },
           "step_2_keyframe_preflight": {
-            "status": "skipped_not_on_host",
-            "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part1\\keyframes\\KF_04.jpg"
+            "status": "pass",
+            "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part1\\keyframes\\KF_04.jpg",
+            "sha256": "34296ad4eadbd38a24494061a9cd5ea211657efc466f01e7dc7e1f1fd954f5f4",
+            "format": "JPEG",
+            "size": [
+              576,
+              1024
+            ],
+            "ratio": 0.5625,
+            "is_9x16": true,
+            "modified": false
           },
           "step_trace": {
             "step_1_story_beat_and_character_lock": {
@@ -1602,8 +1719,17 @@
               "status": "pass"
             },
             "step_2_keyframe_preflight": {
-              "status": "skipped_not_on_host",
-              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part1\\keyframes\\KF_04.jpg"
+              "status": "pass",
+              "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part1\\keyframes\\KF_04.jpg",
+              "sha256": "34296ad4eadbd38a24494061a9cd5ea211657efc466f01e7dc7e1f1fd954f5f4",
+              "format": "JPEG",
+              "size": [
+                576,
+                1024
+              ],
+              "ratio": 0.5625,
+              "is_9x16": true,
+              "modified": false
             },
             "step_3_visual_continuity_audit": {
               "status": "pass",
@@ -1708,8 +1834,17 @@
             "status": "pass"
           },
           "step_2_keyframe_preflight": {
-            "status": "skipped_not_on_host",
-            "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part1\\keyframes\\KF_05.jpg"
+            "status": "pass",
+            "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part1\\keyframes\\KF_05.jpg",
+            "sha256": "2538e16c38d022201c1d1985ab04eafe87b7bf96fe6322bc5d15a2cc5f32b6ad",
+            "format": "JPEG",
+            "size": [
+              576,
+              1024
+            ],
+            "ratio": 0.5625,
+            "is_9x16": true,
+            "modified": false
           },
           "step_trace": {
             "step_1_story_beat_and_character_lock": {
@@ -1730,8 +1865,17 @@
               "status": "pass"
             },
             "step_2_keyframe_preflight": {
-              "status": "skipped_not_on_host",
-              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part1\\keyframes\\KF_05.jpg"
+              "status": "pass",
+              "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part1\\keyframes\\KF_05.jpg",
+              "sha256": "2538e16c38d022201c1d1985ab04eafe87b7bf96fe6322bc5d15a2cc5f32b6ad",
+              "format": "JPEG",
+              "size": [
+                576,
+                1024
+              ],
+              "ratio": 0.5625,
+              "is_9x16": true,
+              "modified": false
             },
             "step_3_visual_continuity_audit": {
               "status": "pass",
@@ -1825,7 +1969,7 @@
               ]
             },
             "audio_from": "native Google Flow Farsi audio of clip_06.mp4",
-            "source_on_host": false
+            "source_on_host": true
           },
           "step_6_mux_and_master_verification": {
             "status": "not_run"
@@ -1848,8 +1992,17 @@
             "status": "pass"
           },
           "step_2_keyframe_preflight": {
-            "status": "skipped_not_on_host",
-            "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part1\\keyframes\\KF_06.jpg"
+            "status": "pass",
+            "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part1\\keyframes\\KF_06.jpg",
+            "sha256": "f2a9dc503c248fdc14b274833708196d3a8069afe0279c56f9144d286c60834f",
+            "format": "JPEG",
+            "size": [
+              576,
+              1024
+            ],
+            "ratio": 0.5625,
+            "is_9x16": true,
+            "modified": false
           },
           "step_trace": {
             "step_1_story_beat_and_character_lock": {
@@ -1870,8 +2023,17 @@
               "status": "pass"
             },
             "step_2_keyframe_preflight": {
-              "status": "skipped_not_on_host",
-              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part1\\keyframes\\KF_06.jpg"
+              "status": "pass",
+              "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part1\\keyframes\\KF_06.jpg",
+              "sha256": "f2a9dc503c248fdc14b274833708196d3a8069afe0279c56f9144d286c60834f",
+              "format": "JPEG",
+              "size": [
+                576,
+                1024
+              ],
+              "ratio": 0.5625,
+              "is_9x16": true,
+              "modified": false
             },
             "step_3_visual_continuity_audit": {
               "status": "fail",
@@ -1919,7 +2081,7 @@
                 ]
               },
               "audio_from": "native Google Flow Farsi audio of clip_06.mp4",
-              "source_on_host": false
+              "source_on_host": true
             },
             "step_6_mux_and_master_verification": {
               "status": "not_run"
@@ -2079,31 +2241,85 @@
           "flags": []
         },
         "step_2_keyframe_preflight": {
-          "status": "skipped",
+          "status": "pass",
           "clips": {
             "clip_01": {
-              "status": "skipped_not_on_host",
-              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part2\\keyframes\\KF_01.jpg"
+              "status": "pass",
+              "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part2\\keyframes\\KF_01.jpg",
+              "sha256": "881f31523a1580b53e8a6656abd75d02bd9a72b90935a3b2f04aae65e9a4ea8b",
+              "format": "JPEG",
+              "size": [
+                576,
+                1024
+              ],
+              "ratio": 0.5625,
+              "is_9x16": true,
+              "modified": false
             },
             "clip_02": {
-              "status": "skipped_not_on_host",
-              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part2\\keyframes\\KF_02.jpg"
+              "status": "pass",
+              "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part2\\keyframes\\KF_02.jpg",
+              "sha256": "0508eb62a9a607d70eae80132db8b74eff7fafc418d24a7167b15bdb51677b2b",
+              "format": "JPEG",
+              "size": [
+                576,
+                1024
+              ],
+              "ratio": 0.5625,
+              "is_9x16": true,
+              "modified": false
             },
             "clip_03": {
-              "status": "skipped_not_on_host",
-              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part2\\keyframes\\KF_03.jpg"
+              "status": "pass",
+              "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part2\\keyframes\\KF_03.jpg",
+              "sha256": "fd861fbffaf3f91345883f9b03f574bb9d468b5f52aec1db6c98c6178435bebc",
+              "format": "JPEG",
+              "size": [
+                576,
+                1024
+              ],
+              "ratio": 0.5625,
+              "is_9x16": true,
+              "modified": false
             },
             "clip_04": {
-              "status": "skipped_not_on_host",
-              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part2\\keyframes\\KF_04.jpg"
+              "status": "pass",
+              "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part2\\keyframes\\KF_04.jpg",
+              "sha256": "73d17b61f7c7569820f1c3214660cfa12460f67ffd08d47caecf0effdee63002",
+              "format": "JPEG",
+              "size": [
+                576,
+                1024
+              ],
+              "ratio": 0.5625,
+              "is_9x16": true,
+              "modified": false
             },
             "clip_05": {
-              "status": "skipped_not_on_host",
-              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part2\\keyframes\\KF_05.jpg"
+              "status": "pass",
+              "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part2\\keyframes\\KF_05.jpg",
+              "sha256": "0b15da1cf8a68d4af3d788dbbe4abf5f60f9d41afb6739529bd0ece0717a8f10",
+              "format": "JPEG",
+              "size": [
+                576,
+                1024
+              ],
+              "ratio": 0.5625,
+              "is_9x16": true,
+              "modified": false
             },
             "clip_06": {
-              "status": "skipped_not_on_host",
-              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part2\\keyframes\\KF_06.jpg"
+              "status": "pass",
+              "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part2\\keyframes\\KF_06.jpg",
+              "sha256": "503b1ee273c86da76259e231ad7322e17f31e2daa3e7990a6545bf977d7d24ab",
+              "format": "JPEG",
+              "size": [
+                576,
+                1024
+              ],
+              "ratio": 0.5625,
+              "is_9x16": true,
+              "modified": false
             }
           },
           "policy": "keyframes are read-only: verified + hashed, never drawn on / blurred / boxed"
@@ -2349,7 +2565,7 @@
                 ]
               },
               "audio_from": "native Google Flow Farsi audio of clip_04.mp4",
-              "source_on_host": false
+              "source_on_host": true
             },
             "clip_05": {
               "resolution": "source_bridge_fallback",
@@ -2365,7 +2581,7 @@
                 ]
               },
               "audio_from": "native Google Flow Farsi audio of clip_05.mp4",
-              "source_on_host": false
+              "source_on_host": true
             },
             "clip_06": {
               "resolution": "flow_clip",
@@ -2450,8 +2666,17 @@
             "status": "pass"
           },
           "step_2_keyframe_preflight": {
-            "status": "skipped_not_on_host",
-            "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part2\\keyframes\\KF_01.jpg"
+            "status": "pass",
+            "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part2\\keyframes\\KF_01.jpg",
+            "sha256": "881f31523a1580b53e8a6656abd75d02bd9a72b90935a3b2f04aae65e9a4ea8b",
+            "format": "JPEG",
+            "size": [
+              576,
+              1024
+            ],
+            "ratio": 0.5625,
+            "is_9x16": true,
+            "modified": false
           },
           "step_trace": {
             "step_1_story_beat_and_character_lock": {
@@ -2472,8 +2697,17 @@
               "status": "pass"
             },
             "step_2_keyframe_preflight": {
-              "status": "skipped_not_on_host",
-              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part2\\keyframes\\KF_01.jpg"
+              "status": "pass",
+              "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part2\\keyframes\\KF_01.jpg",
+              "sha256": "881f31523a1580b53e8a6656abd75d02bd9a72b90935a3b2f04aae65e9a4ea8b",
+              "format": "JPEG",
+              "size": [
+                576,
+                1024
+              ],
+              "ratio": 0.5625,
+              "is_9x16": true,
+              "modified": false
             },
             "step_3_visual_continuity_audit": {
               "status": "pass",
@@ -2576,8 +2810,17 @@
             "status": "pass"
           },
           "step_2_keyframe_preflight": {
-            "status": "skipped_not_on_host",
-            "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part2\\keyframes\\KF_02.jpg"
+            "status": "pass",
+            "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part2\\keyframes\\KF_02.jpg",
+            "sha256": "0508eb62a9a607d70eae80132db8b74eff7fafc418d24a7167b15bdb51677b2b",
+            "format": "JPEG",
+            "size": [
+              576,
+              1024
+            ],
+            "ratio": 0.5625,
+            "is_9x16": true,
+            "modified": false
           },
           "step_trace": {
             "step_1_story_beat_and_character_lock": {
@@ -2598,8 +2841,17 @@
               "status": "pass"
             },
             "step_2_keyframe_preflight": {
-              "status": "skipped_not_on_host",
-              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part2\\keyframes\\KF_02.jpg"
+              "status": "pass",
+              "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part2\\keyframes\\KF_02.jpg",
+              "sha256": "0508eb62a9a607d70eae80132db8b74eff7fafc418d24a7167b15bdb51677b2b",
+              "format": "JPEG",
+              "size": [
+                576,
+                1024
+              ],
+              "ratio": 0.5625,
+              "is_9x16": true,
+              "modified": false
             },
             "step_3_visual_continuity_audit": {
               "status": "pass",
@@ -2702,8 +2954,17 @@
             "status": "pass"
           },
           "step_2_keyframe_preflight": {
-            "status": "skipped_not_on_host",
-            "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part2\\keyframes\\KF_03.jpg"
+            "status": "pass",
+            "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part2\\keyframes\\KF_03.jpg",
+            "sha256": "fd861fbffaf3f91345883f9b03f574bb9d468b5f52aec1db6c98c6178435bebc",
+            "format": "JPEG",
+            "size": [
+              576,
+              1024
+            ],
+            "ratio": 0.5625,
+            "is_9x16": true,
+            "modified": false
           },
           "step_trace": {
             "step_1_story_beat_and_character_lock": {
@@ -2724,8 +2985,17 @@
               "status": "pass"
             },
             "step_2_keyframe_preflight": {
-              "status": "skipped_not_on_host",
-              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part2\\keyframes\\KF_03.jpg"
+              "status": "pass",
+              "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part2\\keyframes\\KF_03.jpg",
+              "sha256": "fd861fbffaf3f91345883f9b03f574bb9d468b5f52aec1db6c98c6178435bebc",
+              "format": "JPEG",
+              "size": [
+                576,
+                1024
+              ],
+              "ratio": 0.5625,
+              "is_9x16": true,
+              "modified": false
             },
             "step_3_visual_continuity_audit": {
               "status": "pass",
@@ -2817,7 +3087,7 @@
               ]
             },
             "audio_from": "native Google Flow Farsi audio of clip_04.mp4",
-            "source_on_host": false
+            "source_on_host": true
           },
           "step_6_mux_and_master_verification": {
             "status": "not_run"
@@ -2840,8 +3110,17 @@
             "status": "pass"
           },
           "step_2_keyframe_preflight": {
-            "status": "skipped_not_on_host",
-            "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part2\\keyframes\\KF_04.jpg"
+            "status": "pass",
+            "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part2\\keyframes\\KF_04.jpg",
+            "sha256": "73d17b61f7c7569820f1c3214660cfa12460f67ffd08d47caecf0effdee63002",
+            "format": "JPEG",
+            "size": [
+              576,
+              1024
+            ],
+            "ratio": 0.5625,
+            "is_9x16": true,
+            "modified": false
           },
           "step_trace": {
             "step_1_story_beat_and_character_lock": {
@@ -2862,8 +3141,17 @@
               "status": "pass"
             },
             "step_2_keyframe_preflight": {
-              "status": "skipped_not_on_host",
-              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part2\\keyframes\\KF_04.jpg"
+              "status": "pass",
+              "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part2\\keyframes\\KF_04.jpg",
+              "sha256": "73d17b61f7c7569820f1c3214660cfa12460f67ffd08d47caecf0effdee63002",
+              "format": "JPEG",
+              "size": [
+                576,
+                1024
+              ],
+              "ratio": 0.5625,
+              "is_9x16": true,
+              "modified": false
             },
             "step_3_visual_continuity_audit": {
               "status": "fail",
@@ -2911,7 +3199,7 @@
                 ]
               },
               "audio_from": "native Google Flow Farsi audio of clip_04.mp4",
-              "source_on_host": false
+              "source_on_host": true
             },
             "step_6_mux_and_master_verification": {
               "status": "not_run"
@@ -2971,7 +3259,7 @@
               ]
             },
             "audio_from": "native Google Flow Farsi audio of clip_05.mp4",
-            "source_on_host": false
+            "source_on_host": true
           },
           "step_6_mux_and_master_verification": {
             "status": "not_run"
@@ -2996,8 +3284,17 @@
             "status": "pass"
           },
           "step_2_keyframe_preflight": {
-            "status": "skipped_not_on_host",
-            "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part2\\keyframes\\KF_05.jpg"
+            "status": "pass",
+            "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part2\\keyframes\\KF_05.jpg",
+            "sha256": "0b15da1cf8a68d4af3d788dbbe4abf5f60f9d41afb6739529bd0ece0717a8f10",
+            "format": "JPEG",
+            "size": [
+              576,
+              1024
+            ],
+            "ratio": 0.5625,
+            "is_9x16": true,
+            "modified": false
           },
           "step_trace": {
             "step_1_story_beat_and_character_lock": {
@@ -3020,8 +3317,17 @@
               "status": "pass"
             },
             "step_2_keyframe_preflight": {
-              "status": "skipped_not_on_host",
-              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part2\\keyframes\\KF_05.jpg"
+              "status": "pass",
+              "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part2\\keyframes\\KF_05.jpg",
+              "sha256": "0b15da1cf8a68d4af3d788dbbe4abf5f60f9d41afb6739529bd0ece0717a8f10",
+              "format": "JPEG",
+              "size": [
+                576,
+                1024
+              ],
+              "ratio": 0.5625,
+              "is_9x16": true,
+              "modified": false
             },
             "step_3_visual_continuity_audit": {
               "status": "fail",
@@ -3073,7 +3379,7 @@
                 ]
               },
               "audio_from": "native Google Flow Farsi audio of clip_05.mp4",
-              "source_on_host": false
+              "source_on_host": true
             },
             "step_6_mux_and_master_verification": {
               "status": "not_run"
@@ -3140,8 +3446,17 @@
             "status": "pass"
           },
           "step_2_keyframe_preflight": {
-            "status": "skipped_not_on_host",
-            "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part2\\keyframes\\KF_06.jpg"
+            "status": "pass",
+            "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part2\\keyframes\\KF_06.jpg",
+            "sha256": "503b1ee273c86da76259e231ad7322e17f31e2daa3e7990a6545bf977d7d24ab",
+            "format": "JPEG",
+            "size": [
+              576,
+              1024
+            ],
+            "ratio": 0.5625,
+            "is_9x16": true,
+            "modified": false
           },
           "step_trace": {
             "step_1_story_beat_and_character_lock": {
@@ -3162,8 +3477,17 @@
               "status": "pass"
             },
             "step_2_keyframe_preflight": {
-              "status": "skipped_not_on_host",
-              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part2\\keyframes\\KF_06.jpg"
+              "status": "pass",
+              "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part2\\keyframes\\KF_06.jpg",
+              "sha256": "503b1ee273c86da76259e231ad7322e17f31e2daa3e7990a6545bf977d7d24ab",
+              "format": "JPEG",
+              "size": [
+                576,
+                1024
+              ],
+              "ratio": 0.5625,
+              "is_9x16": true,
+              "modified": false
             },
             "step_3_visual_continuity_audit": {
               "status": "pass",
@@ -3361,31 +3685,85 @@
           "flags": []
         },
         "step_2_keyframe_preflight": {
-          "status": "skipped",
+          "status": "pass",
           "clips": {
             "clip_01": {
-              "status": "skipped_not_on_host",
-              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part3\\keyframes\\KF_01.jpg"
+              "status": "pass",
+              "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part3\\keyframes\\KF_01.jpg",
+              "sha256": "feee039980402968b69c4150e736a7b99cac831d455374211de069c4c0b3db17",
+              "format": "JPEG",
+              "size": [
+                576,
+                1024
+              ],
+              "ratio": 0.5625,
+              "is_9x16": true,
+              "modified": false
             },
             "clip_02": {
-              "status": "skipped_not_on_host",
-              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part3\\keyframes\\KF_02.jpg"
+              "status": "pass",
+              "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part3\\keyframes\\KF_02.jpg",
+              "sha256": "41d599047872f24701f7c2f6f3994c6bdf0ce2a85fee428152834834a6b0f92d",
+              "format": "JPEG",
+              "size": [
+                576,
+                1024
+              ],
+              "ratio": 0.5625,
+              "is_9x16": true,
+              "modified": false
             },
             "clip_03": {
-              "status": "skipped_not_on_host",
-              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part3\\keyframes\\KF_03.jpg"
+              "status": "pass",
+              "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part3\\keyframes\\KF_03.jpg",
+              "sha256": "b5bec14c2a01cf60fbbb9e05a5af13fe77b54f28fcd4159384518a1bbb8add36",
+              "format": "JPEG",
+              "size": [
+                576,
+                1024
+              ],
+              "ratio": 0.5625,
+              "is_9x16": true,
+              "modified": false
             },
             "clip_04": {
-              "status": "skipped_not_on_host",
-              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part3\\keyframes\\KF_04.jpg"
+              "status": "pass",
+              "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part3\\keyframes\\KF_04.jpg",
+              "sha256": "79e0b5f3a6625b0c2413d36ae4e0c03b8a3b90a571072a0df493f178783dddfe",
+              "format": "JPEG",
+              "size": [
+                576,
+                1024
+              ],
+              "ratio": 0.5625,
+              "is_9x16": true,
+              "modified": false
             },
             "clip_05": {
-              "status": "skipped_not_on_host",
-              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part3\\keyframes\\KF_05.jpg"
+              "status": "pass",
+              "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part3\\keyframes\\KF_05.jpg",
+              "sha256": "eea4a319a86d42e8dacc47dc788797d103ef065243a7bd963ea3749841546621",
+              "format": "JPEG",
+              "size": [
+                576,
+                1024
+              ],
+              "ratio": 0.5625,
+              "is_9x16": true,
+              "modified": false
             },
             "clip_06": {
-              "status": "skipped_not_on_host",
-              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part3\\keyframes\\KF_06.jpg"
+              "status": "pass",
+              "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part3\\keyframes\\KF_06.jpg",
+              "sha256": "b9f49b7ec2c73418bd2bb53e4479d31d450c3fb7ba40474945cc10de591386ff",
+              "format": "JPEG",
+              "size": [
+                576,
+                1024
+              ],
+              "ratio": 0.5625,
+              "is_9x16": true,
+              "modified": false
             }
           },
           "policy": "keyframes are read-only: verified + hashed, never drawn on / blurred / boxed"
@@ -3623,7 +4001,7 @@
                 ]
               },
               "audio_from": "native Google Flow Farsi audio of clip_04.mp4",
-              "source_on_host": false
+              "source_on_host": true
             },
             "clip_05": {
               "resolution": "flow_clip",
@@ -3714,8 +4092,17 @@
             "status": "pass"
           },
           "step_2_keyframe_preflight": {
-            "status": "skipped_not_on_host",
-            "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part3\\keyframes\\KF_01.jpg"
+            "status": "pass",
+            "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part3\\keyframes\\KF_01.jpg",
+            "sha256": "feee039980402968b69c4150e736a7b99cac831d455374211de069c4c0b3db17",
+            "format": "JPEG",
+            "size": [
+              576,
+              1024
+            ],
+            "ratio": 0.5625,
+            "is_9x16": true,
+            "modified": false
           },
           "step_trace": {
             "step_1_story_beat_and_character_lock": {
@@ -3736,8 +4123,17 @@
               "status": "pass"
             },
             "step_2_keyframe_preflight": {
-              "status": "skipped_not_on_host",
-              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part3\\keyframes\\KF_01.jpg"
+              "status": "pass",
+              "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part3\\keyframes\\KF_01.jpg",
+              "sha256": "feee039980402968b69c4150e736a7b99cac831d455374211de069c4c0b3db17",
+              "format": "JPEG",
+              "size": [
+                576,
+                1024
+              ],
+              "ratio": 0.5625,
+              "is_9x16": true,
+              "modified": false
             },
             "step_3_visual_continuity_audit": {
               "status": "pass",
@@ -3842,8 +4238,17 @@
             "status": "pass"
           },
           "step_2_keyframe_preflight": {
-            "status": "skipped_not_on_host",
-            "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part3\\keyframes\\KF_02.jpg"
+            "status": "pass",
+            "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part3\\keyframes\\KF_02.jpg",
+            "sha256": "41d599047872f24701f7c2f6f3994c6bdf0ce2a85fee428152834834a6b0f92d",
+            "format": "JPEG",
+            "size": [
+              576,
+              1024
+            ],
+            "ratio": 0.5625,
+            "is_9x16": true,
+            "modified": false
           },
           "step_trace": {
             "step_1_story_beat_and_character_lock": {
@@ -3866,8 +4271,17 @@
               "status": "pass"
             },
             "step_2_keyframe_preflight": {
-              "status": "skipped_not_on_host",
-              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part3\\keyframes\\KF_02.jpg"
+              "status": "pass",
+              "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part3\\keyframes\\KF_02.jpg",
+              "sha256": "41d599047872f24701f7c2f6f3994c6bdf0ce2a85fee428152834834a6b0f92d",
+              "format": "JPEG",
+              "size": [
+                576,
+                1024
+              ],
+              "ratio": 0.5625,
+              "is_9x16": true,
+              "modified": false
             },
             "step_3_visual_continuity_audit": {
               "status": "pass",
@@ -3970,8 +4384,17 @@
             "status": "pass"
           },
           "step_2_keyframe_preflight": {
-            "status": "skipped_not_on_host",
-            "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part3\\keyframes\\KF_03.jpg"
+            "status": "pass",
+            "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part3\\keyframes\\KF_03.jpg",
+            "sha256": "b5bec14c2a01cf60fbbb9e05a5af13fe77b54f28fcd4159384518a1bbb8add36",
+            "format": "JPEG",
+            "size": [
+              576,
+              1024
+            ],
+            "ratio": 0.5625,
+            "is_9x16": true,
+            "modified": false
           },
           "step_trace": {
             "step_1_story_beat_and_character_lock": {
@@ -3992,8 +4415,17 @@
               "status": "pass"
             },
             "step_2_keyframe_preflight": {
-              "status": "skipped_not_on_host",
-              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part3\\keyframes\\KF_03.jpg"
+              "status": "pass",
+              "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part3\\keyframes\\KF_03.jpg",
+              "sha256": "b5bec14c2a01cf60fbbb9e05a5af13fe77b54f28fcd4159384518a1bbb8add36",
+              "format": "JPEG",
+              "size": [
+                576,
+                1024
+              ],
+              "ratio": 0.5625,
+              "is_9x16": true,
+              "modified": false
             },
             "step_3_visual_continuity_audit": {
               "status": "pass",
@@ -4085,7 +4517,7 @@
               ]
             },
             "audio_from": "native Google Flow Farsi audio of clip_04.mp4",
-            "source_on_host": false
+            "source_on_host": true
           },
           "step_6_mux_and_master_verification": {
             "status": "not_run"
@@ -4108,8 +4540,17 @@
             "status": "pass"
           },
           "step_2_keyframe_preflight": {
-            "status": "skipped_not_on_host",
-            "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part3\\keyframes\\KF_04.jpg"
+            "status": "pass",
+            "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part3\\keyframes\\KF_04.jpg",
+            "sha256": "79e0b5f3a6625b0c2413d36ae4e0c03b8a3b90a571072a0df493f178783dddfe",
+            "format": "JPEG",
+            "size": [
+              576,
+              1024
+            ],
+            "ratio": 0.5625,
+            "is_9x16": true,
+            "modified": false
           },
           "step_trace": {
             "step_1_story_beat_and_character_lock": {
@@ -4130,8 +4571,17 @@
               "status": "pass"
             },
             "step_2_keyframe_preflight": {
-              "status": "skipped_not_on_host",
-              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part3\\keyframes\\KF_04.jpg"
+              "status": "pass",
+              "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part3\\keyframes\\KF_04.jpg",
+              "sha256": "79e0b5f3a6625b0c2413d36ae4e0c03b8a3b90a571072a0df493f178783dddfe",
+              "format": "JPEG",
+              "size": [
+                576,
+                1024
+              ],
+              "ratio": 0.5625,
+              "is_9x16": true,
+              "modified": false
             },
             "step_3_visual_continuity_audit": {
               "status": "fail",
@@ -4179,7 +4629,7 @@
                 ]
               },
               "audio_from": "native Google Flow Farsi audio of clip_04.mp4",
-              "source_on_host": false
+              "source_on_host": true
             },
             "step_6_mux_and_master_verification": {
               "status": "not_run"
@@ -4246,8 +4696,17 @@
             "status": "pass"
           },
           "step_2_keyframe_preflight": {
-            "status": "skipped_not_on_host",
-            "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part3\\keyframes\\KF_05.jpg"
+            "status": "pass",
+            "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part3\\keyframes\\KF_05.jpg",
+            "sha256": "eea4a319a86d42e8dacc47dc788797d103ef065243a7bd963ea3749841546621",
+            "format": "JPEG",
+            "size": [
+              576,
+              1024
+            ],
+            "ratio": 0.5625,
+            "is_9x16": true,
+            "modified": false
           },
           "step_trace": {
             "step_1_story_beat_and_character_lock": {
@@ -4268,8 +4727,17 @@
               "status": "pass"
             },
             "step_2_keyframe_preflight": {
-              "status": "skipped_not_on_host",
-              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part3\\keyframes\\KF_05.jpg"
+              "status": "pass",
+              "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part3\\keyframes\\KF_05.jpg",
+              "sha256": "eea4a319a86d42e8dacc47dc788797d103ef065243a7bd963ea3749841546621",
+              "format": "JPEG",
+              "size": [
+                576,
+                1024
+              ],
+              "ratio": 0.5625,
+              "is_9x16": true,
+              "modified": false
             },
             "step_3_visual_continuity_audit": {
               "status": "pass",
@@ -4372,8 +4840,17 @@
             "status": "pass"
           },
           "step_2_keyframe_preflight": {
-            "status": "skipped_not_on_host",
-            "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part3\\keyframes\\KF_06.jpg"
+            "status": "pass",
+            "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part3\\keyframes\\KF_06.jpg",
+            "sha256": "b9f49b7ec2c73418bd2bb53e4479d31d450c3fb7ba40474945cc10de591386ff",
+            "format": "JPEG",
+            "size": [
+              576,
+              1024
+            ],
+            "ratio": 0.5625,
+            "is_9x16": true,
+            "modified": false
           },
           "step_trace": {
             "step_1_story_beat_and_character_lock": {
@@ -4394,8 +4871,17 @@
               "status": "pass"
             },
             "step_2_keyframe_preflight": {
-              "status": "skipped_not_on_host",
-              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part3\\keyframes\\KF_06.jpg"
+              "status": "pass",
+              "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part3\\keyframes\\KF_06.jpg",
+              "sha256": "b9f49b7ec2c73418bd2bb53e4479d31d450c3fb7ba40474945cc10de591386ff",
+              "format": "JPEG",
+              "size": [
+                576,
+                1024
+              ],
+              "ratio": 0.5625,
+              "is_9x16": true,
+              "modified": false
             },
             "step_3_visual_continuity_audit": {
               "status": "pass",
@@ -4583,31 +5069,85 @@
           "flags": []
         },
         "step_2_keyframe_preflight": {
-          "status": "skipped",
+          "status": "pass",
           "clips": {
             "clip_01": {
-              "status": "skipped_not_on_host",
-              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part4\\keyframes\\KF_01.jpg"
+              "status": "pass",
+              "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part4\\keyframes\\KF_01.jpg",
+              "sha256": "dd732588e1d7419a28becb855cbc0bca035801da5092a79131b539937b09618d",
+              "format": "JPEG",
+              "size": [
+                576,
+                1024
+              ],
+              "ratio": 0.5625,
+              "is_9x16": true,
+              "modified": false
             },
             "clip_02": {
-              "status": "skipped_not_on_host",
-              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part4\\keyframes\\KF_02.jpg"
+              "status": "pass",
+              "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part4\\keyframes\\KF_02.jpg",
+              "sha256": "07f1b2e57a427fa798f5ea6c049e53381b3eb1254656462de5f4a3ef8a009571",
+              "format": "JPEG",
+              "size": [
+                576,
+                1024
+              ],
+              "ratio": 0.5625,
+              "is_9x16": true,
+              "modified": false
             },
             "clip_03": {
-              "status": "skipped_not_on_host",
-              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part4\\keyframes\\KF_03.jpg"
+              "status": "pass",
+              "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part4\\keyframes\\KF_03.jpg",
+              "sha256": "04d6fa843b6edb0107d7ca8fc9c19a993b2b3290aa378a27dbc8717514a29324",
+              "format": "JPEG",
+              "size": [
+                576,
+                1024
+              ],
+              "ratio": 0.5625,
+              "is_9x16": true,
+              "modified": false
             },
             "clip_04": {
-              "status": "skipped_not_on_host",
-              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part4\\keyframes\\KF_04.jpg"
+              "status": "pass",
+              "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part4\\keyframes\\KF_04.jpg",
+              "sha256": "6a64e6b33584367879387db34d535a379f8c2f52fcdf80a0623880745ac9514d",
+              "format": "JPEG",
+              "size": [
+                576,
+                1024
+              ],
+              "ratio": 0.5625,
+              "is_9x16": true,
+              "modified": false
             },
             "clip_05": {
-              "status": "skipped_not_on_host",
-              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part4\\keyframes\\KF_05.jpg"
+              "status": "pass",
+              "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part4\\keyframes\\KF_05.jpg",
+              "sha256": "c9b28c920fb02c6c2fa5e560e398593c65671645521e8ab25be9681da0a8b4f9",
+              "format": "JPEG",
+              "size": [
+                576,
+                1024
+              ],
+              "ratio": 0.5625,
+              "is_9x16": true,
+              "modified": false
             },
             "clip_06": {
-              "status": "skipped_not_on_host",
-              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part4\\keyframes\\KF_06.jpg"
+              "status": "pass",
+              "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part4\\keyframes\\KF_06.jpg",
+              "sha256": "92d616ad877dbc313c0a52ac7919d6387985e12415696761d2e77fd0bec042bb",
+              "format": "JPEG",
+              "size": [
+                576,
+                1024
+              ],
+              "ratio": 0.5625,
+              "is_9x16": true,
+              "modified": false
             }
           },
           "policy": "keyframes are read-only: verified + hashed, never drawn on / blurred / boxed"
@@ -4856,7 +5396,7 @@
                 ]
               },
               "audio_from": "native Google Flow Farsi audio of clip_04.mp4",
-              "source_on_host": false
+              "source_on_host": true
             },
             "clip_05": {
               "resolution": "flow_clip",
@@ -4878,7 +5418,7 @@
                 ]
               },
               "audio_from": "native Google Flow Farsi audio of clip_06.mp4",
-              "source_on_host": false
+              "source_on_host": true
             }
           }
         },
@@ -4957,8 +5497,17 @@
             "status": "pass"
           },
           "step_2_keyframe_preflight": {
-            "status": "skipped_not_on_host",
-            "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part4\\keyframes\\KF_01.jpg"
+            "status": "pass",
+            "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part4\\keyframes\\KF_01.jpg",
+            "sha256": "dd732588e1d7419a28becb855cbc0bca035801da5092a79131b539937b09618d",
+            "format": "JPEG",
+            "size": [
+              576,
+              1024
+            ],
+            "ratio": 0.5625,
+            "is_9x16": true,
+            "modified": false
           },
           "step_trace": {
             "step_1_story_beat_and_character_lock": {
@@ -4979,8 +5528,17 @@
               "status": "pass"
             },
             "step_2_keyframe_preflight": {
-              "status": "skipped_not_on_host",
-              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part4\\keyframes\\KF_01.jpg"
+              "status": "pass",
+              "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part4\\keyframes\\KF_01.jpg",
+              "sha256": "dd732588e1d7419a28becb855cbc0bca035801da5092a79131b539937b09618d",
+              "format": "JPEG",
+              "size": [
+                576,
+                1024
+              ],
+              "ratio": 0.5625,
+              "is_9x16": true,
+              "modified": false
             },
             "step_3_visual_continuity_audit": {
               "status": "pass",
@@ -5085,8 +5643,17 @@
             "status": "pass"
           },
           "step_2_keyframe_preflight": {
-            "status": "skipped_not_on_host",
-            "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part4\\keyframes\\KF_02.jpg"
+            "status": "pass",
+            "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part4\\keyframes\\KF_02.jpg",
+            "sha256": "07f1b2e57a427fa798f5ea6c049e53381b3eb1254656462de5f4a3ef8a009571",
+            "format": "JPEG",
+            "size": [
+              576,
+              1024
+            ],
+            "ratio": 0.5625,
+            "is_9x16": true,
+            "modified": false
           },
           "step_trace": {
             "step_1_story_beat_and_character_lock": {
@@ -5109,8 +5676,17 @@
               "status": "pass"
             },
             "step_2_keyframe_preflight": {
-              "status": "skipped_not_on_host",
-              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part4\\keyframes\\KF_02.jpg"
+              "status": "pass",
+              "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part4\\keyframes\\KF_02.jpg",
+              "sha256": "07f1b2e57a427fa798f5ea6c049e53381b3eb1254656462de5f4a3ef8a009571",
+              "format": "JPEG",
+              "size": [
+                576,
+                1024
+              ],
+              "ratio": 0.5625,
+              "is_9x16": true,
+              "modified": false
             },
             "step_3_visual_continuity_audit": {
               "status": "pass",
@@ -5213,8 +5789,17 @@
             "status": "pass"
           },
           "step_2_keyframe_preflight": {
-            "status": "skipped_not_on_host",
-            "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part4\\keyframes\\KF_03.jpg"
+            "status": "pass",
+            "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part4\\keyframes\\KF_03.jpg",
+            "sha256": "04d6fa843b6edb0107d7ca8fc9c19a993b2b3290aa378a27dbc8717514a29324",
+            "format": "JPEG",
+            "size": [
+              576,
+              1024
+            ],
+            "ratio": 0.5625,
+            "is_9x16": true,
+            "modified": false
           },
           "step_trace": {
             "step_1_story_beat_and_character_lock": {
@@ -5235,8 +5820,17 @@
               "status": "pass"
             },
             "step_2_keyframe_preflight": {
-              "status": "skipped_not_on_host",
-              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part4\\keyframes\\KF_03.jpg"
+              "status": "pass",
+              "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part4\\keyframes\\KF_03.jpg",
+              "sha256": "04d6fa843b6edb0107d7ca8fc9c19a993b2b3290aa378a27dbc8717514a29324",
+              "format": "JPEG",
+              "size": [
+                576,
+                1024
+              ],
+              "ratio": 0.5625,
+              "is_9x16": true,
+              "modified": false
             },
             "step_3_visual_continuity_audit": {
               "status": "pass",
@@ -5331,7 +5925,7 @@
               ]
             },
             "audio_from": "native Google Flow Farsi audio of clip_04.mp4",
-            "source_on_host": false
+            "source_on_host": true
           },
           "step_6_mux_and_master_verification": {
             "status": "not_run"
@@ -5354,8 +5948,17 @@
             "status": "pass"
           },
           "step_2_keyframe_preflight": {
-            "status": "skipped_not_on_host",
-            "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part4\\keyframes\\KF_04.jpg"
+            "status": "pass",
+            "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part4\\keyframes\\KF_04.jpg",
+            "sha256": "6a64e6b33584367879387db34d535a379f8c2f52fcdf80a0623880745ac9514d",
+            "format": "JPEG",
+            "size": [
+              576,
+              1024
+            ],
+            "ratio": 0.5625,
+            "is_9x16": true,
+            "modified": false
           },
           "step_trace": {
             "step_1_story_beat_and_character_lock": {
@@ -5376,8 +5979,17 @@
               "status": "pass"
             },
             "step_2_keyframe_preflight": {
-              "status": "skipped_not_on_host",
-              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part4\\keyframes\\KF_04.jpg"
+              "status": "pass",
+              "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part4\\keyframes\\KF_04.jpg",
+              "sha256": "6a64e6b33584367879387db34d535a379f8c2f52fcdf80a0623880745ac9514d",
+              "format": "JPEG",
+              "size": [
+                576,
+                1024
+              ],
+              "ratio": 0.5625,
+              "is_9x16": true,
+              "modified": false
             },
             "step_3_visual_continuity_audit": {
               "status": "fail",
@@ -5428,7 +6040,7 @@
                 ]
               },
               "audio_from": "native Google Flow Farsi audio of clip_04.mp4",
-              "source_on_host": false
+              "source_on_host": true
             },
             "step_6_mux_and_master_verification": {
               "status": "not_run"
@@ -5495,8 +6107,17 @@
             "status": "pass"
           },
           "step_2_keyframe_preflight": {
-            "status": "skipped_not_on_host",
-            "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part4\\keyframes\\KF_05.jpg"
+            "status": "pass",
+            "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part4\\keyframes\\KF_05.jpg",
+            "sha256": "c9b28c920fb02c6c2fa5e560e398593c65671645521e8ab25be9681da0a8b4f9",
+            "format": "JPEG",
+            "size": [
+              576,
+              1024
+            ],
+            "ratio": 0.5625,
+            "is_9x16": true,
+            "modified": false
           },
           "step_trace": {
             "step_1_story_beat_and_character_lock": {
@@ -5517,8 +6138,17 @@
               "status": "pass"
             },
             "step_2_keyframe_preflight": {
-              "status": "skipped_not_on_host",
-              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part4\\keyframes\\KF_05.jpg"
+              "status": "pass",
+              "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part4\\keyframes\\KF_05.jpg",
+              "sha256": "c9b28c920fb02c6c2fa5e560e398593c65671645521e8ab25be9681da0a8b4f9",
+              "format": "JPEG",
+              "size": [
+                576,
+                1024
+              ],
+              "ratio": 0.5625,
+              "is_9x16": true,
+              "modified": false
             },
             "step_3_visual_continuity_audit": {
               "status": "pass",
@@ -5614,7 +6244,7 @@
               ]
             },
             "audio_from": "native Google Flow Farsi audio of clip_06.mp4",
-            "source_on_host": false
+            "source_on_host": true
           },
           "step_6_mux_and_master_verification": {
             "status": "not_run"
@@ -5637,8 +6267,17 @@
             "status": "pass"
           },
           "step_2_keyframe_preflight": {
-            "status": "skipped_not_on_host",
-            "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part4\\keyframes\\KF_06.jpg"
+            "status": "pass",
+            "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part4\\keyframes\\KF_06.jpg",
+            "sha256": "92d616ad877dbc313c0a52ac7919d6387985e12415696761d2e77fd0bec042bb",
+            "format": "JPEG",
+            "size": [
+              576,
+              1024
+            ],
+            "ratio": 0.5625,
+            "is_9x16": true,
+            "modified": false
           },
           "step_trace": {
             "step_1_story_beat_and_character_lock": {
@@ -5659,8 +6298,17 @@
               "status": "pass"
             },
             "step_2_keyframe_preflight": {
-              "status": "skipped_not_on_host",
-              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part4\\keyframes\\KF_06.jpg"
+              "status": "pass",
+              "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part4\\keyframes\\KF_06.jpg",
+              "sha256": "92d616ad877dbc313c0a52ac7919d6387985e12415696761d2e77fd0bec042bb",
+              "format": "JPEG",
+              "size": [
+                576,
+                1024
+              ],
+              "ratio": 0.5625,
+              "is_9x16": true,
+              "modified": false
             },
             "step_3_visual_continuity_audit": {
               "status": "fail",
@@ -5712,7 +6360,7 @@
                 ]
               },
               "audio_from": "native Google Flow Farsi audio of clip_06.mp4",
-              "source_on_host": false
+              "source_on_host": true
             },
             "step_6_mux_and_master_verification": {
               "status": "not_run"
@@ -5871,31 +6519,85 @@
           "flags": []
         },
         "step_2_keyframe_preflight": {
-          "status": "skipped",
+          "status": "pass",
           "clips": {
             "clip_01": {
-              "status": "skipped_not_on_host",
-              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\keyframes\\KF_01.jpg"
+              "status": "pass",
+              "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\keyframes\\KF_01.jpg",
+              "sha256": "c93206ab456af2ce6fdd57ec230ff929f99b7e2be6fa319d3c78cbd426b9f1f3",
+              "format": "JPEG",
+              "size": [
+                576,
+                1024
+              ],
+              "ratio": 0.5625,
+              "is_9x16": true,
+              "modified": false
             },
             "clip_02": {
-              "status": "skipped_not_on_host",
-              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\keyframes\\KF_02.jpg"
+              "status": "pass",
+              "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\keyframes\\KF_02.jpg",
+              "sha256": "f6ce991651d30612386f988d3167b5d2325d4113175d174e4be08f326ff6b29d",
+              "format": "JPEG",
+              "size": [
+                576,
+                1024
+              ],
+              "ratio": 0.5625,
+              "is_9x16": true,
+              "modified": false
             },
             "clip_03": {
-              "status": "skipped_not_on_host",
-              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\keyframes\\KF_03.jpg"
+              "status": "pass",
+              "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\keyframes\\KF_03.jpg",
+              "sha256": "c0537073c00ccfed8aadde08071abaa41c98d53feee931f4297b5b1e0b68a496",
+              "format": "JPEG",
+              "size": [
+                576,
+                1024
+              ],
+              "ratio": 0.5625,
+              "is_9x16": true,
+              "modified": false
             },
             "clip_04": {
-              "status": "skipped_not_on_host",
-              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\keyframes\\KF_04.jpg"
+              "status": "pass",
+              "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\keyframes\\KF_04.jpg",
+              "sha256": "b40147959bb889bdaee7e4b41ade924815c167f461b3ae6d9db11280ba7fbccb",
+              "format": "JPEG",
+              "size": [
+                576,
+                1024
+              ],
+              "ratio": 0.5625,
+              "is_9x16": true,
+              "modified": false
             },
             "clip_05": {
-              "status": "skipped_not_on_host",
-              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\keyframes\\KF_05.jpg"
+              "status": "pass",
+              "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\keyframes\\KF_05.jpg",
+              "sha256": "45a642191366daf5928e50e2fda67ff92e44435f4feb2b5445c742ffa053c070",
+              "format": "JPEG",
+              "size": [
+                576,
+                1024
+              ],
+              "ratio": 0.5625,
+              "is_9x16": true,
+              "modified": false
             },
             "clip_06": {
-              "status": "skipped_not_on_host",
-              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\keyframes\\KF_06.jpg"
+              "status": "pass",
+              "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\keyframes\\KF_06.jpg",
+              "sha256": "fa1a155cd6c29089c7665af17424200918428251536e88a6fedff1cd09b3a438",
+              "format": "JPEG",
+              "size": [
+                576,
+                1024
+              ],
+              "ratio": 0.5625,
+              "is_9x16": true,
+              "modified": false
             }
           },
           "policy": "keyframes are read-only: verified + hashed, never drawn on / blurred / boxed"
@@ -6127,7 +6829,7 @@
                 ]
               },
               "audio_from": "native Google Flow Farsi audio of clip_01.mp4",
-              "source_on_host": false
+              "source_on_host": true
             },
             "clip_02": {
               "resolution": "source_bridge_fallback",
@@ -6143,7 +6845,7 @@
                 ]
               },
               "audio_from": "native Google Flow Farsi audio of clip_02.mp4",
-              "source_on_host": false
+              "source_on_host": true
             },
             "clip_03": {
               "resolution": "source_bridge_fallback",
@@ -6159,7 +6861,7 @@
                 ]
               },
               "audio_from": "native Google Flow Farsi audio of clip_03.mp4",
-              "source_on_host": false
+              "source_on_host": true
             },
             "clip_04": {
               "resolution": "flow_clip",
@@ -6187,7 +6889,7 @@
                 ]
               },
               "audio_from": "native Google Flow Farsi audio of clip_06.mp4",
-              "source_on_host": false
+              "source_on_host": true
             }
           }
         },
@@ -6255,7 +6957,7 @@
               ]
             },
             "audio_from": "native Google Flow Farsi audio of clip_01.mp4",
-            "source_on_host": false
+            "source_on_host": true
           },
           "step_6_mux_and_master_verification": {
             "status": "not_run"
@@ -6278,8 +6980,17 @@
             "status": "pass"
           },
           "step_2_keyframe_preflight": {
-            "status": "skipped_not_on_host",
-            "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\keyframes\\KF_01.jpg"
+            "status": "pass",
+            "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\keyframes\\KF_01.jpg",
+            "sha256": "c93206ab456af2ce6fdd57ec230ff929f99b7e2be6fa319d3c78cbd426b9f1f3",
+            "format": "JPEG",
+            "size": [
+              576,
+              1024
+            ],
+            "ratio": 0.5625,
+            "is_9x16": true,
+            "modified": false
           },
           "step_trace": {
             "step_1_story_beat_and_character_lock": {
@@ -6300,8 +7011,17 @@
               "status": "pass"
             },
             "step_2_keyframe_preflight": {
-              "status": "skipped_not_on_host",
-              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\keyframes\\KF_01.jpg"
+              "status": "pass",
+              "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\keyframes\\KF_01.jpg",
+              "sha256": "c93206ab456af2ce6fdd57ec230ff929f99b7e2be6fa319d3c78cbd426b9f1f3",
+              "format": "JPEG",
+              "size": [
+                576,
+                1024
+              ],
+              "ratio": 0.5625,
+              "is_9x16": true,
+              "modified": false
             },
             "step_3_visual_continuity_audit": {
               "status": "fail",
@@ -6349,7 +7069,7 @@
                 ]
               },
               "audio_from": "native Google Flow Farsi audio of clip_01.mp4",
-              "source_on_host": false
+              "source_on_host": true
             },
             "step_6_mux_and_master_verification": {
               "status": "not_run"
@@ -6405,7 +7125,7 @@
               ]
             },
             "audio_from": "native Google Flow Farsi audio of clip_02.mp4",
-            "source_on_host": false
+            "source_on_host": true
           },
           "step_6_mux_and_master_verification": {
             "status": "not_run"
@@ -6428,8 +7148,17 @@
             "status": "pass"
           },
           "step_2_keyframe_preflight": {
-            "status": "skipped_not_on_host",
-            "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\keyframes\\KF_02.jpg"
+            "status": "pass",
+            "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\keyframes\\KF_02.jpg",
+            "sha256": "f6ce991651d30612386f988d3167b5d2325d4113175d174e4be08f326ff6b29d",
+            "format": "JPEG",
+            "size": [
+              576,
+              1024
+            ],
+            "ratio": 0.5625,
+            "is_9x16": true,
+            "modified": false
           },
           "step_trace": {
             "step_1_story_beat_and_character_lock": {
@@ -6450,8 +7179,17 @@
               "status": "pass"
             },
             "step_2_keyframe_preflight": {
-              "status": "skipped_not_on_host",
-              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\keyframes\\KF_02.jpg"
+              "status": "pass",
+              "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\keyframes\\KF_02.jpg",
+              "sha256": "f6ce991651d30612386f988d3167b5d2325d4113175d174e4be08f326ff6b29d",
+              "format": "JPEG",
+              "size": [
+                576,
+                1024
+              ],
+              "ratio": 0.5625,
+              "is_9x16": true,
+              "modified": false
             },
             "step_3_visual_continuity_audit": {
               "status": "fail",
@@ -6499,7 +7237,7 @@
                 ]
               },
               "audio_from": "native Google Flow Farsi audio of clip_02.mp4",
-              "source_on_host": false
+              "source_on_host": true
             },
             "step_6_mux_and_master_verification": {
               "status": "not_run"
@@ -6555,7 +7293,7 @@
               ]
             },
             "audio_from": "native Google Flow Farsi audio of clip_03.mp4",
-            "source_on_host": false
+            "source_on_host": true
           },
           "step_6_mux_and_master_verification": {
             "status": "not_run"
@@ -6578,8 +7316,17 @@
             "status": "pass"
           },
           "step_2_keyframe_preflight": {
-            "status": "skipped_not_on_host",
-            "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\keyframes\\KF_03.jpg"
+            "status": "pass",
+            "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\keyframes\\KF_03.jpg",
+            "sha256": "c0537073c00ccfed8aadde08071abaa41c98d53feee931f4297b5b1e0b68a496",
+            "format": "JPEG",
+            "size": [
+              576,
+              1024
+            ],
+            "ratio": 0.5625,
+            "is_9x16": true,
+            "modified": false
           },
           "step_trace": {
             "step_1_story_beat_and_character_lock": {
@@ -6600,8 +7347,17 @@
               "status": "pass"
             },
             "step_2_keyframe_preflight": {
-              "status": "skipped_not_on_host",
-              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\keyframes\\KF_03.jpg"
+              "status": "pass",
+              "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\keyframes\\KF_03.jpg",
+              "sha256": "c0537073c00ccfed8aadde08071abaa41c98d53feee931f4297b5b1e0b68a496",
+              "format": "JPEG",
+              "size": [
+                576,
+                1024
+              ],
+              "ratio": 0.5625,
+              "is_9x16": true,
+              "modified": false
             },
             "step_3_visual_continuity_audit": {
               "status": "fail",
@@ -6649,7 +7405,7 @@
                 ]
               },
               "audio_from": "native Google Flow Farsi audio of clip_03.mp4",
-              "source_on_host": false
+              "source_on_host": true
             },
             "step_6_mux_and_master_verification": {
               "status": "not_run"
@@ -6716,8 +7472,17 @@
             "status": "pass"
           },
           "step_2_keyframe_preflight": {
-            "status": "skipped_not_on_host",
-            "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\keyframes\\KF_04.jpg"
+            "status": "pass",
+            "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\keyframes\\KF_04.jpg",
+            "sha256": "b40147959bb889bdaee7e4b41ade924815c167f461b3ae6d9db11280ba7fbccb",
+            "format": "JPEG",
+            "size": [
+              576,
+              1024
+            ],
+            "ratio": 0.5625,
+            "is_9x16": true,
+            "modified": false
           },
           "step_trace": {
             "step_1_story_beat_and_character_lock": {
@@ -6738,8 +7503,17 @@
               "status": "pass"
             },
             "step_2_keyframe_preflight": {
-              "status": "skipped_not_on_host",
-              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\keyframes\\KF_04.jpg"
+              "status": "pass",
+              "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\keyframes\\KF_04.jpg",
+              "sha256": "b40147959bb889bdaee7e4b41ade924815c167f461b3ae6d9db11280ba7fbccb",
+              "format": "JPEG",
+              "size": [
+                576,
+                1024
+              ],
+              "ratio": 0.5625,
+              "is_9x16": true,
+              "modified": false
             },
             "step_3_visual_continuity_audit": {
               "status": "pass",
@@ -6842,8 +7616,17 @@
             "status": "pass"
           },
           "step_2_keyframe_preflight": {
-            "status": "skipped_not_on_host",
-            "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\keyframes\\KF_05.jpg"
+            "status": "pass",
+            "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\keyframes\\KF_05.jpg",
+            "sha256": "45a642191366daf5928e50e2fda67ff92e44435f4feb2b5445c742ffa053c070",
+            "format": "JPEG",
+            "size": [
+              576,
+              1024
+            ],
+            "ratio": 0.5625,
+            "is_9x16": true,
+            "modified": false
           },
           "step_trace": {
             "step_1_story_beat_and_character_lock": {
@@ -6864,8 +7647,17 @@
               "status": "pass"
             },
             "step_2_keyframe_preflight": {
-              "status": "skipped_not_on_host",
-              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\keyframes\\KF_05.jpg"
+              "status": "pass",
+              "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\keyframes\\KF_05.jpg",
+              "sha256": "45a642191366daf5928e50e2fda67ff92e44435f4feb2b5445c742ffa053c070",
+              "format": "JPEG",
+              "size": [
+                576,
+                1024
+              ],
+              "ratio": 0.5625,
+              "is_9x16": true,
+              "modified": false
             },
             "step_3_visual_continuity_audit": {
               "status": "pass",
@@ -6957,7 +7749,7 @@
               ]
             },
             "audio_from": "native Google Flow Farsi audio of clip_06.mp4",
-            "source_on_host": false
+            "source_on_host": true
           },
           "step_6_mux_and_master_verification": {
             "status": "not_run"
@@ -6980,8 +7772,17 @@
             "status": "pass"
           },
           "step_2_keyframe_preflight": {
-            "status": "skipped_not_on_host",
-            "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\keyframes\\KF_06.jpg"
+            "status": "pass",
+            "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\keyframes\\KF_06.jpg",
+            "sha256": "fa1a155cd6c29089c7665af17424200918428251536e88a6fedff1cd09b3a438",
+            "format": "JPEG",
+            "size": [
+              576,
+              1024
+            ],
+            "ratio": 0.5625,
+            "is_9x16": true,
+            "modified": false
           },
           "step_trace": {
             "step_1_story_beat_and_character_lock": {
@@ -7002,8 +7803,17 @@
               "status": "pass"
             },
             "step_2_keyframe_preflight": {
-              "status": "skipped_not_on_host",
-              "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\keyframes\\KF_06.jpg"
+              "status": "pass",
+              "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\keyframes\\KF_06.jpg",
+              "sha256": "fa1a155cd6c29089c7665af17424200918428251536e88a6fedff1cd09b3a438",
+              "format": "JPEG",
+              "size": [
+                576,
+                1024
+              ],
+              "ratio": 0.5625,
+              "is_9x16": true,
+              "modified": false
             },
             "step_3_visual_continuity_audit": {
               "status": "fail",
@@ -7051,7 +7861,7 @@
                 ]
               },
               "audio_from": "native Google Flow Farsi audio of clip_06.mp4",
-              "source_on_host": false
+              "source_on_host": true
             },
             "step_6_mux_and_master_verification": {
               "status": "not_run"
