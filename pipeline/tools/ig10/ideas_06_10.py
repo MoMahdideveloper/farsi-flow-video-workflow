@@ -11,7 +11,8 @@ IDEAS = [{'idea_id': 'IG10_06',
   'hook_visual': "11:58 PM, a 3D student character gets a Telegram message from the professor 'فردا ساعت ۸ ارائه "
                  "۲۰ اسلایدی' — his soul literally leaves his body; then a clock spins and a finished slide deck "
                  'flies out of the laptop. Show the transformation in the FIRST 3 seconds; do not render text in '
-                 'the generated image.',
+                 'the generated image. Production rule: generated scene is illustrative. Composite actual '
+                 'UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.',
   'hook_fa': 'فردا ارائه داری؟',
   'before_fa': 'صفحه سفید پاورپوینت و یک فایل صوتی ۹۰ دقیقه\u200cای ضبط\u200cشده از کلاس.',
   'after_fa': 'پیش\u200cنویس اسلاید از متن درس در Gamma؛ صحت، منابع و نگارش فارسی را پیش از ارائه بررسی کن. زمان '
@@ -24,35 +25,42 @@ IDEAS = [{'idea_id': 'IG10_06',
              "11:58 PM, a 3D student character gets a Telegram message from the professor 'فردا ساعت ۸ ارائه ۲۰ "
              "اسلایدی' — his soul literally leaves his body; then a clock spins and a finished slide deck flies "
              'out of the laptop. Show the transformation in the FIRST 3 seconds; do not render text in the '
-             'generated image.',
+             'generated image. Production rule: generated scene is illustrative. Composite actual UI/screenshots '
+             'and all Persian text in editing; no synthetic trust badges or testimonials.',
              '0–3s: reveal the hook immediately. Say in Persian (Farsi): "فردا ارائه داری؟". 3–8s: hold on the '
              'result; no extra dialogue.',
              'فردا ارائه داری؟',
              ['فردا ارائه داری؟']),
             (8,
-             '3D Pixar-style animation, soft cinematic lighting, vertical 9:16, warm Iranian everyday setting, '
-             'expressive faces, shallow depth of field. The student drags a 90-minute class audio recording into '
-             'an AI note-taker app; a one-page Persian summary appears instantly.',
-             'Audio waveform compresses into a neat glowing page. Student says in Persian (Farsi): "صدای کلاس رو '
-             'دادم به پلاد، یه دقیقه\u200cای خلاصه\u200cش کرد."',
-             'صدای کلاس رو دادم به PLAUD، یه دقیقه\u200cای خلاصه\u200cش کرد.',
-             ['۹۰ دقیقه کلاس ← ۱ صفحه خلاصه 📝']),
+             'Student opens permitted class text and manually checks a short outline. Audio transcription tools '
+             'optional, not required for slides. Production rule: generated scene is illustrative. Composite '
+             'actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.',
+             'Vertical 9:16, smooth camera motion. Say in Persian (Farsi): "از متن مجاز درس شروع کن؛ اول '
+             'نکته\u200cهای اصلی رو مشخص کن.".',
+             'از متن مجاز درس شروع کن؛ اول نکته\u200cهای اصلی رو مشخص کن.',
+             ['متن مجاز درس', 'خلاصه قابل بازبینی']),
             (8,
              'Laptop close-up: the summary is pasted into Claude/ChatGPT to make an outline, then into Gamma AI; '
-             '20 beautiful slides with charts generate one after another.',
+             '20 beautiful slides with charts generate one after another. Production rule: generated scene is '
+             'illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust '
+             'badges or testimonials.',
              'Slides cascade like cards, timer in corner reads 02:47. Narrator says in Persian (Farsi): "خلاصه رو '
              'دادم به هوش مصنوعی، گاما بیست تا اسلاید شیک ساخت."',
              'خلاصه رو دادم به هوش مصنوعی، Gamma بیست تا اسلاید شیک ساخت.',
              ['۲۰ اسلاید در چند مرحله ⏱️']),
             (8,
              'Vertical 9:16. Student checks a draft slide against class notes, corrects one factual error and '
-             'saves locally. No grade or approval claim.',
+             'saves locally. No grade or approval claim. Production rule: generated scene is illustrative. '
+             'Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or '
+             'testimonials.',
              'Close-up on review. Say in Persian: "این فقط پیش\u200cنویسه؛ منبع و متنش رو خودت چک کن."',
              'این فقط پیش\u200cنویسه؛ منبع و متنش رو خودت چک کن.',
              ['پیش\u200cنویس، نه تکلیف آماده', 'بازبینی منبع و متن']),
             (8,
              'Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL '
-             'product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text.',
+             'product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text. '
+             'Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian '
+             'text in editing; no synthetic trust badges or testimonials.',
              'Slow push-in. Say in Persian (Farsi): "«اسلاید» رو کامنت کن؛ لینک و شرایط خرید رو بگیر.". Leave '
              'space for RTL overlays.',
              '«اسلاید» رو کامنت کن؛ لینک و شرایط خرید رو بگیر.',
@@ -71,7 +79,9 @@ IDEAS = [{'idea_id': 'IG10_06',
              'و طولانی\u200cاند.',
   'trigger': 'امید به درآمد + «من هم می\u200cتونم» + کار از خانه',
   'hook_visual': 'Vertical 9:16. Young adult shows a before/after cafe post portfolio on an ordinary laptop. No '
-                 'bank SMS, client testimonial or payment proof.',
+                 'bank SMS, client testimonial or payment proof. Production rule: generated scene is '
+                 'illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic '
+                 'trust badges or testimonials.',
   'hook_fa': 'اولین نمونه\u200cکارت رو بساز!',
   'before_fa': 'عکس تار و بی\u200cکیفیت محصول یک کافه + ویدیوی خام لرزان از گوشی صاحب کافه.',
   'after_fa': 'کاور شاخص ریلز با کیفیت 4K، لوگوی تمیز، و ریلز ادیت\u200cشده با زیرنویس و افکت — بسته محتوایی که '
@@ -81,33 +91,42 @@ IDEAS = [{'idea_id': 'IG10_06',
                'draft_8f001536-6d8a-4996-84ab-fcc126fbdb1e'],
   'shots': [(8,
              'Vertical 9:16. Young adult shows a before/after cafe post portfolio on an ordinary laptop. No bank '
-             'SMS, client testimonial or payment proof.',
+             'SMS, client testimonial or payment proof. Production rule: generated scene is illustrative. '
+             'Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or '
+             'testimonials.',
              'Immediate portfolio reveal. Say in Persian: "اولین نمونه\u200cکارت رو بساز!".',
              'اولین نمونه\u200cکارت رو بساز!',
              ['اولین نمونه\u200cکارت رو بساز!']),
             (8,
-             'Phone screen: a blurry low-res cafe product photo is upscaled by Magnific AI into a crisp 4K image, '
-             'then background removed in Picsart with one tap.',
-             'Blur-to-sharp wipe transition, sparkle. Character says in Persian (Farsi): "عکس تار مشتری رو با '
-             'مگنیفیک فورکی کردم، با پیکس\u200cآرت پس\u200cزمینه\u200cش رو برداشتم."',
-             'عکس تار مشتری رو با Magnific فورکی کردم، با Picsart پس\u200cزمینه\u200cش رو برداشتم.',
-             ['۱. کیفیت 4K با Magnific 🔍', '۲. حذف پس\u200cزمینه با Picsart']),
+             'Freelancer creates a simple cafe cover in Canva using an authorized photo; no required upscaling '
+             'subscription or 4K claim. Production rule: generated scene is illustrative. Composite actual '
+             'UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.',
+             'Vertical 9:16, smooth camera motion. Say in Persian (Farsi): "با عکس مجاز و یک قالب ساده شروع کن؛ '
+             'ابزارهای بیشتر اختیاری\u200cان.".',
+             'با عکس مجاز و یک قالب ساده شروع کن؛ ابزارهای بیشتر اختیاری\u200cان.',
+             ['شروع با Canva', 'ابزارهای بیشتر اختیاری']),
             (8,
              'Vertical 9:16. Show a cafe cover designed in Canva, then a timeline with manually added Persian '
-             'subtitles. Use real screen capture in editing.',
+             'subtitles. Use real screen capture in editing. Production rule: generated scene is illustrative. '
+             'Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or '
+             'testimonials.',
              'Swipe between cover and timeline. Say in Persian: "کاور رو طراحی کن؛ متن فارسی رو دستی اضافه و '
              'بازبینی کن."',
              'کاور رو طراحی کن؛ متن فارسی رو دستی اضافه و بازبینی کن.',
              ['کاور با Canva', 'زیرنویس فارسی با بازبینی']),
             (8,
              'Vertical 9:16. A freelancer sends a clearly labelled sample portfolio to a cafe owner; owner '
-             'considers it, no hiring, handshake or money.',
+             'considers it, no hiring, handshake or money. Production rule: generated scene is illustrative. '
+             'Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or '
+             'testimonials.',
              'Show the sample. Say in Persian: "نمونه\u200cکارت رو پیشنهاد بده؛ گرفتن سفارش تضمینی نیست."',
              'نمونه\u200cکارت رو پیشنهاد بده؛ گرفتن سفارش تضمینی نیست.',
              ['اول نمونه\u200cکار', 'درآمد تضمینی نیست']),
             (8,
              'Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL '
-             'product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text.',
+             'product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text. '
+             'Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian '
+             'text in editing; no synthetic trust badges or testimonials.',
              'Slow push-in. Say in Persian (Farsi): "«درآمد» رو کامنت کن؛ لینک و شرایط خرید رو بگیر.". Leave '
              'space for RTL overlays.',
              '«درآمد» رو کامنت کن؛ لینک و شرایط خرید رو بگیر.',
@@ -127,7 +146,9 @@ IDEAS = [{'idea_id': 'IG10_06',
   'trigger': 'ضرر نکردن (loss aversion) + اعتماد (اینماد) + سبک شدن پرداخت با قسط',
   'hook_visual': "A 3D character's wallet screams and runs away as a receipt keeps printing extra lines: '$20', "
                  "'+ مالیات', '+ کارمزد کارت مجازی', '+ نرخ دلار امروز'… The receipt grows longer than the room. "
-                 'Show the transformation in the FIRST 3 seconds; do not render text in the generated image.',
+                 'Show the transformation in the FIRST 3 seconds; do not render text in the generated image. '
+                 'Production rule: generated scene is illustrative. Composite actual UI/screenshots and all '
+                 'Persian text in editing; no synthetic trust badges or testimonials.',
   'hook_fa': 'قیمت نهایی چقدر میشه؟',
   'before_fa': 'قبل پرداخت: قیمت نهایی و شرایط پلن نامشخص؛ هیچ مقایسه دلاری یا مالیاتی بدون فاکتور همسان منتشر '
                'نشود.',
@@ -136,37 +157,42 @@ IDEAS = [{'idea_id': 'IG10_06',
   'shots': [(8,
              "A 3D character's wallet screams and runs away as a receipt keeps printing extra lines: '$20', '+ "
              "مالیات', '+ کارمزد کارت مجازی', '+ نرخ دلار امروز'… The receipt grows longer than the room. Show "
-             'the transformation in the FIRST 3 seconds; do not render text in the generated image.',
+             'the transformation in the FIRST 3 seconds; do not render text in the generated image. Production '
+             'rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in '
+             'editing; no synthetic trust badges or testimonials.',
              '0–3s: reveal the hook immediately. Say in Persian (Farsi): "قیمت نهایی چقدر میشه؟". 3–8s: hold on '
              'the result; no extra dialogue.',
              'قیمت نهایی چقدر میشه؟',
              ['قیمت نهایی چقدر میشه؟']),
             (8,
-             '3D Pixar-style animation, soft cinematic lighting, vertical 9:16, warm Iranian everyday setting, '
-             'expressive faces, shallow depth of field. The same man in a dark alley-like Telegram chat world '
-             "talking to a shady hooded seller with no name; a 'Blocked' stamp hits his virtual card.",
-             'Spooky lighting, the seller vanishes in smoke. Character says in Persian (Farsi): "ویزاکارت هم بلاک '
-             'شد، فروشنده تلگرامی هم غیب شد!"',
-             'ویزاکارت هم بلاک شد، فروشنده تلگرامی هم غیب شد!',
-             ['کارت مجازی بلاک ❌', 'فروشنده ناشناس 👻']),
+             'Customer compares two identical subscription durations and plan features before viewing the final '
+             'total; no fabricated fraud scene. Production rule: generated scene is illustrative. Composite '
+             'actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.',
+             'Vertical 9:16, smooth camera motion. Say in Persian (Farsi): "فقط قیمت رو نبین؛ مدت اشتراک و '
+             'امکانات پلن رو هم مقایسه کن.".',
+             'فقط قیمت رو نبین؛ مدت اشتراک و امکانات پلن رو هم مقایسه کن.',
+             ['مقایسه پلن همسان', 'مدت و امکانات']),
             (8,
-             '3D Pixar-style animation, soft cinematic lighting, vertical 9:16, warm Iranian everyday setting, '
-             'expressive faces, shallow depth of field. A bright clean shop interior: a friendly 3D KelidBox '
-             "mascot shows a big screen with the product's Toman price, the Enamad trust seal glowing, and a "
-             "button '۴ قسط طبق شرایط درگاه'.",
-             'Mascot taps the screen; the long receipt shrinks into four small equal coins. Mascot says in '
-             'Persian (Farsi): "تو کلیدباکس قیمت تومانیه، با نماد اینماد، و می\u200cتونی چهار قسطه بدی."',
-             'تو کلیدباکس قیمت تومانیه، با نماد اینماد، و می\u200cتونی چهار قسطه بدی.',
-             ['قیمت تومانی شفاف ✅', 'نماد اینماد 🛡️', '۴ قسط طبق شرایط درگاه 💳']),
+             'Insert a REAL product-page screen recording and the real store trust-verification path in editing. '
+             'Never generate an Enamad seal. Production rule: generated scene is illustrative. Composite actual '
+             'UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.',
+             'Vertical 9:16, smooth camera motion. Say in Persian (Farsi): "اطلاعات فروشگاه و شرایط قسط رو از '
+             'مسیر واقعی سایت بررسی کن.".',
+             'اطلاعات فروشگاه و شرایط قسط رو از مسیر واقعی سایت بررسی کن.',
+             ['بررسی فروشگاه', 'قسط طبق شرایط اعتبار']),
             (8,
              'Vertical 9:16. Real checkout screen recording added in editing: chosen plan, WELCOME10 field and '
-             'final total. No synthetic successful order.',
+             'final total. No synthetic successful order. Production rule: generated scene is illustrative. '
+             'Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or '
+             'testimonials.',
              'Pause on terms. Say in Persian: "تخفیف سقف داره؛ مبلغ نهایی و شرایط قسط رو چک کن."',
              'تخفیف سقف داره؛ مبلغ نهایی و شرایط قسط رو چک کن.',
              ['۱۰٪ تا سقف ۱۵۰٬۰۰۰ تومان', 'حداقل خرید ۱۰۰٬۰۰۰ تومان']),
             (8,
              'Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL '
-             'product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text.',
+             'product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text. '
+             'Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian '
+             'text in editing; no synthetic trust badges or testimonials.',
              'Slow push-in. Say in Persian (Farsi): "«قیمت» رو کامنت کن؛ لینک و شرایط خرید رو بگیر.". Leave space '
              'for RTL overlays.',
              '«قیمت» رو کامنت کن؛ لینک و شرایط خرید رو بگیر.',
@@ -185,7 +211,9 @@ IDEAS = [{'idea_id': 'IG10_06',
   'trigger': 'کمدی خانوادگی آشنا (relatable) + آرامش خانه',
   'hook_visual': "A 3D toddler watching a cartoon on a tablet; an ad pops up, the toddler's face turns red and he "
                  "transforms into a tiny screaming volcano while the dad dives across the room to hit 'Skip'. "
-                 'Show the transformation in the FIRST 3 seconds; do not render text in the generated image.',
+                 'Show the transformation in the FIRST 3 seconds; do not render text in the generated image. '
+                 'Production rule: generated scene is illustrative. Composite actual UI/screenshots and all '
+                 'Persian text in editing; no synthetic trust badges or testimonials.',
   'hook_fa': 'باز وسط کارتون تبلیغ؟',
   'before_fa': 'تبلیغات میان ویدیوهای یوتیوب؛ قابلیت\u200cها و محدودیت\u200cهای هر سرویس را جداگانه بررسی کن.',
   'after_fa': 'کارتون بی\u200cوقفه و دانلود آفلاین برای سفر، موزیک پس\u200cزمینه در مترو، شب فیلم خانوادگی با '
@@ -194,14 +222,17 @@ IDEAS = [{'idea_id': 'IG10_06',
   'shots': [(8,
              "A 3D toddler watching a cartoon on a tablet; an ad pops up, the toddler's face turns red and he "
              "transforms into a tiny screaming volcano while the dad dives across the room to hit 'Skip'. Show "
-             'the transformation in the FIRST 3 seconds; do not render text in the generated image.',
+             'the transformation in the FIRST 3 seconds; do not render text in the generated image. Production '
+             'rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in '
+             'editing; no synthetic trust badges or testimonials.',
              '0–3s: reveal the hook immediately. Say in Persian (Farsi): "باز وسط کارتون تبلیغ؟". 3–8s: hold on '
              'the result; no extra dialogue.',
              'باز وسط کارتون تبلیغ؟',
              ['باز وسط کارتون تبلیغ؟']),
             (8,
              'Vertical 9:16. Adult commuter watching an ordinary YouTube video; an ad interrupts. Not a Spotify '
-             'lock-screen example.',
+             'lock-screen example. Production rule: generated scene is illustrative. Composite actual '
+             'UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.',
              'Commuter pauses. Say in Persian: "وسط آموزش، دوباره تبلیغ اومد."',
              'وسط آموزش، دوباره تبلیغ اومد.',
              ['وقفه وسط آموزش']),
@@ -209,20 +240,24 @@ IDEAS = [{'idea_id': 'IG10_06',
              '3D Pixar-style animation, soft cinematic lighting, vertical 9:16, warm Iranian everyday setting, '
              "expressive faces, shallow depth of field. Magical transition: a glowing 'Premium' key turns in the "
              'tablet; the toddler watches a cartoon peacefully with no ads, then the same cartoon downloaded '
-             'offline in a car on a road trip.',
+             'offline in a car on a road trip. Production rule: generated scene is illustrative. Composite actual '
+             'UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.',
              'Golden key turns, ads shatter like glass, calm music. Narrator says in Persian (Farsi): "با یوتیوب '
              'پریمیوم: بدون تبلیغ، پخش در پس\u200cزمینه، دانلود برای سفر."',
              'با YouTube Premium: بدون تبلیغ، پخش در پس\u200cزمینه، دانلود برای سفر.',
              ['بدون تبلیغ ✅', 'دانلود آفلاین برای سفر 🚗']),
             (8,
              'Vertical 9:16. Family selects a viewing service after reading plan and device limits; no guaranteed '
-             '4K on every device.',
+             '4K on every device. Production rule: generated scene is illustrative. Composite actual '
+             'UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.',
              'Warm family scene. Say in Persian: "کیفیت و دانلود به سرویس، دستگاه و پلن بستگی داره."',
              'کیفیت و دانلود به سرویس، دستگاه و پلن بستگی داره.',
              ['شرایط پلن را بخوان']),
             (8,
              'Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL '
-             'product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text.',
+             'product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text. '
+             'Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian '
+             'text in editing; no synthetic trust badges or testimonials.',
              'Slow push-in. Say in Persian (Farsi): "«بدون تبلیغ» رو کامنت کن؛ لینک و شرایط خرید رو بگیر.". Leave '
              'space for RTL overlays.',
              '«بدون تبلیغ» رو کامنت کن؛ لینک و شرایط خرید رو بگیر.',
@@ -241,7 +276,9 @@ IDEAS = [{'idea_id': 'IG10_06',
   'trigger': 'هویت گیمری + ترس از کلاهبرداری + «الان می\u200cتونم بخرم» با قسط',
   'hook_visual': 'A 3D teen gamer about to buy CP from a shady hooded figure in a neon alley; a giant cartoon hat '
                  '(کلاه) slowly lowers onto his head from the sky — he freezes. Show the transformation in the '
-                 'FIRST 3 seconds; do not render text in the generated image.',
+                 'FIRST 3 seconds; do not render text in the generated image. Production rule: generated scene is '
+                 'illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic '
+                 'trust badges or testimonials.',
   'hook_fa': 'قبل خرید، ریجن رو چک کن!',
   'before_fa': 'پیام فروشنده تلگرامی: «اول کارت به کارت کن، بعد شارژ می\u200cکنم» → بلاک شدن و پول از دست رفته.',
   'after_fa': 'نسخه Global و روش شارژ Activision را برای CP تطبیق بده؛ قیمت، زمان تحویل و شرایط اعتبار را قبل '
@@ -255,34 +292,40 @@ IDEAS = [{'idea_id': 'IG10_06',
   'shots': [(8,
              'A 3D teen gamer about to buy CP from a shady hooded figure in a neon alley; a giant cartoon hat '
              '(کلاه) slowly lowers onto his head from the sky — he freezes. Show the transformation in the FIRST '
-             '3 seconds; do not render text in the generated image.',
+             '3 seconds; do not render text in the generated image. Production rule: generated scene is '
+             'illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust '
+             'badges or testimonials.',
              '0–3s: reveal the hook immediately. Say in Persian (Farsi): "قبل خرید، ریجن رو چک کن!". 3–8s: hold '
              'on the result; no extra dialogue.',
              'قبل خرید، ریجن رو چک کن!',
              ['قبل خرید، ریجن رو چک کن!']),
             (8,
-             '3D Pixar-style animation, soft cinematic lighting, vertical 9:16, warm Iranian everyday setting, '
-             'expressive faces, shallow depth of field. The gamer in his room staring at a Valorant skin store '
-             'and a Steam game page; his piggy bank is cracked and nearly empty; ping meter shows 180ms in red.',
-             'Piggy bank coughs a single coin, ping meter blinks red. Gamer says in Persian (Farsi): "پولم هم به '
-             'اسکین جدید نمی\u200cرسه، پینگمم صد و هشتاده!"',
-             'پولم هم به اسکین جدید نمی\u200cرسه، پینگم هم صد و هشتاده!',
-             ['پول نمی\u200cرسه 💸', 'پینگ ۱۸۰ 🐢']),
+             'Adult gamer checks Global edition and Activision account compatibility; no empty piggy bank, '
+             'borrowing pressure or ping meter. Production rule: generated scene is illustrative. Composite '
+             'actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.',
+             'Vertical 9:16, smooth camera motion. Say in Persian (Farsi): "قبل پرداخت، مطمئن شو محصول با نسخه '
+             'بازی و حسابت سازگاره.".',
+             'قبل پرداخت، مطمئن شو محصول با نسخه بازی و حسابت سازگاره.',
+             ['تطبیق نسخه و حساب', 'خرید آگاهانه']),
             (8,
              'Vertical 9:16. Adult gamer and parent inspect a real product page for Global COD Mobile CP; no '
-             'fabricated trust badge.',
+             'fabricated trust badge. Production rule: generated scene is illustrative. Composite actual '
+             'UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.',
              'Focus on region label. Say in Persian: "نسخه و ریجن رو تطبیق بده؛ بعد شرایط خرید رو بخون."',
              'نسخه و ریجن رو تطبیق بده؛ بعد شرایط خرید رو بخون.',
              ['نسخه Global و حساب سازگار', 'قسط فقط طبق شرایط اعتبار']),
             (8,
              'Vertical 9:16. Adult gamer checks item details before buying. No ping meter, victory or performance '
-             'claim.',
+             'claim. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all '
+             'Persian text in editing; no synthetic trust badges or testimonials.',
              'Calm comparison shot. Say in Persian: "خرید آیتم، برد یا پینگ بهتر رو تضمین نمی\u200cکنه."',
              'خرید آیتم، برد یا پینگ بهتر رو تضمین نمی\u200cکنه.',
              ['بدون تضمین برد یا پینگ']),
             (8,
              'Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL '
-             'product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text.',
+             'product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text. '
+             'Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian '
+             'text in editing; no synthetic trust badges or testimonials.',
              'Slow push-in. Say in Persian (Farsi): "«گیم» رو کامنت کن؛ لینک و شرایط خرید رو بگیر.". Leave space '
              'for RTL overlays.',
              '«گیم» رو کامنت کن؛ لینک و شرایط خرید رو بگیر.',

@@ -56,7 +56,7 @@
       "psychological_trigger": "حسادت مثبت به رقیب + ترس از جا ماندن (FOMO) + صرفه‌جویی پول",
       "hook_duration_sec": 3,
       "hook_timing_status": "script_budget_not_audio_verified",
-      "hook_3s_visual": "Split screen: left a dull, badly lit phone photo of a sneaker on a shop counter; right the SAME sneaker exploding into a glossy cinematic 3D ad with gold light rays. A red stamp reads 'هزینه آتلیه: ۰ تومان'. Show the transformation in the FIRST 3 seconds; do not render text in the generated image.",
+      "hook_3s_visual": "Split screen: left a dull, badly lit phone photo of a sneaker on a shop counter; right the SAME sneaker exploding into a glossy cinematic 3D ad with gold light rays. A red stamp reads 'هزینه آتلیه: ۰ تومان'. Show the transformation in the FIRST 3 seconds; do not render text in the generated image. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.",
       "hook_3s_spoken_fa": "این عکس، تبلیغ شد!",
       "before_after_demo": {
         "before_fa": "عکس معمولی موبایل از یک کفش روی پیشخوان مغازه، نور زرد و پس‌زمینه شلوغ.",
@@ -100,7 +100,7 @@
         {
           "shot_id": "IG10_01_S01",
           "duration_sec": 8,
-          "visual_prompt_flow": "Split screen: left a dull, badly lit phone photo of a sneaker on a shop counter; right the SAME sneaker exploding into a glossy cinematic 3D ad with gold light rays. A red stamp reads 'هزینه آتلیه: ۰ تومان'. Show the transformation in the FIRST 3 seconds; do not render text in the generated image.",
+          "visual_prompt_flow": "Split screen: left a dull, badly lit phone photo of a sneaker on a shop counter; right the SAME sneaker exploding into a glossy cinematic 3D ad with gold light rays. A red stamp reads 'هزینه آتلیه: ۰ تومان'. Show the transformation in the FIRST 3 seconds; do not render text in the generated image. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.",
           "motion_prompt_flow": "0–3s: reveal the hook immediately. Say in Persian (Farsi): \"این عکس، تبلیغ شد!\". 3–8s: hold on the result; no extra dialogue.",
           "spoken_fa": "این عکس، تبلیغ شد!",
           "subtitles_rtl": [
@@ -115,7 +115,7 @@
         {
           "shot_id": "IG10_01_S02",
           "duration_sec": 8,
-          "visual_prompt_flow": "3D Pixar-style animation, soft cinematic lighting, vertical 9:16, warm Iranian everyday setting, expressive faces, shallow depth of field. Close-up of the phone screen: the dull sneaker photo is dragged into an AI video app; a glowing 'Image to Video' button.",
+          "visual_prompt_flow": "3D Pixar-style animation, soft cinematic lighting, vertical 9:16, warm Iranian everyday setting, expressive faces, shallow depth of field. Close-up of the phone screen: the dull sneaker photo is dragged into an AI video app; a glowing 'Image to Video' button. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.",
           "motion_prompt_flow": "Finger taps the button; the photo ripples like liquid and particles of golden light swirl out of the screen. Narrator says in Persian (Farsi): \"فقط عکس رو دادم به هوش مصنوعی و نوشتم: تبلیغ لوکس سینمایی.\"",
           "spoken_fa": "فقط عکس رو دادم به هوش مصنوعی و نوشتم: تبلیغ لوکس سینمایی.",
           "subtitles_rtl": [
@@ -130,20 +130,20 @@
         {
           "shot_id": "IG10_01_S03",
           "duration_sec": 8,
-          "visual_prompt_flow": "Ultra-premium product commercial: the same white sneaker rotates on a glossy black pedestal, water droplets frozen mid-air, golden rim light, slow-motion fabric details, 9:16, photoreal.",
-          "motion_prompt_flow": "Orbiting camera 180 degrees around the sneaker, slow motion, light rays sweep across. No dialogue, dramatic whoosh sound design.",
-          "spoken_fa": "(صدای افکت سینمایی)",
+          "visual_prompt_flow": "The exact same shoe rotates under soft cinematic lighting. No changed product details, sales numbers or time-to-render claim. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.",
+          "motion_prompt_flow": "Vertical 9:16, smooth camera motion. Say in Persian (Farsi): \"این یک نمونه تیزره؛ جزئیات محصول رو با عکس مقایسه کن.\".",
+          "spoken_fa": "این یک نمونه تیزره؛ جزئیات محصول رو با عکس مقایسه کن.",
           "subtitles_rtl": [
             {
               "start": 0.25,
               "end": 3.9,
-              "text": "۳۰ ثانیه بعد 👇",
+              "text": "نمونه تیزر",
               "direction": "rtl"
             },
             {
               "start": 4.0,
               "end": 7.65,
-              "text": "تیزر میلیونی بدون آتلیه ✨",
+              "text": "جزئیات محصول را چک کن",
               "direction": "rtl"
             }
           ]
@@ -151,14 +151,20 @@
         {
           "shot_id": "IG10_01_S04",
           "duration_sec": 8,
-          "visual_prompt_flow": "3D Pixar-style animation, soft cinematic lighting, vertical 9:16, warm Iranian everyday setting, expressive faces, shallow depth of field. The boutique owner now smiling, phone buzzing with Instagram notifications and DM bubbles saying 'قیمت؟' and 'سایز ۴۲ دارین؟'.",
-          "motion_prompt_flow": "Notifications pop rapidly around his head; he laughs and high-fives his teenage daughter. Character says in Persian (Farsi): \"از دیروز تا حالا چهل تا دایرکت قیمت گرفتم!\"",
-          "spoken_fa": "از دیروز تا حالا چهل تا دایرکت قیمت گرفتم!",
+          "visual_prompt_flow": "Shop owner compares the source photo with a demo ad on a phone. No customer messages, likes or simulated sales proof. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.",
+          "motion_prompt_flow": "Vertical 9:16, smooth camera motion. Say in Persian (Farsi): \"حالا یک نمونه برای پیجت داری؛ فروش بیشتر تضمینی نیست.\".",
+          "spoken_fa": "حالا یک نمونه برای پیجت داری؛ فروش بیشتر تضمینی نیست.",
           "subtitles_rtl": [
             {
               "start": 0.25,
+              "end": 3.9,
+              "text": "نمونه آماده بازبینی",
+              "direction": "rtl"
+            },
+            {
+              "start": 4.0,
               "end": 7.65,
-              "text": "دایرکت‌ها ترکید 📩",
+              "text": "بدون تضمین فروش",
               "direction": "rtl"
             }
           ]
@@ -166,7 +172,7 @@
         {
           "shot_id": "IG10_01_S05",
           "duration_sec": 8,
-          "visual_prompt_flow": "Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text.",
+          "visual_prompt_flow": "Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.",
           "motion_prompt_flow": "Slow push-in. Say in Persian (Farsi): \"«تیزر» رو کامنت کن؛ لینک و شرایط خرید رو بگیر.\". Leave space for RTL overlays.",
           "spoken_fa": "«تیزر» رو کامنت کن؛ لینک و شرایط خرید رو بگیر.",
           "subtitles_rtl": [
@@ -207,7 +213,7 @@
       "psychological_trigger": "کنجکاوی پشت‌صحنه + اثبات اجتماعی (همین سریال‌هایی که دیدی)",
       "hook_duration_sec": 3,
       "hook_timing_status": "script_budget_not_audio_verified",
-      "hook_3s_visual": "The famous Pineapple husband and Strawberry wife from @kelidbox_com freeze mid-argument; the camera pulls back to reveal it's playing on a laptop in a cozy kitchen, a woman's hands (face never shown) typing beside a cup of tea. Show the transformation in the FIRST 3 seconds; do not render text in the generated image.",
+      "hook_3s_visual": "The famous Pineapple husband and Strawberry wife from @kelidbox_com freeze mid-argument; the camera pulls back to reveal it's playing on a laptop in a cozy kitchen, a woman's hands (face never shown) typing beside a cup of tea. Show the transformation in the FIRST 3 seconds; do not render text in the generated image. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.",
       "hook_3s_spoken_fa": "این کارتون، بدون دوربینه!",
       "before_after_demo": {
         "before_fa": "یک ایده داستانی در دفترچه: «زن و شوهری که سر عکس خانوادگی دعوا می‌کنند.»",
@@ -251,7 +257,7 @@
         {
           "shot_id": "IG10_02_S01",
           "duration_sec": 8,
-          "visual_prompt_flow": "The famous Pineapple husband and Strawberry wife from @kelidbox_com freeze mid-argument; the camera pulls back to reveal it's playing on a laptop in a cozy kitchen, a woman's hands (face never shown) typing beside a cup of tea. Show the transformation in the FIRST 3 seconds; do not render text in the generated image.",
+          "visual_prompt_flow": "The famous Pineapple husband and Strawberry wife from @kelidbox_com freeze mid-argument; the camera pulls back to reveal it's playing on a laptop in a cozy kitchen, a woman's hands (face never shown) typing beside a cup of tea. Show the transformation in the FIRST 3 seconds; do not render text in the generated image. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.",
           "motion_prompt_flow": "0–3s: reveal the hook immediately. Say in Persian (Farsi): \"این کارتون، بدون دوربینه!\". 3–8s: hold on the result; no extra dialogue.",
           "spoken_fa": "این کارتون، بدون دوربینه!",
           "subtitles_rtl": [
@@ -266,7 +272,7 @@
         {
           "shot_id": "IG10_02_S02",
           "duration_sec": 8,
-          "visual_prompt_flow": "Over-the-shoulder view (no face) of hands typing a Persian story idea into a chat AI on a laptop; the AI replies with a 5-scene script in Persian.",
+          "visual_prompt_flow": "Over-the-shoulder view (no face) of hands typing a Persian story idea into a chat AI on a laptop; the AI replies with a 5-scene script in Persian. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.",
           "motion_prompt_flow": "Text streams quickly on screen, warm lamp light. Narrator says in Persian (Farsi): \"اول ایده‌م رو به چت‌جی‌پی‌تی گفتم، سناریو پنج صحنه‌ای رو نوشت.\"",
           "spoken_fa": "اول ایده‌م رو به چت‌جی‌پی‌تی گفتم، سناریوی پنج صحنه‌ای رو نوشت.",
           "subtitles_rtl": [
@@ -281,7 +287,7 @@
         {
           "shot_id": "IG10_02_S03",
           "duration_sec": 8,
-          "visual_prompt_flow": "Screen recording style: a scene prompt pasted into Google Flow; a 3D Pixar pineapple character renders frame by frame from a grey clay draft into full color.",
+          "visual_prompt_flow": "Screen recording style: a scene prompt pasted into Google Flow; a 3D Pixar pineapple character renders frame by frame from a grey clay draft into full color. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.",
           "motion_prompt_flow": "Time-lapse render, progress bar fills, colors bloom. Narrator says in Persian (Farsi): \"بعد توی گوگل فلو، هر صحنه رو با یک جمله ساختم.\"",
           "spoken_fa": "بعد توی گوگل فلو، هر صحنه رو با یک جمله ساختم.",
           "subtitles_rtl": [
@@ -296,14 +302,20 @@
         {
           "shot_id": "IG10_02_S04",
           "duration_sec": 8,
-          "visual_prompt_flow": "3D Pixar-style animation, soft cinematic lighting, vertical 9:16, warm Iranian everyday setting, expressive faces, shallow depth of field. The finished strawberry character on screen lip-syncs a Persian line; an audio waveform glows beside it; Instagram view counter climbs rapidly.",
-          "motion_prompt_flow": "View counter animates upward, heart icons float. Narrator says in Persian (Farsi): \"صداهای فارسی رو با الون‌لبز ساختم. حالا ویو می‌گیرم، بدون اینکه کسی منو بشناسه.\"",
-          "spoken_fa": "صداهای فارسی رو با ElevenLabs ساختم. حالا ویو می‌گیرم، بدون اینکه کسی منو بشناسه.",
+          "visual_prompt_flow": "Hands add an optional authorized Persian voice track to an animation. Show waveform, no view counters. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.",
+          "motion_prompt_flow": "Vertical 9:16, smooth camera motion. Say in Persian (Farsi): \"صدا رو با ابزار مجاز اضافه کن؛ کیفیت فارسی رو گوش بده.\".",
+          "spoken_fa": "صدا رو با ابزار مجاز اضافه کن؛ کیفیت فارسی رو گوش بده.",
           "subtitles_rtl": [
             {
               "start": 0.25,
+              "end": 3.9,
+              "text": "صدا با اجازه صاحب آن",
+              "direction": "rtl"
+            },
+            {
+              "start": 4.0,
               "end": 7.65,
-              "text": "۳. صدای فارسی با ElevenLabs 🎙️",
+              "text": "بازبینی تلفظ فارسی",
               "direction": "rtl"
             }
           ]
@@ -311,7 +323,7 @@
         {
           "shot_id": "IG10_02_S05",
           "duration_sec": 8,
-          "visual_prompt_flow": "Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text.",
+          "visual_prompt_flow": "Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.",
           "motion_prompt_flow": "Slow push-in. Say in Persian (Farsi): \"«انیمیشن» رو کامنت کن؛ لینک و شرایط خرید رو بگیر.\". Leave space for RTL overlays.",
           "spoken_fa": "«انیمیشن» رو کامنت کن؛ لینک و شرایط خرید رو بگیر.",
           "subtitles_rtl": [
@@ -352,7 +364,7 @@
       "psychological_trigger": "کمبود وقت + اعتبار حرفه‌ای + «این آدم واقعی نیست؟!»",
       "hook_duration_sec": 3,
       "hook_timing_status": "script_budget_not_audio_verified",
-      "hook_3s_visual": "A confident presenter in a white doctor's coat speaks to camera; mid-sentence the image glitches and reveals a wireframe avatar — while the real dentist is shown asleep on the clinic couch. Show the transformation in the FIRST 3 seconds; do not render text in the generated image.",
+      "hook_3s_visual": "A confident presenter in a white doctor's coat speaks to camera; mid-sentence the image glitches and reveals a wireframe avatar — while the real dentist is shown asleep on the clinic couch. Show the transformation in the FIRST 3 seconds; do not render text in the generated image. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.",
       "hook_3s_spoken_fa": "این مجری، واقعی نیست!",
       "before_after_demo": {
         "before_fa": "یک متن ۵ خطی تایپ‌شده درباره «۳ اشتباه در مسواک زدن».",
@@ -405,7 +417,7 @@
         {
           "shot_id": "IG10_03_S01",
           "duration_sec": 8,
-          "visual_prompt_flow": "A confident presenter in a white doctor's coat speaks to camera; mid-sentence the image glitches and reveals a wireframe avatar — while the real dentist is shown asleep on the clinic couch. Show the transformation in the FIRST 3 seconds; do not render text in the generated image.",
+          "visual_prompt_flow": "A confident presenter in a white doctor's coat speaks to camera; mid-sentence the image glitches and reveals a wireframe avatar — while the real dentist is shown asleep on the clinic couch. Show the transformation in the FIRST 3 seconds; do not render text in the generated image. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.",
           "motion_prompt_flow": "0–3s: reveal the hook immediately. Say in Persian (Farsi): \"این مجری، واقعی نیست!\". 3–8s: hold on the result; no extra dialogue.",
           "spoken_fa": "این مجری، واقعی نیست!",
           "subtitles_rtl": [
@@ -420,7 +432,7 @@
         {
           "shot_id": "IG10_03_S02",
           "duration_sec": 8,
-          "visual_prompt_flow": "3D Pixar-style animation, soft cinematic lighting, vertical 9:16, warm Iranian everyday setting, expressive faces, shallow depth of field. The dentist character, exhausted, surrounded by a ring light, a camera on tripod, and a pile of failed takes labeled 'تپق ۱۲'.",
+          "visual_prompt_flow": "3D Pixar-style animation, soft cinematic lighting, vertical 9:16, warm Iranian everyday setting, expressive faces, shallow depth of field. The dentist character, exhausted, surrounded by a ring light, a camera on tripod, and a pile of failed takes labeled 'تپق ۱۲'. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.",
           "motion_prompt_flow": "Fast comedic montage of bloopers, papers flying. Character says in Persian (Farsi): \"هر ریلز یه ساعت ضبط و تپق... دیگه وقت نداشتم!\"",
           "spoken_fa": "هر ریلز یه ساعت ضبط و تپق... دیگه وقت نداشتم!",
           "subtitles_rtl": [
@@ -435,14 +447,20 @@
         {
           "shot_id": "IG10_03_S03",
           "duration_sec": 8,
-          "visual_prompt_flow": "Clean laptop UI close-up: a 5-line Persian script written by an AI chat, pasted into an avatar video tool; a Persian voice clone waveform appears.",
-          "motion_prompt_flow": "Cursor clicks 'Generate'; waveform pulses; avatar thumbnail starts moving. Narrator says in Persian (Farsi): \"متن رو چت‌جی‌پی‌تی نوشت، صدای خودم رو یه بار دادم، مجری ساخته شد.\"",
-          "spoken_fa": "متن رو ChatGPT نوشت، صدای خودم رو یه بار دادم، مجری ساخته شد.",
+          "visual_prompt_flow": "Actual authorized avatar demo screen capture added in editing; consent checklist beside a short reviewed text. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.",
+          "motion_prompt_flow": "Vertical 9:16, smooth camera motion. Say in Persian (Farsi): \"با متن کوتاه و چهره مجاز شروع کن؛ خروجی فارسی رو آزمایش کن.\".",
+          "spoken_fa": "با متن کوتاه و چهره مجاز شروع کن؛ خروجی فارسی رو آزمایش کن.",
           "subtitles_rtl": [
             {
               "start": 0.25,
+              "end": 3.9,
+              "text": "مجری دیجیتال با رضایت",
+              "direction": "rtl"
+            },
+            {
+              "start": 4.0,
               "end": 7.65,
-              "text": "متن ✍️ ← صدا 🎙️ ← مجری 🧑‍⚕️",
+              "text": "آزمایش فارسی قبل انتشار",
               "direction": "rtl"
             }
           ]
@@ -450,14 +468,20 @@
         {
           "shot_id": "IG10_03_S04",
           "duration_sec": 8,
-          "visual_prompt_flow": "Phone mockup showing three finished branded reels (dentist, lawyer, real-estate agent avatars) with Persian title covers designed in a template editor.",
-          "motion_prompt_flow": "Swipe between the three reels; likes and 'نوبت میخوام' DMs pop. Narrator says in Persian (Farsi): \"وکیل، مشاور املاک، کوچ... همه میتونن هفته‌ای ده تا ریلز داشته باشن.\"",
-          "spoken_fa": "وکیل، مشاور املاک، کوچ... همه می‌تونن هفته‌ای ده تا ریلز داشته باشن.",
+          "visual_prompt_flow": "A clearly labelled fictional digital presenter beside a checklist: voice, lips, factual accuracy; no output-rate guarantee. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.",
+          "motion_prompt_flow": "Vertical 9:16, smooth camera motion. Say in Persian (Farsi): \"فارسی و لب‌خوانی رو چک کن؛ متن تخصصی هم باید بازبینی بشه.\".",
+          "spoken_fa": "فارسی و لب‌خوانی رو چک کن؛ متن تخصصی هم باید بازبینی بشه.",
           "subtitles_rtl": [
             {
               "start": 0.25,
+              "end": 3.9,
+              "text": "بازبینی صدا و لب‌خوانی",
+              "direction": "rtl"
+            },
+            {
+              "start": 4.0,
               "end": 7.65,
-              "text": "هفته‌ای ۱۰ ریلز بدون ضبط 📈",
+              "text": "بدون تضمین تعداد خروجی",
               "direction": "rtl"
             }
           ]
@@ -465,7 +489,7 @@
         {
           "shot_id": "IG10_03_S05",
           "duration_sec": 8,
-          "visual_prompt_flow": "Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text.",
+          "visual_prompt_flow": "Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.",
           "motion_prompt_flow": "Slow push-in. Say in Persian (Farsi): \"«مجری» رو کامنت کن؛ لینک و شرایط خرید رو بگیر.\". Leave space for RTL overlays.",
           "spoken_fa": "«مجری» رو کامنت کن؛ لینک و شرایط خرید رو بگیر.",
           "subtitles_rtl": [
@@ -506,7 +530,7 @@
       "psychological_trigger": "احساس، اشک شوق و میل به دیده شدن در استوری (UGC قابل اشتراک)",
       "hook_duration_sec": 3,
       "hook_timing_status": "script_budget_not_audio_verified",
-      "hook_3s_visual": "A woman opens her phone at a birthday table, hears a song singing HER name 'سارا' in Persian, and bursts into happy tears; balloons in the background. Show the transformation in the FIRST 3 seconds; do not render text in the generated image.",
+      "hook_3s_visual": "A woman opens her phone at a birthday table, hears a song singing HER name 'سارا' in Persian, and bursts into happy tears; balloons in the background. Show the transformation in the FIRST 3 seconds; do not render text in the generated image. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.",
       "hook_3s_spoken_fa": "آهنگ با اسم خودت!",
       "before_after_demo": {
         "before_fa": "سه خط خاطره: «اولین دیدار در کافه، سفر شمال، اسمش سارا است.»",
@@ -550,7 +574,7 @@
         {
           "shot_id": "IG10_04_S01",
           "duration_sec": 8,
-          "visual_prompt_flow": "A woman opens her phone at a birthday table, hears a song singing HER name 'سارا' in Persian, and bursts into happy tears; balloons in the background. Show the transformation in the FIRST 3 seconds; do not render text in the generated image.",
+          "visual_prompt_flow": "A woman opens her phone at a birthday table, hears a song singing HER name 'سارا' in Persian, and bursts into happy tears; balloons in the background. Show the transformation in the FIRST 3 seconds; do not render text in the generated image. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.",
           "motion_prompt_flow": "0–3s: reveal the hook immediately. Say in Persian (Farsi): \"آهنگ با اسم خودت!\". 3–8s: hold on the result; no extra dialogue.",
           "spoken_fa": "آهنگ با اسم خودت!",
           "subtitles_rtl": [
@@ -565,7 +589,7 @@
         {
           "shot_id": "IG10_04_S02",
           "duration_sec": 8,
-          "visual_prompt_flow": "3D Pixar-style animation, soft cinematic lighting, vertical 9:16, warm Iranian everyday setting, expressive faces, shallow depth of field. Flashback: the husband secretly typing three memories into a music AI app at night on the sofa: 'کافه، سفر شمال، سارا'.",
+          "visual_prompt_flow": "3D Pixar-style animation, soft cinematic lighting, vertical 9:16, warm Iranian everyday setting, expressive faces, shallow depth of field. Flashback: the husband secretly typing three memories into a music AI app at night on the sofa: 'کافه، سفر شمال، سارا'. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.",
           "motion_prompt_flow": "Typing close-up, then a glowing music waveform rises from the phone. Husband says in Persian (Farsi): \"فقط سه تا خاطره نوشتم و گفتم یه آهنگ عاشقانه با اسم سارا بساز.\"",
           "spoken_fa": "فقط سه تا خاطره نوشتم و گفتم یه آهنگ عاشقانه با اسم سارا بساز.",
           "subtitles_rtl": [
@@ -580,7 +604,7 @@
         {
           "shot_id": "IG10_04_S03",
           "duration_sec": 8,
-          "visual_prompt_flow": "3D Pixar-style animation, soft cinematic lighting, vertical 9:16, warm Iranian everyday setting, expressive faces, shallow depth of field. A 3D Pixar couple version of Sara and husband meeting in a cozy Tehran cafe, then walking on a misty Caspian beach in the north of Iran.",
+          "visual_prompt_flow": "3D Pixar-style animation, soft cinematic lighting, vertical 9:16, warm Iranian everyday setting, expressive faces, shallow depth of field. A 3D Pixar couple version of Sara and husband meeting in a cozy Tehran cafe, then walking on a misty Caspian beach in the north of Iran. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.",
           "motion_prompt_flow": "Dreamy dolly shot, cherry petals and sea mist, music swells. Persian lyrics are sung (Farsi): \"سارا، تو اون کافه دلم رو بردی...\"",
           "spoken_fa": "سارا، تو اون کافه دلم رو بردی...",
           "subtitles_rtl": [
@@ -595,14 +619,20 @@
         {
           "shot_id": "IG10_04_S04",
           "duration_sec": 8,
-          "visual_prompt_flow": "3D Pixar-style animation, soft cinematic lighting, vertical 9:16, warm Iranian everyday setting, expressive faces, shallow depth of field. Back to the birthday table: Sara hugs her husband; family members film with phones; an Instagram story with the song gets many replies.",
-          "motion_prompt_flow": "Group cheer, confetti falls. Sara says in Persian (Farsi): \"بهترین کادوی عمرم بود! همه فامیل استوری کردن!\"",
-          "spoken_fa": "بهترین کادوی عمرم بود! همه فامیل استوری کردن!",
+          "visual_prompt_flow": "Fictional birthday scene with a short personalized song playing. No customer quotes, views or claimed real family reaction. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.",
+          "motion_prompt_flow": "Vertical 9:16, smooth camera motion. Say in Persian (Farsi): \"این یک نمونه هدیه‌ست؛ قبل انتشار، اجازه و حق استفاده رو چک کن.\".",
+          "spoken_fa": "این یک نمونه هدیه‌ست؛ قبل انتشار، اجازه و حق استفاده رو چک کن.",
           "subtitles_rtl": [
             {
               "start": 0.25,
+              "end": 3.9,
+              "text": "نمونه نمایشی",
+              "direction": "rtl"
+            },
+            {
+              "start": 4.0,
               "end": 7.65,
-              "text": "بهترین کادوی عمرش 🎁",
+              "text": "اجازه انتشار و حق موسیقی",
               "direction": "rtl"
             }
           ]
@@ -610,7 +640,7 @@
         {
           "shot_id": "IG10_04_S05",
           "duration_sec": 8,
-          "visual_prompt_flow": "Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text.",
+          "visual_prompt_flow": "Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.",
           "motion_prompt_flow": "Slow push-in. Say in Persian (Farsi): \"«تولد» رو کامنت کن؛ لینک و شرایط خرید رو بگیر.\". Leave space for RTL overlays.",
           "spoken_fa": "«تولد» رو کامنت کن؛ لینک و شرایط خرید رو بگیر.",
           "subtitles_rtl": [
@@ -651,7 +681,7 @@
       "psychological_trigger": "عشق والدین + ذوق کودک + اشتراک‌گذاری در گروه‌های خانوادگی",
       "hook_duration_sec": 3,
       "hook_timing_status": "script_budget_not_audio_verified",
-      "hook_3s_visual": "A crayon drawing of a purple dinosaur on a fridge suddenly blinks, peels off the paper as a 3D cartoon, and says the child's name; a 6-year-old girl screams with joy. Show the transformation in the FIRST 3 seconds; do not render text in the generated image.",
+      "hook_3s_visual": "A crayon drawing of a purple dinosaur on a fridge suddenly blinks, peels off the paper as a 3D cartoon, and says the child's name; a 6-year-old girl screams with joy. Show the transformation in the FIRST 3 seconds; do not render text in the generated image. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.",
       "hook_3s_spoken_fa": "نقاشی بچه‌ات زنده شد!",
       "before_after_demo": {
         "before_fa": "نقاشی مداد شمعی یک دایناسور بنفش روی کاغذ A4، چسبیده به یخچال.",
@@ -695,7 +725,7 @@
         {
           "shot_id": "IG10_05_S01",
           "duration_sec": 8,
-          "visual_prompt_flow": "A crayon drawing of a purple dinosaur on a fridge suddenly blinks, peels off the paper as a 3D cartoon, and says the child's name; a 6-year-old girl screams with joy. Show the transformation in the FIRST 3 seconds; do not render text in the generated image.",
+          "visual_prompt_flow": "A crayon drawing of a purple dinosaur on a fridge suddenly blinks, peels off the paper as a 3D cartoon, and says the child's name; a 6-year-old girl screams with joy. Show the transformation in the FIRST 3 seconds; do not render text in the generated image. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.",
           "motion_prompt_flow": "0–3s: reveal the hook immediately. Say in Persian (Farsi): \"نقاشی بچه‌ات زنده شد!\". 3–8s: hold on the result; no extra dialogue.",
           "spoken_fa": "نقاشی بچه‌ات زنده شد!",
           "subtitles_rtl": [
@@ -710,7 +740,7 @@
         {
           "shot_id": "IG10_05_S02",
           "duration_sec": 8,
-          "visual_prompt_flow": "Over-the-shoulder: a mother's phone photographs the crayon drawing; the photo is uploaded into Google Gemini with a Persian prompt.",
+          "visual_prompt_flow": "Over-the-shoulder: a mother's phone photographs the crayon drawing; the photo is uploaded into Google Gemini with a Persian prompt. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.",
           "motion_prompt_flow": "Photo slides into the app, sparkles. Mother says in Persian (Farsi): \"از نقاشی عکس گرفتم و به جمنای گفتم همین رو سه‌بعدی کن، دقیقاً با همین رنگ‌ها.\"",
           "spoken_fa": "از نقاشی عکس گرفتم و به Gemini گفتم همین رو سه‌بعدی کن، دقیقاً با همین رنگ‌ها.",
           "subtitles_rtl": [
@@ -731,7 +761,7 @@
         {
           "shot_id": "IG10_05_S03",
           "duration_sec": 8,
-          "visual_prompt_flow": "3D Pixar-style animation, soft cinematic lighting, vertical 9:16, warm Iranian everyday setting, expressive faces, shallow depth of field. The purple 3D dinosaur (same shape as the crayon drawing, chunky legs, uneven spikes) walks through a colorful paper-craft forest.",
+          "visual_prompt_flow": "3D Pixar-style animation, soft cinematic lighting, vertical 9:16, warm Iranian everyday setting, expressive faces, shallow depth of field. The purple 3D dinosaur (same shape as the crayon drawing, chunky legs, uneven spikes) walks through a colorful paper-craft forest. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.",
           "motion_prompt_flow": "Bouncy walk cycle, camera tracks alongside. Dinosaur says in Persian (Farsi) with a cute voice: \"سلام نیلا! بیا با هم بازی کنیم!\"",
           "spoken_fa": "سلام نیلا! بیا با هم بازی کنیم!",
           "subtitles_rtl": [
@@ -746,14 +776,20 @@
         {
           "shot_id": "IG10_05_S04",
           "duration_sec": 8,
-          "visual_prompt_flow": "3D Pixar-style animation, soft cinematic lighting, vertical 9:16, warm Iranian everyday setting, expressive faces, shallow depth of field. A primary-school classroom: a kind female teacher projects students' drawings turned into talking 3D cartoons; kids cheer; a quiz game screen follows.",
-          "motion_prompt_flow": "Kids jump and raise hands. Teacher says in Persian (Farsi): \"نقاشی همه بچه‌ها رو کارتون کردم و باهاش مسابقه کلاسی ساختم!\"",
-          "spoken_fa": "نقاشی همه بچه‌ها رو کارتون کردم و باهاش مسابقه کلاسی ساختم!",
+          "visual_prompt_flow": "Teacher previews an animation of a fictional drawing with parental permission; no real child photo or named pupil. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.",
+          "motion_prompt_flow": "Vertical 9:16, smooth camera motion. Say in Persian (Farsi): \"برای کلاس هم میشه نمونه ساخت؛ با اجازه والدین و بدون اطلاعات کودک.\".",
+          "spoken_fa": "برای کلاس هم میشه نمونه ساخت؛ با اجازه والدین و بدون اطلاعات کودک.",
           "subtitles_rtl": [
             {
               "start": 0.25,
+              "end": 3.9,
+              "text": "اجازه والدین",
+              "direction": "rtl"
+            },
+            {
+              "start": 4.0,
               "end": 7.65,
-              "text": "معلم‌ها هم عاشقش شدن 👩‍🏫",
+              "text": "بدون اطلاعات شخصی کودک",
               "direction": "rtl"
             }
           ]
@@ -761,7 +797,7 @@
         {
           "shot_id": "IG10_05_S05",
           "duration_sec": 8,
-          "visual_prompt_flow": "Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text.",
+          "visual_prompt_flow": "Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.",
           "motion_prompt_flow": "Slow push-in. Say in Persian (Farsi): \"«نقاشی» رو کامنت کن؛ لینک و شرایط خرید رو بگیر.\". Leave space for RTL overlays.",
           "spoken_fa": "«نقاشی» رو کامنت کن؛ لینک و شرایط خرید رو بگیر.",
           "subtitles_rtl": [
@@ -802,7 +838,7 @@
       "psychological_trigger": "استرس ددلاین + رهایی فوری + «کاش زودتر می‌دونستم»",
       "hook_duration_sec": 3,
       "hook_timing_status": "script_budget_not_audio_verified",
-      "hook_3s_visual": "11:58 PM, a 3D student character gets a Telegram message from the professor 'فردا ساعت ۸ ارائه ۲۰ اسلایدی' — his soul literally leaves his body; then a clock spins and a finished slide deck flies out of the laptop. Show the transformation in the FIRST 3 seconds; do not render text in the generated image.",
+      "hook_3s_visual": "11:58 PM, a 3D student character gets a Telegram message from the professor 'فردا ساعت ۸ ارائه ۲۰ اسلایدی' — his soul literally leaves his body; then a clock spins and a finished slide deck flies out of the laptop. Show the transformation in the FIRST 3 seconds; do not render text in the generated image. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.",
       "hook_3s_spoken_fa": "فردا ارائه داری؟",
       "before_after_demo": {
         "before_fa": "صفحه سفید پاورپوینت و یک فایل صوتی ۹۰ دقیقه‌ای ضبط‌شده از کلاس.",
@@ -855,7 +891,7 @@
         {
           "shot_id": "IG10_06_S01",
           "duration_sec": 8,
-          "visual_prompt_flow": "11:58 PM, a 3D student character gets a Telegram message from the professor 'فردا ساعت ۸ ارائه ۲۰ اسلایدی' — his soul literally leaves his body; then a clock spins and a finished slide deck flies out of the laptop. Show the transformation in the FIRST 3 seconds; do not render text in the generated image.",
+          "visual_prompt_flow": "11:58 PM, a 3D student character gets a Telegram message from the professor 'فردا ساعت ۸ ارائه ۲۰ اسلایدی' — his soul literally leaves his body; then a clock spins and a finished slide deck flies out of the laptop. Show the transformation in the FIRST 3 seconds; do not render text in the generated image. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.",
           "motion_prompt_flow": "0–3s: reveal the hook immediately. Say in Persian (Farsi): \"فردا ارائه داری؟\". 3–8s: hold on the result; no extra dialogue.",
           "spoken_fa": "فردا ارائه داری؟",
           "subtitles_rtl": [
@@ -870,14 +906,20 @@
         {
           "shot_id": "IG10_06_S02",
           "duration_sec": 8,
-          "visual_prompt_flow": "3D Pixar-style animation, soft cinematic lighting, vertical 9:16, warm Iranian everyday setting, expressive faces, shallow depth of field. The student drags a 90-minute class audio recording into an AI note-taker app; a one-page Persian summary appears instantly.",
-          "motion_prompt_flow": "Audio waveform compresses into a neat glowing page. Student says in Persian (Farsi): \"صدای کلاس رو دادم به پلاد، یه دقیقه‌ای خلاصه‌ش کرد.\"",
-          "spoken_fa": "صدای کلاس رو دادم به PLAUD، یه دقیقه‌ای خلاصه‌ش کرد.",
+          "visual_prompt_flow": "Student opens permitted class text and manually checks a short outline. Audio transcription tools optional, not required for slides. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.",
+          "motion_prompt_flow": "Vertical 9:16, smooth camera motion. Say in Persian (Farsi): \"از متن مجاز درس شروع کن؛ اول نکته‌های اصلی رو مشخص کن.\".",
+          "spoken_fa": "از متن مجاز درس شروع کن؛ اول نکته‌های اصلی رو مشخص کن.",
           "subtitles_rtl": [
             {
               "start": 0.25,
+              "end": 3.9,
+              "text": "متن مجاز درس",
+              "direction": "rtl"
+            },
+            {
+              "start": 4.0,
               "end": 7.65,
-              "text": "۹۰ دقیقه کلاس ← ۱ صفحه خلاصه 📝",
+              "text": "خلاصه قابل بازبینی",
               "direction": "rtl"
             }
           ]
@@ -885,7 +927,7 @@
         {
           "shot_id": "IG10_06_S03",
           "duration_sec": 8,
-          "visual_prompt_flow": "Laptop close-up: the summary is pasted into Claude/ChatGPT to make an outline, then into Gamma AI; 20 beautiful slides with charts generate one after another.",
+          "visual_prompt_flow": "Laptop close-up: the summary is pasted into Claude/ChatGPT to make an outline, then into Gamma AI; 20 beautiful slides with charts generate one after another. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.",
           "motion_prompt_flow": "Slides cascade like cards, timer in corner reads 02:47. Narrator says in Persian (Farsi): \"خلاصه رو دادم به هوش مصنوعی، گاما بیست تا اسلاید شیک ساخت.\"",
           "spoken_fa": "خلاصه رو دادم به هوش مصنوعی، Gamma بیست تا اسلاید شیک ساخت.",
           "subtitles_rtl": [
@@ -900,7 +942,7 @@
         {
           "shot_id": "IG10_06_S04",
           "duration_sec": 8,
-          "visual_prompt_flow": "Vertical 9:16. Student checks a draft slide against class notes, corrects one factual error and saves locally. No grade or approval claim.",
+          "visual_prompt_flow": "Vertical 9:16. Student checks a draft slide against class notes, corrects one factual error and saves locally. No grade or approval claim. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.",
           "motion_prompt_flow": "Close-up on review. Say in Persian: \"این فقط پیش‌نویسه؛ منبع و متنش رو خودت چک کن.\"",
           "spoken_fa": "این فقط پیش‌نویسه؛ منبع و متنش رو خودت چک کن.",
           "subtitles_rtl": [
@@ -921,7 +963,7 @@
         {
           "shot_id": "IG10_06_S05",
           "duration_sec": 8,
-          "visual_prompt_flow": "Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text.",
+          "visual_prompt_flow": "Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.",
           "motion_prompt_flow": "Slow push-in. Say in Persian (Farsi): \"«اسلاید» رو کامنت کن؛ لینک و شرایط خرید رو بگیر.\". Leave space for RTL overlays.",
           "spoken_fa": "«اسلاید» رو کامنت کن؛ لینک و شرایط خرید رو بگیر.",
           "subtitles_rtl": [
@@ -962,7 +1004,7 @@
       "psychological_trigger": "امید به درآمد + «من هم می‌تونم» + کار از خانه",
       "hook_duration_sec": 3,
       "hook_timing_status": "script_budget_not_audio_verified",
-      "hook_3s_visual": "Vertical 9:16. Young adult shows a before/after cafe post portfolio on an ordinary laptop. No bank SMS, client testimonial or payment proof.",
+      "hook_3s_visual": "Vertical 9:16. Young adult shows a before/after cafe post portfolio on an ordinary laptop. No bank SMS, client testimonial or payment proof. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.",
       "hook_3s_spoken_fa": "اولین نمونه‌کارت رو بساز!",
       "before_after_demo": {
         "before_fa": "عکس تار و بی‌کیفیت محصول یک کافه + ویدیوی خام لرزان از گوشی صاحب کافه.",
@@ -1006,7 +1048,7 @@
         {
           "shot_id": "IG10_07_S01",
           "duration_sec": 8,
-          "visual_prompt_flow": "Vertical 9:16. Young adult shows a before/after cafe post portfolio on an ordinary laptop. No bank SMS, client testimonial or payment proof.",
+          "visual_prompt_flow": "Vertical 9:16. Young adult shows a before/after cafe post portfolio on an ordinary laptop. No bank SMS, client testimonial or payment proof. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.",
           "motion_prompt_flow": "Immediate portfolio reveal. Say in Persian: \"اولین نمونه‌کارت رو بساز!\".",
           "spoken_fa": "اولین نمونه‌کارت رو بساز!",
           "subtitles_rtl": [
@@ -1021,20 +1063,20 @@
         {
           "shot_id": "IG10_07_S02",
           "duration_sec": 8,
-          "visual_prompt_flow": "Phone screen: a blurry low-res cafe product photo is upscaled by Magnific AI into a crisp 4K image, then background removed in Picsart with one tap.",
-          "motion_prompt_flow": "Blur-to-sharp wipe transition, sparkle. Character says in Persian (Farsi): \"عکس تار مشتری رو با مگنیفیک فورکی کردم، با پیکس‌آرت پس‌زمینه‌ش رو برداشتم.\"",
-          "spoken_fa": "عکس تار مشتری رو با Magnific فورکی کردم، با Picsart پس‌زمینه‌ش رو برداشتم.",
+          "visual_prompt_flow": "Freelancer creates a simple cafe cover in Canva using an authorized photo; no required upscaling subscription or 4K claim. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.",
+          "motion_prompt_flow": "Vertical 9:16, smooth camera motion. Say in Persian (Farsi): \"با عکس مجاز و یک قالب ساده شروع کن؛ ابزارهای بیشتر اختیاری‌ان.\".",
+          "spoken_fa": "با عکس مجاز و یک قالب ساده شروع کن؛ ابزارهای بیشتر اختیاری‌ان.",
           "subtitles_rtl": [
             {
               "start": 0.25,
               "end": 3.9,
-              "text": "۱. کیفیت 4K با Magnific 🔍",
+              "text": "شروع با Canva",
               "direction": "rtl"
             },
             {
               "start": 4.0,
               "end": 7.65,
-              "text": "۲. حذف پس‌زمینه با Picsart",
+              "text": "ابزارهای بیشتر اختیاری",
               "direction": "rtl"
             }
           ]
@@ -1042,7 +1084,7 @@
         {
           "shot_id": "IG10_07_S03",
           "duration_sec": 8,
-          "visual_prompt_flow": "Vertical 9:16. Show a cafe cover designed in Canva, then a timeline with manually added Persian subtitles. Use real screen capture in editing.",
+          "visual_prompt_flow": "Vertical 9:16. Show a cafe cover designed in Canva, then a timeline with manually added Persian subtitles. Use real screen capture in editing. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.",
           "motion_prompt_flow": "Swipe between cover and timeline. Say in Persian: \"کاور رو طراحی کن؛ متن فارسی رو دستی اضافه و بازبینی کن.\"",
           "spoken_fa": "کاور رو طراحی کن؛ متن فارسی رو دستی اضافه و بازبینی کن.",
           "subtitles_rtl": [
@@ -1063,7 +1105,7 @@
         {
           "shot_id": "IG10_07_S04",
           "duration_sec": 8,
-          "visual_prompt_flow": "Vertical 9:16. A freelancer sends a clearly labelled sample portfolio to a cafe owner; owner considers it, no hiring, handshake or money.",
+          "visual_prompt_flow": "Vertical 9:16. A freelancer sends a clearly labelled sample portfolio to a cafe owner; owner considers it, no hiring, handshake or money. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.",
           "motion_prompt_flow": "Show the sample. Say in Persian: \"نمونه‌کارت رو پیشنهاد بده؛ گرفتن سفارش تضمینی نیست.\"",
           "spoken_fa": "نمونه‌کارت رو پیشنهاد بده؛ گرفتن سفارش تضمینی نیست.",
           "subtitles_rtl": [
@@ -1084,7 +1126,7 @@
         {
           "shot_id": "IG10_07_S05",
           "duration_sec": 8,
-          "visual_prompt_flow": "Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text.",
+          "visual_prompt_flow": "Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.",
           "motion_prompt_flow": "Slow push-in. Say in Persian (Farsi): \"«درآمد» رو کامنت کن؛ لینک و شرایط خرید رو بگیر.\". Leave space for RTL overlays.",
           "spoken_fa": "«درآمد» رو کامنت کن؛ لینک و شرایط خرید رو بگیر.",
           "subtitles_rtl": [
@@ -1125,7 +1167,7 @@
       "psychological_trigger": "ضرر نکردن (loss aversion) + اعتماد (اینماد) + سبک شدن پرداخت با قسط",
       "hook_duration_sec": 3,
       "hook_timing_status": "script_budget_not_audio_verified",
-      "hook_3s_visual": "A 3D character's wallet screams and runs away as a receipt keeps printing extra lines: '$20', '+ مالیات', '+ کارمزد کارت مجازی', '+ نرخ دلار امروز'… The receipt grows longer than the room. Show the transformation in the FIRST 3 seconds; do not render text in the generated image.",
+      "hook_3s_visual": "A 3D character's wallet screams and runs away as a receipt keeps printing extra lines: '$20', '+ مالیات', '+ کارمزد کارت مجازی', '+ نرخ دلار امروز'… The receipt grows longer than the room. Show the transformation in the FIRST 3 seconds; do not render text in the generated image. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.",
       "hook_3s_spoken_fa": "قیمت نهایی چقدر میشه؟",
       "before_after_demo": {
         "before_fa": "قبل پرداخت: قیمت نهایی و شرایط پلن نامشخص؛ هیچ مقایسه دلاری یا مالیاتی بدون فاکتور همسان منتشر نشود.",
@@ -1169,7 +1211,7 @@
         {
           "shot_id": "IG10_08_S01",
           "duration_sec": 8,
-          "visual_prompt_flow": "A 3D character's wallet screams and runs away as a receipt keeps printing extra lines: '$20', '+ مالیات', '+ کارمزد کارت مجازی', '+ نرخ دلار امروز'… The receipt grows longer than the room. Show the transformation in the FIRST 3 seconds; do not render text in the generated image.",
+          "visual_prompt_flow": "A 3D character's wallet screams and runs away as a receipt keeps printing extra lines: '$20', '+ مالیات', '+ کارمزد کارت مجازی', '+ نرخ دلار امروز'… The receipt grows longer than the room. Show the transformation in the FIRST 3 seconds; do not render text in the generated image. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.",
           "motion_prompt_flow": "0–3s: reveal the hook immediately. Say in Persian (Farsi): \"قیمت نهایی چقدر میشه؟\". 3–8s: hold on the result; no extra dialogue.",
           "spoken_fa": "قیمت نهایی چقدر میشه؟",
           "subtitles_rtl": [
@@ -1184,20 +1226,20 @@
         {
           "shot_id": "IG10_08_S02",
           "duration_sec": 8,
-          "visual_prompt_flow": "3D Pixar-style animation, soft cinematic lighting, vertical 9:16, warm Iranian everyday setting, expressive faces, shallow depth of field. The same man in a dark alley-like Telegram chat world talking to a shady hooded seller with no name; a 'Blocked' stamp hits his virtual card.",
-          "motion_prompt_flow": "Spooky lighting, the seller vanishes in smoke. Character says in Persian (Farsi): \"ویزاکارت هم بلاک شد، فروشنده تلگرامی هم غیب شد!\"",
-          "spoken_fa": "ویزاکارت هم بلاک شد، فروشنده تلگرامی هم غیب شد!",
+          "visual_prompt_flow": "Customer compares two identical subscription durations and plan features before viewing the final total; no fabricated fraud scene. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.",
+          "motion_prompt_flow": "Vertical 9:16, smooth camera motion. Say in Persian (Farsi): \"فقط قیمت رو نبین؛ مدت اشتراک و امکانات پلن رو هم مقایسه کن.\".",
+          "spoken_fa": "فقط قیمت رو نبین؛ مدت اشتراک و امکانات پلن رو هم مقایسه کن.",
           "subtitles_rtl": [
             {
               "start": 0.25,
               "end": 3.9,
-              "text": "کارت مجازی بلاک ❌",
+              "text": "مقایسه پلن همسان",
               "direction": "rtl"
             },
             {
               "start": 4.0,
               "end": 7.65,
-              "text": "فروشنده ناشناس 👻",
+              "text": "مدت و امکانات",
               "direction": "rtl"
             }
           ]
@@ -1205,26 +1247,20 @@
         {
           "shot_id": "IG10_08_S03",
           "duration_sec": 8,
-          "visual_prompt_flow": "3D Pixar-style animation, soft cinematic lighting, vertical 9:16, warm Iranian everyday setting, expressive faces, shallow depth of field. A bright clean shop interior: a friendly 3D KelidBox mascot shows a big screen with the product's Toman price, the Enamad trust seal glowing, and a button '۴ قسط طبق شرایط درگاه'.",
-          "motion_prompt_flow": "Mascot taps the screen; the long receipt shrinks into four small equal coins. Mascot says in Persian (Farsi): \"تو کلیدباکس قیمت تومانیه، با نماد اینماد، و می‌تونی چهار قسطه بدی.\"",
-          "spoken_fa": "تو کلیدباکس قیمت تومانیه، با نماد اینماد، و می‌تونی چهار قسطه بدی.",
+          "visual_prompt_flow": "Insert a REAL product-page screen recording and the real store trust-verification path in editing. Never generate an Enamad seal. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.",
+          "motion_prompt_flow": "Vertical 9:16, smooth camera motion. Say in Persian (Farsi): \"اطلاعات فروشگاه و شرایط قسط رو از مسیر واقعی سایت بررسی کن.\".",
+          "spoken_fa": "اطلاعات فروشگاه و شرایط قسط رو از مسیر واقعی سایت بررسی کن.",
           "subtitles_rtl": [
             {
               "start": 0.25,
-              "end": 2.65,
-              "text": "قیمت تومانی شفاف ✅",
+              "end": 3.9,
+              "text": "بررسی فروشگاه",
               "direction": "rtl"
             },
             {
-              "start": 2.75,
-              "end": 5.15,
-              "text": "نماد اینماد 🛡️",
-              "direction": "rtl"
-            },
-            {
-              "start": 5.25,
+              "start": 4.0,
               "end": 7.65,
-              "text": "۴ قسط طبق شرایط درگاه 💳",
+              "text": "قسط طبق شرایط اعتبار",
               "direction": "rtl"
             }
           ]
@@ -1232,7 +1268,7 @@
         {
           "shot_id": "IG10_08_S04",
           "duration_sec": 8,
-          "visual_prompt_flow": "Vertical 9:16. Real checkout screen recording added in editing: chosen plan, WELCOME10 field and final total. No synthetic successful order.",
+          "visual_prompt_flow": "Vertical 9:16. Real checkout screen recording added in editing: chosen plan, WELCOME10 field and final total. No synthetic successful order. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.",
           "motion_prompt_flow": "Pause on terms. Say in Persian: \"تخفیف سقف داره؛ مبلغ نهایی و شرایط قسط رو چک کن.\"",
           "spoken_fa": "تخفیف سقف داره؛ مبلغ نهایی و شرایط قسط رو چک کن.",
           "subtitles_rtl": [
@@ -1253,7 +1289,7 @@
         {
           "shot_id": "IG10_08_S05",
           "duration_sec": 8,
-          "visual_prompt_flow": "Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text.",
+          "visual_prompt_flow": "Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.",
           "motion_prompt_flow": "Slow push-in. Say in Persian (Farsi): \"«قیمت» رو کامنت کن؛ لینک و شرایط خرید رو بگیر.\". Leave space for RTL overlays.",
           "spoken_fa": "«قیمت» رو کامنت کن؛ لینک و شرایط خرید رو بگیر.",
           "subtitles_rtl": [
@@ -1294,7 +1330,7 @@
       "psychological_trigger": "کمدی خانوادگی آشنا (relatable) + آرامش خانه",
       "hook_duration_sec": 3,
       "hook_timing_status": "script_budget_not_audio_verified",
-      "hook_3s_visual": "A 3D toddler watching a cartoon on a tablet; an ad pops up, the toddler's face turns red and he transforms into a tiny screaming volcano while the dad dives across the room to hit 'Skip'. Show the transformation in the FIRST 3 seconds; do not render text in the generated image.",
+      "hook_3s_visual": "A 3D toddler watching a cartoon on a tablet; an ad pops up, the toddler's face turns red and he transforms into a tiny screaming volcano while the dad dives across the room to hit 'Skip'. Show the transformation in the FIRST 3 seconds; do not render text in the generated image. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.",
       "hook_3s_spoken_fa": "باز وسط کارتون تبلیغ؟",
       "before_after_demo": {
         "before_fa": "تبلیغات میان ویدیوهای یوتیوب؛ قابلیت‌ها و محدودیت‌های هر سرویس را جداگانه بررسی کن.",
@@ -1347,7 +1383,7 @@
         {
           "shot_id": "IG10_09_S01",
           "duration_sec": 8,
-          "visual_prompt_flow": "A 3D toddler watching a cartoon on a tablet; an ad pops up, the toddler's face turns red and he transforms into a tiny screaming volcano while the dad dives across the room to hit 'Skip'. Show the transformation in the FIRST 3 seconds; do not render text in the generated image.",
+          "visual_prompt_flow": "A 3D toddler watching a cartoon on a tablet; an ad pops up, the toddler's face turns red and he transforms into a tiny screaming volcano while the dad dives across the room to hit 'Skip'. Show the transformation in the FIRST 3 seconds; do not render text in the generated image. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.",
           "motion_prompt_flow": "0–3s: reveal the hook immediately. Say in Persian (Farsi): \"باز وسط کارتون تبلیغ؟\". 3–8s: hold on the result; no extra dialogue.",
           "spoken_fa": "باز وسط کارتون تبلیغ؟",
           "subtitles_rtl": [
@@ -1362,7 +1398,7 @@
         {
           "shot_id": "IG10_09_S02",
           "duration_sec": 8,
-          "visual_prompt_flow": "Vertical 9:16. Adult commuter watching an ordinary YouTube video; an ad interrupts. Not a Spotify lock-screen example.",
+          "visual_prompt_flow": "Vertical 9:16. Adult commuter watching an ordinary YouTube video; an ad interrupts. Not a Spotify lock-screen example. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.",
           "motion_prompt_flow": "Commuter pauses. Say in Persian: \"وسط آموزش، دوباره تبلیغ اومد.\"",
           "spoken_fa": "وسط آموزش، دوباره تبلیغ اومد.",
           "subtitles_rtl": [
@@ -1377,7 +1413,7 @@
         {
           "shot_id": "IG10_09_S03",
           "duration_sec": 8,
-          "visual_prompt_flow": "3D Pixar-style animation, soft cinematic lighting, vertical 9:16, warm Iranian everyday setting, expressive faces, shallow depth of field. Magical transition: a glowing 'Premium' key turns in the tablet; the toddler watches a cartoon peacefully with no ads, then the same cartoon downloaded offline in a car on a road trip.",
+          "visual_prompt_flow": "3D Pixar-style animation, soft cinematic lighting, vertical 9:16, warm Iranian everyday setting, expressive faces, shallow depth of field. Magical transition: a glowing 'Premium' key turns in the tablet; the toddler watches a cartoon peacefully with no ads, then the same cartoon downloaded offline in a car on a road trip. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.",
           "motion_prompt_flow": "Golden key turns, ads shatter like glass, calm music. Narrator says in Persian (Farsi): \"با یوتیوب پریمیوم: بدون تبلیغ، پخش در پس‌زمینه، دانلود برای سفر.\"",
           "spoken_fa": "با YouTube Premium: بدون تبلیغ، پخش در پس‌زمینه، دانلود برای سفر.",
           "subtitles_rtl": [
@@ -1398,7 +1434,7 @@
         {
           "shot_id": "IG10_09_S04",
           "duration_sec": 8,
-          "visual_prompt_flow": "Vertical 9:16. Family selects a viewing service after reading plan and device limits; no guaranteed 4K on every device.",
+          "visual_prompt_flow": "Vertical 9:16. Family selects a viewing service after reading plan and device limits; no guaranteed 4K on every device. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.",
           "motion_prompt_flow": "Warm family scene. Say in Persian: \"کیفیت و دانلود به سرویس، دستگاه و پلن بستگی داره.\"",
           "spoken_fa": "کیفیت و دانلود به سرویس، دستگاه و پلن بستگی داره.",
           "subtitles_rtl": [
@@ -1413,7 +1449,7 @@
         {
           "shot_id": "IG10_09_S05",
           "duration_sec": 8,
-          "visual_prompt_flow": "Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text.",
+          "visual_prompt_flow": "Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.",
           "motion_prompt_flow": "Slow push-in. Say in Persian (Farsi): \"«بدون تبلیغ» رو کامنت کن؛ لینک و شرایط خرید رو بگیر.\". Leave space for RTL overlays.",
           "spoken_fa": "«بدون تبلیغ» رو کامنت کن؛ لینک و شرایط خرید رو بگیر.",
           "subtitles_rtl": [
@@ -1454,7 +1490,7 @@
       "psychological_trigger": "هویت گیمری + ترس از کلاهبرداری + «الان می‌تونم بخرم» با قسط",
       "hook_duration_sec": 3,
       "hook_timing_status": "script_budget_not_audio_verified",
-      "hook_3s_visual": "A 3D teen gamer about to buy CP from a shady hooded figure in a neon alley; a giant cartoon hat (کلاه) slowly lowers onto his head from the sky — he freezes. Show the transformation in the FIRST 3 seconds; do not render text in the generated image.",
+      "hook_3s_visual": "A 3D teen gamer about to buy CP from a shady hooded figure in a neon alley; a giant cartoon hat (کلاه) slowly lowers onto his head from the sky — he freezes. Show the transformation in the FIRST 3 seconds; do not render text in the generated image. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.",
       "hook_3s_spoken_fa": "قبل خرید، ریجن رو چک کن!",
       "before_after_demo": {
         "before_fa": "پیام فروشنده تلگرامی: «اول کارت به کارت کن، بعد شارژ می‌کنم» → بلاک شدن و پول از دست رفته.",
@@ -1525,7 +1561,7 @@
         {
           "shot_id": "IG10_10_S01",
           "duration_sec": 8,
-          "visual_prompt_flow": "A 3D teen gamer about to buy CP from a shady hooded figure in a neon alley; a giant cartoon hat (کلاه) slowly lowers onto his head from the sky — he freezes. Show the transformation in the FIRST 3 seconds; do not render text in the generated image.",
+          "visual_prompt_flow": "A 3D teen gamer about to buy CP from a shady hooded figure in a neon alley; a giant cartoon hat (کلاه) slowly lowers onto his head from the sky — he freezes. Show the transformation in the FIRST 3 seconds; do not render text in the generated image. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.",
           "motion_prompt_flow": "0–3s: reveal the hook immediately. Say in Persian (Farsi): \"قبل خرید، ریجن رو چک کن!\". 3–8s: hold on the result; no extra dialogue.",
           "spoken_fa": "قبل خرید، ریجن رو چک کن!",
           "subtitles_rtl": [
@@ -1540,20 +1576,20 @@
         {
           "shot_id": "IG10_10_S02",
           "duration_sec": 8,
-          "visual_prompt_flow": "3D Pixar-style animation, soft cinematic lighting, vertical 9:16, warm Iranian everyday setting, expressive faces, shallow depth of field. The gamer in his room staring at a Valorant skin store and a Steam game page; his piggy bank is cracked and nearly empty; ping meter shows 180ms in red.",
-          "motion_prompt_flow": "Piggy bank coughs a single coin, ping meter blinks red. Gamer says in Persian (Farsi): \"پولم هم به اسکین جدید نمی‌رسه، پینگمم صد و هشتاده!\"",
-          "spoken_fa": "پولم هم به اسکین جدید نمی‌رسه، پینگم هم صد و هشتاده!",
+          "visual_prompt_flow": "Adult gamer checks Global edition and Activision account compatibility; no empty piggy bank, borrowing pressure or ping meter. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.",
+          "motion_prompt_flow": "Vertical 9:16, smooth camera motion. Say in Persian (Farsi): \"قبل پرداخت، مطمئن شو محصول با نسخه بازی و حسابت سازگاره.\".",
+          "spoken_fa": "قبل پرداخت، مطمئن شو محصول با نسخه بازی و حسابت سازگاره.",
           "subtitles_rtl": [
             {
               "start": 0.25,
               "end": 3.9,
-              "text": "پول نمی‌رسه 💸",
+              "text": "تطبیق نسخه و حساب",
               "direction": "rtl"
             },
             {
               "start": 4.0,
               "end": 7.65,
-              "text": "پینگ ۱۸۰ 🐢",
+              "text": "خرید آگاهانه",
               "direction": "rtl"
             }
           ]
@@ -1561,7 +1597,7 @@
         {
           "shot_id": "IG10_10_S03",
           "duration_sec": 8,
-          "visual_prompt_flow": "Vertical 9:16. Adult gamer and parent inspect a real product page for Global COD Mobile CP; no fabricated trust badge.",
+          "visual_prompt_flow": "Vertical 9:16. Adult gamer and parent inspect a real product page for Global COD Mobile CP; no fabricated trust badge. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.",
           "motion_prompt_flow": "Focus on region label. Say in Persian: \"نسخه و ریجن رو تطبیق بده؛ بعد شرایط خرید رو بخون.\"",
           "spoken_fa": "نسخه و ریجن رو تطبیق بده؛ بعد شرایط خرید رو بخون.",
           "subtitles_rtl": [
@@ -1582,7 +1618,7 @@
         {
           "shot_id": "IG10_10_S04",
           "duration_sec": 8,
-          "visual_prompt_flow": "Vertical 9:16. Adult gamer checks item details before buying. No ping meter, victory or performance claim.",
+          "visual_prompt_flow": "Vertical 9:16. Adult gamer checks item details before buying. No ping meter, victory or performance claim. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.",
           "motion_prompt_flow": "Calm comparison shot. Say in Persian: \"خرید آیتم، برد یا پینگ بهتر رو تضمین نمی‌کنه.\"",
           "spoken_fa": "خرید آیتم، برد یا پینگ بهتر رو تضمین نمی‌کنه.",
           "subtitles_rtl": [
@@ -1597,7 +1633,7 @@
         {
           "shot_id": "IG10_10_S05",
           "duration_sec": 8,
-          "visual_prompt_flow": "Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text.",
+          "visual_prompt_flow": "Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.",
           "motion_prompt_flow": "Slow push-in. Say in Persian (Farsi): \"«گیم» رو کامنت کن؛ لینک و شرایط خرید رو بگیر.\". Leave space for RTL overlays.",
           "spoken_fa": "«گیم» رو کامنت کن؛ لینک و شرایط خرید رو بگیر.",
           "subtitles_rtl": [

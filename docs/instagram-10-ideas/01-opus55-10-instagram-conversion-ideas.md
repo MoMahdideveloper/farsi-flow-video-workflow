@@ -43,7 +43,7 @@ Spoken copy needs a native-Farsi timing pass. Add Persian UI text/subtitles in e
 - **Pain:** عکاسی صنعتی و مدل و آتلیه برای هر محصول چند میلیون خرج دارد؛ عکس‌های ساده موبایلی دیده نمی‌شوند و رقیب‌ها با ویدیوهای شیک فروش را می‌برند.
 
 ### (b) 3-second information-gap hook
-- **Visual:** Split screen: left a dull, badly lit phone photo of a sneaker on a shop counter; right the SAME sneaker exploding into a glossy cinematic 3D ad with gold light rays. A red stamp reads 'هزینه آتلیه: ۰ تومان'. Show the transformation in the FIRST 3 seconds; do not render text in the generated image.
+- **Visual:** Split screen: left a dull, badly lit phone photo of a sneaker on a shop counter; right the SAME sneaker exploding into a glossy cinematic 3D ad with gold light rays. A red stamp reads 'هزینه آتلیه: ۰ تومان'. Show the transformation in the FIRST 3 seconds; do not render text in the generated image. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.
 - **First spoken line (Farsi):** «این عکس، تبلیغ شد!»
 
 ### (c) Before → After demo (understood in 5 seconds)
@@ -53,16 +53,16 @@ Spoken copy needs a native-Farsi timing pass. Add Persian UI text/subtitles in e
 ### (d) 40-second 5-shot reel script
 | Shot | Sec | Visual | Spoken Farsi | RTL subtitle pills |
 |---|---|---|---|---|
-| 1 | 0–8 | Split screen: left a dull, badly lit phone photo of a sneaker on a shop counter; right the SAME sneaker exploding into a glossy cinematic 3D ad with gold light rays. A red stamp reads 'هزینه آتلیه: ۰ تومان'. Show the transformation in the FIRST 3 seconds; do not render text in the generated image. | این عکس، تبلیغ شد! | این عکس، تبلیغ شد! |
-| 2 | 8–16 | Close-up of the phone screen: the dull sneaker photo is dragged into an AI video app; a glowing 'Image to Video' button. | فقط عکس رو دادم به هوش مصنوعی و نوشتم: تبلیغ لوکس سینمایی. | ۱ عکس + ۱ جمله ✍️ |
-| 3 | 16–24 | Ultra-premium product commercial: the same white sneaker rotates on a glossy black pedestal, water droplets frozen mid-air, golden rim light, slow-motion fabric details, 9:16, photoreal. | (صدای افکت سینمایی) | ۳۰ ثانیه بعد 👇 · تیزر میلیونی بدون آتلیه ✨ |
-| 4 | 24–32 | The boutique owner now smiling, phone buzzing with Instagram notifications and DM bubbles saying 'قیمت؟' and 'سایز ۴۲ دارین؟'. | از دیروز تا حالا چهل تا دایرکت قیمت گرفتم! | دایرکت‌ها ترکید 📩 |
-| 5 | 32–40 | Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text. | «تیزر» رو کامنت کن؛ لینک و شرایط خرید رو بگیر. | کامنت: تیزر · WELCOME10 • ۱۰٪ تا ۱۵۰٬۰۰۰ تومان · حداقل خرید: ۱۰۰٬۰۰۰ تومان · ۴ قسط ترب‌پی / دیجی‌پی؛ طبق شرایط درگاه |
+| 1 | 0–8 | Split screen: left a dull, badly lit phone photo of a sneaker on a shop counter; right the SAME sneaker exploding into a glossy cinematic 3D ad with gold light rays. A red stamp reads 'هزینه آتلیه: ۰ تومان'. Show the transformation in the FIRST 3 seconds; do not render text in the generated image. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials. | این عکس، تبلیغ شد! | این عکس، تبلیغ شد! |
+| 2 | 8–16 | Close-up of the phone screen: the dull sneaker photo is dragged into an AI video app; a glowing 'Image to Video' button. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials. | فقط عکس رو دادم به هوش مصنوعی و نوشتم: تبلیغ لوکس سینمایی. | ۱ عکس + ۱ جمله ✍️ |
+| 3 | 16–24 | The exact same shoe rotates under soft cinematic lighting. No changed product details, sales numbers or time-to-render claim. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials. | این یک نمونه تیزره؛ جزئیات محصول رو با عکس مقایسه کن. | نمونه تیزر · جزئیات محصول را چک کن |
+| 4 | 24–32 | Shop owner compares the source photo with a demo ad on a phone. No customer messages, likes or simulated sales proof. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials. | حالا یک نمونه برای پیجت داری؛ فروش بیشتر تضمینی نیست. | نمونه آماده بازبینی · بدون تضمین فروش |
+| 5 | 32–40 | Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials. | «تیزر» رو کامنت کن؛ لینک و شرایط خرید رو بگیر. | کامنت: تیزر · WELCOME10 • ۱۰٪ تا ۱۵۰٬۰۰۰ تومان · حداقل خرید: ۱۰۰٬۰۰۰ تومان · ۴ قسط ترب‌پی / دیجی‌پی؛ طبق شرایط درگاه |
 
 ### (e) Ready-to-paste Google Flow / Kling prompts
 **Shot 1 — image/keyframe prompt**
 ```text
-Split screen: left a dull, badly lit phone photo of a sneaker on a shop counter; right the SAME sneaker exploding into a glossy cinematic 3D ad with gold light rays. A red stamp reads 'هزینه آتلیه: ۰ تومان'. Show the transformation in the FIRST 3 seconds; do not render text in the generated image.
+Split screen: left a dull, badly lit phone photo of a sneaker on a shop counter; right the SAME sneaker exploding into a glossy cinematic 3D ad with gold light rays. A red stamp reads 'هزینه آتلیه: ۰ تومان'. Show the transformation in the FIRST 3 seconds; do not render text in the generated image. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.
 ```
 **Shot 1 — motion + audio prompt (8s)**
 ```text
@@ -70,7 +70,7 @@ Split screen: left a dull, badly lit phone photo of a sneaker on a shop counter;
 ```
 **Shot 2 — image/keyframe prompt**
 ```text
-3D Pixar-style animation, soft cinematic lighting, vertical 9:16, warm Iranian everyday setting, expressive faces, shallow depth of field. Close-up of the phone screen: the dull sneaker photo is dragged into an AI video app; a glowing 'Image to Video' button.
+3D Pixar-style animation, soft cinematic lighting, vertical 9:16, warm Iranian everyday setting, expressive faces, shallow depth of field. Close-up of the phone screen: the dull sneaker photo is dragged into an AI video app; a glowing 'Image to Video' button. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.
 ```
 **Shot 2 — motion + audio prompt (8s)**
 ```text
@@ -78,23 +78,23 @@ Finger taps the button; the photo ripples like liquid and particles of golden li
 ```
 **Shot 3 — image/keyframe prompt**
 ```text
-Ultra-premium product commercial: the same white sneaker rotates on a glossy black pedestal, water droplets frozen mid-air, golden rim light, slow-motion fabric details, 9:16, photoreal.
+The exact same shoe rotates under soft cinematic lighting. No changed product details, sales numbers or time-to-render claim. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.
 ```
 **Shot 3 — motion + audio prompt (8s)**
 ```text
-Orbiting camera 180 degrees around the sneaker, slow motion, light rays sweep across. No dialogue, dramatic whoosh sound design.
+Vertical 9:16, smooth camera motion. Say in Persian (Farsi): "این یک نمونه تیزره؛ جزئیات محصول رو با عکس مقایسه کن.".
 ```
 **Shot 4 — image/keyframe prompt**
 ```text
-3D Pixar-style animation, soft cinematic lighting, vertical 9:16, warm Iranian everyday setting, expressive faces, shallow depth of field. The boutique owner now smiling, phone buzzing with Instagram notifications and DM bubbles saying 'قیمت؟' and 'سایز ۴۲ دارین؟'.
+Shop owner compares the source photo with a demo ad on a phone. No customer messages, likes or simulated sales proof. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.
 ```
 **Shot 4 — motion + audio prompt (8s)**
 ```text
-Notifications pop rapidly around his head; he laughs and high-fives his teenage daughter. Character says in Persian (Farsi): "از دیروز تا حالا چهل تا دایرکت قیمت گرفتم!"
+Vertical 9:16, smooth camera motion. Say in Persian (Farsi): "حالا یک نمونه برای پیجت داری؛ فروش بیشتر تضمینی نیست.".
 ```
 **Shot 5 — image/keyframe prompt**
 ```text
-Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text.
+Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.
 ```
 **Shot 5 — motion + audio prompt (8s)**
 ```text
@@ -126,7 +126,7 @@ Installment division is arithmetic only, not an approved repayment schedule. Pri
 - **Pain:** فکر می‌کند برای ویو گرفتن باید جلوی دوربین برقصد یا حرف بزند؛ از قضاوت فامیل و همکار می‌ترسد.
 
 ### (b) 3-second information-gap hook
-- **Visual:** The famous Pineapple husband and Strawberry wife from @kelidbox_com freeze mid-argument; the camera pulls back to reveal it's playing on a laptop in a cozy kitchen, a woman's hands (face never shown) typing beside a cup of tea. Show the transformation in the FIRST 3 seconds; do not render text in the generated image.
+- **Visual:** The famous Pineapple husband and Strawberry wife from @kelidbox_com freeze mid-argument; the camera pulls back to reveal it's playing on a laptop in a cozy kitchen, a woman's hands (face never shown) typing beside a cup of tea. Show the transformation in the FIRST 3 seconds; do not render text in the generated image. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.
 - **First spoken line (Farsi):** «این کارتون، بدون دوربینه!»
 
 ### (c) Before → After demo (understood in 5 seconds)
@@ -136,16 +136,16 @@ Installment division is arithmetic only, not an approved repayment schedule. Pri
 ### (d) 40-second 5-shot reel script
 | Shot | Sec | Visual | Spoken Farsi | RTL subtitle pills |
 |---|---|---|---|---|
-| 1 | 0–8 | The famous Pineapple husband and Strawberry wife from @kelidbox_com freeze mid-argument; the camera pulls back to reveal it's playing on a laptop in a cozy kitchen, a woman's hands (face never shown) typing beside a cup of tea. Show the transformation in the FIRST 3 seconds; do not render text in the generated image. | این کارتون، بدون دوربینه! | این کارتون، بدون دوربینه! |
-| 2 | 8–16 | Over-the-shoulder view (no face) of hands typing a Persian story idea into a chat AI on a laptop; the AI replies with a 5-scene script in Persian. | اول ایده‌م رو به چت‌جی‌پی‌تی گفتم، سناریوی پنج صحنه‌ای رو نوشت. | ۱. سناریو با ChatGPT ✍️ |
-| 3 | 16–24 | Screen recording style: a scene prompt pasted into Google Flow; a 3D Pixar pineapple character renders frame by frame from a grey clay draft into full color. | بعد توی گوگل فلو، هر صحنه رو با یک جمله ساختم. | ۲. انیمیشن با Google Flow 🎬 |
-| 4 | 24–32 | The finished strawberry character on screen lip-syncs a Persian line; an audio waveform glows beside it; Instagram view counter climbs rapidly. | صداهای فارسی رو با ElevenLabs ساختم. حالا ویو می‌گیرم، بدون اینکه کسی منو بشناسه. | ۳. صدای فارسی با ElevenLabs 🎙️ |
-| 5 | 32–40 | Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text. | «انیمیشن» رو کامنت کن؛ لینک و شرایط خرید رو بگیر. | کامنت: انیمیشن · WELCOME10 • ۱۰٪ تا ۱۵۰٬۰۰۰ تومان · حداقل خرید: ۱۰۰٬۰۰۰ تومان · ۴ قسط ترب‌پی / دیجی‌پی؛ طبق شرایط درگاه |
+| 1 | 0–8 | The famous Pineapple husband and Strawberry wife from @kelidbox_com freeze mid-argument; the camera pulls back to reveal it's playing on a laptop in a cozy kitchen, a woman's hands (face never shown) typing beside a cup of tea. Show the transformation in the FIRST 3 seconds; do not render text in the generated image. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials. | این کارتون، بدون دوربینه! | این کارتون، بدون دوربینه! |
+| 2 | 8–16 | Over-the-shoulder view (no face) of hands typing a Persian story idea into a chat AI on a laptop; the AI replies with a 5-scene script in Persian. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials. | اول ایده‌م رو به چت‌جی‌پی‌تی گفتم، سناریوی پنج صحنه‌ای رو نوشت. | ۱. سناریو با ChatGPT ✍️ |
+| 3 | 16–24 | Screen recording style: a scene prompt pasted into Google Flow; a 3D Pixar pineapple character renders frame by frame from a grey clay draft into full color. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials. | بعد توی گوگل فلو، هر صحنه رو با یک جمله ساختم. | ۲. انیمیشن با Google Flow 🎬 |
+| 4 | 24–32 | Hands add an optional authorized Persian voice track to an animation. Show waveform, no view counters. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials. | صدا رو با ابزار مجاز اضافه کن؛ کیفیت فارسی رو گوش بده. | صدا با اجازه صاحب آن · بازبینی تلفظ فارسی |
+| 5 | 32–40 | Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials. | «انیمیشن» رو کامنت کن؛ لینک و شرایط خرید رو بگیر. | کامنت: انیمیشن · WELCOME10 • ۱۰٪ تا ۱۵۰٬۰۰۰ تومان · حداقل خرید: ۱۰۰٬۰۰۰ تومان · ۴ قسط ترب‌پی / دیجی‌پی؛ طبق شرایط درگاه |
 
 ### (e) Ready-to-paste Google Flow / Kling prompts
 **Shot 1 — image/keyframe prompt**
 ```text
-The famous Pineapple husband and Strawberry wife from @kelidbox_com freeze mid-argument; the camera pulls back to reveal it's playing on a laptop in a cozy kitchen, a woman's hands (face never shown) typing beside a cup of tea. Show the transformation in the FIRST 3 seconds; do not render text in the generated image.
+The famous Pineapple husband and Strawberry wife from @kelidbox_com freeze mid-argument; the camera pulls back to reveal it's playing on a laptop in a cozy kitchen, a woman's hands (face never shown) typing beside a cup of tea. Show the transformation in the FIRST 3 seconds; do not render text in the generated image. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.
 ```
 **Shot 1 — motion + audio prompt (8s)**
 ```text
@@ -153,7 +153,7 @@ The famous Pineapple husband and Strawberry wife from @kelidbox_com freeze mid-a
 ```
 **Shot 2 — image/keyframe prompt**
 ```text
-Over-the-shoulder view (no face) of hands typing a Persian story idea into a chat AI on a laptop; the AI replies with a 5-scene script in Persian.
+Over-the-shoulder view (no face) of hands typing a Persian story idea into a chat AI on a laptop; the AI replies with a 5-scene script in Persian. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.
 ```
 **Shot 2 — motion + audio prompt (8s)**
 ```text
@@ -161,7 +161,7 @@ Text streams quickly on screen, warm lamp light. Narrator says in Persian (Farsi
 ```
 **Shot 3 — image/keyframe prompt**
 ```text
-Screen recording style: a scene prompt pasted into Google Flow; a 3D Pixar pineapple character renders frame by frame from a grey clay draft into full color.
+Screen recording style: a scene prompt pasted into Google Flow; a 3D Pixar pineapple character renders frame by frame from a grey clay draft into full color. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.
 ```
 **Shot 3 — motion + audio prompt (8s)**
 ```text
@@ -169,15 +169,15 @@ Time-lapse render, progress bar fills, colors bloom. Narrator says in Persian (F
 ```
 **Shot 4 — image/keyframe prompt**
 ```text
-3D Pixar-style animation, soft cinematic lighting, vertical 9:16, warm Iranian everyday setting, expressive faces, shallow depth of field. The finished strawberry character on screen lip-syncs a Persian line; an audio waveform glows beside it; Instagram view counter climbs rapidly.
+Hands add an optional authorized Persian voice track to an animation. Show waveform, no view counters. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.
 ```
 **Shot 4 — motion + audio prompt (8s)**
 ```text
-View counter animates upward, heart icons float. Narrator says in Persian (Farsi): "صداهای فارسی رو با الون‌لبز ساختم. حالا ویو می‌گیرم، بدون اینکه کسی منو بشناسه."
+Vertical 9:16, smooth camera motion. Say in Persian (Farsi): "صدا رو با ابزار مجاز اضافه کن؛ کیفیت فارسی رو گوش بده.".
 ```
 **Shot 5 — image/keyframe prompt**
 ```text
-Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text.
+Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.
 ```
 **Shot 5 — motion + audio prompt (8s)**
 ```text
@@ -209,7 +209,7 @@ Installment division is arithmetic only, not an approved repayment schedule. Pri
 - **Pain:** هر ریلز یعنی یک ساعت ضبط، تپق، نور بد و تدوین؛ در نتیجه پیج ماه‌ها خاک می‌خورد.
 
 ### (b) 3-second information-gap hook
-- **Visual:** A confident presenter in a white doctor's coat speaks to camera; mid-sentence the image glitches and reveals a wireframe avatar — while the real dentist is shown asleep on the clinic couch. Show the transformation in the FIRST 3 seconds; do not render text in the generated image.
+- **Visual:** A confident presenter in a white doctor's coat speaks to camera; mid-sentence the image glitches and reveals a wireframe avatar — while the real dentist is shown asleep on the clinic couch. Show the transformation in the FIRST 3 seconds; do not render text in the generated image. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.
 - **First spoken line (Farsi):** «این مجری، واقعی نیست!»
 
 ### (c) Before → After demo (understood in 5 seconds)
@@ -219,16 +219,16 @@ Installment division is arithmetic only, not an approved repayment schedule. Pri
 ### (d) 40-second 5-shot reel script
 | Shot | Sec | Visual | Spoken Farsi | RTL subtitle pills |
 |---|---|---|---|---|
-| 1 | 0–8 | A confident presenter in a white doctor's coat speaks to camera; mid-sentence the image glitches and reveals a wireframe avatar — while the real dentist is shown asleep on the clinic couch. Show the transformation in the FIRST 3 seconds; do not render text in the generated image. | این مجری، واقعی نیست! | این مجری، واقعی نیست! |
-| 2 | 8–16 | The dentist character, exhausted, surrounded by a ring light, a camera on tripod, and a pile of failed takes labeled 'تپق ۱۲'. | هر ریلز یه ساعت ضبط و تپق... دیگه وقت نداشتم! | ۱ ساعت ضبط برای ۱ ریلز؟ 😮‍💨 |
-| 3 | 16–24 | Clean laptop UI close-up: a 5-line Persian script written by an AI chat, pasted into an avatar video tool; a Persian voice clone waveform appears. | متن رو ChatGPT نوشت، صدای خودم رو یه بار دادم، مجری ساخته شد. | متن ✍️ ← صدا 🎙️ ← مجری 🧑‍⚕️ |
-| 4 | 24–32 | Phone mockup showing three finished branded reels (dentist, lawyer, real-estate agent avatars) with Persian title covers designed in a template editor. | وکیل، مشاور املاک، کوچ... همه می‌تونن هفته‌ای ده تا ریلز داشته باشن. | هفته‌ای ۱۰ ریلز بدون ضبط 📈 |
-| 5 | 32–40 | Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text. | «مجری» رو کامنت کن؛ لینک و شرایط خرید رو بگیر. | کامنت: مجری · WELCOME10 • ۱۰٪ تا ۱۵۰٬۰۰۰ تومان · حداقل خرید: ۱۰۰٬۰۰۰ تومان · ۴ قسط ترب‌پی / دیجی‌پی؛ طبق شرایط درگاه |
+| 1 | 0–8 | A confident presenter in a white doctor's coat speaks to camera; mid-sentence the image glitches and reveals a wireframe avatar — while the real dentist is shown asleep on the clinic couch. Show the transformation in the FIRST 3 seconds; do not render text in the generated image. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials. | این مجری، واقعی نیست! | این مجری، واقعی نیست! |
+| 2 | 8–16 | The dentist character, exhausted, surrounded by a ring light, a camera on tripod, and a pile of failed takes labeled 'تپق ۱۲'. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials. | هر ریلز یه ساعت ضبط و تپق... دیگه وقت نداشتم! | ۱ ساعت ضبط برای ۱ ریلز؟ 😮‍💨 |
+| 3 | 16–24 | Actual authorized avatar demo screen capture added in editing; consent checklist beside a short reviewed text. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials. | با متن کوتاه و چهره مجاز شروع کن؛ خروجی فارسی رو آزمایش کن. | مجری دیجیتال با رضایت · آزمایش فارسی قبل انتشار |
+| 4 | 24–32 | A clearly labelled fictional digital presenter beside a checklist: voice, lips, factual accuracy; no output-rate guarantee. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials. | فارسی و لب‌خوانی رو چک کن؛ متن تخصصی هم باید بازبینی بشه. | بازبینی صدا و لب‌خوانی · بدون تضمین تعداد خروجی |
+| 5 | 32–40 | Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials. | «مجری» رو کامنت کن؛ لینک و شرایط خرید رو بگیر. | کامنت: مجری · WELCOME10 • ۱۰٪ تا ۱۵۰٬۰۰۰ تومان · حداقل خرید: ۱۰۰٬۰۰۰ تومان · ۴ قسط ترب‌پی / دیجی‌پی؛ طبق شرایط درگاه |
 
 ### (e) Ready-to-paste Google Flow / Kling prompts
 **Shot 1 — image/keyframe prompt**
 ```text
-A confident presenter in a white doctor's coat speaks to camera; mid-sentence the image glitches and reveals a wireframe avatar — while the real dentist is shown asleep on the clinic couch. Show the transformation in the FIRST 3 seconds; do not render text in the generated image.
+A confident presenter in a white doctor's coat speaks to camera; mid-sentence the image glitches and reveals a wireframe avatar — while the real dentist is shown asleep on the clinic couch. Show the transformation in the FIRST 3 seconds; do not render text in the generated image. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.
 ```
 **Shot 1 — motion + audio prompt (8s)**
 ```text
@@ -236,7 +236,7 @@ A confident presenter in a white doctor's coat speaks to camera; mid-sentence th
 ```
 **Shot 2 — image/keyframe prompt**
 ```text
-3D Pixar-style animation, soft cinematic lighting, vertical 9:16, warm Iranian everyday setting, expressive faces, shallow depth of field. The dentist character, exhausted, surrounded by a ring light, a camera on tripod, and a pile of failed takes labeled 'تپق ۱۲'.
+3D Pixar-style animation, soft cinematic lighting, vertical 9:16, warm Iranian everyday setting, expressive faces, shallow depth of field. The dentist character, exhausted, surrounded by a ring light, a camera on tripod, and a pile of failed takes labeled 'تپق ۱۲'. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.
 ```
 **Shot 2 — motion + audio prompt (8s)**
 ```text
@@ -244,23 +244,23 @@ Fast comedic montage of bloopers, papers flying. Character says in Persian (Fars
 ```
 **Shot 3 — image/keyframe prompt**
 ```text
-Clean laptop UI close-up: a 5-line Persian script written by an AI chat, pasted into an avatar video tool; a Persian voice clone waveform appears.
+Actual authorized avatar demo screen capture added in editing; consent checklist beside a short reviewed text. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.
 ```
 **Shot 3 — motion + audio prompt (8s)**
 ```text
-Cursor clicks 'Generate'; waveform pulses; avatar thumbnail starts moving. Narrator says in Persian (Farsi): "متن رو چت‌جی‌پی‌تی نوشت، صدای خودم رو یه بار دادم، مجری ساخته شد."
+Vertical 9:16, smooth camera motion. Say in Persian (Farsi): "با متن کوتاه و چهره مجاز شروع کن؛ خروجی فارسی رو آزمایش کن.".
 ```
 **Shot 4 — image/keyframe prompt**
 ```text
-Phone mockup showing three finished branded reels (dentist, lawyer, real-estate agent avatars) with Persian title covers designed in a template editor.
+A clearly labelled fictional digital presenter beside a checklist: voice, lips, factual accuracy; no output-rate guarantee. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.
 ```
 **Shot 4 — motion + audio prompt (8s)**
 ```text
-Swipe between the three reels; likes and 'نوبت میخوام' DMs pop. Narrator says in Persian (Farsi): "وکیل، مشاور املاک، کوچ... همه میتونن هفته‌ای ده تا ریلز داشته باشن."
+Vertical 9:16, smooth camera motion. Say in Persian (Farsi): "فارسی و لب‌خوانی رو چک کن؛ متن تخصصی هم باید بازبینی بشه.".
 ```
 **Shot 5 — image/keyframe prompt**
 ```text
-Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text.
+Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.
 ```
 **Shot 5 — motion + audio prompt (8s)**
 ```text
@@ -293,7 +293,7 @@ Installment division is arithmetic only, not an approved repayment schedule. Pri
 - **Pain:** کادوهای تکراری (گل، ادکلن) هیجان ندارند؛ سفارش آهنگ اختصاصی به خواننده چند ده میلیون خرج دارد.
 
 ### (b) 3-second information-gap hook
-- **Visual:** A woman opens her phone at a birthday table, hears a song singing HER name 'سارا' in Persian, and bursts into happy tears; balloons in the background. Show the transformation in the FIRST 3 seconds; do not render text in the generated image.
+- **Visual:** A woman opens her phone at a birthday table, hears a song singing HER name 'سارا' in Persian, and bursts into happy tears; balloons in the background. Show the transformation in the FIRST 3 seconds; do not render text in the generated image. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.
 - **First spoken line (Farsi):** «آهنگ با اسم خودت!»
 
 ### (c) Before → After demo (understood in 5 seconds)
@@ -303,16 +303,16 @@ Installment division is arithmetic only, not an approved repayment schedule. Pri
 ### (d) 40-second 5-shot reel script
 | Shot | Sec | Visual | Spoken Farsi | RTL subtitle pills |
 |---|---|---|---|---|
-| 1 | 0–8 | A woman opens her phone at a birthday table, hears a song singing HER name 'سارا' in Persian, and bursts into happy tears; balloons in the background. Show the transformation in the FIRST 3 seconds; do not render text in the generated image. | آهنگ با اسم خودت! | آهنگ با اسم خودت! |
-| 2 | 8–16 | Flashback: the husband secretly typing three memories into a music AI app at night on the sofa: 'کافه، سفر شمال، سارا'. | فقط سه تا خاطره نوشتم و گفتم یه آهنگ عاشقانه با اسم سارا بساز. | ۳ خاطره ← ۱ آهنگ 🎵 |
-| 3 | 16–24 | A 3D Pixar couple version of Sara and husband meeting in a cozy Tehran cafe, then walking on a misty Caspian beach in the north of Iran. | سارا، تو اون کافه دلم رو بردی... | موزیک‌ویدیو از خاطرات خودتون 🎬 |
-| 4 | 24–32 | Back to the birthday table: Sara hugs her husband; family members film with phones; an Instagram story with the song gets many replies. | بهترین کادوی عمرم بود! همه فامیل استوری کردن! | بهترین کادوی عمرش 🎁 |
-| 5 | 32–40 | Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text. | «تولد» رو کامنت کن؛ لینک و شرایط خرید رو بگیر. | کامنت: تولد · WELCOME10 • ۱۰٪ تا ۱۵۰٬۰۰۰ تومان · حداقل خرید: ۱۰۰٬۰۰۰ تومان · ۴ قسط ترب‌پی / دیجی‌پی؛ طبق شرایط درگاه |
+| 1 | 0–8 | A woman opens her phone at a birthday table, hears a song singing HER name 'سارا' in Persian, and bursts into happy tears; balloons in the background. Show the transformation in the FIRST 3 seconds; do not render text in the generated image. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials. | آهنگ با اسم خودت! | آهنگ با اسم خودت! |
+| 2 | 8–16 | Flashback: the husband secretly typing three memories into a music AI app at night on the sofa: 'کافه، سفر شمال، سارا'. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials. | فقط سه تا خاطره نوشتم و گفتم یه آهنگ عاشقانه با اسم سارا بساز. | ۳ خاطره ← ۱ آهنگ 🎵 |
+| 3 | 16–24 | A 3D Pixar couple version of Sara and husband meeting in a cozy Tehran cafe, then walking on a misty Caspian beach in the north of Iran. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials. | سارا، تو اون کافه دلم رو بردی... | موزیک‌ویدیو از خاطرات خودتون 🎬 |
+| 4 | 24–32 | Fictional birthday scene with a short personalized song playing. No customer quotes, views or claimed real family reaction. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials. | این یک نمونه هدیه‌ست؛ قبل انتشار، اجازه و حق استفاده رو چک کن. | نمونه نمایشی · اجازه انتشار و حق موسیقی |
+| 5 | 32–40 | Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials. | «تولد» رو کامنت کن؛ لینک و شرایط خرید رو بگیر. | کامنت: تولد · WELCOME10 • ۱۰٪ تا ۱۵۰٬۰۰۰ تومان · حداقل خرید: ۱۰۰٬۰۰۰ تومان · ۴ قسط ترب‌پی / دیجی‌پی؛ طبق شرایط درگاه |
 
 ### (e) Ready-to-paste Google Flow / Kling prompts
 **Shot 1 — image/keyframe prompt**
 ```text
-A woman opens her phone at a birthday table, hears a song singing HER name 'سارا' in Persian, and bursts into happy tears; balloons in the background. Show the transformation in the FIRST 3 seconds; do not render text in the generated image.
+A woman opens her phone at a birthday table, hears a song singing HER name 'سارا' in Persian, and bursts into happy tears; balloons in the background. Show the transformation in the FIRST 3 seconds; do not render text in the generated image. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.
 ```
 **Shot 1 — motion + audio prompt (8s)**
 ```text
@@ -320,7 +320,7 @@ A woman opens her phone at a birthday table, hears a song singing HER name 'سا
 ```
 **Shot 2 — image/keyframe prompt**
 ```text
-3D Pixar-style animation, soft cinematic lighting, vertical 9:16, warm Iranian everyday setting, expressive faces, shallow depth of field. Flashback: the husband secretly typing three memories into a music AI app at night on the sofa: 'کافه، سفر شمال، سارا'.
+3D Pixar-style animation, soft cinematic lighting, vertical 9:16, warm Iranian everyday setting, expressive faces, shallow depth of field. Flashback: the husband secretly typing three memories into a music AI app at night on the sofa: 'کافه، سفر شمال، سارا'. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.
 ```
 **Shot 2 — motion + audio prompt (8s)**
 ```text
@@ -328,7 +328,7 @@ Typing close-up, then a glowing music waveform rises from the phone. Husband say
 ```
 **Shot 3 — image/keyframe prompt**
 ```text
-3D Pixar-style animation, soft cinematic lighting, vertical 9:16, warm Iranian everyday setting, expressive faces, shallow depth of field. A 3D Pixar couple version of Sara and husband meeting in a cozy Tehran cafe, then walking on a misty Caspian beach in the north of Iran.
+3D Pixar-style animation, soft cinematic lighting, vertical 9:16, warm Iranian everyday setting, expressive faces, shallow depth of field. A 3D Pixar couple version of Sara and husband meeting in a cozy Tehran cafe, then walking on a misty Caspian beach in the north of Iran. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.
 ```
 **Shot 3 — motion + audio prompt (8s)**
 ```text
@@ -336,15 +336,15 @@ Dreamy dolly shot, cherry petals and sea mist, music swells. Persian lyrics are 
 ```
 **Shot 4 — image/keyframe prompt**
 ```text
-3D Pixar-style animation, soft cinematic lighting, vertical 9:16, warm Iranian everyday setting, expressive faces, shallow depth of field. Back to the birthday table: Sara hugs her husband; family members film with phones; an Instagram story with the song gets many replies.
+Fictional birthday scene with a short personalized song playing. No customer quotes, views or claimed real family reaction. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.
 ```
 **Shot 4 — motion + audio prompt (8s)**
 ```text
-Group cheer, confetti falls. Sara says in Persian (Farsi): "بهترین کادوی عمرم بود! همه فامیل استوری کردن!"
+Vertical 9:16, smooth camera motion. Say in Persian (Farsi): "این یک نمونه هدیه‌ست؛ قبل انتشار، اجازه و حق استفاده رو چک کن.".
 ```
 **Shot 5 — image/keyframe prompt**
 ```text
-Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text.
+Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.
 ```
 **Shot 5 — motion + audio prompt (8s)**
 ```text
@@ -376,7 +376,7 @@ Installment division is arithmetic only, not an approved repayment schedule. Pri
 - **Pain:** بچه‌ها ساعت‌ها کارتون تکراری می‌بینند؛ نقاشی‌هایشان در کشو گم می‌شود؛ معلم‌ها برای کلاس محتوای جذاب ندارند.
 
 ### (b) 3-second information-gap hook
-- **Visual:** A crayon drawing of a purple dinosaur on a fridge suddenly blinks, peels off the paper as a 3D cartoon, and says the child's name; a 6-year-old girl screams with joy. Show the transformation in the FIRST 3 seconds; do not render text in the generated image.
+- **Visual:** A crayon drawing of a purple dinosaur on a fridge suddenly blinks, peels off the paper as a 3D cartoon, and says the child's name; a 6-year-old girl screams with joy. Show the transformation in the FIRST 3 seconds; do not render text in the generated image. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.
 - **First spoken line (Farsi):** «نقاشی بچه‌ات زنده شد!»
 
 ### (c) Before → After demo (understood in 5 seconds)
@@ -386,16 +386,16 @@ Installment division is arithmetic only, not an approved repayment schedule. Pri
 ### (d) 40-second 5-shot reel script
 | Shot | Sec | Visual | Spoken Farsi | RTL subtitle pills |
 |---|---|---|---|---|
-| 1 | 0–8 | A crayon drawing of a purple dinosaur on a fridge suddenly blinks, peels off the paper as a 3D cartoon, and says the child's name; a 6-year-old girl screams with joy. Show the transformation in the FIRST 3 seconds; do not render text in the generated image. | نقاشی بچه‌ات زنده شد! | نقاشی بچه‌ات زنده شد! |
-| 2 | 8–16 | Over-the-shoulder: a mother's phone photographs the crayon drawing; the photo is uploaded into Google Gemini with a Persian prompt. | از نقاشی عکس گرفتم و به Gemini گفتم همین رو سه‌بعدی کن، دقیقاً با همین رنگ‌ها. | ۱. عکس نقاشی 📸 · ۲. سه‌بعدی با Gemini ✨ |
-| 3 | 16–24 | The purple 3D dinosaur (same shape as the crayon drawing, chunky legs, uneven spikes) walks through a colorful paper-craft forest. | سلام نیلا! بیا با هم بازی کنیم! | ۳. انیمیشن با Hailuo / PixVerse 🎬 |
-| 4 | 24–32 | A primary-school classroom: a kind female teacher projects students' drawings turned into talking 3D cartoons; kids cheer; a quiz game screen follows. | نقاشی همه بچه‌ها رو کارتون کردم و باهاش مسابقه کلاسی ساختم! | معلم‌ها هم عاشقش شدن 👩‍🏫 |
-| 5 | 32–40 | Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text. | «نقاشی» رو کامنت کن؛ لینک و شرایط خرید رو بگیر. | کامنت: نقاشی · WELCOME10 • ۱۰٪ تا ۱۵۰٬۰۰۰ تومان · حداقل خرید: ۱۰۰٬۰۰۰ تومان · ۴ قسط ترب‌پی / دیجی‌پی؛ طبق شرایط درگاه |
+| 1 | 0–8 | A crayon drawing of a purple dinosaur on a fridge suddenly blinks, peels off the paper as a 3D cartoon, and says the child's name; a 6-year-old girl screams with joy. Show the transformation in the FIRST 3 seconds; do not render text in the generated image. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials. | نقاشی بچه‌ات زنده شد! | نقاشی بچه‌ات زنده شد! |
+| 2 | 8–16 | Over-the-shoulder: a mother's phone photographs the crayon drawing; the photo is uploaded into Google Gemini with a Persian prompt. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials. | از نقاشی عکس گرفتم و به Gemini گفتم همین رو سه‌بعدی کن، دقیقاً با همین رنگ‌ها. | ۱. عکس نقاشی 📸 · ۲. سه‌بعدی با Gemini ✨ |
+| 3 | 16–24 | The purple 3D dinosaur (same shape as the crayon drawing, chunky legs, uneven spikes) walks through a colorful paper-craft forest. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials. | سلام نیلا! بیا با هم بازی کنیم! | ۳. انیمیشن با Hailuo / PixVerse 🎬 |
+| 4 | 24–32 | Teacher previews an animation of a fictional drawing with parental permission; no real child photo or named pupil. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials. | برای کلاس هم میشه نمونه ساخت؛ با اجازه والدین و بدون اطلاعات کودک. | اجازه والدین · بدون اطلاعات شخصی کودک |
+| 5 | 32–40 | Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials. | «نقاشی» رو کامنت کن؛ لینک و شرایط خرید رو بگیر. | کامنت: نقاشی · WELCOME10 • ۱۰٪ تا ۱۵۰٬۰۰۰ تومان · حداقل خرید: ۱۰۰٬۰۰۰ تومان · ۴ قسط ترب‌پی / دیجی‌پی؛ طبق شرایط درگاه |
 
 ### (e) Ready-to-paste Google Flow / Kling prompts
 **Shot 1 — image/keyframe prompt**
 ```text
-A crayon drawing of a purple dinosaur on a fridge suddenly blinks, peels off the paper as a 3D cartoon, and says the child's name; a 6-year-old girl screams with joy. Show the transformation in the FIRST 3 seconds; do not render text in the generated image.
+A crayon drawing of a purple dinosaur on a fridge suddenly blinks, peels off the paper as a 3D cartoon, and says the child's name; a 6-year-old girl screams with joy. Show the transformation in the FIRST 3 seconds; do not render text in the generated image. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.
 ```
 **Shot 1 — motion + audio prompt (8s)**
 ```text
@@ -403,7 +403,7 @@ A crayon drawing of a purple dinosaur on a fridge suddenly blinks, peels off the
 ```
 **Shot 2 — image/keyframe prompt**
 ```text
-Over-the-shoulder: a mother's phone photographs the crayon drawing; the photo is uploaded into Google Gemini with a Persian prompt.
+Over-the-shoulder: a mother's phone photographs the crayon drawing; the photo is uploaded into Google Gemini with a Persian prompt. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.
 ```
 **Shot 2 — motion + audio prompt (8s)**
 ```text
@@ -411,7 +411,7 @@ Photo slides into the app, sparkles. Mother says in Persian (Farsi): "از نق�
 ```
 **Shot 3 — image/keyframe prompt**
 ```text
-3D Pixar-style animation, soft cinematic lighting, vertical 9:16, warm Iranian everyday setting, expressive faces, shallow depth of field. The purple 3D dinosaur (same shape as the crayon drawing, chunky legs, uneven spikes) walks through a colorful paper-craft forest.
+3D Pixar-style animation, soft cinematic lighting, vertical 9:16, warm Iranian everyday setting, expressive faces, shallow depth of field. The purple 3D dinosaur (same shape as the crayon drawing, chunky legs, uneven spikes) walks through a colorful paper-craft forest. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.
 ```
 **Shot 3 — motion + audio prompt (8s)**
 ```text
@@ -419,15 +419,15 @@ Bouncy walk cycle, camera tracks alongside. Dinosaur says in Persian (Farsi) wit
 ```
 **Shot 4 — image/keyframe prompt**
 ```text
-3D Pixar-style animation, soft cinematic lighting, vertical 9:16, warm Iranian everyday setting, expressive faces, shallow depth of field. A primary-school classroom: a kind female teacher projects students' drawings turned into talking 3D cartoons; kids cheer; a quiz game screen follows.
+Teacher previews an animation of a fictional drawing with parental permission; no real child photo or named pupil. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.
 ```
 **Shot 4 — motion + audio prompt (8s)**
 ```text
-Kids jump and raise hands. Teacher says in Persian (Farsi): "نقاشی همه بچه‌ها رو کارتون کردم و باهاش مسابقه کلاسی ساختم!"
+Vertical 9:16, smooth camera motion. Say in Persian (Farsi): "برای کلاس هم میشه نمونه ساخت؛ با اجازه والدین و بدون اطلاعات کودک.".
 ```
 **Shot 5 — image/keyframe prompt**
 ```text
-Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text.
+Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.
 ```
 **Shot 5 — motion + audio prompt (8s)**
 ```text
@@ -457,7 +457,7 @@ Installment division is arithmetic only, not an approved repayment schedule. Pri
 - **Pain:** شب‌بیداری برای پاورپوینت، جزوه‌نویسی دستی سر کلاس و جلسه، استرس ددلاین صبح.
 
 ### (b) 3-second information-gap hook
-- **Visual:** 11:58 PM, a 3D student character gets a Telegram message from the professor 'فردا ساعت ۸ ارائه ۲۰ اسلایدی' — his soul literally leaves his body; then a clock spins and a finished slide deck flies out of the laptop. Show the transformation in the FIRST 3 seconds; do not render text in the generated image.
+- **Visual:** 11:58 PM, a 3D student character gets a Telegram message from the professor 'فردا ساعت ۸ ارائه ۲۰ اسلایدی' — his soul literally leaves his body; then a clock spins and a finished slide deck flies out of the laptop. Show the transformation in the FIRST 3 seconds; do not render text in the generated image. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.
 - **First spoken line (Farsi):** «فردا ارائه داری؟»
 
 ### (c) Before → After demo (understood in 5 seconds)
@@ -467,16 +467,16 @@ Installment division is arithmetic only, not an approved repayment schedule. Pri
 ### (d) 40-second 5-shot reel script
 | Shot | Sec | Visual | Spoken Farsi | RTL subtitle pills |
 |---|---|---|---|---|
-| 1 | 0–8 | 11:58 PM, a 3D student character gets a Telegram message from the professor 'فردا ساعت ۸ ارائه ۲۰ اسلایدی' — his soul literally leaves his body; then a clock spins and a finished slide deck flies out of the laptop. Show the transformation in the FIRST 3 seconds; do not render text in the generated image. | فردا ارائه داری؟ | فردا ارائه داری؟ |
-| 2 | 8–16 | The student drags a 90-minute class audio recording into an AI note-taker app; a one-page Persian summary appears instantly. | صدای کلاس رو دادم به PLAUD، یه دقیقه‌ای خلاصه‌ش کرد. | ۹۰ دقیقه کلاس ← ۱ صفحه خلاصه 📝 |
-| 3 | 16–24 | Laptop close-up: the summary is pasted into Claude/ChatGPT to make an outline, then into Gamma AI; 20 beautiful slides with charts generate one after another. | خلاصه رو دادم به هوش مصنوعی، Gamma بیست تا اسلاید شیک ساخت. | ۲۰ اسلاید در چند مرحله ⏱️ |
-| 4 | 24–32 | Vertical 9:16. Student checks a draft slide against class notes, corrects one factual error and saves locally. No grade or approval claim. | این فقط پیش‌نویسه؛ منبع و متنش رو خودت چک کن. | پیش‌نویس، نه تکلیف آماده · بازبینی منبع و متن |
-| 5 | 32–40 | Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text. | «اسلاید» رو کامنت کن؛ لینک و شرایط خرید رو بگیر. | کامنت: اسلاید · WELCOME10 • ۱۰٪ تا ۱۵۰٬۰۰۰ تومان · حداقل خرید: ۱۰۰٬۰۰۰ تومان · ۴ قسط ترب‌پی / دیجی‌پی؛ طبق شرایط درگاه |
+| 1 | 0–8 | 11:58 PM, a 3D student character gets a Telegram message from the professor 'فردا ساعت ۸ ارائه ۲۰ اسلایدی' — his soul literally leaves his body; then a clock spins and a finished slide deck flies out of the laptop. Show the transformation in the FIRST 3 seconds; do not render text in the generated image. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials. | فردا ارائه داری؟ | فردا ارائه داری؟ |
+| 2 | 8–16 | Student opens permitted class text and manually checks a short outline. Audio transcription tools optional, not required for slides. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials. | از متن مجاز درس شروع کن؛ اول نکته‌های اصلی رو مشخص کن. | متن مجاز درس · خلاصه قابل بازبینی |
+| 3 | 16–24 | Laptop close-up: the summary is pasted into Claude/ChatGPT to make an outline, then into Gamma AI; 20 beautiful slides with charts generate one after another. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials. | خلاصه رو دادم به هوش مصنوعی، Gamma بیست تا اسلاید شیک ساخت. | ۲۰ اسلاید در چند مرحله ⏱️ |
+| 4 | 24–32 | Vertical 9:16. Student checks a draft slide against class notes, corrects one factual error and saves locally. No grade or approval claim. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials. | این فقط پیش‌نویسه؛ منبع و متنش رو خودت چک کن. | پیش‌نویس، نه تکلیف آماده · بازبینی منبع و متن |
+| 5 | 32–40 | Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials. | «اسلاید» رو کامنت کن؛ لینک و شرایط خرید رو بگیر. | کامنت: اسلاید · WELCOME10 • ۱۰٪ تا ۱۵۰٬۰۰۰ تومان · حداقل خرید: ۱۰۰٬۰۰۰ تومان · ۴ قسط ترب‌پی / دیجی‌پی؛ طبق شرایط درگاه |
 
 ### (e) Ready-to-paste Google Flow / Kling prompts
 **Shot 1 — image/keyframe prompt**
 ```text
-11:58 PM, a 3D student character gets a Telegram message from the professor 'فردا ساعت ۸ ارائه ۲۰ اسلایدی' — his soul literally leaves his body; then a clock spins and a finished slide deck flies out of the laptop. Show the transformation in the FIRST 3 seconds; do not render text in the generated image.
+11:58 PM, a 3D student character gets a Telegram message from the professor 'فردا ساعت ۸ ارائه ۲۰ اسلایدی' — his soul literally leaves his body; then a clock spins and a finished slide deck flies out of the laptop. Show the transformation in the FIRST 3 seconds; do not render text in the generated image. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.
 ```
 **Shot 1 — motion + audio prompt (8s)**
 ```text
@@ -484,15 +484,15 @@ Installment division is arithmetic only, not an approved repayment schedule. Pri
 ```
 **Shot 2 — image/keyframe prompt**
 ```text
-3D Pixar-style animation, soft cinematic lighting, vertical 9:16, warm Iranian everyday setting, expressive faces, shallow depth of field. The student drags a 90-minute class audio recording into an AI note-taker app; a one-page Persian summary appears instantly.
+Student opens permitted class text and manually checks a short outline. Audio transcription tools optional, not required for slides. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.
 ```
 **Shot 2 — motion + audio prompt (8s)**
 ```text
-Audio waveform compresses into a neat glowing page. Student says in Persian (Farsi): "صدای کلاس رو دادم به پلاد، یه دقیقه‌ای خلاصه‌ش کرد."
+Vertical 9:16, smooth camera motion. Say in Persian (Farsi): "از متن مجاز درس شروع کن؛ اول نکته‌های اصلی رو مشخص کن.".
 ```
 **Shot 3 — image/keyframe prompt**
 ```text
-Laptop close-up: the summary is pasted into Claude/ChatGPT to make an outline, then into Gamma AI; 20 beautiful slides with charts generate one after another.
+Laptop close-up: the summary is pasted into Claude/ChatGPT to make an outline, then into Gamma AI; 20 beautiful slides with charts generate one after another. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.
 ```
 **Shot 3 — motion + audio prompt (8s)**
 ```text
@@ -500,7 +500,7 @@ Slides cascade like cards, timer in corner reads 02:47. Narrator says in Persian
 ```
 **Shot 4 — image/keyframe prompt**
 ```text
-Vertical 9:16. Student checks a draft slide against class notes, corrects one factual error and saves locally. No grade or approval claim.
+Vertical 9:16. Student checks a draft slide against class notes, corrects one factual error and saves locally. No grade or approval claim. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.
 ```
 **Shot 4 — motion + audio prompt (8s)**
 ```text
@@ -508,7 +508,7 @@ Close-up on review. Say in Persian: "این فقط پیش‌نویسه؛ منب�
 ```
 **Shot 5 — image/keyframe prompt**
 ```text
-Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text.
+Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.
 ```
 **Shot 5 — motion + audio prompt (8s)**
 ```text
@@ -541,7 +541,7 @@ Installment division is arithmetic only, not an approved repayment schedule. Pri
 - **Pain:** فکر می‌کند برای ادیتوری باید فتوشاپ و پریمیر و سیستم گرون یاد بگیرد؛ کلاس‌های طراحی گران و طولانی‌اند.
 
 ### (b) 3-second information-gap hook
-- **Visual:** Vertical 9:16. Young adult shows a before/after cafe post portfolio on an ordinary laptop. No bank SMS, client testimonial or payment proof.
+- **Visual:** Vertical 9:16. Young adult shows a before/after cafe post portfolio on an ordinary laptop. No bank SMS, client testimonial or payment proof. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.
 - **First spoken line (Farsi):** «اولین نمونه‌کارت رو بساز!»
 
 ### (c) Before → After demo (understood in 5 seconds)
@@ -551,16 +551,16 @@ Installment division is arithmetic only, not an approved repayment schedule. Pri
 ### (d) 40-second 5-shot reel script
 | Shot | Sec | Visual | Spoken Farsi | RTL subtitle pills |
 |---|---|---|---|---|
-| 1 | 0–8 | Vertical 9:16. Young adult shows a before/after cafe post portfolio on an ordinary laptop. No bank SMS, client testimonial or payment proof. | اولین نمونه‌کارت رو بساز! | اولین نمونه‌کارت رو بساز! |
-| 2 | 8–16 | Phone screen: a blurry low-res cafe product photo is upscaled by Magnific AI into a crisp 4K image, then background removed in Picsart with one tap. | عکس تار مشتری رو با Magnific فورکی کردم، با Picsart پس‌زمینه‌ش رو برداشتم. | ۱. کیفیت 4K با Magnific 🔍 · ۲. حذف پس‌زمینه با Picsart |
-| 3 | 16–24 | Vertical 9:16. Show a cafe cover designed in Canva, then a timeline with manually added Persian subtitles. Use real screen capture in editing. | کاور رو طراحی کن؛ متن فارسی رو دستی اضافه و بازبینی کن. | کاور با Canva · زیرنویس فارسی با بازبینی |
-| 4 | 24–32 | Vertical 9:16. A freelancer sends a clearly labelled sample portfolio to a cafe owner; owner considers it, no hiring, handshake or money. | نمونه‌کارت رو پیشنهاد بده؛ گرفتن سفارش تضمینی نیست. | اول نمونه‌کار · درآمد تضمینی نیست |
-| 5 | 32–40 | Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text. | «درآمد» رو کامنت کن؛ لینک و شرایط خرید رو بگیر. | کامنت: درآمد · WELCOME10 • ۱۰٪ تا ۱۵۰٬۰۰۰ تومان · حداقل خرید: ۱۰۰٬۰۰۰ تومان · ۴ قسط ترب‌پی / دیجی‌پی؛ طبق شرایط درگاه |
+| 1 | 0–8 | Vertical 9:16. Young adult shows a before/after cafe post portfolio on an ordinary laptop. No bank SMS, client testimonial or payment proof. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials. | اولین نمونه‌کارت رو بساز! | اولین نمونه‌کارت رو بساز! |
+| 2 | 8–16 | Freelancer creates a simple cafe cover in Canva using an authorized photo; no required upscaling subscription or 4K claim. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials. | با عکس مجاز و یک قالب ساده شروع کن؛ ابزارهای بیشتر اختیاری‌ان. | شروع با Canva · ابزارهای بیشتر اختیاری |
+| 3 | 16–24 | Vertical 9:16. Show a cafe cover designed in Canva, then a timeline with manually added Persian subtitles. Use real screen capture in editing. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials. | کاور رو طراحی کن؛ متن فارسی رو دستی اضافه و بازبینی کن. | کاور با Canva · زیرنویس فارسی با بازبینی |
+| 4 | 24–32 | Vertical 9:16. A freelancer sends a clearly labelled sample portfolio to a cafe owner; owner considers it, no hiring, handshake or money. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials. | نمونه‌کارت رو پیشنهاد بده؛ گرفتن سفارش تضمینی نیست. | اول نمونه‌کار · درآمد تضمینی نیست |
+| 5 | 32–40 | Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials. | «درآمد» رو کامنت کن؛ لینک و شرایط خرید رو بگیر. | کامنت: درآمد · WELCOME10 • ۱۰٪ تا ۱۵۰٬۰۰۰ تومان · حداقل خرید: ۱۰۰٬۰۰۰ تومان · ۴ قسط ترب‌پی / دیجی‌پی؛ طبق شرایط درگاه |
 
 ### (e) Ready-to-paste Google Flow / Kling prompts
 **Shot 1 — image/keyframe prompt**
 ```text
-Vertical 9:16. Young adult shows a before/after cafe post portfolio on an ordinary laptop. No bank SMS, client testimonial or payment proof.
+Vertical 9:16. Young adult shows a before/after cafe post portfolio on an ordinary laptop. No bank SMS, client testimonial or payment proof. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.
 ```
 **Shot 1 — motion + audio prompt (8s)**
 ```text
@@ -568,15 +568,15 @@ Immediate portfolio reveal. Say in Persian: "اولین نمونه‌کارت ر
 ```
 **Shot 2 — image/keyframe prompt**
 ```text
-Phone screen: a blurry low-res cafe product photo is upscaled by Magnific AI into a crisp 4K image, then background removed in Picsart with one tap.
+Freelancer creates a simple cafe cover in Canva using an authorized photo; no required upscaling subscription or 4K claim. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.
 ```
 **Shot 2 — motion + audio prompt (8s)**
 ```text
-Blur-to-sharp wipe transition, sparkle. Character says in Persian (Farsi): "عکس تار مشتری رو با مگنیفیک فورکی کردم، با پیکس‌آرت پس‌زمینه‌ش رو برداشتم."
+Vertical 9:16, smooth camera motion. Say in Persian (Farsi): "با عکس مجاز و یک قالب ساده شروع کن؛ ابزارهای بیشتر اختیاری‌ان.".
 ```
 **Shot 3 — image/keyframe prompt**
 ```text
-Vertical 9:16. Show a cafe cover designed in Canva, then a timeline with manually added Persian subtitles. Use real screen capture in editing.
+Vertical 9:16. Show a cafe cover designed in Canva, then a timeline with manually added Persian subtitles. Use real screen capture in editing. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.
 ```
 **Shot 3 — motion + audio prompt (8s)**
 ```text
@@ -584,7 +584,7 @@ Swipe between cover and timeline. Say in Persian: "کاور رو طراحی کن
 ```
 **Shot 4 — image/keyframe prompt**
 ```text
-Vertical 9:16. A freelancer sends a clearly labelled sample portfolio to a cafe owner; owner considers it, no hiring, handshake or money.
+Vertical 9:16. A freelancer sends a clearly labelled sample portfolio to a cafe owner; owner considers it, no hiring, handshake or money. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.
 ```
 **Shot 4 — motion + audio prompt (8s)**
 ```text
@@ -592,7 +592,7 @@ Show the sample. Say in Persian: "نمونه‌کارت رو پیشنهاد بد
 ```
 **Shot 5 — image/keyframe prompt**
 ```text
-Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text.
+Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.
 ```
 **Shot 5 — motion + audio prompt (8s)**
 ```text
@@ -624,7 +624,7 @@ Installment division is arithmetic only, not an approved repayment schedule. Pri
 - **Pain:** قیمت دلاری + مالیات + کارمزد کارت مجازی + ریسک کلاهبرداری فروشنده‌های تلگرامی بی‌نام‌ونشان.
 
 ### (b) 3-second information-gap hook
-- **Visual:** A 3D character's wallet screams and runs away as a receipt keeps printing extra lines: '$20', '+ مالیات', '+ کارمزد کارت مجازی', '+ نرخ دلار امروز'… The receipt grows longer than the room. Show the transformation in the FIRST 3 seconds; do not render text in the generated image.
+- **Visual:** A 3D character's wallet screams and runs away as a receipt keeps printing extra lines: '$20', '+ مالیات', '+ کارمزد کارت مجازی', '+ نرخ دلار امروز'… The receipt grows longer than the room. Show the transformation in the FIRST 3 seconds; do not render text in the generated image. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.
 - **First spoken line (Farsi):** «قیمت نهایی چقدر میشه؟»
 
 ### (c) Before → After demo (understood in 5 seconds)
@@ -634,16 +634,16 @@ Installment division is arithmetic only, not an approved repayment schedule. Pri
 ### (d) 40-second 5-shot reel script
 | Shot | Sec | Visual | Spoken Farsi | RTL subtitle pills |
 |---|---|---|---|---|
-| 1 | 0–8 | A 3D character's wallet screams and runs away as a receipt keeps printing extra lines: '$20', '+ مالیات', '+ کارمزد کارت مجازی', '+ نرخ دلار امروز'… The receipt grows longer than the room. Show the transformation in the FIRST 3 seconds; do not render text in the generated image. | قیمت نهایی چقدر میشه؟ | قیمت نهایی چقدر میشه؟ |
-| 2 | 8–16 | The same man in a dark alley-like Telegram chat world talking to a shady hooded seller with no name; a 'Blocked' stamp hits his virtual card. | ویزاکارت هم بلاک شد، فروشنده تلگرامی هم غیب شد! | کارت مجازی بلاک ❌ · فروشنده ناشناس 👻 |
-| 3 | 16–24 | A bright clean shop interior: a friendly 3D KelidBox mascot shows a big screen with the product's Toman price, the Enamad trust seal glowing, and a button '۴ قسط طبق شرایط درگاه'. | تو کلیدباکس قیمت تومانیه، با نماد اینماد، و می‌تونی چهار قسطه بدی. | قیمت تومانی شفاف ✅ · نماد اینماد 🛡️ · ۴ قسط طبق شرایط درگاه 💳 |
-| 4 | 24–32 | Vertical 9:16. Real checkout screen recording added in editing: chosen plan, WELCOME10 field and final total. No synthetic successful order. | تخفیف سقف داره؛ مبلغ نهایی و شرایط قسط رو چک کن. | ۱۰٪ تا سقف ۱۵۰٬۰۰۰ تومان · حداقل خرید ۱۰۰٬۰۰۰ تومان |
-| 5 | 32–40 | Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text. | «قیمت» رو کامنت کن؛ لینک و شرایط خرید رو بگیر. | کامنت: قیمت · WELCOME10 • ۱۰٪ تا ۱۵۰٬۰۰۰ تومان · حداقل خرید: ۱۰۰٬۰۰۰ تومان · ۴ قسط ترب‌پی / دیجی‌پی؛ طبق شرایط درگاه |
+| 1 | 0–8 | A 3D character's wallet screams and runs away as a receipt keeps printing extra lines: '$20', '+ مالیات', '+ کارمزد کارت مجازی', '+ نرخ دلار امروز'… The receipt grows longer than the room. Show the transformation in the FIRST 3 seconds; do not render text in the generated image. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials. | قیمت نهایی چقدر میشه؟ | قیمت نهایی چقدر میشه؟ |
+| 2 | 8–16 | Customer compares two identical subscription durations and plan features before viewing the final total; no fabricated fraud scene. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials. | فقط قیمت رو نبین؛ مدت اشتراک و امکانات پلن رو هم مقایسه کن. | مقایسه پلن همسان · مدت و امکانات |
+| 3 | 16–24 | Insert a REAL product-page screen recording and the real store trust-verification path in editing. Never generate an Enamad seal. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials. | اطلاعات فروشگاه و شرایط قسط رو از مسیر واقعی سایت بررسی کن. | بررسی فروشگاه · قسط طبق شرایط اعتبار |
+| 4 | 24–32 | Vertical 9:16. Real checkout screen recording added in editing: chosen plan, WELCOME10 field and final total. No synthetic successful order. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials. | تخفیف سقف داره؛ مبلغ نهایی و شرایط قسط رو چک کن. | ۱۰٪ تا سقف ۱۵۰٬۰۰۰ تومان · حداقل خرید ۱۰۰٬۰۰۰ تومان |
+| 5 | 32–40 | Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials. | «قیمت» رو کامنت کن؛ لینک و شرایط خرید رو بگیر. | کامنت: قیمت · WELCOME10 • ۱۰٪ تا ۱۵۰٬۰۰۰ تومان · حداقل خرید: ۱۰۰٬۰۰۰ تومان · ۴ قسط ترب‌پی / دیجی‌پی؛ طبق شرایط درگاه |
 
 ### (e) Ready-to-paste Google Flow / Kling prompts
 **Shot 1 — image/keyframe prompt**
 ```text
-A 3D character's wallet screams and runs away as a receipt keeps printing extra lines: '$20', '+ مالیات', '+ کارمزد کارت مجازی', '+ نرخ دلار امروز'… The receipt grows longer than the room. Show the transformation in the FIRST 3 seconds; do not render text in the generated image.
+A 3D character's wallet screams and runs away as a receipt keeps printing extra lines: '$20', '+ مالیات', '+ کارمزد کارت مجازی', '+ نرخ دلار امروز'… The receipt grows longer than the room. Show the transformation in the FIRST 3 seconds; do not render text in the generated image. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.
 ```
 **Shot 1 — motion + audio prompt (8s)**
 ```text
@@ -651,23 +651,23 @@ A 3D character's wallet screams and runs away as a receipt keeps printing extra 
 ```
 **Shot 2 — image/keyframe prompt**
 ```text
-3D Pixar-style animation, soft cinematic lighting, vertical 9:16, warm Iranian everyday setting, expressive faces, shallow depth of field. The same man in a dark alley-like Telegram chat world talking to a shady hooded seller with no name; a 'Blocked' stamp hits his virtual card.
+Customer compares two identical subscription durations and plan features before viewing the final total; no fabricated fraud scene. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.
 ```
 **Shot 2 — motion + audio prompt (8s)**
 ```text
-Spooky lighting, the seller vanishes in smoke. Character says in Persian (Farsi): "ویزاکارت هم بلاک شد، فروشنده تلگرامی هم غیب شد!"
+Vertical 9:16, smooth camera motion. Say in Persian (Farsi): "فقط قیمت رو نبین؛ مدت اشتراک و امکانات پلن رو هم مقایسه کن.".
 ```
 **Shot 3 — image/keyframe prompt**
 ```text
-3D Pixar-style animation, soft cinematic lighting, vertical 9:16, warm Iranian everyday setting, expressive faces, shallow depth of field. A bright clean shop interior: a friendly 3D KelidBox mascot shows a big screen with the product's Toman price, the Enamad trust seal glowing, and a button '۴ قسط طبق شرایط درگاه'.
+Insert a REAL product-page screen recording and the real store trust-verification path in editing. Never generate an Enamad seal. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.
 ```
 **Shot 3 — motion + audio prompt (8s)**
 ```text
-Mascot taps the screen; the long receipt shrinks into four small equal coins. Mascot says in Persian (Farsi): "تو کلیدباکس قیمت تومانیه، با نماد اینماد، و می‌تونی چهار قسطه بدی."
+Vertical 9:16, smooth camera motion. Say in Persian (Farsi): "اطلاعات فروشگاه و شرایط قسط رو از مسیر واقعی سایت بررسی کن.".
 ```
 **Shot 4 — image/keyframe prompt**
 ```text
-Vertical 9:16. Real checkout screen recording added in editing: chosen plan, WELCOME10 field and final total. No synthetic successful order.
+Vertical 9:16. Real checkout screen recording added in editing: chosen plan, WELCOME10 field and final total. No synthetic successful order. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.
 ```
 **Shot 4 — motion + audio prompt (8s)**
 ```text
@@ -675,7 +675,7 @@ Pause on terms. Say in Persian: "تخفیف سقف داره؛ مبلغ نهای�
 ```
 **Shot 5 — image/keyframe prompt**
 ```text
-Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text.
+Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.
 ```
 **Shot 5 — motion + audio prompt (8s)**
 ```text
@@ -707,7 +707,7 @@ Installment division is arithmetic only, not an approved repayment schedule. Pri
 - **Pain:** تبلیغ وسط تماشای ویدیو؛ انتخاب پلن مناسب بدون اشتباه گرفتن قابلیت سرویس‌ها.
 
 ### (b) 3-second information-gap hook
-- **Visual:** A 3D toddler watching a cartoon on a tablet; an ad pops up, the toddler's face turns red and he transforms into a tiny screaming volcano while the dad dives across the room to hit 'Skip'. Show the transformation in the FIRST 3 seconds; do not render text in the generated image.
+- **Visual:** A 3D toddler watching a cartoon on a tablet; an ad pops up, the toddler's face turns red and he transforms into a tiny screaming volcano while the dad dives across the room to hit 'Skip'. Show the transformation in the FIRST 3 seconds; do not render text in the generated image. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.
 - **First spoken line (Farsi):** «باز وسط کارتون تبلیغ؟»
 
 ### (c) Before → After demo (understood in 5 seconds)
@@ -717,16 +717,16 @@ Installment division is arithmetic only, not an approved repayment schedule. Pri
 ### (d) 40-second 5-shot reel script
 | Shot | Sec | Visual | Spoken Farsi | RTL subtitle pills |
 |---|---|---|---|---|
-| 1 | 0–8 | A 3D toddler watching a cartoon on a tablet; an ad pops up, the toddler's face turns red and he transforms into a tiny screaming volcano while the dad dives across the room to hit 'Skip'. Show the transformation in the FIRST 3 seconds; do not render text in the generated image. | باز وسط کارتون تبلیغ؟ | باز وسط کارتون تبلیغ؟ |
-| 2 | 8–16 | Vertical 9:16. Adult commuter watching an ordinary YouTube video; an ad interrupts. Not a Spotify lock-screen example. | وسط آموزش، دوباره تبلیغ اومد. | وقفه وسط آموزش |
-| 3 | 16–24 | Magical transition: a glowing 'Premium' key turns in the tablet; the toddler watches a cartoon peacefully with no ads, then the same cartoon downloaded offline in a car on a road trip. | با YouTube Premium: بدون تبلیغ، پخش در پس‌زمینه، دانلود برای سفر. | بدون تبلیغ ✅ · دانلود آفلاین برای سفر 🚗 |
-| 4 | 24–32 | Vertical 9:16. Family selects a viewing service after reading plan and device limits; no guaranteed 4K on every device. | کیفیت و دانلود به سرویس، دستگاه و پلن بستگی داره. | شرایط پلن را بخوان |
-| 5 | 32–40 | Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text. | «بدون تبلیغ» رو کامنت کن؛ لینک و شرایط خرید رو بگیر. | کامنت: بدون تبلیغ · WELCOME10 • ۱۰٪ تا ۱۵۰٬۰۰۰ تومان · حداقل خرید: ۱۰۰٬۰۰۰ تومان · ۴ قسط ترب‌پی / دیجی‌پی؛ طبق شرایط درگاه |
+| 1 | 0–8 | A 3D toddler watching a cartoon on a tablet; an ad pops up, the toddler's face turns red and he transforms into a tiny screaming volcano while the dad dives across the room to hit 'Skip'. Show the transformation in the FIRST 3 seconds; do not render text in the generated image. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials. | باز وسط کارتون تبلیغ؟ | باز وسط کارتون تبلیغ؟ |
+| 2 | 8–16 | Vertical 9:16. Adult commuter watching an ordinary YouTube video; an ad interrupts. Not a Spotify lock-screen example. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials. | وسط آموزش، دوباره تبلیغ اومد. | وقفه وسط آموزش |
+| 3 | 16–24 | Magical transition: a glowing 'Premium' key turns in the tablet; the toddler watches a cartoon peacefully with no ads, then the same cartoon downloaded offline in a car on a road trip. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials. | با YouTube Premium: بدون تبلیغ، پخش در پس‌زمینه، دانلود برای سفر. | بدون تبلیغ ✅ · دانلود آفلاین برای سفر 🚗 |
+| 4 | 24–32 | Vertical 9:16. Family selects a viewing service after reading plan and device limits; no guaranteed 4K on every device. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials. | کیفیت و دانلود به سرویس، دستگاه و پلن بستگی داره. | شرایط پلن را بخوان |
+| 5 | 32–40 | Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials. | «بدون تبلیغ» رو کامنت کن؛ لینک و شرایط خرید رو بگیر. | کامنت: بدون تبلیغ · WELCOME10 • ۱۰٪ تا ۱۵۰٬۰۰۰ تومان · حداقل خرید: ۱۰۰٬۰۰۰ تومان · ۴ قسط ترب‌پی / دیجی‌پی؛ طبق شرایط درگاه |
 
 ### (e) Ready-to-paste Google Flow / Kling prompts
 **Shot 1 — image/keyframe prompt**
 ```text
-A 3D toddler watching a cartoon on a tablet; an ad pops up, the toddler's face turns red and he transforms into a tiny screaming volcano while the dad dives across the room to hit 'Skip'. Show the transformation in the FIRST 3 seconds; do not render text in the generated image.
+A 3D toddler watching a cartoon on a tablet; an ad pops up, the toddler's face turns red and he transforms into a tiny screaming volcano while the dad dives across the room to hit 'Skip'. Show the transformation in the FIRST 3 seconds; do not render text in the generated image. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.
 ```
 **Shot 1 — motion + audio prompt (8s)**
 ```text
@@ -734,7 +734,7 @@ A 3D toddler watching a cartoon on a tablet; an ad pops up, the toddler's face t
 ```
 **Shot 2 — image/keyframe prompt**
 ```text
-Vertical 9:16. Adult commuter watching an ordinary YouTube video; an ad interrupts. Not a Spotify lock-screen example.
+Vertical 9:16. Adult commuter watching an ordinary YouTube video; an ad interrupts. Not a Spotify lock-screen example. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.
 ```
 **Shot 2 — motion + audio prompt (8s)**
 ```text
@@ -742,7 +742,7 @@ Commuter pauses. Say in Persian: "وسط آموزش، دوباره تبلیغ ا
 ```
 **Shot 3 — image/keyframe prompt**
 ```text
-3D Pixar-style animation, soft cinematic lighting, vertical 9:16, warm Iranian everyday setting, expressive faces, shallow depth of field. Magical transition: a glowing 'Premium' key turns in the tablet; the toddler watches a cartoon peacefully with no ads, then the same cartoon downloaded offline in a car on a road trip.
+3D Pixar-style animation, soft cinematic lighting, vertical 9:16, warm Iranian everyday setting, expressive faces, shallow depth of field. Magical transition: a glowing 'Premium' key turns in the tablet; the toddler watches a cartoon peacefully with no ads, then the same cartoon downloaded offline in a car on a road trip. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.
 ```
 **Shot 3 — motion + audio prompt (8s)**
 ```text
@@ -750,7 +750,7 @@ Golden key turns, ads shatter like glass, calm music. Narrator says in Persian (
 ```
 **Shot 4 — image/keyframe prompt**
 ```text
-Vertical 9:16. Family selects a viewing service after reading plan and device limits; no guaranteed 4K on every device.
+Vertical 9:16. Family selects a viewing service after reading plan and device limits; no guaranteed 4K on every device. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.
 ```
 **Shot 4 — motion + audio prompt (8s)**
 ```text
@@ -758,7 +758,7 @@ Warm family scene. Say in Persian: "کیفیت و دانلود به سرویس،
 ```
 **Shot 5 — image/keyframe prompt**
 ```text
-Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text.
+Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.
 ```
 **Shot 5 — motion + audio prompt (8s)**
 ```text
@@ -791,7 +791,7 @@ Installment division is arithmetic only, not an approved repayment schedule. Pri
 - **Pain:** کلاهبرداری فروشنده‌های ناشناس، شارژ نشدن، پول کافی برای اسکین/بازی جدید نداشتن، لگ و پینگ بالا.
 
 ### (b) 3-second information-gap hook
-- **Visual:** A 3D teen gamer about to buy CP from a shady hooded figure in a neon alley; a giant cartoon hat (کلاه) slowly lowers onto his head from the sky — he freezes. Show the transformation in the FIRST 3 seconds; do not render text in the generated image.
+- **Visual:** A 3D teen gamer about to buy CP from a shady hooded figure in a neon alley; a giant cartoon hat (کلاه) slowly lowers onto his head from the sky — he freezes. Show the transformation in the FIRST 3 seconds; do not render text in the generated image. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.
 - **First spoken line (Farsi):** «قبل خرید، ریجن رو چک کن!»
 
 ### (c) Before → After demo (understood in 5 seconds)
@@ -801,16 +801,16 @@ Installment division is arithmetic only, not an approved repayment schedule. Pri
 ### (d) 40-second 5-shot reel script
 | Shot | Sec | Visual | Spoken Farsi | RTL subtitle pills |
 |---|---|---|---|---|
-| 1 | 0–8 | A 3D teen gamer about to buy CP from a shady hooded figure in a neon alley; a giant cartoon hat (کلاه) slowly lowers onto his head from the sky — he freezes. Show the transformation in the FIRST 3 seconds; do not render text in the generated image. | قبل خرید، ریجن رو چک کن! | قبل خرید، ریجن رو چک کن! |
-| 2 | 8–16 | The gamer in his room staring at a Valorant skin store and a Steam game page; his piggy bank is cracked and nearly empty; ping meter shows 180ms in red. | پولم هم به اسکین جدید نمی‌رسه، پینگم هم صد و هشتاده! | پول نمی‌رسه 💸 · پینگ ۱۸۰ 🐢 |
-| 3 | 16–24 | Vertical 9:16. Adult gamer and parent inspect a real product page for Global COD Mobile CP; no fabricated trust badge. | نسخه و ریجن رو تطبیق بده؛ بعد شرایط خرید رو بخون. | نسخه Global و حساب سازگار · قسط فقط طبق شرایط اعتبار |
-| 4 | 24–32 | Vertical 9:16. Adult gamer checks item details before buying. No ping meter, victory or performance claim. | خرید آیتم، برد یا پینگ بهتر رو تضمین نمی‌کنه. | بدون تضمین برد یا پینگ |
-| 5 | 32–40 | Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text. | «گیم» رو کامنت کن؛ لینک و شرایط خرید رو بگیر. | کامنت: گیم · WELCOME10 • ۱۰٪ تا ۱۵۰٬۰۰۰ تومان · حداقل خرید: ۱۰۰٬۰۰۰ تومان · ۴ قسط ترب‌پی / دیجی‌پی؛ طبق شرایط درگاه |
+| 1 | 0–8 | A 3D teen gamer about to buy CP from a shady hooded figure in a neon alley; a giant cartoon hat (کلاه) slowly lowers onto his head from the sky — he freezes. Show the transformation in the FIRST 3 seconds; do not render text in the generated image. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials. | قبل خرید، ریجن رو چک کن! | قبل خرید، ریجن رو چک کن! |
+| 2 | 8–16 | Adult gamer checks Global edition and Activision account compatibility; no empty piggy bank, borrowing pressure or ping meter. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials. | قبل پرداخت، مطمئن شو محصول با نسخه بازی و حسابت سازگاره. | تطبیق نسخه و حساب · خرید آگاهانه |
+| 3 | 16–24 | Vertical 9:16. Adult gamer and parent inspect a real product page for Global COD Mobile CP; no fabricated trust badge. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials. | نسخه و ریجن رو تطبیق بده؛ بعد شرایط خرید رو بخون. | نسخه Global و حساب سازگار · قسط فقط طبق شرایط اعتبار |
+| 4 | 24–32 | Vertical 9:16. Adult gamer checks item details before buying. No ping meter, victory or performance claim. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials. | خرید آیتم، برد یا پینگ بهتر رو تضمین نمی‌کنه. | بدون تضمین برد یا پینگ |
+| 5 | 32–40 | Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials. | «گیم» رو کامنت کن؛ لینک و شرایط خرید رو بگیر. | کامنت: گیم · WELCOME10 • ۱۰٪ تا ۱۵۰٬۰۰۰ تومان · حداقل خرید: ۱۰۰٬۰۰۰ تومان · ۴ قسط ترب‌پی / دیجی‌پی؛ طبق شرایط درگاه |
 
 ### (e) Ready-to-paste Google Flow / Kling prompts
 **Shot 1 — image/keyframe prompt**
 ```text
-A 3D teen gamer about to buy CP from a shady hooded figure in a neon alley; a giant cartoon hat (کلاه) slowly lowers onto his head from the sky — he freezes. Show the transformation in the FIRST 3 seconds; do not render text in the generated image.
+A 3D teen gamer about to buy CP from a shady hooded figure in a neon alley; a giant cartoon hat (کلاه) slowly lowers onto his head from the sky — he freezes. Show the transformation in the FIRST 3 seconds; do not render text in the generated image. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.
 ```
 **Shot 1 — motion + audio prompt (8s)**
 ```text
@@ -818,15 +818,15 @@ A 3D teen gamer about to buy CP from a shady hooded figure in a neon alley; a gi
 ```
 **Shot 2 — image/keyframe prompt**
 ```text
-3D Pixar-style animation, soft cinematic lighting, vertical 9:16, warm Iranian everyday setting, expressive faces, shallow depth of field. The gamer in his room staring at a Valorant skin store and a Steam game page; his piggy bank is cracked and nearly empty; ping meter shows 180ms in red.
+Adult gamer checks Global edition and Activision account compatibility; no empty piggy bank, borrowing pressure or ping meter. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.
 ```
 **Shot 2 — motion + audio prompt (8s)**
 ```text
-Piggy bank coughs a single coin, ping meter blinks red. Gamer says in Persian (Farsi): "پولم هم به اسکین جدید نمی‌رسه، پینگمم صد و هشتاده!"
+Vertical 9:16, smooth camera motion. Say in Persian (Farsi): "قبل پرداخت، مطمئن شو محصول با نسخه بازی و حسابت سازگاره.".
 ```
 **Shot 3 — image/keyframe prompt**
 ```text
-Vertical 9:16. Adult gamer and parent inspect a real product page for Global COD Mobile CP; no fabricated trust badge.
+Vertical 9:16. Adult gamer and parent inspect a real product page for Global COD Mobile CP; no fabricated trust badge. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.
 ```
 **Shot 3 — motion + audio prompt (8s)**
 ```text
@@ -834,7 +834,7 @@ Focus on region label. Say in Persian: "نسخه و ریجن رو تطبیق ب�
 ```
 **Shot 4 — image/keyframe prompt**
 ```text
-Vertical 9:16. Adult gamer checks item details before buying. No ping meter, victory or performance claim.
+Vertical 9:16. Adult gamer checks item details before buying. No ping meter, victory or performance claim. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.
 ```
 **Shot 4 — motion + audio prompt (8s)**
 ```text
@@ -842,7 +842,7 @@ Calm comparison shot. Say in Persian: "خرید آیتم، برد یا پینگ 
 ```
 **Shot 5 — image/keyframe prompt**
 ```text
-Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text.
+Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.
 ```
 **Shot 5 — motion + audio prompt (8s)**
 ```text

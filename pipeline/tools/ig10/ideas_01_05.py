@@ -11,7 +11,8 @@ IDEAS = [{'idea_id': 'IG10_01',
   'hook_visual': 'Split screen: left a dull, badly lit phone photo of a sneaker on a shop counter; right the SAME '
                  "sneaker exploding into a glossy cinematic 3D ad with gold light rays. A red stamp reads 'هزینه "
                  "آتلیه: ۰ تومان'. Show the transformation in the FIRST 3 seconds; do not render text in the "
-                 'generated image.',
+                 'generated image. Production rule: generated scene is illustrative. Composite actual '
+                 'UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.',
   'hook_fa': 'این عکس، تبلیغ شد!',
   'before_fa': 'عکس معمولی موبایل از یک کفش روی پیشخوان مغازه، نور زرد و پس\u200cزمینه شلوغ.',
   'after_fa': 'تیزر ۸ ثانیه\u200cای سینمایی: کفش روی سکوی براق می\u200cچرخد، قطرات آب و نور طلایی، اسم برند به '
@@ -23,7 +24,8 @@ IDEAS = [{'idea_id': 'IG10_01',
              'Split screen: left a dull, badly lit phone photo of a sneaker on a shop counter; right the SAME '
              "sneaker exploding into a glossy cinematic 3D ad with gold light rays. A red stamp reads 'هزینه "
              "آتلیه: ۰ تومان'. Show the transformation in the FIRST 3 seconds; do not render text in the "
-             'generated image.',
+             'generated image. Production rule: generated scene is illustrative. Composite actual UI/screenshots '
+             'and all Persian text in editing; no synthetic trust badges or testimonials.',
              '0–3s: reveal the hook immediately. Say in Persian (Farsi): "این عکس، تبلیغ شد!". 3–8s: hold on the '
              'result; no extra dialogue.',
              'این عکس، تبلیغ شد!',
@@ -31,30 +33,35 @@ IDEAS = [{'idea_id': 'IG10_01',
             (8,
              '3D Pixar-style animation, soft cinematic lighting, vertical 9:16, warm Iranian everyday setting, '
              'expressive faces, shallow depth of field. Close-up of the phone screen: the dull sneaker photo is '
-             "dragged into an AI video app; a glowing 'Image to Video' button.",
+             "dragged into an AI video app; a glowing 'Image to Video' button. Production rule: generated scene "
+             'is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic '
+             'trust badges or testimonials.',
              'Finger taps the button; the photo ripples like liquid and particles of golden light swirl out of '
              'the screen. Narrator says in Persian (Farsi): "فقط عکس رو دادم به هوش مصنوعی و نوشتم: تبلیغ لوکس '
              'سینمایی."',
              'فقط عکس رو دادم به هوش مصنوعی و نوشتم: تبلیغ لوکس سینمایی.',
              ['۱ عکس + ۱ جمله ✍️']),
             (8,
-             'Ultra-premium product commercial: the same white sneaker rotates on a glossy black pedestal, water '
-             'droplets frozen mid-air, golden rim light, slow-motion fabric details, 9:16, photoreal.',
-             'Orbiting camera 180 degrees around the sneaker, slow motion, light rays sweep across. No dialogue, '
-             'dramatic whoosh sound design.',
-             '(صدای افکت سینمایی)',
-             ['۳۰ ثانیه بعد 👇', 'تیزر میلیونی بدون آتلیه ✨']),
+             'The exact same shoe rotates under soft cinematic lighting. No changed product details, sales '
+             'numbers or time-to-render claim. Production rule: generated scene is illustrative. Composite actual '
+             'UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.',
+             'Vertical 9:16, smooth camera motion. Say in Persian (Farsi): "این یک نمونه تیزره؛ جزئیات محصول رو '
+             'با عکس مقایسه کن.".',
+             'این یک نمونه تیزره؛ جزئیات محصول رو با عکس مقایسه کن.',
+             ['نمونه تیزر', 'جزئیات محصول را چک کن']),
             (8,
-             '3D Pixar-style animation, soft cinematic lighting, vertical 9:16, warm Iranian everyday setting, '
-             'expressive faces, shallow depth of field. The boutique owner now smiling, phone buzzing with '
-             "Instagram notifications and DM bubbles saying 'قیمت؟' and 'سایز ۴۲ دارین؟'.",
-             'Notifications pop rapidly around his head; he laughs and high-fives his teenage daughter. Character '
-             'says in Persian (Farsi): "از دیروز تا حالا چهل تا دایرکت قیمت گرفتم!"',
-             'از دیروز تا حالا چهل تا دایرکت قیمت گرفتم!',
-             ['دایرکت\u200cها ترکید 📩']),
+             'Shop owner compares the source photo with a demo ad on a phone. No customer messages, likes or '
+             'simulated sales proof. Production rule: generated scene is illustrative. Composite actual '
+             'UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.',
+             'Vertical 9:16, smooth camera motion. Say in Persian (Farsi): "حالا یک نمونه برای پیجت داری؛ فروش '
+             'بیشتر تضمینی نیست.".',
+             'حالا یک نمونه برای پیجت داری؛ فروش بیشتر تضمینی نیست.',
+             ['نمونه آماده بازبینی', 'بدون تضمین فروش']),
             (8,
              'Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL '
-             'product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text.',
+             'product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text. '
+             'Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian '
+             'text in editing; no synthetic trust badges or testimonials.',
              'Slow push-in. Say in Persian (Farsi): "«تیزر» رو کامنت کن؛ لینک و شرایط خرید رو بگیر.". Leave space '
              'for RTL overlays.',
              '«تیزر» رو کامنت کن؛ لینک و شرایط خرید رو بگیر.',
@@ -75,7 +82,9 @@ IDEAS = [{'idea_id': 'IG10_01',
   'hook_visual': 'The famous Pineapple husband and Strawberry wife from @kelidbox_com freeze mid-argument; the '
                  "camera pulls back to reveal it's playing on a laptop in a cozy kitchen, a woman's hands (face "
                  'never shown) typing beside a cup of tea. Show the transformation in the FIRST 3 seconds; do not '
-                 'render text in the generated image.',
+                 'render text in the generated image. Production rule: generated scene is illustrative. Composite '
+                 'actual UI/screenshots and all Persian text in editing; no synthetic trust badges or '
+                 'testimonials.',
   'hook_fa': 'این کارتون، بدون دوربینه!',
   'before_fa': 'یک ایده داستانی در دفترچه: «زن و شوهری که سر عکس خانوادگی دعوا می\u200cکنند.»',
   'after_fa': 'قسمت ۴۰ ثانیه\u200cای انیمیشن سه\u200cبعدی با دوبله فارسی و زیرنویس — همان فرمتی که در گرید '
@@ -87,36 +96,43 @@ IDEAS = [{'idea_id': 'IG10_01',
              'The famous Pineapple husband and Strawberry wife from @kelidbox_com freeze mid-argument; the camera '
              "pulls back to reveal it's playing on a laptop in a cozy kitchen, a woman's hands (face never shown) "
              'typing beside a cup of tea. Show the transformation in the FIRST 3 seconds; do not render text in '
-             'the generated image.',
+             'the generated image. Production rule: generated scene is illustrative. Composite actual '
+             'UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.',
              '0–3s: reveal the hook immediately. Say in Persian (Farsi): "این کارتون، بدون دوربینه!". 3–8s: hold '
              'on the result; no extra dialogue.',
              'این کارتون، بدون دوربینه!',
              ['این کارتون، بدون دوربینه!']),
             (8,
              'Over-the-shoulder view (no face) of hands typing a Persian story idea into a chat AI on a laptop; '
-             'the AI replies with a 5-scene script in Persian.',
+             'the AI replies with a 5-scene script in Persian. Production rule: generated scene is illustrative. '
+             'Composite actual UI/screenshots and all Persian text in editing; no synthetic trust badges or '
+             'testimonials.',
              'Text streams quickly on screen, warm lamp light. Narrator says in Persian (Farsi): "اول ایده\u200cم '
              'رو به چت\u200cجی\u200cپی\u200cتی گفتم، سناریو پنج صحنه\u200cای رو نوشت."',
              'اول ایده\u200cم رو به چت\u200cجی\u200cپی\u200cتی گفتم، سناریوی پنج صحنه\u200cای رو نوشت.',
              ['۱. سناریو با ChatGPT ✍️']),
             (8,
              'Screen recording style: a scene prompt pasted into Google Flow; a 3D Pixar pineapple character '
-             'renders frame by frame from a grey clay draft into full color.',
+             'renders frame by frame from a grey clay draft into full color. Production rule: generated scene is '
+             'illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust '
+             'badges or testimonials.',
              'Time-lapse render, progress bar fills, colors bloom. Narrator says in Persian (Farsi): "بعد توی '
              'گوگل فلو، هر صحنه رو با یک جمله ساختم."',
              'بعد توی گوگل فلو، هر صحنه رو با یک جمله ساختم.',
              ['۲. انیمیشن با Google Flow 🎬']),
             (8,
-             '3D Pixar-style animation, soft cinematic lighting, vertical 9:16, warm Iranian everyday setting, '
-             'expressive faces, shallow depth of field. The finished strawberry character on screen lip-syncs a '
-             'Persian line; an audio waveform glows beside it; Instagram view counter climbs rapidly.',
-             'View counter animates upward, heart icons float. Narrator says in Persian (Farsi): "صداهای فارسی رو '
-             'با الون\u200cلبز ساختم. حالا ویو می\u200cگیرم، بدون اینکه کسی منو بشناسه."',
-             'صداهای فارسی رو با ElevenLabs ساختم. حالا ویو می\u200cگیرم، بدون اینکه کسی منو بشناسه.',
-             ['۳. صدای فارسی با ElevenLabs 🎙️']),
+             'Hands add an optional authorized Persian voice track to an animation. Show waveform, no view '
+             'counters. Production rule: generated scene is illustrative. Composite actual UI/screenshots and all '
+             'Persian text in editing; no synthetic trust badges or testimonials.',
+             'Vertical 9:16, smooth camera motion. Say in Persian (Farsi): "صدا رو با ابزار مجاز اضافه کن؛ کیفیت '
+             'فارسی رو گوش بده.".',
+             'صدا رو با ابزار مجاز اضافه کن؛ کیفیت فارسی رو گوش بده.',
+             ['صدا با اجازه صاحب آن', 'بازبینی تلفظ فارسی']),
             (8,
              'Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL '
-             'product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text.',
+             'product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text. '
+             'Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian '
+             'text in editing; no synthetic trust badges or testimonials.',
              'Slow push-in. Say in Persian (Farsi): "«انیمیشن» رو کامنت کن؛ لینک و شرایط خرید رو بگیر.". Leave '
              'space for RTL overlays.',
              '«انیمیشن» رو کامنت کن؛ لینک و شرایط خرید رو بگیر.',
@@ -136,7 +152,8 @@ IDEAS = [{'idea_id': 'IG10_01',
   'hook_visual': "A confident presenter in a white doctor's coat speaks to camera; mid-sentence the image "
                  'glitches and reveals a wireframe avatar — while the real dentist is shown asleep on the clinic '
                  'couch. Show the transformation in the FIRST 3 seconds; do not render text in the generated '
-                 'image.',
+                 'image. Production rule: generated scene is illustrative. Composite actual UI/screenshots and '
+                 'all Persian text in editing; no synthetic trust badges or testimonials.',
   'hook_fa': 'این مجری، واقعی نیست!',
   'before_fa': 'یک متن ۵ خطی تایپ\u200cشده درباره «۳ اشتباه در مسواک زدن».',
   'after_fa': 'نمونه ریلز با مجری دیجیتال؛ کیفیت فارسی و لب\u200cخوانی باید با پلن منتخب آزمایش شود. چهره و صدا '
@@ -148,7 +165,9 @@ IDEAS = [{'idea_id': 'IG10_01',
   'shots': [(8,
              "A confident presenter in a white doctor's coat speaks to camera; mid-sentence the image glitches "
              'and reveals a wireframe avatar — while the real dentist is shown asleep on the clinic couch. Show '
-             'the transformation in the FIRST 3 seconds; do not render text in the generated image.',
+             'the transformation in the FIRST 3 seconds; do not render text in the generated image. Production '
+             'rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian text in '
+             'editing; no synthetic trust badges or testimonials.',
              '0–3s: reveal the hook immediately. Say in Persian (Farsi): "این مجری، واقعی نیست!". 3–8s: hold on '
              'the result; no extra dialogue.',
              'این مجری، واقعی نیست!',
@@ -156,28 +175,34 @@ IDEAS = [{'idea_id': 'IG10_01',
             (8,
              '3D Pixar-style animation, soft cinematic lighting, vertical 9:16, warm Iranian everyday setting, '
              'expressive faces, shallow depth of field. The dentist character, exhausted, surrounded by a ring '
-             "light, a camera on tripod, and a pile of failed takes labeled 'تپق ۱۲'.",
+             "light, a camera on tripod, and a pile of failed takes labeled 'تپق ۱۲'. Production rule: generated "
+             'scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no '
+             'synthetic trust badges or testimonials.',
              'Fast comedic montage of bloopers, papers flying. Character says in Persian (Farsi): "هر ریلز یه '
              'ساعت ضبط و تپق... دیگه وقت نداشتم!"',
              'هر ریلز یه ساعت ضبط و تپق... دیگه وقت نداشتم!',
              ['۱ ساعت ضبط برای ۱ ریلز؟ 😮\u200d💨']),
             (8,
-             'Clean laptop UI close-up: a 5-line Persian script written by an AI chat, pasted into an avatar '
-             'video tool; a Persian voice clone waveform appears.',
-             "Cursor clicks 'Generate'; waveform pulses; avatar thumbnail starts moving. Narrator says in Persian "
-             '(Farsi): "متن رو چت\u200cجی\u200cپی\u200cتی نوشت، صدای خودم رو یه بار دادم، مجری ساخته شد."',
-             'متن رو ChatGPT نوشت، صدای خودم رو یه بار دادم، مجری ساخته شد.',
-             ['متن ✍️ ← صدا 🎙️ ← مجری 🧑\u200d⚕️']),
+             'Actual authorized avatar demo screen capture added in editing; consent checklist beside a short '
+             'reviewed text. Production rule: generated scene is illustrative. Composite actual UI/screenshots '
+             'and all Persian text in editing; no synthetic trust badges or testimonials.',
+             'Vertical 9:16, smooth camera motion. Say in Persian (Farsi): "با متن کوتاه و چهره مجاز شروع کن؛ '
+             'خروجی فارسی رو آزمایش کن.".',
+             'با متن کوتاه و چهره مجاز شروع کن؛ خروجی فارسی رو آزمایش کن.',
+             ['مجری دیجیتال با رضایت', 'آزمایش فارسی قبل انتشار']),
             (8,
-             'Phone mockup showing three finished branded reels (dentist, lawyer, real-estate agent avatars) with '
-             'Persian title covers designed in a template editor.',
-             "Swipe between the three reels; likes and 'نوبت میخوام' DMs pop. Narrator says in Persian (Farsi): "
-             '"وکیل، مشاور املاک، کوچ... همه میتونن هفته\u200cای ده تا ریلز داشته باشن."',
-             'وکیل، مشاور املاک، کوچ... همه می\u200cتونن هفته\u200cای ده تا ریلز داشته باشن.',
-             ['هفته\u200cای ۱۰ ریلز بدون ضبط 📈']),
+             'A clearly labelled fictional digital presenter beside a checklist: voice, lips, factual accuracy; '
+             'no output-rate guarantee. Production rule: generated scene is illustrative. Composite actual '
+             'UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.',
+             'Vertical 9:16, smooth camera motion. Say in Persian (Farsi): "فارسی و لب\u200cخوانی رو چک کن؛ متن '
+             'تخصصی هم باید بازبینی بشه.".',
+             'فارسی و لب\u200cخوانی رو چک کن؛ متن تخصصی هم باید بازبینی بشه.',
+             ['بازبینی صدا و لب\u200cخوانی', 'بدون تضمین تعداد خروجی']),
             (8,
              'Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL '
-             'product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text.',
+             'product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text. '
+             'Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian '
+             'text in editing; no synthetic trust badges or testimonials.',
              'Slow push-in. Say in Persian (Farsi): "«مجری» رو کامنت کن؛ لینک و شرایط خرید رو بگیر.". Leave space '
              'for RTL overlays.',
              '«مجری» رو کامنت کن؛ لینک و شرایط خرید رو بگیر.',
@@ -195,7 +220,9 @@ IDEAS = [{'idea_id': 'IG10_01',
   'trigger': 'احساس، اشک شوق و میل به دیده شدن در استوری (UGC قابل اشتراک)',
   'hook_visual': "A woman opens her phone at a birthday table, hears a song singing HER name 'سارا' in Persian, "
                  'and bursts into happy tears; balloons in the background. Show the transformation in the FIRST 3 '
-                 'seconds; do not render text in the generated image.',
+                 'seconds; do not render text in the generated image. Production rule: generated scene is '
+                 'illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic '
+                 'trust badges or testimonials.',
   'hook_fa': 'آهنگ با اسم خودت!',
   'before_fa': 'سه خط خاطره: «اولین دیدار در کافه، سفر شمال، اسمش سارا است.»',
   'after_fa': 'آهنگ پاپ فارسی ۲ دقیقه\u200cای با اسم سارا + موزیک\u200cویدیوی سه\u200cبعدی از همان خاطرات (کافه، '
@@ -206,7 +233,9 @@ IDEAS = [{'idea_id': 'IG10_01',
   'shots': [(8,
              "A woman opens her phone at a birthday table, hears a song singing HER name 'سارا' in Persian, and "
              'bursts into happy tears; balloons in the background. Show the transformation in the FIRST 3 '
-             'seconds; do not render text in the generated image.',
+             'seconds; do not render text in the generated image. Production rule: generated scene is '
+             'illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust '
+             'badges or testimonials.',
              '0–3s: reveal the hook immediately. Say in Persian (Farsi): "آهنگ با اسم خودت!". 3–8s: hold on the '
              'result; no extra dialogue.',
              'آهنگ با اسم خودت!',
@@ -214,7 +243,9 @@ IDEAS = [{'idea_id': 'IG10_01',
             (8,
              '3D Pixar-style animation, soft cinematic lighting, vertical 9:16, warm Iranian everyday setting, '
              'expressive faces, shallow depth of field. Flashback: the husband secretly typing three memories '
-             "into a music AI app at night on the sofa: 'کافه، سفر شمال، سارا'.",
+             "into a music AI app at night on the sofa: 'کافه، سفر شمال، سارا'. Production rule: generated scene "
+             'is illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic '
+             'trust badges or testimonials.',
              'Typing close-up, then a glowing music waveform rises from the phone. Husband says in Persian '
              '(Farsi): "فقط سه تا خاطره نوشتم و گفتم یه آهنگ عاشقانه با اسم سارا بساز."',
              'فقط سه تا خاطره نوشتم و گفتم یه آهنگ عاشقانه با اسم سارا بساز.',
@@ -222,22 +253,26 @@ IDEAS = [{'idea_id': 'IG10_01',
             (8,
              '3D Pixar-style animation, soft cinematic lighting, vertical 9:16, warm Iranian everyday setting, '
              'expressive faces, shallow depth of field. A 3D Pixar couple version of Sara and husband meeting in '
-             'a cozy Tehran cafe, then walking on a misty Caspian beach in the north of Iran.',
+             'a cozy Tehran cafe, then walking on a misty Caspian beach in the north of Iran. Production rule: '
+             'generated scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; '
+             'no synthetic trust badges or testimonials.',
              'Dreamy dolly shot, cherry petals and sea mist, music swells. Persian lyrics are sung (Farsi): '
              '"سارا، تو اون کافه دلم رو بردی..."',
              'سارا، تو اون کافه دلم رو بردی...',
              ['موزیک\u200cویدیو از خاطرات خودتون 🎬']),
             (8,
-             '3D Pixar-style animation, soft cinematic lighting, vertical 9:16, warm Iranian everyday setting, '
-             'expressive faces, shallow depth of field. Back to the birthday table: Sara hugs her husband; family '
-             'members film with phones; an Instagram story with the song gets many replies.',
-             'Group cheer, confetti falls. Sara says in Persian (Farsi): "بهترین کادوی عمرم بود! همه فامیل استوری '
-             'کردن!"',
-             'بهترین کادوی عمرم بود! همه فامیل استوری کردن!',
-             ['بهترین کادوی عمرش 🎁']),
+             'Fictional birthday scene with a short personalized song playing. No customer quotes, views or '
+             'claimed real family reaction. Production rule: generated scene is illustrative. Composite actual '
+             'UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.',
+             'Vertical 9:16, smooth camera motion. Say in Persian (Farsi): "این یک نمونه هدیه\u200cست؛ قبل '
+             'انتشار، اجازه و حق استفاده رو چک کن.".',
+             'این یک نمونه هدیه\u200cست؛ قبل انتشار، اجازه و حق استفاده رو چک کن.',
+             ['نمونه نمایشی', 'اجازه انتشار و حق موسیقی']),
             (8,
              'Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL '
-             'product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text.',
+             'product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text. '
+             'Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian '
+             'text in editing; no synthetic trust badges or testimonials.',
              'Slow push-in. Say in Persian (Farsi): "«تولد» رو کامنت کن؛ لینک و شرایط خرید رو بگیر.". Leave space '
              'for RTL overlays.',
              '«تولد» رو کامنت کن؛ لینک و شرایط خرید رو بگیر.',
@@ -257,7 +292,9 @@ IDEAS = [{'idea_id': 'IG10_01',
   'trigger': 'عشق والدین + ذوق کودک + اشتراک\u200cگذاری در گروه\u200cهای خانوادگی',
   'hook_visual': 'A crayon drawing of a purple dinosaur on a fridge suddenly blinks, peels off the paper as a 3D '
                  "cartoon, and says the child's name; a 6-year-old girl screams with joy. Show the transformation "
-                 'in the FIRST 3 seconds; do not render text in the generated image.',
+                 'in the FIRST 3 seconds; do not render text in the generated image. Production rule: generated '
+                 'scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no '
+                 'synthetic trust badges or testimonials.',
   'hook_fa': 'نقاشی بچه\u200cات زنده شد!',
   'before_fa': 'نقاشی مداد شمعی یک دایناسور بنفش روی کاغذ A4، چسبیده به یخچال.',
   'after_fa': 'کارتون سه\u200cبعدی ۸ ثانیه\u200cای که همان دایناسور (با همان رنگ و شکل) راه می\u200cرود و '
@@ -268,14 +305,17 @@ IDEAS = [{'idea_id': 'IG10_01',
   'shots': [(8,
              'A crayon drawing of a purple dinosaur on a fridge suddenly blinks, peels off the paper as a 3D '
              "cartoon, and says the child's name; a 6-year-old girl screams with joy. Show the transformation in "
-             'the FIRST 3 seconds; do not render text in the generated image.',
+             'the FIRST 3 seconds; do not render text in the generated image. Production rule: generated scene is '
+             'illustrative. Composite actual UI/screenshots and all Persian text in editing; no synthetic trust '
+             'badges or testimonials.',
              '0–3s: reveal the hook immediately. Say in Persian (Farsi): "نقاشی بچه\u200cات زنده شد!". 3–8s: hold '
              'on the result; no extra dialogue.',
              'نقاشی بچه\u200cات زنده شد!',
              ['نقاشی بچه\u200cات زنده شد!']),
             (8,
              "Over-the-shoulder: a mother's phone photographs the crayon drawing; the photo is uploaded into "
-             'Google Gemini with a Persian prompt.',
+             'Google Gemini with a Persian prompt. Production rule: generated scene is illustrative. Composite '
+             'actual UI/screenshots and all Persian text in editing; no synthetic trust badges or testimonials.',
              'Photo slides into the app, sparkles. Mother says in Persian (Farsi): "از نقاشی عکس گرفتم و به جمنای '
              'گفتم همین رو سه\u200cبعدی کن، دقیقاً با همین رنگ\u200cها."',
              'از نقاشی عکس گرفتم و به Gemini گفتم همین رو سه\u200cبعدی کن، دقیقاً با همین رنگ\u200cها.',
@@ -283,23 +323,26 @@ IDEAS = [{'idea_id': 'IG10_01',
             (8,
              '3D Pixar-style animation, soft cinematic lighting, vertical 9:16, warm Iranian everyday setting, '
              'expressive faces, shallow depth of field. The purple 3D dinosaur (same shape as the crayon drawing, '
-             'chunky legs, uneven spikes) walks through a colorful paper-craft forest.',
+             'chunky legs, uneven spikes) walks through a colorful paper-craft forest. Production rule: generated '
+             'scene is illustrative. Composite actual UI/screenshots and all Persian text in editing; no '
+             'synthetic trust badges or testimonials.',
              'Bouncy walk cycle, camera tracks alongside. Dinosaur says in Persian (Farsi) with a cute voice: '
              '"سلام نیلا! بیا با هم بازی کنیم!"',
              'سلام نیلا! بیا با هم بازی کنیم!',
              ['۳. انیمیشن با Hailuo / PixVerse 🎬']),
             (8,
-             '3D Pixar-style animation, soft cinematic lighting, vertical 9:16, warm Iranian everyday setting, '
-             'expressive faces, shallow depth of field. A primary-school classroom: a kind female teacher '
-             "projects students' drawings turned into talking 3D cartoons; kids cheer; a quiz game screen "
-             'follows.',
-             'Kids jump and raise hands. Teacher says in Persian (Farsi): "نقاشی همه بچه\u200cها رو کارتون کردم و '
-             'باهاش مسابقه کلاسی ساختم!"',
-             'نقاشی همه بچه\u200cها رو کارتون کردم و باهاش مسابقه کلاسی ساختم!',
-             ['معلم\u200cها هم عاشقش شدن 👩\u200d🏫']),
+             'Teacher previews an animation of a fictional drawing with parental permission; no real child photo '
+             'or named pupil. Production rule: generated scene is illustrative. Composite actual UI/screenshots '
+             'and all Persian text in editing; no synthetic trust badges or testimonials.',
+             'Vertical 9:16, smooth camera motion. Say in Persian (Farsi): "برای کلاس هم میشه نمونه ساخت؛ با '
+             'اجازه والدین و بدون اطلاعات کودک.".',
+             'برای کلاس هم میشه نمونه ساخت؛ با اجازه والدین و بدون اطلاعات کودک.',
+             ['اجازه والدین', 'بدون اطلاعات شخصی کودک']),
             (8,
              'Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL '
-             'product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text.',
+             'product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text. '
+             'Production rule: generated scene is illustrative. Composite actual UI/screenshots and all Persian '
+             'text in editing; no synthetic trust badges or testimonials.',
              'Slow push-in. Say in Persian (Farsi): "«نقاشی» رو کامنت کن؛ لینک و شرایط خرید رو بگیر.". Leave '
              'space for RTL overlays.',
              '«نقاشی» رو کامنت کن؛ لینک و شرایط خرید رو بگیر.',
