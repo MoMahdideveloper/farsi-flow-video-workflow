@@ -58,7 +58,7 @@ except ImportError:  # pragma: no cover
     except ImportError:
         get_display = None
 
-PIPELINE_VERSION = "1.0.1"
+PIPELINE_VERSION = "1.1.0"
 ANALYSIS_SR = 16000  # speech analysis: 16 kHz mono PCM
 
 # ----------------------------------------------------------------- defaults --
@@ -96,7 +96,7 @@ class PipelineError(RuntimeError):
 
 # ------------------------------------------------------------------ helpers --
 def log(msg: str) -> None:
-    print(f"[farsi-flow] {msg}", flush=True)
+    print(f"[farsi-flow] {msg}", file=sys.stderr, flush=True)
 
 
 def run(cmd: list[str], *, capture: bool = False, what: str = "") -> subprocess.CompletedProcess:
@@ -239,7 +239,7 @@ class Cue:
             s0, s1 = float(s0), float(s1)
         except (TypeError, ValueError) as exc:
             raise PipelineError(f"{where}: start/end must be numbers") from exc
-        if not (0.0 <= s0 < s1):
+        if not (math.isfinite(s0) and math.isfinite(s1) and 0.0 <= s0 < s1):
             raise PipelineError(f"{where}: need 0 <= start < end (got {s0}..{s1})")
         if not str(txt).strip():
             raise PipelineError(f"{where}: empty subtitle text")
@@ -308,6 +308,8 @@ def _expand(value: str, variables: dict[str, str]) -> str:
         if new == value:
             break
         value = new
+    if _VAR.search(value):
+        raise PipelineError(f"cyclic or excessively nested path variable: {value!r}")
     return os.path.expanduser(value)
 
 
@@ -344,7 +346,7 @@ def _parse_segments(raw: Any, where: str) -> Optional[list[tuple[float, float]]]
         if not (isinstance(seg, (list, tuple)) and len(seg) == 2):
             raise PipelineError(f"{where}.splice_segments[{i}] must be [start, end]")
         s0, s1 = float(seg[0]), float(seg[1])
-        if not (0.0 <= s0 < s1):
+        if not (math.isfinite(s0) and math.isfinite(s1) and 0.0 <= s0 < s1):
             raise PipelineError(f"{where}.splice_segments[{i}]: need 0 <= start < end")
         if segs and s0 < segs[-1][1]:
             raise PipelineError(f"{where}.splice_segments must be ascending and non-overlapping")
@@ -364,6 +366,8 @@ def load_manifest(path: Path, overrides: Optional[dict] = None) -> Episode:
         raise PipelineError(f"{path.name}: invalid JSON ({exc})") from exc
     if not isinstance(data, dict):
         raise PipelineError(f"{path.name}: top level must be an object")
+    if data.get("schema_version", 1) != 1:
+        raise PipelineError("unsupported schema_version; expected 1")
     episode_id = str(data.get("episode_id") or "").strip()
     if not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9_\-]*", episode_id):
         raise PipelineError(f"{path.name}: episode_id must be [A-Za-z0-9_-]+ (got {episode_id!r})")
@@ -390,7 +394,7 @@ def load_manifest(path: Path, overrides: Optional[dict] = None) -> Episode:
         cue.speaker = cue.speaker or cta_speaker
         cta_subs.append(cue)
 
-    speech = _merged(SPEECH_DEFAULTS, data.get("speech"))
+    speech = _merged(SPEECH_DEFAULTS, {"speech_safe": data.get("speech_safe")}, data.get("speech"))
     speech["speech_safe"] = normalize_speech_mode(ov.get("speech_safe") or speech.get("speech_safe"))
     subs_cfg = _merged(SUB_DEFAULTS, data.get("subtitle_style"))
     if subs_cfg["time_base"] not in ("trim_local", "source"):
@@ -410,13 +414,16 @@ def load_manifest(path: Path, overrides: Optional[dict] = None) -> Episode:
         if not isinstance(c, dict) or not c.get("file"):
             raise PipelineError(f"{where}: needs at least a 'file'")
         cid = str(c.get("id") or f"clip_{i:02d}")
+        if not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9_-]*", cid):
+            raise PipelineError(f"{where}: unsafe clip id {cid!r}")
         if cid in seen:
             raise PipelineError(f"{where}: duplicate clip id {cid}")
         seen.add(cid)
         t_in = float(c.get("trim_in", 0.0) or 0.0)
         t_out = c.get("trim_out")
         t_out = None if t_out is None else float(t_out)
-        if t_in < 0 or (t_out is not None and t_out <= t_in):
+        if not math.isfinite(t_in) or t_in < 0 or (t_out is not None and
+                (not math.isfinite(t_out) or t_out <= t_in)):
             raise PipelineError(f"{where}: need 0 <= trim_in < trim_out (got {t_in}..{t_out})")
         cues = [Cue.parse(s, f"{where}.subtitles[{j}]") for j, s in enumerate(c.get("subtitles") or [])]
         for cue in cues:
@@ -433,7 +440,7 @@ def load_manifest(path: Path, overrides: Optional[dict] = None) -> Episode:
     if not clips:
         raise PipelineError(f"{path.name}: no clips defined")
 
-    return Episode(
+    ep = Episode(
         manifest_path=path, manifest_sha256=hashlib.sha256(raw_bytes).hexdigest(),
         episode_id=episode_id, title_fa=str(data.get("title_fa") or ""),
         clips_dir=clips_dir, out_dir=out_dir, font_path=font_path,
@@ -442,6 +449,55 @@ def load_manifest(path: Path, overrides: Optional[dict] = None) -> Episode:
         audio=_merged(AUDIO_DEFAULTS, data.get("audio")),
         speech=speech, subs=subs_cfg, badge=badge, voices=voices, clips=clips,
         outputs=dict(data.get("outputs") or {}))
+    validate_settings(ep)
+    return ep
+
+
+def validate_settings(ep: Episode) -> None:
+    """Fail early for invalid numeric settings, enums, colors and path collisions."""
+    for group, keys in ((ep.video, ("width", "height", "fps")),
+                        (ep.audio, ("sample_rate", "channels")),
+                        (ep.speech, ("frame_ms", "min_speech_ms")),
+                        (ep.subs, ("font_size", "min_font_size", "max_text_margin"))):
+        for key in keys:
+            value = float(group[key])
+            if not math.isfinite(value) or value <= 0 or value != int(value):
+                raise PipelineError(f"{key} must be a positive integer")
+    for key in ("pre_handle", "post_handle", "merge_gap_ms", "splice_crossfade"):
+        value = float(ep.speech[key])
+        if not math.isfinite(value) or value < 0:
+            raise PipelineError(f"{key} must be finite and nonnegative")
+    for key in ("threshold_dbfs", "noise_margin_db", "peak_margin_db"):
+        if not math.isfinite(float(ep.speech[key])):
+            raise PipelineError(f"{key} must be finite")
+    if ep.audio["channels"] not in (1, 2):
+        raise PipelineError("channels must be 1 or 2")
+    if any(int(ep.video[k]) % 2 for k in ("width", "height")):
+        raise PipelineError("video dimensions must be even (yuv420p)")
+    if ep.video["scale_mode"] not in ("fill", "fit", "stretch"):
+        raise PipelineError("invalid video.scale_mode")
+    if ep.outputs.get("base_mode", "timeline") not in ("timeline", "concat_subbed"):
+        raise PipelineError("invalid outputs.base_mode")
+    if ep.outputs.get("per_clip_location", "both") not in ("both", "clips_dir", "out_dir"):
+        raise PipelineError("invalid outputs.per_clip_location")
+    for cue in ep.cta_subtitles:
+        if cue.speaker and cue.speaker not in ep.voices:
+            raise PipelineError(f"CTA speaker {cue.speaker!r} not declared in voices")
+    for speaker, voice in ep.voices.items():
+        color = voice.get("color", DEFAULT_TEXT_COLOR)
+        if len(color) != 3 or any(not isinstance(c, int) or not 0 <= c <= 255 for c in color):
+            raise PipelineError(f"{speaker}: color must be three RGB integers in 0..255")
+    sources = {p.resolve() for c in ep.clips for p in clip_source_paths(ep, c) if p}
+    if ep.cta_video:
+        sources.add(ep.cta_video.resolve())
+    products = [ep.out_dir / f"{n}.mp4" for n in (ep.base_name, ep.master_name)]
+    for c in ep.clips:
+        products += clip_output_paths(ep, c, f"{c.id}_subbed.mp4")
+        products += [work_dir(ep) / f"{c.id}_{suffix}" for suffix in ("norm.mp4", "spliced.mov")]
+    products.append(work_dir(ep) / "cta_norm.mov")
+    if sources.intersection(p.resolve() for p in products):
+        raise PipelineError("output path would overwrite an input source; use separate paths")
+
 
 
 def clip_source_paths(ep: Episode, clip: ClipSpec) -> tuple[Path, Optional[Path]]:
@@ -702,6 +758,8 @@ def shape_fa(text: str, engine: Optional[str] = None) -> str:
     'raqm' the logical string is returned untouched (raqm shapes it itself;
     pre-reshaping would reverse it twice)."""
     engine = engine or shaping_engine()
+    if engine == "none":
+        raise PipelineError("Persian shaping unavailable; install arabic-reshaper and python-bidi")
     if engine == "reshaper":
         return get_display(arabic_reshaper.reshape(text))
     return text
@@ -922,7 +980,10 @@ def cache_ok(outputs: list[Path], key: str) -> bool:
     if not rec.is_file() or not all(p.is_file() and p.stat().st_size > 0 for p in outputs):
         return False
     try:
-        return json.loads(rec.read_text("utf-8")).get("key") == key
+        record = json.loads(rec.read_text("utf-8"))
+        hashes = record.get("output_hashes", {outputs[0].name: record.get("sha256")})
+        return record.get("key") == key and all(
+            hashes.get(p.name) == sha256_file(p) for p in outputs)
     except (OSError, json.JSONDecodeError):
         return False
 
@@ -1108,7 +1169,7 @@ def render_clip(ep: Episode, res: ClipResult, work: Path, font_path: str,
                 force: bool = False) -> ClipResult:
     """Normalise + burn subtitles (badge on the badge clip) WITH original audio."""
     clip, (t_in, t_out) = res.clip, res.plan["final"]
-    norm_key = fingerprint({"src": res.provenance["source_sha256"], "segs": clip.splice_segments,
+    norm_key = fingerprint({"src": sha256_file(res.source), "segs": clip.splice_segments,
                             "trim": [t_in, t_out], "video": ep.video, "audio": ep.audio,
                             "v": PIPELINE_VERSION})
     res.norm_mp4, res.norm_wav = work / f"{clip.id}_norm.mp4", work / f"{clip.id}_norm.wav"
@@ -1116,7 +1177,8 @@ def render_clip(ep: Episode, res: ClipResult, work: Path, font_path: str,
         log(f"{clip.id}: normalise {res.source.name} [{t_in:.3f}, {t_out:.3f}] -> "
             f"{ep.video['width']}x{ep.video['height']}@{ep.video['fps']} + loudnorm")
         info = normalize_clip(res.source, t_in, t_out, res.norm_mp4, res.norm_wav, ep.video, ep.audio)
-        cache_write(res.norm_mp4, norm_key, **info)
+        cache_write(res.norm_mp4, norm_key, **info, output_hashes={
+            p.name: sha256_file(p) for p in (res.norm_mp4, res.norm_wav)})
     rec = json.loads(_record_path(res.norm_mp4).read_text("utf-8"))
     res.frames, res.duration = int(rec["frames"]), float(rec["duration"])
 
@@ -1128,7 +1190,7 @@ def render_clip(ep: Episode, res: ClipResult, work: Path, font_path: str,
     res.overlays = build_overlays(ep, res.cues, res.duration, work / "pills", clip.id, font_path,
                                   with_badge)
     sub_key = fingerprint({"norm": norm_key, "font": sha256_file(Path(font_path)),
-                           "engine": shaping_engine(), "style": ep.subs, "crf": ep.video["crf"],
+                           "engine": shaping_engine(), "style": ep.subs, "badge": ep.badge, "crf": ep.video["crf"],
                            "ov": [(o.kind, o.start, o.end, o.text, o.meta["x"], o.meta["y"],
                                    o.meta["font_size"], ep.color_for(o.speaker)) for o in res.overlays]})
     name = f"{clip.id}_subbed"
@@ -1173,6 +1235,8 @@ def run_clips(ep: Episode, force: bool = False, render: bool = True,
         if render:
             res = render_clip(ep, res, work, font_path, force)  # type: ignore[arg-type]
         results.append(res)
+    if not results:
+        raise PipelineError("--only matched no clips")
     return results, font_path, font_notes
 
 
@@ -1310,7 +1374,9 @@ def normalize_cta(ep: Episode, cta: Path, font_path: Optional[str], force: bool 
     cta_sha = sha256_file(cta)
     key = fingerprint({"cta": cta_sha, "burn": burn, "ln": lnorm, "video": ep.video, "audio": ep.audio,
                        "subs": [asdict(c) for c in ep.cta_subtitles] if burn else None,
-                       "v": PIPELINE_VERSION})
+                       "font": sha256_file(Path(font_path)) if burn and font_path else None,
+                       "style": ep.subs if burn else None, "voices": ep.voices if burn else None,
+                       "engine": shaping_engine() if burn else None, "v": PIPELINE_VERSION})
     if not force and cache_ok([out], key):
         return out, float(json.loads(_record_path(out).read_text("utf-8"))["duration"]), cta_sha
     p = probe_media(cta)
@@ -1691,7 +1757,9 @@ def _kv(items: Optional[list[str]]) -> dict[str, str]:
 
 
 def _manifest_args(p: argparse.ArgumentParser, cta: bool = True) -> None:
-    p.add_argument("manifest", type=Path, help="episode manifest JSON")
+    p.add_argument("manifest", type=Path, nargs="?", help="episode manifest JSON")
+    p.add_argument("--manifest", dest="manifest_option", type=Path,
+                   help="episode manifest JSON (alternative to positional argument)")
     p.add_argument("--var", action="append", metavar="NAME=VALUE",
                    help="override a manifest ${VAR} (e.g. BASE=/data/series1); repeatable")
     p.add_argument("--clips-dir", help="override clips_dir")
@@ -1767,6 +1835,9 @@ def main(argv: Optional[list[str]] = None) -> int:
     global FFMPEG, FFPROBE, VERBOSE
     a = build_parser().parse_args(argv)
     FFMPEG, FFPROBE, VERBOSE = a.ffmpeg or FFMPEG, a.ffprobe or FFPROBE, a.verbose
+    for stream in (sys.stdout, sys.stderr):
+        if hasattr(stream, "reconfigure"):
+            stream.reconfigure(encoding="utf-8", errors="replace")
     try:
         if a.command == "clipboard-image":
             info = verify_keyframe(a.image, require_portrait=not a.allow_any_ratio)
@@ -1789,7 +1860,9 @@ def main(argv: Optional[list[str]] = None) -> int:
             return 0
         if shutil.which(FFMPEG) is None or shutil.which(FFPROBE) is None:
             raise PipelineError(f"ffmpeg/ffprobe not found ({FFMPEG}, {FFPROBE}); use --ffmpeg/--ffprobe")
-        ep = load_manifest(a.manifest, _overrides(a))
+        if bool(a.manifest) == bool(a.manifest_option):
+            raise PipelineError("provide exactly one manifest: positional or --manifest PATH")
+        ep = load_manifest(a.manifest or a.manifest_option, _overrides(a))
         log(f"episode {ep.episode_id}: {len(ep.clips)} clips, clips_dir={ep.clips_dir}, out_dir={ep.out_dir}")
         if a.command == "speech-audit":
             res = speech_audit(ep, only=_only(a))
@@ -1813,8 +1886,9 @@ def main(argv: Optional[list[str]] = None) -> int:
             log(f"report: {res['qa_report']}")
         for w in ep.warnings:
             log(f"WARNING: {w}")
-        return 0
-    except PipelineError as exc:
+        report = json.loads(res["qa_report"].read_text("utf-8"))
+        return 1 if report["overall_status"] == "fail" else 0
+    except (PipelineError, OSError, ValueError, TypeError) as exc:
         log(f"ERROR: {exc}")
         return 1
 
