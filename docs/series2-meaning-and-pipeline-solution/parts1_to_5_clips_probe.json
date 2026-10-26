@@ -1,0 +1,414 @@
+{
+  "parts": {
+    "part1": {
+      "clip_01": {
+        "file": "clip_01.mp4",
+        "used_raw_unsubbed": true,
+        "num_sampled_frames": 20,
+        "l1_vs_keyframe_mean": 57.18,
+        "l1_vs_keyframe_start": 57.73,
+        "l1_vs_keyframe_end": 61.02,
+        "closest_other_keyframe": "clip_04",
+        "closest_other_keyframe_l1_start": 35.99,
+        "max_internal_jump_l1": 51.65,
+        "max_internal_jump_time_sec": 9.0,
+        "detected_scene_cuts_sec": [
+          9.0
+        ]
+      },
+      "clip_02": {
+        "file": "clip_02.mp4",
+        "used_raw_unsubbed": true,
+        "num_sampled_frames": 20,
+        "l1_vs_keyframe_mean": 39.25,
+        "l1_vs_keyframe_start": 9.55,
+        "l1_vs_keyframe_end": 39.64,
+        "closest_other_keyframe": "clip_04",
+        "closest_other_keyframe_l1_start": 52.17,
+        "max_internal_jump_l1": 42.21,
+        "max_internal_jump_time_sec": 0.5,
+        "detected_scene_cuts_sec": [
+          0.5
+        ]
+      },
+      "clip_03": {
+        "file": "clip_03.mp4",
+        "used_raw_unsubbed": true,
+        "num_sampled_frames": 20,
+        "l1_vs_keyframe_mean": 59.69,
+        "l1_vs_keyframe_start": 59.1,
+        "l1_vs_keyframe_end": 60.46,
+        "closest_other_keyframe": "clip_01",
+        "closest_other_keyframe_l1_start": 59.85,
+        "max_internal_jump_l1": 8.23,
+        "max_internal_jump_time_sec": 6.0,
+        "detected_scene_cuts_sec": []
+      },
+      "clip_04": {
+        "file": "clip_04.mp4",
+        "used_raw_unsubbed": true,
+        "num_sampled_frames": 20,
+        "l1_vs_keyframe_mean": 15.7,
+        "l1_vs_keyframe_start": 11.04,
+        "l1_vs_keyframe_end": 15.37,
+        "closest_other_keyframe": "clip_03",
+        "closest_other_keyframe_l1_start": 38.84,
+        "max_internal_jump_l1": 11.1,
+        "max_internal_jump_time_sec": 1.5,
+        "detected_scene_cuts_sec": []
+      },
+      "clip_05": {
+        "file": "clip_05.mp4",
+        "used_raw_unsubbed": true,
+        "num_sampled_frames": 20,
+        "l1_vs_keyframe_mean": 40.74,
+        "l1_vs_keyframe_start": 19.51,
+        "l1_vs_keyframe_end": 41.33,
+        "closest_other_keyframe": "clip_06",
+        "closest_other_keyframe_l1_start": 54.1,
+        "max_internal_jump_l1": 30.61,
+        "max_internal_jump_time_sec": 0.5,
+        "detected_scene_cuts_sec": []
+      },
+      "clip_06": {
+        "file": "clip_06.mp4",
+        "used_raw_unsubbed": true,
+        "num_sampled_frames": 20,
+        "l1_vs_keyframe_mean": 49.34,
+        "l1_vs_keyframe_start": 48.89,
+        "l1_vs_keyframe_end": 48.92,
+        "closest_other_keyframe": "clip_03",
+        "closest_other_keyframe_l1_start": 54.86,
+        "max_internal_jump_l1": 10.63,
+        "max_internal_jump_time_sec": 8.0,
+        "detected_scene_cuts_sec": []
+      }
+    },
+    "part2": {
+      "clip_01": {
+        "file": "clip_01.mp4",
+        "used_raw_unsubbed": true,
+        "num_sampled_frames": 20,
+        "l1_vs_keyframe_mean": 27.32,
+        "l1_vs_keyframe_start": 16.14,
+        "l1_vs_keyframe_end": 23.08,
+        "closest_other_keyframe": "clip_03",
+        "closest_other_keyframe_l1_start": 51.24,
+        "max_internal_jump_l1": 26.45,
+        "max_internal_jump_time_sec": 9.0,
+        "detected_scene_cuts_sec": []
+      },
+      "clip_02": {
+        "file": "clip_02.mp4",
+        "used_raw_unsubbed": true,
+        "num_sampled_frames": 20,
+        "l1_vs_keyframe_mean": 8.74,
+        "l1_vs_keyframe_start": 5.28,
+        "l1_vs_keyframe_end": 11.07,
+        "closest_other_keyframe": "clip_03",
+        "closest_other_keyframe_l1_start": 30.2,
+        "max_internal_jump_l1": 8.59,
+        "max_internal_jump_time_sec": 5.5,
+        "detected_scene_cuts_sec": []
+      },
+      "clip_03": {
+        "file": "clip_03.mp4",
+        "used_raw_unsubbed": true,
+        "num_sampled_frames": 20,
+        "l1_vs_keyframe_mean": 21.44,
+        "l1_vs_keyframe_start": 5.79,
+        "l1_vs_keyframe_end": 22.69,
+        "closest_other_keyframe": "clip_02",
+        "closest_other_keyframe_l1_start": 30.13,
+        "max_internal_jump_l1": 21.67,
+        "max_internal_jump_time_sec": 1.0,
+        "detected_scene_cuts_sec": []
+      },
+      "clip_04": {
+        "file": "clip_04.mp4",
+        "used_raw_unsubbed": true,
+        "num_sampled_frames": 20,
+        "l1_vs_keyframe_mean": 61.81,
+        "l1_vs_keyframe_start": 60.2,
+        "l1_vs_keyframe_end": 61.46,
+        "closest_other_keyframe": "clip_01",
+        "closest_other_keyframe_l1_start": 65.88,
+        "max_internal_jump_l1": 17.26,
+        "max_internal_jump_time_sec": 3.5,
+        "detected_scene_cuts_sec": []
+      },
+      "clip_05": {
+        "file": "clip_05.mp4",
+        "used_raw_unsubbed": true,
+        "num_sampled_frames": 20,
+        "l1_vs_keyframe_mean": 49.77,
+        "l1_vs_keyframe_start": 67.86,
+        "l1_vs_keyframe_end": 49.91,
+        "closest_other_keyframe": "clip_06",
+        "closest_other_keyframe_l1_start": 12.03,
+        "max_internal_jump_l1": 62.74,
+        "max_internal_jump_time_sec": 0.5,
+        "detected_scene_cuts_sec": [
+          0.5
+        ]
+      },
+      "clip_06": {
+        "file": "clip_06.mp4",
+        "used_raw_unsubbed": true,
+        "num_sampled_frames": 20,
+        "l1_vs_keyframe_mean": 22.91,
+        "l1_vs_keyframe_start": 9.76,
+        "l1_vs_keyframe_end": 29.58,
+        "closest_other_keyframe": "clip_03",
+        "closest_other_keyframe_l1_start": 53.09,
+        "max_internal_jump_l1": 19.25,
+        "max_internal_jump_time_sec": 5.5,
+        "detected_scene_cuts_sec": []
+      }
+    },
+    "part3": {
+      "clip_01": {
+        "file": "clip_01.mp4",
+        "used_raw_unsubbed": true,
+        "num_sampled_frames": 20,
+        "l1_vs_keyframe_mean": 17.97,
+        "l1_vs_keyframe_start": 5.49,
+        "l1_vs_keyframe_end": 19.89,
+        "closest_other_keyframe": "clip_05",
+        "closest_other_keyframe_l1_start": 51.35,
+        "max_internal_jump_l1": 13.41,
+        "max_internal_jump_time_sec": 1.0,
+        "detected_scene_cuts_sec": []
+      },
+      "clip_02": {
+        "file": "clip_02.mp4",
+        "used_raw_unsubbed": true,
+        "num_sampled_frames": 20,
+        "l1_vs_keyframe_mean": 29.23,
+        "l1_vs_keyframe_start": 15.25,
+        "l1_vs_keyframe_end": 30.07,
+        "closest_other_keyframe": "clip_06",
+        "closest_other_keyframe_l1_start": 39.67,
+        "max_internal_jump_l1": 17.04,
+        "max_internal_jump_time_sec": 0.5,
+        "detected_scene_cuts_sec": []
+      },
+      "clip_03": {
+        "file": "clip_03.mp4",
+        "used_raw_unsubbed": true,
+        "num_sampled_frames": 20,
+        "l1_vs_keyframe_mean": 18.66,
+        "l1_vs_keyframe_start": 7.38,
+        "l1_vs_keyframe_end": 20.67,
+        "closest_other_keyframe": "clip_04",
+        "closest_other_keyframe_l1_start": 44.58,
+        "max_internal_jump_l1": 13.41,
+        "max_internal_jump_time_sec": 0.5,
+        "detected_scene_cuts_sec": []
+      },
+      "clip_04": {
+        "file": "clip_04.mp4",
+        "used_raw_unsubbed": true,
+        "num_sampled_frames": 20,
+        "l1_vs_keyframe_mean": 45.46,
+        "l1_vs_keyframe_start": 45.36,
+        "l1_vs_keyframe_end": 45.32,
+        "closest_other_keyframe": "clip_03",
+        "closest_other_keyframe_l1_start": 47.41,
+        "max_internal_jump_l1": 7.68,
+        "max_internal_jump_time_sec": 7.0,
+        "detected_scene_cuts_sec": []
+      },
+      "clip_05": {
+        "file": "clip_05.mp4",
+        "used_raw_unsubbed": true,
+        "num_sampled_frames": 20,
+        "l1_vs_keyframe_mean": 24.43,
+        "l1_vs_keyframe_start": 10.95,
+        "l1_vs_keyframe_end": 30.09,
+        "closest_other_keyframe": "clip_06",
+        "closest_other_keyframe_l1_start": 44.5,
+        "max_internal_jump_l1": 17.72,
+        "max_internal_jump_time_sec": 3.5,
+        "detected_scene_cuts_sec": []
+      },
+      "clip_06": {
+        "file": "clip_06.mp4",
+        "used_raw_unsubbed": true,
+        "num_sampled_frames": 20,
+        "l1_vs_keyframe_mean": 8.26,
+        "l1_vs_keyframe_start": 6.04,
+        "l1_vs_keyframe_end": 8.19,
+        "closest_other_keyframe": "clip_04",
+        "closest_other_keyframe_l1_start": 16.51,
+        "max_internal_jump_l1": 6.32,
+        "max_internal_jump_time_sec": 0.5,
+        "detected_scene_cuts_sec": []
+      }
+    },
+    "part4": {
+      "clip_01": {
+        "file": "clip_01.mp4",
+        "used_raw_unsubbed": true,
+        "num_sampled_frames": 20,
+        "l1_vs_keyframe_mean": 21.2,
+        "l1_vs_keyframe_start": 9.24,
+        "l1_vs_keyframe_end": 19.46,
+        "closest_other_keyframe": "clip_03",
+        "closest_other_keyframe_l1_start": 40.4,
+        "max_internal_jump_l1": 17.8,
+        "max_internal_jump_time_sec": 1.0,
+        "detected_scene_cuts_sec": []
+      },
+      "clip_02": {
+        "file": "clip_02.mp4",
+        "used_raw_unsubbed": true,
+        "num_sampled_frames": 20,
+        "l1_vs_keyframe_mean": 18.42,
+        "l1_vs_keyframe_start": 9.01,
+        "l1_vs_keyframe_end": 18.17,
+        "closest_other_keyframe": "clip_03",
+        "closest_other_keyframe_l1_start": 44.61,
+        "max_internal_jump_l1": 9.85,
+        "max_internal_jump_time_sec": 3.5,
+        "detected_scene_cuts_sec": []
+      },
+      "clip_03": {
+        "file": "clip_03.mp4",
+        "used_raw_unsubbed": true,
+        "num_sampled_frames": 20,
+        "l1_vs_keyframe_mean": 22.68,
+        "l1_vs_keyframe_start": 6.71,
+        "l1_vs_keyframe_end": 25.0,
+        "closest_other_keyframe": "clip_01",
+        "closest_other_keyframe_l1_start": 42.36,
+        "max_internal_jump_l1": 25.91,
+        "max_internal_jump_time_sec": 1.0,
+        "detected_scene_cuts_sec": []
+      },
+      "clip_04": {
+        "file": "clip_04.mp4",
+        "used_raw_unsubbed": true,
+        "num_sampled_frames": 20,
+        "l1_vs_keyframe_mean": 43.05,
+        "l1_vs_keyframe_start": 43.33,
+        "l1_vs_keyframe_end": 42.98,
+        "closest_other_keyframe": "clip_05",
+        "closest_other_keyframe_l1_start": 55.17,
+        "max_internal_jump_l1": 38.16,
+        "max_internal_jump_time_sec": 1.5,
+        "detected_scene_cuts_sec": [
+          1.5
+        ]
+      },
+      "clip_05": {
+        "file": "clip_05.mp4",
+        "used_raw_unsubbed": true,
+        "num_sampled_frames": 20,
+        "l1_vs_keyframe_mean": 17.19,
+        "l1_vs_keyframe_start": 15.15,
+        "l1_vs_keyframe_end": 22.38,
+        "closest_other_keyframe": "clip_03",
+        "closest_other_keyframe_l1_start": 43.3,
+        "max_internal_jump_l1": 18.5,
+        "max_internal_jump_time_sec": 1.5,
+        "detected_scene_cuts_sec": []
+      },
+      "clip_06": {
+        "file": "clip_06.mp4",
+        "used_raw_unsubbed": true,
+        "num_sampled_frames": 20,
+        "l1_vs_keyframe_mean": 54.59,
+        "l1_vs_keyframe_start": 56.56,
+        "l1_vs_keyframe_end": 61.35,
+        "closest_other_keyframe": "clip_01",
+        "closest_other_keyframe_l1_start": 44.69,
+        "max_internal_jump_l1": 47.28,
+        "max_internal_jump_time_sec": 9.0,
+        "detected_scene_cuts_sec": [
+          9.0
+        ]
+      }
+    },
+    "part5": {
+      "clip_01": {
+        "file": "clip_01.mp4",
+        "used_raw_unsubbed": true,
+        "num_sampled_frames": 20,
+        "l1_vs_keyframe_mean": 54.02,
+        "l1_vs_keyframe_start": 54.69,
+        "l1_vs_keyframe_end": 52.6,
+        "closest_other_keyframe": "clip_05",
+        "closest_other_keyframe_l1_start": 59.24,
+        "max_internal_jump_l1": 25.87,
+        "max_internal_jump_time_sec": 3.0,
+        "detected_scene_cuts_sec": []
+      },
+      "clip_02": {
+        "file": "clip_02.mp4",
+        "used_raw_unsubbed": true,
+        "num_sampled_frames": 20,
+        "l1_vs_keyframe_mean": 40.68,
+        "l1_vs_keyframe_start": 38.66,
+        "l1_vs_keyframe_end": 39.86,
+        "closest_other_keyframe": "clip_04",
+        "closest_other_keyframe_l1_start": 46.39,
+        "max_internal_jump_l1": 21.38,
+        "max_internal_jump_time_sec": 2.5,
+        "detected_scene_cuts_sec": []
+      },
+      "clip_03": {
+        "file": "clip_03.mp4",
+        "used_raw_unsubbed": true,
+        "num_sampled_frames": 20,
+        "l1_vs_keyframe_mean": 49.64,
+        "l1_vs_keyframe_start": 48.96,
+        "l1_vs_keyframe_end": 50.08,
+        "closest_other_keyframe": "clip_04",
+        "closest_other_keyframe_l1_start": 48.71,
+        "max_internal_jump_l1": 11.64,
+        "max_internal_jump_time_sec": 4.0,
+        "detected_scene_cuts_sec": []
+      },
+      "clip_04": {
+        "file": "clip_04.mp4",
+        "used_raw_unsubbed": true,
+        "num_sampled_frames": 20,
+        "l1_vs_keyframe_mean": 11.3,
+        "l1_vs_keyframe_start": 5.35,
+        "l1_vs_keyframe_end": 13.06,
+        "closest_other_keyframe": "clip_02",
+        "closest_other_keyframe_l1_start": 36.3,
+        "max_internal_jump_l1": 13.9,
+        "max_internal_jump_time_sec": 8.5,
+        "detected_scene_cuts_sec": []
+      },
+      "clip_05": {
+        "file": "clip_05.mp4",
+        "used_raw_unsubbed": true,
+        "num_sampled_frames": 20,
+        "l1_vs_keyframe_mean": 18.53,
+        "l1_vs_keyframe_start": 8.8,
+        "l1_vs_keyframe_end": 19.14,
+        "closest_other_keyframe": "clip_02",
+        "closest_other_keyframe_l1_start": 43.18,
+        "max_internal_jump_l1": 20.07,
+        "max_internal_jump_time_sec": 2.5,
+        "detected_scene_cuts_sec": []
+      },
+      "clip_06": {
+        "file": "clip_06.mp4",
+        "used_raw_unsubbed": true,
+        "num_sampled_frames": 20,
+        "l1_vs_keyframe_mean": 71.28,
+        "l1_vs_keyframe_start": 72.32,
+        "l1_vs_keyframe_end": 71.41,
+        "closest_other_keyframe": "clip_05",
+        "closest_other_keyframe_l1_start": 91.83,
+        "max_internal_jump_l1": 9.15,
+        "max_internal_jump_time_sec": 9.5,
+        "detected_scene_cuts_sec": []
+      }
+    }
+  }
+}
