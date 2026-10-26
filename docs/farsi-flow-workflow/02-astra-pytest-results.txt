@@ -1,0 +1,62 @@
+Stage 2 final verification — 2026-10-26 UTC
+Command: pytest tests/test_farsi_flow_workflow.py -v
+Tested repository commit: 08b21967352b578708fc888f999e561a54cb49d8
+Exit status: 0
+Only the absolute rootdir path below is replaced by <repository checkout>.
+
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-9.1.1, pluggy-1.6.0 -- /usr/bin/python3
+cachedir: .pytest_cache
+rootdir: <repository checkout>
+plugins: anyio-4.15.1
+collecting ... collected 47 items
+
+tests/test_farsi_flow_workflow.py::test_build_outputs_and_original_audio PASSED [  2%]
+tests/test_farsi_flow_workflow.py::test_build_is_idempotent PASSED       [  4%]
+tests/test_farsi_flow_workflow.py::test_subtitle_pixels_are_burned PASSED [  6%]
+tests/test_farsi_flow_workflow.py::test_speech_audit_auto_expands_and_retimes PASSED [  8%]
+tests/test_farsi_flow_workflow.py::test_warn_retains_unsafe_window_and_fails_gate PASSED [ 10%]
+tests/test_farsi_flow_workflow.py::test_exact_splice_raw_original_and_fallback PASSED [ 12%]
+tests/test_farsi_flow_workflow.py::test_no_cta_missing_cta_and_restore_are_idempotent PASSED [ 14%]
+tests/test_farsi_flow_workflow.py::test_cached_auxiliary_and_primary_hashes PASSED [ 17%]
+tests/test_farsi_flow_workflow.py::test_rendered_cache_corruption_is_rebuilt PASSED [ 19%]
+tests/test_farsi_flow_workflow.py::test_shipped_manifests_preserve_paths_text_and_windows[series1_part1_whats_her_number.json] PASSED [ 21%]
+tests/test_farsi_flow_workflow.py::test_shipped_manifests_preserve_paths_text_and_windows[ugly_chef_part2.json] PASSED [ 23%]
+tests/test_farsi_flow_workflow.py::test_invalid_manifest_rejected[change0] PASSED [ 25%]
+tests/test_farsi_flow_workflow.py::test_invalid_manifest_rejected[change1] PASSED [ 27%]
+tests/test_farsi_flow_workflow.py::test_invalid_manifest_rejected[change2] PASSED [ 29%]
+tests/test_farsi_flow_workflow.py::test_invalid_manifest_rejected[change3] PASSED [ 31%]
+tests/test_farsi_flow_workflow.py::test_invalid_manifest_rejected[change4] PASSED [ 34%]
+tests/test_farsi_flow_workflow.py::test_invalid_manifest_rejected[change5] PASSED [ 36%]
+tests/test_farsi_flow_workflow.py::test_invalid_manifest_rejected[change6] PASSED [ 38%]
+tests/test_farsi_flow_workflow.py::test_invalid_manifest_rejected[change7] PASSED [ 40%]
+tests/test_farsi_flow_workflow.py::test_invalid_manifest_rejected[change8] PASSED [ 42%]
+tests/test_farsi_flow_workflow.py::test_invalid_manifest_rejected[change9] PASSED [ 44%]
+tests/test_farsi_flow_workflow.py::test_invalid_manifest_rejected[change10] PASSED [ 46%]
+tests/test_farsi_flow_workflow.py::test_output_never_overwrites_source PASSED [ 48%]
+tests/test_farsi_flow_workflow.py::test_dense_speech_silence_and_partial_pcm_tail PASSED [ 51%]
+tests/test_farsi_flow_workflow.py::test_trim_local_shift_and_lock PASSED [ 53%]
+tests/test_farsi_flow_workflow.py::test_windows_clipboard_encoding_without_mutation PASSED [ 55%]
+tests/test_farsi_flow_workflow.py::test_missing_shaper_does_not_silently_pass PASSED [ 57%]
+tests/test_farsi_flow_workflow.py::test_unknown_only_filter_is_error PASSED [ 59%]
+tests/test_farsi_flow_workflow.py::test_empty_contact_sheet_gets_story_frame PASSED [ 61%]
+tests/test_farsi_flow_workflow.py::test_positional_manifest_remains_compatible PASSED [ 63%]
+tests/test_farsi_flow_workflow.py::test_all_six_series1_clips_with_shipped_windows PASSED [ 65%]
+tests/test_farsi_flow_workflow.py::test_reference_scripts_match_manifest_dialogue_and_trims PASSED [ 68%]
+tests/test_farsi_flow_workflow.py::test_failed_promotion_keeps_previous_output PASSED [ 70%]
+tests/test_farsi_flow_workflow.py::test_ffprobe_na_fields_are_tolerated PASSED [ 72%]
+tests/test_farsi_flow_workflow.py::test_outer_splice_cuts_cannot_escape_audit[start-segments0-span0] PASSED [ 74%]
+tests/test_farsi_flow_workflow.py::test_outer_splice_cuts_cannot_escape_audit[end-segments1-span1] PASSED [ 76%]
+tests/test_farsi_flow_workflow.py::test_internal_splice_crossfade_has_speech_guard PASSED [ 78%]
+tests/test_farsi_flow_workflow.py::test_trim_beyond_source_is_not_silently_shortened[warn] PASSED [ 80%]
+tests/test_farsi_flow_workflow.py::test_trim_beyond_source_is_not_silently_shortened[auto_expand] PASSED [ 82%]
+tests/test_farsi_flow_workflow.py::test_trim_beyond_source_is_not_silently_shortened[off] PASSED [ 85%]
+tests/test_farsi_flow_workflow.py::test_source_pts_offset_rejected_before_audio_retiming[direct-starts0] PASSED [ 87%]
+tests/test_farsi_flow_workflow.py::test_source_pts_offset_rejected_before_audio_retiming[direct-starts1] PASSED [ 89%]
+tests/test_farsi_flow_workflow.py::test_source_pts_offset_rejected_before_audio_retiming[direct-starts2] PASSED [ 91%]
+tests/test_farsi_flow_workflow.py::test_source_pts_offset_rejected_before_audio_retiming[splice-starts0] PASSED [ 93%]
+tests/test_farsi_flow_workflow.py::test_source_pts_offset_rejected_before_audio_retiming[splice-starts1] PASSED [ 95%]
+tests/test_farsi_flow_workflow.py::test_source_pts_offset_rejected_before_audio_retiming[splice-starts2] PASSED [ 97%]
+tests/test_farsi_flow_workflow.py::test_outer_splice_tail_failure_reaches_cli_and_qa PASSED [100%]
+
+======================== 47 passed in 162.37s (0:02:42) ========================
