@@ -1,6 +1,7 @@
 {
   "_comment": "The Ugly Face Chef / سرآشپز زشت - Part 2 (Google Flow native Farsi). Ported 1:1 from 06_assemble_part2_flow_master.py + the Part 2 CTA step of 10_append_kelidbox_flow_cta.py (cta_kelidbox_agnes_subbed.mp4, subs_a). episode_id 'Part2' keeps the existing Master_Part2_Flow_Native_Farsi.mp4 name. On Linux/macOS remap the Windows root, e.g. --var BASE=/data/ugly-face-chef-farsi",
   "schema_version": 1,
+  "speech_review_note": "Auto-expand retains detected speech and requested handles within source bounds; missing source speech cannot be recovered. Automatic QA is not a listening sign-off. Review all original Flow audio, splice/cut boundaries, and the final encoded master before publishing.",
   "series": "ugly_face_chef",
   "episode_id": "Part2",
   "title_fa": "قسمت دوم: سرآشپز زشت",
