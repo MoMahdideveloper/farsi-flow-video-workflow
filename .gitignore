@@ -1,0 +1,7 @@
+# Python/test caches; source fixtures and renders belong outside this repository.
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+.venv/
