@@ -543,3 +543,131 @@ def analyze_clip_speech(mp4_path: Path, trim_in: float = 0.0, trim_out: Optional
     if not segs:
         report["warning"] = "no speech energy detected above threshold"
     return report
+
+
+# ------------------------------------------------------ speech-safe trimming --
+def plan_trim(clip: ClipSpec, analysis: Optional[dict], src_dur: float, cfg: dict) -> dict:
+    """Decide the final [trim_in, trim_out] for one clip.
+
+    auto_expand: trim_in  = min(trim_in,  max(0, first_speech - pre_handle))
+                 trim_out = max(trim_out, min(src_dur, last_speech + post_handle))
+    warn:        keep curated window, record diagnostics.
+    off / lock_trim: keep curated window verbatim.
+    Subtitles are trim-local, so widening trim_in by d shifts every cue by +d."""
+    req_in = clip.trim_in
+    req_out = src_dur if clip.trim_out is None else clip.trim_out
+    notes: list[str] = []
+    if req_out > src_dur + 1e-3:
+        notes.append(f"trim_out {req_out:.3f} > source duration {src_dur:.3f}; clamped")
+        req_out = src_dur
+    if req_in >= req_out:
+        raise PipelineError(f"{clip.id}: trim_in {req_in} >= usable trim_out {req_out}")
+    new_in, new_out = req_in, req_out
+    mode = "locked" if clip.lock_trim else clip.speech_safe
+    first = analysis.get("first_speech_sec") if analysis else None
+    last = analysis.get("last_speech_sec") if analysis else None
+    if mode == "auto_expand" and first is not None and last is not None:
+        new_in = round(min(req_in, max(0.0, first - float(cfg["pre_handle"]))), 3)
+        new_out = round(max(req_out, min(src_dur, last + float(cfg["post_handle"]))), 3)
+        if new_in < req_in:
+            notes.append(f"trim_in widened {req_in:.3f} -> {new_in:.3f} (speech at {first:.3f}s)")
+        if new_out > req_out:
+            notes.append(f"trim_out widened {req_out:.3f} -> {new_out:.3f} (speech until {last:.3f}s)")
+        if first - new_in < float(cfg["pre_handle"]) - 1e-3:
+            notes.append(f"pre-handle only {first - new_in:.3f}s (source starts close to speech)")
+        if new_out - last < float(cfg["post_handle"]) - 1e-3:
+            notes.append(f"post-handle only {new_out - last:.3f}s (source ends close to speech)")
+    elif analysis and analysis.get("cuts_speech") and mode in ("warn", "locked"):
+        notes.append(f"WARNING: curated trim cuts speech energy (mode={mode}); review by ear")
+    shift = round(req_in - new_in, 3)
+    return {"mode": mode, "requested": [round(req_in, 3), round(req_out, 3)],
+            "final": [new_in, new_out], "duration": round(new_out - new_in, 3),
+            "subtitle_shift": shift, "source_duration": round(src_dur, 3), "notes": notes}
+
+
+def frame_quantize(dur: float, fps: float) -> tuple[int, float]:
+    """Whole frames for a duration; returns (frames, quantised seconds)."""
+    n = max(1, int(round(dur * fps)))
+    return n, n / fps
+
+
+# -------------------------------------------------------- splice + normalise --
+def splice_clip(src: Path, segments: list[tuple[float, float]], dst: Path, cfg: dict,
+                video: dict) -> Path:
+    """Join source segments on one timeline.  Video: frame trims + concat.
+    Audio: each join gets a centred `acrossfade=d` (segments are widened by d/2
+    around the join), then padded/trimmed to the exact video length."""
+    d = float(cfg.get("splice_crossfade", 0.02))
+    src_dur = media_duration(src)
+    segs = [(a, min(b, src_dur)) for a, b in segments if a < src_dur]
+    if not segs:
+        raise PipelineError(f"splice: no segment of {segments} inside {src.name} ({src_dur:.2f}s)")
+    fps = float(video["fps"])
+    parts, alabels, vlabels = [], [], []
+    total = 0.0
+    for i, (a, b) in enumerate(segs):
+        n, q = frame_quantize(b - a, fps)
+        total += q
+        parts.append(f"[0:v]trim=start={a:.4f}:end={a + q:.4f},setpts=PTS-STARTPTS,fps={fps:g}[v{i}]")
+        a0 = a - (d / 2 if i > 0 else 0.0)
+        a1 = a + q + (d / 2 if i < len(segs) - 1 else 0.0)
+        parts.append(f"[0:a]atrim=start={max(0.0, a0):.4f}:end={min(src_dur, a1):.4f},"
+                     f"asetpts=PTS-STARTPTS,aresample=48000[a{i}]")
+        vlabels.append(f"[v{i}]")
+        alabels.append(f"[a{i}]")
+    parts.append("".join(vlabels) + f"concat=n={len(segs)}:v=1:a=0[v]")
+    cur = alabels[0]
+    for i in range(1, len(segs)):
+        nxt = f"[x{i}]"
+        parts.append(f"{cur}{alabels[i]}acrossfade=d={d:g}:c1=tri:c2=tri{nxt}")
+        cur = nxt
+    parts.append(f"{cur}apad,atrim=end={total:.4f}[a]")
+    dst.parent.mkdir(parents=True, exist_ok=True)
+    tmp = dst.with_name(dst.stem + ".tmp" + dst.suffix)
+    run(ffmpeg_cmd("-i", str(src), "-filter_complex", ";".join(parts), "-map", "[v]", "-map", "[a]",
+                   "-c:v", "libx264", "-preset", "fast", "-crf", str(video["work_crf"]),
+                   "-pix_fmt", "yuv420p", "-c:a", "pcm_s16le", str(tmp)), what=f"splice {src.name}")
+    os.replace(tmp, dst)
+    return dst
+
+
+def _scale_filter(video: dict) -> str:
+    w, h = int(video["width"]), int(video["height"])
+    mode = video.get("scale_mode", "fill")
+    if mode == "stretch":  # legacy behaviour of the reference scripts
+        return f"scale={w}:{h}:flags=lanczos,setsar=1"
+    if mode == "fit":
+        return (f"scale={w}:{h}:force_original_aspect_ratio=decrease:flags=lanczos,"
+                f"pad={w}:{h}:(ow-iw)/2:(oh-ih)/2:color=black,setsar=1")
+    return (f"scale={w}:{h}:force_original_aspect_ratio=increase:flags=lanczos,"
+            f"crop={w}:{h},setsar=1")
+
+
+def normalize_clip(src: Path, t_in: float, t_out: float, dst_mp4: Path, dst_wav: Path,
+                   video: dict, audio: dict) -> dict:
+    """Trim [t_in, t_out] (frame-quantised), scale to WxH @ fps, loudnorm to
+    48 kHz stereo.  Writes an AAC-192k MP4 (the per-clip audio that is later
+    stream-copied) plus a PCM WAV sidecar of the very same samples (used for
+    gap-free Base/Master concatenation without AAC re-encode generations)."""
+    fps = float(video["fps"])
+    n, q = frame_quantize(t_out - t_in, fps)
+    sr, ch = int(audio["sample_rate"]), int(audio["channels"])
+    fc = (f"[0:v]trim=start={t_in:.4f}:end={t_in + q:.4f},setpts=PTS-STARTPTS,{_scale_filter(video)},"
+          f"fps={fps:g},tpad=stop_mode=clone:stop_duration=1,trim=end_frame={n},format=yuv420p[v];"
+          f"[0:a]atrim=start={t_in:.4f}:end={t_in + q:.4f},asetpts=PTS-STARTPTS,{audio['loudnorm']},"
+          f"aresample={sr},aformat=sample_fmts=fltp:channel_layouts={'stereo' if ch == 2 else 'mono'},"
+          f"apad,atrim=end_sample={int(round(q * sr))},asplit=2[a1][a2]")
+    for p in (dst_mp4, dst_wav):
+        p.parent.mkdir(parents=True, exist_ok=True)
+    tmp_mp4 = dst_mp4.with_name(dst_mp4.stem + ".tmp.mp4")
+    tmp_wav = dst_wav.with_name(dst_wav.stem + ".tmp.wav")
+    run(ffmpeg_cmd("-i", str(src), "-filter_complex", fc,
+                   "-map", "[v]", "-map", "[a1]", "-c:v", "libx264", "-preset", str(video["preset"]),
+                   "-crf", str(video["work_crf"]), "-r", f"{fps:g}", "-c:a", "aac",
+                   "-b:a", str(audio["bitrate"]), "-ar", str(sr), "-ac", str(ch),
+                   "-movflags", "+faststart", str(tmp_mp4),
+                   "-map", "[a2]", "-c:a", "pcm_s16le", "-ar", str(sr), "-ac", str(ch), str(tmp_wav)),
+        what=f"normalize {src.name}")
+    os.replace(tmp_mp4, dst_mp4)
+    os.replace(tmp_wav, dst_wav)
+    return {"frames": n, "duration": round(q, 4)}
