@@ -399,10 +399,19 @@ def _parse_span(raw: Any, where: str) -> Optional[tuple[float, float]]:
         return None
     if not (isinstance(raw, (list, tuple)) and len(raw) == 2):
         raise PipelineError(f"{where}.source_span must be [start_sec, end_sec]")
-    s0, s1 = float(raw[0]), float(raw[1])
+    try:
+        s0, s1 = float(raw[0]), float(raw[1])
+    except (TypeError, ValueError) as exc:
+        raise PipelineError(f"{where}.source_span must contain numeric seconds") from exc
     if not (math.isfinite(s0) and math.isfinite(s1) and 0.0 <= s0 < s1):
         raise PipelineError(f"{where}.source_span: need 0 <= start < end (got {raw})")
     return round(s0, 3), round(s1, 3)
+
+
+def strict_bool(value: Any, where: str) -> bool:
+    if not isinstance(value, bool):
+        raise PipelineError(f"{where} must be a JSON boolean, not {value!r}")
+    return value
 
 
 def load_manifest(path: Path, overrides: Optional[dict] = None) -> Episode:
@@ -481,6 +490,9 @@ def load_manifest(path: Path, overrides: Optional[dict] = None) -> Episode:
             if cue.speaker and voices and cue.speaker not in voices:
                 raise PipelineError(f"{where}: speaker {cue.speaker!r} not declared in voices")
         mode = ov.get("speech_safe") or c.get("speech_safe", speech["speech_safe"])
+        expected = c.get("expected_speakers", [])
+        if not isinstance(expected, list) or any(not isinstance(x, str) or not x.strip() for x in expected):
+            raise PipelineError(f"{where}.expected_speakers must be a list of speaker names")
         clips.append(ClipSpec(
             index=i, id=cid, file=str(c["file"]), trim_in=round(t_in, 3),
             trim_out=None if t_out is None else round(t_out, 3), subtitles=cues,
@@ -490,10 +502,10 @@ def load_manifest(path: Path, overrides: Optional[dict] = None) -> Episode:
             allow_speech_splice=bool(c.get("allow_speech_splice", False)),
             notes=str(c.get("notes") or ""),
             keyframe=resolve_path(c.get("keyframe"), variables, rel),
-            expected_speakers=[str(x).upper() for x in (c.get("expected_speakers") or [])],
+            expected_speakers=[x.strip().upper() for x in expected],
             story_beat=str(c.get("story_beat") or ""),
             source_span=_parse_span(c.get("source_span"), where),
-            tight_speech_trim=None if c.get("tight_speech_trim") is None else bool(c["tight_speech_trim"])))
+            tight_speech_trim=None if c.get("tight_speech_trim") is None else strict_bool(c["tight_speech_trim"], f"{where}.tight_speech_trim")))
         for spk in clips[-1].expected_speakers:
             if voices and spk not in voices:
                 raise PipelineError(f"{where}: expected speaker {spk!r} not declared in voices")
@@ -511,8 +523,9 @@ def load_manifest(path: Path, overrides: Optional[dict] = None) -> Episode:
         outputs=dict(data.get("outputs") or {}),
         source_video=resolve_path(ov.get("source_video") or data.get("source_video"), variables, rel),
         story_summary_fa=str(data.get("story_summary_fa") or ""),
-        fallback_to_source_on_visual_fail=bool(data.get("fallback_to_source_on_visual_fail", False)),
-        tight_speech_trim=bool(data.get("tight_speech_trim", False)),
+        fallback_to_source_on_visual_fail=strict_bool(data.get("fallback_to_source_on_visual_fail", False),
+                                                      "fallback_to_source_on_visual_fail"),
+        tight_speech_trim=strict_bool(data.get("tight_speech_trim", False), "tight_speech_trim"),
         visual=_merged(VISUAL_DEFAULTS, data.get("visual_gate")))
     validate_settings(ep)
     return ep
@@ -552,13 +565,29 @@ def validate_settings(ep: Episode) -> None:
         color = voice.get("color", DEFAULT_TEXT_COLOR)
         if len(color) != 3 or any(not isinstance(c, int) or not 0 <= c <= 255 for c in color):
             raise PipelineError(f"{speaker}: color must be three RGB integers in 0..255")
+    for key in ("keyframe_threshold", "jump_threshold", "contamination_margin", "sample_fps"):
+        value = ep.visual[key]
+        if isinstance(value, bool) or not isinstance(value, (int, float)) or not math.isfinite(value) \
+                or value < 0 or (key == "sample_fps" and value == 0):
+            raise PipelineError(f"visual_gate.{key} must be finite and valid")
+    size = ep.visual["thumb_size"]
+    if not isinstance(size, (list, tuple)) or len(size) != 2 or any(
+            isinstance(x, bool) or not isinstance(x, int) or x <= 0 for x in size):
+        raise PipelineError("visual_gate.thumb_size needs two positive integer dimensions")
+    if ep.fallback_to_source_on_visual_fail and (ep.source_video is None or
+                                                 any(c.source_span is None for c in ep.clips)):
+        raise PipelineError("fallback requires source_video and every clip source_span")
     sources = {p.resolve() for c in ep.clips for p in clip_source_paths(ep, c) if p}
+    sources.update(c.keyframe.resolve() for c in ep.clips if c.keyframe)
+    if ep.source_video:
+        sources.add(ep.source_video.resolve())
     if ep.cta_video:
         sources.add(ep.cta_video.resolve())
     products = [ep.out_dir / f"{n}.mp4" for n in (ep.base_name, ep.master_name)]
     for c in ep.clips:
         products += clip_output_paths(ep, c, f"{c.id}_subbed.mp4")
-        products += [work_dir(ep) / f"{c.id}_{suffix}" for suffix in ("norm.mp4", "spliced.mov")]
+        products += [work_dir(ep) / f"{c.id}_{suffix}" for suffix in
+                     ("norm.mp4", "norm.wav", "spliced.mov", "source_bridge.mp4")]
     products.append(work_dir(ep) / "cta_norm.mov")
     if sources.intersection(p.resolve() for p in products):
         raise PipelineError("output path would overwrite an input source; use separate paths")
@@ -1737,7 +1766,7 @@ def extract_source_fallback_clip(source_video: Path, source_span: tuple[float, f
             "verified": True, "flow_audio_stream_sha256": audio_hash,
             "output_audio_stream_sha256": output_audio_hash,
             "source_span_bounds_verified": True, "source_duration": src_dur,
-            "output": str(out_mp4)}
+            "output_path": str(out_mp4)}
 
 
 # ------------------------------------------------------ tight speech pacing --
