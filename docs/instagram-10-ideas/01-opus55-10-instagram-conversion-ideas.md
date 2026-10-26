@@ -16,20 +16,20 @@ version is `pipeline/manifests/instagram_10_conversion_ideas.json`.
 
 | # | Idea | Segment | Keyword |
 |---|------|---------|---------|
-| 1 | بدون دوربین، مدل و آتلیه، با ۱ عکس موبایل تیزر تبلیغاتی میلیونی برای مغازه و آنلاین‌شاپت بساز! | `online_shop_and_local_store_owners` | `تیزر` |
-| 2 | خجالت می‌کشی جلوی دوربین بیای؟ پیج بدون چهره (Faceless) بساز و مثل همین پیج کلیدباکس با انیمیشن هوش مصنوعی ویو و درآمد بگیر! | `shy_creators_and_housewives_faceless` | `انیمیشن` |
-| 3 | بدون اینکه ۱ دقیقه جلوی دوربین بشینی، مجری هوش مصنوعی با صدای فارسی برایت ریلز آموزشی و فروش می‌سازه! | `doctors_lawyers_coaches_real_estate_busy_sellers` | `مجری` |
-| 4 | برای تولد، سالگرد ازدواج یا سورپرایز عشقت، یک آهنگ و موزیک‌ویدیوی سه‌بعدی اختصاصی با اسم و خاطرات خودش بساز! | `mass_appeal_emotional_gift_song_video` | `تولد` |
-| 5 | نقاشی بچه‌ات رو بفرست تا هوش مصنوعی تبدیلش کنه به کارتون سه‌بعدی سخنگو با اسم خودش! | `parents_kids_and_teachers` | `نقاشی` |
-| 6 | وقتی استاد یا رئیست میگه تا فردا صبح پاورپوینت ۲۰ اسلایدی و خلاصه جلسه رو بده... و تو با هوش مصنوعی تو ۳ دقیقه می‌سازیش! | `students_thesis_and_office_workers` | `اسلاید` |
-| 7 | چطور بدون فتوشاپ و سیستم قوی، با ۳ اکانت هوش مصنوعی ادمین و ادیتور پیج‌ها بشی و ماهانه درآمد بگیری؟ | `freelancers_admins_and_youth_income` | `درآمد` |
-| 8 | چرا اکانت ۲۰ دلاری رو با مالیات و کارمزد کارت مجازی گرون بخری وقتی تو کلیدباکس با ۱۰٪ تخفیف WELCOME10 و ۴ قسط ترب‌پی با ۲ کلیک تحویل می‌گیری؟ | `price_shock_dollar_tax_vs_kelidbox_installments` | `قیمت` |
-| 9 | وقتی وسط کارتون بچه‌ات یا آموزش دیدن تو یوتیوب ۱۰ تا تبلیغ میاد... یا اسپاتیفای قطع میشه! | `families_and_commuters_ad_free_entertainment` | `بدون تبلیغ` |
-| 10 | وقتی می‌خوای سی‌پی کالاف، روباکس، ولورانت پوینت یا بازی استیم بخری ولی می‌ترسی سرت کلاه بره یا پولت نرسه! | `gamers_and_gen_z_safe_installments` | `گیم` |
+| 1 | با یک عکس محصول، نمونه تیزر فروشگاهت را بساز | `online_shop_and_local_store_owners` | `تیزر` |
+| 2 | از یک ایده، انیمیشن بدون چهره بساز | `shy_creators_and_housewives_faceless` | `انیمیشن` |
+| 3 | متن آموزشی را با مجری دیجیتال نمایش بده | `doctors_lawyers_coaches_real_estate_busy_sellers` | `مجری` |
+| 4 | آهنگ هدیه با اسم و خاطره بساز؛ ویدیو مرحله بعد | `mass_appeal_emotional_gift_song_video` | `تولد` |
+| 5 | نقاشی کودک را با اجازه والدین متحرک کن | `parents_kids_and_teachers` | `نقاشی` |
+| 6 | از متن درس، پیش‌نویس اسلاید قابل بازبینی بساز | `students_thesis_and_office_workers` | `اسلاید` |
+| 7 | برای پیشنهاد خدمات محتوا، نمونه‌کار بساز؛ درآمد تضمینی نیست | `freelancers_admins_and_youth_income` | `درآمد` |
+| 8 | قبل پرداخت، قیمت نهایی و شرایط قسط را ببین | `price_shock_dollar_tax_vs_kelidbox_installments` | `قیمت` |
+| 9 | برای تماشای یوتیوب، گزینه بدون تبلیغ را بشناس | `families_and_commuters_ad_free_entertainment` | `بدون تبلیغ` |
+| 10 | برای خرید شارژ بازی، نسخه و ریجن را تطبیق بده | `gamers_and_gen_z_safe_installments` | `گیم` |
 
 ---
 
-## Idea 1 — بدون دوربین، مدل و آتلیه، با ۱ عکس موبایل تیزر تبلیغاتی میلیونی برای مغازه و آنلاین‌شاپت بساز!
+## Idea 1 — با یک عکس محصول، نمونه تیزر فروشگاهت را بساز
 
 **Segment:** `online_shop_and_local_store_owners` · **Psychological trigger:** حسادت مثبت به رقیب + ترس از جا ماندن (FOMO) + صرفه‌جویی پول
 
@@ -38,8 +38,8 @@ version is `pipeline/manifests/instagram_10_conversion_ideas.json`.
 - **Pain:** عکاسی صنعتی و مدل و آتلیه برای هر محصول چند میلیون خرج دارد؛ عکس‌های ساده موبایلی دیده نمی‌شوند و رقیب‌ها با ویدیوهای شیک فروش را می‌برند.
 
 ### (b) 3-second information-gap hook
-- **Visual:** Split screen: left a dull, badly lit phone photo of a sneaker on a shop counter; right the SAME sneaker exploding into a glossy cinematic 3D ad with gold light rays. A red stamp reads 'هزینه آتلیه: ۰ تومان'.
-- **First spoken line (Farsi):** «این عکس رو با گوشی خودم گرفتم... این یکی تبلیغش شد. فقط سی ثانیه!»
+- **Visual:** Split screen: left a dull, badly lit phone photo of a sneaker on a shop counter; right the SAME sneaker exploding into a glossy cinematic 3D ad with gold light rays. A red stamp reads 'هزینه آتلیه: ۰ تومان'. Show the transformation in the FIRST 3 seconds; do not render text in the generated image.
+- **First spoken line (Farsi):** «این عکس، تبلیغ شد!»
 
 ### (c) Before → After demo (understood in 5 seconds)
 - **Before:** عکس معمولی موبایل از یک کفش روی پیشخوان مغازه، نور زرد و پس‌زمینه شلوغ.
@@ -48,20 +48,20 @@ version is `pipeline/manifests/instagram_10_conversion_ideas.json`.
 ### (d) 40-second 5-shot reel script
 | Shot | Sec | Visual | Spoken Farsi | RTL subtitle pills |
 |---|---|---|---|---|
-| 1 | 0–8 | A tired Iranian boutique owner (40s, mustache, apron) holds a phone, photographing a sneaker on a messy shop counter under yellow fluorescent light. Next to him a rival shop's phone screen shows a slick luxury ad. | این عکس رو با گوشی خودم گرفتم... هیچکس لایکش نمی‌کنه! | عکس موبایلی = ۳ تا لایک 😩 |
+| 1 | 0–8 | Split screen: left a dull, badly lit phone photo of a sneaker on a shop counter; right the SAME sneaker exploding into a glossy cinematic 3D ad with gold light rays. A red stamp reads 'هزینه آتلیه: ۰ تومان'. Show the transformation in the FIRST 3 seconds; do not render text in the generated image. | این عکس، تبلیغ شد! | این عکس، تبلیغ شد! |
 | 2 | 8–16 | Close-up of the phone screen: the dull sneaker photo is dragged into an AI video app; a glowing 'Image to Video' button. | فقط عکس رو دادم به هوش مصنوعی و نوشتم: تبلیغ لوکس سینمایی. | ۱ عکس + ۱ جمله ✍️ |
 | 3 | 16–24 | Ultra-premium product commercial: the same white sneaker rotates on a glossy black pedestal, water droplets frozen mid-air, golden rim light, slow-motion fabric details, 9:16, photoreal. | (صدای افکت سینمایی) | ۳۰ ثانیه بعد 👇 · تیزر میلیونی بدون آتلیه ✨ |
 | 4 | 24–32 | The boutique owner now smiling, phone buzzing with Instagram notifications and DM bubbles saying 'قیمت؟' and 'سایز ۴۲ دارین؟'. | از دیروز تا حالا چهل تا دایرکت قیمت گرفتم! | دایرکت‌ها ترکید 📩 |
-| 5 | 32–40 | The owner holds his phone toward camera showing kelidbox.com with Kling AI and CapCut Pro cards, an Enamad trust badge and a '۴ قسط' label. | اکانت‌هاش رو از کلیدباکس گرفتم. زیر همین پست بنویس «تیزر»، لینک رو برات می‌فرستم. | کامنت بنویس: تیزر 👇 · کد WELCOME10 + ۴ قسط |
+| 5 | 32–40 | Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text. | «تیزر» رو کامنت کن؛ لینک و شرایط خرید رو بگیر. | کامنت: تیزر · WELCOME10 • ۱۰٪ تا ۱۵۰٬۰۰۰ تومان · حداقل خرید: ۱۰۰٬۰۰۰ تومان · ۴ قسط ترب‌پی / دیجی‌پی؛ طبق شرایط درگاه |
 
 ### (e) Ready-to-paste Google Flow / Kling prompts
 **Shot 1 — image/keyframe prompt**
 ```text
-3D Pixar-style animation, soft cinematic lighting, vertical 9:16, warm Iranian everyday setting, expressive faces, shallow depth of field. A tired Iranian boutique owner (40s, mustache, apron) holds a phone, photographing a sneaker on a messy shop counter under yellow fluorescent light. Next to him a rival shop's phone screen shows a slick luxury ad.
+Split screen: left a dull, badly lit phone photo of a sneaker on a shop counter; right the SAME sneaker exploding into a glossy cinematic 3D ad with gold light rays. A red stamp reads 'هزینه آتلیه: ۰ تومان'. Show the transformation in the FIRST 3 seconds; do not render text in the generated image.
 ```
 **Shot 1 — motion + audio prompt (8s)**
 ```text
-Slow push-in on his frustrated face; he sighs and lowers the phone. Character says in Persian (Farsi): "این عکس رو با گوشی خودم گرفتم... هیچکس لایکش نمی‌کنه!"
+0–3s: reveal the hook immediately. Say in Persian (Farsi): "این عکس، تبلیغ شد!". 3–8s: hold on the result; no extra dialogue.
 ```
 **Shot 2 — image/keyframe prompt**
 ```text
@@ -89,11 +89,11 @@ Notifications pop rapidly around his head; he laughs and high-fives his teenage 
 ```
 **Shot 5 — image/keyframe prompt**
 ```text
-3D Pixar-style animation, soft cinematic lighting, vertical 9:16, warm Iranian everyday setting, expressive faces, shallow depth of field. The owner holds his phone toward camera showing kelidbox.com with Kling AI and CapCut Pro cards, an Enamad trust badge and a '۴ قسط' label.
+Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text.
 ```
 **Shot 5 — motion + audio prompt (8s)**
 ```text
-He winks at the camera. Character says in Persian (Farsi): "اکانت‌هاش رو از کلیدباکس گرفتم. زیر همین پست بنویس تیزر، لینک رو برات می‌فرستم."
+Slow push-in. Say in Persian (Farsi): "«تیزر» رو کامنت کن؛ لینک و شرایط خرید رو بگیر.". Leave space for RTL overlays.
 ```
 
 ### (f) Featured KelidBox accounts, price anchor & CTA
@@ -102,16 +102,15 @@ He winks at the camera. Character says in Persian (Farsi): "اکانت‌هاش 
 | اشتراک Kling AI Standard و Pro — حساب جدید ۱ ماهه | `draft_83353025-b540-45aa-ac1f-624f826a4098` | ۴٬۰۱۰٬۰۰۰ | ۱۵۰٬۰۰۰ | ۱٬۰۰۲٬۵۰۰ |
 | اشتراک Google AI Pro (Gemini) + ۵ ترابایت — ۶ ماهه روی جیمیل شما | `draft_0794ef61-67db-4aa0-9cd6-0977addacf48` | ۱٬۷۱۰٬۰۰۰ | ۱۵۰٬۰۰۰ | ۴۲۷٬۵۰۰ |
 | اشتراک Runway ML Standard و Pro — ساخت ویدیو با هوش مصنوعی | `draft_17d3b365-2e40-400d-be39-d6e7e159aa14` | ۸٬۸۲۰٬۰۰۰ | ۱۵۰٬۰۰۰ | ۲٬۲۰۵٬۰۰۰ |
-| اشتراک CapCut Pro ⚠️ unverified | `draft_ee59478a-977e-42ca-b176-9ceb0def34c8` | ۱۹۰٬۰۰۰ | ۱۹٬۰۰۰ | ۴۷٬۵۰۰ |
 
 *Brief discrepancy (snapshot price used):* draft_83353025-b540-45aa-ac1f-624f826a4098: brief said 850,000
 
 - **Comment keyword:** `تیزر`
-- **CTA caption (Farsi):** زیر همین پست کلمه «تیزر» رو کامنت کن تا لینک مستقیم کلیدباکس رو دایرکت بگیری. شروع قیمت از ۱۹۰٬۰۰۰ تومان؛ با کد WELCOME10 تا ۱۵۰٬۰۰۰ تومان تخفیف (خرید بالای ۱۰۰٬۰۰۰ تومان) و پرداخت ۴ قسط بدون بهره با ترب‌پی / اسنپ‌پی / دیجی‌پی. خرید ۲ کلیکی، نماد اعتماد اینماد، تحویل فوری.
+- **CTA caption (Farsi):** زیر همین پست کلمه «تیزر» رو کامنت کن تا لینک مستقیم کلیدباکس رو دایرکت بگیری. شروع قیمت از ۱٬۷۱۰٬۰۰۰ تومان؛ با کد WELCOME10 تا ۱۵۰٬۰۰۰ تومان تخفیف (خرید بالای ۱۰۰٬۰۰۰ تومان) و پرداخت ۴ قسط بدون بهره با ترب‌پی / اسنپ‌پی / دیجی‌پی. خرید ۲ کلیکی، نماد اعتماد اینماد، تحویل فوری.
 
 ---
 
-## Idea 2 — خجالت می‌کشی جلوی دوربین بیای؟ پیج بدون چهره (Faceless) بساز و مثل همین پیج کلیدباکس با انیمیشن هوش مصنوعی ویو و درآمد بگیر!
+## Idea 2 — از یک ایده، انیمیشن بدون چهره بساز
 
 **Segment:** `shy_creators_and_housewives_faceless` · **Psychological trigger:** کنجکاوی پشت‌صحنه + اثبات اجتماعی (همین سریال‌هایی که دیدی)
 
@@ -120,8 +119,8 @@ He winks at the camera. Character says in Persian (Farsi): "اکانت‌هاش 
 - **Pain:** فکر می‌کند برای ویو گرفتن باید جلوی دوربین برقصد یا حرف بزند؛ از قضاوت فامیل و همکار می‌ترسد.
 
 ### (b) 3-second information-gap hook
-- **Visual:** The famous Pineapple husband and Strawberry wife from @kelidbox_com freeze mid-argument; the camera pulls back to reveal it's playing on a laptop in a cozy kitchen, a woman's hands (face never shown) typing beside a cup of tea.
-- **First spoken line (Farsi):** «این آناناس و توت‌فرنگی رو یادته؟ هیچ آدمی جلوی دوربین نیومد!»
+- **Visual:** The famous Pineapple husband and Strawberry wife from @kelidbox_com freeze mid-argument; the camera pulls back to reveal it's playing on a laptop in a cozy kitchen, a woman's hands (face never shown) typing beside a cup of tea. Show the transformation in the FIRST 3 seconds; do not render text in the generated image.
+- **First spoken line (Farsi):** «این کارتون، بدون دوربینه!»
 
 ### (c) Before → After demo (understood in 5 seconds)
 - **Before:** یک ایده داستانی در دفترچه: «زن و شوهری که سر عکس خانوادگی دعوا می‌کنند.»
@@ -130,20 +129,20 @@ He winks at the camera. Character says in Persian (Farsi): "اکانت‌هاش 
 ### (d) 40-second 5-shot reel script
 | Shot | Sec | Visual | Spoken Farsi | RTL subtitle pills |
 |---|---|---|---|---|
-| 1 | 0–8 | Anthropomorphic pineapple husband and strawberry wife arguing in a living room (the @kelidbox_com 'Fruits of Power' characters). The frame freezes. | این آناناس و توت‌فرنگی رو یادته؟ هیچ آدمی جلوی دوربین نیومد! | بدون چهره 🙈 · بدون دوربین 🎥❌ |
+| 1 | 0–8 | The famous Pineapple husband and Strawberry wife from @kelidbox_com freeze mid-argument; the camera pulls back to reveal it's playing on a laptop in a cozy kitchen, a woman's hands (face never shown) typing beside a cup of tea. Show the transformation in the FIRST 3 seconds; do not render text in the generated image. | این کارتون، بدون دوربینه! | این کارتون، بدون دوربینه! |
 | 2 | 8–16 | Over-the-shoulder view (no face) of hands typing a Persian story idea into a chat AI on a laptop; the AI replies with a 5-scene script in Persian. | اول ایده‌م رو به چت‌جی‌پی‌تی گفتم، سناریوی پنج صحنه‌ای رو نوشت. | ۱. سناریو با ChatGPT ✍️ |
 | 3 | 16–24 | Screen recording style: a scene prompt pasted into Google Flow; a 3D Pixar pineapple character renders frame by frame from a grey clay draft into full color. | بعد توی گوگل فلو، هر صحنه رو با یک جمله ساختم. | ۲. انیمیشن با Google Flow 🎬 |
 | 4 | 24–32 | The finished strawberry character on screen lip-syncs a Persian line; an audio waveform glows beside it; Instagram view counter climbs rapidly. | صداهای فارسی رو با ElevenLabs ساختم. حالا ویو می‌گیرم، بدون اینکه کسی منو بشناسه. | ۳. صدای فارسی با ElevenLabs 🎙️ |
-| 5 | 32–40 | The pineapple and strawberry characters step out of the laptop onto the kitchen table holding a tiny sign 'kelidbox.com' with an Enamad badge. | هر سه اکانت تو کلیدباکسه. کامنت بنویس «انیمیشن» تا لینک و کد تخفیف رو بفرستیم! | کامنت: انیمیشن 👇 · WELCOME10 + ۴ قسط |
+| 5 | 32–40 | Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text. | «انیمیشن» رو کامنت کن؛ لینک و شرایط خرید رو بگیر. | کامنت: انیمیشن · WELCOME10 • ۱۰٪ تا ۱۵۰٬۰۰۰ تومان · حداقل خرید: ۱۰۰٬۰۰۰ تومان · ۴ قسط ترب‌پی / دیجی‌پی؛ طبق شرایط درگاه |
 
 ### (e) Ready-to-paste Google Flow / Kling prompts
 **Shot 1 — image/keyframe prompt**
 ```text
-3D Pixar-style animation, soft cinematic lighting, vertical 9:16, warm Iranian everyday setting, expressive faces, shallow depth of field. Anthropomorphic pineapple husband and strawberry wife arguing in a living room (the @kelidbox_com 'Fruits of Power' characters). The frame freezes.
+The famous Pineapple husband and Strawberry wife from @kelidbox_com freeze mid-argument; the camera pulls back to reveal it's playing on a laptop in a cozy kitchen, a woman's hands (face never shown) typing beside a cup of tea. Show the transformation in the FIRST 3 seconds; do not render text in the generated image.
 ```
 **Shot 1 — motion + audio prompt (8s)**
 ```text
-Freeze-frame, then camera pulls back through a laptop screen into a cozy Iranian kitchen; only a woman's hands and a tea glass are visible. Narrator (female) says in Persian (Farsi): "این آناناس و توت‌فرنگی رو یادته؟ هیچ آدمی جلوی دوربین نیومد!"
+0–3s: reveal the hook immediately. Say in Persian (Farsi): "این کارتون، بدون دوربینه!". 3–8s: hold on the result; no extra dialogue.
 ```
 **Shot 2 — image/keyframe prompt**
 ```text
@@ -171,11 +170,11 @@ View counter animates upward, heart icons float. Narrator says in Persian (Farsi
 ```
 **Shot 5 — image/keyframe prompt**
 ```text
-3D Pixar-style animation, soft cinematic lighting, vertical 9:16, warm Iranian everyday setting, expressive faces, shallow depth of field. The pineapple and strawberry characters step out of the laptop onto the kitchen table holding a tiny sign 'kelidbox.com' with an Enamad badge.
+Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text.
 ```
 **Shot 5 — motion + audio prompt (8s)**
 ```text
-Both characters wave at camera. Strawberry says in Persian (Farsi): "هر سه اکانت تو کلیدباکسه. کامنت بنویس انیمیشن تا لینک و کد تخفیف رو بفرستیم!"
+Slow push-in. Say in Persian (Farsi): "«انیمیشن» رو کامنت کن؛ لینک و شرایط خرید رو بگیر.". Leave space for RTL overlays.
 ```
 
 ### (f) Featured KelidBox accounts, price anchor & CTA
@@ -192,7 +191,7 @@ Both characters wave at camera. Strawberry says in Persian (Farsi): "هر سه �
 
 ---
 
-## Idea 3 — بدون اینکه ۱ دقیقه جلوی دوربین بشینی، مجری هوش مصنوعی با صدای فارسی برایت ریلز آموزشی و فروش می‌سازه!
+## Idea 3 — متن آموزشی را با مجری دیجیتال نمایش بده
 
 **Segment:** `doctors_lawyers_coaches_real_estate_busy_sellers` · **Psychological trigger:** کمبود وقت + اعتبار حرفه‌ای + «این آدم واقعی نیست؟!»
 
@@ -201,30 +200,30 @@ Both characters wave at camera. Strawberry says in Persian (Farsi): "هر سه �
 - **Pain:** هر ریلز یعنی یک ساعت ضبط، تپق، نور بد و تدوین؛ در نتیجه پیج ماه‌ها خاک می‌خورد.
 
 ### (b) 3-second information-gap hook
-- **Visual:** A confident presenter in a white doctor's coat speaks to camera; mid-sentence the image glitches and reveals a wireframe avatar — while the real dentist is shown asleep on the clinic couch.
-- **First spoken line (Farsi):** «این دکتر الان داره حرف می‌زنه... ولی خودش خوابه!»
+- **Visual:** A confident presenter in a white doctor's coat speaks to camera; mid-sentence the image glitches and reveals a wireframe avatar — while the real dentist is shown asleep on the clinic couch. Show the transformation in the FIRST 3 seconds; do not render text in the generated image.
+- **First spoken line (Farsi):** «این مجری، واقعی نیست!»
 
 ### (c) Before → After demo (understood in 5 seconds)
 - **Before:** یک متن ۵ خطی تایپ‌شده درباره «۳ اشتباه در مسواک زدن».
-- **After:** ریلز ۴۰ ثانیه‌ای با مجری دیجیتال، لب‌خوانی دقیق فارسی، زیرنویس و کاور برند — بدون یک ثانیه ضبط.
+- **After:** نمونه ریلز با مجری دیجیتال؛ کیفیت فارسی و لب‌خوانی باید با پلن منتخب آزمایش شود. چهره و صدا فقط با رضایت صاحب آن.
 
 ### (d) 40-second 5-shot reel script
 | Shot | Sec | Visual | Spoken Farsi | RTL subtitle pills |
 |---|---|---|---|---|
-| 1 | 0–8 | Photoreal vertical shot of a friendly Iranian dentist presenter (30s, white coat, clean modern clinic) speaking to camera; subtle digital glitch lines. | این دکتر الان داره حرف می‌زنه... ولی خودش خوابه! | این مجری واقعی نیست 😳 |
+| 1 | 0–8 | A confident presenter in a white doctor's coat speaks to camera; mid-sentence the image glitches and reveals a wireframe avatar — while the real dentist is shown asleep on the clinic couch. Show the transformation in the FIRST 3 seconds; do not render text in the generated image. | این مجری، واقعی نیست! | این مجری، واقعی نیست! |
 | 2 | 8–16 | The dentist character, exhausted, surrounded by a ring light, a camera on tripod, and a pile of failed takes labeled 'تپق ۱۲'. | هر ریلز یه ساعت ضبط و تپق... دیگه وقت نداشتم! | ۱ ساعت ضبط برای ۱ ریلز؟ 😮‍💨 |
 | 3 | 16–24 | Clean laptop UI close-up: a 5-line Persian script written by an AI chat, pasted into an avatar video tool; a Persian voice clone waveform appears. | متن رو ChatGPT نوشت، صدای خودم رو یه بار دادم، مجری ساخته شد. | متن ✍️ ← صدا 🎙️ ← مجری 🧑‍⚕️ |
 | 4 | 24–32 | Phone mockup showing three finished branded reels (dentist, lawyer, real-estate agent avatars) with Persian title covers designed in a template editor. | وکیل، مشاور املاک، کوچ... همه می‌تونن هفته‌ای ده تا ریلز داشته باشن. | هفته‌ای ۱۰ ریلز بدون ضبط 📈 |
-| 5 | 32–40 | The AI dentist avatar now stands beside a kelidbox.com screen showing HeyGen, ElevenLabs, ChatGPT and Canva cards, Enamad seal and '۴ قسط بدون بهره'. | این چهار اکانت رو از کلیدباکس بگیر. کامنت بنویس «مجری»، لینک و کد تخفیف میاد تو دایرکتت. | کامنت: مجری 👇 · WELCOME10 + ۴ قسط |
+| 5 | 32–40 | Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text. | «مجری» رو کامنت کن؛ لینک و شرایط خرید رو بگیر. | کامنت: مجری · WELCOME10 • ۱۰٪ تا ۱۵۰٬۰۰۰ تومان · حداقل خرید: ۱۰۰٬۰۰۰ تومان · ۴ قسط ترب‌پی / دیجی‌پی؛ طبق شرایط درگاه |
 
 ### (e) Ready-to-paste Google Flow / Kling prompts
 **Shot 1 — image/keyframe prompt**
 ```text
-Photoreal vertical shot of a friendly Iranian dentist presenter (30s, white coat, clean modern clinic) speaking to camera; subtle digital glitch lines.
+A confident presenter in a white doctor's coat speaks to camera; mid-sentence the image glitches and reveals a wireframe avatar — while the real dentist is shown asleep on the clinic couch. Show the transformation in the FIRST 3 seconds; do not render text in the generated image.
 ```
 **Shot 1 — motion + audio prompt (8s)**
 ```text
-Mid-sentence the frame glitches and reveals a glowing wireframe face for one beat, then cuts to the real dentist asleep on a clinic couch. Narrator says in Persian (Farsi): "این دکتر الان داره حرف می‌زنه... ولی خودش خوابه!"
+0–3s: reveal the hook immediately. Say in Persian (Farsi): "این مجری، واقعی نیست!". 3–8s: hold on the result; no extra dialogue.
 ```
 **Shot 2 — image/keyframe prompt**
 ```text
@@ -252,11 +251,11 @@ Swipe between the three reels; likes and 'نوبت میخوام' DMs pop. Narrat
 ```
 **Shot 5 — image/keyframe prompt**
 ```text
-The AI dentist avatar now stands beside a kelidbox.com screen showing HeyGen, ElevenLabs, ChatGPT and Canva cards, Enamad seal and '۴ قسط بدون بهره'.
+Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text.
 ```
 **Shot 5 — motion + audio prompt (8s)**
 ```text
-Avatar gestures toward the screen. Avatar says in Persian (Farsi): "این چهار اکانت رو از کلیدباکس بگیر. کامنت بنویس مجری، لینک و کد تخفیف میاد تو دایرکتت."
+Slow push-in. Say in Persian (Farsi): "«مجری» رو کامنت کن؛ لینک و شرایط خرید رو بگیر.". Leave space for RTL overlays.
 ```
 
 ### (f) Featured KelidBox accounts, price anchor & CTA
@@ -274,7 +273,7 @@ Avatar gestures toward the screen. Avatar says in Persian (Farsi): "این چه�
 
 ---
 
-## Idea 4 — برای تولد، سالگرد ازدواج یا سورپرایز عشقت، یک آهنگ و موزیک‌ویدیوی سه‌بعدی اختصاصی با اسم و خاطرات خودش بساز!
+## Idea 4 — آهنگ هدیه با اسم و خاطره بساز؛ ویدیو مرحله بعد
 
 **Segment:** `mass_appeal_emotional_gift_song_video` · **Psychological trigger:** احساس، اشک شوق و میل به دیده شدن در استوری (UGC قابل اشتراک)
 
@@ -283,8 +282,8 @@ Avatar gestures toward the screen. Avatar says in Persian (Farsi): "این چه�
 - **Pain:** کادوهای تکراری (گل، ادکلن) هیجان ندارند؛ سفارش آهنگ اختصاصی به خواننده چند ده میلیون خرج دارد.
 
 ### (b) 3-second information-gap hook
-- **Visual:** A woman opens her phone at a birthday table, hears a song singing HER name 'سارا' in Persian, and bursts into happy tears; balloons in the background.
-- **First spoken line (Farsi):** «شوهرش یه آهنگ با اسم خودش براش ساخت... ببین چیکار کرد!»
+- **Visual:** A woman opens her phone at a birthday table, hears a song singing HER name 'سارا' in Persian, and bursts into happy tears; balloons in the background. Show the transformation in the FIRST 3 seconds; do not render text in the generated image.
+- **First spoken line (Farsi):** «آهنگ با اسم خودت!»
 
 ### (c) Before → After demo (understood in 5 seconds)
 - **Before:** سه خط خاطره: «اولین دیدار در کافه، سفر شمال، اسمش سارا است.»
@@ -293,20 +292,20 @@ Avatar gestures toward the screen. Avatar says in Persian (Farsi): "این چه�
 ### (d) 40-second 5-shot reel script
 | Shot | Sec | Visual | Spoken Farsi | RTL subtitle pills |
 |---|---|---|---|---|
-| 1 | 0–8 | A young Iranian woman named Sara at a candle-lit birthday table looks at a phone; tears of joy, her husband watching nervously behind a balloon. | شوهرش یه آهنگ با اسم خودش براش ساخت... ببین چیکار کرد! | آهنگی با اسم خودش 🎶❤️ |
+| 1 | 0–8 | A woman opens her phone at a birthday table, hears a song singing HER name 'سارا' in Persian, and bursts into happy tears; balloons in the background. Show the transformation in the FIRST 3 seconds; do not render text in the generated image. | آهنگ با اسم خودت! | آهنگ با اسم خودت! |
 | 2 | 8–16 | Flashback: the husband secretly typing three memories into a music AI app at night on the sofa: 'کافه، سفر شمال، سارا'. | فقط سه تا خاطره نوشتم و گفتم یه آهنگ عاشقانه با اسم سارا بساز. | ۳ خاطره ← ۱ آهنگ 🎵 |
 | 3 | 16–24 | A 3D Pixar couple version of Sara and husband meeting in a cozy Tehran cafe, then walking on a misty Caspian beach in the north of Iran. | سارا، تو اون کافه دلم رو بردی... | موزیک‌ویدیو از خاطرات خودتون 🎬 |
 | 4 | 24–32 | Back to the birthday table: Sara hugs her husband; family members film with phones; an Instagram story with the song gets many replies. | بهترین کادوی عمرم بود! همه فامیل استوری کردن! | بهترین کادوی عمرش 🎁 |
-| 5 | 32–40 | The husband holds a gift box that opens to reveal glowing kelidbox.com cards for Suno AI and PixVerse, an Enamad seal and '۴ قسط'. | تو هم برای عشقت بساز. کامنت بنویس «تولد» تا لینک و کد تخفیف رو بفرستیم. | کامنت: تولد 👇 · WELCOME10 + ۴ قسط |
+| 5 | 32–40 | Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text. | «تولد» رو کامنت کن؛ لینک و شرایط خرید رو بگیر. | کامنت: تولد · WELCOME10 • ۱۰٪ تا ۱۵۰٬۰۰۰ تومان · حداقل خرید: ۱۰۰٬۰۰۰ تومان · ۴ قسط ترب‌پی / دیجی‌پی؛ طبق شرایط درگاه |
 
 ### (e) Ready-to-paste Google Flow / Kling prompts
 **Shot 1 — image/keyframe prompt**
 ```text
-3D Pixar-style animation, soft cinematic lighting, vertical 9:16, warm Iranian everyday setting, expressive faces, shallow depth of field. A young Iranian woman named Sara at a candle-lit birthday table looks at a phone; tears of joy, her husband watching nervously behind a balloon.
+A woman opens her phone at a birthday table, hears a song singing HER name 'سارا' in Persian, and bursts into happy tears; balloons in the background. Show the transformation in the FIRST 3 seconds; do not render text in the generated image.
 ```
 **Shot 1 — motion + audio prompt (8s)**
 ```text
-Slow push-in on her emotional face as soft Persian pop music plays. Narrator says in Persian (Farsi): "شوهرش یه آهنگ با اسم خودش براش ساخت... ببین چیکار کرد!"
+0–3s: reveal the hook immediately. Say in Persian (Farsi): "آهنگ با اسم خودت!". 3–8s: hold on the result; no extra dialogue.
 ```
 **Shot 2 — image/keyframe prompt**
 ```text
@@ -334,11 +333,11 @@ Group cheer, confetti falls. Sara says in Persian (Farsi): "بهترین کاد�
 ```
 **Shot 5 — image/keyframe prompt**
 ```text
-3D Pixar-style animation, soft cinematic lighting, vertical 9:16, warm Iranian everyday setting, expressive faces, shallow depth of field. The husband holds a gift box that opens to reveal glowing kelidbox.com cards for Suno AI and PixVerse, an Enamad seal and '۴ قسط'.
+Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text.
 ```
 **Shot 5 — motion + audio prompt (8s)**
 ```text
-Box opens with sparkles toward the camera. Husband says in Persian (Farsi): "تو هم برای عشقت بساز. کامنت بنویس تولد تا لینک و کد تخفیف رو بفرستیم."
+Slow push-in. Say in Persian (Farsi): "«تولد» رو کامنت کن؛ لینک و شرایط خرید رو بگیر.". Leave space for RTL overlays.
 ```
 
 ### (f) Featured KelidBox accounts, price anchor & CTA
@@ -355,7 +354,7 @@ Box opens with sparkles toward the camera. Husband says in Persian (Farsi): "ت�
 
 ---
 
-## Idea 5 — نقاشی بچه‌ات رو بفرست تا هوش مصنوعی تبدیلش کنه به کارتون سه‌بعدی سخنگو با اسم خودش!
+## Idea 5 — نقاشی کودک را با اجازه والدین متحرک کن
 
 **Segment:** `parents_kids_and_teachers` · **Psychological trigger:** عشق والدین + ذوق کودک + اشتراک‌گذاری در گروه‌های خانوادگی
 
@@ -364,8 +363,8 @@ Box opens with sparkles toward the camera. Husband says in Persian (Farsi): "ت�
 - **Pain:** بچه‌ها ساعت‌ها کارتون تکراری می‌بینند؛ نقاشی‌هایشان در کشو گم می‌شود؛ معلم‌ها برای کلاس محتوای جذاب ندارند.
 
 ### (b) 3-second information-gap hook
-- **Visual:** A crayon drawing of a purple dinosaur on a fridge suddenly blinks, peels off the paper as a 3D cartoon, and says the child's name; a 6-year-old girl screams with joy.
-- **First spoken line (Farsi):** «این دایناسور رو دخترم کشیده بود... حالا اسمش رو صدا می‌زنه!»
+- **Visual:** A crayon drawing of a purple dinosaur on a fridge suddenly blinks, peels off the paper as a 3D cartoon, and says the child's name; a 6-year-old girl screams with joy. Show the transformation in the FIRST 3 seconds; do not render text in the generated image.
+- **First spoken line (Farsi):** «نقاشی بچه‌ات زنده شد!»
 
 ### (c) Before → After demo (understood in 5 seconds)
 - **Before:** نقاشی مداد شمعی یک دایناسور بنفش روی کاغذ A4، چسبیده به یخچال.
@@ -374,20 +373,20 @@ Box opens with sparkles toward the camera. Husband says in Persian (Farsi): "ت�
 ### (d) 40-second 5-shot reel script
 | Shot | Sec | Visual | Spoken Farsi | RTL subtitle pills |
 |---|---|---|---|---|
-| 1 | 0–8 | A child's crayon drawing of a purple dinosaur taped to a fridge in an Iranian apartment kitchen; a 6-year-old girl named Nila watches. | این دایناسور رو دخترم کشیده بود... حالا اسمش رو صدا می‌زنه! | نقاشی بچه‌م زنده شد! 🦖 |
+| 1 | 0–8 | A crayon drawing of a purple dinosaur on a fridge suddenly blinks, peels off the paper as a 3D cartoon, and says the child's name; a 6-year-old girl screams with joy. Show the transformation in the FIRST 3 seconds; do not render text in the generated image. | نقاشی بچه‌ات زنده شد! | نقاشی بچه‌ات زنده شد! |
 | 2 | 8–16 | Over-the-shoulder: a mother's phone photographs the crayon drawing; the photo is uploaded into Google Gemini with a Persian prompt. | از نقاشی عکس گرفتم و به Gemini گفتم همین رو سه‌بعدی کن، دقیقاً با همین رنگ‌ها. | ۱. عکس نقاشی 📸 · ۲. سه‌بعدی با Gemini ✨ |
 | 3 | 16–24 | The purple 3D dinosaur (same shape as the crayon drawing, chunky legs, uneven spikes) walks through a colorful paper-craft forest. | سلام نیلا! بیا با هم بازی کنیم! | ۳. انیمیشن با Hailuo / PixVerse 🎬 |
 | 4 | 24–32 | A primary-school classroom: a kind female teacher projects students' drawings turned into talking 3D cartoons; kids cheer; a quiz game screen follows. | نقاشی همه بچه‌ها رو کارتون کردم و باهاش مسابقه کلاسی ساختم! | معلم‌ها هم عاشقش شدن 👩‍🏫 |
-| 5 | 32–40 | Nila hugs the 3D dinosaur on the sofa; the mother holds a phone showing kelidbox.com with Gemini, Hailuo and PixVerse cards, Enamad seal and '۴ قسط'. | تو هم نقاشی بچه‌ت رو زنده کن. کامنت بنویس «نقاشی» تا لینک و کد تخفیف رو بفرستیم. | کامنت: نقاشی 👇 · WELCOME10 + ۴ قسط |
+| 5 | 32–40 | Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text. | «نقاشی» رو کامنت کن؛ لینک و شرایط خرید رو بگیر. | کامنت: نقاشی · WELCOME10 • ۱۰٪ تا ۱۵۰٬۰۰۰ تومان · حداقل خرید: ۱۰۰٬۰۰۰ تومان · ۴ قسط ترب‌پی / دیجی‌پی؛ طبق شرایط درگاه |
 
 ### (e) Ready-to-paste Google Flow / Kling prompts
 **Shot 1 — image/keyframe prompt**
 ```text
-A child's crayon drawing of a purple dinosaur taped to a fridge in an Iranian apartment kitchen; a 6-year-old girl named Nila watches.
+A crayon drawing of a purple dinosaur on a fridge suddenly blinks, peels off the paper as a 3D cartoon, and says the child's name; a 6-year-old girl screams with joy. Show the transformation in the FIRST 3 seconds; do not render text in the generated image.
 ```
 **Shot 1 — motion + audio prompt (8s)**
 ```text
-The drawing blinks, peels off the paper and becomes a soft 3D Pixar-style cartoon dinosaur that waves; Nila screams with joy. Narrator (mother) says in Persian (Farsi): "این دایناسور رو دخترم کشیده بود... حالا اسمش رو صدا می‌زنه!"
+0–3s: reveal the hook immediately. Say in Persian (Farsi): "نقاشی بچه‌ات زنده شد!". 3–8s: hold on the result; no extra dialogue.
 ```
 **Shot 2 — image/keyframe prompt**
 ```text
@@ -415,11 +414,11 @@ Kids jump and raise hands. Teacher says in Persian (Farsi): "نقاشی همه �
 ```
 **Shot 5 — image/keyframe prompt**
 ```text
-3D Pixar-style animation, soft cinematic lighting, vertical 9:16, warm Iranian everyday setting, expressive faces, shallow depth of field. Nila hugs the 3D dinosaur on the sofa; the mother holds a phone showing kelidbox.com with Gemini, Hailuo and PixVerse cards, Enamad seal and '۴ قسط'.
+Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text.
 ```
 **Shot 5 — motion + audio prompt (8s)**
 ```text
-Dinosaur winks at camera. Mother says in Persian (Farsi): "تو هم نقاشی بچه‌ت رو زنده کن. کامنت بنویس نقاشی تا لینک و کد تخفیف رو بفرستیم."
+Slow push-in. Say in Persian (Farsi): "«نقاشی» رو کامنت کن؛ لینک و شرایط خرید رو بگیر.". Leave space for RTL overlays.
 ```
 
 ### (f) Featured KelidBox accounts, price anchor & CTA
@@ -428,14 +427,13 @@ Dinosaur winks at camera. Mother says in Persian (Farsi): "تو هم نقاشی 
 | اشتراک Google AI Pro (Gemini) + ۵ ترابایت — ۶ ماهه روی جیمیل شما | `draft_0794ef61-67db-4aa0-9cd6-0977addacf48` | ۱٬۷۱۰٬۰۰۰ | ۱۵۰٬۰۰۰ | ۴۲۷٬۵۰۰ |
 | اشتراک Hailuo AI (MiniMax) — ساخت ویدیوهای واقع‌گرایانه با هوش مصنوعی | `draft_8ddf9af6-ea31-4aa5-89f4-d5b6a1ef7b4f` | ۲٬۶۴۰٬۰۰۰ | ۱۵۰٬۰۰۰ | ۶۶۰٬۰۰۰ |
 | اشتراک PixVerse AI — تولید ویدیو و انیمیشن با هوش مصنوعی | `draft_11fa376d-8e22-44d8-9bca-7830c1f6b9da` | ۹٬۶۰۰٬۰۰۰ | ۱۵۰٬۰۰۰ | ۲٬۴۰۰٬۰۰۰ |
-| اشتراک Wordwall Pro ⚠️ unverified | `draft_75a7b397-5b21-46ee-81a6-e134abb55ab1` | ؟ | — | — |
 
 - **Comment keyword:** `نقاشی`
 - **CTA caption (Farsi):** زیر همین پست کلمه «نقاشی» رو کامنت کن تا لینک مستقیم کلیدباکس رو دایرکت بگیری. شروع قیمت از ۱٬۷۱۰٬۰۰۰ تومان؛ با کد WELCOME10 تا ۱۵۰٬۰۰۰ تومان تخفیف (خرید بالای ۱۰۰٬۰۰۰ تومان) و پرداخت ۴ قسط بدون بهره با ترب‌پی / اسنپ‌پی / دیجی‌پی. خرید ۲ کلیکی، نماد اعتماد اینماد، تحویل فوری.
 
 ---
 
-## Idea 6 — وقتی استاد یا رئیست میگه تا فردا صبح پاورپوینت ۲۰ اسلایدی و خلاصه جلسه رو بده... و تو با هوش مصنوعی تو ۳ دقیقه می‌سازیش!
+## Idea 6 — از متن درس، پیش‌نویس اسلاید قابل بازبینی بساز
 
 **Segment:** `students_thesis_and_office_workers` · **Psychological trigger:** استرس ددلاین + رهایی فوری + «کاش زودتر می‌دونستم»
 
@@ -444,30 +442,30 @@ Dinosaur winks at camera. Mother says in Persian (Farsi): "تو هم نقاشی 
 - **Pain:** شب‌بیداری برای پاورپوینت، جزوه‌نویسی دستی سر کلاس و جلسه، استرس ددلاین صبح.
 
 ### (b) 3-second information-gap hook
-- **Visual:** 11:58 PM, a 3D student character gets a Telegram message from the professor 'فردا ساعت ۸ ارائه ۲۰ اسلایدی' — his soul literally leaves his body; then a clock spins and a finished slide deck flies out of the laptop.
-- **First spoken line (Farsi):** «ساعت دوازده شب استاد پیام داد: فردا ارائه بیست اسلایدی!»
+- **Visual:** 11:58 PM, a 3D student character gets a Telegram message from the professor 'فردا ساعت ۸ ارائه ۲۰ اسلایدی' — his soul literally leaves his body; then a clock spins and a finished slide deck flies out of the laptop. Show the transformation in the FIRST 3 seconds; do not render text in the generated image.
+- **First spoken line (Farsi):** «فردا ارائه داری؟»
 
 ### (c) Before → After demo (understood in 5 seconds)
 - **Before:** صفحه سفید پاورپوینت و یک فایل صوتی ۹۰ دقیقه‌ای ضبط‌شده از کلاس.
-- **After:** خلاصه ۱ صفحه‌ای کلاس + ارائه ۲۰ اسلایدی طراحی‌شده با نمودار و تصویر، ذخیره در OneDrive — در ۳ دقیقه.
+- **After:** پیش‌نویس اسلاید از متن درس در Gamma؛ صحت، منابع و نگارش فارسی را پیش از ارائه بررسی کن. زمان تولید متغیر است.
 
 ### (d) 40-second 5-shot reel script
 | Shot | Sec | Visual | Spoken Farsi | RTL subtitle pills |
 |---|---|---|---|---|
-| 1 | 0–8 | 11:58 PM dorm room, a tired Iranian university student with messy hair gets a phone message: 'فردا ساعت ۸ ارائه ۲۰ اسلایدی'. His ghost-soul pops out of his body comically. | ساعت دوازده شب استاد پیام داد: فردا ارائه بیست اسلایدی! | ساعت ۰۰:۰۰ 😱 · ارائه ۲۰ اسلایدی تا صبح! |
+| 1 | 0–8 | 11:58 PM, a 3D student character gets a Telegram message from the professor 'فردا ساعت ۸ ارائه ۲۰ اسلایدی' — his soul literally leaves his body; then a clock spins and a finished slide deck flies out of the laptop. Show the transformation in the FIRST 3 seconds; do not render text in the generated image. | فردا ارائه داری؟ | فردا ارائه داری؟ |
 | 2 | 8–16 | The student drags a 90-minute class audio recording into an AI note-taker app; a one-page Persian summary appears instantly. | صدای کلاس رو دادم به PLAUD، یه دقیقه‌ای خلاصه‌ش کرد. | ۹۰ دقیقه کلاس ← ۱ صفحه خلاصه 📝 |
-| 3 | 16–24 | Laptop close-up: the summary is pasted into Claude/ChatGPT to make an outline, then into Gamma AI; 20 beautiful slides with charts generate one after another. | خلاصه رو دادم به هوش مصنوعی، Gamma بیست تا اسلاید شیک ساخت. | ۲۰ اسلاید در ۳ دقیقه ⏱️ |
-| 4 | 24–32 | Next morning: the student presents confidently in a lecture hall; the strict professor nods and writes '۲۰/۲۰'. Cut to an office worker doing the same for a meeting report. | آفرین! بهترین ارائه کلاس بود. | نمره ۲۰ 🏆 · کارمندها هم: گزارش جلسه در ۳ دقیقه |
-| 5 | 32–40 | The student sleeps happily at night; on his laptop screen kelidbox.com shows Gamma, Claude, ChatGPT, PLAUD and Office 365 cards, Enamad seal, '۴ قسط'. | دیگه شب‌بیداری نکن. کامنت بنویس «اسلاید» تا لینک و کد تخفیف رو بفرستیم. | کامنت: اسلاید 👇 · WELCOME10 + ۴ قسط |
+| 3 | 16–24 | Laptop close-up: the summary is pasted into Claude/ChatGPT to make an outline, then into Gamma AI; 20 beautiful slides with charts generate one after another. | خلاصه رو دادم به هوش مصنوعی، Gamma بیست تا اسلاید شیک ساخت. | ۲۰ اسلاید در چند مرحله ⏱️ |
+| 4 | 24–32 | Vertical 9:16. Student checks a draft slide against class notes, corrects one factual error and saves locally. No grade or approval claim. | این فقط پیش‌نویسه؛ منبع و متنش رو خودت چک کن. | پیش‌نویس، نه تکلیف آماده · بازبینی منبع و متن |
+| 5 | 32–40 | Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text. | «اسلاید» رو کامنت کن؛ لینک و شرایط خرید رو بگیر. | کامنت: اسلاید · WELCOME10 • ۱۰٪ تا ۱۵۰٬۰۰۰ تومان · حداقل خرید: ۱۰۰٬۰۰۰ تومان · ۴ قسط ترب‌پی / دیجی‌پی؛ طبق شرایط درگاه |
 
 ### (e) Ready-to-paste Google Flow / Kling prompts
 **Shot 1 — image/keyframe prompt**
 ```text
-3D Pixar-style animation, soft cinematic lighting, vertical 9:16, warm Iranian everyday setting, expressive faces, shallow depth of field. 11:58 PM dorm room, a tired Iranian university student with messy hair gets a phone message: 'فردا ساعت ۸ ارائه ۲۰ اسلایدی'. His ghost-soul pops out of his body comically.
+11:58 PM, a 3D student character gets a Telegram message from the professor 'فردا ساعت ۸ ارائه ۲۰ اسلایدی' — his soul literally leaves his body; then a clock spins and a finished slide deck flies out of the laptop. Show the transformation in the FIRST 3 seconds; do not render text in the generated image.
 ```
 **Shot 1 — motion + audio prompt (8s)**
 ```text
-Comedic shock zoom, soul floats up, then snaps back. Student says in Persian (Farsi): "ساعت دوازده شب استاد پیام داد: فردا ارائه بیست اسلایدی!"
+0–3s: reveal the hook immediately. Say in Persian (Farsi): "فردا ارائه داری؟". 3–8s: hold on the result; no extra dialogue.
 ```
 **Shot 2 — image/keyframe prompt**
 ```text
@@ -487,19 +485,19 @@ Slides cascade like cards, timer in corner reads 02:47. Narrator says in Persian
 ```
 **Shot 4 — image/keyframe prompt**
 ```text
-3D Pixar-style animation, soft cinematic lighting, vertical 9:16, warm Iranian everyday setting, expressive faces, shallow depth of field. Next morning: the student presents confidently in a lecture hall; the strict professor nods and writes '۲۰/۲۰'. Cut to an office worker doing the same for a meeting report.
+Vertical 9:16. Student checks a draft slide against class notes, corrects one factual error and saves locally. No grade or approval claim.
 ```
 **Shot 4 — motion + audio prompt (8s)**
 ```text
-Applause, professor's eyebrows rise. Professor says in Persian (Farsi): "آفرین! بهترین ارائه کلاس بود."
+Close-up on review. Say in Persian: "این فقط پیش‌نویسه؛ منبع و متنش رو خودت چک کن."
 ```
 **Shot 5 — image/keyframe prompt**
 ```text
-3D Pixar-style animation, soft cinematic lighting, vertical 9:16, warm Iranian everyday setting, expressive faces, shallow depth of field. The student sleeps happily at night; on his laptop screen kelidbox.com shows Gamma, Claude, ChatGPT, PLAUD and Office 365 cards, Enamad seal, '۴ قسط'.
+Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text.
 ```
 **Shot 5 — motion + audio prompt (8s)**
 ```text
-Camera drifts from sleeping student to the screen. Narrator says in Persian (Farsi): "دیگه شب‌بیداری نکن. کامنت بنویس اسلاید تا لینک و کد تخفیف رو بفرستیم."
+Slow push-in. Say in Persian (Farsi): "«اسلاید» رو کامنت کن؛ لینک و شرایط خرید رو بگیر.". Leave space for RTL overlays.
 ```
 
 ### (f) Featured KelidBox accounts, price anchor & CTA
@@ -509,16 +507,15 @@ Camera drifts from sleeping student to the screen. Narrator says in Persian (Far
 | اشتراک Claude Pro (Anthropic) | `claude-pro` | ۹٬۲۶۰٬۰۰۰ | ۱۵۰٬۰۰۰ | ۲٬۳۱۵٬۰۰۰ |
 | اشتراک ChatGPT | `chatgpt-plus` | ۳٬۷۴۰٬۰۰۰ | ۱۵۰٬۰۰۰ | ۹۳۵٬۰۰۰ |
 | اشتراک PLAUD AI Pro و Unlimited — رونویسی و خلاصه‌سازی جلسات با هوش مصنوعی | `draft_31ded853-61a6-47d9-b604-8b21c6283217` | ۱۶٬۶۳۰٬۰۰۰ | ۱۵۰٬۰۰۰ | ۴٬۱۵۷٬۵۰۰ |
-| اشتراک Office 365 + ۱ ترابایت OneDrive ⚠️ unverified | `office-365-onedrive` | ۵۹۰٬۰۰۰ | ۵۹٬۰۰۰ | ۱۴۷٬۵۰۰ |
 
 *Brief discrepancy (snapshot price used):* chatgpt-plus: brief said 390,000; claude-pro: brief said 440,000
 
 - **Comment keyword:** `اسلاید`
-- **CTA caption (Farsi):** زیر همین پست کلمه «اسلاید» رو کامنت کن تا لینک مستقیم کلیدباکس رو دایرکت بگیری. شروع قیمت از ۵۹۰٬۰۰۰ تومان؛ با کد WELCOME10 تا ۱۵۰٬۰۰۰ تومان تخفیف (خرید بالای ۱۰۰٬۰۰۰ تومان) و پرداخت ۴ قسط بدون بهره با ترب‌پی / اسنپ‌پی / دیجی‌پی. خرید ۲ کلیکی، نماد اعتماد اینماد، تحویل فوری.
+- **CTA caption (Farsi):** زیر همین پست کلمه «اسلاید» رو کامنت کن تا لینک مستقیم کلیدباکس رو دایرکت بگیری. شروع قیمت از ۲٬۲۰۰٬۰۰۰ تومان؛ با کد WELCOME10 تا ۱۵۰٬۰۰۰ تومان تخفیف (خرید بالای ۱۰۰٬۰۰۰ تومان) و پرداخت ۴ قسط بدون بهره با ترب‌پی / اسنپ‌پی / دیجی‌پی. خرید ۲ کلیکی، نماد اعتماد اینماد، تحویل فوری.
 
 ---
 
-## Idea 7 — چطور بدون فتوشاپ و سیستم قوی، با ۳ اکانت هوش مصنوعی ادمین و ادیتور پیج‌ها بشی و ماهانه درآمد بگیری؟
+## Idea 7 — برای پیشنهاد خدمات محتوا، نمونه‌کار بساز؛ درآمد تضمینی نیست
 
 **Segment:** `freelancers_admins_and_youth_income` · **Psychological trigger:** امید به درآمد + «من هم می‌تونم» + کار از خانه
 
@@ -527,8 +524,8 @@ Camera drifts from sleeping student to the screen. Narrator says in Persian (Far
 - **Pain:** فکر می‌کند برای ادیتوری باید فتوشاپ و پریمیر و سیستم گرون یاد بگیرد؛ کلاس‌های طراحی گران و طولانی‌اند.
 
 ### (b) 3-second information-gap hook
-- **Visual:** A 3D young man in his bedroom shows a phone with a bank SMS notification 'واریز: پرداخت ماهانه ادمین پیج' while his old laptop smokes comically; text 'بدون فتوشاپ'.
-- **First spoken line (Farsi):** «با این لپ‌تاپ داغون، ادمین چهار تا پیجم و هر ماه حقوق می‌گیرم!»
+- **Visual:** Vertical 9:16. Young adult shows a before/after cafe post portfolio on an ordinary laptop. No bank SMS, client testimonial or payment proof.
+- **First spoken line (Farsi):** «اولین نمونه‌کارت رو بساز!»
 
 ### (c) Before → After demo (understood in 5 seconds)
 - **Before:** عکس تار و بی‌کیفیت محصول یک کافه + ویدیوی خام لرزان از گوشی صاحب کافه.
@@ -537,20 +534,20 @@ Camera drifts from sleeping student to the screen. Narrator says in Persian (Far
 ### (d) 40-second 5-shot reel script
 | Shot | Sec | Visual | Spoken Farsi | RTL subtitle pills |
 |---|---|---|---|---|
-| 1 | 0–8 | A young Iranian man in a small bedroom holds up a phone showing a bank deposit SMS; beside him an old laptop with a cartoon puff of smoke. | با این لپ‌تاپ داغون، ادمین چهار تا پیجم و هر ماه حقوق می‌گیرم! | بدون فتوشاپ ❌ · بدون سیستم قوی ❌ |
+| 1 | 0–8 | Vertical 9:16. Young adult shows a before/after cafe post portfolio on an ordinary laptop. No bank SMS, client testimonial or payment proof. | اولین نمونه‌کارت رو بساز! | اولین نمونه‌کارت رو بساز! |
 | 2 | 8–16 | Phone screen: a blurry low-res cafe product photo is upscaled by Magnific AI into a crisp 4K image, then background removed in Picsart with one tap. | عکس تار مشتری رو با Magnific فورکی کردم، با Picsart پس‌زمینه‌ش رو برداشتم. | ۱. کیفیت 4K با Magnific 🔍 · ۲. حذف پس‌زمینه با Picsart |
-| 3 | 16–24 | Canva template editor on a phone: a Persian reel cover and a minimalist cafe logo are generated by AI; then CapCut auto-captions a shaky cafe video and adds smooth zooms. | کاور و لوگو رو تو Canva ساختم، ریلزش رو تو CapCut با زیرنویس خودکار ادیت کردم. | ۳. کاور و لوگو با Canva 🎨 · ۴. ادیت با CapCut ✂️ |
-| 4 | 24–32 | The cafe owner (50s, friendly) looks at the finished reel on his phone, impressed, and shakes the young man's hand; a chat shows 'ماهی چند می‌گیری؟ ادمین پیج ما هم باش'. | این‌ها رو خودت ساختی؟ از این ماه ادمین پیج ما هم باش! | مشتری اول ✅ درآمد ماهانه 💸 |
-| 5 | 32–40 | The young man at his desk points at the laptop showing kelidbox.com with Canva, CapCut, Picsart and Magnific cards, Enamad seal and '۴ قسط'. | این چهار تا اکانت سرمایه کارمه. کامنت بنویس «درآمد» تا لینک و کد تخفیف رو بفرستیم. | کامنت: درآمد 👇 · WELCOME10 + ۴ قسط |
+| 3 | 16–24 | Vertical 9:16. Show a cafe cover designed in Canva, then a timeline with manually added Persian subtitles. Use real screen capture in editing. | کاور رو طراحی کن؛ متن فارسی رو دستی اضافه و بازبینی کن. | کاور با Canva · زیرنویس فارسی با بازبینی |
+| 4 | 24–32 | Vertical 9:16. A freelancer sends a clearly labelled sample portfolio to a cafe owner; owner considers it, no hiring, handshake or money. | نمونه‌کارت رو پیشنهاد بده؛ گرفتن سفارش تضمینی نیست. | اول نمونه‌کار · درآمد تضمینی نیست |
+| 5 | 32–40 | Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text. | «درآمد» رو کامنت کن؛ لینک و شرایط خرید رو بگیر. | کامنت: درآمد · WELCOME10 • ۱۰٪ تا ۱۵۰٬۰۰۰ تومان · حداقل خرید: ۱۰۰٬۰۰۰ تومان · ۴ قسط ترب‌پی / دیجی‌پی؛ طبق شرایط درگاه |
 
 ### (e) Ready-to-paste Google Flow / Kling prompts
 **Shot 1 — image/keyframe prompt**
 ```text
-3D Pixar-style animation, soft cinematic lighting, vertical 9:16, warm Iranian everyday setting, expressive faces, shallow depth of field. A young Iranian man in a small bedroom holds up a phone showing a bank deposit SMS; beside him an old laptop with a cartoon puff of smoke.
+Vertical 9:16. Young adult shows a before/after cafe post portfolio on an ordinary laptop. No bank SMS, client testimonial or payment proof.
 ```
 **Shot 1 — motion + audio prompt (8s)**
 ```text
-He grins at camera as the laptop coughs smoke. Character says in Persian (Farsi): "با این لپ‌تاپ داغون، ادمین چهار تا پیجم و هر ماه حقوق می‌گیرم!"
+Immediate portfolio reveal. Say in Persian: "اولین نمونه‌کارت رو بساز!".
 ```
 **Shot 2 — image/keyframe prompt**
 ```text
@@ -562,45 +559,44 @@ Blur-to-sharp wipe transition, sparkle. Character says in Persian (Farsi): "عک
 ```
 **Shot 3 — image/keyframe prompt**
 ```text
-Canva template editor on a phone: a Persian reel cover and a minimalist cafe logo are generated by AI; then CapCut auto-captions a shaky cafe video and adds smooth zooms.
+Vertical 9:16. Show a cafe cover designed in Canva, then a timeline with manually added Persian subtitles. Use real screen capture in editing.
 ```
 **Shot 3 — motion + audio prompt (8s)**
 ```text
-Fast satisfying UI montage, swipes and taps. Character says in Persian (Farsi): "کاور و لوگو رو تو کانوا ساختم، ریلزش رو تو کپ‌کات با زیرنویس خودکار ادیت کردم."
+Swipe between cover and timeline. Say in Persian: "کاور رو طراحی کن؛ متن فارسی رو دستی اضافه و بازبینی کن."
 ```
 **Shot 4 — image/keyframe prompt**
 ```text
-3D Pixar-style animation, soft cinematic lighting, vertical 9:16, warm Iranian everyday setting, expressive faces, shallow depth of field. The cafe owner (50s, friendly) looks at the finished reel on his phone, impressed, and shakes the young man's hand; a chat shows 'ماهی چند می‌گیری؟ ادمین پیج ما هم باش'.
+Vertical 9:16. A freelancer sends a clearly labelled sample portfolio to a cafe owner; owner considers it, no hiring, handshake or money.
 ```
 **Shot 4 — motion + audio prompt (8s)**
 ```text
-Handshake, cafe customers in background. Cafe owner says in Persian (Farsi): "این‌ها رو خودت ساختی؟ از این ماه ادمین پیج ما هم باش!"
+Show the sample. Say in Persian: "نمونه‌کارت رو پیشنهاد بده؛ گرفتن سفارش تضمینی نیست."
 ```
 **Shot 5 — image/keyframe prompt**
 ```text
-3D Pixar-style animation, soft cinematic lighting, vertical 9:16, warm Iranian everyday setting, expressive faces, shallow depth of field. The young man at his desk points at the laptop showing kelidbox.com with Canva, CapCut, Picsart and Magnific cards, Enamad seal and '۴ قسط'.
+Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text.
 ```
 **Shot 5 — motion + audio prompt (8s)**
 ```text
-He points at the screen then at camera. Character says in Persian (Farsi): "این چهار تا اکانت سرمایه کارمه. کامنت بنویس درآمد تا لینک و کد تخفیف رو بفرستیم."
+Slow push-in. Say in Persian (Farsi): "«درآمد» رو کامنت کن؛ لینک و شرایط خرید رو بگیر.". Leave space for RTL overlays.
 ```
 
 ### (f) Featured KelidBox accounts, price anchor & CTA
 | Product | id | From (Toman) | WELCOME10 saving | 4 × installment |
 |---|---|---|---|---|
 | اشتراک Canva | `canva-pro` | ۳۸۰٬۰۰۰ | ۳۸٬۰۰۰ | ۹۵٬۰۰۰ |
-| اشتراک CapCut Pro ⚠️ unverified | `draft_ee59478a-977e-42ca-b176-9ceb0def34c8` | ۱۹۰٬۰۰۰ | ۱۹٬۰۰۰ | ۴۷٬۵۰۰ |
 | اشتراک Picsart Pro — ویرایش عکس و ویدیو با هوش مصنوعی | `draft_cb39433a-d659-4cea-affe-1de803238eeb` | ۴۲۰٬۰۰۰ | ۴۲٬۰۰۰ | ۱۰۵٬۰۰۰ |
 | اشتراک Magnific AI (Freepik) — افزایش کیفیت تصویر و دانلود فایل‌های گرافیکی | `draft_8f001536-6d8a-4996-84ab-fcc126fbdb1e` | ۹۵۰٬۰۰۰ | ۹۵٬۰۰۰ | ۲۳۷٬۵۰۰ |
 
 *Brief discrepancy (snapshot price used):* canva-pro: brief said 230,000
 
 - **Comment keyword:** `درآمد`
-- **CTA caption (Farsi):** زیر همین پست کلمه «درآمد» رو کامنت کن تا لینک مستقیم کلیدباکس رو دایرکت بگیری. شروع قیمت از ۱۹۰٬۰۰۰ تومان؛ با کد WELCOME10 تا ۱۵۰٬۰۰۰ تومان تخفیف (خرید بالای ۱۰۰٬۰۰۰ تومان) و پرداخت ۴ قسط بدون بهره با ترب‌پی / اسنپ‌پی / دیجی‌پی. خرید ۲ کلیکی، نماد اعتماد اینماد، تحویل فوری.
+- **CTA caption (Farsi):** زیر همین پست کلمه «درآمد» رو کامنت کن تا لینک مستقیم کلیدباکس رو دایرکت بگیری. شروع قیمت از ۳۸۰٬۰۰۰ تومان؛ با کد WELCOME10 تا ۱۵۰٬۰۰۰ تومان تخفیف (خرید بالای ۱۰۰٬۰۰۰ تومان) و پرداخت ۴ قسط بدون بهره با ترب‌پی / اسنپ‌پی / دیجی‌پی. خرید ۲ کلیکی، نماد اعتماد اینماد، تحویل فوری.
 
 ---
 
-## Idea 8 — چرا اکانت ۲۰ دلاری رو با مالیات و کارمزد کارت مجازی گرون بخری وقتی تو کلیدباکس با ۱۰٪ تخفیف WELCOME10 و ۴ قسط ترب‌پی با ۲ کلیک تحویل می‌گیری؟
+## Idea 8 — قبل پرداخت، قیمت نهایی و شرایط قسط را ببین
 
 **Segment:** `price_shock_dollar_tax_vs_kelidbox_installments` · **Psychological trigger:** ضرر نکردن (loss aversion) + اعتماد (اینماد) + سبک شدن پرداخت با قسط
 
@@ -609,30 +605,30 @@ He points at the screen then at camera. Character says in Persian (Farsi): "ای
 - **Pain:** قیمت دلاری + مالیات + کارمزد کارت مجازی + ریسک کلاهبرداری فروشنده‌های تلگرامی بی‌نام‌ونشان.
 
 ### (b) 3-second information-gap hook
-- **Visual:** A 3D character's wallet screams and runs away as a receipt keeps printing extra lines: '$20', '+ مالیات', '+ کارمزد کارت مجازی', '+ نرخ دلار امروز'… The receipt grows longer than the room.
-- **First spoken line (Farsi):** «فکر کردی اکانت بیست دلاره؟ صبر کن فاکتور تموم شه!»
+- **Visual:** A 3D character's wallet screams and runs away as a receipt keeps printing extra lines: '$20', '+ مالیات', '+ کارمزد کارت مجازی', '+ نرخ دلار امروز'… The receipt grows longer than the room. Show the transformation in the FIRST 3 seconds; do not render text in the generated image.
+- **First spoken line (Farsi):** «قیمت نهایی چقدر میشه؟»
 
 ### (c) Before → After demo (understood in 5 seconds)
-- **Before:** فاکتور خیالی خرید مستقیم: قیمت دلاری + مالیات/کارمزد (مثال: ~۹٪) + کارمزد ویزاکارت + معطلی و ریسک.
-- **After:** صفحه محصول کلیدباکس: قیمت تومانی شفاف، کد WELCOME10، دکمه «۴ قسط بدون بهره»، نماد اینماد و تحویل فوری با ۲ کلیک.
+- **Before:** قبل پرداخت: قیمت نهایی و شرایط پلن نامشخص؛ هیچ مقایسه دلاری یا مالیاتی بدون فاکتور همسان منتشر نشود.
+- **After:** قیمت تومانی پلن منتخب، سقف تخفیف و برنامه اقساط را در تسویه بررسی کن؛ تحویل مطابق زمان صفحه محصول.
 
 ### (d) 40-second 5-shot reel script
 | Shot | Sec | Visual | Spoken Farsi | RTL subtitle pills |
 |---|---|---|---|---|
-| 1 | 0–8 | A young Iranian man at a desk clicks 'Subscribe $20'; a receipt printer starts spitting an endless receipt with lines '$20', '+ مالیات', '+ کارمزد'. | فکر کردی اکانت بیست دلاره؟ صبر کن فاکتور تموم شه! | ۲۰ دلار؟ 🤔 · + مالیات + کارمزد 😵 |
+| 1 | 0–8 | A 3D character's wallet screams and runs away as a receipt keeps printing extra lines: '$20', '+ مالیات', '+ کارمزد کارت مجازی', '+ نرخ دلار امروز'… The receipt grows longer than the room. Show the transformation in the FIRST 3 seconds; do not render text in the generated image. | قیمت نهایی چقدر میشه؟ | قیمت نهایی چقدر میشه؟ |
 | 2 | 8–16 | The same man in a dark alley-like Telegram chat world talking to a shady hooded seller with no name; a 'Blocked' stamp hits his virtual card. | ویزاکارت هم بلاک شد، فروشنده تلگرامی هم غیب شد! | کارت مجازی بلاک ❌ · فروشنده ناشناس 👻 |
-| 3 | 16–24 | A bright clean shop interior: a friendly 3D KelidBox mascot shows a big screen with the product's Toman price, the Enamad trust seal glowing, and a button '۴ قسط بدون بهره'. | تو کلیدباکس قیمت تومانیه، با نماد اینماد، و می‌تونی چهار قسطه بدی. | قیمت تومانی شفاف ✅ · نماد اینماد 🛡️ · ۴ قسط بدون بهره 💳 |
-| 4 | 24–32 | Phone UI close-up: coupon field, typing 'WELCOME10', the total drops by 10% (capped at 150,000 Toman); two taps: 'خرید' → 'پرداخت قسطی'; a 'تحویل شد ✅' message. | کد WELCOME10 رو بزن، ده درصد تخفیف بگیر، با دو کلیک تحویل بگیر. | WELCOME10 = ۱۰٪ تخفیف 🎁 · ۲ کلیک ← تحویل فوری |
-| 5 | 32–40 | The man relaxed, his wallet character happily back in his pocket; the mascot holds a sign 'kelidbox.com'. | کامنت بنویس «قیمت» تا لیست قیمت و کد تخفیف رو دایرکت بفرستیم. | کامنت: قیمت 👇 · WELCOME10 + ۴ قسط |
+| 3 | 16–24 | A bright clean shop interior: a friendly 3D KelidBox mascot shows a big screen with the product's Toman price, the Enamad trust seal glowing, and a button '۴ قسط طبق شرایط درگاه'. | تو کلیدباکس قیمت تومانیه، با نماد اینماد، و می‌تونی چهار قسطه بدی. | قیمت تومانی شفاف ✅ · نماد اینماد 🛡️ · ۴ قسط طبق شرایط درگاه 💳 |
+| 4 | 24–32 | Vertical 9:16. Real checkout screen recording added in editing: chosen plan, WELCOME10 field and final total. No synthetic successful order. | تخفیف سقف داره؛ مبلغ نهایی و شرایط قسط رو چک کن. | ۱۰٪ تا سقف ۱۵۰٬۰۰۰ تومان · حداقل خرید ۱۰۰٬۰۰۰ تومان |
+| 5 | 32–40 | Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text. | «قیمت» رو کامنت کن؛ لینک و شرایط خرید رو بگیر. | کامنت: قیمت · WELCOME10 • ۱۰٪ تا ۱۵۰٬۰۰۰ تومان · حداقل خرید: ۱۰۰٬۰۰۰ تومان · ۴ قسط ترب‌پی / دیجی‌پی؛ طبق شرایط درگاه |
 
 ### (e) Ready-to-paste Google Flow / Kling prompts
 **Shot 1 — image/keyframe prompt**
 ```text
-3D Pixar-style animation, soft cinematic lighting, vertical 9:16, warm Iranian everyday setting, expressive faces, shallow depth of field. A young Iranian man at a desk clicks 'Subscribe $20'; a receipt printer starts spitting an endless receipt with lines '$20', '+ مالیات', '+ کارمزد'.
+A 3D character's wallet screams and runs away as a receipt keeps printing extra lines: '$20', '+ مالیات', '+ کارمزد کارت مجازی', '+ نرخ دلار امروز'… The receipt grows longer than the room. Show the transformation in the FIRST 3 seconds; do not render text in the generated image.
 ```
 **Shot 1 — motion + audio prompt (8s)**
 ```text
-Receipt grows across the floor, his anthropomorphic wallet screams and runs. Character says in Persian (Farsi): "فکر کردی اکانت بیست دلاره؟ صبر کن فاکتور تموم شه!"
+0–3s: reveal the hook immediately. Say in Persian (Farsi): "قیمت نهایی چقدر میشه؟". 3–8s: hold on the result; no extra dialogue.
 ```
 **Shot 2 — image/keyframe prompt**
 ```text
@@ -644,7 +640,7 @@ Spooky lighting, the seller vanishes in smoke. Character says in Persian (Farsi)
 ```
 **Shot 3 — image/keyframe prompt**
 ```text
-3D Pixar-style animation, soft cinematic lighting, vertical 9:16, warm Iranian everyday setting, expressive faces, shallow depth of field. A bright clean shop interior: a friendly 3D KelidBox mascot shows a big screen with the product's Toman price, the Enamad trust seal glowing, and a button '۴ قسط بدون بهره'.
+3D Pixar-style animation, soft cinematic lighting, vertical 9:16, warm Iranian everyday setting, expressive faces, shallow depth of field. A bright clean shop interior: a friendly 3D KelidBox mascot shows a big screen with the product's Toman price, the Enamad trust seal glowing, and a button '۴ قسط طبق شرایط درگاه'.
 ```
 **Shot 3 — motion + audio prompt (8s)**
 ```text
@@ -652,19 +648,19 @@ Mascot taps the screen; the long receipt shrinks into four small equal coins. Ma
 ```
 **Shot 4 — image/keyframe prompt**
 ```text
-Phone UI close-up: coupon field, typing 'WELCOME10', the total drops by 10% (capped at 150,000 Toman); two taps: 'خرید' → 'پرداخت قسطی'; a 'تحویل شد ✅' message.
+Vertical 9:16. Real checkout screen recording added in editing: chosen plan, WELCOME10 field and final total. No synthetic successful order.
 ```
 **Shot 4 — motion + audio prompt (8s)**
 ```text
-Two crisp taps with satisfying sound, confetti. Narrator says in Persian (Farsi): "کد ولکام‌تن رو بزن، ده درصد تخفیف بگیر، با دو کلیک تحویل بگیر."
+Pause on terms. Say in Persian: "تخفیف سقف داره؛ مبلغ نهایی و شرایط قسط رو چک کن."
 ```
 **Shot 5 — image/keyframe prompt**
 ```text
-3D Pixar-style animation, soft cinematic lighting, vertical 9:16, warm Iranian everyday setting, expressive faces, shallow depth of field. The man relaxed, his wallet character happily back in his pocket; the mascot holds a sign 'kelidbox.com'.
+Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text.
 ```
 **Shot 5 — motion + audio prompt (8s)**
 ```text
-Wallet gives a thumbs-up. Mascot says in Persian (Farsi): "کامنت بنویس قیمت تا لیست قیمت و کد تخفیف رو دایرکت بفرستیم."
+Slow push-in. Say in Persian (Farsi): "«قیمت» رو کامنت کن؛ لینک و شرایط خرید رو بگیر.". Leave space for RTL overlays.
 ```
 
 ### (f) Featured KelidBox accounts, price anchor & CTA
@@ -681,47 +677,47 @@ Wallet gives a thumbs-up. Mascot says in Persian (Farsi): "کامنت بنویس
 
 ---
 
-## Idea 9 — وقتی وسط کارتون بچه‌ات یا آموزش دیدن تو یوتیوب ۱۰ تا تبلیغ میاد... یا اسپاتیفای قطع میشه!
+## Idea 9 — برای تماشای یوتیوب، گزینه بدون تبلیغ را بشناس
 
 **Segment:** `families_and_commuters_ad_free_entertainment` · **Psychological trigger:** کمدی خانوادگی آشنا (relatable) + آرامش خانه
 
 ### (a) Everyday persona & pain point
 - **Persona:** پدر و مادرهایی که برای بچه کارتون یوتیوب می‌گذارند، کارمندهای توی مترو و تاکسی، و خانواده‌هایی که آخر هفته فیلم می‌بینند.
-- **Pain:** تبلیغ‌های پشت‌سرهم وسط کارتون بچه، قطع شدن موزیک وقتی صفحه خاموش است، کیفیت پایین و زیرنویس‌های بد فیلم.
+- **Pain:** تبلیغ وسط تماشای ویدیو؛ انتخاب پلن مناسب بدون اشتباه گرفتن قابلیت سرویس‌ها.
 
 ### (b) 3-second information-gap hook
-- **Visual:** A 3D toddler watching a cartoon on a tablet; an ad pops up, the toddler's face turns red and he transforms into a tiny screaming volcano while the dad dives across the room to hit 'Skip'.
-- **First spoken line (Farsi):** «پنج ثانیه تبلیغ... و خونه ما میشه میدون جنگ!»
+- **Visual:** A 3D toddler watching a cartoon on a tablet; an ad pops up, the toddler's face turns red and he transforms into a tiny screaming volcano while the dad dives across the room to hit 'Skip'. Show the transformation in the FIRST 3 seconds; do not render text in the generated image.
+- **First spoken line (Farsi):** «باز وسط کارتون تبلیغ؟»
 
 ### (c) Before → After demo (understood in 5 seconds)
-- **Before:** یوتیوب با ۱۰ تبلیغ، اسپاتیفای که با خاموش شدن صفحه قطع می‌شود، فیلم با کیفیت پایین.
+- **Before:** تبلیغات میان ویدیوهای یوتیوب؛ قابلیت‌ها و محدودیت‌های هر سرویس را جداگانه بررسی کن.
 - **After:** کارتون بی‌وقفه و دانلود آفلاین برای سفر، موزیک پس‌زمینه در مترو، شب فیلم خانوادگی با Netflix و Disney+ 4K.
 
 ### (d) 40-second 5-shot reel script
 | Shot | Sec | Visual | Spoken Farsi | RTL subtitle pills |
 |---|---|---|---|---|
-| 1 | 0–8 | Cozy Iranian living room, a toddler watches a cartoon on a tablet; an ad interrupts; the toddler morphs into a tiny comedic volcano; the dad leaps in slow motion toward the tablet. | پنج ثانیه تبلیغ... و خونه ما میشه میدون جنگ! | تبلیغ شماره ۷ 😤 |
-| 2 | 8–16 | The mom in a crowded Tehran metro wagon with earbuds; she locks her phone and the music stops; she groans as other passengers stare. | صفحه رو خاموش می‌کنم، آهنگ قطع میشه! | مترو + آهنگ قطع 🎧❌ |
+| 1 | 0–8 | A 3D toddler watching a cartoon on a tablet; an ad pops up, the toddler's face turns red and he transforms into a tiny screaming volcano while the dad dives across the room to hit 'Skip'. Show the transformation in the FIRST 3 seconds; do not render text in the generated image. | باز وسط کارتون تبلیغ؟ | باز وسط کارتون تبلیغ؟ |
+| 2 | 8–16 | Vertical 9:16. Adult commuter watching an ordinary YouTube video; an ad interrupts. Not a Spotify lock-screen example. | وسط آموزش، دوباره تبلیغ اومد. | وقفه وسط آموزش |
 | 3 | 16–24 | Magical transition: a glowing 'Premium' key turns in the tablet; the toddler watches a cartoon peacefully with no ads, then the same cartoon downloaded offline in a car on a road trip. | با YouTube Premium: بدون تبلیغ، پخش در پس‌زمینه، دانلود برای سفر. | بدون تبلیغ ✅ · دانلود آفلاین برای سفر 🚗 |
-| 4 | 24–32 | Weekend movie night: the whole family on a sofa with popcorn in front of a big TV showing a crisp 4K animated movie; the mom's earbuds play Spotify while she cooks earlier. | Spotify بدون قطعی، Netflix و Disney+ فورکی... آخر هفته‌مون عوض شد! | شب فیلم 4K 🍿 |
-| 5 | 32–40 | The family waves at the camera; the TV screen shows kelidbox.com with YouTube Premium, Spotify, Netflix 4K and Disney+ cards, Enamad seal and '۴ قسط'. | کامنت بنویس «بدون تبلیغ» تا لینک و کد تخفیف رو دایرکت بفرستیم. | کامنت: بدون تبلیغ 👇 · WELCOME10 + ۴ قسط |
+| 4 | 24–32 | Vertical 9:16. Family selects a viewing service after reading plan and device limits; no guaranteed 4K on every device. | کیفیت و دانلود به سرویس، دستگاه و پلن بستگی داره. | شرایط پلن را بخوان |
+| 5 | 32–40 | Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text. | «بدون تبلیغ» رو کامنت کن؛ لینک و شرایط خرید رو بگیر. | کامنت: بدون تبلیغ · WELCOME10 • ۱۰٪ تا ۱۵۰٬۰۰۰ تومان · حداقل خرید: ۱۰۰٬۰۰۰ تومان · ۴ قسط ترب‌پی / دیجی‌پی؛ طبق شرایط درگاه |
 
 ### (e) Ready-to-paste Google Flow / Kling prompts
 **Shot 1 — image/keyframe prompt**
 ```text
-3D Pixar-style animation, soft cinematic lighting, vertical 9:16, warm Iranian everyday setting, expressive faces, shallow depth of field. Cozy Iranian living room, a toddler watches a cartoon on a tablet; an ad interrupts; the toddler morphs into a tiny comedic volcano; the dad leaps in slow motion toward the tablet.
+A 3D toddler watching a cartoon on a tablet; an ad pops up, the toddler's face turns red and he transforms into a tiny screaming volcano while the dad dives across the room to hit 'Skip'. Show the transformation in the FIRST 3 seconds; do not render text in the generated image.
 ```
 **Shot 1 — motion + audio prompt (8s)**
 ```text
-Slow-motion comedic dive, tea glass flying. Dad says in Persian (Farsi): "پنج ثانیه تبلیغ... و خونه ما میشه میدون جنگ!"
+0–3s: reveal the hook immediately. Say in Persian (Farsi): "باز وسط کارتون تبلیغ؟". 3–8s: hold on the result; no extra dialogue.
 ```
 **Shot 2 — image/keyframe prompt**
 ```text
-3D Pixar-style animation, soft cinematic lighting, vertical 9:16, warm Iranian everyday setting, expressive faces, shallow depth of field. The mom in a crowded Tehran metro wagon with earbuds; she locks her phone and the music stops; she groans as other passengers stare.
+Vertical 9:16. Adult commuter watching an ordinary YouTube video; an ad interrupts. Not a Spotify lock-screen example.
 ```
 **Shot 2 — motion + audio prompt (8s)**
 ```text
-Music cuts abruptly to silence, record-scratch sound. Mom says in Persian (Farsi): "صفحه رو خاموش می‌کنم، آهنگ قطع میشه!"
+Commuter pauses. Say in Persian: "وسط آموزش، دوباره تبلیغ اومد."
 ```
 **Shot 3 — image/keyframe prompt**
 ```text
@@ -733,19 +729,19 @@ Golden key turns, ads shatter like glass, calm music. Narrator says in Persian (
 ```
 **Shot 4 — image/keyframe prompt**
 ```text
-3D Pixar-style animation, soft cinematic lighting, vertical 9:16, warm Iranian everyday setting, expressive faces, shallow depth of field. Weekend movie night: the whole family on a sofa with popcorn in front of a big TV showing a crisp 4K animated movie; the mom's earbuds play Spotify while she cooks earlier.
+Vertical 9:16. Family selects a viewing service after reading plan and device limits; no guaranteed 4K on every device.
 ```
 **Shot 4 — motion + audio prompt (8s)**
 ```text
-Warm lights dim, family laughs together. Mom says in Persian (Farsi): "اسپاتیفای بدون قطعی، نتفلیکس و دیزنی فورکی... آخر هفته‌مون عوض شد!"
+Warm family scene. Say in Persian: "کیفیت و دانلود به سرویس، دستگاه و پلن بستگی داره."
 ```
 **Shot 5 — image/keyframe prompt**
 ```text
-3D Pixar-style animation, soft cinematic lighting, vertical 9:16, warm Iranian everyday setting, expressive faces, shallow depth of field. The family waves at the camera; the TV screen shows kelidbox.com with YouTube Premium, Spotify, Netflix 4K and Disney+ cards, Enamad seal and '۴ قسط'.
+Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text.
 ```
 **Shot 5 — motion + audio prompt (8s)**
 ```text
-Toddler blows a kiss. Dad says in Persian (Farsi): "کامنت بنویس بدون تبلیغ تا لینک و کد تخفیف رو دایرکت بفرستیم."
+Slow push-in. Say in Persian (Farsi): "«بدون تبلیغ» رو کامنت کن؛ لینک و شرایط خرید رو بگیر.". Leave space for RTL overlays.
 ```
 
 ### (f) Featured KelidBox accounts, price anchor & CTA
@@ -763,39 +759,39 @@ Toddler blows a kiss. Dad says in Persian (Farsi): "کامنت بنویس بدو
 
 ---
 
-## Idea 10 — وقتی می‌خوای سی‌پی کالاف، روباکس، ولورانت پوینت یا بازی استیم بخری ولی می‌ترسی سرت کلاه بره یا پولت نرسه!
+## Idea 10 — برای خرید شارژ بازی، نسخه و ریجن را تطبیق بده
 
 **Segment:** `gamers_and_gen_z_safe_installments` · **Psychological trigger:** هویت گیمری + ترس از کلاهبرداری + «الان می‌تونم بخرم» با قسط
 
 ### (a) Everyday persona & pain point
-- **Persona:** گیمر ۱۳ تا ۲۵ ساله (و پدر و مادرهایی که برای بچه شارژ بازی می‌خرند) که پول توجیبی محدود دارد.
+- **Persona:** گیمر بزرگسال؛ برای کاربران زیر سن قانونی، خرید و تصمیم اعتباری فقط توسط والد یا سرپرست.
 - **Pain:** کلاهبرداری فروشنده‌های ناشناس، شارژ نشدن، پول کافی برای اسکین/بازی جدید نداشتن، لگ و پینگ بالا.
 
 ### (b) 3-second information-gap hook
-- **Visual:** A 3D teen gamer about to buy CP from a shady hooded figure in a neon alley; a giant cartoon hat (کلاه) slowly lowers onto his head from the sky — he freezes.
-- **First spoken line (Farsi):** «داشتم سی‌پی می‌خریدم... که کلاه اومد سرم!»
+- **Visual:** A 3D teen gamer about to buy CP from a shady hooded figure in a neon alley; a giant cartoon hat (کلاه) slowly lowers onto his head from the sky — he freezes. Show the transformation in the FIRST 3 seconds; do not render text in the generated image.
+- **First spoken line (Farsi):** «قبل خرید، ریجن رو چک کن!»
 
 ### (c) Before → After demo (understood in 5 seconds)
 - **Before:** پیام فروشنده تلگرامی: «اول کارت به کارت کن، بعد شارژ می‌کنم» → بلاک شدن و پول از دست رفته.
-- **After:** خرید از کلیدباکس با نماد اینماد، پرداخت ۴ قسطه، شارژ CP/Robux/VP و کلید استیم + ExitLag برای پینگ پایین.
+- **After:** نسخه Global و روش شارژ Activision را برای CP تطبیق بده؛ قیمت، زمان تحویل و شرایط اعتبار را قبل پرداخت بخوان.
 
 ### (d) 40-second 5-shot reel script
 | Shot | Sec | Visual | Spoken Farsi | RTL subtitle pills |
 |---|---|---|---|---|
-| 1 | 0–8 | Neon alley at night, a teen Iranian gamer with a headset hands money to a shady hooded seller; a giant cartoon hat descends from the sky onto his head. | داشتم سی‌پی می‌خریدم... که کلاه اومد سرم! | کارت به کارت کردی؟ 🎩😭 |
+| 1 | 0–8 | A 3D teen gamer about to buy CP from a shady hooded figure in a neon alley; a giant cartoon hat (کلاه) slowly lowers onto his head from the sky — he freezes. Show the transformation in the FIRST 3 seconds; do not render text in the generated image. | قبل خرید، ریجن رو چک کن! | قبل خرید، ریجن رو چک کن! |
 | 2 | 8–16 | The gamer in his room staring at a Valorant skin store and a Steam game page; his piggy bank is cracked and nearly empty; ping meter shows 180ms in red. | پولم هم به اسکین جدید نمی‌رسه، پینگم هم صد و هشتاده! | پول نمی‌رسه 💸 · پینگ ۱۸۰ 🐢 |
-| 3 | 16–24 | Epic gaming-shop portal opens: a friendly 3D KelidBox mascot in gamer armor presents floating icons of COD Mobile CP, Robux, Valorant Points, Telegram Stars, Steam gift card and ExitLag; the Enamad seal glows like a shield. | اینجا کلیدباکسه: نماد اینماد داره، شارژ سریع، و همه‌چی چهار قسطه. | نماد اینماد 🛡️ · ۴ قسط ترب‌پی 💳 |
-| 4 | 24–32 | In-game victory: the gamer wins a match with a new skin, ping meter green at 35ms with ExitLag; teammates cheer on voice chat. | اسکین گرفتم، پینگم اومد سی و پنج، اولین برد امشب! | پینگ ۳۵ با ExitLag ⚡ · برد! 🏆 |
-| 5 | 32–40 | The gamer and mascot fist-bump; behind them a giant screen shows kelidbox.com, 'WELCOME10' and '۴ قسط'. | کامنت بنویس «گیم» تا لینک شارژ و کد تخفیف رو دایرکت بفرستیم. | کامنت: گیم 👇 · WELCOME10 + ۴ قسط |
+| 3 | 16–24 | Vertical 9:16. Adult gamer and parent inspect a real product page for Global COD Mobile CP; no fabricated trust badge. | نسخه و ریجن رو تطبیق بده؛ بعد شرایط خرید رو بخون. | نسخه Global و حساب سازگار · قسط فقط طبق شرایط اعتبار |
+| 4 | 24–32 | Vertical 9:16. Adult gamer checks item details before buying. No ping meter, victory or performance claim. | خرید آیتم، برد یا پینگ بهتر رو تضمین نمی‌کنه. | بدون تضمین برد یا پینگ |
+| 5 | 32–40 | Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text. | «گیم» رو کامنت کن؛ لینک و شرایط خرید رو بگیر. | کامنت: گیم · WELCOME10 • ۱۰٪ تا ۱۵۰٬۰۰۰ تومان · حداقل خرید: ۱۰۰٬۰۰۰ تومان · ۴ قسط ترب‌پی / دیجی‌پی؛ طبق شرایط درگاه |
 
 ### (e) Ready-to-paste Google Flow / Kling prompts
 **Shot 1 — image/keyframe prompt**
 ```text
-3D Pixar-style animation, soft cinematic lighting, vertical 9:16, warm Iranian everyday setting, expressive faces, shallow depth of field. Neon alley at night, a teen Iranian gamer with a headset hands money to a shady hooded seller; a giant cartoon hat descends from the sky onto his head.
+A 3D teen gamer about to buy CP from a shady hooded figure in a neon alley; a giant cartoon hat (کلاه) slowly lowers onto his head from the sky — he freezes. Show the transformation in the FIRST 3 seconds; do not render text in the generated image.
 ```
 **Shot 1 — motion + audio prompt (8s)**
 ```text
-Hat lands with a comedic thud, seller vanishes. Gamer says in Persian (Farsi): "داشتم سی‌پی می‌خریدم... که کلاه اومد سرم!"
+0–3s: reveal the hook immediately. Say in Persian (Farsi): "قبل خرید، ریجن رو چک کن!". 3–8s: hold on the result; no extra dialogue.
 ```
 **Shot 2 — image/keyframe prompt**
 ```text
@@ -807,27 +803,27 @@ Piggy bank coughs a single coin, ping meter blinks red. Gamer says in Persian (F
 ```
 **Shot 3 — image/keyframe prompt**
 ```text
-3D Pixar-style animation, soft cinematic lighting, vertical 9:16, warm Iranian everyday setting, expressive faces, shallow depth of field. Epic gaming-shop portal opens: a friendly 3D KelidBox mascot in gamer armor presents floating icons of COD Mobile CP, Robux, Valorant Points, Telegram Stars, Steam gift card and ExitLag; the Enamad seal glows like a shield.
+Vertical 9:16. Adult gamer and parent inspect a real product page for Global COD Mobile CP; no fabricated trust badge.
 ```
 **Shot 3 — motion + audio prompt (8s)**
 ```text
-Icons orbit the gamer, shield flashes. Mascot says in Persian (Farsi): "اینجا کلیدباکسه: نماد اینماد داره، شارژ سریع، و همه‌چی چهار قسطه."
+Focus on region label. Say in Persian: "نسخه و ریجن رو تطبیق بده؛ بعد شرایط خرید رو بخون."
 ```
 **Shot 4 — image/keyframe prompt**
 ```text
-3D Pixar-style animation, soft cinematic lighting, vertical 9:16, warm Iranian everyday setting, expressive faces, shallow depth of field. In-game victory: the gamer wins a match with a new skin, ping meter green at 35ms with ExitLag; teammates cheer on voice chat.
+Vertical 9:16. Adult gamer checks item details before buying. No ping meter, victory or performance claim.
 ```
 **Shot 4 — motion + audio prompt (8s)**
 ```text
-Victory explosion, slow-motion confetti, 'VICTORY' banner. Gamer says in Persian (Farsi): "اسکین گرفتم، پینگم اومد سی و پنج، اولین برد امشب!"
+Calm comparison shot. Say in Persian: "خرید آیتم، برد یا پینگ بهتر رو تضمین نمی‌کنه."
 ```
 **Shot 5 — image/keyframe prompt**
 ```text
-3D Pixar-style animation, soft cinematic lighting, vertical 9:16, warm Iranian everyday setting, expressive faces, shallow depth of field. The gamer and mascot fist-bump; behind them a giant screen shows kelidbox.com, 'WELCOME10' and '۴ قسط'.
+Vertical 9:16, same character and setting. Hold a clean phone mockup with empty space for a REAL product screenshot added in editing. Do not generate logos, checkout UI, seals or readable text.
 ```
 **Shot 5 — motion + audio prompt (8s)**
 ```text
-Fist-bump with a spark. Mascot says in Persian (Farsi): "کامنت بنویس گیم تا لینک شارژ و کد تخفیف رو دایرکت بفرستیم."
+Slow push-in. Say in Persian (Farsi): "«گیم» رو کامنت کن؛ لینک و شرایط خرید رو بگیر.". Leave space for RTL overlays.
 ```
 
 ### (f) Featured KelidBox accounts, price anchor & CTA
