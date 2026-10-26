@@ -1043,3 +1043,125 @@ def render_subbed_clip(norm_mp4: Path, overlays: list[Overlay], dst: Path, video
                    "-movflags", "+faststart", str(tmp)), what=f"subtitle burn {dst.name}")
     os.replace(tmp, dst)
     return dst
+
+
+# ---------------------------------------------------- per-clip orchestration --
+@dataclass
+class ClipResult:
+    clip: ClipSpec
+    source: Path
+    provenance: dict
+    analysis: Optional[dict]
+    plan: dict
+    final_check: Optional[dict]
+    norm_mp4: Optional[Path] = None
+    norm_wav: Optional[Path] = None
+    duration: float = 0.0
+    frames: int = 0
+    cues: list[Cue] = field(default_factory=list)
+    cue_checks: list[dict] = field(default_factory=list)
+    overlays: list[Overlay] = field(default_factory=list)
+    subbed: list[Path] = field(default_factory=list)
+    srt: list[Path] = field(default_factory=list)
+
+
+def plan_clip(ep: Episode, clip: ClipSpec, work: Path, force: bool = False) -> ClipResult:
+    """Source prep + speech analysis + speech-safe trim plan (no rendering)."""
+    src, prov = prepare_source(ep, clip, work, force)
+    src_dur = media_duration(src)
+    req_out = src_dur if clip.trim_out is None else min(clip.trim_out, src_dur)
+    analysis = None
+    if clip.speech_safe != "off" or clip.lock_trim:
+        analysis = analyze_clip_speech(src, clip.trim_in, req_out, ep.speech)
+    plan = plan_trim(clip, analysis, src_dur, ep.speech)
+    final = window_speech_check(analysis, *plan["final"]) if analysis else None
+    for n in plan["notes"]:
+        log(f"{clip.id}: {n}")
+        if n.startswith("WARNING") or "clamped" in n:
+            ep.warnings.append(f"{clip.id}: {n}")
+    if final and final["cuts_speech"]:
+        ep.warnings.append(f"{clip.id}: final trim {plan['final']} still touches speech energy "
+                           f"(mode={plan['mode']}) - listen to both edges")
+    return ClipResult(clip, src, prov, analysis, plan, final)
+
+
+def clip_output_paths(ep: Episode, clip: ClipSpec, name: str) -> list[Path]:
+    """Where per-clip deliverables go: clips_dir and/or <out_dir>/clips_subbed."""
+    where = str(ep.outputs.get("per_clip_location", "both"))
+    dirs = {"both": [ep.out_dir / "clips_subbed", ep.clips_dir],
+            "out_dir": [ep.out_dir / "clips_subbed"], "clips_dir": [ep.clips_dir]}.get(where)
+    if dirs is None:
+        raise PipelineError("outputs.per_clip_location must be both | out_dir | clips_dir")
+    return [d / name for d in dirs]
+
+
+def render_clip(ep: Episode, res: ClipResult, work: Path, font_path: str,
+                force: bool = False) -> ClipResult:
+    """Normalise + burn subtitles (badge on the badge clip) WITH original audio."""
+    clip, (t_in, t_out) = res.clip, res.plan["final"]
+    norm_key = fingerprint({"src": res.provenance["source_sha256"], "segs": clip.splice_segments,
+                            "trim": [t_in, t_out], "video": ep.video, "audio": ep.audio,
+                            "v": PIPELINE_VERSION})
+    res.norm_mp4, res.norm_wav = work / f"{clip.id}_norm.mp4", work / f"{clip.id}_norm.wav"
+    if force or not cache_ok([res.norm_mp4, res.norm_wav], norm_key):
+        log(f"{clip.id}: normalise {res.source.name} [{t_in:.3f}, {t_out:.3f}] -> "
+            f"{ep.video['width']}x{ep.video['height']}@{ep.video['fps']} + loudnorm")
+        info = normalize_clip(res.source, t_in, t_out, res.norm_mp4, res.norm_wav, ep.video, ep.audio)
+        cache_write(res.norm_mp4, norm_key, **info)
+    rec = json.loads(_record_path(res.norm_mp4).read_text("utf-8"))
+    res.frames, res.duration = int(rec["frames"]), float(rec["duration"])
+
+    res.cues, res.cue_checks = local_cues(ep, clip, res.plan, res.analysis, res.duration)
+    for chk in res.cue_checks:
+        if not chk["in_bounds"]:
+            ep.warnings.append(f"{clip.id}: cue {chk['authored']} outside clip (0..{res.duration:.3f}); clamped")
+    with_badge = bool(ep.badge) and clip.index == int(ep.badge.get("clip_index", 1))
+    res.overlays = build_overlays(ep, res.cues, res.duration, work / "pills", clip.id, font_path,
+                                  with_badge)
+    sub_key = fingerprint({"norm": norm_key, "font": sha256_file(Path(font_path)),
+                           "engine": shaping_engine(), "style": ep.subs, "crf": ep.video["crf"],
+                           "ov": [(o.kind, o.start, o.end, o.text, o.meta["x"], o.meta["y"],
+                                   o.meta["font_size"], ep.color_for(o.speaker)) for o in res.overlays]})
+    name = f"{clip.id}_subbed"
+    targets = clip_output_paths(ep, clip, name + ".mp4")
+    primary = targets[0]
+    if force or not cache_ok([primary], sub_key):
+        log(f"{clip.id}: burn {len(res.overlays)} overlay(s) + mux original Flow audio -> {primary}")
+        render_subbed_clip(res.norm_mp4, res.overlays, primary, ep.video)
+        cache_write(primary, sub_key, clip=clip.id, frames=res.frames, duration=res.duration)
+    res.subbed = [primary]
+    srt_cues = [(c.start, c.end, c.text) for c in res.cues]
+    write_srt(primary.with_suffix(".srt"), srt_cues)
+    res.srt = [primary.with_suffix(".srt")]
+    for extra in targets[1:]:
+        try:
+            if not (extra.is_file() and sha256_file(extra) == sha256_file(primary)):
+                atomic_copy(primary, extra)
+            write_srt(extra.with_suffix(".srt"), srt_cues)
+            res.subbed.append(extra)
+            res.srt.append(extra.with_suffix(".srt"))
+        except OSError as exc:
+            ep.warnings.append(f"{clip.id}: could not write {extra} ({exc})")
+    return res
+
+
+def run_clips(ep: Episode, force: bool = False, render: bool = True,
+              only: Optional[set[str]] = None) -> tuple[list[ClipResult], Optional[str], list[str]]:
+    """Plan (and optionally render) every clip.  Returns (results, font, notes)."""
+    work = work_dir(ep)
+    work.mkdir(parents=True, exist_ok=True)
+    font_path, font_notes = (None, [])
+    if render:
+        font_path, font_notes = resolve_font(ep.font_path)
+        for n in font_notes:
+            ep.warnings.append(n)
+        log(f"font: {font_path} (shaping: {shaping_engine()})")
+    results = []
+    for clip in ep.clips:
+        if only and clip.id not in only and str(clip.index) not in only:
+            continue
+        res = plan_clip(ep, clip, work, force)
+        if render:
+            res = render_clip(ep, res, work, font_path, force)  # type: ignore[arg-type]
+        results.append(res)
+    return results, font_path, font_notes
