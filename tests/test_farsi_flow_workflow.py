@@ -401,3 +401,84 @@ def test_positional_manifest_remains_compatible(media, tmp_path):
     path = save_manifest(tmp_path / "positional.json", data)
     proc = command([sys.executable, SCRIPT, "speech-audit", path, "--only", "1", "--json"])
     assert len(json.loads(proc.stdout)) == 1
+
+
+def test_all_six_series1_clips_with_shipped_windows(media):
+    root, _ = media
+    shipped = ROOT / "pipeline" / "manifests" / "series1_part1_whats_her_number.json"
+    data = json.loads(shipped.read_text("utf-8"))
+    clips = root / "six originals"
+    clips.mkdir()
+    for i, clip in enumerate(data["clips"], 1):
+        centers = [clip["trim_in"] + (c[0]+c[1])/2 for c in clip["subtitles"]]
+        spans = [(c-.20, c+.20) for c in centers]
+        synth(clips / clip["file"], 280+i*40, clip["trim_out"]+.5, spans)
+        if clip.get("raw_orig_file"):
+            mapped = []
+            for a, b in spans:
+                offset = 0.0
+                for lo, hi in clip["splice_segments"]:
+                    x, y = max(a, offset), min(b, offset+hi-lo)
+                    if x < y:
+                        mapped.append((lo+x-offset, lo+y-offset))
+                    offset += hi-lo
+            synth(clips / clip["raw_orig_file"], 280+i*40, 9, mapped)
+    cta = root / "six cta.mp4"
+    synth(cta, 880, 8, ((.4, 3.2), (4.0, 7.6)))
+    font, _ = fw.resolve_font()
+    data.update(clips_dir=str(clips), out_dir=str(root / "six final"), font_path=font, cta_video=str(cta))
+    data["video"]["preset"] = "ultrafast"
+    data["outputs"]["cta_burn_subtitles"] = True
+    path = save_manifest(root / "six.json", data)
+    cli(path)
+    out = Path(data["out_dir"])
+    report = json.loads((out / "qa_report.json").read_text())
+    assert report["overall_status"] == "pass"
+    assert len(report["clips"]) == 6
+    for original, result in zip(data["clips"], report["clips"]):
+        assert result["plan"]["final"] == [original["trim_in"], original["trim_out"]]
+        assert len(result["outputs"]) == 2
+        assert_av(clips / f'{original["id"]}_subbed.mp4', result["duration"])
+    assert report["base"]["duration"] == pytest.approx(50.375, abs=.001)
+    assert report["master"]["duration"] == pytest.approx(58.375, abs=.001)
+    assert report["master"]["cue_count"] == 17
+    master = Path(report["master"]["path"])
+    sha = fw.sha256_file(master)
+    cli(path)
+    assert fw.sha256_file(master) == sha
+
+
+def test_reference_scripts_match_manifest_dialogue_and_trims():
+    import ast
+    import re
+    text = (ROOT / "docs" / "farsi-flow-workflow" / "00-context-and-requirements.md").read_text()
+    references = []
+    for source in re.findall(r"```python\n(.*?)```", text, flags=re.S):
+        for node in ast.parse(source).body:
+            if isinstance(node, ast.Assign) and any(isinstance(t, ast.Name) and t.id == "CLIPS" for t in node.targets):
+                references.append(ast.literal_eval(node.value))
+    assert len(references) == 2
+    for filename, rows in zip(("series1_part1_whats_her_number.json", "ugly_chef_part2.json"), references):
+        data = json.loads((ROOT / "pipeline" / "manifests" / filename).read_text())
+        for actual, expected in zip(data["clips"], rows):
+            assert (actual["file"], actual["trim_in"], actual["trim_out"]) == expected[:3]
+            assert [tuple(s) for s in actual["subtitles"]] == expected[3]
+
+
+def test_failed_promotion_keeps_previous_output(media, tmp_path):
+    _, data = media
+    ep = fw.load_manifest(save_manifest(tmp_path / "episode.json", data))
+    previous, invalid = tmp_path / "previous.mp4", tmp_path / "render.tmp.mp4"
+    previous.write_bytes(b"keep this previous output")
+    invalid.write_bytes(b"invalid media")
+    with pytest.raises(fw.PipelineError):
+        fw.promote(ep, invalid, previous, 1.0, "test")
+    assert previous.read_bytes() == b"keep this previous output"
+
+
+def test_ffprobe_na_fields_are_tolerated(monkeypatch, tmp_path):
+    monkeypatch.setattr(fw, "ffprobe_json", lambda _: {
+        "format": {"duration": "1.5"}, "streams": [{"codec_type": "video", "codec_name": "h264",
+            "duration": "N/A", "nb_frames": "N/A", "avg_frame_rate": "24/1", "start_time": "N/A"}]})
+    probe = fw.probe_media(tmp_path / "video.mp4")
+    assert probe["video"]["duration"] == 1.5 and probe["video"]["frames"] == 0
