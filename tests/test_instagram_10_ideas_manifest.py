@@ -110,3 +110,100 @@ def test_each_shot_has_flow_prompts_and_timed_rtl_subtitles(idea, n, shot):
     if n == 5:
         assert idea['comment_keyword'] in shot['spoken_fa']
         assert 'WELCOME10' in ' '.join(c['text'] for c in cues)
+
+
+def test_offer_terms_are_exact_and_attributed():
+    coupon = DATA['coupon']
+    assert {k: coupon[k] for k in ('code', 'percent', 'max_discount_toman', 'min_order_toman')} == {
+        'code': 'WELCOME10', 'percent': 10, 'max_discount_toman': 150000, 'min_order_toman': 100000}
+    assert 'Stage-2 brief' in coupon['source']
+    installments = DATA['installments']
+    assert installments['count'] == 4
+    assert installments['providers'] == ['TorobPay', 'DigiPay']
+    assert installments['eligibility_required'] is True
+    assert installments['coupon_stacking_verified'] is False
+    assert 'interest' not in installments  # no unsupported zero-interest assertion
+
+
+@pytest.mark.parametrize('price,expected', [(99999, None), (100000, 10000), (380000, 38000),
+                                          (1500000, 150000), (1710000, 150000), (None, None)])
+def test_coupon_boundaries(price, expected):
+    sys.path.insert(0, str(ROOT / 'pipeline/tools'))
+    from ig10.common import coupon_saving
+    assert coupon_saving(price) == expected
+
+
+def test_generated_manifest_and_stage1_document_are_current():
+    check = subprocess.run([sys.executable, str(ROOT / 'pipeline/tools/ig10/build_manifest.py'), '--check'],
+                           cwd=ROOT, text=True, capture_output=True, check=False)
+    assert check.returncode == 0, check.stdout + check.stderr
+    sys.path.insert(0, str(ROOT / 'pipeline/tools'))
+    from ig10.ideas_01_05 import IDEAS as first
+    from ig10.ideas_06_10 import IDEAS as second
+    from ig10.render_md import render
+    assert STAGE1.read_text(encoding='utf-8') == render(first + second)
+
+
+def test_stage1_markdown_has_all_ten_complete_ideas():
+    text = STAGE1.read_text(encoding='utf-8')
+    sections = re.split(r'^## Idea \d+ — ', text, flags=re.M)[1:]
+    assert len(sections) == 10
+    for section, idea in zip(sections, IDEAS):
+        for marker in ('### (a)', '### (b)', '### (c)', '### (d)', '### (e)', '### (f)'):
+            assert marker in section
+        assert section.count('— image/keyframe prompt') == 5
+        assert section.count('— motion + audio prompt') == 5
+        assert idea['hook_3s_spoken_fa'] in section
+        assert idea['primary_product_id'] in section
+        assert idea['comment_keyword'] in section and 'WELCOME10' in section
+
+
+def test_playbook_has_substantive_ranking_profile_calendar_and_launch_gates():
+    text = PLAYBOOK.read_text(encoding='utf-8')
+    assert len(text) > 15000
+    ranked = re.findall(r'^\| (\d+) \| (IG10_\d{2}) /', text, re.M)
+    assert len(ranked) == 10 and {i for _, i in ranked} == set(EXPECTED_IDS)
+    assert [i for _, i in ranked[:3]] == ['IG10_01', 'IG10_02', 'IG10_06']
+    bio = text.split('```text\n', 1)[1].split('```', 1)[0].strip()
+    assert PERSIAN.search(bio) and 50 <= len(bio) <= 150
+    assert len(re.findall(r'^### Pinned post [123]', text, re.M)) == 3
+    for title in ('🎬 با AI چی بسازم؟', '💰 درآمد با ویدیو AI', '💳 خرید قسطی ۴ ماهه',
+                  '🎁 کد تخفیف ۱۰٪', '🛡️ نماد اعتماد اینماد'):
+        block = text.split('#### ' + title, 1)[1].split('\n##', 1)[0]
+        assert all(f'\n{n}. ' in block for n in range(1, 5))
+    calendar = re.findall(r'^\| (\d+) \| (Viral 3D|Conversion|Support|Conversion variant) \|', text, re.M)
+    assert [int(n) for n, _ in calendar] == list(range(1, 31))
+    assert sum(kind == 'Viral 3D' for _, kind in calendar) == 10
+    assert sum(kind == 'Conversion' for _, kind in calendar) == 10
+    for marker in ('RELEASE BLOCKER', 'candidate_unverified_route', 'توقف', '7-day',
+                   'Launch gates', 'three-minute tutorial', 'not a promise', 'not installed'):
+        assert marker in text
+
+
+@pytest.mark.parametrize('idea', IDEAS, ids=EXPECTED_IDS)
+def test_each_dm_contains_matching_product_offer_and_installment_steps(idea):
+    text = PLAYBOOK.read_text(encoding='utf-8')
+    marker = f"#### DM {idea['idea_id']} — {idea['comment_keyword']}"
+    assert text.count(marker) == 1
+    block = text.split(marker, 1)[1].split('\n##', 1)[0]
+    product = next(p for p in idea['featured_products'] if p['role'] == 'primary')
+    for term in (product['id'], product['product_url'], product['title'], 'WELCOME10', '۱۰٪',
+                 '۱۵۰٬۰۰۰', '۱۰۰٬۰۰۰', '۴ قسط', 'ترب‌پی', 'دیجی‌پی', 'تسویه', 'توقف',
+                 'candidate_unverified_route'):
+        assert term in block
+    assert len(block) > 500
+
+
+@pytest.mark.parametrize('fault', ['missing_shot', 'unknown_product', 'wrong_price', 'wrong_anchor',
+                                  'english_hook', 'long_hook', 'mismatched_hook', 'missing_coupon'])
+def test_validation_rejects_regressions(fault):
+    idea = copy.deepcopy(IDEAS[0])
+    if fault == 'missing_shot': idea['shots'].pop()
+    elif fault == 'unknown_product': idea['featured_products'][0]['id'] = 'not-in-seed'
+    elif fault == 'wrong_price': idea['featured_products'][0]['min_price_toman'] += 1
+    elif fault == 'wrong_anchor': idea['price_anchor_toman'] = 190000
+    elif fault == 'english_hook': idea['hook_3s_spoken_fa'] = 'English only'
+    elif fault == 'long_hook': idea['hook_3s_spoken_fa'] = 'سلام ' * 20
+    elif fault == 'mismatched_hook': idea['shots'][0]['spoken_fa'] = 'یک جمله دیگر'
+    elif fault == 'missing_coupon': idea['cta_fa'] = idea['cta_fa'].replace('WELCOME10', '')
+    with pytest.raises(AssertionError): validate_idea(idea)
