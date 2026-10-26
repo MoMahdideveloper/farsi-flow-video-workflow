@@ -159,3 +159,76 @@ After the plan, `window_speech_check` re-evaluates the **final** window; that dr
 
 Amplitude evidence locates candidates; it does not prove a sentence finished. The report says so
 and the listening gates stay `pending` until a human/audio-capable reviewer signs off.
+
+## 5. Persian RTL typography & pill renderer
+
+**Shaping engine** (`shaping_engine()`, recorded in `qa_report.json → host.shaping_engine`):
+
+| engine | when | how |
+|--------|------|-----|
+| `reshaper` (preferred) | `arabic_reshaper` + `python-bidi` importable | `get_display(arabic_reshaper.reshape(text))`, Pillow BASIC layout — pixel-identical on Windows / Linux / macOS |
+| `raqm` | packages missing, Pillow built with libraqm | logical text passed through, `direction="rtl"` (no double reversal) |
+| `none` | neither | renders, but `qa_report` makes the degraded engine visible |
+
+**Font resolution** (`resolve_font`): `--font` → manifest `font_path` → `$FARSI_FLOW_FONT` →
+the Windows Vazirmatn path → Linux/macOS/Windows system fonts (Vazirmatn, Noto Sans/Naskh Arabic,
+DejaVu, Geeza Pro, Tahoma, Arial). Each candidate must contain the Persian glyphs the subtitles
+need (alef, Farsi yeh U+06CC, plus noon-medial and keheh presentation forms for the reshaper
+engine) via fontTools when installed. A missing preferred font is a **warning**, never a silent
+substitution; the chosen font path and its SHA-256 go into `qa_report.json`.
+
+**Fit** (`fit_text`): start at `font_size` (27; badge 28), step down 2 pt to `min_font_size` (16)
+until `text_width ≤ frame_w − max_text_margin` (720 − 84 = 636 px). If a single line still
+overflows at 16 pt and `max_lines ≥ 2`, balance-wrap at the word boundary that best equalises the
+halves and retry from 27 pt. `fits_width=false` fails the `pill_layout` gate.
+
+**Draw** (`draw_rtl_pill`): rounded rectangle radius 16, fill `(12,14,22,210)`, 2 px gold outline
+`(255,215,80,220)`, Gaussian-blurred drop shadow, text shadow `(0,0,0,230)` at +2/+2, text in the
+speaker's `voices[*].color` (CTA default `(255,230,150)`), centred with `anchor="mm"`. Padding 22×12,
+pill clamped to `[16, w−16]`. Subtitles sit at `y = 0.84·H` (1075 px); the Episode Badge at
+`y_center = 130` for `0.0–3.5 s` on `badge.clip_index` (clip 1) only.
+
+**Composite**: each pill is rendered once to a cropped transparent PNG (`render_pill_png`) and
+placed by ffmpeg `overlay=x:y:enable='between(t,start,end)'`. No per-frame Python loop, no OpenCV,
+no colour-space round-trip, and the video never leaves ffmpeg — which is what keeps audio attached.
+
+## 6. Outputs, naming and idempotency
+
+Per episode, in `out_dir` (Windows manifests: `…\05_final_masters`):
+
+| File | Content |
+|------|---------|
+| `clips_subbed/clip_XX_subbed.mp4` (+ copy in `clips_dir`) | one clip: burned pills (+badge on clip 1) **and its own normalised Flow audio** |
+| `clips_subbed/clip_XX_subbed.srt` | that clip's cues, clip-local time, UTF-8 BOM |
+| `Base_<ep>_Flow_Native_Farsi.mp4` / `.srt` | immutable story-only master |
+| `Master_<ep>_Flow_Native_Farsi.mp4` / `.srt` | Base + exactly one CTA (or byte copy of Base) |
+| `Master_<ep>_Flow_Native_Farsi_audit.mp3` | 128 k MP3 of the Master audio for listening QA |
+| `qa_<ep>_contact.jpg` | grid: badge midpoint, every cue midpoint, every CTA cue midpoint, labelled `t + speaker` |
+| `qa_report.json` (`qa_report_<cmd>.json` for partial runs) | §7 |
+| `_work/<ep>/` | spliced sources, normalised clips + PCM sidecars, pill PNGs, normalised CTA |
+| `*.build.json` | build record next to every product: cache key, SHA-256, inputs |
+
+**Caching.** Every stage writes `<output>.build.json` with a fingerprint of its exact inputs
+(source SHA-256, trims, cues, style, video/audio settings, pipeline version). A stage is skipped
+only when the output exists, is non-empty, and the key matches; `--force` ignores the cache.
+Change a cue → only that clip's pills, subbed clip, Base and Master rebuild.
+
+**Immutability & promotion.** Sources in `clips_dir` are read-only to the pipeline (the only
+writes there are the `clip_XX_subbed.*` mirrors). Every product is written to `*.tmp.*`, probed
+by `av_checks`, then `os.replace`d (`promote`); a failed render leaves the previous good file
+in place.
+
+**CTA idempotency.** `Master` is always rebuilt *from Base*, never from a previous Master. Its key
+is `sha256(Base) + sha256(CTA) + sha256(normalised CTA) + settings`, and its build record stores
+`cta_count: 1`. Re-running with identical inputs is a no-op (smoke test: 4.4 s, Master SHA-256
+unchanged, one Kelidbox cue). `--no-cta` or a missing `cta_video` makes Master a byte copy of Base
+(SHA-256 identical) with a warning. `normalize_cta` frame-quantises the CTA to 720×1280@24 and
+48 kHz stereo; it does **not** re-burn subtitles or re-loudnorm the already-finished
+`cta_kelidbox_agnes_subbed.mp4` unless `outputs.cta_burn_subtitles` / `cta_loudnorm` are set.
+The Master `.srt` appends `cta_subtitles` at `+Base duration`.
+
+**Base modes.** `timeline` (default): concat the normalised clips and overlay every pill at its
+global offset — one encode generation from the 14-CRF intermediates. `concat_subbed`: concat the
+already-burned `clip_XX_subbed.mp4` videos (one extra generation, byte-for-byte the same pixels as
+the per-clip deliverables). Audio in both modes is the sample-exact concatenation of the per-clip
+PCM sidecars, i.e. *exactly* the samples inside each `clip_XX_subbed.mp4`, encoded to AAC once.
