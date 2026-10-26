@@ -309,3 +309,95 @@ def test_shipped_manifests_preserve_paths_text_and_windows(file, tmp_path):
             (0,9.4), (.5,8.9), (.5,7.5), (.6,9.4), (1.1,9.8), (.4,8.4)]
         assert episode.clips[2].splice_segments == [(0,5.22),(6.14,8.6)]
         assert mapped.clips_dir == tmp_path / "series" / "03_flow_clips" / "part1"
+
+
+@pytest.mark.parametrize("change", [
+    {"schema_version": 99}, {"video": {"fps": 0}}, {"video": {"width": 721}},
+    {"video": {"scale_mode": "unknown"}}, {"speech": {"pre_handle": -1}},
+    {"outputs": {"base_mode": "unknown"}}, {"outputs": {"per_clip_location": "unknown"}},
+    {"clips": [{"id": "../escape", "file": "clip.mp4"}]},
+    {"clips": [{"file": "clip.mp4", "trim_in": float("nan")}]},
+    {"clips": [{"file": "clip.mp4", "trim_out": float("inf")}]},
+    {"voices": {"ELLA": {"color": [999, 2, 3]}}},
+])
+def test_invalid_manifest_rejected(media, tmp_path, change):
+    _, data = media
+    data = {**copy.deepcopy(data), **change}
+    with pytest.raises(fw.PipelineError):
+        fw.load_manifest(save_manifest(tmp_path / "bad.json", data))
+
+
+def test_output_never_overwrites_source(media, tmp_path):
+    _, data = media
+    data = copy.deepcopy(data)
+    data["clips"][0]["file"] = "clip_01_subbed.mp4"
+    with pytest.raises(fw.PipelineError, match="overwrite"):
+        fw.load_manifest(save_manifest(tmp_path / "collision.json", data))
+
+
+def test_dense_speech_silence_and_partial_pcm_tail():
+    cfg = fw.SPEECH_DEFAULTS
+    segments, _ = fw.detect_speech_segments(np.full(300, -18.0), cfg)
+    assert segments == [(0, 6.0)]
+    assert fw.detect_speech_segments(np.full(300, -120.0), cfg)[0] == []
+    db = fw.frame_dbfs(np.ones(321, dtype=np.float32) * .2)
+    assert len(db) == 2 and db[-1] > -40, "partial tail lost"
+    frames, seconds = fw.frame_quantize(9.4, 24)
+    assert frames == 226 and seconds >= 9.4
+    assert fw.fmt_srt(59.9996) == "00:01:00,000"
+
+
+def test_trim_local_shift_and_lock():
+    cue = fw.Cue(.2, .8, "ELLA", "سلام!")
+    clip = fw.ClipSpec(1, "clip_01", "clip_01.mp4", 1, 2, [cue])
+    analysis = {"first_speech_sec": .8, "last_speech_sec": 2.2, "cuts_speech": True}
+    plan = fw.plan_trim(clip, analysis, 4, fw.SPEECH_DEFAULTS)
+    assert plan["final"] == [.6, 2.55]
+    assert plan["subtitle_shift"] == .4
+    clip.lock_trim = True
+    assert fw.plan_trim(clip, analysis, 4, fw.SPEECH_DEFAULTS)["final"] == [1, 2]
+
+
+def test_windows_clipboard_encoding_without_mutation(monkeypatch):
+    monkeypatch.setattr(fw.platform, "system", lambda: "Windows")
+    calls = []
+    def fake_run(cmd, **kwargs):
+        calls.append((cmd, kwargs))
+        return subprocess.CompletedProcess(cmd, 0, b"", b"")
+    monkeypatch.setattr(fw.subprocess, "run", fake_run)
+    fw.copy_text_to_clipboard("سلام!")
+    assert calls[0][0] == ["clip"]
+    assert calls[0][1]["input"] == b"\xff\xfe" + "سلام!".encode("utf-16le")
+    assert "-STA" in fw.copy_image_to_clipboard(Path("C:/frames/keyframe.png"), dry_run=True)
+    assert len(calls) == 1, "dry-run mutated clipboard"
+
+
+def test_missing_shaper_does_not_silently_pass(monkeypatch):
+    monkeypatch.setattr(fw, "arabic_reshaper", None)
+    monkeypatch.setattr(fw, "get_display", None)
+    monkeypatch.setattr(fw.features, "check", lambda _: False)
+    with pytest.raises(fw.PipelineError, match="shaping unavailable"):
+        fw.shape_fa("سلام!")
+
+
+def test_unknown_only_filter_is_error(media, tmp_path):
+    _, data = media
+    path = save_manifest(tmp_path / "filter.json", data)
+    proc = cli(path, "speech-audit", "--only", "does-not-exist", expected=1)
+    assert b"matched no clips" in proc.stderr
+
+
+def test_empty_contact_sheet_gets_story_frame(built, tmp_path):
+    manifest, out, _, _ = built
+    ep = fw.load_manifest(manifest, {"out_dir": str(tmp_path)})
+    path = fw.write_contact_sheet(ep, out / "Base_Series1_Part1_Flow_Native_Farsi.mp4", [])
+    with Image.open(path) as im:
+        im.load()
+        assert im.height > 0
+
+
+def test_positional_manifest_remains_compatible(media, tmp_path):
+    _, data = media
+    path = save_manifest(tmp_path / "positional.json", data)
+    proc = command([sys.executable, SCRIPT, "speech-audit", path, "--only", "1", "--json"])
+    assert len(json.loads(proc.stdout)) == 1
