@@ -1307,3 +1307,128 @@ def normalize_cta(ep: Episode, cta: Path, font_path: Optional[str], force: bool 
     os.replace(tmp, out)
     cache_write(out, key, duration=round(q, 4), frames=n, source=str(cta))
     return out, round(q, 4), cta_sha
+
+
+def assemble_master(ep: Episode, base: dict, font_path: Optional[str], no_cta: bool = False,
+                    force: bool = False) -> dict:
+    """Master = immutable Base + exactly ONE CTA.  Always built from Base (never
+    from a previous Master), keyed on sha256(Base)+sha256(CTA) so re-runs are
+    no-ops; written to a temp file, duration-verified, then promoted.  Without
+    a CTA (missing / --no-cta) Master is a byte copy of Base."""
+    base_mp4: Path = base["path"]
+    dst = ep.out_dir / f"{ep.master_name}.mp4"
+    srt = ep.out_dir / f"{ep.master_name}.srt"
+    base_sha = sha256_file(base_mp4)
+    cta = None if no_cta else ep.cta_video
+    info: dict[str, Any] = {"cta_requested": str(ep.cta_video) if ep.cta_video else None,
+                            "cta_used": False, "base_sha256": base_sha}
+    if cta is not None and not cta.is_file():
+        ep.warnings.append(f"cta_video not found ({cta}); Master = Base (no CTA)")
+        cta = None
+    if no_cta:
+        info["cta_skipped"] = "--no-cta"
+    cues = [(a, b, t) for a, b, _, t in base["cues"]]
+    if cta is None:
+        key = fingerprint({"base": base_sha, "cta": None})
+        if force or not cache_ok([dst], key):
+            atomic_copy(base_mp4, dst)
+            cache_write(dst, key, base=str(base_mp4), cta=None)
+        write_srt(srt, cues)
+        info.update(path=dst, duration=base["duration"], srt=srt, cue_count=len(cues),
+                    qa=av_checks(ep, dst, base["duration"]))
+        return info
+    cta_norm, cta_dur, cta_sha = normalize_cta(ep, cta, font_path, force)
+    total = round(base["duration"] + cta_dur, 4)
+    key = fingerprint({"base": base_sha, "cta": cta_sha, "cta_norm": sha256_file(cta_norm),
+                       "video": ep.video, "audio": ep.audio, "v": PIPELINE_VERSION})
+    cues += [(base["duration"] + c.start, base["duration"] + c.end, c.text) for c in ep.cta_subtitles]
+    write_srt(srt, cues)
+    info.update(cta_used=True, cta_video=str(cta), cta_sha256=cta_sha, cta_duration=cta_dur,
+                srt=srt, cue_count=len(cues))
+    if not force and cache_ok([dst], key):
+        log(f"Master up to date (Base + 1 CTA): {dst.name}")
+        info.update(path=dst, duration=total, qa=av_checks(ep, dst, total))
+        return info
+    fps, sr = float(ep.video["fps"]), int(ep.audio["sample_rate"])
+    nb = int(round(base["duration"] * fps))
+    fc = (f"[0:v]trim=end_frame={nb},setpts=PTS-STARTPTS[v0];[1:v]setpts=PTS-STARTPTS[v1];"
+          f"[0:a]aresample={sr},apad,atrim=end_sample={int(round(base['duration'] * sr))}[a0];"
+          f"[1:a]aresample={sr}[a1];[v0][a0][v1][a1]concat=n=2:v=1:a=1[vc][a];[vc]format=yuv420p[v]")
+    tmp = dst.with_name(dst.stem + ".tmp.mp4")
+    log(f"Master: Base {base['duration']:.3f}s + CTA {cta.name} {cta_dur:.3f}s -> {dst.name}")
+    run(ffmpeg_cmd("-i", str(base_mp4), "-i", str(cta_norm), "-filter_complex", fc,
+                   "-map", "[v]", "-map", "[a]", "-c:v", "libx264", "-preset", str(ep.video["preset"]),
+                   "-crf", str(ep.video["crf"]), "-pix_fmt", "yuv420p", "-r", f"{fps:g}",
+                   "-c:a", "aac", "-b:a", str(ep.audio["bitrate"]), "-ar", str(sr),
+                   "-ac", str(ep.audio["channels"]), "-movflags", "+faststart", str(tmp)),
+        what="assemble Master")
+    info["qa"] = promote(ep, tmp, dst, total, "Master")
+    cache_write(dst, key, base=str(base_mp4), base_sha256=base_sha, cta=str(cta), cta_sha256=cta_sha,
+                cta_count=1, duration=total)
+    info.update(path=dst, duration=total)
+    return info
+
+
+# --------------------------------------------------------- QA deliverables --
+def write_audit_mp3(ep: Episode, master: Path, force: bool = False) -> Path:
+    dst = ep.out_dir / f"{ep.master_name}_audit.mp3"
+    key = fingerprint({"master": sha256_file(master), "br": ep.audio["audit_bitrate"]})
+    if force or not cache_ok([dst], key):
+        tmp = dst.with_name(dst.stem + ".tmp.mp3")
+        run(ffmpeg_cmd("-i", str(master), "-map", "0:a:0", "-vn", "-c:a", "libmp3lame",
+                       "-b:a", str(ep.audio["audit_bitrate"]), str(tmp)), what="audit mp3")
+        os.replace(tmp, dst)
+        cache_write(dst, key, master=str(master))
+    return dst
+
+
+def contact_points(ep: Episode, base: dict, master: dict) -> list[tuple[float, str]]:
+    """Badge midpoint, every subtitle midpoint, every CTA cue midpoint."""
+    pts: list[tuple[float, str]] = []
+    if ep.badge:
+        b0, b1 = float(ep.badge["start"]), min(float(ep.badge["end"]), base["duration"])
+        pts.append(((b0 + b1) / 2, "BADGE"))
+    pts += [((a + b) / 2, spk or "SUB") for a, b, spk, _ in base["cues"]]
+    if master.get("cta_used"):
+        off = base["duration"]
+        pts += [(off + (c.start + c.end) / 2, f"CTA {c.speaker}".strip()) for c in ep.cta_subtitles]
+    return sorted(pts)
+
+
+def _label_font(size: int = 18):
+    for p in ("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf", r"C:\Windows\Fonts\arialbd.ttf",
+              "/Library/Fonts/Arial Bold.ttf"):
+        if Path(p).is_file():
+            return ImageFont.truetype(p, size)
+    return ImageFont.load_default()
+
+
+def write_contact_sheet(ep: Episode, video: Path, points: list[tuple[float, str]],
+                        cols: int = 4, thumb_w: int = 240) -> Path:
+    """One decode pass (select by frame index) -> labelled grid JPEG."""
+    dst = ep.out_dir / f"qa_{ep.episode_id}_contact.jpg"
+    fps = float(ep.video["fps"])
+    nframes = max(1, int(probe_media(video)["video"]["frames"] or 0) or 10 ** 9)
+    idx = sorted({min(nframes - 1, max(0, int(round(t * fps)))) for t, _ in points}) or [0]
+    with tempfile.TemporaryDirectory(prefix="ffw_contact_") as td:
+        sel = "+".join(f"eq(n\\,{i})" for i in idx)
+        run(ffmpeg_cmd("-i", str(video), "-vf", f"select='{sel}',scale={thumb_w}:-2",
+                       "-vsync", "0", "-frames:v", str(len(idx)), str(Path(td) / "f_%04d.png")),
+            what="contact frames")
+        frames = sorted(Path(td).glob("f_*.png"))
+        thumbs = {i: Image.open(f).convert("RGB") for i, f in zip(idx, frames)}
+        if not thumbs:
+            raise PipelineError("contact sheet: no frames extracted")
+        tw, th = next(iter(thumbs.values())).size
+        label_h, rows = 26, math.ceil(len(points) / cols)
+        sheet = Image.new("RGB", (cols * tw, rows * (th + label_h)), (18, 18, 24))
+        d, lf = ImageDraw.Draw(sheet), _label_font(16)
+        for k, (t, lab) in enumerate(points):
+            i = min(nframes - 1, max(0, int(round(t * fps))))
+            im = thumbs.get(i) or thumbs[min(thumbs, key=lambda x: abs(x - i))]
+            x, y = (k % cols) * tw, (k // cols) * (th + label_h)
+            sheet.paste(im, (x, y + label_h))
+            d.text((x + 6, y + 4), f"{t:6.2f}s  {lab}", font=lf, fill=(255, 215, 80))
+        dst.parent.mkdir(parents=True, exist_ok=True)
+        sheet.save(dst, "JPEG", quality=88)
+    return dst
