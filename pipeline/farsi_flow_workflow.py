@@ -671,3 +671,227 @@ def normalize_clip(src: Path, t_in: float, t_out: float, dst_mp4: Path, dst_wav:
     os.replace(tmp_mp4, dst_mp4)
     os.replace(tmp_wav, dst_wav)
     return {"frames": n, "duration": round(q, 4)}
+
+
+# ------------------------------------------------ Persian RTL typography --
+_FONT_CACHE: dict[tuple[str, int, str], ImageFont.FreeTypeFont] = {}
+_REQUIRED_GLYPHS = (0x0627, 0x06CC, 0xFEE8, 0xFB8F)  # alef, farsi yeh, noon medial, keheh
+
+
+def shaping_engine() -> str:
+    """'reshaper' (arabic_reshaper + bidi, Pillow BASIC layout -- identical on
+    Windows/Linux/macOS), else 'raqm' (Pillow does shaping + bidi), else 'none'."""
+    if arabic_reshaper is not None and get_display is not None:
+        return "reshaper"
+    if features.check("raqm"):
+        return "raqm"
+    return "none"
+
+
+def shape_fa(text: str, engine: Optional[str] = None) -> str:
+    """Visual-order, presentation-form text for the 'reshaper' engine.  For
+    'raqm' the logical string is returned untouched (raqm shapes it itself;
+    pre-reshaping would reverse it twice)."""
+    engine = engine or shaping_engine()
+    if engine == "reshaper":
+        return get_display(arabic_reshaper.reshape(text))
+    return text
+
+
+def font_has_persian(path: str) -> bool:
+    """True when the font maps the glyphs Persian subtitles need.  Uses
+    fontTools when installed; otherwise trusts any font Pillow can open."""
+    try:
+        from fontTools.ttLib import TTFont  # type: ignore
+    except ImportError:
+        try:
+            ImageFont.truetype(path, 12)
+            return True
+        except OSError:
+            return False
+    try:
+        tt = TTFont(path, fontNumber=0, lazy=True)
+        cmap = tt.getBestCmap() or {}
+        tt.close()
+    except Exception:  # noqa: BLE001 - unreadable / unsupported font
+        return False
+    need = _REQUIRED_GLYPHS if shaping_engine() == "reshaper" else _REQUIRED_GLYPHS[:2]
+    return all(cp in cmap for cp in need)
+
+
+def resolve_font(*preferred: Optional[str]) -> tuple[str, list[str]]:
+    """First existing Persian-capable font among: explicit candidates (CLI
+    --font, manifest font_path), $FARSI_FLOW_FONT, the Windows Vazirmatn path,
+    then Linux/macOS/Windows system fonts.  Returns (path, notes)."""
+    notes: list[str] = []
+    cands = [p for p in preferred if p] + [os.environ.get("FARSI_FLOW_FONT", ""), WINDOWS_FONT,
+                                          *SYSTEM_FONT_CANDIDATES]
+    for i, cand in enumerate(c for c in cands if c):
+        p = Path(os.path.expanduser(cand))
+        if is_foreign_windows_path(cand) or not p.is_file():
+            if i < len([x for x in preferred if x]):
+                notes.append(f"font not found: {cand}")
+            continue
+        if not font_has_persian(str(p)):
+            notes.append(f"font lacks Persian glyphs, skipped: {p}")
+            continue
+        return str(p), notes
+    raise PipelineError("no Persian-capable TTF found; pass --font /path/Vazirmatn-Bold.ttf "
+                        "(tried: " + ", ".join(str(c) for c in cands if c) + ")")
+
+
+def load_font(path: str, size: int, engine: str) -> ImageFont.FreeTypeFont:
+    key = (path, size, engine)
+    if key not in _FONT_CACHE:
+        layout = ImageFont.Layout.RAQM if engine == "raqm" else ImageFont.Layout.BASIC
+        _FONT_CACHE[key] = ImageFont.truetype(path, size, layout_engine=layout)
+    return _FONT_CACHE[key]
+
+
+def _measure(draw: ImageDraw.ImageDraw, text: str, font, engine: str) -> tuple[int, int, int, int]:
+    kw = {"direction": "rtl"} if engine == "raqm" else {}
+    return draw.textbbox((0, 0), text, font=font, **kw)
+
+
+def _split_two_lines(text: str) -> list[str]:
+    """Split at the word boundary that best balances the two halves (logical order)."""
+    words = text.split()
+    if len(words) < 2:
+        return [text]
+    best, best_cost = 1, float("inf")
+    for k in range(1, len(words)):
+        cost = abs(len(" ".join(words[:k])) - len(" ".join(words[k:])))
+        if cost < best_cost:
+            best, best_cost = k, cost
+    return [" ".join(words[:best]), " ".join(words[best:])]
+
+
+def fit_text(text: str, font_path: str, frame_w: int, size: int, min_size: int,
+             margin: int, max_lines: int = 2, engine: Optional[str] = None) -> dict:
+    """Auto-shrink (2 pt steps, ``size`` -> ``min_size``) until every line fits
+    ``frame_w - margin``; if one line still overflows at ``min_size`` and
+    ``max_lines >= 2``, balance-wrap into two lines and retry from ``size``."""
+    engine = engine or shaping_engine()
+    probe = ImageDraw.Draw(Image.new("RGBA", (8, 8)))
+    limit = frame_w - margin
+    layouts = [[text]] + ([_split_two_lines(text)] if max_lines >= 2 else [])
+    result = None
+    for lines in layouts:
+        shaped = [shape_fa(ln, engine) for ln in lines]
+        cur = int(size)
+        while True:
+            font = load_font(font_path, cur, engine)
+            boxes = [_measure(probe, s, font, engine) for s in shaped]
+            widest = max(b[2] - b[0] for b in boxes)
+            result = {"lines": shaped, "boxes": boxes, "font": font, "font_size": cur,
+                      "text_width": widest, "fits": widest <= limit, "engine": engine}
+            if result["fits"] or cur <= min_size:
+                break
+            cur = max(int(min_size), cur - 2)  # 27, 25, ... 17, 16
+        if result["fits"]:
+            return result
+    return result  # type: ignore[return-value]  # best effort; flagged by fits=False
+
+
+def draw_rtl_pill(canvas: Image.Image, text_fa: str, font_path: str, *, y_center: int,
+                  font_size: int = 27, min_font_size: int = 16, margin: int = 84,
+                  text_color: tuple = DEFAULT_TEXT_COLOR, max_lines: int = 2,
+                  engine: Optional[str] = None, shadow: bool = True) -> dict:
+    """Draw one centred RTL Persian subtitle pill onto an RGBA ``canvas`` in place.
+
+    Rounded dark pill (12,14,22,210) + gold outline (255,215,80,220) + soft
+    drop shadow, text shadow (+2,+2) and the speaker colour.  Font auto-shrinks
+    27 -> 16 pt so the text fits ``width - margin``; balance-wraps to two lines
+    as a last resort.  Returns geometry + fit metadata for qa_report.json."""
+    from PIL import ImageFilter
+    w, h = canvas.size
+    fit = fit_text(text_fa, font_path, w, font_size, min_font_size, margin, max_lines, engine)
+    font, engine = fit["font"], fit["engine"]
+    asc, desc = font.getmetrics()
+    line_h, gap = asc + desc, max(4, int(0.18 * fit["font_size"]))
+    tw, n = fit["text_width"], len(fit["lines"])
+    th = n * line_h + (n - 1) * gap
+    pad_x, pad_y, radius = 22, 12, 16
+    rx0 = max(16, (w - tw) // 2 - pad_x)
+    rx1 = min(w - 16, (w + tw) // 2 + pad_x)
+    ry0 = int(y_center - th / 2 - pad_y)
+    ry1 = int(y_center + th / 2 + pad_y)
+    if shadow:  # soft drop shadow under the pill
+        sh = Image.new("RGBA", canvas.size, (0, 0, 0, 0))
+        ImageDraw.Draw(sh).rounded_rectangle([rx0 + 2, ry0 + 5, rx1 + 2, ry1 + 5], radius=radius,
+                                             fill=(0, 0, 0, 120))
+        canvas.alpha_composite(sh.filter(ImageFilter.GaussianBlur(5)))
+    draw = ImageDraw.Draw(canvas)
+    draw.rounded_rectangle([rx0, ry0, rx1, ry1], radius=radius, fill=PILL_FILL,
+                           outline=PILL_OUTLINE, width=2)
+    kw = {"direction": "rtl"} if engine == "raqm" else {}
+    fill = tuple(int(c) for c in text_color[:3]) + (255,)
+    cx = w // 2
+    for i, line in enumerate(fit["lines"]):
+        cy = int(ry0 + pad_y + i * (line_h + gap) + line_h / 2)
+        draw.text((cx + 2, cy + 2), line, font=font, fill=TEXT_SHADOW, anchor="mm", **kw)
+        draw.text((cx, cy), line, font=font, fill=fill, anchor="mm", **kw)
+    inside = rx0 >= 0 and ry0 >= 0 and rx1 <= w and ry1 <= h
+    return {"box": [rx0, ry0, rx1, ry1], "font_size": fit["font_size"], "lines": n,
+            "text_width": tw, "fits_width": bool(fit["fits"]), "inside_frame": inside,
+            "engine": engine}
+
+
+def render_pill_png(text_fa: str, font_path: str, frame_size: tuple[int, int], dst: Path,
+                    **kw: Any) -> dict:
+    """Render a pill on a transparent frame-sized canvas, crop to its alpha
+    bounds and save as PNG.  Returns geometry incl. the overlay x/y offset."""
+    canvas = Image.new("RGBA", frame_size, (0, 0, 0, 0))
+    meta = draw_rtl_pill(canvas, text_fa, font_path, **kw)
+    bbox = canvas.getbbox() or (0, 0, 2, 2)
+    x0, y0 = bbox[0] - bbox[0] % 2, bbox[1] - bbox[1] % 2  # even offsets (yuv420p)
+    crop = canvas.crop((x0, y0, bbox[2], bbox[3]))
+    dst.parent.mkdir(parents=True, exist_ok=True)
+    crop.save(dst, "PNG", optimize=True)
+    meta.update(png=str(dst), x=int(x0), y=int(y0), png_size=list(crop.size))
+    return meta
+
+
+def subtitle_y(ep: Episode) -> int:
+    return int(int(ep.video["height"]) * float(ep.subs["y_ratio"]))
+
+
+@dataclass
+class Overlay:
+    """One timed PNG overlay on a clip-local timeline (seconds)."""
+    start: float
+    end: float
+    kind: str  # 'sub' | 'badge'
+    speaker: str
+    text: str
+    meta: dict
+
+
+def build_overlays(ep: Episode, cues: list[Cue], clip_dur: float, png_dir: Path,
+                   prefix: str, font_path: str, with_badge: bool) -> list[Overlay]:
+    """PNG pills for one clip: optional Episode Badge (top, y_center=130,
+    0.0..3.5 s) plus one pill per subtitle cue in the clip's local time."""
+    size = (int(ep.video["width"]), int(ep.video["height"]))
+    st = ep.subs
+    out: list[Overlay] = []
+    if with_badge and ep.badge:
+        b = ep.badge
+        b0, b1 = float(b["start"]), min(float(b["end"]), clip_dur)
+        if b1 > b0:
+            meta = render_pill_png(str(b["text"]), font_path, size, png_dir / f"{prefix}_badge.png",
+                                   y_center=int(b["y_center"]), font_size=int(b["font_size"]),
+                                   min_font_size=int(st["min_font_size"]),
+                                   margin=int(st["max_text_margin"]),
+                                   text_color=tuple(b["color"]), max_lines=1)
+            out.append(Overlay(b0, b1, "badge", "", str(b["text"]), meta))
+    for j, cue in enumerate(cues, 1):
+        s0, s1 = max(0.0, cue.start), min(cue.end, clip_dur)
+        if s1 <= s0:
+            continue
+        meta = render_pill_png(cue.text, font_path, size, png_dir / f"{prefix}_sub{j:02d}.png",
+                               y_center=subtitle_y(ep), font_size=int(st["font_size"]),
+                               min_font_size=int(st["min_font_size"]),
+                               margin=int(st["max_text_margin"]),
+                               text_color=ep.color_for(cue.speaker), max_lines=int(st["max_lines"]))
+        out.append(Overlay(round(s0, 3), round(s1, 3), "sub", cue.speaker, cue.text, meta))
+    return out
