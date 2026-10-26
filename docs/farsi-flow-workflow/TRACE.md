@@ -17,3 +17,4 @@ arabic-reshaper 3.0.1, python-bidi 0.6.12, no OpenCV (pipeline deliberately does
 
 ### Log
 - 2026-10-26T12:01Z · `62aa669` · Created TRACE.md with Stage 1 plan + environment probe
+- 2026-10-26T12:08Z · `3518b28` · farsi_flow_workflow.py chunk 1/8: module header, defaults, subprocess/ffprobe/sha256/SRT helpers
