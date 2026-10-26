@@ -1291,6 +1291,9 @@ def plan_clip(ep: Episode, clip: ClipSpec, work: Path, force: bool = False) -> C
                                                video=ep.video, anchor_sec=plan["final"][0])
             cache_write(fb_mp4, key, **rec)
         fallback["extraction"] = json.loads(_record_path(fb_mp4).read_text("utf-8"))
+        fallback.update(resolved=bool(fallback["extraction"].get("verified")),
+                        status="pass" if fallback["extraction"].get("verified") else "fail",
+                        reason="source bridge extraction verification")
         prov.update(visual_fallback=True, flow_clip=str(src), analysed=str(fb_mp4))
         src = fb_mp4
         ep.warnings.append(f"{clip.id}: video replaced by source_span {list(clip.source_span)} "  # type: ignore[arg-type]
@@ -2097,9 +2100,9 @@ def write_qa_report(ep: Episode, results: list[ClipResult], font: Optional[str],
     trace = episode_trace(ep, traces, mode=command, master=master)
     if narrative:
         automatic["story_beat_lock"] = gate(trace["step_trace"][STEP_NAMES[0]]["status"] == "pass")
-        automatic["keyframe_preflight"] = gate(trace["step_trace"][STEP_NAMES[1]]["status"] != "fail")
+        automatic["keyframe_preflight"] = gate(trace["step_trace"][STEP_NAMES[1]]["status"] == "pass")
         automatic["visual_continuity_resolved"] = gate(trace["visual_continuity_resolved"])
-        automatic["dead_air_pacing"] = gate(trace["step_trace"][STEP_NAMES[3]]["status"] != "fail")
+        automatic["dead_air_pacing"] = gate(trace["step_trace"][STEP_NAMES[3]]["status"] == "pass")
     status = "pass" if all(v == "pass" for v in automatic.values()) else "fail"
     trace["all_passed"] = status == "pass"
     report = {
@@ -2245,16 +2248,20 @@ def step2_keyframe_preflight(ep: Episode) -> dict:
 
 def resolve_fallback(ep: Episode, clip: ClipSpec, visual: Optional[dict]) -> dict:
     """Decide what VIDEO the clip uses: Flow clip, or original source span."""
-    failed = bool(visual and visual.get("flags"))
+    if visual is None and narrative_mode(ep):
+        return {"resolution": "unresolved_visual_fail", "resolved": False,
+                "reason": "visual evidence missing; cannot verify Flow or choose a fallback"}
+    failed = bool(visual and not visual.get("passed"))
     if not failed:
-        return {"resolution": "flow_clip", "resolved": True}
+        return {"resolution": "flow_clip", "resolved": True, "plan_available": True}
     if not ep.fallback_to_source_on_visual_fail:
         return {"resolution": "unresolved_visual_fail", "resolved": False,
                 "reason": "fallback_to_source_on_visual_fail is false"}
     if ep.source_video is None or clip.source_span is None:
         return {"resolution": "unresolved_visual_fail", "resolved": False,
                 "reason": "needs episode source_video and clip source_span"}
-    return {"resolution": "source_bridge_fallback", "resolved": True,
+    return {"resolution": "source_bridge_fallback", "resolved": False, "plan_available": True,
+            "status": "planned", "reason": "source extraction and media verification not run",
             "video_from": {"source_video": str(ep.source_video), "source_span": list(clip.source_span)},
             "audio_from": "native Google Flow Farsi audio of " + clip.file,
             "source_on_host": Path(ep.source_video).is_file()}
@@ -2266,9 +2273,11 @@ def clip_trace(ep: Episode, clip: ClipSpec, *, visual: Optional[dict], speech: O
     if speech and speech.get("first_speech_sec") is not None and plan:
         first, last = speech["first_speech_sec"], speech["last_speech_sec"]
         dur = plan["duration"]
-        dead = round(dur - (last - first), 3)
+        active = _speech_inside([tuple(x) for x in speech.get("speech_segments", [[first, last]])],
+                                *plan["final"])
+        dead = round(max(0.0, dur - active), 3)
         s4.update(status="pass", first_speech_sec=first, last_speech_sec=last,
-                  speech_duration_sec=round(last - first, 3), trimmed_duration_sec=dur,
+                  speech_duration_sec=active, speech_envelope_sec=round(last - first, 3), trimmed_duration_sec=dur,
                   dead_air_sec=dead, final_trim=plan["final"], pre_tight=plan.get("pre_tight"),
                   flags=["DEAD_AIR_PACING"] if dead > DEAD_AIR_LIMIT else [])
         if s4["flags"]:
@@ -2291,9 +2300,17 @@ def clip_trace(ep: Episode, clip: ClipSpec, *, visual: Optional[dict], speech: O
 def episode_trace(ep: Episode, clip_traces: list[dict], *, mode: str,
                   master: Optional[dict] = None) -> dict:
     s1, s2 = step1_story_lock(ep), step2_keyframe_preflight(ep)
+    for t in clip_traces:
+        cid = t["clip_id"]
+        first = s1["clips"][cid]
+        t[STEP_NAMES[0]] = {**first, "status": "fail" if first["flags"] or s1["flags"] else "pass"}
+        t[STEP_NAMES[1]] = s2["clips"][cid]
+        t["step_trace"] = {name: t[name] for name in STEP_NAMES}
     vis = [t["step_3_visual_continuity_audit"] for t in clip_traces]
-    raw_ok = all(v["status"] != "fail" for v in vis)
+    raw_ok = all(v["status"] == "pass" for v in vis)
     resolved = all(t["step_5_hybrid_bridge_and_fallback_resolution"].get("resolved") for t in clip_traces)
+    planned = all(t[STEP_NAMES[4]].get("resolved") or t[STEP_NAMES[4]].get("plan_available")
+                  for t in clip_traces)
     pacing = [t["step_4_acoustic_speech_and_pacing"] for t in clip_traces]
     s6 = {"status": "not_run" if master is None else ("pass" if master.get("qa", {}).get("pass") else "fail"),
           "visual_continuity_passed": raw_ok, "visual_continuity_resolved": resolved}
@@ -2306,7 +2323,7 @@ def episode_trace(ep: Episode, clip_traces: list[dict], *, mode: str,
         STEP_NAMES[3]: {"status": "skipped" if all(p["status"] == "skipped" for p in pacing) else
                         ("fail" if any(p["status"] == "fail" for p in pacing) else "pass"),
                         "clips": {t["clip_id"]: t["step_4_acoustic_speech_and_pacing"] for t in clip_traces}},
-        STEP_NAMES[4]: {"status": "pass" if resolved else "fail",
+        STEP_NAMES[4]: {"status": "pass" if resolved else ("planned" if planned else "fail"),
                         "fallback_clips": [t["clip_id"] for t in clip_traces
                                            if t["step_5_hybrid_bridge_and_fallback_resolution"]["resolution"]
                                            == "source_bridge_fallback"],
@@ -2324,7 +2341,11 @@ def episode_trace(ep: Episode, clip_traces: list[dict], *, mode: str,
             "fallback_to_source_on_visual_fail": ep.fallback_to_source_on_visual_fail,
             "tight_speech_trim": ep.tight_speech_trim, "step_trace": steps,
             "visual_continuity_passed": raw_ok, "visual_continuity_resolved": resolved,
-            "blocking_steps": blocking, "all_passed": not blocking}
+            "blocking_steps": blocking, "audit_passed": not blocking,
+            "all_passed": not blocking and resolved and s2["status"] == "pass"
+                          and steps[STEP_NAMES[3]]["status"] == "pass" and s6["status"] == "pass",
+            "verification_scope": "rendered_media" if master else "diagnostic_only",
+            "publication_status": "pending_human_review"}
 
 
 def probe_entries_for(ep: Episode, probe: dict, part: Optional[str] = None) -> tuple[str, dict]:
@@ -2659,19 +2680,26 @@ def trace_all_parts(probe_path: Path, out_json: Path, manifests: list[Path],
                          "flags": v.get("flags", []), "warnings": v.get("warnings", []),
                          "suggested_visual_trim": [v.get("suggested_visual_trim_in"),
                                                    v.get("suggested_visual_trim_out")],
-                         "resolution": r["resolution"],
+                         "resolution": r["resolution"], "resolved": r.get("resolved", False),
+                         "plan_available": r.get("plan_available", False),
                          "fallback_source_span": (r.get("video_from") or {}).get("source_span")})
     failed = [r for r in rows if r["flags"]]
     summary = {"clips_total": len(rows), "clips_failed_visual": len(failed),
-               "clips_resolved_by_source_bridge": sum(r["resolution"] == "source_bridge_fallback" for r in failed),
-               "clips_unresolved": sum(r["resolution"] == "unresolved_visual_fail" for r in rows),
+               "clips_planned_source_bridge": sum(r["resolution"] == "source_bridge_fallback" for r in failed),
+               "clips_resolved_by_source_bridge": sum(r["resolution"] == "source_bridge_fallback"
+                                                       and r["resolved"] for r in failed),
+               "clips_unresolved": sum(not r["resolved"] for r in rows),
+               "clips_without_recovery_plan": sum(not r["plan_available"] for r in rows),
                "flag_counts": {f: sum(f in r["flags"] for r in rows) for f in FAIL_FLAGS},
                "failed_clips": [f"{r['part']}/{r['clip']}" for r in failed]}
     out = {"generated_utc": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
            "pipeline_version": PIPELINE_VERSION, "probe_json": str(probe_path),
            "policy": {"keyframes": "read-only, never defaced",
                       "fallback": "failed Flow VIDEO -> subtitle-inpainted source_span; Flow Farsi AUDIO kept"},
-           "summary": summary, "table": rows, "episodes": episodes}
+           "summary": summary, "table": rows, "episodes": episodes,
+           "audit_passed": all(t["audit_passed"] for t in episodes),
+           "all_passed": all(t["all_passed"] for t in episodes),
+           "verification_scope": "probe_metrics_and_recovery_plan_not_render_signoff"}
     write_json_atomic(out_json, out)
     return out
 
@@ -2712,9 +2740,10 @@ def main(argv: Optional[list[str]] = None) -> int:
                 print_trace_table(tr)
             sm = out["summary"]
             log(f"{sm['clips_failed_visual']}/{sm['clips_total']} clips failed the visual gate; "
-                f"{sm['clips_resolved_by_source_bridge']} resolved by source bridge, "
+                f"{sm['clips_planned_source_bridge']} planned source bridges; "
+                f"{sm['clips_resolved_by_source_bridge']} verified source bridges, "
                 f"{sm['clips_unresolved']} unresolved -> {a.out_json}")
-            return 0
+            return 0 if out["audit_passed"] else 1
         if a.command == "trace-audit":
             if bool(a.manifest) == bool(a.manifest_option):
                 raise PipelineError("provide exactly one manifest: positional or --manifest PATH")
@@ -2726,7 +2755,7 @@ def main(argv: Optional[list[str]] = None) -> int:
             if a.out_json:
                 write_json_atomic(a.out_json, tr)
                 log(f"trace: {a.out_json}")
-            return 0 if tr["all_passed"] else 1
+            return 0 if tr["audit_passed"] else 1
         if shutil.which(FFMPEG) is None or shutil.which(FFPROBE) is None:
             raise PipelineError(f"ffmpeg/ffprobe not found ({FFMPEG}, {FFPROBE}); use --ffmpeg/--ffprobe")
         if bool(a.manifest) == bool(a.manifest_option):
