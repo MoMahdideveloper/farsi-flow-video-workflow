@@ -71,3 +71,5 @@ arabic-reshaper 3.0.1, python-bidi 0.6.12, no OpenCV (pipeline deliberately does
 - 2026-10-26T13:18Z · `3299a763c1987a72b55ce4118fc0f7af759d1291` · Stage 2 resumed: fix(stage2): audit outer splice cuts and reject unsafe source timing or short inputs
 
 - 2026-10-26T13:18Z · `5703f45cbaf48a30b64c93e0623cede971edf9a7` · Stage 2 resumed: fix(stage2): apply native source timeline validation before raw-original splicing
+
+- 2026-10-26T13:19Z · `93202211ad94a8f0be015c8fa56be82c0de20c2b` · Stage 2 resumed: test(stage2): cover outer splice losses, native source offsets, and exact fallback trim bounds
