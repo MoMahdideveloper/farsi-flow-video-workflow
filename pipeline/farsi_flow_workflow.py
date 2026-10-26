@@ -268,6 +268,7 @@ class ClipSpec:
     splice_segments: Optional[list[tuple[float, float]]] = None
     speech_safe: str = "auto_expand"
     lock_trim: bool = False
+    allow_speech_splice: bool = False
     notes: str = ""
 
 
@@ -446,6 +447,7 @@ def load_manifest(path: Path, overrides: Optional[dict] = None) -> Episode:
             raw_orig_file=c.get("raw_orig_file"),
             splice_segments=_parse_segments(c.get("splice_segments"), where),
             speech_safe=normalize_speech_mode(mode), lock_trim=bool(c.get("lock_trim", False)),
+            allow_speech_splice=bool(c.get("allow_speech_splice", False)),
             notes=str(c.get("notes") or "")))
     if not clips:
         raise PipelineError(f"{path.name}: no clips defined")
@@ -511,10 +513,15 @@ def validate_settings(ep: Episode) -> None:
 
 
 def clip_source_paths(ep: Episode, clip: ClipSpec) -> tuple[Path, Optional[Path]]:
-    """(file path, raw_orig path) resolved against clips_dir."""
+    """(file path, raw_orig path) resolved against clips_dir (preferring raw_unsubbed/ when present)."""
     def res(name: str) -> Path:
         p = Path(name)
-        return p if p.is_absolute() or is_foreign_windows_path(name) else ep.clips_dir / p
+        if p.is_absolute() or is_foreign_windows_path(name):
+            return p
+        raw_unsubbed = ep.clips_dir / "raw_unsubbed" / p
+        if raw_unsubbed.is_file():
+            return raw_unsubbed
+        return ep.clips_dir / p
     return res(clip.file), (res(clip.raw_orig_file) if clip.raw_orig_file else None)
 
 
@@ -1075,6 +1082,7 @@ def splice_boundary_checks(segments: list[tuple[float, float]],
             internal = (edge == "start" and i > 0) or (edge == "end" and i < len(segments)-1)
             radius = crossfade if internal else 0.0
             boundaries.append({"segment_index": i, "edge": edge, "at_sec": t,
+                               "internal": internal,
                                "crossfade_neighborhood_sec": radius,
                                "touches_speech": any(a < t + radius and b > t - radius
                                                      for a, b in spans)})
@@ -1608,7 +1616,8 @@ def clip_report(ep: Episode, r: ClipResult) -> dict:
     out: dict[str, Any] = {
         "id": r.clip.id, "index": r.clip.index, "provenance": r.provenance, "plan": r.plan,
         "speech": a,
-        "final_window_speech": r.final_check, "lock_trim": r.clip.lock_trim, "notes": r.clip.notes}
+        "final_window_speech": r.final_check, "lock_trim": r.clip.lock_trim,
+        "allow_speech_splice": r.clip.allow_speech_splice, "notes": r.clip.notes}
     if r.subbed:
         out.update(duration=r.duration, frames=r.frames, subtitles=r.cue_checks,
                    overlays=[{"kind": o.kind, "start": o.start, "end": o.end, "speaker": o.speaker,
@@ -1637,8 +1646,11 @@ def write_qa_report(ep: Episode, results: list[ClipResult], font: Optional[str],
     mirrors_ok = all(len(r.subbed) == len(clip_output_paths(ep, r.clip, f"{r.clip.id}_subbed.mp4"))
                      and all(sha256_file(p) == sha256_file(r.subbed[0]) for p in r.subbed)
                      for r in results) if font else True
-    splice_ok = all(not b["touches_speech"] for c in clips
-                    for b in c["provenance"].get("splice_audit", {}).get("boundaries", []))
+    splice_ok = all(
+        (not b["touches_speech"]) or (c.get("allow_speech_splice") and b.get("internal"))
+        for c in clips
+        for b in c["provenance"].get("splice_audit", {}).get("boundaries", [])
+    )
     automatic = {"per_clip_media": gate(media_ok), "subtitle_bounds": gate(subs_ok),
                  "pill_layout": gate(pills_ok), "speech_safe_trim": gate(speech_ok),
                  "per_clip_mirrors": gate(mirrors_ok), "splice_boundaries": gate(splice_ok),

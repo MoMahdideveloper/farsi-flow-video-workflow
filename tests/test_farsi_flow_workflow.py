@@ -119,7 +119,7 @@ def test_build_outputs_and_original_audio(built):
     assert set(report["gates"]["automatic"].values()) == {"pass"}
     assert set(report["gates"]["human_review"].values()) == {"pending"}
     for i, clip in enumerate(report["clips"], 1):
-        for location in (out / "clips_subbed", Path(json.loads(manifest.read_text())["clips_dir"])):
+        for location in (out / "clips_subbed", Path(json.loads(manifest.read_text("utf-8"))["clips_dir"])):
             assert_av(location / f"clip_{i:02d}_subbed.mp4", clip["duration"])
         assert clip["mirror_sha256_match"] == [True]
         assert clip["plan"]["final"] == [0.3, 6.1]
@@ -154,11 +154,11 @@ def test_build_is_idempotent(built):
     before = {p: (fw.sha256_file(p), p.stat().st_mtime_ns) for p in products}
     cli(manifest)
     assert before == {p: (fw.sha256_file(p), p.stat().st_mtime_ns) for p in products}
-    again = json.loads((out / "qa_report.json").read_text())
+    again = json.loads((out / "qa_report.json").read_text("utf-8"))
     assert again["overall_status"] == "pass"
     assert again["master"]["duration"] == pytest.approx(
         again["base"]["duration"] + again["master"]["cta_duration"], abs=.001)
-    record = json.loads((out / "Master_Series1_Part1_Flow_Native_Farsi.mp4.build.json").read_text())
+    record = json.loads((out / "Master_Series1_Part1_Flow_Native_Farsi.mp4.build.json").read_text("utf-8"))
     assert record["cta_count"] == 1
     assert again["master"]["media"]["sha256"] == report["master"]["media"]["sha256"]
 
@@ -195,7 +195,7 @@ def test_speech_audit_auto_expands_and_retimes(media):
     assert plan["final"][0] <= .62 and plan["final"][1] >= 6.0
     assert not clips[0]["final_window_speech"]["cuts_speech"]
     cli(path, "build", "--no-cta")
-    report = json.loads((root / "expanded" / "qa_report.json").read_text())
+    report = json.loads((root / "expanded" / "qa_report.json").read_text("utf-8"))
     assert report["overall_status"] == "pass"
     assert report["clips"][0]["subtitles"][0]["local"][0] == pytest.approx(.85-plan["final"][0], abs=.001)
     assert_av(Path(report["clips"][0]["outputs"][0]))
@@ -212,7 +212,7 @@ def test_warn_retains_unsafe_window_and_fails_gate(media):
     clip = json.loads(result.stdout)[0]
     assert clip["plan"]["final"] == [1.1, 5.2]
     assert clip["final_window_speech"]["cuts_speech"]
-    report = json.loads((root / "warn" / "qa_report_speech-audit.json").read_text())
+    report = json.loads((root / "warn" / "qa_report_speech-audit.json").read_text("utf-8"))
     assert report["overall_status"] == "fail"
     assert report["gates"]["automatic"]["speech_safe_trim"] == "fail"
 
@@ -236,7 +236,7 @@ def test_exact_splice_raw_original_and_fallback(media):
     data["out_dir"] = str(root / "splice output")
     path = save_manifest(root / "splice.json", data)
     cli(path, "build", "--no-cta")
-    report = json.loads((Path(data["out_dir"]) / "qa_report.json").read_text())
+    report = json.loads((Path(data["out_dir"]) / "qa_report.json").read_text("utf-8"))
     clip = report["clips"][0]
     assert report["overall_status"] == "pass"
     assert clip["provenance"]["mode"] == "spliced"
@@ -252,7 +252,7 @@ def test_exact_splice_raw_original_and_fallback(media):
     raw.rename(raw.with_suffix(".saved"))
     try:
         cli(path, "build", "--no-cta")
-        fallback = json.loads((Path(data["out_dir"]) / "qa_report.json").read_text())
+        fallback = json.loads((Path(data["out_dir"]) / "qa_report.json").read_text("utf-8"))
         assert fallback["overall_status"] == "pass"
         assert fallback["clips"][0]["provenance"]["mode"] == "pre_spliced_file"
         assert fallback["clips"][0]["plan"]["final"] == [.5, 7.5]
@@ -300,7 +300,7 @@ def test_rendered_cache_corruption_is_rebuilt(built):
 @pytest.mark.parametrize("file", ["series1_part1_whats_her_number.json", "ugly_chef_part2.json"])
 def test_shipped_manifests_preserve_paths_text_and_windows(file, tmp_path):
     path = ROOT / "pipeline" / "manifests" / file
-    data = json.loads(path.read_text())
+    data = json.loads(path.read_text("utf-8"))
     episode = fw.load_manifest(path)
     assert len(episode.clips) == 6
     assert episode.outputs["per_clip_location"] == "both"
@@ -310,7 +310,8 @@ def test_shipped_manifests_preserve_paths_text_and_windows(file, tmp_path):
     assert [(c.trim_in, c.trim_out) for c in episode.clips] == [(c["trim_in"], c["trim_out"]) for c in data["clips"]]
     assert all(c.subtitles for c in episode.clips)
     if file.startswith("series1"):
-        assert all(c.speech_safe == "warn" for c in episode.clips)
+        assert all(c.speech_safe in ("warn", "auto_expand") for c in episode.clips)
+        assert episode.clips[2].allow_speech_splice is True
         assert [(c.trim_in, c.trim_out) for c in episode.clips] == [
             (0,9.4), (.5,8.9), (.5,7.5), (.6,9.4), (1.1,9.8), (.4,8.4)]
         assert episode.clips[2].splice_segments == [(0,5.22),(6.14,8.6)]
@@ -438,7 +439,7 @@ def test_all_six_series1_clips_with_shipped_windows(media):
     path = save_manifest(root / "six.json", data)
     cli(path)
     out = Path(data["out_dir"])
-    report = json.loads((out / "qa_report.json").read_text())
+    report = json.loads((out / "qa_report.json").read_text("utf-8"))
     assert report["overall_status"] == "pass"
     assert len(report["clips"]) == 6
     for original, result in zip(data["clips"], report["clips"]):
@@ -458,7 +459,7 @@ def test_reference_scripts_match_manifest_dialogue_and_trims():
     import ast
     import re
     import textwrap
-    text = (ROOT / "docs" / "farsi-flow-workflow" / "00-context-and-requirements.md").read_text()
+    text = (ROOT / "docs" / "farsi-flow-workflow" / "00-context-and-requirements.md").read_text("utf-8")
     references = []
     for source in re.findall(r"```python\n(.*?)```", text, flags=re.S):
         for node in ast.parse(textwrap.dedent(source)).body:
@@ -466,7 +467,7 @@ def test_reference_scripts_match_manifest_dialogue_and_trims():
                 references.append(ast.literal_eval(node.value))
     assert len(references) == 2
     for filename, rows in zip(("series1_part1_whats_her_number.json", "ugly_chef_part2.json"), references):
-        data = json.loads((ROOT / "pipeline" / "manifests" / filename).read_text())
+        data = json.loads((ROOT / "pipeline" / "manifests" / filename).read_text("utf-8"))
         for actual, expected in zip(data["clips"], rows):
             assert (actual["file"], actual["trim_in"], actual["trim_out"]) == expected[:3]
             assert [tuple(s) for s in actual["subtitles"]] == expected[3]
@@ -545,8 +546,26 @@ def test_outer_splice_tail_failure_reaches_cli_and_qa(media):
                       "trim_in": 0, "trim_out": None, "subtitles": []}]
     path = save_manifest(root / "unsafe-splice.json", data)
     cli(path, "speech-audit", "--json", expected=1)
-    report = json.loads((Path(data["out_dir"]) / "qa_report_speech-audit.json").read_text())
+    report = json.loads((Path(data["out_dir"]) / "qa_report_speech-audit.json").read_text("utf-8"))
     assert report["overall_status"] == "fail"
     assert report["gates"]["automatic"]["splice_boundaries"] == "fail"
     cuts = report["clips"][0]["provenance"]["splice_audit"]["boundaries"]
     assert any(c["at_sec"] == 8.6 and c["touches_speech"] for c in cuts)
+
+
+def test_raw_unsubbed_preference_and_allow_speech_splice(tmp_path):
+    raw_dir = tmp_path / "raw_unsubbed"
+    raw_dir.mkdir(parents=True)
+    raw_clip = raw_dir / "clip_01.mp4"
+    raw_clip.write_bytes(b"clean")
+    overwritten_clip = tmp_path / "clip_01.mp4"
+    overwritten_clip.write_bytes(b"already-subbed")
+    ep = fw.load_manifest(
+        ROOT / "pipeline/manifests/series1_part1_whats_her_number.json",
+        {"clips_dir": str(tmp_path), "out_dir": str(tmp_path / "out")},
+    )
+    src_file, _ = fw.clip_source_paths(ep, ep.clips[0])
+    assert src_file == raw_clip
+    boundaries = fw.splice_boundary_checks([(0.0, 5.22), (6.14, 8.6)], [(4.46, 7.46)], 0.02)
+    assert [b["internal"] for b in boundaries] == [False, True, True, False]
+    assert [b["touches_speech"] for b in boundaries] == [False, True, True, False]

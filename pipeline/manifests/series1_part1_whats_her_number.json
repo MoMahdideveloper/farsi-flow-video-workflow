@@ -20,7 +20,7 @@
   ],
   "video": {"width": 720, "height": 1280, "fps": 24, "crf": 18, "preset": "fast", "scale_mode": "fill"},
   "audio": {"loudnorm": "loudnorm=I=-14:TP=-1.5:LRA=11", "sample_rate": 48000, "channels": 2, "bitrate": "192k"},
-  "speech": {"speech_safe": "warn", "threshold_dbfs": -38.0, "pre_handle": 0.20, "post_handle": 0.35,
+  "speech": {"speech_safe": "auto_expand", "threshold_dbfs": -38.0, "pre_handle": 0.20, "post_handle": 0.35,
              "splice_crossfade": 0.02},
   "subtitle_style": {"time_base": "trim_local", "y_ratio": 0.84, "font_size": 27, "min_font_size": 16,
                      "max_text_margin": 84, "max_lines": 2},
@@ -54,6 +54,7 @@
     {
       "id": "clip_03", "file": "clip_03.mp4", "raw_orig_file": "clip_03_raw_orig.mp4",
       "splice_segments": [[0.0, 5.22], [6.14, 8.60]],
+      "allow_speech_splice": true,
       "trim_in": 0.50, "trim_out": 7.50,
       "notes": "Re-spliced from clip_03_raw_orig.mp4 so 'افتخار میدی' is complete; trim is relative to the spliced timeline. Falls back to clip_03.mp4 as the pre-spliced cut if the raw original is absent.",
       "subtitles": [
