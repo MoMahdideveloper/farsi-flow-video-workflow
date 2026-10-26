@@ -1,0 +1,81 @@
+{
+  "_comment": "Strawberrina's Teeth Makeover - Part 1 (Google Flow native Farsi).",
+  "schema_version": 1,
+  "speech_review_note": "Curated trim windows with auto_expand speech-safe protection.",
+  "episode_id": "Strawberrina_Part1",
+  "title_fa": "قسمت اول: انتقام توت‌فرنگی",
+  "title_en": "Strawberrina's Teeth Makeover - Part 1",
+  "variables": {
+    "BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series1-whats-her-number-farsi",
+    "CHEF_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\ugly-face-chef-farsi"
+  },
+  "clips_dir": "${BASE}\\03_flow_clips\\strawberrina_part1",
+  "out_dir": "${BASE}\\05_final_masters",
+  "font_path": "${CHEF_BASE}\\03_farsi_audio_tts\\Vazirmatn-Bold.ttf",
+  "cta_video": "${CHEF_BASE}\\05_final_masters\\cta_kelidbox_agnes_subbed.mp4",
+  "cta_speaker": "STRAW",
+  "cta_subtitles": [
+    {"start": 0.10, "end": 3.60, "text": "برای دیدن قسمت بعدی همین الان پیج رو فالو کن!"},
+    {"start": 3.80, "end": 7.85, "text": "راستی کل این انیمیشن با اکانت‌های هوش مصنوعی سایت کلیدباکس ساخته شده!"}
+  ],
+  "video": {"width": 720, "height": 1280, "fps": 24, "crf": 18, "preset": "fast", "scale_mode": "fill"},
+  "audio": {"loudnorm": "loudnorm=I=-14:TP=-1.5:LRA=11", "sample_rate": 48000, "channels": 2, "bitrate": "192k"},
+  "speech": {"speech_safe": "auto_expand", "threshold_dbfs": -38.0, "pre_handle": 0.20, "post_handle": 0.35,
+             "splice_crossfade": 0.02},
+  "subtitle_style": {"time_base": "trim_local", "y_ratio": 0.84, "font_size": 27, "min_font_size": 16,
+                     "max_text_margin": 84, "max_lines": 2},
+  "badge": {"text": "قسمت اول: انتقام توت‌فرنگی", "start": 0.0, "end": 3.5, "y_center": 130, "font_size": 28,
+            "color": [255, 225, 110], "clip_index": 1},
+  "outputs": {"per_clip_location": "both", "base_mode": "timeline", "cta_burn_subtitles": false,
+              "cta_loudnorm": false},
+  "voices": {
+    "PINE":  {"name_fa": "آناناس",     "color": [255, 220, 110], "source": "google_flow_native"},
+    "STRAW": {"name_fa": "توت‌فرنگی",   "color": [255, 150, 195], "source": "google_flow_native"},
+    "CHERRY":{"name_fa": "دکتر گیلاس", "color": [150, 255, 190], "source": "google_flow_native"},
+    "APPLE": {"name_fa": "آرایشگر",    "color": [160, 240, 255], "source": "google_flow_native"}
+  },
+  "clips": [
+    {
+      "id": "clip_01", "file": "clip_01.mp4", "trim_in": 1.10, "trim_out": 9.85,
+      "subtitles": [
+        [0.25, 3.05, "PINE", "عزیزم، میشه برای عکس با دهن بسته لبخند بزنی؟"],
+        [4.20, 8.50, "STRAW", "چطوری با دهن بسته لبخند بزنم؟ خودت می‌دونی دندونام بسته نمیشه!"]
+      ]
+    },
+    {
+      "id": "clip_02", "file": "clip_02.mp4", "trim_in": 0.00, "trim_out": 9.95,
+      "subtitles": [
+        [0.20, 5.45, "PINE", "جرئت ندارم با دختری که دندوناش به دوازده جهت کج شده ازدواج کنم!"],
+        [5.65, 9.75, "STRAW", "پس تمام این مدت اصلاً دوستم نداشته..."]
+      ]
+    },
+    {
+      "id": "clip_03", "file": "clip_03.mp4", "trim_in": 0.00, "trim_out": 9.35,
+      "subtitles": [
+        [0.10, 4.10, "STRAW", "خانم دکتر، کلی وقته منتظرم دندونام درست بشه!"],
+        [4.45, 9.05, "CHERRY", "مشکل اینجاست که تکون نمی‌خورن عزیزم، باید اساسی درستشون کنیم!"]
+      ]
+    },
+    {
+      "id": "clip_04", "file": "clip_04.mp4", "trim_in": 0.60, "trim_out": 9.95,
+      "subtitles": [
+        [0.25, 5.55, "PINE", "خیالت راحت، توت‌فرنگی به هیچی شک نکرده!"],
+        [6.20, 9.15, "PINE", "فقط به خاطر پولش باهاش موندم!"]
+      ]
+    },
+    {
+      "id": "clip_05", "file": "clip_05.mp4", "trim_in": 0.30, "trim_out": 9.95,
+      "subtitles": [
+        [0.25, 4.60, "STRAW", "آها، پس فقط به خاطر پولم باهامی؟"],
+        [4.80, 9.45, "STRAW", "کاری می‌کنم از روز تولدت پشیمون بشی!"]
+      ]
+    },
+    {
+      "id": "clip_06", "file": "clip_06.mp4", "trim_in": 0.00, "trim_out": 9.95,
+      "subtitles": [
+        [0.10, 4.50, "STRAW", "خانم دکتر، یه لبخند می‌خوام که چشماش از تعجب چهار تا بشه!"],
+        [4.80, 9.75, "CHERRY", "بحث انتقام خالصه! یه شاهکار برات می‌سازم دختر!"]
+      ]
+    }
+  ]
+}
