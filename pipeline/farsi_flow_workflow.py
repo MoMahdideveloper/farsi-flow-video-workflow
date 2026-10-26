@@ -1,0 +1,183 @@
+#!/usr/bin/env python3
+"""Farsi Google Flow Viral Series Workflow (config-driven CLI).
+
+Industrialises the Google Flow (Veo) *native Farsi* localisation pipeline:
+
+    raw Flow clips -> optional multi-segment splice -> speech-safe trim
+      -> 720x1280 @ 24fps + loudnorm(-14 LUFS) 48 kHz stereo AAC 192k
+      -> per-clip RTL Persian subtitles burned in WITH the original Flow audio
+         (clip_XX_subbed.mp4 + clip_XX_subbed.srt)
+      -> Base_<episode>_Flow_Native_Farsi.mp4      (immutable story-only master)
+      -> Master_<episode>_Flow_Native_Farsi.mp4    (Base + exactly one Kelidbox CTA)
+      -> .srt (UTF-8 BOM), _audit.mp3, qa_<episode>_contact.jpg, qa_report.json
+
+Subcommands
+    build             full episode: per-clip subbed clips, Base, Master, QA kit
+    speech-audit      speech-boundary analysis + trim plan only (no rendering)
+    sub-clips-only    per-clip subtitled+audio clips only (no Base / Master)
+    clipboard-image   copy a verified 9:16 keyframe to the OS clipboard
+    clipboard-prompt  copy a Google Flow scene prompt to the OS clipboard
+
+Requirements: Python 3.10+, ffmpeg + ffprobe on PATH (or --ffmpeg/--ffprobe),
+numpy, Pillow.  arabic-reshaper + python-bidi are used when present (needed
+for correct Persian shaping on Pillow builds without libraqm, e.g. Windows).
+No OpenCV: subtitles are rendered as RGBA pills with Pillow and composited by
+ffmpeg's overlay filter, so video and audio stay on one explicit timeline.
+"""
+from __future__ import annotations
+
+import argparse
+import hashlib
+import json
+import math
+import os
+import platform
+import shutil
+import subprocess
+import sys
+import tempfile
+import time
+from dataclasses import dataclass, field, asdict
+from pathlib import Path
+from typing import Any, Iterable, Optional
+
+import numpy as np
+from PIL import Image, ImageDraw, ImageFont, features
+
+try:  # Persian shaping (preferred path on Windows Pillow without raqm)
+    import arabic_reshaper  # type: ignore
+except ImportError:  # pragma: no cover - minimal CI
+    arabic_reshaper = None
+try:
+    from bidi.algorithm import get_display  # type: ignore
+except ImportError:  # pragma: no cover
+    try:
+        from bidi import get_display  # type: ignore  # python-bidi >= 0.6
+    except ImportError:
+        get_display = None
+
+PIPELINE_VERSION = "1.0.0"
+
+# ----------------------------------------------------------------- defaults --
+DEFAULT_WIDTH, DEFAULT_HEIGHT, DEFAULT_FPS = 720, 1280, 24
+DEFAULT_LOUDNORM = "loudnorm=I=-14:TP=-1.5:LRA=11"
+PILL_FILL = (12, 14, 22, 210)
+PILL_OUTLINE = (255, 215, 80, 220)
+TEXT_SHADOW = (0, 0, 0, 230)
+DEFAULT_TEXT_COLOR = (255, 255, 255)
+WINDOWS_FONT = (r"C:\Users\LifeCycle\.gemini\antigravity\scratch"
+                r"\ugly-face-chef-farsi\03_farsi_audio_tts\Vazirmatn-Bold.ttf")
+SYSTEM_FONT_CANDIDATES = [
+    "/usr/share/fonts/truetype/vazirmatn/Vazirmatn-Bold.ttf",
+    "/usr/local/share/fonts/Vazirmatn-Bold.ttf",
+    os.path.expanduser("~/.fonts/Vazirmatn-Bold.ttf"),
+    os.path.expanduser("~/.local/share/fonts/Vazirmatn-Bold.ttf"),
+    "/usr/share/fonts/truetype/noto/NotoSansArabic-Bold.ttf",
+    "/usr/share/fonts/truetype/noto/NotoNaskhArabic-Bold.ttf",
+    "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
+    "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
+    "/Library/Fonts/Vazirmatn-Bold.ttf",
+    "/System/Library/Fonts/Supplemental/GeezaPro.ttc",
+    r"C:\Windows\Fonts\Vazirmatn-Bold.ttf",
+    r"C:\Windows\Fonts\tahomabd.ttf",
+    r"C:\Windows\Fonts\arialbd.ttf",
+]
+FFMPEG = os.environ.get("FFMPEG_BIN", "ffmpeg")
+FFPROBE = os.environ.get("FFPROBE_BIN", "ffprobe")
+VERBOSE = False
+
+
+class PipelineError(RuntimeError):
+    """Raised for manifest / media problems the operator must fix."""
+
+
+# ------------------------------------------------------------------ helpers --
+def log(msg: str) -> None:
+    print(f"[farsi-flow] {msg}", flush=True)
+
+
+def run(cmd: list[str], *, capture: bool = False, what: str = "") -> subprocess.CompletedProcess:
+    """Run a subprocess; raise PipelineError with stderr tail on failure."""
+    if VERBOSE:
+        log("$ " + " ".join(cmd))
+    proc = subprocess.run(cmd, stdout=subprocess.PIPE if capture else subprocess.DEVNULL,
+                          stderr=subprocess.PIPE)
+    if proc.returncode != 0:
+        tail = proc.stderr.decode("utf-8", "replace").strip().splitlines()[-12:]
+        raise PipelineError(f"{what or cmd[0]} failed (exit {proc.returncode}):\n  " + "\n  ".join(tail))
+    return proc
+
+
+def ffmpeg_cmd(*args: str) -> list[str]:
+    return [FFMPEG, "-hide_banner", "-nostdin", "-y", "-loglevel", "error", *args]
+
+
+def ffprobe_json(path: Path) -> dict:
+    proc = run([FFPROBE, "-v", "error", "-print_format", "json", "-show_format",
+                "-show_streams", str(path)], capture=True, what=f"ffprobe {path.name}")
+    return json.loads(proc.stdout.decode("utf-8", "replace") or "{}")
+
+
+def _fps_value(rate: str | None) -> float:
+    if not rate or rate in ("0/0", "0"):
+        return 0.0
+    num, _, den = rate.partition("/")
+    return float(num) / float(den or 1) if float(den or 1) else 0.0
+
+
+def probe_media(path: Path) -> dict:
+    """Condensed ffprobe summary: first video/audio stream + durations."""
+    info = ffprobe_json(path)
+    fmt_dur = float(info.get("format", {}).get("duration", 0.0) or 0.0)
+    out: dict[str, Any] = {"path": str(path), "format_duration": round(fmt_dur, 4),
+                           "video": None, "audio": None}
+    for st in info.get("streams", []):
+        kind = st.get("codec_type")
+        if kind not in ("video", "audio") or out[kind] is not None:
+            continue
+        dur = float(st.get("duration", 0.0) or 0.0) or fmt_dur
+        entry = {"codec": st.get("codec_name"), "duration": round(dur, 4)}
+        if kind == "video":
+            entry.update(width=st.get("width"), height=st.get("height"),
+                         fps=round(_fps_value(st.get("avg_frame_rate") or st.get("r_frame_rate")), 3),
+                         pix_fmt=st.get("pix_fmt"), frames=int(st.get("nb_frames", 0) or 0))
+        else:
+            entry.update(sample_rate=int(st.get("sample_rate", 0) or 0),
+                         channels=int(st.get("channels", 0) or 0))
+        out[kind] = entry
+    return out
+
+
+def media_duration(path: Path) -> float:
+    """Shortest of the video/audio stream durations (safe trim bound)."""
+    p = probe_media(path)
+    durs = [s["duration"] for s in (p["video"], p["audio"]) if s and s["duration"] > 0]
+    return min(durs) if durs else p["format_duration"]
+
+
+def sha256_file(path: Path, chunk: int = 1 << 20) -> str:
+    h = hashlib.sha256()
+    with open(path, "rb") as fh:
+        for block in iter(lambda: fh.read(chunk), b""):
+            h.update(block)
+    return h.hexdigest()
+
+
+def fmt_srt(sec: float) -> str:
+    """SRT timestamp; rounds on total milliseconds (no ',1000' overflow)."""
+    total_ms = max(0, int(round(sec * 1000)))
+    h, rem = divmod(total_ms, 3_600_000)
+    m, rem = divmod(rem, 60_000)
+    s, ms = divmod(rem, 1000)
+    return f"{h:02d}:{m:02d}:{s:02d},{ms:03d}"
+
+
+def write_srt(path: Path, cues: Iterable[tuple[float, float, str]]) -> int:
+    """Write UTF-8-with-BOM SRT; returns cue count."""
+    blocks = [f"{i}\n{fmt_srt(s0)} --> {fmt_srt(s1)}\n{txt}\n"
+              for i, (s0, s1, txt) in enumerate(cues, 1)]
+    path.parent.mkdir(parents=True, exist_ok=True)
+    tmp = path.with_suffix(path.suffix + ".tmp")
+    tmp.write_text("\n".join(blocks) + ("\n" if blocks else ""), encoding="utf-8-sig")
+    os.replace(tmp, path)
+    return len(blocks)
