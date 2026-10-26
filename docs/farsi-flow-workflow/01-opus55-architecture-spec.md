@@ -232,3 +232,113 @@ global offset — one encode generation from the 14-CRF intermediates. `concat_s
 already-burned `clip_XX_subbed.mp4` videos (one extra generation, byte-for-byte the same pixels as
 the per-clip deliverables). Audio in both modes is the sample-exact concatenation of the per-clip
 PCM sidecars, i.e. *exactly* the samples inside each `clip_XX_subbed.mp4`, encoded to AAC once.
+
+## 7. QA certification (`qa_report.json`)
+
+Top level: `pipeline_version`, `command`, `generated_utc`, `host` (python, platform, shaping
+engine, raqm), `manifest {path, sha256}`, `font {path, sha256}`, `settings`, `clips[]`, `base`,
+`master`, `deliverables`, `gates`, `overall_automatic`, `warnings`, `note`.
+
+Per clip: `provenance` (mode `direct | spliced | pre_spliced_file`, source path + SHA-256, splice
+segments), `speech` (full analyzer report), `plan` (requested vs final trim, shift, notes),
+`final_window_speech`, `duration`, `frames`, `subtitles[]` (authored vs local time, `in_bounds`,
+`overlaps_previous`, `speech_energy_ratio`), `overlays[]` (box, font size, lines, `fits_width`,
+`inside_frame`), `media` (ffprobe checks), `mirror_sha256_match`.
+
+| Automatic gate | Passes when |
+|----------------|-------------|
+| `per_clip_media` | every `clip_XX_subbed.mp4`: h264 720×1280 @ 24, aac 48 kHz stereo, `|v−a| < 0.15 s`, duration within 1.5 frames of plan |
+| `subtitle_bounds` | every cue inside its clip, no overlap with the previous cue |
+| `pill_layout` | every pill fits `W − 84` and lies inside the frame |
+| `speech_safe_trim` | no final window starts/ends inside speech or drops speech energy |
+| `base_media` / `master_media` | same ffprobe checks + expected duration |
+| `master_single_cta` | `Master − Base − CTA` within 1.5 frames (exactly one CTA) |
+
+`overall_automatic` is `pass` only if every automatic gate passes. The **human_review** block
+(`listen_every_clip_edges`, `listen_final_master`, `transcript_word_for_word`,
+`visual_frame_review`, `voice_continuity`) is always written as `pending`; the pipeline never
+claims a listening pass it did not perform (Gate 3 / Gate 4 of the skill).
+
+## 8. CLI reference
+
+```
+python pipeline/farsi_flow_workflow.py [--ffmpeg BIN] [--ffprobe BIN] [-v] <command> …
+
+build           MANIFEST [--var K=V]… [--clips-dir D] [--out-dir D] [--font TTF]
+                [--speech-safe auto_expand|warn|off] [--cta-video MP4] [--no-cta]
+                [--force] [--no-contact]
+speech-audit    MANIFEST [same path/speech options] [--only ids] [--json]
+sub-clips-only  MANIFEST [same path/speech options] [--only clip_01,3] [--force]
+clipboard-image IMAGE [--allow-any-ratio] [--dry-run]
+clipboard-prompt [KEY] [--prompts JSON] [--list] [--print] [--dry-run]
+```
+
+Exit codes: `0` success · `1` `PipelineError` (bad manifest, missing source, failed render or
+verification, non-9:16 keyframe) · `2` usage (argparse, or `clipboard-prompt` with no key).
+
+Typical runs
+
+```bash
+# Windows, paths exactly as in the manifest
+python pipeline\farsi_flow_workflow.py build pipeline\manifests\series1_part1_whats_her_number.json
+
+# Linux/macOS with the same manifest
+python pipeline/farsi_flow_workflow.py build pipeline/manifests/ugly_chef_part2.json \
+    --var CHEF_BASE=/data/ugly-face-chef-farsi
+
+# "give me each Flow clip with its original audio, just add subtitles"
+python pipeline/farsi_flow_workflow.py sub-clips-only pipeline/manifests/series1_part1_whats_her_number.json
+
+# check trims against speech before rendering anything
+python pipeline/farsi_flow_workflow.py speech-audit pipeline/manifests/ugly_chef_part2.json --speech-safe warn
+```
+
+**Clipboard helpers** (Gate 2 / Workflow B step 1). `clipboard-image` fully decodes the keyframe,
+requires 9:16 (±2 %), logs its SHA-256, then copies it via Windows Forms `Clipboard.SetImage`
+(STA PowerShell) / macOS `osascript` PNGf / `wl-copy` / `xclip`. `clipboard-prompt` reads
+`pipeline/prompts/ugly_chef_flow_prompts.json` (6 scene prompts, verbatim from
+`set_flow_clipboard.py`, plus scene/speaker/location-sheet metadata) and copies via `clip.exe`
+(UTF-16LE + BOM) / `pbcopy` / `wl-copy` / `xclip` / `xsel`. `--dry-run` verifies and reports
+without touching the clipboard and succeeds on headless hosts.
+
+## 9. Verification performed in Stage 1
+
+Environment: Python 3.12.3, ffmpeg 6.1.1, Pillow (raqm present, reshaper engine used),
+arabic-reshaper 3.0.1, python-bidi 0.6.12, Noto Sans Arabic Bold (Vazirmatn not installed on the
+build host → warning recorded, as designed).
+
+Synthetic media: six 1080×1920 @ 30 fps `testsrc2` clips with 44.1 kHz mono tone-burst "speech",
+`clip_03_raw_orig.mp4` for the splice, an 8 s CTA, a 720×1280 keyframe.
+
+| Check | Result |
+|-------|--------|
+| `speech-audit` Series 1 | 6/6 clips analysed; `auto_expand` widened 5 edges; `--speech-safe warn` kept the curated `clip_02` window and flagged `CUTS-SPEECH` |
+| `build` Series 1 (cold) | 3 m 16 s; 6 × `clip_XX_subbed.mp4` in both locations, Base 52.125 s, Master 60.125 s, all h264 720×1280@24 + aac 48 kHz stereo, A/V durations equal |
+| SRT | UTF-8 BOM, 17 cues incl. 2 CTA at `+52.125 s` |
+| Contact sheet | 18 tiles (badge, 15 cues, 2 CTA); badge + RTL pills visually correct, joined Persian, speaker colours |
+| `qa_report.json` | `overall_automatic = pass`, human gates `pending` |
+| Re-run, same inputs | 4.4 s, Master SHA-256 unchanged, exactly one Kelidbox cue |
+| `--no-cta` | Master SHA-256 == Base SHA-256, no CTA cues |
+| `sub-clips-only --only 1,3` on `ugly_chef_part2` | pass |
+| `clipboard-prompt --list / --dry-run`, `clipboard-image --dry-run` | exit 0; landscape keyframe rejected with exit 1 |
+| Manifests vs reference scripts | trims, cues, speakers, Persian text, CTA subs verbatim (ast-checked) |
+
+Bug found and fixed during the smoke test: adaptive speech threshold could exceed the clip's peak
+on dense dialogue (commit `aa196bb`, §4).
+
+## 10. Known limits & hand-off to later stages
+
+- **Amplitude ≠ intelligibility.** RMS detection cannot tell a finished sentence from a cut one,
+  and music/SFX beds can read as speech. Real Flow clips still need the listening gates; an ASR /
+  VAD pass (e.g. Whisper word timestamps) is the natural Stage 2+ upgrade to `analyze_clip_speech`.
+- **Source defects are not repairable here.** If Flow itself starts/ends mid-word the clip is
+  flagged (`pre/post-handle only …`) but must be regenerated (bounded retry, Workflow B step 1).
+- **Fonts.** Install `Vazirmatn-Bold.ttf` or pass `--font`; fallbacks render correctly but differ
+  stylistically from the published series.
+- **CTA asset is trusted as finished.** Its loudness/subtitles are only touched when
+  `cta_loudnorm` / `cta_burn_subtitles` are set.
+- **Tests.** `tests/test_farsi_flow_workflow.py` (pytest, required by `00-context…` §1) is not
+  part of Stage 1; `pipeline/tools/synth_fixtures.py` provides manifest-driven fixtures with known
+  ground truth (`fixtures.json`, `--leak-in`, `--fps`) for it.
+- Real Windows paths in the manifests were **not** exercised (no access to the author's machine);
+  path remapping was exercised via `--var` on Linux.
