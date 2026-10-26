@@ -5,9 +5,14 @@
   "episode_id": "FruitsOfPower_Part1",
   "title_fa": "قسمت اول: خیانت در عمارت بارانی",
   "title_en": "Fruits of Power - Part 1",
+  "source_video": "${SRC}\\14_2026-10-19_DeqOJQTqU1S.mp4",
+  "story_summary_fa": "دوک بادمجان با گل رز بنفش برمی‌گرده و خیانت لمونلای باردار با موز طلایی رو کشف می‌کنه.",
+  "fallback_to_source_on_visual_fail": true,
+  "tight_speech_trim": true,
   "variables": {
     "BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi",
-    "CHEF_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\ugly-face-chef-farsi"
+    "CHEF_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\ugly-face-chef-farsi",
+    "SRC": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\straw.berryjammin"
   },
   "clips_dir": "${BASE}\\part1\\flow_clips",
   "out_dir": "${BASE}\\05_final_masters",
@@ -16,65 +21,122 @@
   "cta_speaker": "DUKE",
   "cta_subtitles": [
     {"start": 0.25, "end": 3.35, "text": "برای دیدن قسمت بعدی همین الان پیج رو فالو کن!"},
-    {"start": 3.50, "end": 7.85, "text": "راستی کل این انیمیشن با اکانت‌های هوش مصنوعی سایت کلیدباکس ساخته شده!"}
+    {"start": 3.5, "end": 7.85, "text": "راستی کل این انیمیشن با اکانت‌های هوش مصنوعی سایت کلیدباکس ساخته شده!"}
   ],
   "video": {"width": 720, "height": 1280, "fps": 24, "crf": 18, "preset": "fast", "scale_mode": "fill"},
   "audio": {"loudnorm": "loudnorm=I=-14:TP=-1.5:LRA=11", "sample_rate": 48000, "channels": 2, "bitrate": "192k"},
-  "speech": {"speech_safe": "auto_expand", "threshold_dbfs": -38.0, "pre_handle": 0.20, "post_handle": 0.35,
-             "splice_crossfade": 0.02},
-  "subtitle_style": {"time_base": "trim_local", "y_ratio": 0.84, "font_size": 27, "min_font_size": 16,
-                     "max_text_margin": 84, "max_lines": 2},
-  "badge": {"text": "قسمت اول: خیانت در عمارت بارانی", "start": 0.0, "end": 3.5, "y_center": 130, "font_size": 28,
-            "color": [255, 225, 110], "clip_index": 1},
-  "outputs": {"per_clip_location": "both", "base_mode": "timeline", "cta_burn_subtitles": true,
-              "cta_loudnorm": true},
+  "speech": {
+    "speech_safe": "auto_expand",
+    "threshold_dbfs": -38.0,
+    "pre_handle": 0.2,
+    "post_handle": 0.35,
+    "splice_crossfade": 0.02
+  },
+  "subtitle_style": {
+    "time_base": "trim_local",
+    "y_ratio": 0.84,
+    "font_size": 27,
+    "min_font_size": 16,
+    "max_text_margin": 84,
+    "max_lines": 2
+  },
+  "badge": {
+    "text": "قسمت اول: خیانت در عمارت بارانی",
+    "start": 0.0,
+    "end": 3.5,
+    "y_center": 130,
+    "font_size": 28,
+    "color": [255, 225, 110],
+    "clip_index": 1
+  },
+  "outputs": {
+    "per_clip_location": "both",
+    "base_mode": "timeline",
+    "cta_burn_subtitles": true,
+    "cta_loudnorm": true,
+    "publish_caption_fa": "دوک بادمجان با یه دسته گل رز بنفش برگشته بود عمارت تا همسرش (لمونلا) رو سورپرایز کنه... اما با دیدن لوکیشن گوشی، دنیا روی سرش خراب شد! 💔🌧️\nلمونلا بارداره، ولی پشت سر دوک با «موز طلایی» نقشه کشیده تا تمام ثروت و عمارت دوک رو بالا بکشن! 😱🍌\nبه نظرتون دوک بادمجان مچشون رو می‌گیره یا فریب اشک تمساح لمونلا رو می‌خوره؟\n👇 برای دیدن قسمت دوم کلمه «خیانت» رو کامنت کنید و پیج رو فالو داشته باشید!",
+    "caption_optional_speakers": []
+  },
   "voices": {
-    "DUKE":   {"name_fa": "دوک بادمجان",  "color": [210, 165, 255], "source": "google_flow_native"},
-    "LEMON":  {"name_fa": "لمونلا",       "color": [255, 235, 110], "source": "google_flow_native"},
-    "BANANA": {"name_fa": "موز طلایی",    "color": [255, 200, 95],  "source": "google_flow_native"},
-    "STRAW":  {"name_fa": "کنتس توت‌فرنگی","color": [255, 150, 195], "source": "google_flow_native"},
-    "FIG":    {"name_fa": "انجیر سیاه",   "color": [180, 220, 255], "source": "google_flow_native"},
-    "PEACH":  {"name_fa": "دکتر هلو",     "color": [150, 255, 190], "source": "google_flow_native"}
+    "DUKE": {"name_fa": "دوک بادمجان", "color": [210, 165, 255], "source": "google_flow_native"},
+    "LEMON": {"name_fa": "لمونلا", "color": [255, 235, 110], "source": "google_flow_native"},
+    "BANANA": {"name_fa": "موز طلایی", "color": [255, 200, 95], "source": "google_flow_native"},
+    "STRAW": {"name_fa": "کنتس توت‌فرنگی", "color": [255, 150, 195], "source": "google_flow_native"},
+    "FIG": {"name_fa": "انجیر سیاه / رییس مافیا / رئیس مافیا", "color": [180, 220, 255], "source": "google_flow_native"},
+    "PEACH": {"name_fa": "دکتر گلابی / دکتر هلو", "color": [150, 255, 190], "source": "google_flow_native"}
   },
   "clips": [
     {
-      "id": "clip_01", "file": "clip_01.mp4", "trim_in": 0.00, "trim_out": 9.95,
+      "id": "clip_01",
+      "file": "clip_01.mp4",
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_01.jpg",
+      "expected_speakers": ["DUKE"],
+      "story_beat": "Duke screams in the rainy pool: betrayal discovered",
+      "source_span": [5.8, 10.4],
+      "trim_in": 0.0,
+      "trim_out": 9.95,
+      "subtitles": [[0.3, 9.5, "DUKE", "چرا؟! چطور تونست به من خیانت کنه و قلبمو بشکنه؟!"]]
+    },
+    {
+      "id": "clip_02",
+      "file": "clip_02.mp4",
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_02.jpg",
+      "expected_speakers": ["LEMON", "BANANA"],
+      "story_beat": "Lemonella reveals pregnancy; plots with Banana on the yellow sports car",
+      "source_span": [10.4, 14.6],
+      "trim_in": 0.0,
+      "trim_out": 9.95,
       "subtitles": [
-        [0.30, 9.50, "DUKE", "چرا؟! چطور تونست به من خیانت کنه و قلبمو بشکنه؟!"]
+        [0.2, 4.8, "LEMON", "من باردارم! ولی هیچ‌کس نباید بفهمه این بچه مال توئه!"],
+        [5.0, 9.6, "BANANA", "نگران نباش عزیزم، دوک به هیچی شک نمی‌کنه!"]
       ]
     },
     {
-      "id": "clip_02", "file": "clip_02.mp4", "trim_in": 0.00, "trim_out": 9.95,
+      "id": "clip_03",
+      "file": "clip_03.mp4",
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_03.jpg",
+      "expected_speakers": ["DUKE"],
+      "story_beat": "Duke reads the phone message 'Last night was wild' and suspects Lemonella",
+      "source_span": [14.6, 18.7],
+      "trim_in": 0.0,
+      "trim_out": 9.95,
+      "subtitles": [[0.25, 9.6, "DUKE", "امکان نداره! لمونلا دیشب کجا بوده؟! یعنی به من خیانت کرده؟!"]]
+    },
+    {
+      "id": "clip_04",
+      "file": "clip_04.mp4",
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_04.jpg",
+      "expected_speakers": ["DUKE"],
+      "story_beat": "Duke arrives with purple roses and drops them on seeing the kiss",
+      "source_span": [18.7, 28.7],
+      "trim_in": 0.0,
+      "trim_out": 9.95,
       "subtitles": [
-        [0.20, 4.80, "LEMON", "من باردارم! ولی هیچ‌کس نباید بفهمه این بچه مال توئه!"],
-        [5.00, 9.60, "BANANA", "نگران نباش عزیزم، دوک به هیچی شک نمی‌کنه!"]
+        [0.25, 4.8, "DUKE", "من این گل‌ها رو با عشق براش خریده بودم..."],
+        [5.0, 9.6, "DUKE", "چطور تونست با قلب من این کار رو بکنه؟!"]
       ]
     },
     {
-      "id": "clip_03", "file": "clip_03.mp4", "trim_in": 0.00, "trim_out": 9.95,
-      "subtitles": [
-        [0.25, 9.60, "DUKE", "امکان نداره! لمونلا دیشب کجا بوده؟! یعنی به من خیانت کرده؟!"]
-      ]
+      "id": "clip_05",
+      "file": "clip_05.mp4",
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_05.jpg",
+      "expected_speakers": ["BANANA"],
+      "story_beat": "Banana gloats in the rain: the Duke's fortune is now his",
+      "source_span": [39.5, 47.9],
+      "trim_in": 0.0,
+      "trim_out": 9.95,
+      "subtitles": [[0.25, 9.6, "BANANA", "بارون رو ببین... حالا تمام دارایی و زندگیت مال منه، دوک!"]]
     },
     {
-      "id": "clip_04", "file": "clip_04.mp4", "trim_in": 0.00, "trim_out": 9.95,
-      "subtitles": [
-        [0.25, 4.80, "DUKE", "من این گل‌ها رو با عشق براش خریده بودم..."],
-        [5.00, 9.60, "DUKE", "چطور تونست با قلب من این کار رو بکنه؟!"]
-      ]
-    },
-    {
-      "id": "clip_05", "file": "clip_05.mp4", "trim_in": 0.00, "trim_out": 9.95,
-      "subtitles": [
-        [0.25, 9.60, "BANANA", "بارون رو ببین... حالا تمام دارایی و زندگیت مال منه، دوک!"]
-      ]
-    },
-    {
-      "id": "clip_06", "file": "clip_06.mp4", "trim_in": 0.50, "trim_out": 9.50,
-      "subtitles": [
-        [0.40, 3.15, "DUKE", "چرا من؟! خدایا چرا؟!"],
-        [3.40, 7.60, "DUKE", "دیگه طاقت دیدن این خیانت رو ندارم!"]
-      ]
+      "id": "clip_06",
+      "file": "clip_06.mp4",
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_06.jpg",
+      "expected_speakers": ["DUKE"],
+      "story_beat": "Duke watches the fountain kiss from the balcony at night and breaks down",
+      "source_span": [47.9, 57.9],
+      "trim_in": 0.5,
+      "trim_out": 9.5,
+      "subtitles": [[0.4, 3.15, "DUKE", "چرا من؟! خدایا چرا؟!"], [3.4, 7.6, "DUKE", "دیگه طاقت دیدن این خیانت رو ندارم!"]]
     }
   ]
 }

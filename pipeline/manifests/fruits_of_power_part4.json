@@ -5,9 +5,14 @@
   "episode_id": "FruitsOfPower_Part4",
   "title_fa": "قسمت چهارم: قرارداد پنهانی و تهدید بزرگ",
   "title_en": "Fruits of Power - Part 4",
+  "source_video": "${SRC}\\11_2026-10-19_DesSgm3hnHy.mp4",
+  "story_summary_fa": "لمونلا اعتراف می‌کنه، دوک قرارداد رو نشون میده، کنتس توت‌فرنگی وسوسه می‌کنه و مهاجم‌ها به عمارت می‌رسن؛ دوک از لمونلا محافظت می‌کنه.",
+  "fallback_to_source_on_visual_fail": true,
+  "tight_speech_trim": true,
   "variables": {
     "BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi",
-    "CHEF_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\ugly-face-chef-farsi"
+    "CHEF_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\ugly-face-chef-farsi",
+    "SRC": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\straw.berryjammin"
   },
   "clips_dir": "${BASE}\\part4\\flow_clips",
   "out_dir": "${BASE}\\05_final_masters",
@@ -16,63 +21,119 @@
   "cta_speaker": "DUKE",
   "cta_subtitles": [
     {"start": 0.25, "end": 3.35, "text": "برای دیدن قسمت بعدی همین الان پیج رو فالو کن!"},
-    {"start": 3.50, "end": 7.85, "text": "راستی کل این انیمیشن با اکانت‌های هوش مصنوعی سایت کلیدباکس ساخته شده!"}
+    {"start": 3.5, "end": 7.85, "text": "راستی کل این انیمیشن با اکانت‌های هوش مصنوعی سایت کلیدباکس ساخته شده!"}
   ],
   "video": {"width": 720, "height": 1280, "fps": 24, "crf": 18, "preset": "fast", "scale_mode": "fill"},
   "audio": {"loudnorm": "loudnorm=I=-14:TP=-1.5:LRA=11", "sample_rate": 48000, "channels": 2, "bitrate": "192k"},
-  "speech": {"speech_safe": "auto_expand", "threshold_dbfs": -38.0, "pre_handle": 0.20, "post_handle": 0.35,
-             "splice_crossfade": 0.02},
-  "subtitle_style": {"time_base": "trim_local", "y_ratio": 0.84, "font_size": 27, "min_font_size": 16,
-                     "max_text_margin": 84, "max_lines": 2},
-  "badge": {"text": "قسمت چهارم: قرارداد پنهانی و تهدید بزرگ", "start": 0.0, "end": 3.5, "y_center": 130, "font_size": 28,
-            "color": [255, 225, 110], "clip_index": 1},
-  "outputs": {"per_clip_location": "both", "base_mode": "timeline", "cta_burn_subtitles": true,
-              "cta_loudnorm": true},
+  "speech": {
+    "speech_safe": "auto_expand",
+    "threshold_dbfs": -38.0,
+    "pre_handle": 0.2,
+    "post_handle": 0.35,
+    "splice_crossfade": 0.02
+  },
+  "subtitle_style": {
+    "time_base": "trim_local",
+    "y_ratio": 0.84,
+    "font_size": 27,
+    "min_font_size": 16,
+    "max_text_margin": 84,
+    "max_lines": 2
+  },
+  "badge": {
+    "text": "قسمت چهارم: قرارداد پنهانی و تهدید بزرگ",
+    "start": 0.0,
+    "end": 3.5,
+    "y_center": 130,
+    "font_size": 28,
+    "color": [255, 225, 110],
+    "clip_index": 1
+  },
+  "outputs": {
+    "per_clip_location": "both",
+    "base_mode": "timeline",
+    "cta_burn_subtitles": true,
+    "cta_loudnorm": true,
+    "publish_caption_fa": "لمونلا با گریه به خیانتش اعتراف کرد، اما دوک بادمجان خیلی جلوتر از این حرف‌ها بود و با یک قرارداد محکم غافلگیرش کرد! 📄⚡\nدرست وسط درگیری لمونلا و کنتس توت‌فرنگی، طوفان به پا شد و مهاجم‌ها به عمارت رسیدن... اما دوک با وجود تمام بدی‌های لمونلا، سپر بلای اون شد! 🛡️💜\nبه نظرتون کار دوک درست بود که دوباره از لمونلا محافظت کرد؟",
+    "caption_optional_speakers": []
+  },
   "voices": {
-    "DUKE":   {"name_fa": "دوک بادمجان",  "color": [210, 165, 255], "source": "google_flow_native"},
-    "LEMON":  {"name_fa": "لمونلا",       "color": [255, 235, 110], "source": "google_flow_native"},
-    "BANANA": {"name_fa": "موز طلایی",    "color": [255, 200, 95],  "source": "google_flow_native"},
-    "STRAW":  {"name_fa": "کنتس توت‌فرنگی","color": [255, 150, 195], "source": "google_flow_native"},
-    "FIG":    {"name_fa": "انجیر سیاه",   "color": [180, 220, 255], "source": "google_flow_native"},
-    "PEACH":  {"name_fa": "دکتر هلو",     "color": [150, 255, 190], "source": "google_flow_native"}
+    "DUKE": {"name_fa": "دوک بادمجان", "color": [210, 165, 255], "source": "google_flow_native"},
+    "LEMON": {"name_fa": "لمونلا", "color": [255, 235, 110], "source": "google_flow_native"},
+    "BANANA": {"name_fa": "موز طلایی", "color": [255, 200, 95], "source": "google_flow_native"},
+    "STRAW": {"name_fa": "کنتس توت‌فرنگی", "color": [255, 150, 195], "source": "google_flow_native"},
+    "FIG": {"name_fa": "انجیر سیاه / رییس مافیا / رئیس مافیا", "color": [180, 220, 255], "source": "google_flow_native"},
+    "PEACH": {"name_fa": "دکتر گلابی / دکتر هلو", "color": [150, 255, 190], "source": "google_flow_native"}
   },
   "clips": [
     {
-      "id": "clip_01", "file": "clip_01.mp4", "trim_in": 0.00, "trim_out": 9.95,
+      "id": "clip_01",
+      "file": "clip_01.mp4",
+      "keyframe": "${BASE}\\part4\\keyframes\\KF_01.jpg",
+      "expected_speakers": ["LEMON"],
+      "story_beat": "Lemonella tearfully confesses her betrayal to Duke",
+      "source_span": [10.7, 18.0],
+      "trim_in": 0.0,
+      "trim_out": 9.95,
+      "subtitles": [[0.25, 9.6, "LEMON", "دوک، قسم می‌خورم نمی‌خواستم اینطوری بشه! به اعتمادت خیانت کردم و همه‌چیز رو خراب کردم!"]]
+    },
+    {
+      "id": "clip_02",
+      "file": "clip_02.mp4",
+      "keyframe": "${BASE}\\part4\\keyframes\\KF_02.jpg",
+      "expected_speakers": ["LEMON", "DUKE"],
+      "story_beat": "Duke surprises Lemonella with a signed contract",
+      "source_span": [18.0, 27.7],
+      "trim_in": 0.0,
+      "trim_out": 9.95,
       "subtitles": [
-        [0.25, 9.60, "LEMON", "دوک، قسم می‌خورم نمی‌خواستم اینطوری بشه! به اعتمادت خیانت کردم و همه‌چیز رو خراب کردم!"]
+        [0.2, 4.5, "LEMON", "این دیگه چیه؟ چرا این قرارداد رو امضا کردی؟"],
+        [4.7, 9.65, "DUKE", "برای اینکه مطمئن بشم دیگه هیچ‌وقت فریب نمی‌خورم!"]
       ]
     },
     {
-      "id": "clip_02", "file": "clip_02.mp4", "trim_in": 0.00, "trim_out": 9.95,
-      "subtitles": [
-        [0.20, 4.50, "LEMON", "این دیگه چیه؟ چرا این قرارداد رو امضا کردی؟"],
-        [4.70, 9.65, "DUKE", "برای اینکه مطمئن بشم دیگه هیچ‌وقت فریب نمی‌خورم!"]
-      ]
+      "id": "clip_03",
+      "file": "clip_03.mp4",
+      "keyframe": "${BASE}\\part4\\keyframes\\KF_03.jpg",
+      "expected_speakers": ["STRAW"],
+      "story_beat": "Countess Strawberry tempts the lonely Duke",
+      "source_span": [27.7, 32.0],
+      "trim_in": 0.0,
+      "trim_out": 9.95,
+      "subtitles": [[0.25, 9.6, "STRAW", "لازم نیست امشب تنها بمونی دوک عزیزم... تو لیاقتت خیلی بیشتر از این غم و غصه‌ست."]]
     },
     {
-      "id": "clip_03", "file": "clip_03.mp4", "trim_in": 0.00, "trim_out": 9.95,
-      "subtitles": [
-        [0.25, 9.60, "STRAW", "لازم نیست امشب تنها بمونی دوک عزیزم... تو لیاقتت خیلی بیشتر از این غم و غصه‌ست."]
-      ]
+      "id": "clip_04",
+      "file": "clip_04.mp4",
+      "keyframe": "${BASE}\\part4\\keyframes\\KF_04.jpg",
+      "expected_speakers": ["LEMON"],
+      "story_beat": "Storm rises over the mansion; Shadow Fig dictates terms",
+      "source_span": [32.0, 42.0],
+      "trim_in": 0.0,
+      "trim_out": 9.95,
+      "subtitles": [[0.25, 9.6, "LEMON", "حالا با این وضعیت و دردسرهای جدید چه خاکی به سرم بریزم؟!"]]
     },
     {
-      "id": "clip_04", "file": "clip_04.mp4", "trim_in": 0.00, "trim_out": 9.95,
-      "subtitles": [
-        [0.25, 9.60, "LEMON", "حالا با این وضعیت و دردسرهای جدید چه خاکی به سرم بریزم؟!"]
-      ]
+      "id": "clip_05",
+      "file": "clip_05.mp4",
+      "keyframe": "${BASE}\\part4\\keyframes\\KF_05.jpg",
+      "expected_speakers": ["LEMON"],
+      "story_beat": "Lemonella vs Countess Strawberry confrontation",
+      "source_span": [49.1, 59.1],
+      "trim_in": 0.0,
+      "trim_out": 9.95,
+      "subtitles": [[0.25, 9.6, "LEMON", "به چه حقی به من پشت می‌کنی؟! وقتی باهات حرف می‌زنم تو چشمام نگاه کن!"]]
     },
     {
-      "id": "clip_05", "file": "clip_05.mp4", "trim_in": 0.00, "trim_out": 9.95,
-      "subtitles": [
-        [0.25, 9.60, "LEMON", "به چه حقی به من پشت می‌کنی؟! وقتی باهات حرف می‌زنم تو چشمام نگاه کن!"]
-      ]
-    },
-    {
-      "id": "clip_06", "file": "clip_06.mp4", "trim_in": 0.00, "trim_out": 9.95,
-      "subtitles": [
-        [0.25, 9.60, "DUKE", "محکم منو بگیر لمونلا! اون‌ها به عمارت رسیدن!"]
-      ]
+      "id": "clip_06",
+      "file": "clip_06.mp4",
+      "keyframe": "${BASE}\\part4\\keyframes\\KF_06.jpg",
+      "expected_speakers": ["DUKE"],
+      "story_beat": "Attackers reach the mansion; Duke shields Lemonella",
+      "source_span": [61.9, 71.9],
+      "trim_in": 0.0,
+      "trim_out": 9.95,
+      "subtitles": [[0.25, 9.6, "DUKE", "محکم منو بگیر لمونلا! اون‌ها به عمارت رسیدن!"]]
     }
   ]
 }
