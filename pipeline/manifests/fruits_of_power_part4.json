@@ -7,7 +7,7 @@
   "title_en": "Fruits of Power - Part 4",
   "source_video": "${SRC}\\11_2026-10-19_DesSgm3hnHy.mp4",
   "story_summary_fa": "لمونلا اعتراف می‌کنه، دوک قرارداد رو نشون میده، کنتس توت‌فرنگی وسوسه می‌کنه و مهاجم‌ها به عمارت می‌رسن؛ دوک از لمونلا محافظت می‌کنه.",
-  "fallback_to_source_on_visual_fail": true,
+  "fallback_to_source_on_visual_fail": false,
   "tight_speech_trim": true,
   "variables": {
     "BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi",
@@ -213,7 +213,7 @@
           "لازم نیست امشب تنها بمونی دوک عزیزم... تو لیاقتت خیلی بیشتر از این غم و غصه‌ست."
         ]
       ],
-      "notes": "force_source_bridge: Countess Strawberry morphs into human woman after 1.0s in Flow clip"
+      "notes": "pure_flow_native"
     },
     {
       "id": "clip_04",

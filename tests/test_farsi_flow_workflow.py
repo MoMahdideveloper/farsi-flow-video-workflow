@@ -628,7 +628,7 @@ def test_stage2_invalid_probe_cannot_pass(field, value):
 def test_stage2_all_manifests_and_exact_probe_flags(part, tmp_path):
     path = ROOT / f'pipeline/manifests/fruits_of_power_part{part}.json'
     ep = fw.load_manifest(path, {'vars': {'BASE': str(tmp_path), 'SRC': str(tmp_path)}})
-    assert ep.fallback_to_source_on_visual_fail and ep.tight_speech_trim
+    assert not ep.fallback_to_source_on_visual_fail and ep.tight_speech_trim
     assert ep.source_video and ep.story_summary_fa
     assert fw.step1_story_lock(ep)['status'] == 'pass'
     assert len(ep.clips) == 6
@@ -648,25 +648,24 @@ def test_stage2_all_manifests_and_exact_probe_flags(part, tmp_path):
 def test_stage2_trace_all_parts_cli_complete_but_not_a_render_signoff(tmp_path):
     out = tmp_path / 'audit.json'
     command([sys.executable, SCRIPT, 'trace-all-parts', '--probe-json',
-             EVIDENCE / 'parts1_to_5_clips_probe.json', '--out-json', out])
-    audit = json.loads(out.read_text())
+             EVIDENCE / 'parts1_to_5_clips_probe.json', '--out-json', out], expected=1)
+    audit = json.loads(out.read_text(encoding='utf-8'))
     assert audit['summary']['clips_total'] == 30
     assert audit['summary']['clips_failed_visual'] == 13
     assert audit['summary']['flag_counts'] == dict(zip(fw.FAIL_FLAGS, (12, 3, 5)))
-    assert audit['summary']['clips_planned_source_bridge'] == 13
+    assert audit['summary']['clips_planned_source_bridge'] == 0
     assert audit['summary']['clips_resolved_by_source_bridge'] == 0
-    assert audit['audit_passed'] is True
+    assert audit['audit_passed'] is False
     for ep in audit['episodes']:
         assert len(ep['clips']) == 6 and set(ep['step_trace']) == set(fw.STEP_NAMES)
-        assert not ep['all_passed'] and ep['audit_passed']
+        assert not ep['all_passed'] and not ep['audit_passed']
         assert ep['step_trace'][fw.STEP_NAMES[5]]['status'] == 'not_run'
         for clip in ep['clips']:
             assert set(clip['step_trace']) == set(fw.STEP_NAMES)
             assert clip['story_beat']
             step5 = clip['step_trace'][fw.STEP_NAMES[4]]
             if clip['step_trace'][fw.STEP_NAMES[2]]['flags']:
-                assert step5['status'] == 'planned' and not step5['resolved']
-                assert step5['video_from']['source_span'][1] > step5['video_from']['source_span'][0]
+                assert step5['status'] == 'fail' and not step5['resolved']
 
 
 def test_stage2_partial_probe_cli_must_fail(tmp_path):

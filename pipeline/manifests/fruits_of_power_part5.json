@@ -7,7 +7,7 @@
   "title_en": "Fruits of Power - Part 5 (Finale)",
   "source_video": "${SRC}\\10_2026-10-20_DeugJXCPEYM.mp4",
   "story_summary_fa": "راز گذشته لمونلا فاش میشه، دوک می‌بخشه، لمونلا به بیمارستان میره و دکتر گلابی سه‌قلو بودن رو اعلام می‌کنه.",
-  "fallback_to_source_on_visual_fail": true,
+  "fallback_to_source_on_visual_fail": false,
   "tight_speech_trim": true,
   "variables": {
     "BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi",

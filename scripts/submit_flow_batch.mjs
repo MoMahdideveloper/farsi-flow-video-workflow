@@ -105,37 +105,37 @@ const BATCHES = {
       clip: 1,
       kf: `${FOP_DIR}\\part1\\keyframes\\KF_01.jpg`,
       prompt:
-        '3D stylized cartoon animation, static medium shot keeping the character in frame the entire time (no camera cuts), anthropomorphic purple eggplant aristocrat man (Duke Eggplant) in a dark purple velvet tuxedo standing in the rain at night looking up at the sky in shock and speaking in native Persian (Farsi) with a deep emotional male voice: «چرا؟! چطور تونست به من خیانت کنه و قلبمو بشکنه؟!» Zero on-screen subtitles.',
+        '3D Pixar/Cinema4D stylized cartoon animation matching the reference image style, static medium shot keeping the character in frame the entire time (no camera cuts), anthropomorphic purple eggplant aristocrat (Duke Eggplant with a full 3D glossy purple eggplant head and green calyx crown, strictly NO human face, NO human hair) in a dark purple velvet tuxedo standing in the rain by the mansion pool at night looking up at the sky in heartbreak and speaking in native Persian (Farsi) with a deep emotional male voice: «چرا؟! چطور تونست به من خیانت کنه و قلبمو بشکنه؟!» Zero on-screen subtitles.',
     },
     {
       clip: 2,
       kf: `${FOP_DIR}\\part1\\keyframes\\KF_02.jpg`,
       prompt:
-        '3D stylized cartoon animation, static medium two-shot keeping both characters in frame the entire time (no camera cuts), glamorous anthropomorphic yellow lemon woman (Lemonella) in a gold gown and flashy banana man in a yellow leather jacket and sunglasses standing by a yellow car at night. First Lemonella speaks in native Persian (Farsi) with a dramatic female voice: «من باردارم! ولی هیچ‌کس نباید بفهمه این بچه مال توئه!» Then Banana Man replies in native Persian (Farsi) with an arrogant young male voice: «نگران نباش عزیزم، دوک به هیچی شک نمی‌کنه!» Zero on-screen subtitles.',
+        '3D Pixar/Cinema4D stylized cartoon animation matching the reference image style, static medium two-shot keeping both characters in frame the entire time (no camera cuts), glamorous anthropomorphic yellow lemon woman (Lemonella with a full 3D yellow lemon head and green leaf, strictly NO human face, NO human hair) in a gold gown touching her pregnant belly beside a flashy anthropomorphic banana man (full 3D curved yellow banana head with dark sunglasses, strictly NO human face) in a yellow leather jacket leaning against a yellow sports car at night. First Lemonella speaks in native Persian (Farsi) with a dramatic female voice: «من باردارم! ولی هیچ‌کس نباید بفهمه این بچه مال توئه!» Then Banana Man replies in native Persian (Farsi) with an arrogant young male voice: «نگران نباش عزیزم، دوک به هیچی شک نمی‌کنه!» Zero on-screen subtitles.',
     },
     {
       clip: 3,
       kf: `${FOP_DIR}\\part1\\keyframes\\KF_03.jpg`,
       prompt:
-        '3D stylized cartoon animation, static medium close-up keeping the character in frame the entire time (no camera cuts), anthropomorphic purple eggplant aristocrat man (Duke Eggplant) in a dark purple velvet tuxedo looking down in shock and heartbreak at a smartphone on a marble table inside his luxury mansion. Duke Eggplant speaks in native Persian (Farsi) with a shocked heartbroken male voice: «امکان نداره! لمونلا دیشب کجا بوده؟! یعنی به من خیانت کرده؟!» Zero on-screen subtitles.',
+        '3D Pixar/Cinema4D stylized cartoon animation matching the reference image style, static medium close-up keeping the character in frame the entire time (no camera cuts), anthropomorphic purple eggplant aristocrat (Duke Eggplant with a full 3D glossy purple eggplant head and green calyx crown, strictly NO human face, NO human hair) in a dark purple velvet tuxedo holding and staring in shock at a glowing smartphone screen showing a suspicious message inside his luxury mansion. Duke Eggplant speaks in native Persian (Farsi) with a shocked heartbroken male voice: «امکان نداره! لمونلا دیشب کجا بوده؟! یعنی به من خیانت کرده؟!» Zero on-screen subtitles.',
     },
     {
       clip: 4,
       kf: `${FOP_DIR}\\part1\\keyframes\\KF_04.jpg`,
       prompt:
-        '3D stylized cartoon animation, static medium close-up keeping the character in frame the entire time (no camera cuts), anthropomorphic purple eggplant aristocrat man (Duke Eggplant) in a dark purple velvet tuxedo holding a bouquet of dark purple roses with tears streaming down his face in his luxury mansion. Duke Eggplant speaks in native Persian (Farsi) with an emotional weeping male voice: «من این گل‌ها رو با عشق براش خریده بودم... چطور تونست با قلب من این کار رو بکنه؟!» Zero on-screen subtitles.',
+        '3D Pixar/Cinema4D stylized cartoon animation matching the reference image style, static medium close-up keeping the character in frame the entire time (no camera cuts), anthropomorphic purple eggplant aristocrat (Duke Eggplant with a full 3D glossy purple eggplant head, strictly NO human face) in a dark purple velvet tuxedo holding a bouquet of dark purple roses with tears streaming down his face in his luxury mansion. Duke Eggplant speaks in native Persian (Farsi) with an emotional weeping male voice: «من این گل‌ها رو با عشق براش خریده بودم... چطور تونست با قلب من این کار رو بکنه؟!» Zero on-screen subtitles.',
     },
     {
       clip: 5,
       kf: `${FOP_DIR}\\part1\\keyframes\\KF_05.jpg`,
       prompt:
-        '3D stylized cartoon animation, static medium shot keeping the character in frame the entire time (no camera cuts), flashy anthropomorphic banana man in a yellow leather jacket, gold chain necklace, and dark sunglasses sitting in a yellow car at night in the rain. Banana Man speaks in native Persian (Farsi) with a smug arrogant male voice: «بارون رو ببین... حالا تمام دارایی و زندگیت مال منه، دوک!» Zero on-screen subtitles.',
+        '3D Pixar/Cinema4D stylized cartoon animation matching the reference image style, static medium shot keeping the character in frame the entire time (no camera cuts), flashy anthropomorphic banana man (full 3D yellow banana head wearing dark sunglasses, strictly NO human face) in a yellow leather jacket and gold chain necklace sitting in a yellow sports car at night in the rain. Banana Man speaks in native Persian (Farsi) with a smug arrogant male voice: «بارون رو ببین... حالا تمام دارایی و زندگیت مال منه، دوک!» Zero on-screen subtitles.',
     },
     {
       clip: 6,
       kf: `${FOP_DIR}\\part1\\keyframes\\KF_06.jpg`,
       prompt:
-        '3D stylized cartoon animation, static medium shot keeping the character in frame the entire time (no camera cuts), anthropomorphic purple eggplant aristocrat man (Duke Eggplant) in a dark purple velvet tuxedo standing on his mansion balcony at night in the rain, looking down heartbroken toward the fountain below. Duke Eggplant speaks in native Persian (Farsi) with a broken weeping male voice: «چرا من؟! خدایا چرا؟! دیگه طاقت دیدن این خیانت رو ندارم!» Zero on-screen subtitles.',
+        '3D Pixar/Cinema4D stylized cartoon animation matching the reference image style, static medium shot keeping the character in frame the entire time (no camera cuts), anthropomorphic purple eggplant aristocrat (Duke Eggplant with a full 3D glossy purple eggplant head and green calyx crown, strictly NO human face) in a dark purple velvet tuxedo standing on his mansion balcony at night in the rain, gripping the stone railing in heartbreak looking down toward the courtyard fountain. Duke Eggplant speaks in native Persian (Farsi) with a broken weeping male voice: «چرا من؟! خدایا چرا؟! دیگه طاقت دیدن این خیانت رو ندارم!» Zero on-screen subtitles.',
     },
   ],
   fop_part2: [
@@ -143,37 +143,37 @@ const BATCHES = {
       clip: 1,
       kf: `${FOP_DIR}\\part2\\keyframes\\KF_01.jpg`,
       prompt:
-        '3D stylized cartoon animation, static medium shot keeping the character in frame the entire time (no camera cuts), flashy anthropomorphic banana man in a yellow leather jacket and sunglasses spraying a sparkling bottle in a luxury VIP party room. Banana Man speaks in native Persian (Farsi) with an excited arrogant male voice: «بزن بریم! امشب شبِ ماست! با پول‌های دوک کل شهر رو می‌خریم!» Zero on-screen subtitles.',
+        '3D Pixar/Cinema4D stylized cartoon animation matching the reference image style, static medium shot keeping the character in frame the entire time (no camera cuts), flashy anthropomorphic banana man (full 3D yellow banana head with sunglasses, strictly NO human face) in a yellow leather jacket celebrating in a luxury VIP lounge at night. Banana Man speaks in native Persian (Farsi) with an excited arrogant male voice: «بزن بریم! امشب شبِ ماست! با پول‌های دوک کل شهر رو می‌خریم!» Zero on-screen subtitles.',
     },
     {
       clip: 2,
       kf: `${FOP_DIR}\\part2\\keyframes\\KF_02.jpg`,
       prompt:
-        '3D stylized cartoon animation, static medium close-up keeping the character in frame the entire time (no camera cuts), anthropomorphic purple eggplant aristocrat man (Duke Eggplant) in a dark purple velvet tuxedo crying alone holding a crystal glass in his dark rainy mansion. Duke Eggplant speaks in native Persian (Farsi) with a deep sorrowful male voice: «همه فکر می‌کنن من همه‌چیز دارم... ولی توی تنهایی خودم دارم می‌سوزم!» Zero on-screen subtitles.',
+        '3D Pixar/Cinema4D stylized cartoon animation matching the reference image style, static medium close-up keeping the character in frame the entire time (no camera cuts), anthropomorphic purple eggplant aristocrat (Duke Eggplant with a full 3D glossy purple eggplant head, strictly NO human face) in a dark purple velvet tuxedo sitting alone holding a crystal glass in his dark rainy mansion. Duke Eggplant speaks in native Persian (Farsi) with a deep sorrowful male voice: «همه فکر می‌کنن من همه‌چیز دارم... ولی توی تنهایی خودم دارم می‌سوزم!» Zero on-screen subtitles.',
     },
     {
       clip: 3,
       kf: `${FOP_DIR}\\part2\\keyframes\\KF_03.jpg`,
       prompt:
-        '3D stylized cartoon animation, static medium two-shot keeping both characters in frame the entire time (no camera cuts), elegant anthropomorphic red strawberry woman (Strawberry Countess) in a crimson evening gown comforting Duke Eggplant at a candlelit table. Strawberry Countess speaks in native Persian (Farsi) with a warm gentle female voice: «دوک عزیزم، اون لیاقت عشق تو رو نداشت... بذار من مرهم قلبت باشم.» Zero on-screen subtitles.',
+        '3D Pixar/Cinema4D stylized cartoon animation matching the reference image style, static medium two-shot keeping both characters in frame the entire time (no camera cuts), elegant anthropomorphic red strawberry woman (Countess Strawberry with a full 3D red seeded strawberry head and green leaf crown, strictly NO human face, NO human hair) in a crimson evening gown comforting Duke Eggplant (full 3D purple eggplant head) at a candlelit table. Countess Strawberry speaks in native Persian (Farsi) with a warm gentle female voice: «دوک عزیزم، اون لیاقت عشق تو رو نداشت... بذار من مرهم قلبت باشم.» Zero on-screen subtitles.',
     },
     {
       clip: 4,
       kf: `${FOP_DIR}\\part2\\keyframes\\KF_04.jpg`,
       prompt:
-        '3D stylized cartoon animation, static medium close-up keeping the character in frame the entire time (no camera cuts), glamorous anthropomorphic yellow lemon woman (Lemonella) in a gold gown gasping in shock at her smartphone screen inside a luxury room. Lemonella speaks in native Persian (Farsi) with a shocked jealous female voice: «نه... امکان نداره دوک با کنتس توت‌فرنگی دیده شده باشه!» Zero on-screen subtitles.',
+        '3D Pixar/Cinema4D stylized cartoon animation matching the reference image style, static medium close-up keeping the character in frame the entire time (no camera cuts), glamorous anthropomorphic yellow lemon woman (Lemonella with a full 3D yellow lemon head and green leaf, strictly NO human face, NO human hair) in a gold gown gasping in burning jealousy while looking at a photo on her smartphone screen inside a luxury room. Lemonella speaks in native Persian (Farsi) with a shocked jealous female voice: «نه... امکان نداره دوک با کنتس توت‌فرنگی دیده شده باشه!» Zero on-screen subtitles.',
     },
     {
       clip: 5,
       kf: `${FOP_DIR}\\part2\\keyframes\\KF_05.jpg`,
       prompt:
-        '3D stylized cartoon animation, static medium two-shot keeping both characters in frame the entire time (no camera cuts), flashy anthropomorphic banana man in a yellow leather jacket and sunglasses and glamorous yellow lemon woman (Lemonella) in a gold gown talking seriously in a luxury hallway about an envelope. First Banana Man speaks in native Persian (Farsi) with a serious male voice: «چی شده؟ توی اون پاکت آزمایش چی نوشته؟» Then Lemonella replies in native Persian (Farsi) with an emotional female voice: «چطور روت میشه حقیقت رو انکار کنی؟! این برگه همه‌چیز رو ثابت می‌کنه!» Zero on-screen subtitles.',
+        '3D Pixar/Cinema4D stylized cartoon animation matching the reference image style, static medium two-shot keeping both characters in frame the entire time (no camera cuts), flashy anthropomorphic banana man (full 3D yellow banana head with sunglasses, strictly NO human face) in a yellow leather jacket and glamorous anthropomorphic yellow lemon woman (Lemonella with a full 3D yellow lemon head, strictly NO human face, NO human hair) in a gold gown holding an opened medical DNA test envelope and paper in a luxury hallway. First Banana Man speaks in native Persian (Farsi) with a serious male voice: «چی شده؟ توی اون پاکت آزمایش چی نوشته؟» Then Lemonella replies in native Persian (Farsi) with an emotional female voice: «چطور روت میشه حقیقت رو انکار کنی؟! این برگه همه‌چیز رو ثابت می‌کنه!» Zero on-screen subtitles.',
     },
     {
       clip: 6,
       kf: `${FOP_DIR}\\part2\\keyframes\\KF_06.jpg`,
       prompt:
-        '3D stylized cartoon animation, static medium shot keeping the characters in frame the entire time (no camera cuts), glamorous yellow lemon woman (Lemonella) holding an open DNA test result paper in total shock while Banana Man and Duke Eggplant stand behind her. Lemonella speaks in native Persian (Farsi) with a terrified shocked female voice: «وای خدای من، نه... امکان نداره نتیجه آزمایش دی‌ان‌ای این باشه!» Zero on-screen subtitles.',
+        '3D Pixar/Cinema4D stylized cartoon animation matching the reference image style, static medium shot keeping the characters in frame the entire time (no camera cuts), glamorous anthropomorphic yellow lemon woman (Lemonella with a full 3D yellow lemon head, strictly NO human face) holding a medical DNA test result paper in total shock while Banana Man and Duke Eggplant stand behind her. Lemonella speaks in native Persian (Farsi) with a terrified shocked female voice: «وای خدای من، نه... امکان نداره نتیجه آزمایش دی‌ان‌ای این باشه!» Zero on-screen subtitles.',
     },
   ],
   fop_part3: [
@@ -181,37 +181,37 @@ const BATCHES = {
       clip: 1,
       kf: `${FOP_DIR}\\part3\\keyframes\\KF_01.jpg`,
       prompt:
-        '3D stylized cartoon animation, static medium close-up keeping the character in frame the entire time (no camera cuts), glamorous anthropomorphic yellow lemon woman (Lemonella) crying in a luxury marble bathroom. Lemonella speaks in native Persian (Farsi) with a tearful emotional female voice: «باورم نمیشه... بچه‌مون پسره! ای کاش بقیه حقیقت رو می‌دونستن...» Zero on-screen subtitles.',
+        '3D Pixar/Cinema4D stylized cartoon animation matching the reference image style, static medium close-up keeping the character in frame the entire time (no camera cuts), glamorous anthropomorphic yellow lemon woman (Lemonella with a full 3D yellow lemon head, strictly NO human face, NO human hair) crying emotionally in a luxury marble room. Lemonella speaks in native Persian (Farsi) with a tearful emotional female voice: «باورم نمیشه... بچه‌مون پسره! ای کاش بقیه حقیقت رو می‌دونستن...» Zero on-screen subtitles.',
     },
     {
       clip: 2,
       kf: `${FOP_DIR}\\part3\\keyframes\\KF_02.jpg`,
       prompt:
-        '3D stylized cartoon animation, static medium two-shot keeping both characters in frame the entire time (no camera cuts), flashy anthropomorphic banana man in a yellow leather jacket and dark sunglasses smiling confidently in the foreground while glamorous yellow lemon woman (Lemonella) in a gold gown holds a paper behind him. First Lemonella speaks in native Persian (Farsi) with a serious female voice: «آزمایش همه‌چیز رو ثابت کرد!» Then Banana Man replies in native Persian (Farsi) with a confident laughing male voice: «هاهاها! که چی مثلاً؟!» Zero on-screen subtitles.',
+        '3D Pixar/Cinema4D stylized cartoon animation matching the reference image style, static medium two-shot keeping both characters in frame the entire time (no camera cuts), flashy anthropomorphic banana man (full 3D yellow banana head with dark sunglasses, strictly NO human face) in a yellow leather jacket smirking in the foreground while glamorous anthropomorphic yellow lemon woman (Lemonella with a full 3D yellow lemon head, strictly NO human face) in a gold gown holds up the DNA test paper behind him. First Lemonella speaks in native Persian (Farsi) with a serious female voice: «آزمایش همه‌چیز رو ثابت کرد!» Then Banana Man replies in native Persian (Farsi) with a confident laughing male voice: «هاهاها! که چی مثلاً؟!» Zero on-screen subtitles.',
     },
     {
       clip: 3,
       kf: `${FOP_DIR}\\part3\\keyframes\\KF_03.jpg`,
       prompt:
-        '3D stylized cartoon animation, static medium two-shot keeping both characters in frame the entire time (no camera cuts), Duke Eggplant in his velvet tuxedo proudly showing an architectural blueprint on a table to Lemonella in her gold gown. Duke Eggplant speaks in native Persian (Farsi) with a warm proud male voice: «این نقشه رو ببین لمونلا؛ تزئینات طلای خالص و نمای کامل شهر... بهترین‌ها برای وارثمون!» Zero on-screen subtitles.',
+        '3D Pixar/Cinema4D stylized cartoon animation matching the reference image style, static medium two-shot keeping both characters in frame the entire time (no camera cuts), anthropomorphic purple eggplant aristocrat (Duke Eggplant with a full 3D purple eggplant head, strictly NO human face) in his velvet tuxedo proudly showing a golden nursery architectural blueprint on a table to Lemonella (full 3D yellow lemon head) in her gold gown. Duke Eggplant speaks in native Persian (Farsi) with a warm proud male voice: «این نقشه رو ببین لمونلا؛ تزئینات طلای خالص و نمای کامل شهر... بهترین‌ها برای وارثمون!» Zero on-screen subtitles.',
     },
     {
       clip: 4,
       kf: `${FOP_DIR}\\part3\\keyframes\\KF_04.jpg`,
       prompt:
-        '3D stylized cartoon animation, static medium shot keeping the character in frame the entire time (no camera cuts), an anthropomorphic dark purple aristocrat man in a dark suit stands outside in the rain at night looking toward an illuminated luxury mansion window and speaks in native Persian (Farsi) with a deep mysterious male voice: «پس فکر کردی می‌تونی از گذشته فرار کنی لمونلا؟ و اونا به هیچ‌چیز شک نکردن؟» Zero on-screen subtitles.',
+        '3D Pixar/Cinema4D stylized cartoon animation matching the reference image style, static medium shot keeping the character in frame the entire time (no camera cuts), anthropomorphic dark black-purple fig mafia boss (Shadow Fig with a full 3D dark textured fig head, strictly NO human face, wearing a dark fedora hat and black mafia trenchcoat over a black suit) standing outside in the rain at night looking toward the illuminated mansion window and speaking in native Persian (Farsi) with a deep menacing mafia boss male voice: «پس فکر کردی می‌تونی از گذشته فرار کنی لمونلا؟ و اونا به هیچ‌چیز شک نکردن؟» Zero on-screen subtitles.',
     },
     {
       clip: 5,
       kf: `${FOP_DIR}\\part3\\keyframes\\KF_05.jpg`,
       prompt:
-        '3D stylized cartoon animation, static medium close-up keeping the character in frame the entire time (no camera cuts), glamorous yellow lemon woman (Lemonella) whispering worriedly into her smartphone in a dimly lit hallway. Lemonella speaks in native Persian (Farsi) with a worried whispering female voice: «معلومه که نه... باید قبل از اینکه دوک بویی ببره از اینجا فرار کنم!» Zero on-screen subtitles.',
+        '3D Pixar/Cinema4D stylized cartoon animation matching the reference image style, static medium close-up keeping the character in frame the entire time (no camera cuts), glamorous anthropomorphic yellow lemon woman (Lemonella with a full 3D yellow lemon head and green leaf, strictly NO human face, NO human hair) whispering worriedly into her smartphone in a dimly lit mansion hallway at night. Lemonella speaks in native Persian (Farsi) with a panicked whispering female voice: «معلومه که نه... باید قبل از اینکه دوک بویی ببره از اینجا فرار کنم!» Zero on-screen subtitles.',
     },
     {
       clip: 6,
       kf: `${FOP_DIR}\\part3\\keyframes\\KF_06.jpg`,
       prompt:
-        '3D stylized cartoon animation, static medium close-up keeping the character in frame the entire time (no camera cuts), an anthropomorphic dark purple aristocrat man in a dark suit smiles confidently inside a dimly lit luxury mansion room at night and speaks in native Persian (Farsi) with a deep serious male voice: «فکر کردی می‌تونی واقعیت رو پنهان کنی عزیزم؟ تمام مدارک دست منه!» Zero on-screen subtitles.',
+        '3D Pixar/Cinema4D stylized cartoon animation matching the reference image style, static medium close-up keeping the character in frame the entire time (no camera cuts), anthropomorphic dark black-purple fig mafia boss (Shadow Fig with a full 3D dark textured fig head, strictly NO human face, wearing a black mafia trenchcoat and dark suit) holding a tiny sparkling crystal baby shoe in his black-gloved hand inside a dimly lit luxury room at night and speaking in native Persian (Farsi) with a deep menacing male voice: «فکر کردی می‌تونی واقعیت رو پنهان کنی عزیزم؟ تمام مدارک دست منه!» Zero on-screen subtitles.',
     },
   ],
   fop_part4: [
@@ -219,37 +219,37 @@ const BATCHES = {
       clip: 1,
       kf: `${FOP_DIR}\\part4\\keyframes\\KF_01.jpg`,
       prompt:
-        '3D stylized cartoon animation, static medium two-shot keeping both characters in frame the entire time (no camera cuts), glamorous yellow lemon woman (Lemonella) in a gold gown crying in the arms of purple eggplant aristocrat (Duke Eggplant) in a dark purple velvet tuxedo inside a luxury mansion room and speaking in native Persian (Farsi) with a weeping remorseful female voice: «دوک، قسم می‌خورم نمی‌خواستم اینطوری بشه! به اعتمادت خیانت کردم و همه‌چیز رو خراب کردم!» Zero on-screen subtitles.',
+        '3D Pixar/Cinema4D stylized cartoon animation matching the reference image style, static medium two-shot keeping both characters in frame the entire time (no camera cuts), glamorous anthropomorphic yellow lemon woman (Lemonella with a full 3D yellow lemon head, strictly NO human face) in a gold gown crying in the arms of anthropomorphic purple eggplant aristocrat (Duke Eggplant with a full 3D purple eggplant head, strictly NO human face) in a dark purple velvet tuxedo inside a luxury mansion room and speaking in native Persian (Farsi) with a weeping remorseful female voice: «دوک، قسم می‌خورم نمی‌خواستم اینطوری بشه! به اعتمادت خیانت کردم و همه‌چیز رو خراب کردم!» Zero on-screen subtitles.',
     },
     {
       clip: 2,
       kf: `${FOP_DIR}\\part4\\keyframes\\KF_02.jpg`,
       prompt:
-        '3D stylized cartoon animation, static medium two-shot keeping both characters in frame the entire time (no camera cuts), Duke Eggplant in a dark purple velvet tuxedo holds a black legal contract folder with a serious expression while Lemonella in a gold gown stands beside him. First Lemonella speaks in native Persian (Farsi) with a shocked tearful female voice: «این دیگه چیه؟ چرا این قرارداد رو امضا کردی؟» Then Duke Eggplant replies in native Persian (Farsi) with a firm serious male voice: «برای اینکه مطمئن بشم دیگه هیچ‌وقت فریب نمی‌خورم!» Zero on-screen subtitles.',
+        '3D Pixar/Cinema4D stylized cartoon animation matching the reference image style, static medium two-shot keeping both characters in frame the entire time (no camera cuts), Duke Eggplant (full 3D purple eggplant head, strictly NO human face) in a dark purple velvet tuxedo holding a signed legal contract folder with a firm expression while Lemonella (full 3D yellow lemon head, strictly NO human face) in a gold gown looks shocked beside him. First Lemonella speaks in native Persian (Farsi) with a shocked tearful female voice: «این دیگه چیه؟ چرا این قرارداد رو امضا کردی؟» Then Duke Eggplant replies in native Persian (Farsi) with a firm serious male voice: «برای اینکه مطمئن بشم دیگه هیچ‌وقت فریب نمی‌خورم!» Zero on-screen subtitles.',
     },
     {
       clip: 3,
       kf: `${FOP_DIR}\\part4\\keyframes\\KF_03.jpg`,
       prompt:
-        '3D stylized cartoon animation, static medium two-shot keeping both characters in frame the entire time (no camera cuts), elegant red strawberry woman (Strawberry Countess) in a crimson evening gown leans in warmly toward Duke Eggplant at a candlelit table and speaks in native Persian (Farsi) with a soft gentle female voice: «لازم نیست امشب تنها بمونی دوک عزیزم... تو لیاقتت خیلی بیشتر از این غم و غصه‌ست.» Zero on-screen subtitles.',
+        '3D Pixar/Cinema4D stylized cartoon animation matching the reference image style, static medium two-shot keeping both characters in frame the entire time (no camera cuts), elegant anthropomorphic red strawberry woman (Countess Strawberry with a full 3D red seeded strawberry head and green leaf crown, strictly NO human face, NO human hair) in a crimson evening gown leaning warmly toward Duke Eggplant (full 3D purple eggplant head, strictly NO human face) at a candlelit table and speaking in native Persian (Farsi) with a soft gentle female voice: «لازم نیست امشب تنها بمونی دوک عزیزم... تو لیاقتت خیلی بیشتر از این غم و غصه‌ست.» Zero on-screen subtitles.',
     },
     {
       clip: 4,
       kf: `${FOP_DIR}\\part4\\keyframes\\KF_04.jpg`,
       prompt:
-        '3D stylized cartoon animation, static medium close-up keeping the character in frame the entire time (no camera cuts), glamorous yellow lemon woman (Lemonella) in a gold gown cries in front of a vanity mirror holding a small photo and speaks in native Persian (Farsi) with a sad crying female voice: «حالا با این وضعیت و دردسرهای جدید چه خاکی به سرم بریزم؟!» Zero on-screen subtitles.',
+        '3D Pixar/Cinema4D stylized cartoon animation matching the reference image style, static medium close-up keeping the character in frame the entire time (no camera cuts), glamorous anthropomorphic yellow lemon woman (Lemonella with a full 3D yellow lemon head and green leaf, strictly NO human face, NO human hair) in a gold gown crying in distress holding an ultrasound photo in front of a luxury vanity mirror and speaking in native Persian (Farsi) with a sad crying female voice: «حالا با این وضعیت و دردسرهای جدید چه خاکی به سرم بریزم؟!» Zero on-screen subtitles.',
     },
     {
       clip: 5,
       kf: `${FOP_DIR}\\part4\\keyframes\\KF_05.jpg`,
       prompt:
-        '3D stylized cartoon animation, static medium shot keeping the characters in frame the entire time (no camera cuts), glamorous yellow lemon woman (Lemonella) in a gold gown speaks emotionally in the foreground while Duke Eggplant and Strawberry Countess sit in the background. Lemonella speaks in native Persian (Farsi) with a loud upset female voice: «به چه حقی به من پشت می‌کنی؟! وقتی باهات حرف می‌زنم تو چشمام نگاه کن!» Zero on-screen subtitles.',
+        '3D Pixar/Cinema4D stylized cartoon animation matching the reference image style, static medium shot keeping the characters in frame the entire time (no camera cuts), glamorous anthropomorphic yellow lemon woman (Lemonella with a full 3D yellow lemon head, strictly NO human face) in a gold gown confronting Countess Strawberry (full 3D red strawberry head) and Duke Eggplant (full 3D purple eggplant head) in a luxury hall. Lemonella speaks in native Persian (Farsi) with a loud upset female voice: «به چه حقی به من پشت می‌کنی؟! وقتی باهات حرف می‌زنم تو چشمام نگاه کن!» Zero on-screen subtitles.',
     },
     {
       clip: 6,
       kf: `${FOP_DIR}\\part4\\keyframes\\KF_06.jpg`,
       prompt:
-        '3D stylized cartoon animation, static medium two-shot keeping both characters in frame the entire time (no camera cuts), Duke Eggplant in a dark purple velvet tuxedo holds and protects Lemonella in a gold gown inside the mansion hall during a dramatic storm and speaks in native Persian (Farsi) with an urgent protective male voice: «محکم منو بگیر لمونلا! اون‌ها به عمارت رسیدن!» Zero on-screen subtitles.',
+        '3D Pixar/Cinema4D stylized cartoon animation matching the reference image style, static medium two-shot keeping both characters in frame the entire time (no camera cuts), anthropomorphic purple eggplant aristocrat (Duke Eggplant with a full 3D purple eggplant head, strictly NO human face) in a dark purple velvet tuxedo shielding and holding Lemonella (full 3D yellow lemon head, strictly NO human face) in a gold gown inside the mansion hall as shadowy attackers approach during a night storm, speaking in native Persian (Farsi) with an urgent protective male voice: «محکم منو بگیر لمونلا! اون‌ها به عمارت رسیدن!» Zero on-screen subtitles.',
     },
   ],
   fop_part5: [
@@ -257,37 +257,37 @@ const BATCHES = {
       clip: 1,
       kf: `${FOP_DIR}\\part5\\keyframes\\KF_01.jpg`,
       prompt:
-        '3D stylized cartoon animation, static medium close-up keeping the character in frame the entire time (no camera cuts), flashy anthropomorphic banana man in a yellow leather jacket and dark sunglasses sits in a neon lounge at night looking bitter and upset and speaks in native Persian (Farsi) with a bitter upset male voice: «پس یعنی منم برات فقط یه اشتباهِ دیگه بودم لمونلا؟!» Zero on-screen subtitles.',
+        '3D Pixar/Cinema4D stylized cartoon animation matching the reference image style, static medium close-up keeping the character in frame the entire time (no camera cuts), flashy anthropomorphic banana man (full 3D yellow banana head wearing dark sunglasses, strictly NO human face) in a yellow leather jacket standing in a dark luxury room looking bitter and betrayed and speaking in native Persian (Farsi) with a bitter upset male voice: «پس یعنی منم برات فقط یه اشتباهِ دیگه بودم لمونلا؟!» Zero on-screen subtitles.',
     },
     {
       clip: 2,
       kf: `${FOP_DIR}\\part5\\keyframes\\KF_02.jpg`,
       prompt:
-        '3D stylized cartoon animation, static medium close-up keeping the character in frame the entire time (no camera cuts), anthropomorphic purple eggplant aristocrat (Duke Eggplant) in a dark purple velvet tuxedo looks down in shock in his luxury mansion and speaks in native Persian (Farsi) with a stunned male voice: «تو قبل از من با اون رابطه داشتی؟! چرا این راز رو پنهان کردی؟!» Zero on-screen subtitles.',
+        '3D Pixar/Cinema4D stylized cartoon animation matching the reference image style, static medium close-up keeping the character in frame the entire time (no camera cuts), anthropomorphic purple eggplant aristocrat (Duke Eggplant with a full 3D glossy purple eggplant head and green calyx crown, strictly NO human face) in a dark purple velvet tuxedo looking stunned and heartbroken as he learns about Lemonella’s past with Shadow Fig, speaking in native Persian (Farsi) with a stunned male voice: «تو قبل از من با اون رابطه داشتی؟! چرا این راز رو پنهان کردی؟!» Zero on-screen subtitles.',
     },
     {
       clip: 3,
       kf: `${FOP_DIR}\\part5\\keyframes\\KF_03.jpg`,
       prompt:
-        '3D stylized cartoon animation, static medium close-up keeping the character in frame the entire time (no camera cuts), glamorous yellow lemon woman (Lemonella) in a gold gown stands in a dark luxury hall looking worried and emotional and speaks in native Persian (Farsi) with a worried emotional female voice: «قبل از دوک، من توی اون شهر غریب تنها بودم و هیچ چاره‌ای نداشتم!» Zero on-screen subtitles.',
+        '3D Pixar/Cinema4D stylized cartoon animation matching the reference image style, static medium close-up keeping the character in frame the entire time (no camera cuts), glamorous anthropomorphic yellow lemon woman (Lemonella with a full 3D yellow lemon head and green leaf, strictly NO human face, NO human hair) in a gold gown standing in a dark luxury casino hall with tears in her eyes explaining her past and speaking in native Persian (Farsi) with a tearful emotional female voice: «قبل از دوک، من توی اون شهر غریب تنها بودم و هیچ چاره‌ای نداشتم!» Zero on-screen subtitles.',
     },
     {
       clip: 4,
       kf: `${FOP_DIR}\\part5\\keyframes\\KF_04.jpg`,
       prompt:
-        '3D stylized cartoon animation, static medium two-shot keeping both characters in frame the entire time (no camera cuts), Duke Eggplant in a dark purple velvet tuxedo embraces the crying Lemonella in a gold gown tenderly in the mansion and speaks in native Persian (Farsi) with a warm forgiving male voice: «برام مهم نیست قبل از من کی توی گذشته‌ت بوده... من از تو و بچه‌مون محافظت می‌کنم!» Zero on-screen subtitles.',
+        '3D Pixar/Cinema4D stylized cartoon animation matching the reference image style, static medium two-shot keeping both characters in frame the entire time (no camera cuts), Duke Eggplant (full 3D purple eggplant head, strictly NO human face) in a dark purple velvet tuxedo embracing the crying Lemonella (full 3D yellow lemon head, strictly NO human face) in a gold gown tenderly in the mansion and speaking in native Persian (Farsi) with a warm forgiving male voice: «برام مهم نیست قبل از من کی توی گذشته‌ت بوده... من از تو و بچه‌مون محافظت می‌کنم!» Zero on-screen subtitles.',
     },
     {
       clip: 5,
       kf: `${FOP_DIR}\\part5\\keyframes\\KF_05.jpg`,
       prompt:
-        '3D stylized cartoon animation, static medium two-shot keeping both characters in frame the entire time (no camera cuts), Duke Eggplant in a dark purple velvet tuxedo kneels on the mansion floor holding Lemonella in a gold gown who feels dizzy and speaks in native Persian (Farsi) with a worried urgent male voice: «تحمل کن عزیزم! سریع زنگ بزنید به اورژانس و بیمارستان!» Zero on-screen subtitles.',
+        '3D Pixar/Cinema4D stylized cartoon animation matching the reference image style, static medium two-shot keeping both characters in frame the entire time (no camera cuts), Duke Eggplant (full 3D purple eggplant head, strictly NO human face) in a dark purple velvet tuxedo kneeling on the mansion floor holding Lemonella (full 3D yellow lemon head, strictly NO human face) in a gold gown as she collapses in pain, speaking in native Persian (Farsi) with a worried urgent male voice: «تحمل کن عزیزم! سریع زنگ بزنید به اورژانس و بیمارستان!» Zero on-screen subtitles.',
     },
     {
       clip: 6,
       kf: `${FOP_DIR}\\part5\\keyframes\\KF_06.jpg`,
       prompt:
-        '3D stylized cartoon animation, static medium shot keeping the characters in frame the entire time (no camera cuts), an anthropomorphic green pear doctor in a white medical coat and stethoscope holds a medical chart in a hospital room beside Duke Eggplant and Lemonella and speaks in native Persian (Farsi) with a serious surprised male doctor voice: «متاسفانه اسکن‌ها یه چیز غیرمنتظره رو نشون میدن... توی شکمت سه تا بچه‌ست! سه‌قلو بارداری!» Zero on-screen subtitles.',
+        '3D Pixar/Cinema4D stylized cartoon animation matching the reference image style, static medium shot keeping the characters in frame the entire time (no camera cuts), anthropomorphic green pear doctor (Dr. Pear with a full 3D green pear head and glasses, strictly NO human face) in a white medical coat and stethoscope holding up an ultrasound scan showing three baby fetuses in a hospital room beside Duke Eggplant (full 3D purple eggplant head) and Lemonella (full 3D yellow lemon head), speaking in native Persian (Farsi) with a surprised male doctor voice: «متاسفانه اسکن‌ها یه چیز غیرمنتظره رو نشون میدن... توی شکمت سه تا بچه‌ست! سه‌قلو بارداری!» Zero on-screen subtitles.',
     },
   ],
 };

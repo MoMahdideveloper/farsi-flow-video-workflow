@@ -7,7 +7,7 @@
   "title_en": "Fruits of Power - Part 3",
   "source_video": "${SRC}\\12_2026-10-19_DesSYDvhdpd.mp4",
   "story_summary_fa": "دوک اتاق طلاکوب وارث رو طراحی می‌کنه؛ رئیس مافیا انجیر سیاه با مدارک گذشته لمونلا برمی‌گرده و لمونلا می‌خواد فرار کنه.",
-  "fallback_to_source_on_visual_fail": true,
+  "fallback_to_source_on_visual_fail": false,
   "tight_speech_trim": true,
   "variables": {
     "BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi",
@@ -192,7 +192,7 @@
           "هاهاها! که چی مثلاً؟!"
         ]
       ],
-      "notes": "force_source_bridge: replace sanitized hat/sunglasses Flow clip with clean original 3D DNA confrontation scene"
+      "notes": "pure_flow_native"
     },
     {
       "id": "clip_03",
@@ -285,7 +285,7 @@
           "فکر کردی می‌تونی واقعیت رو پنهان کنی عزیزم؟ تمام مدارک دست منه!"
         ]
       ],
-      "notes": "force_source_bridge: replace monocle-edited Flow clip with clean original 3D Shadow Fig evidence scene"
+      "notes": "pure_flow_native"
     }
   ],
   "source_span_review_note": "Candidate source windows, not verified scene boundaries. Validate against the original MP4 duration and review narrative coverage on the media host before publication. Stage 2 uses strict bounds: no silent clamp."

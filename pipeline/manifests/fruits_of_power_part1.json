@@ -7,7 +7,7 @@
   "title_en": "Fruits of Power - Part 1",
   "source_video": "${SRC}\\14_2026-10-19_DeqOJQTqU1S.mp4",
   "story_summary_fa": "دوک بادمجان با گل رز بنفش برمی‌گرده و خیانت لمونلای باردار با موز طلایی رو کشف می‌کنه.",
-  "fallback_to_source_on_visual_fail": true,
+  "fallback_to_source_on_visual_fail": false,
   "tight_speech_trim": true,
   "variables": {
     "BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi",

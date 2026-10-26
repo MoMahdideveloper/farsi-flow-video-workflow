@@ -7,7 +7,7 @@
   "title_en": "Fruits of Power - Part 2",
   "source_video": "${SRC}\\13_2026-10-19_Der6ej5KRCT.mp4",
   "story_summary_fa": "کنتس توت‌فرنگی کنار دوک تنهاست، لمونلا حسادت می‌کنه و پاکت آزمایش دی‌ان‌ای باز میشه.",
-  "fallback_to_source_on_visual_fail": true,
+  "fallback_to_source_on_visual_fail": false,
   "tight_speech_trim": true,
   "variables": {
     "BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi",
