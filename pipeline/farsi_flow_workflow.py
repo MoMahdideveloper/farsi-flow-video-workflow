@@ -1165,3 +1165,145 @@ def run_clips(ep: Episode, force: bool = False, render: bool = True,
             res = render_clip(ep, res, work, font_path, force)  # type: ignore[arg-type]
         results.append(res)
     return results, font_path, font_notes
+
+
+# ------------------------------------------------- verification (ffprobe) --
+def av_checks(ep: Episode, path: Path, expected: Optional[float] = None) -> dict:
+    """ffprobe gate: h264 WxH @ fps video + aac 48 kHz stereo audio, A/V drift
+    < 0.15 s, and (optionally) duration within ~1.5 frames of ``expected``."""
+    p = probe_media(path)
+    v, a = p["video"], p["audio"]
+    fps = float(ep.video["fps"])
+    c = {"has_video": v is not None, "has_audio": a is not None,
+         "video_h264": bool(v) and v["codec"] == "h264",
+         "video_size": bool(v) and (v["width"], v["height"]) == (int(ep.video["width"]), int(ep.video["height"])),
+         "video_fps": bool(v) and abs(v["fps"] - fps) < 0.01,
+         "audio_aac": bool(a) and a["codec"] == "aac",
+         "audio_rate_channels": bool(a) and a["sample_rate"] == int(ep.audio["sample_rate"])
+                                and a["channels"] == int(ep.audio["channels"])}
+    drift = round(abs(v["duration"] - a["duration"]), 4) if v and a else None
+    c["av_drift_ok"] = drift is not None and drift < DRIFT_TOLERANCE
+    if expected is not None:
+        c["duration_ok"] = bool(v) and abs(v["duration"] - expected) <= 1.5 / fps + 0.02
+    return {"path": str(path), "sha256": sha256_file(path), "probe": p, "av_drift_sec": drift,
+            "expected_duration": None if expected is None else round(expected, 4),
+            "checks": c, "pass": all(c.values())}
+
+
+def promote(ep: Episode, tmp: Path, dst: Path, expected: float, what: str) -> dict:
+    """Verify a temp render; only then replace the previous output."""
+    qa = av_checks(ep, tmp, expected)
+    if not qa["pass"]:
+        bad = [k for k, ok in qa["checks"].items() if not ok]
+        raise PipelineError(f"{what}: verification failed {bad} (kept previous {dst.name}; temp at {tmp})")
+    os.replace(tmp, dst)
+    qa["path"] = str(dst)
+    return qa
+
+
+# ------------------------------------------------------------ Base master --
+def timeline(results: list[ClipResult]) -> tuple[list[float], float]:
+    offs, t = [], 0.0
+    for r in results:
+        offs.append(round(t, 4))
+        t += r.duration
+    return offs, round(t, 4)
+
+
+def assemble_base(ep: Episode, results: list[ClipResult], force: bool = False) -> dict:
+    """Base_<ep>.mp4 = story-only master.  Video: 'timeline' mode (default)
+    concatenates the normalised clips and burns every pill at its global
+    offset (one generation from the intermediates); 'concat_subbed' joins the
+    clip_XX_subbed.mp4 videos.  Audio: the PCM sidecars of the very samples in
+    each clip_XX_subbed.mp4, concatenated sample-exactly and AAC-encoded once."""
+    ep.out_dir.mkdir(parents=True, exist_ok=True)
+    dst = ep.out_dir / f"{ep.base_name}.mp4"
+    mode = str(ep.outputs.get("base_mode", "timeline"))
+    if mode not in ("timeline", "concat_subbed"):
+        raise PipelineError("outputs.base_mode must be timeline | concat_subbed")
+    offs, total = timeline(results)
+    key = fingerprint({"mode": mode, "clips": [sha256_file(r.subbed[0]) for r in results],
+                       "wav": [sha256_file(r.norm_wav) for r in results],  # type: ignore[arg-type]
+                       "video": ep.video, "audio": ep.audio, "v": PIPELINE_VERSION})
+    cues = [(o + c.start, o + c.end, c.speaker, c.text) for r, o in zip(results, offs) for c in r.cues]
+    write_srt(ep.out_dir / f"{ep.base_name}.srt", [(a, b, t) for a, b, _, t in cues])
+    if not force and cache_ok([dst], key):
+        log(f"Base up to date: {dst.name}")
+        return {"path": dst, "duration": total, "cues": cues, "offsets": offs, "qa": av_checks(ep, dst, total)}
+    n = len(results)
+    args: list[str] = []
+    for r in results:
+        args += ["-i", str(r.norm_mp4 if mode == "timeline" else r.subbed[0])]
+    for r in results:
+        args += ["-i", str(r.norm_wav)]
+    parts = ["".join(f"[{i}:v]" for i in range(n)) + f"concat=n={n}:v=1:a=0[vc]",
+             "".join(f"[{n + i}:a]" for i in range(n)) + f"concat=n={n}:v=0:a=1[a]"]
+    cur = "[vc]"
+    if mode == "timeline":
+        shifted = [Overlay(ov.start + o, ov.end + o, ov.kind, ov.speaker, ov.text, ov.meta)
+                   for r, o in zip(results, offs) for ov in r.overlays]
+        for ov in shifted:
+            args += ["-i", ov.meta["png"]]
+        chain, cur = overlay_chain(cur, shifted, 2 * n)
+        parts += chain
+    parts.append(f"{cur}format=yuv420p[v]")
+    tmp = dst.with_name(dst.stem + ".tmp.mp4")
+    log(f"Base: {n} clips, {total:.3f}s ({mode}) -> {dst.name}")
+    run(ffmpeg_cmd(*args, "-filter_complex", ";".join(parts), "-map", "[v]", "-map", "[a]",
+                   "-c:v", "libx264", "-preset", str(ep.video["preset"]), "-crf", str(ep.video["crf"]),
+                   "-pix_fmt", "yuv420p", "-r", f"{float(ep.video['fps']):g}",
+                   "-c:a", "aac", "-b:a", str(ep.audio["bitrate"]), "-ar", str(ep.audio["sample_rate"]),
+                   "-ac", str(ep.audio["channels"]), "-movflags", "+faststart", str(tmp)),
+        what="assemble Base")
+    qa = promote(ep, tmp, dst, total, "Base")
+    cache_write(dst, key, duration=total, clips=[r.clip.id for r in results])
+    return {"path": dst, "duration": total, "cues": cues, "offsets": offs, "qa": qa}
+
+
+# ------------------------------------------------------- CTA + Master ------
+def normalize_cta(ep: Episode, cta: Path, font_path: Optional[str], force: bool = False) -> tuple[Path, float, str]:
+    """CTA -> WxH @ fps, frame-exact, 48 kHz stereo PCM (.mov).  Burns
+    cta_subtitles only when cta_burn_subtitles is true (the Kelidbox
+    *_subbed.mp4 asset already carries them); loudnorm only if cta_loudnorm."""
+    work = work_dir(ep)
+    out = work / "cta_norm.mov"
+    burn = bool(ep.outputs.get("cta_burn_subtitles", False))
+    lnorm = bool(ep.outputs.get("cta_loudnorm", False))
+    cta_sha = sha256_file(cta)
+    key = fingerprint({"cta": cta_sha, "burn": burn, "ln": lnorm, "video": ep.video, "audio": ep.audio,
+                       "subs": [asdict(c) for c in ep.cta_subtitles] if burn else None,
+                       "v": PIPELINE_VERSION})
+    if not force and cache_ok([out], key):
+        return out, float(json.loads(_record_path(out).read_text("utf-8"))["duration"]), cta_sha
+    p = probe_media(cta)
+    fps, sr = float(ep.video["fps"]), int(ep.audio["sample_rate"])
+    durs = [s["duration"] for s in (p["video"], p["audio"]) if s and s["duration"] > 0]
+    n, q = frame_quantize(min(durs) if durs else p["format_duration"], fps)
+    args = ["-i", str(cta)]
+    a_in = "[0:a]"
+    if p["audio"] is None:
+        args += ["-f", "lavfi", "-i", f"anullsrc=r={sr}:cl=stereo"]
+        a_in = "[1:a]"
+        ep.warnings.append(f"CTA {cta.name} has no audio stream; silence inserted")
+    parts = [f"[0:v]{_scale_filter(ep.video)},fps={fps:g},tpad=stop_mode=clone:stop_duration=1,"
+             f"trim=end_frame={n},setpts=PTS-STARTPTS[vs]"]
+    cur = "[vs]"
+    if burn and ep.cta_subtitles and font_path:
+        ovs = build_overlays(ep, ep.cta_subtitles, q, work / "pills", "cta", font_path, False)
+        base_idx = 2 if p["audio"] is None else 1
+        for ov in ovs:
+            args += ["-i", ov.meta["png"]]
+        chain, cur = overlay_chain(cur, ovs, base_idx)
+        parts += chain
+    parts.append(f"{cur}format=yuv420p[v]")
+    parts.append(f"{a_in}asetpts=PTS-STARTPTS,{ep.audio['loudnorm'] + ',' if lnorm else ''}"
+                 f"aresample={sr},aformat=sample_fmts=fltp:channel_layouts=stereo,"
+                 f"apad,atrim=end_sample={int(round(q * sr))}[a]")
+    tmp = out.with_name("cta_norm.tmp.mov")
+    run(ffmpeg_cmd(*args, "-filter_complex", ";".join(parts), "-map", "[v]", "-map", "[a]",
+                   "-c:v", "libx264", "-preset", str(ep.video["preset"]), "-crf", str(ep.video["work_crf"]),
+                   "-pix_fmt", "yuv420p", "-r", f"{fps:g}", "-c:a", "pcm_s16le", str(tmp)),
+        what=f"normalise CTA {cta.name}")
+    os.replace(tmp, out)
+    cache_write(out, key, duration=round(q, 4), frames=n, source=str(cta))
+    return out, round(q, 4), cta_sha
