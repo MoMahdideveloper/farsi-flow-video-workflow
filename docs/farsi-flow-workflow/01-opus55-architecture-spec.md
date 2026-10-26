@@ -1,6 +1,6 @@
 # 01 · Farsi Google Flow Viral Series Workflow — Architecture Spec (Stage 1)
 
-Author: Stage 1 (Principal Video Pipeline Architect & Core Builder) · Pipeline version `1.0.0`
+Author: Stage 1 (Principal Video Pipeline Architect & Core Builder) · Pipeline version `1.0.1`
 Status: **implemented, pushed to `main`, smoke-tested end-to-end on synthetic media.**
 Human/audio review of real Flow footage is still **pending** (see §9).
 
@@ -247,11 +247,11 @@ segments), `speech` (full analyzer report), `plan` (requested vs final trim, shi
 
 | Automatic gate | Passes when |
 |----------------|-------------|
-| `per_clip_media` | every `clip_XX_subbed.mp4`: h264 720×1280 @ 24, aac 48 kHz stereo, `|v−a| < 0.15 s`, duration within 1.5 frames of plan |
+| `per_clip_media` | every `clip_XX_subbed.mp4`: h264 720×1280 @ 24, aac 48 kHz stereo, `|v−a| < 0.15 s`, **`audio_contiguous`** (no audio PTS jumps / stretched packets, v1.0.1), duration within 1.5 frames of plan |
 | `subtitle_bounds` | every cue inside its clip, no overlap with the previous cue |
 | `pill_layout` | every pill fits `W − 84` and lies inside the frame |
 | `speech_safe_trim` | no final window starts/ends inside speech or drops speech energy |
-| `base_media` / `master_media` | same ffprobe checks + expected duration |
+| `base_media` / `master_media` | same ffprobe checks (incl. `audio_contiguous`) + expected duration |
 | `master_single_cta` | `Master − Base − CTA` within 1.5 frames (exactly one CTA) |
 
 `overall_automatic` is `pass` only if every automatic gate passes. The **human_review** block
@@ -323,8 +323,15 @@ Synthetic media: six 1080×1920 @ 30 fps `testsrc2` clips with 44.1 kHz mono ton
 | `clipboard-prompt --list / --dry-run`, `clipboard-image --dry-run` | exit 0; landscape keyframe rejected with exit 1 |
 | Manifests vs reference scripts | trims, cues, speakers, Persian text, CTA subs verbatim (ast-checked) |
 
-Bug found and fixed during the smoke test: adaptive speech threshold could exceed the clip's peak
-on dense dialogue (commit `aa196bb`, §4).
+Bugs found and fixed during Stage 1 verification:
+
+- `aa196bb` (v1.0.0): adaptive speech threshold could exceed the clip's peak on dense dialogue (§4).
+- `5572fbe` (v1.0.1, parallel session): `loudnorm` emits a 67–83 ms audio PTS hole ~5.5 s into a
+  clip; the MP4 muxer stored it as one stretched AAC packet, so `clip_XX_subbed.mp4` audio ran late
+  after that point while the 0.15 s drift gate still passed. Fixed with `asetpts=N/SR/TB` after
+  `loudnorm` (clips + CTA) plus the `audio_contiguous` gate; the version bump invalidates cached
+  intermediates. Base/Master were never affected (PCM sidecar path). Re-verified on v1.0.1:
+  `clip_01`/`clip_03` `audio_contiguous = true`, A/V drift 0.3–0.7 ms, all gates pass.
 
 ## 10. Known limits & hand-off to later stages
 
