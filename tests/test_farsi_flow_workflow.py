@@ -220,7 +220,12 @@ def test_warn_retains_unsafe_window_and_fails_gate(media):
 def test_exact_splice_raw_original_and_fallback(media):
     root, original = media
     data = copy.deepcopy(original)
-    clips = Path(data["clips_dir"])
+    # A real pre-spliced fallback must cover the curated 7.50s out-point.
+    # Keep it isolated so this regression cannot mutate the shared fixture.
+    clips = root / "splice originals"
+    clips.mkdir()
+    data["clips_dir"] = str(clips)
+    synth(clips / "clip_03.mp4", 630, 7.7, ((.9, 1.8), (5.46, 6.86)))
     raw = clips / "clip_03_raw_orig.mp4"
     synth(raw, 630, 8.9, ((.9, 1.8), (5.4, 5.9), (6.4, 7.8)))
     raw_hash = fw.sha256_file(raw)
@@ -250,6 +255,7 @@ def test_exact_splice_raw_original_and_fallback(media):
         fallback = json.loads((Path(data["out_dir"]) / "qa_report.json").read_text())
         assert fallback["overall_status"] == "pass"
         assert fallback["clips"][0]["provenance"]["mode"] == "pre_spliced_file"
+        assert fallback["clips"][0]["plan"]["final"] == [.5, 7.5]
         assert fallback["clips"][0]["provenance"]["source_sha256"] == fallback_hash
         assert any("pre-spliced" in w for w in fallback["warnings"])
     finally:
@@ -483,3 +489,64 @@ def test_ffprobe_na_fields_are_tolerated(monkeypatch, tmp_path):
             "duration": "N/A", "nb_frames": "N/A", "avg_frame_rate": "24/1", "start_time": "N/A"}]})
     probe = fw.probe_media(tmp_path / "video.mp4")
     assert probe["video"]["duration"] == 1.5 and probe["video"]["frames"] == 0
+
+
+@pytest.mark.parametrize("edge,segments,span", [
+    ("start", [(0.2, 5.22), (6.14, 8.6)], (0.1, 0.7)),
+    ("end", [(0.0, 5.22), (6.14, 8.6)], (8.3, 8.8)),
+])
+def test_outer_splice_cuts_cannot_escape_audit(edge, segments, span):
+    boundaries = fw.splice_boundary_checks(segments, [span], .02)
+    assert len(boundaries) == 4
+    flagged = [b for b in boundaries if b["touches_speech"]]
+    assert len(flagged) == 1 and flagged[0]["edge"] == edge
+    assert flagged[0]["crossfade_neighborhood_sec"] == 0
+
+
+def test_internal_splice_crossfade_has_speech_guard():
+    boundaries = fw.splice_boundary_checks([(0, 5.22), (6.14, 8.6)], [(5.19, 5.21)], .02)
+    assert boundaries[1]["touches_speech"]
+    assert boundaries[1]["crossfade_neighborhood_sec"] == .02
+
+
+@pytest.mark.parametrize("mode", ["warn", "auto_expand", "off"])
+def test_trim_beyond_source_is_not_silently_shortened(mode):
+    clip = fw.ClipSpec(1, "clip_03", "clip_03.mp4", .5, 7.5, [], speech_safe=mode)
+    with pytest.raises(fw.PipelineError, match="exceeds source duration"):
+        fw.plan_trim(clip, None, 6.4, fw.SPEECH_DEFAULTS)
+    assert (clip.trim_in, clip.trim_out) == (.5, 7.5)
+
+
+@pytest.mark.parametrize("starts", [(0, .2), (10, 10), (-.03, .03)])
+@pytest.mark.parametrize("stage", ["direct", "splice"])
+def test_source_pts_offset_rejected_before_audio_retiming(tmp_path, monkeypatch, starts, stage):
+    ep = fw.load_manifest(ROOT / "pipeline/manifests/series1_part1_whats_her_number.json")
+    monkeypatch.setattr(fw, "prepare_source", lambda *args: (tmp_path / "source.mp4", {}))
+    monkeypatch.setattr(fw, "probe_media", lambda _: {
+        "video": {"duration": 10, "start_time": starts[0]},
+        "audio": {"duration": 10, "start_time": starts[1]}})
+    with pytest.raises(fw.PipelineError, match="source (stream start offsets|A/V starts misaligned)"):
+        if stage == "direct":
+            fw.plan_clip(ep, ep.clips[0], tmp_path)
+        else:
+            fw.splice_clip(tmp_path / "source.mp4", [(0, 1)], tmp_path / "out.mov", ep.speech, ep.video)
+
+
+def test_outer_splice_tail_failure_reaches_cli_and_qa(media):
+    root, original = media
+    data = copy.deepcopy(original)
+    clips = root / "unsafe splice originals"
+    clips.mkdir()
+    synth(clips / "clip_03_raw_orig.mp4", 630, 8.9, ((.9, 1.8), (8.3, 8.8)))
+    data.update(clips_dir=str(clips), out_dir=str(root / "unsafe splice qa"))
+    data["clips"] = [{"id": "clip_03", "file": "clip_03.mp4",
+                      "raw_orig_file": "clip_03_raw_orig.mp4",
+                      "splice_segments": [[0.0, 5.22], [6.14, 8.60]],
+                      "trim_in": 0, "trim_out": None, "subtitles": []}]
+    path = save_manifest(root / "unsafe-splice.json", data)
+    cli(path, "speech-audit", "--json", expected=1)
+    report = json.loads((Path(data["out_dir"]) / "qa_report_speech-audit.json").read_text())
+    assert report["overall_status"] == "fail"
+    assert report["gates"]["automatic"]["splice_boundaries"] == "fail"
+    cuts = report["clips"][0]["provenance"]["splice_audit"]["boundaries"]
+    assert any(c["at_sec"] == 8.6 and c["touches_speech"] for c in cuts)
