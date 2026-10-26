@@ -451,10 +451,11 @@ def test_all_six_series1_clips_with_shipped_windows(media):
 def test_reference_scripts_match_manifest_dialogue_and_trims():
     import ast
     import re
+    import textwrap
     text = (ROOT / "docs" / "farsi-flow-workflow" / "00-context-and-requirements.md").read_text()
     references = []
     for source in re.findall(r"```python\n(.*?)```", text, flags=re.S):
-        for node in ast.parse(source).body:
+        for node in ast.parse(textwrap.dedent(source)).body:
             if isinstance(node, ast.Assign) and any(isinstance(t, ast.Name) and t.id == "CLIPS" for t in node.targets):
                 references.append(ast.literal_eval(node.value))
     assert len(references) == 2
