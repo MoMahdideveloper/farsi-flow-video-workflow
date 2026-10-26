@@ -16,3 +16,4 @@ Environment probed: Python 3.12.3, ffmpeg 6.1.1 (libx264, aac, libmp3lame), Pill
 arabic-reshaper 3.0.1, python-bidi 0.6.12, no OpenCV (pipeline deliberately does not need it).
 
 ### Log
+- 2026-10-26T12:01Z · `62aa669` · Created TRACE.md with Stage 1 plan + environment probe
