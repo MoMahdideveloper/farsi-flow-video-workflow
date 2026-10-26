@@ -101,3 +101,219 @@ Prompt: «همین محصول را با شکل، رنگ و لوگوی ثابت �
 | 32–40 | «قیمت رو کامنت کن؛ لینک و راهنمای خرید رو می‌فرستیم.» | Link in DM; actual Enamad details in trust highlight |
 
 Caption shared by pinned posts: «کد WELCOME10: ۱۰٪ تخفیف تا سقف ۱۵۰٬۰۰۰ تومان؛ حداقل سفارش ۱۰۰٬۰۰۰ تومان. ۴ قسط ترب‌پی / دیجی‌پی طبق شرایط اعتبار. قبل پرداخت، مبلغ نهایی، امکان ترکیب کد و قسط، سررسیدها و زمان تحویل را بررسی کن.»
+
+### Five story highlights — exact frame scripts
+
+Use the requested full titles on each opening frame. Short cover labels are پیشنهاد ساخت / درآمد / ۴ قسط / تخفیف / اعتماد if Instagram truncates the full title. Each frame 5–8 seconds; use real screen captures for store or payment claims.
+
+#### 🎬 با AI چی بسازم؟
+1. «مغازه داری؟ عکس محصولت رو به نمونه تیزر تبدیل کن.» — same product before/after, no changed features.
+2. «دوست نداری جلوی دوربین باشی؟ داستان کوتاه بدون چهره بساز.» — recognizable fruit-series bridge.
+3. «ارائه داری؟ از متن درس، پیش‌نویس اسلاید بگیر و بازبینی کن.» — reviewed draft, not a perfect grade.
+4. «برای شروع، تیزر یا انیمیشن یا اسلاید رو دایرکت کن.» — route to the matching product only.
+
+#### 💰 درآمد با ویدیو AI
+1. «اول نمونه‌کار بساز؛ خرید ابزار به‌تنهایی درآمد نمی‌سازه.» — show clearly labelled fictional cafe brief.
+2. «با اجازه صاحب کسب‌وکار، یک نمونه کاور و ویدیوی کوتاه آماده کن.» — do not invent client endorsements.
+3. «تعداد خروجی، اصلاحات و حق استفاده رو قبل سفارش مشخص کن.» — one sample scope card.
+4. «برای مسیر نمونه‌کار، درآمد رو دایرکت کن. سفارش و درآمد تضمینی نیست.» — Canva starter; no salary screenshots.
+
+#### 💳 خرید قسطی ۴ ماهه
+1. «پرداخت ۴ قسط با ترب‌پی یا دیجی‌پی؛ طبق شرایط اعتبار.» — four payments, not a promise of four full months after delivery.
+2. «محصول و پلن رو انتخاب کن؛ در تسویه گزینه پرداخت قسطی رو ببین.» — actual checkout screenshot.
+3. «مبلغ هر قسط، پیش‌پرداخت احتمالی، کارمزد و تاریخ سررسید رو همان‌جا بررسی کن.» — provider's schedule is authoritative.
+4. «گزینه قسط نبود؟ شرایط اعتبار یا محصول رو با پشتیبانی بررسی کن. خرید زیر سن قانونی با والد یا سرپرست.» — do not imply universal eligibility.
+
+#### 🎁 کد تخفیف ۱۰٪
+1. «کد: WELCOME10» — copyable Latin code; keep direction LTR inside RTL text.
+2. «۱۰٪ تخفیف تا سقف ۱۵۰٬۰۰۰ تومان؛ حداقل سفارش ۱۰۰٬۰۰۰ تومان.» — no “10% on everything” shorthand.
+3. «مثال محاسباتی: خرید ۳۸۰٬۰۰۰ تومانی، ۳۸٬۰۰۰ تومان تخفیف؛ مبلغ نهایی را در تسویه ببین.» — not a live quote.
+4. «کد رو وارد کن و اعمال‌شدنش رو ببین؛ ترکیب تخفیف و قسط را قبل پرداخت بررسی کن.» — do not promise stacking.
+
+#### 🛡️ نماد اعتماد اینماد
+1. «قبل خرید، اطلاعات فروشگاه رو بررسی کن.» — start from the actual [KelidBox website](https://kelidbox.com).
+2. «روی نماد داخل سایت بزن و نام و دامنه و اعتبار نمایش‌داده‌شده رو تطبیق بده.» — capture the real verification page; never generate a badge.
+3. «شرایط تحویل، پشتیبانی و محصول رو بخون؛ نماد به‌معنی تضمین نتیجه ابزار نیست.» — exact selected-plan conditions.
+4. «سؤال داری؟ از مسیر پشتیبانی داخل سایت بپرس؛ رمز حساب و اطلاعات پرداخت رو در کامنت نفرست.» — use genuine consented reviews only; otherwise no testimonial frame.
+
+## 3. Comment-to-DM automation — all 10 ideas
+
+**Implementation status: scripts only; no ManyChat account connected or automation deployed.** Platform permissions, current message-window rules and trigger availability require an operator check before enabling. A comment-triggered private reply does not automatically grant unlimited promotional messaging.
+
+**RELEASE BLOCKER — product permalinks:** the source contains IDs and prices, but no product URL template. All `/product/{id}` destinations below are explicitly **candidate_unverified_route**, not verified direct links. Before copying into active buttons, replace each with the actual matching product permalink and test the exact plan on mobile. Do not send speculative links to customers. Do not treat passing offline tests as proof a URL resolves.
+
+### Setup and safety
+
+- Use one Reel-specific keyword trigger per idea, not a global substring that catches unrelated comments. For new posts enable only after its destination is verified.
+- Normalize ي→ی and ك→ک, trim spaces, normalize zero-width non-joiners; match «بدون تبلیغ» as a phrase and allow «بدون‌تبلیغ». Keep a per-user/post dedupe guard. If several keywords appear, ask in DM which use case they want; never send ten links at once.
+- Public reply: «راهنمای درخواستی رو دایرکت کردم 🌱 اگر نرسید، همین کلمه رو برامون دایرکت کن.» Use only after successful send. On failure: «برای گرفتن راهنما، همین کلمه رو دایرکت کن.»
+- First private message below delivers the requested information. If the platform requires an opening opt-in button, first say «راهنمای درخواستی‌ات آماده‌ست؛ بزن دریافت راهنما.» and use «دریافت راهنما» before sending product details.
+- Follow-up only after the user responds/opts in and within the platform's current permitted window. No scheduled unsolicited 24h/48h sales chase, scraping, purchased lists or mass DMs.
+- Optional reply after user engagement: «بیشتر برای چه کاری می‌خوای؟ اگر دوست داشتی، کمک می‌کنیم فقط پلن مناسب نیازت رو انتخاب کنی.»
+- Stop words: «توقف»، «لغو»، «نفرست». Exact stop reply: «حتماً؛ پیام تبلیغاتی بیشتری نمی‌فرستیم. هر وقت خواستی خودت پیام بده 🌱» Suppress further automated promotional messages.
+- Never ask for passwords, payment-card details, identity documents or children's photos in automated DM. Hand off billing/account issues to the actual site's support channel.
+- Log only necessary funnel events and consent state, not sensitive message contents. Apply workspace privacy policy and deletion requests; proposed event names below are not an installed tracker.
+
+### Copy-paste instant DM scripts
+
+Each message includes ONE primary product. Prices are deliberately kept out of DM copy so a stale snapshot does not become a live quote. Optional tools are offered only after understanding the use case. Candidate links are shown visibly for audit, not hidden behind a false verified label.
+
+#### DM IG10_01 — تیزر
+
+**Trigger:** «تیزر» · **Product ID:** `draft_0794ef61-67db-4aa0-9cd6-0977addacf48` · **Button:** «دیدن پلن و شرایط خرید». **Link gate:** candidate_unverified_route; replace/verify before sending.
+
+سلام 🌱 برای «تیزر» پیام دادی؛ این هم راه شروع:
+
+برای فروشگاهت، اول یک عکس روشن از محصول خودت آماده کن؛ هدف، ساخت نمونه تیزره نه تضمین فروش.
+
+محصول پیشنهادی: [اشتراک Google AI Pro (Gemini) + ۵ ترابایت — ۶ ماهه روی جیمیل شما](https://kelidbox.com/product/draft_0794ef61-67db-4aa0-9cd6-0977addacf48)
+
+کد WELCOME10 رو در تسویه وارد کن: ۱۰٪ تخفیف تا سقف ۱۵۰٬۰۰۰ تومان، با حداقل سفارش ۱۰۰٬۰۰۰ تومان.
+
+برای پرداخت ۴ قسط، بعد از انتخاب پلن در تسویه ترب‌پی یا دیجی‌پی رو انتخاب کن و مراحل اعتبار رو انجام بده. مبلغ نهایی، امکان ترکیب کد و قسط، سررسیدها و زمان تحویل رو قبل پرداخت بررسی کن؛ شرایط هر پلن و اعتبار ملاکه.
+
+اگه درباره انتخاب پلن سؤال داری، همین‌جا بپرس؛ برای توقف پیام‌ها بنویس «توقف».
+
+#### DM IG10_02 — انیمیشن
+
+**Trigger:** «انیمیشن» · **Product ID:** `draft_0794ef61-67db-4aa0-9cd6-0977addacf48` · **Button:** «دیدن پلن و شرایط خرید». **Link gate:** candidate_unverified_route; replace/verify before sending.
+
+سلام 🌱 برای «انیمیشن» پیام دادی؛ این هم راه شروع:
+
+برای شروع پیج بدون چهره، یک داستان دوخطی بنویس؛ این مسیر از همون انیمیشن‌هایی میاد که تو پیجمون دیدی.
+
+محصول پیشنهادی: [اشتراک Google AI Pro (Gemini) + ۵ ترابایت — ۶ ماهه روی جیمیل شما](https://kelidbox.com/product/draft_0794ef61-67db-4aa0-9cd6-0977addacf48)
+
+کد WELCOME10 رو در تسویه وارد کن: ۱۰٪ تخفیف تا سقف ۱۵۰٬۰۰۰ تومان، با حداقل سفارش ۱۰۰٬۰۰۰ تومان.
+
+برای پرداخت ۴ قسط، بعد از انتخاب پلن در تسویه ترب‌پی یا دیجی‌پی رو انتخاب کن و مراحل اعتبار رو انجام بده. مبلغ نهایی، امکان ترکیب کد و قسط، سررسیدها و زمان تحویل رو قبل پرداخت بررسی کن؛ شرایط هر پلن و اعتبار ملاکه.
+
+اگه درباره انتخاب پلن سؤال داری، همین‌جا بپرس؛ برای توقف پیام‌ها بنویس «توقف».
+
+#### DM IG10_03 — مجری
+
+**Trigger:** «مجری» · **Product ID:** `draft_12bb11ac-8ac4-4875-8529-8a756991a70b` · **Button:** «دیدن پلن و شرایط خرید». **Link gate:** candidate_unverified_route; replace/verify before sending.
+
+سلام 🌱 برای «مجری» پیام دادی؛ این هم راه شروع:
+
+برای مجری دیجیتال، یک متن کوتاه آماده کن؛ کیفیت فارسی و امکانات پلن رو چک کن و فقط از چهره و صدای مجاز استفاده کن.
+
+محصول پیشنهادی: [اشتراک HeyGen Creator و Pro — حساب جدید ۱ ماهه](https://kelidbox.com/product/draft_12bb11ac-8ac4-4875-8529-8a756991a70b)
+
+کد WELCOME10 رو در تسویه وارد کن: ۱۰٪ تخفیف تا سقف ۱۵۰٬۰۰۰ تومان، با حداقل سفارش ۱۰۰٬۰۰۰ تومان.
+
+برای پرداخت ۴ قسط، بعد از انتخاب پلن در تسویه ترب‌پی یا دیجی‌پی رو انتخاب کن و مراحل اعتبار رو انجام بده. مبلغ نهایی، امکان ترکیب کد و قسط، سررسیدها و زمان تحویل رو قبل پرداخت بررسی کن؛ شرایط هر پلن و اعتبار ملاکه.
+
+اگه درباره انتخاب پلن سؤال داری، همین‌جا بپرس؛ برای توقف پیام‌ها بنویس «توقف».
+
+#### DM IG10_04 — تولد
+
+**Trigger:** «تولد» · **Product ID:** `draft_a817f7f0-7513-497c-af44-0cd2863f6045` · **Button:** «دیدن پلن و شرایط خرید». **Link gate:** candidate_unverified_route; replace/verify before sending.
+
+سلام 🌱 برای «تولد» پیام دادی؛ این هم راه شروع:
+
+برای هدیه، اسم و سه خاطره غیرحساس رو آماده کن؛ اول آهنگ بساز، ساخت موزیک‌ویدیو ابزار و هزینه جدا می‌خواد.
+
+محصول پیشنهادی: [اشتراک Suno AI Pro و Premier — روی حساب شما](https://kelidbox.com/product/draft_a817f7f0-7513-497c-af44-0cd2863f6045)
+
+کد WELCOME10 رو در تسویه وارد کن: ۱۰٪ تخفیف تا سقف ۱۵۰٬۰۰۰ تومان، با حداقل سفارش ۱۰۰٬۰۰۰ تومان.
+
+برای پرداخت ۴ قسط، بعد از انتخاب پلن در تسویه ترب‌پی یا دیجی‌پی رو انتخاب کن و مراحل اعتبار رو انجام بده. مبلغ نهایی، امکان ترکیب کد و قسط، سررسیدها و زمان تحویل رو قبل پرداخت بررسی کن؛ شرایط هر پلن و اعتبار ملاکه.
+
+اگه درباره انتخاب پلن سؤال داری، همین‌جا بپرس؛ برای توقف پیام‌ها بنویس «توقف».
+
+#### DM IG10_05 — نقاشی
+
+**Trigger:** «نقاشی» · **Product ID:** `draft_0794ef61-67db-4aa0-9cd6-0977addacf48` · **Button:** «دیدن پلن و شرایط خرید». **Link gate:** candidate_unverified_route; replace/verify before sending.
+
+سلام 🌱 برای «نقاشی» پیام دادی؛ این هم راه شروع:
+
+برای نقاشی متحرک، با اجازه والدین از خود نقاشی استفاده کن؛ لازم نیست عکس چهره یا اطلاعات کودک رو بفرستی.
+
+محصول پیشنهادی: [اشتراک Google AI Pro (Gemini) + ۵ ترابایت — ۶ ماهه روی جیمیل شما](https://kelidbox.com/product/draft_0794ef61-67db-4aa0-9cd6-0977addacf48)
+
+کد WELCOME10 رو در تسویه وارد کن: ۱۰٪ تخفیف تا سقف ۱۵۰٬۰۰۰ تومان، با حداقل سفارش ۱۰۰٬۰۰۰ تومان.
+
+برای پرداخت ۴ قسط، بعد از انتخاب پلن در تسویه ترب‌پی یا دیجی‌پی رو انتخاب کن و مراحل اعتبار رو انجام بده. مبلغ نهایی، امکان ترکیب کد و قسط، سررسیدها و زمان تحویل رو قبل پرداخت بررسی کن؛ شرایط هر پلن و اعتبار ملاکه.
+
+اگه درباره انتخاب پلن سؤال داری، همین‌جا بپرس؛ برای توقف پیام‌ها بنویس «توقف».
+
+#### DM IG10_06 — اسلاید
+
+**Trigger:** «اسلاید» · **Product ID:** `draft_3492cbe3-b83d-408e-8ff1-c2f635dcf811` · **Button:** «دیدن پلن و شرایط خرید». **Link gate:** candidate_unverified_route; replace/verify before sending.
+
+سلام 🌱 برای «اسلاید» پیام دادی؛ این هم راه شروع:
+
+برای ارائه، متن درسی مجاز رو آماده کن؛ خروجی Gamma پیش‌نویسه و باید منبع و متنش رو خودت بررسی کنی.
+
+محصول پیشنهادی: [اشتراک Gamma AI Plus و Pro — حساب آماده ۱ ماهه](https://kelidbox.com/product/draft_3492cbe3-b83d-408e-8ff1-c2f635dcf811)
+
+کد WELCOME10 رو در تسویه وارد کن: ۱۰٪ تخفیف تا سقف ۱۵۰٬۰۰۰ تومان، با حداقل سفارش ۱۰۰٬۰۰۰ تومان.
+
+برای پرداخت ۴ قسط، بعد از انتخاب پلن در تسویه ترب‌پی یا دیجی‌پی رو انتخاب کن و مراحل اعتبار رو انجام بده. مبلغ نهایی، امکان ترکیب کد و قسط، سررسیدها و زمان تحویل رو قبل پرداخت بررسی کن؛ شرایط هر پلن و اعتبار ملاکه.
+
+اگه درباره انتخاب پلن سؤال داری، همین‌جا بپرس؛ برای توقف پیام‌ها بنویس «توقف».
+
+#### DM IG10_07 — درآمد
+
+**Trigger:** «درآمد» · **Product ID:** `canva-pro` · **Button:** «دیدن پلن و شرایط خرید». **Link gate:** candidate_unverified_route; replace/verify before sending.
+
+سلام 🌱 برای «درآمد» پیام دادی؛ این هم راه شروع:
+
+برای شروع خدمات محتوا، یک نمونه کاور برای کسب‌وکار فرضی بساز؛ خرید ابزار یا این مسیر تضمین درآمد نیست.
+
+محصول پیشنهادی: [اشتراک Canva](https://kelidbox.com/product/canva-pro)
+
+کد WELCOME10 رو در تسویه وارد کن: ۱۰٪ تخفیف تا سقف ۱۵۰٬۰۰۰ تومان، با حداقل سفارش ۱۰۰٬۰۰۰ تومان.
+
+برای پرداخت ۴ قسط، بعد از انتخاب پلن در تسویه ترب‌پی یا دیجی‌پی رو انتخاب کن و مراحل اعتبار رو انجام بده. مبلغ نهایی، امکان ترکیب کد و قسط، سررسیدها و زمان تحویل رو قبل پرداخت بررسی کن؛ شرایط هر پلن و اعتبار ملاکه.
+
+اگه درباره انتخاب پلن سؤال داری، همین‌جا بپرس؛ برای توقف پیام‌ها بنویس «توقف».
+
+#### DM IG10_08 — قیمت
+
+**Trigger:** «قیمت» · **Product ID:** `canva-pro` · **Button:** «دیدن پلن و شرایط خرید». **Link gate:** candidate_unverified_route; replace/verify before sending.
+
+سلام 🌱 برای «قیمت» پیام دادی؛ این هم راه شروع:
+
+برای دیدن مسیر خرید، Canva یک مثال روشنه؛ قیمت این محصول رو با قیمت ابزارهای ویدیویی اشتباه نگیر.
+
+محصول پیشنهادی: [اشتراک Canva](https://kelidbox.com/product/canva-pro)
+
+کد WELCOME10 رو در تسویه وارد کن: ۱۰٪ تخفیف تا سقف ۱۵۰٬۰۰۰ تومان، با حداقل سفارش ۱۰۰٬۰۰۰ تومان.
+
+برای پرداخت ۴ قسط، بعد از انتخاب پلن در تسویه ترب‌پی یا دیجی‌پی رو انتخاب کن و مراحل اعتبار رو انجام بده. مبلغ نهایی، امکان ترکیب کد و قسط، سررسیدها و زمان تحویل رو قبل پرداخت بررسی کن؛ شرایط هر پلن و اعتبار ملاکه.
+
+اگه درباره انتخاب پلن سؤال داری، همین‌جا بپرس؛ برای توقف پیام‌ها بنویس «توقف».
+
+#### DM IG10_09 — بدون تبلیغ
+
+**Trigger:** «بدون تبلیغ» · **Product ID:** `youtube-premium` · **Button:** «دیدن پلن و شرایط خرید». **Link gate:** candidate_unverified_route; replace/verify before sending.
+
+سلام 🌱 برای «بدون تبلیغ» پیام دادی؛ این هم راه شروع:
+
+اگر مسئله‌ات تبلیغ وسط یوتیوبه، این لینک برای YouTube Premium است؛ شرایط منطقه، دستگاه و پلن رو بخون.
+
+محصول پیشنهادی: [اشتراک YouTube Premium + YouTube Music](https://kelidbox.com/product/youtube-premium)
+
+کد WELCOME10 رو در تسویه وارد کن: ۱۰٪ تخفیف تا سقف ۱۵۰٬۰۰۰ تومان، با حداقل سفارش ۱۰۰٬۰۰۰ تومان.
+
+برای پرداخت ۴ قسط، بعد از انتخاب پلن در تسویه ترب‌پی یا دیجی‌پی رو انتخاب کن و مراحل اعتبار رو انجام بده. مبلغ نهایی، امکان ترکیب کد و قسط، سررسیدها و زمان تحویل رو قبل پرداخت بررسی کن؛ شرایط هر پلن و اعتبار ملاکه.
+
+اگه درباره انتخاب پلن سؤال داری، همین‌جا بپرس؛ برای توقف پیام‌ها بنویس «توقف».
+
+#### DM IG10_10 — گیم
+
+**Trigger:** «گیم» · **Product ID:** `cod-mobile-cp` · **Button:** «دیدن پلن و شرایط خرید». **Link gate:** candidate_unverified_route; replace/verify before sending.
+
+سلام 🌱 برای «گیم» پیام دادی؛ این هم راه شروع:
+
+برای CP، اول نسخه Global و شرایط حساب Activision رو تطبیق بده؛ برای زیر سن قانونی، تصمیم خرید و اعتبار با والد یا سرپرسته.
+
+محصول پیشنهادی: [سی‌پی کالاف دیوتی موبایل — نسخه Global، شارژ دستی Activision](https://kelidbox.com/product/cod-mobile-cp)
+
+کد WELCOME10 رو در تسویه وارد کن: ۱۰٪ تخفیف تا سقف ۱۵۰٬۰۰۰ تومان، با حداقل سفارش ۱۰۰٬۰۰۰ تومان.
+
+برای پرداخت ۴ قسط، بعد از انتخاب پلن در تسویه ترب‌پی یا دیجی‌پی رو انتخاب کن و مراحل اعتبار رو انجام بده. مبلغ نهایی، امکان ترکیب کد و قسط، سررسیدها و زمان تحویل رو قبل پرداخت بررسی کن؛ شرایط هر پلن و اعتبار ملاکه.
+
+اگه درباره انتخاب پلن سؤال داری، همین‌جا بپرس؛ برای توقف پیام‌ها بنویس «توقف».
