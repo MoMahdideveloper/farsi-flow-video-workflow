@@ -1,0 +1,1280 @@
+{
+  "overall_status": "pass",
+  "overall_status_scope": "automatic_checks_only",
+  "publication_status": "pending",
+  "pipeline": "farsi_flow_workflow",
+  "pipeline_version": "1.1.1",
+  "command": "build",
+  "generated_utc": "2026-10-26T16:53:52Z",
+  "host": {
+    "python": "3.13.7",
+    "platform": "Windows-10-10.0.19045-SP0",
+    "shaping_engine": "reshaper",
+    "raqm": false
+  },
+  "episode_id": "FruitsOfPower_Part5",
+  "title_fa": "قسمت پنجم: شوک سه‌قلوها در بیمارستان (فینال)",
+  "manifest": {
+    "path": "F:\\antigravity_archive\\scratch\\farsi-flow-video-workflow\\pipeline\\manifests\\fruits_of_power_part5.json",
+    "sha256": "0c605a0cfcf3ced3ecf223980ca3eee028ef24ee5012f0c2bd892edce3414eab"
+  },
+  "font": {
+    "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\ugly-face-chef-farsi\\03_farsi_audio_tts\\Vazirmatn-Bold.ttf",
+    "sha256": "f635fdbea28f265de395ba83b4b1570dcf2f58d13c65469e61903b1c2d2ae723"
+  },
+  "settings": {
+    "video": {
+      "width": 720,
+      "height": 1280,
+      "fps": 24,
+      "crf": 18,
+      "preset": "fast",
+      "work_crf": 14,
+      "scale_mode": "fill"
+    },
+    "audio": {
+      "loudnorm": "loudnorm=I=-14:TP=-1.5:LRA=11",
+      "sample_rate": 48000,
+      "channels": 2,
+      "bitrate": "192k",
+      "audit_bitrate": "128k"
+    },
+    "speech": {
+      "speech_safe": "auto_expand",
+      "threshold_dbfs": -38.0,
+      "noise_margin_db": 10.0,
+      "peak_margin_db": 12.0,
+      "frame_ms": 20,
+      "min_speech_ms": 60,
+      "merge_gap_ms": 250,
+      "pre_handle": 0.2,
+      "post_handle": 0.35,
+      "splice_crossfade": 0.02
+    },
+    "subtitle_style": {
+      "time_base": "trim_local",
+      "y_ratio": 0.84,
+      "font_size": 27,
+      "min_font_size": 16,
+      "max_text_margin": 84,
+      "max_lines": 2
+    },
+    "badge": {
+      "start": 0.0,
+      "end": 3.5,
+      "y_center": 130,
+      "font_size": 28,
+      "color": [
+        255,
+        225,
+        110
+      ],
+      "clip_index": 1,
+      "text": "قسمت پنجم: شوک سه‌قلوها در بیمارستان"
+    }
+  },
+  "clips": [
+    {
+      "id": "clip_01",
+      "index": 1,
+      "provenance": {
+        "file": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\flow_clips\\raw_unsubbed\\clip_01.mp4",
+        "raw_orig_file": null,
+        "mode": "direct",
+        "source": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\flow_clips\\raw_unsubbed\\clip_01.mp4",
+        "source_sha256": "58ef13dfb5d5d7cc5924afb883823a0c1a97c0228923d8485e03be2ced0021cc",
+        "analysed": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\flow_clips\\raw_unsubbed\\clip_01.mp4"
+      },
+      "plan": {
+        "mode": "auto_expand",
+        "requested": [
+          0.0,
+          9.95
+        ],
+        "final": [
+          0.0,
+          9.95
+        ],
+        "duration": 9.95,
+        "subtitle_shift": 0.0,
+        "source_duration": 10.0,
+        "notes": [],
+        "render_duration": 9.9583,
+        "tail_padding_sec": 0.0083
+      },
+      "speech": {
+        "source": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\flow_clips\\raw_unsubbed\\clip_01.mp4",
+        "source_duration": 10.0,
+        "analysis_sr": 16000,
+        "frame_ms": 20,
+        "noise_floor_dbfs": -34.03,
+        "threshold_dbfs": -24.03,
+        "peak_dbfs": -9.03,
+        "speech_segments": [
+          [
+            3.0,
+            5.36
+          ],
+          [
+            6.72,
+            8.94
+          ]
+        ],
+        "first_speech_sec": 3.0,
+        "last_speech_sec": 8.94,
+        "trim_in": 0.0,
+        "trim_out": 9.95,
+        "trim_in_inside_speech": false,
+        "trim_out_inside_speech": false,
+        "speech_dropped_before_in_sec": 0.0,
+        "speech_dropped_after_out_sec": 0.0,
+        "pre_handle_sec": 3.0,
+        "post_handle_sec": 1.01,
+        "cuts_speech": false
+      },
+      "final_window_speech": {
+        "trim_in_inside_speech": false,
+        "trim_out_inside_speech": false,
+        "speech_dropped_sec": 0.0,
+        "pre_handle_sec": 3.0,
+        "post_handle_sec": 1.01,
+        "cuts_speech": false
+      },
+      "lock_trim": false,
+      "allow_speech_splice": false,
+      "notes": "",
+      "duration": 9.9583,
+      "frames": 239,
+      "subtitles": [
+        {
+          "text": "پس یعنی منم برات فقط یه اشتباهِ دیگه بودم لمونلا؟!",
+          "speaker": "BANANA",
+          "authored": [
+            0.25,
+            9.6
+          ],
+          "local": [
+            0.25,
+            9.6
+          ],
+          "in_bounds": true,
+          "overlaps_previous": false,
+          "speech_energy_ratio": 0.49
+        }
+      ],
+      "overlays": [
+        {
+          "kind": "badge",
+          "start": 0.0,
+          "end": 3.5,
+          "speaker": "",
+          "box": [
+            95,
+            95,
+            624,
+            164
+          ],
+          "font_size": 28,
+          "lines": 1,
+          "fits_width": true,
+          "inside_frame": true
+        },
+        {
+          "kind": "sub",
+          "start": 0.25,
+          "end": 9.6,
+          "speaker": "BANANA",
+          "box": [
+            55,
+            1041,
+            665,
+            1108
+          ],
+          "font_size": 27,
+          "lines": 1,
+          "fits_width": true,
+          "inside_frame": true
+        }
+      ],
+      "outputs": [
+        "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\05_final_masters\\clips_subbed\\clip_01_subbed.mp4",
+        "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\flow_clips\\clip_01_subbed.mp4"
+      ],
+      "srt": [
+        "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\05_final_masters\\clips_subbed\\clip_01_subbed.srt",
+        "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\flow_clips\\clip_01_subbed.srt"
+      ],
+      "media": {
+        "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\05_final_masters\\clips_subbed\\clip_01_subbed.mp4",
+        "sha256": "433013ce62561386ce008babe0e416a77fb7abe34a736b066d4b48c455084ad9",
+        "probe": {
+          "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\05_final_masters\\clips_subbed\\clip_01_subbed.mp4",
+          "format_duration": 9.9583,
+          "video": {
+            "codec": "h264",
+            "duration": 9.9583,
+            "start_time": 0.0,
+            "width": 720,
+            "height": 1280,
+            "fps": 24.0,
+            "pix_fmt": "yuv420p",
+            "frames": 239
+          },
+          "audio": {
+            "codec": "aac",
+            "duration": 9.958,
+            "start_time": 0.0,
+            "sample_rate": 48000,
+            "channels": 2
+          }
+        },
+        "av_drift_sec": 0.0003,
+        "audio_pts_gaps": [],
+        "expected_duration": 9.9583,
+        "checks": {
+          "has_video": true,
+          "has_audio": true,
+          "video_h264": true,
+          "video_size": true,
+          "video_fps": true,
+          "audio_aac": true,
+          "audio_rate_channels": true,
+          "av_drift_ok": true,
+          "av_start_aligned": true,
+          "starts_at_zero": true,
+          "audio_contiguous": true,
+          "duration_ok": true
+        },
+        "pass": true
+      },
+      "mirror_sha256_match": [
+        true
+      ]
+    },
+    {
+      "id": "clip_02",
+      "index": 2,
+      "provenance": {
+        "file": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\flow_clips\\raw_unsubbed\\clip_02.mp4",
+        "raw_orig_file": null,
+        "mode": "direct",
+        "source": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\flow_clips\\raw_unsubbed\\clip_02.mp4",
+        "source_sha256": "d5e9cc1944240d12f7d6f5dfd918d40243b6e9d6515874085f48c9ac1d5f1872",
+        "analysed": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\flow_clips\\raw_unsubbed\\clip_02.mp4"
+      },
+      "plan": {
+        "mode": "auto_expand",
+        "requested": [
+          0.0,
+          9.95
+        ],
+        "final": [
+          0.0,
+          9.95
+        ],
+        "duration": 9.95,
+        "subtitle_shift": 0.0,
+        "source_duration": 10.0,
+        "notes": [],
+        "render_duration": 9.9583,
+        "tail_padding_sec": 0.0083
+      },
+      "speech": {
+        "source": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\flow_clips\\raw_unsubbed\\clip_02.mp4",
+        "source_duration": 10.0,
+        "analysis_sr": 16000,
+        "frame_ms": 20,
+        "noise_floor_dbfs": -35.88,
+        "threshold_dbfs": -25.88,
+        "peak_dbfs": -9.64,
+        "speech_segments": [
+          [
+            0.42,
+            0.6
+          ],
+          [
+            2.18,
+            4.28
+          ],
+          [
+            5.2,
+            7.28
+          ]
+        ],
+        "first_speech_sec": 0.42,
+        "last_speech_sec": 7.28,
+        "trim_in": 0.0,
+        "trim_out": 9.95,
+        "trim_in_inside_speech": false,
+        "trim_out_inside_speech": false,
+        "speech_dropped_before_in_sec": 0.0,
+        "speech_dropped_after_out_sec": 0.0,
+        "pre_handle_sec": 0.42,
+        "post_handle_sec": 2.67,
+        "cuts_speech": false
+      },
+      "final_window_speech": {
+        "trim_in_inside_speech": false,
+        "trim_out_inside_speech": false,
+        "speech_dropped_sec": 0.0,
+        "pre_handle_sec": 0.42,
+        "post_handle_sec": 2.67,
+        "cuts_speech": false
+      },
+      "lock_trim": false,
+      "allow_speech_splice": false,
+      "notes": "",
+      "duration": 9.9583,
+      "frames": 239,
+      "subtitles": [
+        {
+          "text": "تو قبل از من با اون رابطه داشتی؟! چرا این راز رو پنهان کردی؟!",
+          "speaker": "DUKE",
+          "authored": [
+            0.25,
+            9.6
+          ],
+          "local": [
+            0.25,
+            9.6
+          ],
+          "in_bounds": true,
+          "overlaps_previous": false,
+          "speech_energy_ratio": 0.466
+        }
+      ],
+      "overlays": [
+        {
+          "kind": "sub",
+          "start": 0.25,
+          "end": 9.6,
+          "speaker": "DUKE",
+          "box": [
+            32,
+            1043,
+            688,
+            1107
+          ],
+          "font_size": 25,
+          "lines": 1,
+          "fits_width": true,
+          "inside_frame": true
+        }
+      ],
+      "outputs": [
+        "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\05_final_masters\\clips_subbed\\clip_02_subbed.mp4",
+        "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\flow_clips\\clip_02_subbed.mp4"
+      ],
+      "srt": [
+        "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\05_final_masters\\clips_subbed\\clip_02_subbed.srt",
+        "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\flow_clips\\clip_02_subbed.srt"
+      ],
+      "media": {
+        "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\05_final_masters\\clips_subbed\\clip_02_subbed.mp4",
+        "sha256": "1ec9c3607b11400f82be34a2e4be57ab91753d204473882237a1d427abe8d910",
+        "probe": {
+          "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\05_final_masters\\clips_subbed\\clip_02_subbed.mp4",
+          "format_duration": 9.9583,
+          "video": {
+            "codec": "h264",
+            "duration": 9.9583,
+            "start_time": 0.0,
+            "width": 720,
+            "height": 1280,
+            "fps": 24.0,
+            "pix_fmt": "yuv420p",
+            "frames": 239
+          },
+          "audio": {
+            "codec": "aac",
+            "duration": 9.958,
+            "start_time": 0.0,
+            "sample_rate": 48000,
+            "channels": 2
+          }
+        },
+        "av_drift_sec": 0.0003,
+        "audio_pts_gaps": [],
+        "expected_duration": 9.9583,
+        "checks": {
+          "has_video": true,
+          "has_audio": true,
+          "video_h264": true,
+          "video_size": true,
+          "video_fps": true,
+          "audio_aac": true,
+          "audio_rate_channels": true,
+          "av_drift_ok": true,
+          "av_start_aligned": true,
+          "starts_at_zero": true,
+          "audio_contiguous": true,
+          "duration_ok": true
+        },
+        "pass": true
+      },
+      "mirror_sha256_match": [
+        true
+      ]
+    },
+    {
+      "id": "clip_03",
+      "index": 3,
+      "provenance": {
+        "file": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\flow_clips\\raw_unsubbed\\clip_03.mp4",
+        "raw_orig_file": null,
+        "mode": "direct",
+        "source": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\flow_clips\\raw_unsubbed\\clip_03.mp4",
+        "source_sha256": "3d966b45ca5d03d42ac685a17ca9d14bd03eb1433bdca7c507a915309c6ee346",
+        "analysed": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\flow_clips\\raw_unsubbed\\clip_03.mp4"
+      },
+      "plan": {
+        "mode": "auto_expand",
+        "requested": [
+          0.0,
+          9.95
+        ],
+        "final": [
+          0.0,
+          9.95
+        ],
+        "duration": 9.95,
+        "subtitle_shift": 0.0,
+        "source_duration": 10.0,
+        "notes": [],
+        "render_duration": 9.9583,
+        "tail_padding_sec": 0.0083
+      },
+      "speech": {
+        "source": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\flow_clips\\raw_unsubbed\\clip_03.mp4",
+        "source_duration": 10.0,
+        "analysis_sr": 16000,
+        "frame_ms": 20,
+        "noise_floor_dbfs": -38.08,
+        "threshold_dbfs": -28.08,
+        "peak_dbfs": -6.76,
+        "speech_segments": [
+          [
+            1.6,
+            2.52
+          ],
+          [
+            3.68,
+            6.2
+          ],
+          [
+            7.04,
+            8.52
+          ]
+        ],
+        "first_speech_sec": 1.6,
+        "last_speech_sec": 8.52,
+        "trim_in": 0.0,
+        "trim_out": 9.95,
+        "trim_in_inside_speech": false,
+        "trim_out_inside_speech": false,
+        "speech_dropped_before_in_sec": 0.0,
+        "speech_dropped_after_out_sec": 0.0,
+        "pre_handle_sec": 1.6,
+        "post_handle_sec": 1.43,
+        "cuts_speech": false
+      },
+      "final_window_speech": {
+        "trim_in_inside_speech": false,
+        "trim_out_inside_speech": false,
+        "speech_dropped_sec": 0.0,
+        "pre_handle_sec": 1.6,
+        "post_handle_sec": 1.43,
+        "cuts_speech": false
+      },
+      "lock_trim": false,
+      "allow_speech_splice": false,
+      "notes": "",
+      "duration": 9.9583,
+      "frames": 239,
+      "subtitles": [
+        {
+          "text": "قبل از دوک، من توی اون شهر غریب تنها بودم و هیچ چاره‌ای نداشتم!",
+          "speaker": "LEMON",
+          "authored": [
+            0.25,
+            9.6
+          ],
+          "local": [
+            0.25,
+            9.6
+          ],
+          "in_bounds": true,
+          "overlaps_previous": false,
+          "speech_energy_ratio": 0.526
+        }
+      ],
+      "overlays": [
+        {
+          "kind": "sub",
+          "start": 0.25,
+          "end": 9.6,
+          "speaker": "LEMON",
+          "box": [
+            57,
+            1046,
+            663,
+            1104
+          ],
+          "font_size": 21,
+          "lines": 1,
+          "fits_width": true,
+          "inside_frame": true
+        }
+      ],
+      "outputs": [
+        "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\05_final_masters\\clips_subbed\\clip_03_subbed.mp4",
+        "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\flow_clips\\clip_03_subbed.mp4"
+      ],
+      "srt": [
+        "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\05_final_masters\\clips_subbed\\clip_03_subbed.srt",
+        "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\flow_clips\\clip_03_subbed.srt"
+      ],
+      "media": {
+        "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\05_final_masters\\clips_subbed\\clip_03_subbed.mp4",
+        "sha256": "87709e3a475a5337f42d2bb851af5646965451ad70fa868a81d43f9ab029799f",
+        "probe": {
+          "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\05_final_masters\\clips_subbed\\clip_03_subbed.mp4",
+          "format_duration": 9.9583,
+          "video": {
+            "codec": "h264",
+            "duration": 9.9583,
+            "start_time": 0.0,
+            "width": 720,
+            "height": 1280,
+            "fps": 24.0,
+            "pix_fmt": "yuv420p",
+            "frames": 239
+          },
+          "audio": {
+            "codec": "aac",
+            "duration": 9.958,
+            "start_time": 0.0,
+            "sample_rate": 48000,
+            "channels": 2
+          }
+        },
+        "av_drift_sec": 0.0003,
+        "audio_pts_gaps": [],
+        "expected_duration": 9.9583,
+        "checks": {
+          "has_video": true,
+          "has_audio": true,
+          "video_h264": true,
+          "video_size": true,
+          "video_fps": true,
+          "audio_aac": true,
+          "audio_rate_channels": true,
+          "av_drift_ok": true,
+          "av_start_aligned": true,
+          "starts_at_zero": true,
+          "audio_contiguous": true,
+          "duration_ok": true
+        },
+        "pass": true
+      },
+      "mirror_sha256_match": [
+        true
+      ]
+    },
+    {
+      "id": "clip_04",
+      "index": 4,
+      "provenance": {
+        "file": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\flow_clips\\raw_unsubbed\\clip_04.mp4",
+        "raw_orig_file": null,
+        "mode": "direct",
+        "source": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\flow_clips\\raw_unsubbed\\clip_04.mp4",
+        "source_sha256": "2bff7a0bdac6de35fc7e6ec1d0b90c4896a9f89c1fc3ea37d1e258f7dbcb1c33",
+        "analysed": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\flow_clips\\raw_unsubbed\\clip_04.mp4"
+      },
+      "plan": {
+        "mode": "auto_expand",
+        "requested": [
+          0.0,
+          9.95
+        ],
+        "final": [
+          0.0,
+          10.0
+        ],
+        "duration": 10.0,
+        "subtitle_shift": 0.0,
+        "source_duration": 10.0,
+        "notes": [
+          "trim_out widened 9.950 -> 10.000 (speech until 9.840s)",
+          "post-handle only 0.160s (source ends close to speech)"
+        ],
+        "render_duration": 10.0,
+        "tail_padding_sec": 0.0
+      },
+      "speech": {
+        "source": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\flow_clips\\raw_unsubbed\\clip_04.mp4",
+        "source_duration": 10.0,
+        "analysis_sr": 16000,
+        "frame_ms": 20,
+        "noise_floor_dbfs": -37.07,
+        "threshold_dbfs": -27.07,
+        "peak_dbfs": -13.47,
+        "speech_segments": [
+          [
+            0.36,
+            0.84
+          ],
+          [
+            1.44,
+            4.52
+          ],
+          [
+            5.42,
+            8.08
+          ],
+          [
+            8.34,
+            9.5
+          ],
+          [
+            9.78,
+            9.84
+          ]
+        ],
+        "first_speech_sec": 0.36,
+        "last_speech_sec": 9.84,
+        "trim_in": 0.0,
+        "trim_out": 9.95,
+        "trim_in_inside_speech": false,
+        "trim_out_inside_speech": false,
+        "speech_dropped_before_in_sec": 0.0,
+        "speech_dropped_after_out_sec": 0.0,
+        "pre_handle_sec": 0.36,
+        "post_handle_sec": 0.11,
+        "cuts_speech": false
+      },
+      "final_window_speech": {
+        "trim_in_inside_speech": false,
+        "trim_out_inside_speech": false,
+        "speech_dropped_sec": 0.0,
+        "pre_handle_sec": 0.36,
+        "post_handle_sec": 0.16,
+        "cuts_speech": false
+      },
+      "lock_trim": false,
+      "allow_speech_splice": false,
+      "notes": "",
+      "duration": 10.0,
+      "frames": 240,
+      "subtitles": [
+        {
+          "text": "برام مهم نیست قبل از من کی توی گذشته‌ت بوده... من از تو و بچه‌مون محافظت می‌کنم!",
+          "speaker": "DUKE",
+          "authored": [
+            0.25,
+            9.6
+          ],
+          "local": [
+            0.25,
+            9.6
+          ],
+          "in_bounds": true,
+          "overlaps_previous": false,
+          "speech_energy_ratio": 0.789
+        }
+      ],
+      "overlays": [
+        {
+          "kind": "sub",
+          "start": 0.25,
+          "end": 9.6,
+          "speaker": "DUKE",
+          "box": [
+            41,
+            1049,
+            679,
+            1101
+          ],
+          "font_size": 17,
+          "lines": 1,
+          "fits_width": true,
+          "inside_frame": true
+        }
+      ],
+      "outputs": [
+        "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\05_final_masters\\clips_subbed\\clip_04_subbed.mp4",
+        "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\flow_clips\\clip_04_subbed.mp4"
+      ],
+      "srt": [
+        "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\05_final_masters\\clips_subbed\\clip_04_subbed.srt",
+        "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\flow_clips\\clip_04_subbed.srt"
+      ],
+      "media": {
+        "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\05_final_masters\\clips_subbed\\clip_04_subbed.mp4",
+        "sha256": "54d629e6aa1586f28a0d878fa28cd1f1a1bc3c9f281e99604e3c47c124e2b739",
+        "probe": {
+          "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\05_final_masters\\clips_subbed\\clip_04_subbed.mp4",
+          "format_duration": 10.0,
+          "video": {
+            "codec": "h264",
+            "duration": 10.0,
+            "start_time": 0.0,
+            "width": 720,
+            "height": 1280,
+            "fps": 24.0,
+            "pix_fmt": "yuv420p",
+            "frames": 240
+          },
+          "audio": {
+            "codec": "aac",
+            "duration": 10.0,
+            "start_time": 0.0,
+            "sample_rate": 48000,
+            "channels": 2
+          }
+        },
+        "av_drift_sec": 0.0,
+        "audio_pts_gaps": [],
+        "expected_duration": 10.0,
+        "checks": {
+          "has_video": true,
+          "has_audio": true,
+          "video_h264": true,
+          "video_size": true,
+          "video_fps": true,
+          "audio_aac": true,
+          "audio_rate_channels": true,
+          "av_drift_ok": true,
+          "av_start_aligned": true,
+          "starts_at_zero": true,
+          "audio_contiguous": true,
+          "duration_ok": true
+        },
+        "pass": true
+      },
+      "mirror_sha256_match": [
+        true
+      ]
+    },
+    {
+      "id": "clip_05",
+      "index": 5,
+      "provenance": {
+        "file": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\flow_clips\\raw_unsubbed\\clip_05.mp4",
+        "raw_orig_file": null,
+        "mode": "direct",
+        "source": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\flow_clips\\raw_unsubbed\\clip_05.mp4",
+        "source_sha256": "f71f20e6c6d8fd2dc63fb4a6105c35a50048c7c34e683b4ef5dcd7e02b2cb66b",
+        "analysed": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\flow_clips\\raw_unsubbed\\clip_05.mp4"
+      },
+      "plan": {
+        "mode": "auto_expand",
+        "requested": [
+          0.0,
+          9.95
+        ],
+        "final": [
+          0.0,
+          9.95
+        ],
+        "duration": 9.95,
+        "subtitle_shift": 0.0,
+        "source_duration": 10.0,
+        "notes": [],
+        "render_duration": 9.9583,
+        "tail_padding_sec": 0.0083
+      },
+      "speech": {
+        "source": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\flow_clips\\raw_unsubbed\\clip_05.mp4",
+        "source_duration": 10.0,
+        "analysis_sr": 16000,
+        "frame_ms": 20,
+        "noise_floor_dbfs": -34.39,
+        "threshold_dbfs": -24.39,
+        "peak_dbfs": -9.33,
+        "speech_segments": [
+          [
+            0.9,
+            0.96
+          ],
+          [
+            1.56,
+            2.76
+          ],
+          [
+            3.66,
+            6.02
+          ],
+          [
+            7.52,
+            8.68
+          ],
+          [
+            8.94,
+            9.0
+          ]
+        ],
+        "first_speech_sec": 0.9,
+        "last_speech_sec": 9.0,
+        "trim_in": 0.0,
+        "trim_out": 9.95,
+        "trim_in_inside_speech": false,
+        "trim_out_inside_speech": false,
+        "speech_dropped_before_in_sec": 0.0,
+        "speech_dropped_after_out_sec": 0.0,
+        "pre_handle_sec": 0.9,
+        "post_handle_sec": 0.95,
+        "cuts_speech": false
+      },
+      "final_window_speech": {
+        "trim_in_inside_speech": false,
+        "trim_out_inside_speech": false,
+        "speech_dropped_sec": 0.0,
+        "pre_handle_sec": 0.9,
+        "post_handle_sec": 0.95,
+        "cuts_speech": false
+      },
+      "lock_trim": false,
+      "allow_speech_splice": false,
+      "notes": "",
+      "duration": 9.9583,
+      "frames": 239,
+      "subtitles": [
+        {
+          "text": "تحمل کن عزیزم! سریع زنگ بزنید به اورژانس و بیمارستان!",
+          "speaker": "DUKE",
+          "authored": [
+            0.25,
+            9.6
+          ],
+          "local": [
+            0.25,
+            9.6
+          ],
+          "in_bounds": true,
+          "overlaps_previous": false,
+          "speech_energy_ratio": 0.518
+        }
+      ],
+      "overlays": [
+        {
+          "kind": "sub",
+          "start": 0.25,
+          "end": 9.6,
+          "speaker": "DUKE",
+          "box": [
+            31,
+            1041,
+            689,
+            1108
+          ],
+          "font_size": 27,
+          "lines": 1,
+          "fits_width": true,
+          "inside_frame": true
+        }
+      ],
+      "outputs": [
+        "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\05_final_masters\\clips_subbed\\clip_05_subbed.mp4",
+        "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\flow_clips\\clip_05_subbed.mp4"
+      ],
+      "srt": [
+        "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\05_final_masters\\clips_subbed\\clip_05_subbed.srt",
+        "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\flow_clips\\clip_05_subbed.srt"
+      ],
+      "media": {
+        "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\05_final_masters\\clips_subbed\\clip_05_subbed.mp4",
+        "sha256": "81fb93c378bac80ad4dce9f3c7635e11e15cb0c7cb0a8ea1f852a81b2ad0d1e1",
+        "probe": {
+          "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\05_final_masters\\clips_subbed\\clip_05_subbed.mp4",
+          "format_duration": 9.9583,
+          "video": {
+            "codec": "h264",
+            "duration": 9.9583,
+            "start_time": 0.0,
+            "width": 720,
+            "height": 1280,
+            "fps": 24.0,
+            "pix_fmt": "yuv420p",
+            "frames": 239
+          },
+          "audio": {
+            "codec": "aac",
+            "duration": 9.958,
+            "start_time": 0.0,
+            "sample_rate": 48000,
+            "channels": 2
+          }
+        },
+        "av_drift_sec": 0.0003,
+        "audio_pts_gaps": [],
+        "expected_duration": 9.9583,
+        "checks": {
+          "has_video": true,
+          "has_audio": true,
+          "video_h264": true,
+          "video_size": true,
+          "video_fps": true,
+          "audio_aac": true,
+          "audio_rate_channels": true,
+          "av_drift_ok": true,
+          "av_start_aligned": true,
+          "starts_at_zero": true,
+          "audio_contiguous": true,
+          "duration_ok": true
+        },
+        "pass": true
+      },
+      "mirror_sha256_match": [
+        true
+      ]
+    },
+    {
+      "id": "clip_06",
+      "index": 6,
+      "provenance": {
+        "file": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\flow_clips\\raw_unsubbed\\clip_06.mp4",
+        "raw_orig_file": null,
+        "mode": "direct",
+        "source": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\flow_clips\\raw_unsubbed\\clip_06.mp4",
+        "source_sha256": "7c25ba9f4236dd238de753390b186d6c9b177d160a728f0f2da3b35676b82e28",
+        "analysed": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\flow_clips\\raw_unsubbed\\clip_06.mp4"
+      },
+      "plan": {
+        "mode": "auto_expand",
+        "requested": [
+          0.0,
+          9.95
+        ],
+        "final": [
+          0.0,
+          10.0
+        ],
+        "duration": 10.0,
+        "subtitle_shift": 0.0,
+        "source_duration": 10.0,
+        "notes": [
+          "trim_out widened 9.950 -> 10.000 (speech until 9.960s)",
+          "pre-handle only 0.160s (source starts close to speech)",
+          "post-handle only 0.040s (source ends close to speech)"
+        ],
+        "render_duration": 10.0,
+        "tail_padding_sec": 0.0
+      },
+      "speech": {
+        "source": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\flow_clips\\raw_unsubbed\\clip_06.mp4",
+        "source_duration": 10.0,
+        "analysis_sr": 16000,
+        "frame_ms": 20,
+        "noise_floor_dbfs": -41.82,
+        "threshold_dbfs": -31.82,
+        "peak_dbfs": -5.95,
+        "speech_segments": [
+          [
+            0.16,
+            5.3
+          ],
+          [
+            5.58,
+            6.66
+          ],
+          [
+            6.94,
+            9.96
+          ]
+        ],
+        "first_speech_sec": 0.16,
+        "last_speech_sec": 9.96,
+        "trim_in": 0.0,
+        "trim_out": 9.95,
+        "trim_in_inside_speech": false,
+        "trim_out_inside_speech": true,
+        "speech_dropped_before_in_sec": 0.0,
+        "speech_dropped_after_out_sec": 0.01,
+        "pre_handle_sec": 0.16,
+        "post_handle_sec": -0.01,
+        "cuts_speech": true
+      },
+      "final_window_speech": {
+        "trim_in_inside_speech": false,
+        "trim_out_inside_speech": false,
+        "speech_dropped_sec": 0.0,
+        "pre_handle_sec": 0.16,
+        "post_handle_sec": 0.04,
+        "cuts_speech": false
+      },
+      "lock_trim": false,
+      "allow_speech_splice": false,
+      "notes": "",
+      "duration": 10.0,
+      "frames": 240,
+      "subtitles": [
+        {
+          "text": "متاسفانه اسکن‌ها یه چیز غیرمنتظره رو نشون میدن...",
+          "speaker": "PEACH",
+          "authored": [
+            0.25,
+            4.8
+          ],
+          "local": [
+            0.25,
+            4.8
+          ],
+          "in_bounds": true,
+          "overlaps_previous": false,
+          "speech_energy_ratio": 1.0
+        },
+        {
+          "text": "توی شکمت سه تا بچه‌ست! سه‌قلو بارداری!",
+          "speaker": "PEACH",
+          "authored": [
+            5.0,
+            9.65
+          ],
+          "local": [
+            5.0,
+            9.65
+          ],
+          "in_bounds": true,
+          "overlaps_previous": false,
+          "speech_energy_ratio": 0.88
+        }
+      ],
+      "overlays": [
+        {
+          "kind": "sub",
+          "start": 0.25,
+          "end": 4.8,
+          "speaker": "PEACH",
+          "box": [
+            50,
+            1041,
+            669,
+            1108
+          ],
+          "font_size": 27,
+          "lines": 1,
+          "fits_width": true,
+          "inside_frame": true
+        },
+        {
+          "kind": "sub",
+          "start": 5.0,
+          "end": 9.65,
+          "speaker": "PEACH",
+          "box": [
+            109,
+            1041,
+            611,
+            1108
+          ],
+          "font_size": 27,
+          "lines": 1,
+          "fits_width": true,
+          "inside_frame": true
+        }
+      ],
+      "outputs": [
+        "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\05_final_masters\\clips_subbed\\clip_06_subbed.mp4",
+        "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\flow_clips\\clip_06_subbed.mp4"
+      ],
+      "srt": [
+        "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\05_final_masters\\clips_subbed\\clip_06_subbed.srt",
+        "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part5\\flow_clips\\clip_06_subbed.srt"
+      ],
+      "media": {
+        "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\05_final_masters\\clips_subbed\\clip_06_subbed.mp4",
+        "sha256": "6dae9efd61cef3087b825427efec4344d52872795dc6b91bfce670c3098221f0",
+        "probe": {
+          "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\05_final_masters\\clips_subbed\\clip_06_subbed.mp4",
+          "format_duration": 10.0,
+          "video": {
+            "codec": "h264",
+            "duration": 10.0,
+            "start_time": 0.0,
+            "width": 720,
+            "height": 1280,
+            "fps": 24.0,
+            "pix_fmt": "yuv420p",
+            "frames": 240
+          },
+          "audio": {
+            "codec": "aac",
+            "duration": 10.0,
+            "start_time": 0.0,
+            "sample_rate": 48000,
+            "channels": 2
+          }
+        },
+        "av_drift_sec": 0.0,
+        "audio_pts_gaps": [],
+        "expected_duration": 10.0,
+        "checks": {
+          "has_video": true,
+          "has_audio": true,
+          "video_h264": true,
+          "video_size": true,
+          "video_fps": true,
+          "audio_aac": true,
+          "audio_rate_channels": true,
+          "av_drift_ok": true,
+          "av_start_aligned": true,
+          "starts_at_zero": true,
+          "audio_contiguous": true,
+          "duration_ok": true
+        },
+        "pass": true
+      },
+      "mirror_sha256_match": [
+        true
+      ]
+    }
+  ],
+  "base": {
+    "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\05_final_masters\\Base_FruitsOfPower_Part5_Flow_Native_Farsi.mp4",
+    "duration": 59.8332,
+    "clip_offsets": [
+      0.0,
+      9.9583,
+      19.9166,
+      29.8749,
+      39.8749,
+      49.8332
+    ],
+    "cue_count": 7,
+    "media": {
+      "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\05_final_masters\\Base_FruitsOfPower_Part5_Flow_Native_Farsi.mp4",
+      "sha256": "3916c54fa39cc401ae291e53e6b85586178a853b345a517e2352c0a1e0d49284",
+      "probe": {
+        "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\05_final_masters\\Base_FruitsOfPower_Part5_Flow_Native_Farsi.tmp.mp4",
+        "format_duration": 59.8333,
+        "video": {
+          "codec": "h264",
+          "duration": 59.8333,
+          "start_time": 0.0,
+          "width": 720,
+          "height": 1280,
+          "fps": 24.0,
+          "pix_fmt": "yuv420p",
+          "frames": 1436
+        },
+        "audio": {
+          "codec": "aac",
+          "duration": 59.833,
+          "start_time": 0.0,
+          "sample_rate": 48000,
+          "channels": 2
+        }
+      },
+      "av_drift_sec": 0.0003,
+      "audio_pts_gaps": [],
+      "expected_duration": 59.8332,
+      "checks": {
+        "has_video": true,
+        "has_audio": true,
+        "video_h264": true,
+        "video_size": true,
+        "video_fps": true,
+        "audio_aac": true,
+        "audio_rate_channels": true,
+        "av_drift_ok": true,
+        "av_start_aligned": true,
+        "starts_at_zero": true,
+        "audio_contiguous": true,
+        "duration_ok": true
+      },
+      "pass": true
+    }
+  },
+  "master": {
+    "cta_requested": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part1\\flow_clips\\cta_kelidbox_s2.mp4",
+    "cta_used": true,
+    "base_sha256": "3916c54fa39cc401ae291e53e6b85586178a853b345a517e2352c0a1e0d49284",
+    "cta_video": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\part1\\flow_clips\\cta_kelidbox_s2.mp4",
+    "cta_sha256": "ddf3568fe6b37f7982004c73e56aca59616c9f01ea81758d0216569786495612",
+    "cta_duration": 10.0,
+    "srt": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\05_final_masters\\Master_FruitsOfPower_Part5_Flow_Native_Farsi.srt",
+    "cue_count": 9,
+    "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\05_final_masters\\Master_FruitsOfPower_Part5_Flow_Native_Farsi.mp4",
+    "duration": 69.8332,
+    "media": {
+      "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\05_final_masters\\Master_FruitsOfPower_Part5_Flow_Native_Farsi.mp4",
+      "sha256": "ceb108ba844d2783687c181f591a77350d978a3d758fbe5be735cf94e3314a62",
+      "probe": {
+        "path": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\05_final_masters\\Master_FruitsOfPower_Part5_Flow_Native_Farsi.tmp.mp4",
+        "format_duration": 69.8333,
+        "video": {
+          "codec": "h264",
+          "duration": 69.8333,
+          "start_time": 0.0,
+          "width": 720,
+          "height": 1280,
+          "fps": 24.0,
+          "pix_fmt": "yuv420p",
+          "frames": 1676
+        },
+        "audio": {
+          "codec": "aac",
+          "duration": 69.833,
+          "start_time": 0.0,
+          "sample_rate": 48000,
+          "channels": 2
+        }
+      },
+      "av_drift_sec": 0.0003,
+      "audio_pts_gaps": [],
+      "expected_duration": 69.8332,
+      "checks": {
+        "has_video": true,
+        "has_audio": true,
+        "video_h264": true,
+        "video_size": true,
+        "video_fps": true,
+        "audio_aac": true,
+        "audio_rate_channels": true,
+        "av_drift_ok": true,
+        "av_start_aligned": true,
+        "starts_at_zero": true,
+        "audio_contiguous": true,
+        "duration_ok": true
+      },
+      "pass": true
+    }
+  },
+  "deliverables": {
+    "base_mp4": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\05_final_masters\\Base_FruitsOfPower_Part5_Flow_Native_Farsi.mp4",
+    "base_srt": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\05_final_masters\\Base_FruitsOfPower_Part5_Flow_Native_Farsi.srt",
+    "master_mp4": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\05_final_masters\\Master_FruitsOfPower_Part5_Flow_Native_Farsi.mp4",
+    "master_srt": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\05_final_masters\\Master_FruitsOfPower_Part5_Flow_Native_Farsi.srt",
+    "audit_mp3": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\05_final_masters\\Master_FruitsOfPower_Part5_Flow_Native_Farsi_audit.mp3",
+    "contact_sheet": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\05_final_masters\\qa_FruitsOfPower_Part5_contact.jpg",
+    "clips_subbed": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\05_final_masters\\clips_subbed\\clip_01_subbed.mp4, C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\05_final_masters\\clips_subbed\\clip_02_subbed.mp4, C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\05_final_masters\\clips_subbed\\clip_03_subbed.mp4, C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\05_final_masters\\clips_subbed\\clip_04_subbed.mp4, C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\05_final_masters\\clips_subbed\\clip_05_subbed.mp4, C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi\\05_final_masters\\clips_subbed\\clip_06_subbed.mp4"
+  },
+  "gates": {
+    "automatic": {
+      "per_clip_media": "pass",
+      "subtitle_bounds": "pass",
+      "pill_layout": "pass",
+      "speech_safe_trim": "pass",
+      "per_clip_mirrors": "pass",
+      "splice_boundaries": "pass",
+      "speech_detected": "pass",
+      "persian_shaping": "pass",
+      "base_media": "pass",
+      "master_media": "pass",
+      "master_single_cta": "pass",
+      "cta_subtitle_bounds": "pass"
+    },
+    "human_review": {
+      "listen_every_clip_edges": "pending",
+      "listen_final_master": "pending",
+      "transcript_word_for_word": "pending",
+      "visual_frame_review": "pending",
+      "voice_continuity": "pending"
+    }
+  },
+  "overall_automatic": "pass",
+  "warnings": [],
+  "note": "Amplitude speech detection locates candidates only; it does not prove a sentence finished. Human/audio-capable review gates stay 'pending' until signed off."
+}

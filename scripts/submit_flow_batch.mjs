@@ -3,15 +3,15 @@
  * Automated Google Flow Keyframe + Native Farsi Prompt Batch Submitter via Profile Bridge MCP.
  *
  * Usage:
- *   node scripts/submit_flow_batch.mjs --part part1 [--clip 1]
- *   node scripts/submit_flow_batch.mjs --part part2 [--clip 1]
+ *   node scripts/submit_flow_batch.mjs --part fop_part1 [--clip 1] [--start-clip 1] [--profile <id>] [--tab <id>]
  */
 
 import { spawn, spawnSync } from 'node:child_process';
 
-const PROFILE_ID = process.env.FLOW_PROFILE_ID || '731e6d16-b95b-480f-a245-cb443411400d';
-const TAB_ID = Number(process.env.FLOW_TAB_ID || 612095035);
+let PROFILE_ID = process.env.FLOW_PROFILE_ID || '731e6d16-b95b-480f-a245-cb443411400d';
+let TAB_ID = Number(process.env.FLOW_TAB_ID || 612095035);
 const KF_DIR = 'C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series1-whats-her-number-farsi\\02_keyframes\\flow_kfs';
+const FOP_DIR = 'C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi';
 
 const BATCHES = {
   part1: [
@@ -90,7 +90,212 @@ const BATCHES = {
         '3D Pixar animation, static medium shot keeping the character in frame the entire time (no camera cuts), the red cherry female dentist in a white coat and round glasses sits at her clinic desk with an open medical book, holding her chin thoughtfully. She speaks in native Persian (Farsi) with a dramatic worried female voice: «امیدوارم اثر درمان توت‌فرنگی بعد از بیست و چهار ساعت نپره... وگرنه دندوناش از قبل هم بزرگ‌تر می‌شه!» Zero on-screen subtitles.',
     },
   ],
+  fop_part1: [
+    {
+      clip: 1,
+      kf: `${FOP_DIR}\\part1\\keyframes\\KF_03.jpg`,
+      prompt:
+        '3D stylized cartoon animation, static medium shot keeping the character in frame the entire time (no camera cuts), anthropomorphic purple eggplant aristocrat man (Duke Eggplant) in a dark purple velvet tuxedo standing in the rain at night looking up at the sky in shock and speaking in native Persian (Farsi) with a deep emotional male voice: «چرا؟! چطور تونست به من خیانت کنه و قلبمو بشکنه؟!» Zero on-screen subtitles.',
+    },
+    {
+      clip: 2,
+      kf: `${FOP_DIR}\\part1\\keyframes\\KF_02.jpg`,
+      prompt:
+        '3D stylized cartoon animation, static medium two-shot keeping both characters in frame the entire time (no camera cuts), glamorous anthropomorphic yellow lemon woman (Lemonella) in a gold gown and flashy banana man in a yellow leather jacket and sunglasses standing by a yellow car at night. First Lemonella speaks in native Persian (Farsi) with a dramatic female voice: «من باردارم! ولی هیچ‌کس نباید بفهمه این بچه مال توئه!» Then Banana Man replies in native Persian (Farsi) with an arrogant young male voice: «نگران نباش عزیزم، دوک به هیچی شک نمی‌کنه!» Zero on-screen subtitles.',
+    },
+    {
+      clip: 3,
+      kf: `${FOP_DIR}\\part1\\keyframes\\KF_03.jpg`,
+      prompt:
+        '3D stylized cartoon animation, static medium close-up keeping the character in frame the entire time (no camera cuts), anthropomorphic purple eggplant aristocrat man (Duke Eggplant) in a dark purple velvet tuxedo looking down in shock and heartbreak at a smartphone on a marble table inside his luxury mansion. Duke Eggplant speaks in native Persian (Farsi) with a shocked heartbroken male voice: «امکان نداره! لمونلا دیشب کجا بوده؟! یعنی به من خیانت کرده؟!» Zero on-screen subtitles.',
+    },
+    {
+      clip: 4,
+      kf: `${FOP_DIR}\\part1\\keyframes\\KF_04.jpg`,
+      prompt:
+        '3D stylized cartoon animation, static medium close-up keeping the character in frame the entire time (no camera cuts), anthropomorphic purple eggplant aristocrat man (Duke Eggplant) in a dark purple velvet tuxedo holding a bouquet of dark purple roses with tears streaming down his face in his luxury mansion. Duke Eggplant speaks in native Persian (Farsi) with an emotional weeping male voice: «من این گل‌ها رو با عشق براش خریده بودم... چطور تونست با قلب من این کار رو بکنه؟!» Zero on-screen subtitles.',
+    },
+    {
+      clip: 5,
+      kf: `${FOP_DIR}\\part1\\keyframes\\KF_05.jpg`,
+      prompt:
+        '3D stylized cartoon animation, static medium shot keeping the character in frame the entire time (no camera cuts), flashy anthropomorphic banana man in a yellow leather jacket, gold chain necklace, and dark sunglasses sitting in a yellow car at night in the rain. Banana Man speaks in native Persian (Farsi) with a smug arrogant male voice: «بارون رو ببین... حالا تمام دارایی و زندگیت مال منه، دوک!» Zero on-screen subtitles.',
+    },
+  ],
+  fop_part2: [
+    {
+      clip: 1,
+      kf: `${FOP_DIR}\\part2\\keyframes\\KF_01.jpg`,
+      prompt:
+        '3D stylized cartoon animation, static medium shot keeping the character in frame the entire time (no camera cuts), flashy anthropomorphic banana man in a yellow leather jacket and sunglasses spraying a sparkling bottle in a luxury VIP party room. Banana Man speaks in native Persian (Farsi) with an excited arrogant male voice: «بزن بریم! امشب شبِ ماست! با پول‌های دوک کل شهر رو می‌خریم!» Zero on-screen subtitles.',
+    },
+    {
+      clip: 2,
+      kf: `${FOP_DIR}\\part2\\keyframes\\KF_02.jpg`,
+      prompt:
+        '3D stylized cartoon animation, static medium close-up keeping the character in frame the entire time (no camera cuts), anthropomorphic purple eggplant aristocrat man (Duke Eggplant) in a dark purple velvet tuxedo crying alone holding a crystal glass in his dark rainy mansion. Duke Eggplant speaks in native Persian (Farsi) with a deep sorrowful male voice: «همه فکر می‌کنن من همه‌چیز دارم... ولی توی تنهایی خودم دارم می‌سوزم!» Zero on-screen subtitles.',
+    },
+    {
+      clip: 3,
+      kf: `${FOP_DIR}\\part2\\keyframes\\KF_03.jpg`,
+      prompt:
+        '3D stylized cartoon animation, static medium two-shot keeping both characters in frame the entire time (no camera cuts), elegant anthropomorphic red strawberry woman (Strawberry Countess) in a crimson evening gown comforting Duke Eggplant at a candlelit table. Strawberry Countess speaks in native Persian (Farsi) with a warm gentle female voice: «دوک عزیزم، اون لیاقت عشق تو رو نداشت... بذار من مرهم قلبت باشم.» Zero on-screen subtitles.',
+    },
+    {
+      clip: 4,
+      kf: `${FOP_DIR}\\part2\\keyframes\\KF_04.jpg`,
+      prompt:
+        '3D stylized cartoon animation, static medium close-up keeping the character in frame the entire time (no camera cuts), glamorous anthropomorphic yellow lemon woman (Lemonella) in a gold gown gasping in shock at her smartphone screen inside a luxury room. Lemonella speaks in native Persian (Farsi) with a shocked jealous female voice: «نه... امکان نداره دوک با کنتس توت‌فرنگی دیده شده باشه!» Zero on-screen subtitles.',
+    },
+    {
+      clip: 5,
+      kf: `${FOP_DIR}\\part2\\keyframes\\KF_01.jpg`,
+      prompt:
+        '3D stylized cartoon animation, static medium two-shot keeping both characters in frame the entire time (no camera cuts), flashy anthropomorphic banana man in a yellow leather jacket and sunglasses and glamorous yellow lemon woman (Lemonella) in a gold gown talking seriously in a luxury hallway about an envelope. First Banana Man speaks in native Persian (Farsi) with a serious male voice: «چی شده؟ توی اون پاکت آزمایش چی نوشته؟» Then Lemonella replies in native Persian (Farsi) with an emotional female voice: «چطور روت میشه حقیقت رو انکار کنی؟! این برگه همه‌چیز رو ثابت می‌کنه!» Zero on-screen subtitles.',
+    },
+    {
+      clip: 6,
+      kf: `${FOP_DIR}\\part2\\keyframes\\KF_06.jpg`,
+      prompt:
+        '3D stylized cartoon animation, static medium shot keeping the characters in frame the entire time (no camera cuts), glamorous yellow lemon woman (Lemonella) holding an open DNA test result paper in total shock while Banana Man and Duke Eggplant stand behind her. Lemonella speaks in native Persian (Farsi) with a terrified shocked female voice: «وای خدای من، نه... امکان نداره نتیجه آزمایش دی‌ان‌ای این باشه!» Zero on-screen subtitles.',
+    },
+  ],
+  fop_part3: [
+    {
+      clip: 1,
+      kf: `${FOP_DIR}\\part3\\keyframes\\KF_01.jpg`,
+      prompt:
+        '3D stylized cartoon animation, static medium close-up keeping the character in frame the entire time (no camera cuts), glamorous anthropomorphic yellow lemon woman (Lemonella) crying in a luxury marble bathroom. Lemonella speaks in native Persian (Farsi) with a tearful emotional female voice: «باورم نمیشه... بچه‌مون پسره! ای کاش بقیه حقیقت رو می‌دونستن...» Zero on-screen subtitles.',
+    },
+    {
+      clip: 2,
+      kf: `${FOP_DIR}\\part2\\keyframes\\KF_01.jpg`,
+      prompt:
+        '3D stylized cartoon animation, static medium two-shot keeping both characters in frame the entire time (no camera cuts), flashy anthropomorphic banana man in a yellow leather jacket and dark sunglasses smiling confidently in the foreground while glamorous yellow lemon woman (Lemonella) in a gold gown holds a paper behind him. First Lemonella speaks in native Persian (Farsi) with a serious female voice: «آزمایش همه‌چیز رو ثابت کرد!» Then Banana Man replies in native Persian (Farsi) with a confident laughing male voice: «هاهاها! که چی مثلاً؟!» Zero on-screen subtitles.',
+    },
+    {
+      clip: 3,
+      kf: `${FOP_DIR}\\part3\\keyframes\\KF_03.jpg`,
+      prompt:
+        '3D stylized cartoon animation, static medium two-shot keeping both characters in frame the entire time (no camera cuts), Duke Eggplant in his velvet tuxedo proudly showing an architectural blueprint on a table to Lemonella in her gold gown. Duke Eggplant speaks in native Persian (Farsi) with a warm proud male voice: «این نقشه رو ببین لمونلا؛ تزئینات طلای خالص و نمای کامل شهر... بهترین‌ها برای وارثمون!» Zero on-screen subtitles.',
+    },
+    {
+      clip: 4,
+      kf: `${FOP_DIR}\\part1\\keyframes\\KF_03.jpg`,
+      prompt:
+        '3D stylized cartoon animation, static medium shot keeping the character in frame the entire time (no camera cuts), an anthropomorphic dark purple aristocrat man in a dark suit stands outside in the rain at night looking toward an illuminated luxury mansion window and speaks in native Persian (Farsi) with a deep mysterious male voice: «پس فکر کردی می‌تونی از گذشته فرار کنی لمونلا؟ و اونا به هیچ‌چیز شک نکردن؟» Zero on-screen subtitles.',
+    },
+    {
+      clip: 5,
+      kf: `${FOP_DIR}\\part3\\keyframes\\KF_05.jpg`,
+      prompt:
+        '3D stylized cartoon animation, static medium close-up keeping the character in frame the entire time (no camera cuts), glamorous yellow lemon woman (Lemonella) whispering worriedly into her smartphone in a dimly lit hallway. Lemonella speaks in native Persian (Farsi) with a worried whispering female voice: «معلومه که نه... باید قبل از اینکه دوک بویی ببره از اینجا فرار کنم!» Zero on-screen subtitles.',
+    },
+    {
+      clip: 6,
+      kf: `${FOP_DIR}\\part1\\keyframes\\KF_03.jpg`,
+      prompt:
+        '3D stylized cartoon animation, static medium close-up keeping the character in frame the entire time (no camera cuts), an anthropomorphic dark purple aristocrat man in a dark suit smiles confidently inside a dimly lit luxury mansion room at night and speaks in native Persian (Farsi) with a deep serious male voice: «فکر کردی می‌تونی واقعیت رو پنهان کنی عزیزم؟ تمام مدارک دست منه!» Zero on-screen subtitles.',
+    },
+  ],
+  fop_part4: [
+    {
+      clip: 1,
+      kf: `${FOP_DIR}\\part4\\keyframes\\KF_01.jpg`,
+      prompt:
+        '3D stylized cartoon animation, static medium two-shot keeping both characters in frame the entire time (no camera cuts), glamorous yellow lemon woman (Lemonella) in a gold gown crying in the arms of purple eggplant aristocrat (Duke Eggplant) in a dark purple velvet tuxedo inside a luxury mansion room and speaking in native Persian (Farsi) with a weeping remorseful female voice: «دوک، قسم می‌خورم نمی‌خواستم اینطوری بشه! به اعتمادت خیانت کردم و همه‌چیز رو خراب کردم!» Zero on-screen subtitles.',
+    },
+    {
+      clip: 2,
+      kf: `${FOP_DIR}\\part4\\keyframes\\KF_02.jpg`,
+      prompt:
+        '3D stylized cartoon animation, static medium two-shot keeping both characters in frame the entire time (no camera cuts), Duke Eggplant in a dark purple velvet tuxedo holds a black legal contract folder with a serious expression while Lemonella in a gold gown stands beside him. First Lemonella speaks in native Persian (Farsi) with a shocked tearful female voice: «این دیگه چیه؟ چرا این قرارداد رو امضا کردی؟» Then Duke Eggplant replies in native Persian (Farsi) with a firm serious male voice: «برای اینکه مطمئن بشم دیگه هیچ‌وقت فریب نمی‌خورم!» Zero on-screen subtitles.',
+    },
+    {
+      clip: 3,
+      kf: `${FOP_DIR}\\part4\\keyframes\\KF_03.jpg`,
+      prompt:
+        '3D stylized cartoon animation, static medium two-shot keeping both characters in frame the entire time (no camera cuts), elegant red strawberry woman (Strawberry Countess) in a crimson evening gown leans in warmly toward Duke Eggplant at a candlelit table and speaks in native Persian (Farsi) with a soft gentle female voice: «لازم نیست امشب تنها بمونی دوک عزیزم... تو لیاقتت خیلی بیشتر از این غم و غصه‌ست.» Zero on-screen subtitles.',
+    },
+    {
+      clip: 4,
+      kf: `${FOP_DIR}\\part4\\keyframes\\KF_04.jpg`,
+      prompt:
+        '3D stylized cartoon animation, static medium close-up keeping the character in frame the entire time (no camera cuts), glamorous yellow lemon woman (Lemonella) in a gold gown cries in front of a vanity mirror holding a small photo and speaks in native Persian (Farsi) with a sad crying female voice: «حالا با این وضعیت و دردسرهای جدید چه خاکی به سرم بریزم؟!» Zero on-screen subtitles.',
+    },
+    {
+      clip: 5,
+      kf: `${FOP_DIR}\\part4\\keyframes\\KF_05.jpg`,
+      prompt:
+        '3D stylized cartoon animation, static medium shot keeping the characters in frame the entire time (no camera cuts), glamorous yellow lemon woman (Lemonella) in a gold gown speaks emotionally in the foreground while Duke Eggplant and Strawberry Countess sit in the background. Lemonella speaks in native Persian (Farsi) with a loud upset female voice: «به چه حقی به من پشت می‌کنی؟! وقتی باهات حرف می‌زنم تو چشمام نگاه کن!» Zero on-screen subtitles.',
+    },
+    {
+      clip: 6,
+      kf: `${FOP_DIR}\\part4\\keyframes\\KF_01.jpg`,
+      prompt:
+        '3D stylized cartoon animation, static medium two-shot keeping both characters in frame the entire time (no camera cuts), Duke Eggplant in a dark purple velvet tuxedo holds and protects Lemonella in a gold gown inside the mansion hall during a dramatic storm and speaks in native Persian (Farsi) with an urgent protective male voice: «محکم منو بگیر لمونلا! اون‌ها به عمارت رسیدن!» Zero on-screen subtitles.',
+    },
+  ],
+  fop_part5: [
+    {
+      clip: 1,
+      kf: `${FOP_DIR}\\part1\\keyframes\\KF_05.jpg`,
+      prompt:
+        '3D stylized cartoon animation, static medium close-up keeping the character in frame the entire time (no camera cuts), flashy anthropomorphic banana man in a yellow leather jacket and dark sunglasses sits in a neon lounge at night looking bitter and upset and speaks in native Persian (Farsi) with a bitter upset male voice: «پس یعنی منم برات فقط یه اشتباهِ دیگه بودم لمونلا؟!» Zero on-screen subtitles.',
+    },
+    {
+      clip: 2,
+      kf: `${FOP_DIR}\\part1\\keyframes\\KF_03.jpg`,
+      prompt:
+        '3D stylized cartoon animation, static medium close-up keeping the character in frame the entire time (no camera cuts), anthropomorphic purple eggplant aristocrat (Duke Eggplant) in a dark purple velvet tuxedo looks down in shock in his luxury mansion and speaks in native Persian (Farsi) with a stunned male voice: «تو قبل از من با اون رابطه داشتی؟! چرا این راز رو پنهان کردی؟!» Zero on-screen subtitles.',
+    },
+    {
+      clip: 3,
+      kf: `${FOP_DIR}\\part3\\keyframes\\KF_05.jpg`,
+      prompt:
+        '3D stylized cartoon animation, static medium close-up keeping the character in frame the entire time (no camera cuts), glamorous yellow lemon woman (Lemonella) in a gold gown stands in a dark luxury hall looking worried and emotional and speaks in native Persian (Farsi) with a worried emotional female voice: «قبل از دوک، من توی اون شهر غریب تنها بودم و هیچ چاره‌ای نداشتم!» Zero on-screen subtitles.',
+    },
+    {
+      clip: 4,
+      kf: `${FOP_DIR}\\part5\\keyframes\\KF_04.jpg`,
+      prompt:
+        '3D stylized cartoon animation, static medium two-shot keeping both characters in frame the entire time (no camera cuts), Duke Eggplant in a dark purple velvet tuxedo embraces the crying Lemonella in a gold gown tenderly in the mansion and speaks in native Persian (Farsi) with a warm forgiving male voice: «برام مهم نیست قبل از من کی توی گذشته‌ت بوده... من از تو و بچه‌مون محافظت می‌کنم!» Zero on-screen subtitles.',
+    },
+    {
+      clip: 5,
+      kf: `${FOP_DIR}\\part5\\keyframes\\KF_05.jpg`,
+      prompt:
+        '3D stylized cartoon animation, static medium two-shot keeping both characters in frame the entire time (no camera cuts), Duke Eggplant in a dark purple velvet tuxedo kneels on the mansion floor holding Lemonella in a gold gown who feels dizzy and speaks in native Persian (Farsi) with a worried urgent male voice: «تحمل کن عزیزم! سریع زنگ بزنید به اورژانس و بیمارستان!» Zero on-screen subtitles.',
+    },
+    {
+      clip: 6,
+      kf: `${FOP_DIR}\\part5\\keyframes\\KF_06.jpg`,
+      prompt:
+        '3D stylized cartoon animation, static medium shot keeping the characters in frame the entire time (no camera cuts), an anthropomorphic green pear doctor in a white medical coat and stethoscope holds a medical chart in a hospital room beside Duke Eggplant and Lemonella and speaks in native Persian (Farsi) with a serious surprised male doctor voice: «متاسفانه اسکن‌ها یه چیز غیرمنتظره رو نشون میدن... توی شکمت سه تا بچه‌ست! سه‌قلو بارداری!» Zero on-screen subtitles.',
+    },
+  ],
 };
+
+BATCHES.fop_rem123 = [
+  BATCHES.fop_part1[0],
+  BATCHES.fop_part2[4],
+  BATCHES.fop_part3[1],
+  BATCHES.fop_part3[3],
+  BATCHES.fop_part3[5],
+];
+
+BATCHES.fop_final_p1 = [
+  BATCHES.fop_part3[5],
+  BATCHES.fop_part5[0],
+  BATCHES.fop_part5[1],
+  BATCHES.fop_part5[2],
+];
+
+BATCHES.fop_final_p2 = [
+  BATCHES.fop_part5[3],
+  BATCHES.fop_part5[4],
+  BATCHES.fop_part5[5],
+];
 
 class McpClient {
   constructor() {
@@ -185,6 +390,18 @@ function findNode(snapshot, predicate) {
   return null;
 }
 
+const isPromptTextbox = (n) =>
+  n.role === 'textbox' &&
+  (n.name === 'What do you want to create?' || n.name === 'چه چیزی می‌خواهید بسازید؟');
+
+const isClearButton = (n) =>
+  n.role === 'button' &&
+  (n.name === 'Clear prompt' || n.name === 'پاک کردن پیام‌واره');
+
+const isStartButton = (n) =>
+  n.role === 'button' &&
+  (n.name === 'Start generation' || n.name === 'شروع تولید');
+
 function copyImageToClipboard(imagePath) {
   const psCmd = `Add-Type -AssemblyName System.Windows.Forms,System.Drawing; $img = [System.Drawing.Image]::FromFile('${imagePath}'); [System.Windows.Forms.Clipboard]::SetImage($img); $img.Dispose(); Write-Output 'COPIED_OK'`;
   const res = spawnSync('powershell.exe', ['-Sta', '-NoProfile', '-Command', psCmd], {
@@ -197,10 +414,13 @@ function copyImageToClipboard(imagePath) {
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
-async function submitSingleClip(mcp, item) {
-  console.log(`\n=== Submitting Clip ${item.clip}: ${item.kf} ===`);
-  copyImageToClipboard(item.kf);
-  console.log(`  [1/5] Copied image to clipboard: ${item.kf}`);
+async function submitSingleClip(mcp, item, forceNoImage = false) {
+  const skipImage = Boolean(item.noImage || forceNoImage);
+  console.log(`\n=== Submitting Clip ${item.clip}: ${skipImage ? '(TEXT-ONLY)' : item.kf} ===`);
+  if (!skipImage) {
+    copyImageToClipboard(item.kf);
+    console.log(`  [1/5] Copied image to clipboard: ${item.kf}`);
+  }
 
   // Ensure prompt box is 100% empty before pasting a new image
   let snap = null;
@@ -209,10 +429,7 @@ async function submitSingleClip(mcp, item) {
       profileId: PROFILE_ID,
       tabId: TAB_ID,
     });
-    const leftoverClear = findNode(
-      snap,
-      (n) => n.role === 'button' && n.name === 'Clear prompt'
-    );
+    const leftoverClear = findNode(snap, isClearButton);
     if (!leftoverClear) break;
     console.log(`  [!] Clearing leftover prompt (try ${clearTry}, ${leftoverClear.ref})...`);
     await mcp.callTool('browser_click', {
@@ -223,55 +440,59 @@ async function submitSingleClip(mcp, item) {
     await sleep(1200);
   }
 
-  // Try up to 3 paste attempts in case a background grid render stole focus
   let uploadedSnap = null;
-  for (let pasteTry = 1; pasteTry <= 3 && !uploadedSnap; pasteTry++) {
-    snap = await mcp.callTool('browser_observe_page', {
+  if (skipImage) {
+    uploadedSnap = await mcp.callTool('browser_observe_page', {
       profileId: PROFILE_ID,
       tabId: TAB_ID,
     });
-    const promptBox = findNode(
-      snap,
-      (n) => n.role === 'textbox' && n.name === 'What do you want to create?'
-    );
-    if (!promptBox) {
-      throw new Error('Could not find prompt textbox ("What do you want to create?")');
-    }
-
-    await mcp.callTool('browser_click', {
-      profileId: PROFILE_ID,
-      tabId: TAB_ID,
-      ref: promptBox.ref,
-    });
-    await sleep(600);
-
-    await mcp.callTool('browser_press_key', {
-      profileId: PROFILE_ID,
-      tabId: TAB_ID,
-      key: 'v',
-      modifiers: ['ctrl'],
-    });
-    console.log(
-      `  [2/5] Pressed Ctrl+V (try ${pasteTry}) on prompt textbox (${promptBox.ref}), waiting for upload...`
-    );
-
-    for (let attempt = 1; attempt <= 6; attempt++) {
-      await sleep(1500);
-      const s = await mcp.callTool('browser_observe_page', {
+  } else {
+    // Try up to 3 paste attempts in case a background grid render stole focus
+    for (let pasteTry = 1; pasteTry <= 3 && !uploadedSnap; pasteTry++) {
+      snap = await mcp.callTool('browser_observe_page', {
         profileId: PROFILE_ID,
         tabId: TAB_ID,
       });
-      const clearBtn = findNode(s, (n) => n.role === 'button' && n.name === 'Clear prompt');
-      const cancelIcon = findNode(s, (n) => n.tag === 'mat-icon' && n.text === 'cancel');
-      if (clearBtn || cancelIcon) {
-        uploadedSnap = s;
-        console.log(`  [3/5] Image upload confirmed on attempt ${attempt} (try ${pasteTry})!`);
-        break;
+      const promptBox = findNode(snap, isPromptTextbox);
+      if (!promptBox) {
+        throw new Error('Could not find prompt textbox');
+      }
+
+      await mcp.callTool('browser_click', {
+        profileId: PROFILE_ID,
+        tabId: TAB_ID,
+        ref: promptBox.ref,
+      });
+      await sleep(600);
+
+      await mcp.callTool('browser_press_key', {
+        profileId: PROFILE_ID,
+        tabId: TAB_ID,
+        key: 'v',
+        modifiers: ['ctrl'],
+      });
+      console.log(
+        `  [2/5] Pressed Ctrl+V (try ${pasteTry}) on prompt textbox (${promptBox.ref}), waiting for upload...`
+      );
+
+      for (let attempt = 1; attempt <= 10; attempt++) {
+        await sleep(1500);
+        const s = await mcp.callTool('browser_observe_page', {
+          profileId: PROFILE_ID,
+          tabId: TAB_ID,
+        });
+        const clearBtn = findNode(s, isClearButton);
+        const cancelIcon = findNode(s, (n) => n.tag === 'mat-icon' && n.text === 'cancel');
+        if (clearBtn || cancelIcon) {
+          uploadedSnap = s;
+          console.log(`  [3/5] Image upload confirmed on attempt ${attempt} (try ${pasteTry})!`);
+          break;
+        }
       }
     }
-  }
-  if (!uploadedSnap) {
-    throw new Error(`Timed out waiting for keyframe image to upload for Clip ${item.clip}`);
+    if (!uploadedSnap) {
+      throw new Error(`Timed out waiting for keyframe image to upload for Clip ${item.clip}`);
+    }
   }
 
   let readySnap = null;
@@ -283,10 +504,7 @@ async function submitSingleClip(mcp, item) {
             profileId: PROFILE_ID,
             tabId: TAB_ID,
           });
-    const updatedPromptBox = findNode(
-      snapBeforeType,
-      (n) => n.role === 'textbox' && n.name === 'What do you want to create?'
-    );
+    const updatedPromptBox = findNode(snapBeforeType, isPromptTextbox);
     if (!updatedPromptBox) {
       throw new Error('Could not find prompt textbox after image upload');
     }
@@ -321,23 +539,38 @@ async function submitSingleClip(mcp, item) {
     throw new Error(`Failed to verify typed prompt text for Clip ${item.clip}`);
   }
 
-  const startBtn = findNode(
-    readySnap,
-    (n) => n.role === 'button' && n.name === 'Start generation'
-  );
-  if (!startBtn) {
-    throw new Error('Could not find "Start generation" button');
+  for (let submitTry = 1; submitTry <= 3; submitTry++) {
+    const curSnap =
+      submitTry === 1
+        ? readySnap
+        : await mcp.callTool('browser_observe_page', {
+            profileId: PROFILE_ID,
+            tabId: TAB_ID,
+          });
+    const startBtn = findNode(curSnap, isStartButton);
+    if (!startBtn) {
+      throw new Error('Could not find "Start generation" button');
+    }
+
+    await mcp.callTool('browser_click', {
+      profileId: PROFILE_ID,
+      tabId: TAB_ID,
+      ref: startBtn.ref,
+    });
+    console.log(`  [5/5] Clicked "Start generation" (${startBtn.ref}, try ${submitTry})!`);
+    await sleep(3500);
+
+    const afterSnap = await mcp.callTool('browser_observe_page', {
+      profileId: PROFILE_ID,
+      tabId: TAB_ID,
+    });
+    const stillHasClear = findNode(afterSnap, isClearButton);
+    if (!stillHasClear) {
+      console.log(`  [OK] Confirmed prompt submitted and cleared!`);
+      break;
+    }
+    console.log(`  [!] Prompt still has Clear button after click (try ${submitTry}), retrying...`);
   }
-
-  await mcp.callTool('browser_click', {
-    profileId: PROFILE_ID,
-    tabId: TAB_ID,
-    ref: startBtn.ref,
-  });
-  console.log(`  [5/5] Clicked "Start generation" (${startBtn.ref})!`);
-
-  // Wait for prompt box to clear confirming submission
-  await sleep(4500);
 }
 
 async function main() {
@@ -345,21 +578,44 @@ async function main() {
   let part = 'part1';
   let clipFilter = null;
   let startClip = 1;
+  let endClip = 999;
   for (let i = 0; i < argv.length; i++) {
     if (argv[i] === '--part' && argv[i + 1]) part = argv[++i];
     else if (argv[i] === '--clip' && argv[i + 1]) clipFilter = Number(argv[++i]);
     else if (argv[i] === '--start-clip' && argv[i + 1]) startClip = Number(argv[++i]);
+    else if (argv[i] === '--end-clip' && argv[i + 1]) endClip = Number(argv[++i]);
+    else if (argv[i] === '--profile' && argv[i + 1]) PROFILE_ID = argv[++i];
+    else if (argv[i] === '--tab' && argv[i + 1]) TAB_ID = Number(argv[++i]);
   }
 
   const batch = BATCHES[part];
   if (!batch) throw new Error(`Unknown --part ${part}`);
   const items = clipFilter
     ? batch.filter((x) => x.clip === clipFilter)
-    : batch.filter((x) => x.clip >= startClip);
+    : batch.filter((x) => x.clip >= startClip && x.clip <= endClip);
 
   const mcp = new McpClient();
   try {
     await mcp.init();
+    // Clean any failed tiles at the top of the list before submitting
+    for (let round = 0; round < 6; round++) {
+      const snap = await mcp.callTool('browser_observe_page', {
+        profileId: PROFILE_ID,
+        tabId: TAB_ID,
+      });
+      const delBtn = findNode(
+        snap,
+        (n) => n.ref && n.role === 'button' && (n.name === 'Delete' || n.name === 'حذف')
+      );
+      if (!delBtn) break;
+      console.log(`  [clean] Deleting failed tile [${delBtn.ref}] (${delBtn.name})...`);
+      await mcp.callTool('browser_click', {
+        profileId: PROFILE_ID,
+        tabId: TAB_ID,
+        ref: delBtn.ref,
+      });
+      await sleep(1000);
+    }
     for (const item of items) {
       await submitSingleClip(mcp, item);
     }

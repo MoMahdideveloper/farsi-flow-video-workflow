@@ -1,0 +1,80 @@
+{
+  "_comment": "Fruits of Power - Part 1 (Google Flow native Farsi).",
+  "schema_version": 1,
+  "speech_review_note": "Curated trim windows with auto_expand speech-safe protection.",
+  "episode_id": "FruitsOfPower_Part1",
+  "title_fa": "قسمت اول: خیانت در عمارت بارانی",
+  "title_en": "Fruits of Power - Part 1",
+  "variables": {
+    "BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi",
+    "CHEF_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\ugly-face-chef-farsi"
+  },
+  "clips_dir": "${BASE}\\part1\\flow_clips",
+  "out_dir": "${BASE}\\05_final_masters",
+  "font_path": "${CHEF_BASE}\\03_farsi_audio_tts\\Vazirmatn-Bold.ttf",
+  "cta_video": "${BASE}\\part1\\flow_clips\\cta_kelidbox_s2.mp4",
+  "cta_speaker": "DUKE",
+  "cta_subtitles": [
+    {"start": 0.25, "end": 3.35, "text": "برای دیدن قسمت بعدی همین الان پیج رو فالو کن!"},
+    {"start": 3.50, "end": 7.85, "text": "راستی کل این انیمیشن با اکانت‌های هوش مصنوعی سایت کلیدباکس ساخته شده!"}
+  ],
+  "video": {"width": 720, "height": 1280, "fps": 24, "crf": 18, "preset": "fast", "scale_mode": "fill"},
+  "audio": {"loudnorm": "loudnorm=I=-14:TP=-1.5:LRA=11", "sample_rate": 48000, "channels": 2, "bitrate": "192k"},
+  "speech": {"speech_safe": "auto_expand", "threshold_dbfs": -38.0, "pre_handle": 0.20, "post_handle": 0.35,
+             "splice_crossfade": 0.02},
+  "subtitle_style": {"time_base": "trim_local", "y_ratio": 0.84, "font_size": 27, "min_font_size": 16,
+                     "max_text_margin": 84, "max_lines": 2},
+  "badge": {"text": "قسمت اول: خیانت در عمارت بارانی", "start": 0.0, "end": 3.5, "y_center": 130, "font_size": 28,
+            "color": [255, 225, 110], "clip_index": 1},
+  "outputs": {"per_clip_location": "both", "base_mode": "timeline", "cta_burn_subtitles": true,
+              "cta_loudnorm": true},
+  "voices": {
+    "DUKE":   {"name_fa": "دوک بادمجان",  "color": [210, 165, 255], "source": "google_flow_native"},
+    "LEMON":  {"name_fa": "لمونلا",       "color": [255, 235, 110], "source": "google_flow_native"},
+    "BANANA": {"name_fa": "موز طلایی",    "color": [255, 200, 95],  "source": "google_flow_native"},
+    "STRAW":  {"name_fa": "کنتس توت‌فرنگی","color": [255, 150, 195], "source": "google_flow_native"},
+    "FIG":    {"name_fa": "انجیر سیاه",   "color": [180, 220, 255], "source": "google_flow_native"},
+    "PEACH":  {"name_fa": "دکتر هلو",     "color": [150, 255, 190], "source": "google_flow_native"}
+  },
+  "clips": [
+    {
+      "id": "clip_01", "file": "clip_01.mp4", "trim_in": 0.00, "trim_out": 9.95,
+      "subtitles": [
+        [0.30, 9.50, "DUKE", "چرا؟! چطور تونست به من خیانت کنه و قلبمو بشکنه؟!"]
+      ]
+    },
+    {
+      "id": "clip_02", "file": "clip_02.mp4", "trim_in": 0.00, "trim_out": 9.95,
+      "subtitles": [
+        [0.20, 4.80, "LEMON", "من باردارم! ولی هیچ‌کس نباید بفهمه این بچه مال توئه!"],
+        [5.00, 9.60, "BANANA", "نگران نباش عزیزم، دوک به هیچی شک نمی‌کنه!"]
+      ]
+    },
+    {
+      "id": "clip_03", "file": "clip_03.mp4", "trim_in": 0.00, "trim_out": 9.95,
+      "subtitles": [
+        [0.25, 9.60, "DUKE", "امکان نداره! لمونلا دیشب کجا بوده؟! یعنی به من خیانت کرده؟!"]
+      ]
+    },
+    {
+      "id": "clip_04", "file": "clip_04.mp4", "trim_in": 0.00, "trim_out": 9.95,
+      "subtitles": [
+        [0.25, 4.80, "DUKE", "من این گل‌ها رو با عشق براش خریده بودم..."],
+        [5.00, 9.60, "DUKE", "چطور تونست با قلب من این کار رو بکنه؟!"]
+      ]
+    },
+    {
+      "id": "clip_05", "file": "clip_05.mp4", "trim_in": 0.00, "trim_out": 9.95,
+      "subtitles": [
+        [0.25, 9.60, "BANANA", "بارون رو ببین... حالا تمام دارایی و زندگیت مال منه، دوک!"]
+      ]
+    },
+    {
+      "id": "clip_06", "file": "clip_06.mp4", "trim_in": 0.50, "trim_out": 9.50,
+      "subtitles": [
+        [0.40, 3.15, "DUKE", "چرا من؟! خدایا چرا؟!"],
+        [3.40, 7.60, "DUKE", "دیگه طاقت دیدن این خیانت رو ندارم!"]
+      ]
+    }
+  ]
+}
