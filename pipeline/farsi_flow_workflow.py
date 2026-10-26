@@ -69,7 +69,7 @@ except ImportError:  # pragma: no cover
     except ImportError:
         get_display = None
 
-PIPELINE_VERSION = "1.2.0"
+PIPELINE_VERSION = "1.2.1"
 ANALYSIS_SR = 16000  # speech analysis: 16 kHz mono PCM
 
 # ----------------------------------------------------------------- defaults --
@@ -1490,10 +1490,35 @@ def evaluate_probe_entry(probe_entry: dict, *, clip_id: str = "", keyframe_thres
                                     (a leftover composer chip steered the clip)
     INTERNAL_SCENE_CUT              max_internal_jump_l1 > jump_thr  (+ suggested visual trim)
     KEYFRAME_DRIFT (warning only)   start locked but the clip ends far from the keyframe."""
-    e = probe_entry or {}
-    fps = float(sample_fps or e.get("sample_fps") or 2.0)
-    n = int(e.get("num_sampled_frames") or 0)
-    dur = float(clip_duration if clip_duration is not None else (n / fps if n else 10.0))
+    if not isinstance(probe_entry, dict):
+        raise PipelineError(f"{clip_id}: probe entry must be an object")
+    e = probe_entry
+
+    def number(value: Any, field: str, lo: float = 0.0, hi: float = float("inf")) -> float:
+        if isinstance(value, bool) or not isinstance(value, (int, float)) or not math.isfinite(value) \
+                or not lo <= value <= hi:
+            raise PipelineError(f"{clip_id}: invalid probe {field}: {value!r}")
+        return float(value)
+
+    fps = number(sample_fps if sample_fps is not None else e.get("sample_fps", 2.0), "sample_fps", .001)
+    n = number(e.get("num_sampled_frames"), "num_sampled_frames", 2)
+    if n != int(n):
+        raise PipelineError(f"{clip_id}: probe num_sampled_frames must be an integer")
+    dur = number(clip_duration if clip_duration is not None else n / fps, "duration", .001)
+    for field in ("l1_vs_keyframe_start", "l1_vs_keyframe_mean", "l1_vs_keyframe_end",
+                  "max_internal_jump_l1"):
+        number(e.get(field), field, 0, 255)
+    if e.get("closest_other_keyframe_l1_start") is not None:
+        number(e["closest_other_keyframe_l1_start"], "closest_other_keyframe_l1_start", 0, 255)
+    number(e.get("max_internal_jump_time_sec"), "max_internal_jump_time_sec", 0, dur)
+    cuts_raw = e.get("detected_scene_cuts_sec", [])
+    if not isinstance(cuts_raw, list):
+        raise PipelineError(f"{clip_id}: probe detected_scene_cuts_sec must be a list")
+    for cut in cuts_raw:
+        number(cut, "detected_scene_cuts_sec", 0, dur)
+    for name, val in (("keyframe_threshold", keyframe_threshold), ("jump_threshold", jump_threshold),
+                      ("contamination_margin", contamination_margin)):
+        number(val, name, 0, 255)
     step = 1.0 / fps
     flags: list[str] = []
     warnings: list[str] = []
@@ -1503,7 +1528,7 @@ def evaluate_probe_entry(probe_entry: dict, *, clip_id: str = "", keyframe_thres
     if start is None:
         warnings.append("NO_KEYFRAME_REFERENCE")
     else:
-        if start > keyframe_threshold and (mean is None or mean > keyframe_threshold):
+        if start > keyframe_threshold and mean > keyframe_threshold:
             flags.append("KEYFRAME_MISMATCH")
         if other is not None and float(other) + contamination_margin < float(start):
             flags.append("MULTI_INGREDIENT_CONTAMINATION")
@@ -1524,7 +1549,8 @@ def evaluate_probe_entry(probe_entry: dict, *, clip_id: str = "", keyframe_thres
         start_locked = start is not None and start <= keyframe_threshold
         # keep the segment that still shows the keyframe scene (the first one) when
         # the start is locked; otherwise keep the longest coherent segment
-        pick = segs[0] if start_locked and segs else max(segs, key=lambda s: s[1] - s[0], default=(0.0, dur))
+        pick = (0.0, max(0.0, cuts[0] - step)) if start_locked else \
+            max(segs, key=lambda s: s[1] - s[0], default=(0.0, 0.0))
         trim_in, trim_out = round(pick[0], 3), round(pick[1], 3)
     return {"clip_id": clip_id or e.get("file", ""), "flags": flags, "warnings": warnings,
             "passed": not flags, "suggested_visual_trim_in": trim_in,
@@ -2317,6 +2343,9 @@ def trace_audit(ep: Episode, *, probe: Optional[dict] = None, part: Optional[str
     entries, used_part = {}, None
     if probe is not None:
         used_part, entries = probe_entries_for(ep, probe, part)
+        missing = {c.id for c in ep.clips} - entries.keys()
+        if missing:
+            raise PipelineError(f"probe {used_part} missing clips: {', '.join(sorted(missing))}")
     vcfg = ep.visual
     kfs = {c.id: c.keyframe for c in ep.clips}
     traces = []
