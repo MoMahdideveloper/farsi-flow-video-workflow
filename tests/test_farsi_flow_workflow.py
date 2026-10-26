@@ -215,3 +215,97 @@ def test_warn_retains_unsafe_window_and_fails_gate(media):
     report = json.loads((root / "warn" / "qa_report_speech-audit.json").read_text())
     assert report["overall_status"] == "fail"
     assert report["gates"]["automatic"]["speech_safe_trim"] == "fail"
+
+
+def test_exact_splice_raw_original_and_fallback(media):
+    root, original = media
+    data = copy.deepcopy(original)
+    clips = Path(data["clips_dir"])
+    raw = clips / "clip_03_raw_orig.mp4"
+    synth(raw, 630, 8.9, ((.9, 1.8), (5.4, 5.9), (6.4, 7.8)))
+    raw_hash = fw.sha256_file(raw)
+    fallback_hash = fw.sha256_file(clips / "clip_03.mp4")
+    data["clips"] = [{"id": "clip_03", "file": "clip_03.mp4", "raw_orig_file": raw.name,
+                      "splice_segments": [[0.0, 5.22], [6.14, 8.60]], "trim_in": .5, "trim_out": 7.5,
+                      "subtitles": [[.5, 1.2, "ELLA", "سلام!"], [4.7, 5.5, "ELLA", "ممنون!"]]}]
+    data["out_dir"] = str(root / "splice output")
+    path = save_manifest(root / "splice.json", data)
+    cli(path, "build", "--no-cta")
+    report = json.loads((Path(data["out_dir"]) / "qa_report.json").read_text())
+    clip = report["clips"][0]
+    assert report["overall_status"] == "pass"
+    assert clip["provenance"]["mode"] == "spliced"
+    assert clip["provenance"]["segments"] == [[0.0, 5.22], [6.14, 8.60]]
+    assert clip["provenance"]["splice_audit"]["crossfade_sec"] == .02
+    assert clip["plan"]["final"] == [.5, 7.5]
+    assert fw.media_duration(Path(clip["provenance"]["analysed"])) == pytest.approx(185/24, abs=.002)
+    pcm = fw.decode_pcm(Path(clip["provenance"]["analysed"]))
+    assert np.max(np.abs(pcm[int(5.05*16000):int(5.30*16000)])) < .003, "removed-gap audio leaked"
+    assert fw.sha256_file(raw) == raw_hash
+    assert fw.sha256_file(clips / "clip_03.mp4") == fallback_hash
+    assert_av(Path(clip["outputs"][0]), 7.0)
+    raw.rename(raw.with_suffix(".saved"))
+    try:
+        cli(path, "build", "--no-cta")
+        fallback = json.loads((Path(data["out_dir"]) / "qa_report.json").read_text())
+        assert fallback["overall_status"] == "pass"
+        assert fallback["clips"][0]["provenance"]["mode"] == "pre_spliced_file"
+        assert fallback["clips"][0]["provenance"]["source_sha256"] == fallback_hash
+        assert any("pre-spliced" in w for w in fallback["warnings"])
+    finally:
+        raw.with_suffix(".saved").rename(raw)
+
+
+def test_no_cta_missing_cta_and_restore_are_idempotent(built):
+    manifest, out, original, _ = built
+    base = out / "Base_Series1_Part1_Flow_Native_Farsi.mp4"
+    master = out / "Master_Series1_Part1_Flow_Native_Farsi.mp4"
+    cli(manifest, "build", "--no-cta")
+    assert fw.sha256_file(master) == fw.sha256_file(base)
+    assert (out / "Master_Series1_Part1_Flow_Native_Farsi.srt").read_text("utf-8-sig").count(" --> ") == 6
+    cli(manifest, "build", "--cta-video", out / "missing.mp4")
+    assert fw.sha256_file(master) == fw.sha256_file(base)
+    cli(manifest)
+    assert fw.sha256_file(master) == original["master"]["media"]["sha256"]
+    assert (out / "Master_Series1_Part1_Flow_Native_Farsi.srt").read_text("utf-8-sig").count(" --> ") == 7
+
+
+def test_cached_auxiliary_and_primary_hashes(tmp_path):
+    primary, sidecar = tmp_path / "main.mp4", tmp_path / "samples.wav"
+    primary.write_bytes(b"original"); sidecar.write_bytes(b"pcm")
+    key = fw.fingerprint({"test": True})
+    fw.cache_write(primary, key, output_hashes={p.name: fw.sha256_file(p) for p in (primary, sidecar)})
+    assert fw.cache_ok([primary, sidecar], key)
+    sidecar.write_bytes(b"bad")
+    assert not fw.cache_ok([primary, sidecar], key)
+    sidecar.write_bytes(b"pcm"); primary.write_bytes(b"tampered")
+    assert not fw.cache_ok([primary], key)
+
+
+def test_rendered_cache_corruption_is_rebuilt(built):
+    manifest, out, report, _ = built
+    sub = out / "clips_subbed" / "clip_02_subbed.mp4"
+    sub.write_bytes(b"corrupted nonempty cache")
+    cli(manifest)
+    assert_av(sub)
+    assert fw.sha256_file(sub) == report["clips"][1]["media"]["sha256"]
+
+
+@pytest.mark.parametrize("file", ["series1_part1_whats_her_number.json", "ugly_chef_part2.json"])
+def test_shipped_manifests_preserve_paths_text_and_windows(file, tmp_path):
+    path = ROOT / "pipeline" / "manifests" / file
+    data = json.loads(path.read_text())
+    episode = fw.load_manifest(path)
+    assert len(episode.clips) == 6
+    assert episode.outputs["per_clip_location"] == "both"
+    assert str(episode.clips_dir).startswith("C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch")
+    mapped = fw.load_manifest(path, {"vars": {"BASE": str(tmp_path / "series"), "CHEF_BASE": str(tmp_path / "chef")}})
+    assert mapped.clips_dir.is_absolute() and not fw.is_foreign_windows_path(mapped.clips_dir)
+    assert [(c.trim_in, c.trim_out) for c in episode.clips] == [(c["trim_in"], c["trim_out"]) for c in data["clips"]]
+    assert all(c.subtitles for c in episode.clips)
+    if file.startswith("series1"):
+        assert all(c.speech_safe == "warn" for c in episode.clips)
+        assert [(c.trim_in, c.trim_out) for c in episode.clips] == [
+            (0,9.4), (.5,8.9), (.5,7.5), (.6,9.4), (1.1,9.8), (.4,8.4)]
+        assert episode.clips[2].splice_segments == [(0,5.22),(6.14,8.6)]
+        assert mapped.clips_dir == tmp_path / "series" / "03_flow_clips" / "part1"
