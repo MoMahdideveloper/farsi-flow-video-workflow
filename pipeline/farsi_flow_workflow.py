@@ -28,10 +28,12 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import io
 import json
 import math
 import os
 import platform
+import re
 import shutil
 import subprocess
 import sys
@@ -181,3 +183,144 @@ def write_srt(path: Path, cues: Iterable[tuple[float, float, str]]) -> int:
     tmp.write_text("\n".join(blocks) + ("\n" if blocks else ""), encoding="utf-8-sig")
     os.replace(tmp, path)
     return len(blocks)
+
+
+# ----------------------------------------------------------------- manifest --
+SPEECH_MODES = ("auto_expand", "warn", "off")
+VIDEO_DEFAULTS = {"width": DEFAULT_WIDTH, "height": DEFAULT_HEIGHT, "fps": DEFAULT_FPS,
+                  "crf": 18, "preset": "fast", "work_crf": 14, "scale_mode": "fill"}
+AUDIO_DEFAULTS = {"loudnorm": DEFAULT_LOUDNORM, "sample_rate": 48000, "channels": 2,
+                  "bitrate": "192k", "audit_bitrate": "128k"}
+SPEECH_DEFAULTS = {"speech_safe": "auto_expand", "threshold_dbfs": -38.0, "noise_margin_db": 10.0,
+                   "frame_ms": 20, "min_speech_ms": 60, "merge_gap_ms": 250,
+                   "pre_handle": 0.20, "post_handle": 0.35, "splice_crossfade": 0.02}
+SUB_DEFAULTS = {"time_base": "trim_local", "y_ratio": 0.84, "font_size": 27, "min_font_size": 16,
+                "max_text_margin": 84, "max_lines": 2}
+BADGE_DEFAULTS = {"start": 0.0, "end": 3.5, "y_center": 130, "font_size": 28,
+                  "color": [255, 225, 110], "clip_index": 1}
+CTA_DEFAULT_COLOR = (255, 230, 150)
+DRIFT_TOLERANCE = 0.15
+_WIN_ABS = re.compile(r"^[A-Za-z]:[\\/]")
+_VAR = re.compile(r"\$\{(\w+)\}")
+
+
+def normalize_speech_mode(value: Any) -> str:
+    """true/None -> auto_expand, false -> off, plus 'warn' / aliases."""
+    if value is True or value is None:
+        return "auto_expand"
+    if value is False:
+        return "off"
+    v = str(value).strip().lower().replace("-", "_")
+    v = {"auto": "auto_expand", "expand": "auto_expand", "true": "auto_expand",
+         "false": "off", "none": "off"}.get(v, v)
+    if v not in SPEECH_MODES:
+        raise PipelineError(f"speech_safe must be one of {SPEECH_MODES}, true or false (got {value!r})")
+    return v
+
+
+@dataclass
+class Cue:
+    start: float
+    end: float
+    speaker: str
+    text: str
+
+    @classmethod
+    def parse(cls, raw: Any, where: str) -> "Cue":
+        if isinstance(raw, dict):
+            s0, s1, spk, txt = raw.get("start"), raw.get("end"), raw.get("speaker", ""), raw.get("text", "")
+        elif isinstance(raw, (list, tuple)) and len(raw) in (3, 4):
+            s0, s1, spk, txt = raw if len(raw) == 4 else (raw[0], raw[1], "", raw[2])
+        else:
+            raise PipelineError(f"{where}: cue must be {{start,end,speaker,text}} or [start,end,speaker,text]")
+        try:
+            s0, s1 = float(s0), float(s1)
+        except (TypeError, ValueError) as exc:
+            raise PipelineError(f"{where}: start/end must be numbers") from exc
+        if not (0.0 <= s0 < s1):
+            raise PipelineError(f"{where}: need 0 <= start < end (got {s0}..{s1})")
+        if not str(txt).strip():
+            raise PipelineError(f"{where}: empty subtitle text")
+        return cls(round(s0, 3), round(s1, 3), str(spk or "").strip().upper(), str(txt).strip())
+
+
+@dataclass
+class ClipSpec:
+    index: int
+    id: str
+    file: str
+    trim_in: float
+    trim_out: Optional[float]
+    subtitles: list[Cue]
+    raw_orig_file: Optional[str] = None
+    splice_segments: Optional[list[tuple[float, float]]] = None
+    speech_safe: str = "auto_expand"
+    lock_trim: bool = False
+    notes: str = ""
+
+
+@dataclass
+class Episode:
+    manifest_path: Path
+    manifest_sha256: str
+    episode_id: str
+    title_fa: str
+    clips_dir: Path
+    out_dir: Path
+    font_path: Optional[str]
+    cta_video: Optional[Path]
+    cta_subtitles: list[Cue]
+    video: dict
+    audio: dict
+    speech: dict
+    subs: dict
+    badge: Optional[dict]
+    voices: dict
+    clips: list[ClipSpec]
+    outputs: dict = field(default_factory=dict)
+    warnings: list[str] = field(default_factory=list)
+
+    @property
+    def base_name(self) -> str:
+        return f"Base_{self.episode_id}_Flow_Native_Farsi"
+
+    @property
+    def master_name(self) -> str:
+        return f"Master_{self.episode_id}_Flow_Native_Farsi"
+
+    def color_for(self, speaker: str, default=DEFAULT_TEXT_COLOR) -> tuple[int, int, int]:
+        col = (self.voices.get(speaker) or {}).get("color")
+        return tuple(int(c) for c in col[:3]) if col else tuple(default)  # type: ignore[return-value]
+
+
+def _expand(value: str, variables: dict[str, str]) -> str:
+    def sub(m: re.Match) -> str:
+        key = m.group(1)
+        if key in variables:
+            return variables[key]
+        if key in os.environ:
+            return os.environ[key]
+        raise PipelineError(f"unknown path variable ${{{key}}} in {value!r}")
+    for _ in range(6):  # allow nested ${a} -> ${b}
+        new = _VAR.sub(sub, value)
+        if new == value:
+            break
+        value = new
+    return os.path.expanduser(value)
+
+
+def is_foreign_windows_path(p: str | Path) -> bool:
+    """A 'C:\\...' path while running on POSIX: can never exist here."""
+    return os.name != "nt" and bool(_WIN_ABS.match(str(p)))
+
+
+def resolve_path(value: Any, variables: dict[str, str], rel_to: Path) -> Optional[Path]:
+    if value in (None, ""):
+        return None
+    s = _expand(str(value), variables)
+    if is_foreign_windows_path(s):
+        return Path(s)  # kept verbatim for messages; .exists() is False on POSIX
+    if os.name != "nt":  # "${BASE}\\03_flow_clips" remapped via --var BASE=/data/x
+        s = s.replace("\\", "/")
+    p = Path(s)
+    return p if p.is_absolute() else (rel_to / p).resolve()
