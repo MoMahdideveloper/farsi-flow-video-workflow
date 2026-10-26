@@ -173,3 +173,7 @@ tests/test_instagram_10_ideas_manifest.py::test_validation_rejects_regressions[m
 **Offline deliverables: PASS (89/89 tests). Customer-facing launch: HOLD pending real product permalinks, selected-plan/checkout checks, automation permission/send tests, and rendered Farsi timing/RTL review.** The source does not document product URL routing; all proposed product URLs are explicitly `candidate_unverified_route`. No claim that URLs resolve, checkout was tested, DMs were deployed or videos rendered. The JSON is an idea/shot planning schema, not a direct clip-level build input.
 
 This entry is introduced by the current commit; its SHA is recorded in the next receipt entry, following the append-only convention.
+
+### Stage 2 receipt — 2026-10-26 19:26 UTC
+
+The verification entry above was introduced by [25b44ad8f8a8dd2527ca5745dd1b16c8a8ba155f](https://github.com/MoMahdideveloper/farsi-flow-video-workflow/commit/25b44ad8f8a8dd2527ca5745dd1b16c8a8ba155f). The current receipt commit records that prior SHA; the final branch tip is reported in the delivery message.
