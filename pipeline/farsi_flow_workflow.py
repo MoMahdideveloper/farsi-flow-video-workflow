@@ -59,6 +59,7 @@ except ImportError:  # pragma: no cover
         get_display = None
 
 PIPELINE_VERSION = "1.0.0"
+ANALYSIS_SR = 16000  # speech analysis: 16 kHz mono PCM
 
 # ----------------------------------------------------------------- defaults --
 DEFAULT_WIDTH, DEFAULT_HEIGHT, DEFAULT_FPS = 720, 1280, 24
@@ -448,3 +449,97 @@ def clip_source_paths(ep: Episode, clip: ClipSpec) -> tuple[Path, Optional[Path]
         p = Path(name)
         return p if p.is_absolute() or is_foreign_windows_path(name) else ep.clips_dir / p
     return res(clip.file), (res(clip.raw_orig_file) if clip.raw_orig_file else None)
+
+
+# ------------------------------------------------- speech boundary analyzer --
+def decode_pcm(path: Path, sr: int = ANALYSIS_SR, channels: int = 1) -> np.ndarray:
+    """Decode the first audio stream to float32 PCM in [-1, 1] (shape [n] or [n, ch])."""
+    proc = run(ffmpeg_cmd("-i", str(path), "-map", "0:a:0", "-vn", "-ac", str(channels),
+                          "-ar", str(sr), "-f", "s16le", "-acodec", "pcm_s16le", "pipe:1"),
+               capture=True, what=f"decode audio {path.name}")
+    pcm = np.frombuffer(proc.stdout, dtype="<i2").astype(np.float32) / 32768.0
+    return pcm.reshape(-1, channels) if channels > 1 else pcm
+
+
+def frame_dbfs(pcm: np.ndarray, sr: int = ANALYSIS_SR, frame_ms: int = 20) -> np.ndarray:
+    """Short-time RMS energy in dBFS over non-overlapping frames."""
+    n = max(1, int(sr * frame_ms / 1000))
+    usable = (len(pcm) // n) * n
+    if usable == 0:
+        return np.full(1, -120.0, dtype=np.float32)
+    frames = pcm[:usable].reshape(-1, n).astype(np.float64)
+    rms = np.sqrt(np.mean(frames * frames, axis=1))
+    return (20.0 * np.log10(np.maximum(rms, 1e-6))).astype(np.float32)
+
+
+def _runs(mask: np.ndarray) -> list[tuple[int, int]]:
+    """[start, end) index runs where mask is True."""
+    if not mask.any():
+        return []
+    d = np.diff(np.concatenate(([0], mask.astype(np.int8), [0])))
+    return list(zip(np.flatnonzero(d == 1).tolist(), np.flatnonzero(d == -1).tolist()))
+
+
+def detect_speech_segments(db: np.ndarray, cfg: dict) -> tuple[list[tuple[float, float]], dict]:
+    """Threshold frames at max(threshold_dbfs, noise_floor + margin), drop blips
+    shorter than min_speech_ms, merge gaps shorter than merge_gap_ms."""
+    fs = cfg["frame_ms"] / 1000.0
+    floor = float(np.percentile(db, 10)) if db.size else -120.0
+    thr = max(float(cfg["threshold_dbfs"]), min(floor + float(cfg["noise_margin_db"]), -20.0))
+    runs = [r for r in _runs(db > thr) if (r[1] - r[0]) * fs * 1000 >= cfg["min_speech_ms"]]
+    merged: list[list[int]] = []
+    for a, b in runs:
+        if merged and (a - merged[-1][1]) * fs * 1000 < cfg["merge_gap_ms"]:
+            merged[-1][1] = b
+        else:
+            merged.append([a, b])
+    segs = [(round(a * fs, 3), round(b * fs, 3)) for a, b in merged]
+    stats = {"noise_floor_dbfs": round(floor, 2), "threshold_dbfs": round(thr, 2),
+             "peak_dbfs": round(float(db.max()) if db.size else -120.0, 2)}
+    return segs, stats
+
+
+def _speech_inside(segs: list[tuple[float, float]], lo: float, hi: float) -> float:
+    return round(sum(max(0.0, min(b, hi) - max(a, lo)) for a, b in segs), 3)
+
+
+def analyze_clip_speech(mp4_path: Path, trim_in: float = 0.0, trim_out: Optional[float] = None,
+                        cfg: Optional[dict] = None) -> dict:
+    """Acoustic speech-boundary report for one source clip.
+
+    Decodes 16 kHz mono PCM, computes 20 ms RMS dBFS frames, finds speech
+    segments, ``first_speech_sec`` / ``last_speech_sec`` and whether the
+    requested [trim_in, trim_out] window cuts into (or drops) speech energy.
+    Amplitude evidence only -- it locates candidates, it does not prove a
+    sentence finished; human/ASR listening stays a separate QA field."""
+    cfg = _merged(SPEECH_DEFAULTS, cfg)
+    pcm = decode_pcm(Path(mp4_path))
+    src_dur = media_duration(Path(mp4_path))
+    db = frame_dbfs(pcm, ANALYSIS_SR, int(cfg["frame_ms"]))
+    segs, stats = detect_speech_segments(db, cfg)
+    t_out = src_dur if trim_out is None else float(trim_out)
+    first = segs[0][0] if segs else None
+    last = min(segs[-1][1], src_dur) if segs else None
+
+    def inside(t: float) -> bool:
+        return any(a < t < b for a, b in segs)
+
+    report = {
+        "source": str(mp4_path), "source_duration": round(src_dur, 3),
+        "analysis_sr": ANALYSIS_SR, "frame_ms": cfg["frame_ms"], **stats,
+        "speech_segments": [[a, b] for a, b in segs],
+        "first_speech_sec": first, "last_speech_sec": last,
+        "trim_in": round(float(trim_in), 3), "trim_out": round(t_out, 3),
+        "trim_in_inside_speech": inside(float(trim_in)),
+        "trim_out_inside_speech": inside(t_out),
+        "speech_dropped_before_in_sec": _speech_inside(segs, 0.0, float(trim_in)),
+        "speech_dropped_after_out_sec": _speech_inside(segs, t_out, src_dur),
+        "pre_handle_sec": None if first is None else round(first - float(trim_in), 3),
+        "post_handle_sec": None if last is None else round(t_out - last, 3),
+    }
+    report["cuts_speech"] = bool(report["trim_in_inside_speech"] or report["trim_out_inside_speech"]
+                                 or report["speech_dropped_before_in_sec"] > 0
+                                 or report["speech_dropped_after_out_sec"] > 0)
+    if not segs:
+        report["warning"] = "no speech energy detected above threshold"
+    return report
