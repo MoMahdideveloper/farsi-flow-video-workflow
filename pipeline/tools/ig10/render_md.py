@@ -6,7 +6,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from ig10.catalog import ROOT, COUPON, fa_num, load_catalog  # noqa: E402
-from ig10.common import cta_fa, coupon_saving, products  # noqa: E402
+from ig10.common import cta_fa, coupon_saving, products, product_url  # noqa: E402
 
 OUT = ROOT / "docs" / "instagram-10-ideas" / "01-opus55-10-instagram-conversion-ideas.md"
 
@@ -16,15 +16,20 @@ HEADER = """# Stage 1 — Claude Opus 5.5: 10 Instagram Conversion Ideas for `@k
 > Rule of every reel: *show a normal person's problem → show the AI result in 5 seconds → show the exact KelidBox accounts that did it → one comment keyword.*
 > Ideas 1–7 answer **"What can an ordinary person do / earn with AI video & AI accounts?"**; ideas 8–10 bridge the 3D-animation style to price-trust, entertainment and gaming accounts.
 
-**Data rules.** Product IDs, titles and "از … تومان" prices come from the seeded live snapshot
-(`00-kelidbox-instagram-and-catalog-context.md`). Where the Stage-1 brief quoted a different price,
-the **snapshot price wins** and the brief figure is listed under *Brief discrepancy*. Products not present in the
-snapshot (CapCut Pro, Wordwall Pro, Office 365 + OneDrive) are marked ⚠️ *unverified* for Stage 2 (Astra).
-Coupon: `WELCOME10` = {pct}% off, max {mx} Toman, min order {mn} Toman (from brief). Installments: 4 parts, zero interest.
+**Stage 2 audit:** Product IDs and starting prices are checked offline against the
+[seeded catalog](00-kelidbox-instagram-and-catalog-context.md), not re-fetched live.
+Unseeded CapCut Pro, Wordwall Pro and Office 365 listings were removed.
+Coupon: WELCOME10 = {pct}% off, max {mx} Toman, minimum order {mn} Toman;
+TorobPay / DigiPay four installments are user-confirmed in the Stage-2 brief.
+Eligibility, fees, due dates, coupon stacking and delivery follow the actual checkout.
+Candidate product links are NOT verified permalinks; do not enable automation until checked.
+No guaranteed income, production time, instant fulfillment, interest-free credit or performance.
 
 **Shared production spec (all reels):** 9:16, 720×1280 @ 24 fps, 5 shots × 8 s = 40 s, Google Flow (Veo) native Farsi
 audio, RTL Vazirmatn-Bold subtitle pills, last shot = CTA (no separate KelidBox CTA clip appended). The machine-readable
-version is `pipeline/manifests/instagram_10_conversion_ideas.json`.
+version is the [planning manifest](../../pipeline/manifests/instagram_10_conversion_ideas.json).
+It is NOT a clip-level render input: render clips, then adapt and retime cues. Hooks have a 3-second script budget, not measured audio.
+Spoken copy needs a native-Farsi timing pass. Add Persian UI text/subtitles in editing; never trust generated text or badges.
 
 | # | Idea | Segment | Keyword |
 |---|------|---------|---------|
@@ -50,13 +55,14 @@ def idea_md(i: int, idea: dict, cat: dict, briefs: dict) -> str:
     for n, (d, vis, mot, _fa, _s) in enumerate(idea["shots"], 1):
         L.append(f"**Shot {n} — image/keyframe prompt**\n```text\n{vis}\n```\n**Shot {n} — motion + audio prompt ({d}s)**\n```text\n{mot}\n```")
     L.append("\n### (f) Featured KelidBox accounts, price anchor & CTA")
-    L.append("| Product | id | From (Toman) | WELCOME10 saving | 4 × installment |\n|---|---|---|---|---|")
+    L.append("| Product | id | Snapshot from (Toman) | WELCOME10 saving | Illustrative price / 4, before discount or fees |\n|---|---|---|---|---|")
     for p in products(idea, cat):
         pr = p["min_price_toman"]
         flag = "" if p["verified_in_seed"] else " ⚠️ unverified"
         sv = coupon_saving(pr)
-        L.append(f"| {p['title']}{flag} | `{p['id']}` | {fa_num(pr)} | {fa_num(sv) if sv else '—'} | "
+        L.append(f"| [{p['title']}{flag}]({product_url(p['id'])}) (candidate URL) | `{p['id']}` | {fa_num(pr)} | {fa_num(sv) if sv else '—'} | "
                  f"{fa_num(-(-pr // 4)) if pr else '—'} |")
+    L.append("\nInstallment division is arithmetic only, not an approved repayment schedule. Primary product: " + idea["primary_product_id"] + "; others optional/alternatives, not a bundle.")
     disc = [f"{k}: brief said {v}" for k, v in briefs.items() if k in idea["products"]]
     if disc:
         L.append("\n*Brief discrepancy (snapshot price used):* " + "; ".join(disc))
