@@ -292,26 +292,48 @@ const BATCHES = {
   ],
 };
 
-BATCHES.fop_rem123 = [
-  BATCHES.fop_part1[0],
-  BATCHES.fop_part2[4],
-  BATCHES.fop_part3[1],
-  BATCHES.fop_part3[3],
-  BATCHES.fop_part3[5],
+BATCHES.fop_part6 = [
+  {
+    clip: 1,
+    kf: `${FOP_DIR}\\part6\\keyframes\\KF_01.jpg`,
+    prompt:
+      '3D Pixar/Cinema4D stylized cartoon animation matching the reference image style, static medium shot keeping the characters in frame the entire time (no camera cuts), anthropomorphic green pear doctor (Dr. Pear with a full 3D green pear head and glasses, strictly NO human face) in a white medical coat holding the medical chart in the hospital room beside Duke Eggplant (full 3D purple eggplant head) and Lemonella (full 3D yellow lemon head), as Dr. Pear speaks in native Persian (Farsi) with a shocked serious male doctor voice: «آزمایش نهایی روی سه‌قلوها انجام شد جناب دوک... نتیجه چیزیه که هیچ‌کس باورش نمیشه!» Zero on-screen subtitles.',
+  },
+  {
+    clip: 2,
+    kf: `${FOP_DIR}\\part6\\keyframes\\KF_02.jpg`,
+    prompt:
+      '3D Pixar/Cinema4D stylized cartoon animation matching the reference image style, static medium close-up keeping the character in frame the entire time (no camera cuts), flashy anthropomorphic banana man (full 3D yellow banana head wearing dark sunglasses, strictly NO human face) in a yellow leather jacket gesturing greedily and speaking in native Persian (Farsi) with an arrogant excited male voice: «اگه سه‌قلوئه، پس حتماً حداقل یکیشون مال منه و نصف ثروت عمارت سهم منه!» Zero on-screen subtitles.',
+  },
+  {
+    clip: 3,
+    kf: `${FOP_DIR}\\part6\\keyframes\\KF_03.jpg`,
+    prompt:
+      '3D Pixar/Cinema4D stylized cartoon animation matching the reference image style, static medium close-up keeping the character in frame the entire time (no camera cuts), mysterious anthropomorphic dark purple-black fig aristocrat (Shadow Fig with a full 3D dark fig head, strictly NO human face) in a tailored black suit holding up a sparkling diamond heirloom in his gloved hand, speaking in native Persian (Farsi) with a deep serious male voice: «زود قضاوت نکنید آقایون! یکی از اون بچه‌ها وارث منه و مدارکش هم توی دستای منه!» Zero on-screen subtitles.',
+  },
+  {
+    clip: 4,
+    kf: `${FOP_DIR}\\part6\\keyframes\\KF_04.jpg`,
+    prompt:
+      '3D Pixar/Cinema4D stylized cartoon animation matching the reference image style, static medium shot keeping the characters in frame the entire time (no camera cuts), Lemonella (full 3D yellow lemon head, strictly NO human face) sitting on the hospital bed gasping in total panic beside Duke Eggplant (full 3D purple eggplant head) and Dr. Pear (full 3D green pear head in white doctor coat), as Lemonella speaks in native Persian (Farsi) with a terrified panicking female voice: «وای نه... یکی شبیه بادمجانه، یکی شبیه موز، و یکی هم کپِ انجیر سیاهه! همه رازهام لو رفت!» Zero on-screen subtitles.',
+  },
+  {
+    clip: 5,
+    kf: `${FOP_DIR}\\part6\\keyframes\\KF_05.jpg`,
+    prompt:
+      '3D Pixar/Cinema4D stylized cartoon animation matching the reference image style, static medium two-shot keeping both characters in frame the entire time (no camera cuts), Duke Eggplant (full 3D purple eggplant head in a dark purple velvet tuxedo, strictly NO human face) holding up the black leather contract folder firmly in front of crying Lemonella (full 3D yellow lemon head in a gold gown) and speaking in native Persian (Farsi) with a commanding decisive male voice: «طبق قراردادی که امضا کردی لمونلا، به خاطر این خیانت از تمام ثروت عمارت محرومی و من فقط وارث خودم رو نگه می‌دارم!» Zero on-screen subtitles.',
+  },
+  {
+    clip: 6,
+    kf: `${FOP_DIR}\\part6\\keyframes\\KF_06.jpg`,
+    prompt:
+      '3D Pixar/Cinema4D stylized cartoon animation matching the reference image style, static medium two-shot keeping both characters in frame the entire time (no camera cuts), glamorous anthropomorphic red strawberry aristocrat woman (Countess Strawberry with a full 3D red strawberry head and green leaf crown, strictly NO human face) in a red velvet evening gown sitting warmly beside Duke Eggplant (full 3D purple eggplant head in a dark purple tuxedo) at a candlelit luxury table, speaking in native Persian (Farsi) with a warm triumphant female voice: «دوک عزیزم، بالاخره از دست دروغ‌هاش خلاص شدی! حالا نوبت زندگی جدید ما و وارث واقعیته!» Zero on-screen subtitles.',
+  },
 ];
 
-BATCHES.fop_final_p1 = [
-  BATCHES.fop_part3[5],
-  BATCHES.fop_part5[0],
-  BATCHES.fop_part5[1],
-  BATCHES.fop_part5[2],
-];
-
-BATCHES.fop_final_p2 = [
-  BATCHES.fop_part5[3],
-  BATCHES.fop_part5[4],
-  BATCHES.fop_part5[5],
-];
+BATCHES.fop_p6_a = BATCHES.fop_part6.slice(0, 3);
+BATCHES.fop_p6_b = BATCHES.fop_part6.slice(3, 6);
+BATCHES.fop_p6_rem = [BATCHES.fop_part6[2], BATCHES.fop_part6[4], BATCHES.fop_part6[5]];
 
 class McpClient {
   constructor() {
