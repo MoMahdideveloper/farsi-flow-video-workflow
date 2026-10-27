@@ -335,6 +335,48 @@ BATCHES.fop_p6_a = BATCHES.fop_part6.slice(0, 3);
 BATCHES.fop_p6_b = BATCHES.fop_part6.slice(3, 6);
 BATCHES.fop_p6_rem = [BATCHES.fop_part6[2], BATCHES.fop_part6[4], BATCHES.fop_part6[5]];
 
+BATCHES.fop_part7 = [
+  {
+    clip: 1,
+    kf: `${FOP_DIR}\\part7\\keyframes\\KF_01.jpg`,
+    prompt:
+      '3D Pixar/Cinema4D stylized cartoon animation matching the reference image style, static medium shot keeping the characters in frame the entire time (no camera cuts), anthropomorphic green pear doctor (Dr. Pear with a full 3D green pear head and glasses, strictly NO human face) in a white medical coat standing beside Duke Eggplant (full 3D purple eggplant head in a purple velvet suit) next to three hospital cradles holding three miniature fruit characters (a small purple eggplant, a small yellow banana, and a small dark fig), as Dr. Pear speaks in native Persian (Farsi) with a warm amazed male doctor voice: «سه‌قلوها به سلامت به دنیا اومدن جناب دوک! خودتون ببینید: یکی بادمجان، یکی موز، و یکی هم انجیر سیاه!» Zero on-screen subtitles.',
+  },
+  {
+    clip: 2,
+    kf: `${FOP_DIR}\\part7\\keyframes\\KF_02.jpg`,
+    prompt:
+      '3D Pixar/Cinema4D stylized cartoon animation matching the reference image style, static medium shot keeping the characters in frame the entire time (no camera cuts), anthropomorphic dark purple-black fig aristocrat (Shadow Fig with a full 3D dark fig head in a black pinstripe suit, strictly NO human face) holding a sleek black carrier containing the miniature dark fig heir while looking coldly over his shoulder at Lemonella (full 3D yellow lemon head) in the hallway and speaking in native Persian (Farsi) with a deep cold decisive male voice: «من فقط وارث خودم رو می‌برم لمونلا! از این لحظه به بعد، دیگه حتی یک سکه هم از من بهت نمی‌رسه!» Zero on-screen subtitles.',
+  },
+  {
+    clip: 3,
+    kf: `${FOP_DIR}\\part7\\keyframes\\KF_03.jpg`,
+    prompt:
+      '3D Pixar/Cinema4D stylized cartoon animation matching the reference image style, static medium two-shot keeping both characters in frame the entire time (no camera cuts), flashy anthropomorphic banana man (full 3D yellow banana head with dark sunglasses in a yellow leather jacket, strictly NO human face) backing away toward the exit door with both hands raised in refusal while Lemonella (full 3D yellow lemon head) holds the miniature yellow banana character in her arms, as Banana Man speaks in native Persian (Farsi) with a panicked cowardly male voice: «من فقط دنبال ثروت دوک بودم، نه بزرگ کردن بچه! خودت تنهایی بزرگش کن لمونلا، من رفتم خداحافظ!» Zero on-screen subtitles.',
+  },
+  {
+    clip: 4,
+    kf: `${FOP_DIR}\\part7\\keyframes\\KF_04.jpg`,
+    prompt:
+      '3D Pixar/Cinema4D stylized cartoon animation matching the reference image style, static medium shot keeping the character in frame the entire time (no camera cuts), anthropomorphic yellow lemon woman (Lemonella with a full 3D yellow lemon head, strictly NO human face) standing in the pouring rain at night outside the locked wrought-iron gates of the mansion beside her suitcase, crying bitterly and speaking in native Persian (Farsi) with a weeping regretful female voice: «به خاطر طمع و خیانت همه‌چیز رو باختم... هم قصر دوک رو از دست دادم و هم زیر بارون بی‌خانمان شدم!» Zero on-screen subtitles.',
+  },
+  {
+    clip: 5,
+    kf: `${FOP_DIR}\\part7\\keyframes\\KF_05.jpg`,
+    prompt:
+      '3D Pixar/Cinema4D stylized cartoon animation matching the reference image style, static medium shot keeping the characters in frame the entire time (no camera cuts), anthropomorphic glossy purple eggplant aristocrat (Duke Eggplant with a full 3D purple eggplant head in a royal purple velvet tuxedo, strictly NO human face) standing proudly in the sunlit golden palace nursery holding the smiling miniature purple eggplant heir in his arms, speaking in native Persian (Farsi) with a warm proud fatherly male voice: «بالاخره اتاق طلاکوب عمارت به وارث واقعیم رسید! پسرم، از امروز تمام این قصر و پادشاهی متعلق به توئه!» Zero on-screen subtitles.',
+  },
+  {
+    clip: 6,
+    kf: `${FOP_DIR}\\part7\\keyframes\\KF_06.jpg`,
+    prompt:
+      '3D Pixar/Cinema4D stylized cartoon animation matching the reference image style, static medium shot keeping the characters in frame the entire time (no camera cuts), glamorous anthropomorphic red strawberry aristocrat woman (Countess Strawberry with a full 3D red strawberry head and green leaf crown in a sparkling ruby-red royal gown, strictly NO human face) standing happily beside Duke Eggplant (full 3D purple eggplant head in a royal purple tuxedo holding the miniature purple eggplant heir) in a grand sunlit palace ballroom with golden confetti, as Countess Strawberry speaks in native Persian (Farsi) with a joyful loving female voice: «عشق واقعی و صداقت همیشه برنده می‌شه دوک عزیزم! حالا خانواده‌مون توی این قصر برای همیشه خوشبخته!» Zero on-screen subtitles.',
+  },
+];
+
+BATCHES.fop_p7_a = BATCHES.fop_part7.slice(0, 3);
+BATCHES.fop_p7_b = BATCHES.fop_part7.slice(3, 6);
+
 class McpClient {
   constructor() {
     this.proc = spawn(

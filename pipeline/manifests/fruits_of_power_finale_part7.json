@@ -1,0 +1,279 @@
+{
+  "_comment": "Fruits of Power - Part 7 (Grand Finale - The Birth of the Triplets & Final Justice - Google Flow native Farsi).",
+  "schema_version": 1,
+  "speech_review_note": "Curated trim windows with auto_expand speech-safe protection.",
+  "episode_id": "FruitsOfPower_Part7",
+  "title_fa": "قسمت هفتم (پایان نهایی): تولد سه‌قلوها و عروسی سلطنتی دوک",
+  "title_en": "Fruits of Power - Part 7 (Grand Finale)",
+  "source_video": "${SRC}\\10_2026-10-20_DeugJXCPEYM.mp4",
+  "story_summary_fa": "در قسمت هفتم و پایان نهایی سریال، سه‌قلوها به دنیا میان: یکی بادمجان، یکی موز و یکی انجیر سیاه! انجیر سیاه فقط وارث خودش رو می‌بره، موز طلایی از زیر بار مسئولیت فرار می‌کنه، لمونلا زیر بارون از عمارت بیرون انداخته می‌شه، و دوک بادمجان با کنتس توت‌فرنگی و وارث بادمجانش توی قصر جشن پیروزی و عروسی می‌گیرن.",
+  "fallback_to_source_on_visual_fail": false,
+  "tight_speech_trim": true,
+  "variables": {
+    "BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi",
+    "CHEF_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\ugly-face-chef-farsi",
+    "SRC": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\straw.berryjammin"
+  },
+  "clips_dir": "${BASE}\\part7\\flow_clips",
+  "out_dir": "${BASE}\\05_final_masters\\part7",
+  "font_path": "${CHEF_BASE}\\03_farsi_audio_tts\\Vazirmatn-Bold.ttf",
+  "cta_video": "${BASE}\\part1\\flow_clips\\cta_kelidbox_s2.mp4",
+  "cta_speaker": "DUKE",
+  "cta_subtitles": [
+    {
+      "start": 0.25,
+      "end": 3.35,
+      "text": "برای دیدن سریال‌های بعدی همین الان پیج رو فالو کن!"
+    },
+    {
+      "start": 3.5,
+      "end": 7.85,
+      "text": "راستی کل این انیمیشن با اکانت‌های هوش مصنوعی سایت کلیدباکس ساخته شده!"
+    }
+  ],
+  "video": {
+    "width": 720,
+    "height": 1280,
+    "fps": 24,
+    "crf": 18,
+    "preset": "fast",
+    "scale_mode": "fill"
+  },
+  "audio": {
+    "loudnorm": "loudnorm=I=-14:TP=-1.5:LRA=11",
+    "sample_rate": 48000,
+    "channels": 2,
+    "bitrate": "192k"
+  },
+  "speech": {
+    "speech_safe": "auto_expand",
+    "threshold_dbfs": -38.0,
+    "pre_handle": 0.2,
+    "post_handle": 0.35,
+    "splice_crossfade": 0.02
+  },
+  "subtitle_style": {
+    "time_base": "trim_local",
+    "y_ratio": 0.84,
+    "font_size": 27,
+    "min_font_size": 16,
+    "max_text_margin": 84,
+    "max_lines": 2
+  },
+  "badge": {
+    "text": "قسمت هفتم (پایان نهایی): تولد سه‌قلوها و عروسی سلطنتی دوک",
+    "start": 0.0,
+    "end": 3.5,
+    "y_center": 130,
+    "font_size": 28,
+    "color": [
+      255,
+      225,
+      110
+    ],
+    "clip_index": 1
+  },
+  "outputs": {
+    "per_clip_location": "both",
+    "base_mode": "timeline",
+    "cta_burn_subtitles": true,
+    "cta_loudnorm": true,
+    "publish_caption_fa": "پایان نهایی و باشکوه سریال میوه‌های قدرت! 🔥🎬👑\nوقتی دکتر گلابی در بخش نوزادان پرده از سه‌قلوها برداشت، همه چیز مشخص شد: یکی بادمجان 🍆، یکی موز 🍌 و یکی هم انجیر سیاه 🕶️!\nانجیر سیاه فقط وارث خودش رو برد، موز طلایی پا به فرار گذاشت، لمونلا زیر بارون از عمارت اخراج شد، و دوک بادمجان به همراه کنتس توت‌فرنگی و وارث واقعیش جشن پیروزی گرفتن! 🍓👑"
+  },
+  "voices": {
+    "DUKE": {
+      "name_fa": "دوک بادمجان",
+      "color": [
+        210,
+        165,
+        255
+      ],
+      "source": "google_flow_native"
+    },
+    "LEMON": {
+      "name_fa": "لمونلا",
+      "color": [
+        255,
+        235,
+        110
+      ],
+      "source": "google_flow_native"
+    },
+    "BANANA": {
+      "name_fa": "موز طلایی",
+      "color": [
+        255,
+        200,
+        95
+      ],
+      "source": "google_flow_native"
+    },
+    "STRAW": {
+      "name_fa": "کنتس توت‌فرنگی",
+      "color": [
+        255,
+        150,
+        195
+      ],
+      "source": "google_flow_native"
+    },
+    "FIG": {
+      "name_fa": "انجیر سیاه / رییس مافیا / رئیس مافیا",
+      "color": [
+        180,
+        220,
+        255
+      ],
+      "source": "google_flow_native"
+    },
+    "PEACH": {
+      "name_fa": "دکتر گلابی / دکتر هلو",
+      "color": [
+        150,
+        255,
+        190
+      ],
+      "source": "google_flow_native"
+    }
+  },
+  "clips": [
+    {
+      "id": "clip_01",
+      "file": "clip_01.mp4",
+      "keyframe": "${BASE}\\part7\\keyframes\\KF_01.jpg",
+      "expected_speakers": [
+        "PEACH"
+      ],
+      "story_beat": "Dr. Pear presents the three newborn fruit triplets in the hospital nursery",
+      "source_span": [
+        69.3,
+        76.8
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.95,
+      "subtitles": [
+        [
+          0.06,
+          7.95,
+          "PEACH",
+          "سه‌قلوها به سلامت به دنیا اومدن جناب دوک! خودتون ببینید: یکی بادمجان، یکی موز، و یکی هم انجیر سیاه!"
+        ]
+      ]
+    },
+    {
+      "id": "clip_02",
+      "file": "clip_02.mp4",
+      "keyframe": "${BASE}\\part7\\keyframes\\KF_02.jpg",
+      "expected_speakers": [
+        "FIG"
+      ],
+      "story_beat": "Shadow Fig takes his heir and cuts Lemonella off completely",
+      "source_span": [
+        7.9,
+        15.7
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.95,
+      "subtitles": [
+        [
+          0.16,
+          7.53,
+          "FIG",
+          "من فقط وارث خودم رو می‌برم لمونلا! از این لحظه به بعد، دیگه حتی یک سکه هم از من بهت نمی‌رسه!"
+        ]
+      ]
+    },
+    {
+      "id": "clip_03",
+      "file": "clip_03.mp4",
+      "keyframe": "${BASE}\\part7\\keyframes\\KF_03.jpg",
+      "expected_speakers": [
+        "BANANA"
+      ],
+      "story_beat": "Golden Banana panics and abandons Lemonella at the hospital",
+      "source_span": [
+        2.8,
+        6.8
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.95,
+      "subtitles": [
+        [
+          0.05,
+          7.51,
+          "BANANA",
+          "من فقط دنبال ثروت دوک بودم، نه بزرگ کردن بچه! خودت تنهایی بزرگش کن لمونلا، من رفتم خداحافظ!"
+        ]
+      ]
+    },
+    {
+      "id": "clip_04",
+      "file": "clip_04.mp4",
+      "keyframe": "${BASE}\\part7\\keyframes\\KF_04.jpg",
+      "expected_speakers": [
+        "LEMON"
+      ],
+      "story_beat": "Lemonella is locked outside the mansion gates in the pouring rain, regretting her betrayal",
+      "source_span": [
+        29.3,
+        37.1
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.95,
+      "subtitles": [
+        [
+          0.3,
+          7.83,
+          "LEMON",
+          "به خاطر طمع و خیانت همه‌چیز رو باختم... هم قصر دوک رو از دست دادم و هم زیر بارون بی‌خانمان شدم!"
+        ]
+      ]
+    },
+    {
+      "id": "clip_05",
+      "file": "clip_05.mp4",
+      "keyframe": "${BASE}\\part7\\keyframes\\KF_05.jpg",
+      "expected_speakers": [
+        "DUKE"
+      ],
+      "story_beat": "Duke Eggplant proudly holds his true Eggplant heir in the golden palace nursery",
+      "source_span": [
+        45.2,
+        53.2
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.95,
+      "subtitles": [
+        [
+          0.54,
+          7.85,
+          "DUKE",
+          "بالاخره اتاق طلاکوب عمارت به وارث واقعیم رسید! پسرم، از امروز تمام این قصر و پادشاهی متعلق به توئه!"
+        ]
+      ]
+    },
+    {
+      "id": "clip_06",
+      "file": "clip_06.mp4",
+      "keyframe": "${BASE}\\part7\\keyframes\\KF_06.jpg",
+      "expected_speakers": [
+        "STRAW"
+      ],
+      "story_beat": "Royal palace wedding celebration of Duke Eggplant, Countess Strawberry, and the Eggplant heir",
+      "source_span": [
+        53.2,
+        61.2
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.95,
+      "subtitles": [
+        [
+          1.14,
+          7.95,
+          "STRAW",
+          "عشق واقعی و صداقت همیشه برنده می‌شه دوک عزیزم! حالا خانواده‌مون توی این قصر برای همیشه خوشبخته!"
+        ]
+      ]
+    }
+  ]
+}
