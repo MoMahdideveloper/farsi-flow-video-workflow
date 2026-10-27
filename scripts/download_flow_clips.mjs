@@ -183,10 +183,12 @@ async function downloadOne(mcp, profileId, tabId, matchSubstr, outPath) {
   console.log(`  [1/3] Found tile [${tile.ref}] "${tile.name}"`);
   const beforeMap = listMp4Files();
 
-  // Check if next interactive button is direct "Download" or "بارگیری" (Row view)
-  const nextBtn = interactive[idx + 1];
+  // Check if one of the next interactive buttons is direct "Download" or "بارگیری" (Row view)
+  const nextBtn = interactive
+    .slice(idx + 1, idx + 4)
+    .find((b) => b && (b.name === 'Download' || b.name === 'بارگیری'));
   const prevBtn = interactive[idx - 1];
-  if (nextBtn && (nextBtn.name === 'Download' || nextBtn.name === 'بارگیری')) {
+  if (nextBtn) {
     console.log(`  [2/3] Clicking direct Download button [${nextBtn.ref}]...`);
     await mcp.callTool('browser_click', { profileId, tabId, ref: nextBtn.ref });
   } else if (prevBtn && (prevBtn.name === 'More options' || prevBtn.name === 'گزینه‌های بیشتر')) {

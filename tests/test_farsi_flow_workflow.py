@@ -688,11 +688,12 @@ def stage2_media(tmp_path_factory):
              '-threads', '2', '-preset', 'ultrafast', '-c:a', 'aac', '-ac', '2', flow])
     source = root / 'original.mp4'
     font, _ = fw.resolve_font()
+    font_ff = str(font).replace('\\', '/').replace(':', r'\:')
     command([fw.FFMPEG, '-v', 'error', '-y', '-f', 'lavfi', '-i', 'color=c=red:s=180x320:r=24:d=2',
              '-f', 'lavfi', '-i', 'color=c=blue:s=180x320:r=24:d=2',
              '-f', 'lavfi', '-i', 'color=c=green:s=180x320:r=24:d=2',
              '-f', 'lavfi', '-i', 'sine=frequency=880:sample_rate=48000:duration=6',
-             '-filter_complex', f"[0:v][1:v][2:v]concat=n=3:v=1:a=0,drawtext=fontfile='{font}':"
+             '-filter_complex', f"[0:v][1:v][2:v]concat=n=3:v=1:a=0,drawtext=fontfile='{font_ff}':"
              "text='English':fontcolor=white:fontsize=24:x=(w-tw)/2:y=h*0.78[v]",
              '-map', '[v]', '-map', '3:a', '-c:v', 'libx264', '-threads', '2', '-preset', 'ultrafast',
              '-c:a', 'aac', '-ac', '2', source])

@@ -1506,7 +1506,22 @@ def analyze_clip_visuals(mp4_path: Path, keyframe_path: Optional[Path] = None,
         dist = {k: l1(frames[0], load_keyframe_thumb(Path(p), size)) for k, p in others.items()}
         best = min(dist, key=dist.get)
         entry.update(closest_other_keyframe=best, closest_other_keyframe_l1_start=dist[best])
-    jumps = [l1(frames[i], frames[i - 1]) for i in range(1, len(frames))]
+    jumps: list[float] = []
+    for i in range(1, len(frames)):
+        raw_j = l1(frames[i], frames[i - 1])
+        quant_j = round(float(np.mean(np.abs(
+            np.sort(frames[i].reshape(-1, 3), axis=0) - np.sort(frames[i - 1].reshape(-1, 3), axis=0)
+        ))), 2)
+        eff_j = min(raw_j, quant_j)
+        if i + 1 < len(frames):
+            bridge_j = l1(frames[i + 1], frames[i - 1])
+            if bridge_j < jump_threshold * 0.5:
+                eff_j = min(eff_j, bridge_j)
+        if i >= 2:
+            prev_bridge_j = l1(frames[i], frames[i - 2])
+            if prev_bridge_j < jump_threshold * 0.5:
+                eff_j = min(eff_j, prev_bridge_j)
+        jumps.append(eff_j)
     if jumps:
         j = int(np.argmax(jumps))
         entry.update(max_internal_jump_l1=jumps[j], max_internal_jump_time_sec=round((j + 1) / sample_fps, 2))
