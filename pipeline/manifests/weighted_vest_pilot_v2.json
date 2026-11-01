@@ -1,0 +1,245 @@
+{
+  "_comment": "New three-shot nursery dialogue pilot. Native Flow audio only. Not a replacement for the full story.",
+  "schema_version": 1,
+  "speech_review_note": "Provisional cue times. Transcribe and align against generated speech before release; no claim of guaranteed pronunciation.",
+  "episode_id": "Series12_NurseryPilot_v2",
+  "title_fa": "پیش‌نمایش: جلیقه‌ی سنگین",
+  "title_en": "Series 12 nursery argument — continuity pilot v2",
+  "source_video": "${SRC}\\01_DfFSazoOhDI_emotionalgroceries.mp4",
+  "source_start_offset": 0,
+  "story_summary_fa": "بهرام می‌خواهد پسر سه‌ساله‌اش را با جلیقه‌ی سنگین قوی کند؛ مادر مخالفت می‌کند.",
+  "fallback_to_source_on_visual_fail": false,
+  "tight_speech_trim": false,
+  "variables": {
+    "BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series12-weighted-vest-sponge-farsi",
+    "S2_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi",
+    "CHEF_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\ugly-face-chef-farsi",
+    "SRC": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\emotionalgroceries"
+  },
+  "clips_dir": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series12-weighted-vest-sponge-farsi\\revisions\\v2-pilot\\flow_clips",
+  "out_dir": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series12-weighted-vest-sponge-farsi\\revisions\\v2-pilot\\draft",
+  "font_path": "${CHEF_BASE}\\03_farsi_audio_tts\\Vazirmatn-Bold.ttf",
+  "cta_video": null,
+  "cta_speaker": "SPONGE_SON",
+  "cta_subtitles": [],
+  "speakers": {
+    "DAD_SPONGE": [
+      170,
+      225,
+      255
+    ],
+    "MOM_SQUIRREL": [
+      255,
+      195,
+      140
+    ],
+    "SPONGE_SON": [
+      255,
+      240,
+      95
+    ],
+    "BADGE": [
+      255,
+      215,
+      70
+    ]
+  },
+  "clips": [
+    {
+      "id": "clip_01",
+      "file": "clip_01.mp4",
+      "trim_in": 0,
+      "trim_out": null,
+      "generation_duration_sec": 8,
+      "shot_type": "dialogue",
+      "beat_ids": [
+        "mother_objects"
+      ],
+      "story_beat": "Wide nursery shot. Mother raises her open palm in objection; the father kneels holding the vest, toddler seated between them. Only mother speaks, worried but firm.",
+      "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series12-weighted-vest-sponge-farsi\\revisions\\v2-pilot\\keyframes\\KF_01.png",
+      "generation_prompt": "[S12V2_C01] Stylized high-quality 3D cartoon, portrait 9:16. Animate the exact supplied frame. Keep the same characters, facial proportions, pores/fur, hair, clothes and nursery. Father: dark charcoal rectangular porous sponge, short black dreadlocks, white ribbed tank, gray sweatpants. Mother: brown squirrel, cream muzzle, long chestnut hair, white ribbed tank, gray lounge pants. Toddler: small yellow porous sponge with short black dreadlocks, white tee and black shorts. Warm morning window light from camera-right. Crib remains on the left. No cut, no wardrobe or species change. Keep the black weighted vest in father's hands, off the child in this shot. Wide nursery shot. Mother raises her open palm in objection; the father kneels holding the vest, toddler seated between them. Only mother speaks, worried but firm. Same adult female Persian voice in both mother shots, firm and worried, natural colloquial Tehran pronunciation. Speak only this exact Persian line once: «بهرام، این بچه فقط سه سالشه! این جلیقه براش خیلی سنگینه!» Begin after 0.4 seconds, finish naturally by 6.5 seconds; leave the final reaction audible and visible. No added words, narrator, music or generated text/subtitles. Preserve original native dialogue and environmental sound.",
+      "expected_speakers": [
+        "MOM_SQUIRREL"
+      ],
+      "subtitles": [
+        [
+          0.35,
+          2.8,
+          "MOM_SQUIRREL",
+          "بهرام، این بچه فقط سه سالشه!"
+        ],
+        [
+          2.9,
+          5.8,
+          "MOM_SQUIRREL",
+          "این جلیقه براش خیلی سنگینه!"
+        ]
+      ],
+      "state_before": "Father holds vest; child not wearing it.",
+      "state_after": "Father still holds vest; child not wearing it.",
+      "overlays": []
+    },
+    {
+      "id": "clip_02",
+      "file": "clip_02.mp4",
+      "trim_in": 0,
+      "trim_out": null,
+      "generation_duration_sec": 8,
+      "shot_type": "dialogue",
+      "beat_ids": [
+        "father_defends"
+      ],
+      "story_beat": "Medium close-up of father, mother at right edge. Father speaks confidently and dismissively, convinced harsh training will make his son strong. He holds the vest in both hands throughout. Only father speaks.",
+      "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series12-weighted-vest-sponge-farsi\\revisions\\v2-pilot\\keyframes\\KF_02.png",
+      "generation_prompt": "[S12V2_C02] Stylized high-quality 3D cartoon, portrait 9:16. Animate the exact supplied frame. Keep the same characters, facial proportions, pores/fur, hair, clothes and nursery. Father: dark charcoal rectangular porous sponge, short black dreadlocks, white ribbed tank, gray sweatpants. Mother: brown squirrel, cream muzzle, long chestnut hair, white ribbed tank, gray lounge pants. Toddler: small yellow porous sponge with short black dreadlocks, white tee and black shorts. Warm morning window light from camera-right. Crib remains on the left. No cut, no wardrobe or species change. Keep the black weighted vest in father's hands, off the child in this shot. Medium close-up of father, mother at right edge. Father speaks confidently and dismissively, convinced harsh training will make his son strong. He holds the vest in both hands throughout. Only father speaks. Same deep adult male Persian voice, confident and stern, natural colloquial Tehran pronunciation. Speak only this exact Persian line once: «نگران نباش! پسرم وقتی بزرگ بشه، خودش ازم تشکر می‌کنه!» Begin after 0.4 seconds, finish naturally by 6.5 seconds; leave the final reaction audible and visible. No added words, narrator, music or generated text/subtitles. Preserve original native dialogue and environmental sound.",
+      "expected_speakers": [
+        "DAD_SPONGE"
+      ],
+      "subtitles": [
+        [
+          0.35,
+          1.6,
+          "DAD_SPONGE",
+          "نگران نباش!"
+        ],
+        [
+          1.7,
+          3.7,
+          "DAD_SPONGE",
+          "پسرم وقتی بزرگ بشه،"
+        ],
+        [
+          3.8,
+          6.2,
+          "DAD_SPONGE",
+          "خودش ازم تشکر می‌کنه!"
+        ]
+      ],
+      "state_before": "Father holds vest; child not wearing it.",
+      "state_after": "Father still holds vest; child not wearing it.",
+      "overlays": []
+    },
+    {
+      "id": "clip_03",
+      "file": "clip_03.mp4",
+      "trim_in": 0,
+      "trim_out": null,
+      "generation_duration_sec": 8,
+      "shot_type": "dialogue",
+      "beat_ids": [
+        "mother_challenges"
+      ],
+      "story_beat": "Medium close-up of mother, father at left foreground. Mother angrily challenges father, open palm raised toward him. Keep her worried firm expression and eye contact. Father remains kneeling and holding the vest outside this framing. Only mother speaks.",
+      "keyframe": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series12-weighted-vest-sponge-farsi\\revisions\\v2-pilot\\keyframes\\KF_03.png",
+      "generation_prompt": "[S12V2_C03] Stylized high-quality 3D cartoon, portrait 9:16. Animate the exact supplied frame. Keep the same characters, facial proportions, pores/fur, hair, clothes and nursery. Father: dark charcoal rectangular porous sponge, short black dreadlocks, white ribbed tank, gray sweatpants. Mother: brown squirrel, cream muzzle, long chestnut hair, white ribbed tank, gray lounge pants. Toddler: small yellow porous sponge with short black dreadlocks, white tee and black shorts. Warm morning window light from camera-right. Crib remains on the left. No cut, no wardrobe or species change. Keep the black weighted vest in father's hands, off the child in this shot. Medium close-up of mother, father at left foreground. Mother angrily challenges father, open palm raised toward him. Keep her worried firm expression and eye contact. Father remains kneeling and holding the vest outside this framing. Only mother speaks. Same adult female Persian voice in both mother shots, firm and worried, natural colloquial Tehran pronunciation. Speak only this exact Persian line once: «این اسمش تمرین نیست، بهرام! اون جلیقه رو بذار کنار!» Begin after 0.4 seconds, finish naturally by 6.5 seconds; leave the final reaction audible and visible. No added words, narrator, music or generated text/subtitles. Preserve original native dialogue and environmental sound.",
+      "expected_speakers": [
+        "MOM_SQUIRREL"
+      ],
+      "subtitles": [
+        [
+          0.35,
+          3.2,
+          "MOM_SQUIRREL",
+          "این اسمش تمرین نیست، بهرام!"
+        ],
+        [
+          3.3,
+          6.0,
+          "MOM_SQUIRREL",
+          "اون جلیقه رو بذار کنار!"
+        ]
+      ],
+      "state_before": "Father holds vest; child not wearing it.",
+      "state_after": "Father still holds vest; child not wearing it.",
+      "overlays": []
+    }
+  ],
+  "voices": {
+    "DAD_SPONGE": {
+      "name_fa": "DAD_SPONGE",
+      "color": [
+        170,
+        225,
+        255
+      ],
+      "source": "google_flow_native"
+    },
+    "MOM_SQUIRREL": {
+      "name_fa": "MOM_SQUIRREL",
+      "color": [
+        255,
+        195,
+        140
+      ],
+      "source": "google_flow_native"
+    },
+    "SPONGE_SON": {
+      "name_fa": "SPONGE_SON",
+      "color": [
+        255,
+        240,
+        95
+      ],
+      "source": "google_flow_native"
+    }
+  },
+  "video": {
+    "width": 720,
+    "height": 1280,
+    "fps": 24,
+    "crf": 18,
+    "preset": "fast",
+    "scale_mode": "fill"
+  },
+  "audio": {
+    "loudnorm": "loudnorm=I=-14:TP=-1.5:LRA=11",
+    "sample_rate": 48000,
+    "channels": 2,
+    "bitrate": "192k"
+  },
+  "speech": {
+    "speech_safe": "auto_expand",
+    "threshold_dbfs": -38,
+    "pre_handle": 0.2,
+    "post_handle": 0.35,
+    "splice_crossfade": 0.02
+  },
+  "subtitle_style": {
+    "time_base": "trim_local",
+    "y_ratio": 0.84,
+    "font_size": 34,
+    "min_font_size": 30,
+    "max_text_margin": 84,
+    "max_lines": 2
+  },
+  "outputs": {
+    "per_clip_location": "out_dir",
+    "base_mode": "timeline",
+    "cta_burn_subtitles": true,
+    "cta_loudnorm": true,
+    "publish_caption_fa": "پیش‌نمایش گفت‌وگوی پدر و مادر درباره‌ی جلیقه‌ی سنگین."
+  },
+  "content_edits": [],
+  "character_references": [
+    "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series12-weighted-vest-sponge-farsi\\character_sheets\\FLOW_SHEET_SERIES12_CHARACTERS.jpg"
+  ],
+  "location_references": [
+    "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series12-weighted-vest-sponge-farsi\\revisions\\v2-pilot\\keyframes\\KF_01.png"
+  ],
+  "story_plan": {
+    "summary": "Three-shot calibration of the nursery argument before the vest is fitted. Mother objects, father defends harsh training, mother challenges him. Preserve the conflict.",
+    "ending": "Mother demands he put the vest aside; father still holds it. Unresolved argument leads into fitting/consequence in the full episode. This pilot is not the whole story.",
+    "required_beats": [
+      "mother_objects",
+      "father_defends",
+      "mother_challenges"
+    ],
+    "continuity": "Same nursery, same morning. Vest held by father throughout, not yet worn. Father kneels left, mother stands right, child sits between them; close-ups stay on the same side of their eyeline."
+  },
+  "generation_settings": {
+    "model": "Veo 3.1 - Fast",
+    "duration_sec": 8,
+    "aspect": "9:16",
+    "outputs": 1
+  }
+}

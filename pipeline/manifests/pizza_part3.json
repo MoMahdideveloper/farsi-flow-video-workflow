@@ -1,0 +1,269 @@
+{
+  "_comment": "Series 7 (@emotionalgroceries Pizza Billionaire) Part 3 - 100% Google Flow native Farsi voice with full اعراب‌گذاری.",
+  "schema_version": 1,
+  "speech_review_note": "Full Persian vowel diacritics (اعراب‌گذاری کامل) in Google Flow prompt for 100% accurate native pronunciation.",
+  "episode_id": "Part3_NewBossRevenge",
+  "title_fa": "قسمت سوم (فینال): خریدنِ کلِ رستوران و اخراجِ رئیسِ طمع‌کار!",
+  "title_en": "Emotional Groceries Pizza Billionaire Part 3 - Buying the Restaurant Chain",
+  "source_video": "${EG_SRC}\\05_DeX4iyqOBp4_emotionalgroceries.mp4",
+  "source_start_offset": 86.9,
+  "story_summary_fa": "پسرک اسفنجی با کت‌وشلوار مشکی و عینک دودی برمی‌گرده، کل شعبه‌های رستوران رو یک‌جا می‌خره، صندوقدار مهربان (سارا) رو مدیر جدید رستوران می‌کنه و رئیس طمع‌کار رو توی بارون اخراج می‌کنه!",
+  "fallback_to_source_on_visual_fail": false,
+  "tight_speech_trim": true,
+  "variables": {
+    "BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series7-sponge-pizza-billionaire-farsi",
+    "S2_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi",
+    "CHEF_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\ugly-face-chef-farsi",
+    "EG_SRC": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\emotionalgroceries"
+  },
+  "clips_dir": "${BASE}\\part3\\flow_clips",
+  "out_dir": "${BASE}\\05_final_masters\\part3",
+  "font_path": "${CHEF_BASE}\\03_farsi_audio_tts\\Vazirmatn-Bold.ttf",
+  "cta_video": "${S2_BASE}\\part1\\flow_clips\\cta_kelidbox_s2.mp4",
+  "cta_speaker": "SANDY",
+  "cta_subtitles": [
+    {
+      "start": 0.25,
+      "end": 3.35,
+      "text": "برای دیدن قسمت بعدی این داستان همین الان پیج رو فالو کن!"
+    },
+    {
+      "start": 3.5,
+      "end": 7.85,
+      "text": "راستی کل این انیمیشن با اکانت‌های هوش مصنوعی سایت کلیدباکس ساخته شده!"
+    }
+  ],
+  "video": {
+    "width": 720,
+    "height": 1280,
+    "fps": 24,
+    "crf": 18,
+    "preset": "fast",
+    "scale_mode": "fill"
+  },
+  "audio": {
+    "loudnorm": "loudnorm=I=-14:TP=-1.5:LRA=11",
+    "sample_rate": 48000,
+    "channels": 2,
+    "bitrate": "192k"
+  },
+  "speech": {
+    "speech_safe": "auto_expand",
+    "threshold_dbfs": -38.0,
+    "pre_handle": 0.2,
+    "post_handle": 0.35,
+    "splice_crossfade": 0.02
+  },
+  "subtitle_style": {
+    "time_base": "trim_local",
+    "y_ratio": 0.84,
+    "font_size": 27,
+    "min_font_size": 16,
+    "max_text_margin": 84,
+    "max_lines": 2
+  },
+  "badge": {
+    "text": "قسمت سوم (پایان): خریدنِ کلِ رستوران و کارما!",
+    "start": 0.0,
+    "end": 3.5,
+    "y_center": 130,
+    "font_size": 28,
+    "color": [
+      255,
+      175,
+      220
+    ],
+    "clip_index": 1
+  },
+  "outputs": {
+    "per_clip_location": "both",
+    "base_mode": "timeline",
+    "cta_burn_subtitles": true,
+    "cta_loudnorm": true,
+    "publish_caption_fa": "با کت‌وشلوار میلیاردی برگشت، کل شعبه‌های رستوران رو خرید و دختر مهربون رو رئیس جدید کرد! 😎🍕👑\nقسمت سوم و پایانی داستان میلیاردر مخفی (@emotionalgroceries)!\nکل این انیمیشن با اکانت‌های هوش مصنوعی سایت «کلیدباکس» ساخته شده 🔑✨"
+  },
+  "voices": {
+    "KUH": {
+      "name_fa": "کوچولو (اسفنج سیاه میلیاردر مخفی)",
+      "color": [
+        140,
+        235,
+        255
+      ],
+      "source": "google_flow_native"
+    },
+    "SANDY": {
+      "name_fa": "سارا (صندوقدار مهربان پیتزافروشی)",
+      "color": [
+        255,
+        175,
+        220
+      ],
+      "source": "google_flow_native"
+    },
+    "BOSS": {
+      "name_fa": "رئیس قرمز (مدیر طمع‌کار رستوران)",
+      "color": [
+        255,
+        130,
+        130
+      ],
+      "source": "google_flow_native"
+    },
+    "COWORKER": {
+      "name_fa": "هومن (همکار مهربان آشپزخانه)",
+      "color": [
+        255,
+        225,
+        120
+      ],
+      "source": "google_flow_native"
+    }
+  },
+  "clips": [
+    {
+      "id": "clip_01",
+      "file": "clip_01.mp4",
+      "keyframe": "${BASE}\\part3\\keyframes\\KF_01.jpg",
+      "expected_speakers": [
+        "KUH"
+      ],
+      "story_beat": "Inside a luxury golden dressing room, the dark charcoal sponge billionaire wears a tailored black tuxedo suit, white shirt, black tie, and sleek dark sunglasses in front of an ornate mirror",
+      "source_span": [
+        86.9,
+        89.2
+      ],
+      "trim_in": 0.0,
+      "trim_out": 9.85,
+      "speech_fa_vocalized": "آزْمایِشِ مَخْفیِ مَن تَمُوم شُد! حالا با لِباسِ اَصْلیم می‌رَم تا جَوابِ خُوبی و بَدی رُو بِدَم!",
+      "subtitles": [
+        [
+          0.1,
+          9.5,
+          "KUH",
+          "آزمایش مخفی من تموم شد! حالا با لباس اصلیم می‌رم تا جواب خوبی و بدی رو بدم!"
+        ]
+      ]
+    },
+    {
+      "id": "clip_02",
+      "file": "clip_02.mp4",
+      "keyframe": "${BASE}\\part3\\keyframes\\KF_02.jpg",
+      "expected_speakers": [
+        "BOSS"
+      ],
+      "story_beat": "Inside the pizza restaurant dining room, the angry red crab manager shouts furiously and points at the tearful squirrel cashier",
+      "source_span": [
+        89.2,
+        95.2
+      ],
+      "trim_in": 0.0,
+      "trim_out": 9.85,
+      "speech_fa_vocalized": "مَگه نَگُفْتَم دیگه پیتْزایِ مَجّانی نَده؟! هَمین اَلان پِیْش‌بَنْدِت رُو دَرْبیار و اَز این‌جا بُرُو بیرُون!",
+      "subtitles": [
+        [
+          0.1,
+          9.5,
+          "BOSS",
+          "مگه نگفتم دیگه پیتزای مجانی نده؟! همین الان پیش‌بندت رو دربیار و از این‌جا برو بیرون!"
+        ]
+      ]
+    },
+    {
+      "id": "clip_03",
+      "file": "clip_03.mp4",
+      "keyframe": "${BASE}\\part3\\keyframes\\KF_03.jpg",
+      "expected_speakers": [
+        "KUH"
+      ],
+      "story_beat": "The dark charcoal sponge billionaire in his sharp black suit and dark sunglasses strides through the pizza restaurant doors as the red crab manager and squirrel cashier turn in shock",
+      "source_span": [
+        95.2,
+        105.0
+      ],
+      "trim_in": 0.0,
+      "trim_out": 9.85,
+      "speech_fa_vocalized": "ایْشُون هیچ‌جا نِمی‌ره، وَلی تُو چِرا! مَن هَمین اَلان کُلِّ شُعْبه‌هایِ این رِسْتُوران رُو خَریدَم!",
+      "subtitles": [
+        [
+          0.1,
+          9.5,
+          "KUH",
+          "ایشون هیچ‌جا نمی‌ره، ولی تو چرا! من همین الان کل شعبه‌های این رستوران رو خریدم!"
+        ]
+      ]
+    },
+    {
+      "id": "clip_04",
+      "file": "clip_04.mp4",
+      "keyframe": "${BASE}\\part3\\keyframes\\KF_04.jpg",
+      "expected_speakers": [
+        "BOSS"
+      ],
+      "story_beat": "Close-up of the red crab manager gasping in total shock with his jaw dropped while the squirrel cashier looks amazed behind him",
+      "source_span": [
+        105.0,
+        107.5
+      ],
+      "trim_in": 0.0,
+      "trim_out": 9.85,
+      "speech_fa_vocalized": "چی؟! یَعْنی تُو هَمُون پِسَرِ فَقیر بُودی کِه کُلِّ زَنْجیرِه رِسْتُوران رُو یِکْ‌جا خَریده؟!",
+      "subtitles": [
+        [
+          0.1,
+          9.5,
+          "BOSS",
+          "چی؟! یعنی تو همون پسر فقیر بودی که کل زنجیره رستوران رو یک‌جا خریده؟!"
+        ]
+      ]
+    },
+    {
+      "id": "clip_05",
+      "file": "clip_05.mp4",
+      "keyframe": "${BASE}\\part3\\keyframes\\KF_05.jpg",
+      "expected_speakers": [
+        "KUH"
+      ],
+      "story_beat": "The dark charcoal sponge billionaire in his black suit and sunglasses points the disgraced red crab manager toward the restaurant exit while the squirrel cashier smiles proudly",
+      "source_span": [
+        107.5,
+        114.0
+      ],
+      "trim_in": 0.0,
+      "trim_out": 9.85,
+      "speech_fa_vocalized": "اَز اِمْرُوز شُما مُدیرِ جَدیدِ این رِسْتُوران هَسْتید خانُمِ مِهْرَبُون! و تُو، فَوْراً اَز مِلْکِ مَن بُرُو بیرُون!",
+      "subtitles": [
+        [
+          0.1,
+          9.5,
+          "KUH",
+          "از امروز شما مدیر جدید این رستوران هستید خانم مهربون! و تو، فوراً از ملک من برو بیرون!"
+        ]
+      ]
+    },
+    {
+      "id": "clip_06",
+      "file": "clip_06.mp4",
+      "keyframe": "${BASE}\\part3\\keyframes\\KF_06.jpg",
+      "expected_speakers": [
+        "BOSS"
+      ],
+      "story_beat": "Outside in a dark rainy neon-lit alley at night, the fired red crab manager stands in the rain holding a small box of his things in defeat",
+      "source_span": [
+        114.0,
+        122.3
+      ],
+      "trim_in": 0.0,
+      "trim_out": 9.85,
+      "speech_fa_vocalized": "بِه خاطِرِ یِک تِکّه پیتْزا هَمِه چیم رُو اَز دَسْت دادَم! این کارْمایِ طَمَع‌کاریِ خُودَم بُود!",
+      "subtitles": [
+        [
+          0.1,
+          9.5,
+          "BOSS",
+          "به خاطر یک تکه پیتزا همه چیم رو از دست دادم! این کارمای طمع‌کاری خودم بود!"
+        ]
+      ]
+    }
+  ]
+}

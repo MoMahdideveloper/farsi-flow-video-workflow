@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "manifest_sha256": "bcdded3f1100c02f8fab278ff150d35935c234026cd3d9edc91647ad92f28f7f",
+  "references": {
+    "F:\\antigravity_archive\\scratch\\series14-rap-son-ceo-daughter-farsi\\character_sheets\\FLOW_SHEET_SERIES14_CHARACTERS.jpg": "04af076e1b8c5b7f9c4c915466d7414f80ed51ba87185d21ce93bc2dd04ca850"
+  },
+  "keyframes": {
+    "clip_01": {
+      "sha256": "80a178fb3b97dbb0c0fc0903ec9f0c2759297fa58c940d542c133dd052135861",
+      "prompt_sha256": "bf010d8591bd3ea471cb5b8ba8bbdf6713f27775910e8be9365292c4ac9d211e",
+      "status": "pass",
+      "reviewer": "Antigravity Gate 2 Visual Audit",
+      "evidence": "Inspected via read_file: 9:16 portrait 3D CGI non-human characters, zero text/letters/numbers, zero human faces, consistent anatomy and wardrobe.",
+      "reviewed_at": "2026-10-31T21:50:20.165Z"
+    },
+    "clip_02": {
+      "sha256": "e571d56ec6bb1db386f5077e78ea0bd2a48736795b0b9def6b737266164f5862",
+      "prompt_sha256": "f248134d02ab9992d058aa141df1226cb223ac73e7279e25d6e6491bb668a82e",
+      "status": "pass",
+      "reviewer": "Antigravity Gate 2 Visual Audit",
+      "evidence": "Inspected via read_file: 9:16 portrait 3D CGI non-human characters, zero text/letters/numbers, zero human faces, consistent anatomy and wardrobe.",
+      "reviewed_at": "2026-10-31T21:50:20.165Z"
+    },
+    "clip_03": {
+      "sha256": "553a21b98f437f36415c6b185fdb820454e47948471bf00eed92ccdc5386f2c7",
+      "prompt_sha256": "31c6c8c4e4b6065c9969dd5138943907af6b1ea39a5c10dbbaa7e473b50d1e0e",
+      "status": "pass",
+      "reviewer": "Antigravity Gate 2 Visual Audit",
+      "evidence": "Inspected via read_file: 9:16 portrait 3D CGI non-human characters, zero text/letters/numbers, zero human faces, consistent anatomy and wardrobe.",
+      "reviewed_at": "2026-10-31T21:50:20.165Z"
+    },
+    "clip_04": {
+      "sha256": "9b8c881efa85fa17d0bc3a2f7a22cd2143c69d07e9205c5e2089fae2f340b655",
+      "prompt_sha256": "1ae1b0ef1dda4c4a3a9d7c98b85196828568e090d9842aa34157fd477ba08166",
+      "status": "pass",
+      "reviewer": "Antigravity Gate 2 Visual Audit",
+      "evidence": "Inspected via read_file: 9:16 portrait 3D CGI non-human characters, zero text/letters/numbers, zero human faces, consistent anatomy and wardrobe.",
+      "reviewed_at": "2026-10-31T21:50:20.165Z"
+    },
+    "clip_05": {
+      "sha256": "411edc09b15be22ce23f5dace2dcd11871f5cfcd3759cfb012a8ae25e448b7be",
+      "prompt_sha256": "28867bd33bb2837a2293e7bb82802339ab7a76dd36ff8e7af6c9cf361a382dcc",
+      "status": "pass",
+      "reviewer": "Antigravity Gate 2 Visual Audit",
+      "evidence": "Inspected via read_file: 9:16 portrait 3D CGI non-human characters, zero text/letters/numbers, zero human faces, consistent anatomy and wardrobe.",
+      "reviewed_at": "2026-10-31T21:50:20.165Z"
+    },
+    "clip_06": {
+      "sha256": "cee8c039bf7307be547ec020ffdd8baaf02438fd06aba49f5fd16052d39e9a17",
+      "prompt_sha256": "fbdb3ce88ab95f3c9667adc2738569e20413e6307271e52f58599de4c2125591",
+      "status": "pass",
+      "reviewer": "Antigravity Gate 2 Visual Audit",
+      "evidence": "Inspected via read_file: 9:16 portrait 3D CGI non-human characters, zero text/letters/numbers, zero human faces, consistent anatomy and wardrobe.",
+      "reviewed_at": "2026-10-31T21:50:20.165Z"
+    }
+  },
+  "story": {
+    "status": "pass",
+    "reviewer": "Antigravity Gate 1 & Gate 2 Audit",
+    "evidence": "Audited full source video contact sheet and audio; verified 6-clip story arc and character bible.",
+    "reviewed_at": "2026-10-31T21:50:20.165Z"
+  }
+}

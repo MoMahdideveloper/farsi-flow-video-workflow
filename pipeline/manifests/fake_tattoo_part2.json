@@ -1,0 +1,292 @@
+{
+  "_comment": "Series 10 (@emotionalgroceries) Part 2 - 100% Google Flow native Farsi voice with full اعراب‌گذاری.",
+  "schema_version": 1,
+  "speech_review_note": "Full Persian vowel diacritics (اعراب‌گذاری کامل) in Google Flow prompt for 100% accurate native pronunciation.",
+  "episode_id": "Part2_PermanentRegret",
+  "title_fa": "قسمت دوم (پایان): جوهرِ دائمی رویِ صورت و پشیمانیِ ابدی!",
+  "title_en": "Fake Tattoo Trap Part 2 - Permanent Regret",
+  "source_video": "${SRC}\\06_DeXU6h_PaFm_emotionalgroceries.mp4",
+  "source_start_offset": 36,
+  "story_summary_fa": "لیلا خالکوبی دائمی را روی صورتش می‌زند و با غرور پیش سندی می‌رود، اما وقتی سندی برچسب ۵ دلاری را از روی صورتش می‌کند، لیلا می‌فهمد چه بلایی سر خودش آورده است!",
+  "fallback_to_source_on_visual_fail": false,
+  "tight_speech_trim": true,
+  "variables": {
+    "BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series10-fake-tattoo-trap-farsi",
+    "S2_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi",
+    "CHEF_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\ugly-face-chef-farsi",
+    "SRC": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\emotionalgroceries"
+  },
+  "clips_dir": "${BASE}\\part2\\flow_clips",
+  "out_dir": "${BASE}\\05_final_masters\\part2",
+  "font_path": "${CHEF_BASE}\\03_farsi_audio_tts\\Vazirmatn-Bold.ttf",
+  "cta_video": "${S2_BASE}\\part1\\flow_clips\\cta_kelidbox_s2.mp4",
+  "cta_speaker": "SANDY",
+  "cta_subtitles": [
+    {
+      "start": 0.15,
+      "end": 3.55,
+      "text": "برای دیدن داستان‌های جذاب بعدی همین الان پیج رو فالو کن!"
+    },
+    {
+      "start": 3.65,
+      "end": 7.6,
+      "text": "راستی کل این انیمیشن با اکانت‌های هوش مصنوعی سایت کلیدباکس ساخته شده!"
+    }
+  ],
+  "speakers": {
+    "SANDY": [
+      255,
+      195,
+      135
+    ],
+    "LEILA": [
+      255,
+      240,
+      95
+    ],
+    "SPONGE_ARTIST": [
+      150,
+      235,
+      255
+    ],
+    "SQUID_ARTIST": [
+      160,
+      255,
+      215
+    ],
+    "BADGE": [
+      255,
+      215,
+      70
+    ]
+  },
+  "clips": [
+    {
+      "id": "clip_01",
+      "file": "clip_01.mp4",
+      "source_span": [
+        36,
+        42
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "In the tattoo parlor, SQUID_ARTIST in round glasses holds his buzzing tattoo gun and warns stubborn LEILA sitting in the chair.",
+      "overlays": [
+        {
+          "speaker": "BADGE",
+          "text": "قسمت آخر: پشیمانیِ ابدی!",
+          "start": 0.1,
+          "end": 3.4,
+          "position": "top",
+          "font_size": 21
+        }
+      ],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "SQUID_ARTIST",
+          "مطمئنی دخترم؟ این سوزن و جوهرِ دائمیه و تا آخرِ عمرت از رویِ صورتت پاک نمی‌شه!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_01.jpg",
+      "expected_speakers": [
+        "SQUID_ARTIST"
+      ]
+    },
+    {
+      "id": "clip_02",
+      "file": "clip_02.mp4",
+      "source_span": [
+        42,
+        48
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "Outside the INK & LUXE shop, LEILA in her black hoodie takes a proud selfie pointing to her newly inked black-and-red permanent face tattoo.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "LEILA",
+          "آخ، صورتم آتیش گرفت! ولی ارزشش رو داشت، خالکوبیِ من از مالِ سندی خیلی خفن‌تره!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_02.jpg",
+      "expected_speakers": [
+        "LEILA"
+      ]
+    },
+    {
+      "id": "clip_03",
+      "file": "clip_03.mp4",
+      "source_span": [
+        48,
+        54
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "On the porch, LEILA smugly brags and points to her permanent cheek tattoo while SANDY smiles calmly wearing her matching sticker.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "LEILA",
+          "سلام سندی! ببین من هم رویِ صورتم خالکوبی زدم، ولی طرحِ من خیلی بزرگ‌تر و قشنگ‌تره!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_03.jpg",
+      "expected_speakers": [
+        "LEILA"
+      ]
+    },
+    {
+      "id": "clip_04",
+      "file": "clip_04.mp4",
+      "source_span": [
+        54,
+        60
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "On the porch, SANDY smirks and peels the temporary sticker cleanly off her furry cheek with a white pad while LEILA freezes in shock.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "SANDY",
+          "وای لیلا، واقعاً با سوزن خالکوبی کردی؟! مالِ من فقط یک برچسبِ موقتِ پنج دلاری بود!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_04.jpg",
+      "expected_speakers": [
+        "SANDY"
+      ]
+    },
+    {
+      "id": "clip_05",
+      "file": "clip_05.mp4",
+      "source_span": [
+        60,
+        66
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "SANDY gasps holding up the peeled-off sticker decal while LEILA grabs her permanently tattooed cheek in panic and sweat drops.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "LEILA",
+          "چی می‌گی؟! یعنی برچسب بود؟! وای نه، پس چرا خالکوبیِ من با دست پاک نمی‌شه؟!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_04.jpg",
+      "expected_speakers": [
+        "LEILA"
+      ]
+    },
+    {
+      "id": "clip_06",
+      "file": "clip_06.mp4",
+      "source_span": [
+        66,
+        72.7
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "LEILA weeps big cartoon tears furiously scrubbing her red swollen cheek with a tissue while the permanent tattoo stays intact, as SANDY stands beside her with arms crossed.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "SANDY",
+          "هر چقدر دستمال بکشی پاک نمی‌شه! این هم نتیجه‌یِ حسادت و تقلیدِ کورکورانه!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_06.jpg",
+      "expected_speakers": [
+        "SANDY"
+      ]
+    }
+  ],
+  "voices": {
+    "SANDY": {
+      "name_fa": "SANDY",
+      "color": [
+        255,
+        195,
+        135
+      ],
+      "source": "google_flow_native"
+    },
+    "LEILA": {
+      "name_fa": "LEILA",
+      "color": [
+        255,
+        240,
+        95
+      ],
+      "source": "google_flow_native"
+    },
+    "SPONGE_ARTIST": {
+      "name_fa": "SPONGE_ARTIST",
+      "color": [
+        150,
+        235,
+        255
+      ],
+      "source": "google_flow_native"
+    },
+    "SQUID_ARTIST": {
+      "name_fa": "SQUID_ARTIST",
+      "color": [
+        160,
+        255,
+        215
+      ],
+      "source": "google_flow_native"
+    }
+  },
+  "video": {
+    "width": 720,
+    "height": 1280,
+    "fps": 24,
+    "crf": 18,
+    "preset": "fast",
+    "scale_mode": "fill"
+  },
+  "audio": {
+    "loudnorm": "loudnorm=I=-14:TP=-1.5:LRA=11",
+    "sample_rate": 48000,
+    "channels": 2,
+    "bitrate": "192k"
+  },
+  "speech": {
+    "speech_safe": "auto_expand",
+    "threshold_dbfs": -38,
+    "pre_handle": 0.2,
+    "post_handle": 0.35,
+    "splice_crossfade": 0.02
+  },
+  "subtitle_style": {
+    "time_base": "trim_local",
+    "y_ratio": 0.84,
+    "font_size": 27,
+    "min_font_size": 16,
+    "max_text_margin": 84,
+    "max_lines": 2
+  },
+  "outputs": {
+    "per_clip_location": "both",
+    "base_mode": "timeline",
+    "cta_burn_subtitles": true,
+    "cta_loudnorm": true,
+    "publish_caption_fa": "قسمت دوم (پایان): جوهرِ دائمی رویِ صورت و پشیمانیِ ابدی!"
+  }
+}

@@ -1,0 +1,363 @@
+{
+  "_comment": "Part1_HonestMinerGoldBars - 100% Google Flow native Farsi voice with full اعراب‌گذاری.",
+  "schema_version": 1,
+  "speech_review_note": "Full Persian vowel diacritics (اعراب‌گذاری کامل) in Google Flow prompt for 100% accurate native pronunciation.",
+  "episode_id": "Part1_HonestMinerGoldBars",
+  "title_fa": "قسمت اول: پنج شمش طلا و امتحان درستکاری معدنچی فقیر!",
+  "title_en": "Honest Miner & 5 Gold Bars Part 1",
+  "source_video": "${SRC}\\10_DeP4jfHST2J_emotionalgroceries.mp4",
+  "source_start_offset": 0,
+  "story_summary_fa": "بالتازار، معدنچی فقیر اما درستکار، پنج شمش طلا در اتاق استراحت معدن پیدا می‌کند و به جای برداشتن آن‌ها، تحویل همسر رئیس می‌دهد؛ اما همسر طمعکار رئیس شمش‌ها را می‌دزدد تا به دبی فرار کند!",
+  "fallback_to_source_on_visual_fail": false,
+  "tight_speech_trim": true,
+  "variables": {
+    "BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series16-honest-miner-gold-bars-farsi",
+    "S2_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi",
+    "CHEF_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\ugly-face-chef-farsi",
+    "SRC": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\emotionalgroceries"
+  },
+  "clips_dir": "${BASE}\\part1\\flow_clips",
+  "out_dir": "${BASE}\\05_final_masters\\part1",
+  "font_path": "${CHEF_BASE}\\03_farsi_audio_tts\\Vazirmatn-Bold.ttf",
+  "cta_video": "${S2_BASE}\\part1\\flow_clips\\cta_kelidbox_s2.mp4",
+  "cta_speaker": "MINER_AVOCADO",
+  "cta_subtitles": [
+    {
+      "start": 0.15,
+      "end": 3.55,
+      "text": "برای دیدن قسمت بعدی این داستان همین الان پیج رو فالو کن!"
+    },
+    {
+      "start": 3.65,
+      "end": 7.6,
+      "text": "راستی کل این انیمیشن با اکانت‌های هوش مصنوعی سایت کلیدباکس ساخته شده!"
+    }
+  ],
+  "speakers": {
+    "MINER_AVOCADO": [
+      165,
+      255,
+      145
+    ],
+    "BOSS_POMEGRANATE": [
+      255,
+      150,
+      150
+    ],
+    "WIFE_APPLE": [
+      255,
+      185,
+      215
+    ],
+    "WORKER_CUCUMBER": [
+      150,
+      235,
+      255
+    ],
+    "GUARD_GRAPE": [
+      205,
+      175,
+      255
+    ],
+    "BADGE": [
+      255,
+      215,
+      70
+    ]
+  },
+  "clips": [
+    {
+      "id": "clip_01",
+      "file": "clip_01.mp4",
+      "source_span": [
+        0,
+        12
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "On an elevated steel walkway overlooking a rocky open-pit gold mine, wealthy faceted ruby-red 3D pomegranate BOSS_POMEGRANATE in a burgundy suit shouts orders down to rough green 3D avocado miner MINER_AVOCADO holding a pickaxe.",
+      "overlays": [
+        {
+          "speaker": "BADGE",
+          "text": "قسمت اول: پنج شمش طلا و امتحان درستکاری!",
+          "start": 0.1,
+          "end": 3.4,
+          "position": "top",
+          "font_size": 21
+        }
+      ],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "BOSS_POMEGRANATE",
+          "بالتازار، امروز باید دو شیفت پشت سر هم کار کنی! حجم استخراج معدن باید دو برابر بشه!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_01.jpg",
+      "expected_speakers": [
+        "BOSS_POMEGRANATE"
+      ],
+      "beat_ids": [
+        "beat_1"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[HM1_C01] Stylized 3D CGI cartoon animation matching the exact 3D non-human fruit characters and outfits in the reference image, static medium shot keeping the characters in frame the entire time (no camera cuts), standing on an elevated steel walkway overlooking a rocky gold mine the wealthy faceted ruby-red 3D pomegranate boss with a crown stem in a tailored burgundy suit and gold tie shouts orders down toward the rough green 3D avocado miner holding a pickaxe (strictly NO human faces), as the red pomegranate boss speaks in native Persian (Farsi) with exact vowel pronunciation and a booming authoritative male voice: «بالتازار، اِمْرُوز بایَد دُو شِیفْت پُشْتِ سَرِ هَم کار کُنِی! حَجْمِ اِسْتِخْراجِ مَعْدَن بایَد دُو بَرابَر بِشِه!» Zero on-screen subtitles."
+    },
+    {
+      "id": "clip_02",
+      "file": "clip_02.mp4",
+      "source_span": [
+        12,
+        24
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "In the dusty rocky quarry pit with excavators in the background, rough-textured green 3D avocado miner MINER_AVOCADO in a yellow mining hard-hat and brown overalls holds his wooden pickaxe and answers loyally.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "MINER_AVOCADO",
+          "چشم رئیس، خیالتون راحت باشه! هر چقدر هم کار سخت باشه، من با تمام وجود انجامش می‌دم!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_02.jpg",
+      "expected_speakers": [
+        "MINER_AVOCADO"
+      ],
+      "beat_ids": [
+        "beat_2"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[HM1_C02] Stylized 3D CGI cartoon animation matching the exact 3D non-human fruit character and outfit in the reference image, static medium shot keeping the character in frame the entire time (no camera cuts), in the dusty rocky quarry pit the rough-textured green 3D avocado miner wearing a yellow mining hard-hat with headlamp and brown denim overalls holds his wooden pickaxe and speaks loyally (strictly NO human face), speaking in native Persian (Farsi) with exact vowel pronunciation and a humble hardworking male voice: «چَشْم رَئِیس، خِیالِتُون راحَت باشِه! هَر چِقَدْر هَم کار سَخْت باشِه، مَن با تَمامِ وُجُود اَنْجامِش مِی‌دَم!» Zero on-screen subtitles."
+    },
+    {
+      "id": "clip_03",
+      "file": "clip_03.mp4",
+      "source_span": [
+        24,
+        38
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "Inside the dimly lit mine break room, green 3D avocado miner MINER_AVOCADO in his yellow hard-hat and overalls holds a gleaming gold bar above an open burlap sack filled with five shining gold bars.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "MINER_AVOCADO",
+          "پنج تا شمش طلای خالص؟! نه، این مال من نیست، باید همین الان به رئیس تحویلش بدم!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_03.jpg",
+      "expected_speakers": [
+        "MINER_AVOCADO"
+      ],
+      "beat_ids": [
+        "beat_3"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[HM1_C03] Stylized 3D CGI cartoon animation matching the exact 3D non-human fruit character and outfit in the reference image, static medium close-up shot keeping the character in frame the entire time (no camera cuts), inside the dimly lit mine break room the rough green 3D avocado miner in his yellow mining hard-hat and brown overalls holds a gleaming gold bar above an open burlap sack filled with five shining gold bars and resolves to do the honest thing (strictly NO human face), speaking in native Persian (Farsi) with exact vowel pronunciation and an honest emotional male voice: «پَنْج تا شِمْشِ طَلایِ خالِص؟! نَه، اِین مالِ مَن نِیسْت، بایَد هَمِین اَلان بِه رَئِیس تَحْوِیلِش بِدَم!» Zero on-screen subtitles."
+    },
+    {
+      "id": "clip_04",
+      "file": "clip_04.mp4",
+      "source_span": [
+        38,
+        50
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "At the green-marble reception desk of the mine headquarters, green 3D avocado miner MINER_AVOCADO hands the burlap sack of five gold bars across the counter to glamorous glossy red 3D apple woman WIFE_APPLE in a gold dress.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "MINER_AVOCADO",
+          "خانم، این پنج تا شمش طلا رو توی اتاق استراحت پیدا کردم. لطفاً تحویل آقای رئیس بدید."
+        ]
+      ],
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_04.jpg",
+      "expected_speakers": [
+        "MINER_AVOCADO"
+      ],
+      "beat_ids": [
+        "beat_4"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[HM1_C04] Stylized 3D CGI cartoon animation matching the exact 3D non-human fruit characters and outfits in the reference image, static medium two-shot keeping both characters in frame the entire time (no camera cuts), at the green-marble reception desk of the mine headquarters the green 3D avocado miner in a yellow hard-hat and brown overalls hands the burlap sack of five shining gold bars across the counter to the glamorous glossy red 3D apple woman in a gold evening dress and pearl necklace (strictly NO human faces), as the green avocado miner speaks in native Persian (Farsi) with exact vowel pronunciation and a polite honest male voice: «خانُم، اِین پَنْج تا شِمْشِ طَلا رُو تُویِ اُتاقِ اِسْتِراحَت پِیْدا کَرْدَم. لُطْفاً تَحْوِیلِ آقایِ رَئِیس بِدِید.» Zero on-screen subtitles."
+    },
+    {
+      "id": "clip_05",
+      "file": "clip_05.mp4",
+      "source_span": [
+        50,
+        62
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "Behind the green-marble reception counter, glamorous glossy red 3D apple woman WIFE_APPLE in her sparkling gold dress pulls the burlap sack of gold bars toward herself with a sweet, scheming smile.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "WIFE_APPLE",
+          "رئیس الان جلسه داره عزیزم، بذارش پیش من! حتماً بهش می‌گم چه کارگر درستکار و امینی هستی!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_05.jpg",
+      "expected_speakers": [
+        "WIFE_APPLE"
+      ],
+      "beat_ids": [
+        "beat_5"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[HM1_C05] Stylized 3D CGI cartoon animation matching the exact 3D non-human fruit characters and outfits in the reference image, static medium two-shot keeping both characters in frame the entire time (no camera cuts), behind the green-marble reception counter the glamorous glossy red 3D apple woman with a green top leaf in a gold dress pulls the burlap sack of gold bars toward herself with a sly sweet smile across from the green 3D avocado miner (strictly NO human faces), as the red apple woman speaks in native Persian (Farsi) with exact vowel pronunciation and a smooth sweet-talking female voice: «رَئِیس اَلان جَلَسِه دارِه عَزِیزَم، بِذارِش پِیشِ مَن! حَتْماً بِهِش مِی‌گَم چِه کارْگَرِ دُرُسْتْکار وُ اَمِینِی هَسْتِی!» Zero on-screen subtitles."
+    },
+    {
+      "id": "clip_06",
+      "file": "clip_06.mp4",
+      "source_span": [
+        62,
+        74
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "Reclining on a luxury silk bed with an open designer suitcase and five gold bars beside her, glamorous glossy red 3D apple woman WIFE_APPLE talks on her smartphone with a wicked laugh.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "WIFE_APPLE",
+          "چه کارگر ساده‌لوحی! این شمش‌های طلا رو برمی‌دارم و فردا باهاش مستقیم پرواز می‌کنم به دبی!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_06.jpg",
+      "expected_speakers": [
+        "WIFE_APPLE"
+      ],
+      "beat_ids": [
+        "beat_6"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[HM1_C06] Stylized 3D CGI cartoon animation matching the exact 3D non-human fruit character and outfit in the reference image, static medium shot keeping the character in frame the entire time (no camera cuts), reclining on a luxury silk bed with an open suitcase and five gleaming gold bars beside her the glamorous glossy red 3D apple woman in a sparkling evening dress and diamond necklace speaks into her smartphone with a wicked triumphant laugh (strictly NO human face), speaking in native Persian (Farsi) with exact vowel pronunciation and a scheming arrogant female voice: «چِه کارْگَرِ سادِه‌لُوحِی! اِین شِمْش‌هایِ طَلا رُو بَرْمِی‌دارَم وُ فَرْدا باهاش مُسْتَقِیم پَرْواز مِی‌کُنَم بِه دُبِی!» Zero on-screen subtitles."
+    }
+  ],
+  "voices": {
+    "MINER_AVOCADO": {
+      "name_fa": "MINER_AVOCADO",
+      "color": [
+        165,
+        255,
+        145
+      ],
+      "source": "google_flow_native"
+    },
+    "BOSS_POMEGRANATE": {
+      "name_fa": "BOSS_POMEGRANATE",
+      "color": [
+        255,
+        150,
+        150
+      ],
+      "source": "google_flow_native"
+    },
+    "WIFE_APPLE": {
+      "name_fa": "WIFE_APPLE",
+      "color": [
+        255,
+        185,
+        215
+      ],
+      "source": "google_flow_native"
+    },
+    "WORKER_CUCUMBER": {
+      "name_fa": "WORKER_CUCUMBER",
+      "color": [
+        150,
+        235,
+        255
+      ],
+      "source": "google_flow_native"
+    },
+    "GUARD_GRAPE": {
+      "name_fa": "GUARD_GRAPE",
+      "color": [
+        205,
+        175,
+        255
+      ],
+      "source": "google_flow_native"
+    }
+  },
+  "video": {
+    "width": 720,
+    "height": 1280,
+    "fps": 24,
+    "crf": 18,
+    "preset": "fast",
+    "scale_mode": "fill"
+  },
+  "audio": {
+    "loudnorm": "loudnorm=I=-14:TP=-1.5:LRA=11",
+    "sample_rate": 48000,
+    "channels": 2,
+    "bitrate": "192k"
+  },
+  "speech": {
+    "speech_safe": "auto_expand",
+    "threshold_dbfs": -38,
+    "pre_handle": 0.2,
+    "post_handle": 0.35,
+    "splice_crossfade": 0.02
+  },
+  "subtitle_style": {
+    "time_base": "trim_local",
+    "y_ratio": 0.84,
+    "font_size": 27,
+    "min_font_size": 16,
+    "max_text_margin": 84,
+    "max_lines": 2
+  },
+  "outputs": {
+    "per_clip_location": "both",
+    "base_mode": "timeline",
+    "cta_burn_subtitles": true,
+    "cta_loudnorm": true,
+    "publish_caption_fa": "قسمت اول: پنج شمش طلا و امتحان درستکاری معدنچی فقیر!"
+  },
+  "character_references": [
+    "${BASE}\\character_sheets\\FLOW_SHEET_SERIES16_CHARACTERS.jpg"
+  ],
+  "content_edits": [],
+  "story_plan": {
+    "summary": "بالتازار، معدنچی فقیر اما درستکار، پنج شمش طلا در اتاق استراحت معدن پیدا می‌کند و به جای برداشتن آن‌ها، تحویل همسر رئیس می‌دهد؛ اما همسر طمعکار رئیس شمش‌ها را می‌دزدد تا به دبی فرار کند!",
+    "ending": "The boss’s greedy apple wife steals the five gold bars returned by honest miner Balthazar and plans to flee to Dubai.",
+    "required_beats": [
+      "beat_1",
+      "beat_2",
+      "beat_3",
+      "beat_4",
+      "beat_5",
+      "beat_6"
+    ]
+  },
+  "visual": {
+    "keyframe_threshold": 38,
+    "jump_threshold": 32,
+    "contamination_margin": 5
+  }
+}

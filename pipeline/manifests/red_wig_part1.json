@@ -1,0 +1,292 @@
+{
+  "_comment": "Series 13 (@emotionalgroceries) Part 1 - 100% Google Flow native Farsi voice with full اعراب‌گذاری.",
+  "schema_version": 1,
+  "speech_review_note": "Full Persian vowel diacritics (اعراب‌گذاری کامل) in Google Flow prompt for 100% accurate native pronunciation.",
+  "episode_id": "Part1_RedWigBait",
+  "title_fa": "قسمت اول: تله‌یِ کلاه‌گیسِ قرمزِ فرفری برایِ دوستِ تقلیدکار!",
+  "title_en": "Red Wig Copycat Trap Part 1 - The Afro Wig Bait",
+  "source_video": "${SRC}\\08_DeU3lqdypjE_emotionalgroceries.mp4",
+  "source_start_offset": 0,
+  "story_summary_fa": "سندی که می‌داند لیلا تمام کارهایش را تقلید می‌کند، یک کلاه‌گیس قرمز فرفری سرش می‌گذارد و عکس می‌گیرد که موهایش را کوتاه و رنگ کرده است!",
+  "fallback_to_source_on_visual_fail": false,
+  "tight_speech_trim": true,
+  "variables": {
+    "BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series13-red-wig-copycat-trap-farsi",
+    "S2_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi",
+    "CHEF_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\ugly-face-chef-farsi",
+    "SRC": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\emotionalgroceries"
+  },
+  "clips_dir": "${BASE}\\part1\\flow_clips",
+  "out_dir": "${BASE}\\05_final_masters\\part1",
+  "font_path": "${CHEF_BASE}\\03_farsi_audio_tts\\Vazirmatn-Bold.ttf",
+  "cta_video": "${S2_BASE}\\part1\\flow_clips\\cta_kelidbox_s2.mp4",
+  "cta_speaker": "SANDY",
+  "cta_subtitles": [
+    {
+      "start": 0.15,
+      "end": 3.55,
+      "text": "برای دیدن قسمت بعدی این داستان همین الان پیج رو فالو کن!"
+    },
+    {
+      "start": 3.65,
+      "end": 7.6,
+      "text": "راستی کل این انیمیشن با اکانت‌های هوش مصنوعی سایت کلیدباکس ساخته شده!"
+    }
+  ],
+  "speakers": {
+    "SANDY": [
+      255,
+      195,
+      135
+    ],
+    "LEILA": [
+      255,
+      240,
+      95
+    ],
+    "SPONGE_STYLIST": [
+      150,
+      235,
+      255
+    ],
+    "PEAR_STYLIST": [
+      255,
+      165,
+      215
+    ],
+    "BADGE": [
+      255,
+      215,
+      70
+    ]
+  },
+  "clips": [
+    {
+      "id": "clip_01",
+      "file": "clip_01.mp4",
+      "source_span": [
+        0,
+        6
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "In a bright salon with warm mirror bulbs, SANDY (3D brown squirrel girl with long sleek black hair in a pink salon cape) sits in the chair smiling mischievously while SPONGE_STYLIST holds up a big fluffy crimson-red curly afro wig.",
+      "overlays": [
+        {
+          "speaker": "BADGE",
+          "text": "قسمت اول: تله‌یِ کلاه‌گیسِ فرفری!",
+          "start": 0.1,
+          "end": 3.4,
+          "position": "top",
+          "font_size": 21
+        }
+      ],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "SANDY",
+          "لیلا عاشقِ اینه که مو به مو از من تقلید کنه، امروز براش یک نقشه‌یِ حسابی کشیدم!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_01.jpg",
+      "expected_speakers": [
+        "SANDY"
+      ]
+    },
+    {
+      "id": "clip_02",
+      "file": "clip_02.mp4",
+      "source_span": [
+        6,
+        12
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "In the salon chair, SPONGE_STYLIST places the giant fluffy crimson-red curly afro wig onto SANDY's head, completely covering her real black hair.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "SPONGE_STYLIST",
+          "بفرما سندی، این کلاه‌گیسِ قرمزِ فرفری رو بذار سرت، هیچ‌کس نمی‌فهمه مویِ خودت نیست!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_02.jpg",
+      "expected_speakers": [
+        "SPONGE_STYLIST"
+      ]
+    },
+    {
+      "id": "clip_03",
+      "file": "clip_03.mp4",
+      "source_span": [
+        12,
+        18
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "In the salon chair, SANDY wearing the giant red curly afro wig holds up her smartphone taking a selfie with a playful grin while SPONGE_STYLIST smiles behind her.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "SANDY",
+          "عالی شد! حالا عکسش رو استوری می‌کنم و می‌نویسم موهایِ بلندم رو کوتاه و قرمز کردم!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_03.jpg",
+      "expected_speakers": [
+        "SANDY"
+      ]
+    },
+    {
+      "id": "clip_04",
+      "file": "clip_04.mp4",
+      "source_span": [
+        18,
+        24
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "Sitting on her bed in red satin pajamas, LEILA (3D yellow lemon girl with long dark braids) stares at SANDY's red-afro selfie on her smartphone in jealous surprise.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "LEILA",
+          "واو! سندی واقعاً موهاش رو کوتاه و قرمزِ فرفری کرده؟! رویِ سرِ من خیلی قشنگ‌تر می‌شه!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_04.jpg",
+      "expected_speakers": [
+        "LEILA"
+      ]
+    },
+    {
+      "id": "clip_05",
+      "file": "clip_05.mp4",
+      "source_span": [
+        24,
+        30
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "In the salon chair in a black cape, LEILA holds up her smartphone showing SANDY's photo to PEAR_STYLIST (3D pink fruit female stylist holding scissors).",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "LEILA",
+          "خانوم آرایشگر، موهایِ بلندِ من رو از ته قیچی کنید و دقیقاً همین شکلی قرمز و فرفری کنید!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_05.jpg",
+      "expected_speakers": [
+        "LEILA"
+      ]
+    },
+    {
+      "id": "clip_06",
+      "file": "clip_06.mp4",
+      "source_span": [
+        30,
+        36
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "In the salon, PEAR_STYLIST holds salon scissors and looks hesitantly at LEILA sitting in the chair.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "PEAR_STYLIST",
+          "مطمئنی عزیزم؟ این تغییر خیلی بزرگه و موهایِ بلند و قشنگت کاملاً کوتاه می‌شه ها!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_06.jpg",
+      "expected_speakers": [
+        "PEAR_STYLIST"
+      ]
+    }
+  ],
+  "voices": {
+    "SANDY": {
+      "name_fa": "SANDY",
+      "color": [
+        255,
+        195,
+        135
+      ],
+      "source": "google_flow_native"
+    },
+    "LEILA": {
+      "name_fa": "LEILA",
+      "color": [
+        255,
+        240,
+        95
+      ],
+      "source": "google_flow_native"
+    },
+    "SPONGE_STYLIST": {
+      "name_fa": "SPONGE_STYLIST",
+      "color": [
+        150,
+        235,
+        255
+      ],
+      "source": "google_flow_native"
+    },
+    "PEAR_STYLIST": {
+      "name_fa": "PEAR_STYLIST",
+      "color": [
+        255,
+        165,
+        215
+      ],
+      "source": "google_flow_native"
+    }
+  },
+  "video": {
+    "width": 720,
+    "height": 1280,
+    "fps": 24,
+    "crf": 18,
+    "preset": "fast",
+    "scale_mode": "fill"
+  },
+  "audio": {
+    "loudnorm": "loudnorm=I=-14:TP=-1.5:LRA=11",
+    "sample_rate": 48000,
+    "channels": 2,
+    "bitrate": "192k"
+  },
+  "speech": {
+    "speech_safe": "auto_expand",
+    "threshold_dbfs": -38,
+    "pre_handle": 0.2,
+    "post_handle": 0.35,
+    "splice_crossfade": 0.02
+  },
+  "subtitle_style": {
+    "time_base": "trim_local",
+    "y_ratio": 0.84,
+    "font_size": 27,
+    "min_font_size": 16,
+    "max_text_margin": 84,
+    "max_lines": 2
+  },
+  "outputs": {
+    "per_clip_location": "both",
+    "base_mode": "timeline",
+    "cta_burn_subtitles": true,
+    "cta_loudnorm": true,
+    "publish_caption_fa": "قسمت اول: تله‌یِ کلاه‌گیسِ قرمزِ فرفری برایِ دوستِ تقلیدکار!"
+  }
+}

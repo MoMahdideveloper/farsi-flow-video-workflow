@@ -1,0 +1,306 @@
+{
+  "_comment": "Series 11 (@emotionalgroceries) Part 2 - 100% Google Flow native Farsi voice with full اعراب‌گذاری.",
+  "schema_version": 1,
+  "speech_review_note": "Full Persian vowel diacritics (اعراب‌گذاری کامل) in Google Flow prompt for 100% accurate native pronunciation.",
+  "episode_id": "Part2_DragonfruitTwist",
+  "title_fa": "قسمت دوم (پایان): قرارِ عاشقانه و شوکِ بزرگِ آخرِ داستان!",
+  "title_en": "Big Lips Pear Part 2 - The Dragonfruit Twist",
+  "source_video": "${SRC}\\04_DefvrgGSzXP_emotionalgroceries.mp4",
+  "source_start_offset": 30,
+  "story_summary_fa": "کامران با خوشحالی ماسکش را برمی‌دارد و با رژان قدم می‌زند، اما وقتی رژان سرش را می‌چرخاند و نیم‌رخ لب‌های غول‌پیکر خودش را نشان می‌دهد، کامران خشکش می‌زند!",
+  "fallback_to_source_on_visual_fail": false,
+  "tight_speech_trim": true,
+  "variables": {
+    "BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series11-big-lips-pear-farsi",
+    "S2_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi",
+    "CHEF_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\ugly-face-chef-farsi",
+    "SRC": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\emotionalgroceries"
+  },
+  "clips_dir": "${BASE}\\part2\\flow_clips",
+  "out_dir": "${BASE}\\05_final_masters\\part2",
+  "font_path": "${CHEF_BASE}\\03_farsi_audio_tts\\Vazirmatn-Bold.ttf",
+  "cta_video": "${S2_BASE}\\part1\\flow_clips\\cta_kelidbox_s2.mp4",
+  "cta_speaker": "PEAR_BOY",
+  "cta_subtitles": [
+    {
+      "start": 0.15,
+      "end": 3.55,
+      "text": "برای دیدن داستان‌های جذاب بعدی همین الان پیج رو فالو کن!"
+    },
+    {
+      "start": 3.65,
+      "end": 7.6,
+      "text": "راستی کل این انیمیشن با اکانت‌های هوش مصنوعی سایت کلیدباکس ساخته شده!"
+    }
+  ],
+  "speakers": {
+    "PEAR_BOY": [
+      180,
+      255,
+      140
+    ],
+    "DRAGONFRUIT_GIRL": [
+      255,
+      165,
+      215
+    ],
+    "ORANGE_CLERK": [
+      255,
+      190,
+      110
+    ],
+    "APPLE_BULLY": [
+      255,
+      135,
+      135
+    ],
+    "PINEAPPLE_JOCK": [
+      255,
+      235,
+      110
+    ],
+    "BADGE": [
+      255,
+      215,
+      70
+    ]
+  },
+  "clips": [
+    {
+      "id": "clip_01",
+      "file": "clip_01.mp4",
+      "source_span": [
+        30,
+        35
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "On the basketball court at dusk, PINEAPPLE_JOCK laughs hysterically with tears in his eyes while PEAR_BOY glares with his mask pulled down under his chin.",
+      "overlays": [
+        {
+          "speaker": "BADGE",
+          "text": "قسمت آخر: رازِ عجیبِ صورتِ رژان!",
+          "start": 0.1,
+          "end": 3.4,
+          "position": "top",
+          "font_size": 21
+        }
+      ],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "PINEAPPLE_JOCK",
+          "پس به خاطرِ این لب‌هایِ غول‌پیکر ماسک زده بودی؟! عجب قیافه‌یِ خنده‌داری داری!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_01.jpg",
+      "expected_speakers": [
+        "PINEAPPLE_JOCK"
+      ]
+    },
+    {
+      "id": "clip_02",
+      "file": "clip_02.mp4",
+      "source_span": [
+        35,
+        40
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "On a park bench at dusk, DRAGONFRUIT_GIRL (Rojan) in a pink cardigan gestures kindly toward masked PEAR_BOY.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "DRAGONFRUIT_GIRL",
+          "به حرف‌هاشون اهمیت نده کامران... چرا صورتت رو پشتِ اون ماسکِ مشکی قایم کردی؟"
+        ]
+      ],
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_02.jpg",
+      "expected_speakers": [
+        "DRAGONFRUIT_GIRL"
+      ]
+    },
+    {
+      "id": "clip_03",
+      "file": "clip_03.mp4",
+      "source_span": [
+        40,
+        45
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "On the park bench, masked PEAR_BOY points hesitantly to his black mask while DRAGONFRUIT_GIRL smiles reassuringly.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "PEAR_BOY",
+          "اگه این ماسک رو بردارم، تو هم مثلِ بقیه به قیافه‌یِ من می‌خندی و مسخره‌م می‌کنی!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_03.jpg",
+      "expected_speakers": [
+        "PEAR_BOY"
+      ]
+    },
+    {
+      "id": "clip_04",
+      "file": "clip_04.mp4",
+      "source_span": [
+        45,
+        50
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "On the park bench, PEAR_BOY holds the mask in his hand revealing his giant lips and touches his chest in amazement as DRAGONFRUIT_GIRL smiles warmly.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "DRAGONFRUIT_GIRL",
+          "اصلاً هم خنده‌دار نیستی! به نظرِ من لب‌هات خیلی هم خاص و بامزه‌ست، بیا با هم دوست بشیم!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_04.jpg",
+      "expected_speakers": [
+        "DRAGONFRUIT_GIRL"
+      ]
+    },
+    {
+      "id": "clip_05",
+      "file": "clip_05.mp4",
+      "source_span": [
+        50,
+        55
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "Walking together on the evening sidewalk, unmasked PEAR_BOY beams with joy beside DRAGONFRUIT_GIRL.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "PEAR_BOY",
+          "باورم نمی‌شه رژان! فکر می‌کردم هیچ‌کس تویِ دنیا پیدا نمی‌شه که قیافه‌یِ من رو درک کنه!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_05.jpg",
+      "expected_speakers": [
+        "PEAR_BOY"
+      ]
+    },
+    {
+      "id": "clip_06",
+      "file": "clip_06.mp4",
+      "source_span": [
+        55,
+        60.8
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "On the evening sidewalk, DRAGONFRUIT_GIRL turns in profile pointing out a gigantic puffy pair of pink cartoon lips protruding from the side of her face while PEAR_BOY freezes with his jaw dropped in hilarious shock.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "PEAR_BOY",
+          "یا ابوالفضل، چرا از نیم‌رخ لب‌هات سه برابرِ مالِ منه؟! یکی ماسکِ من رو بده فرار کنم!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_06.jpg",
+      "expected_speakers": [
+        "PEAR_BOY"
+      ]
+    }
+  ],
+  "voices": {
+    "PEAR_BOY": {
+      "name_fa": "PEAR_BOY",
+      "color": [
+        180,
+        255,
+        140
+      ],
+      "source": "google_flow_native"
+    },
+    "DRAGONFRUIT_GIRL": {
+      "name_fa": "DRAGONFRUIT_GIRL",
+      "color": [
+        255,
+        165,
+        215
+      ],
+      "source": "google_flow_native"
+    },
+    "ORANGE_CLERK": {
+      "name_fa": "ORANGE_CLERK",
+      "color": [
+        255,
+        190,
+        110
+      ],
+      "source": "google_flow_native"
+    },
+    "APPLE_BULLY": {
+      "name_fa": "APPLE_BULLY",
+      "color": [
+        255,
+        135,
+        135
+      ],
+      "source": "google_flow_native"
+    },
+    "PINEAPPLE_JOCK": {
+      "name_fa": "PINEAPPLE_JOCK",
+      "color": [
+        255,
+        235,
+        110
+      ],
+      "source": "google_flow_native"
+    }
+  },
+  "video": {
+    "width": 720,
+    "height": 1280,
+    "fps": 24,
+    "crf": 18,
+    "preset": "fast",
+    "scale_mode": "fill"
+  },
+  "audio": {
+    "loudnorm": "loudnorm=I=-14:TP=-1.5:LRA=11",
+    "sample_rate": 48000,
+    "channels": 2,
+    "bitrate": "192k"
+  },
+  "speech": {
+    "speech_safe": "auto_expand",
+    "threshold_dbfs": -38,
+    "pre_handle": 0.2,
+    "post_handle": 0.35,
+    "splice_crossfade": 0.02
+  },
+  "subtitle_style": {
+    "time_base": "trim_local",
+    "y_ratio": 0.84,
+    "font_size": 27,
+    "min_font_size": 16,
+    "max_text_margin": 84,
+    "max_lines": 2
+  },
+  "outputs": {
+    "per_clip_location": "both",
+    "base_mode": "timeline",
+    "cta_burn_subtitles": true,
+    "cta_loudnorm": true,
+    "publish_caption_fa": "قسمت دوم (پایان): قرارِ عاشقانه و شوکِ بزرگِ آخرِ داستان!"
+  }
+}

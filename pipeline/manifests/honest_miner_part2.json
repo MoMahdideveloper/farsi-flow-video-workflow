@@ -1,0 +1,363 @@
+{
+  "_comment": "Part2_MinerFramedAndCleared - 100% Google Flow native Farsi voice with full اعراب‌گذاری.",
+  "schema_version": 1,
+  "speech_review_note": "Full Persian vowel diacritics (اعراب‌گذاری کامل) in Google Flow prompt for 100% accurate native pronunciation.",
+  "episode_id": "Part2_MinerFramedAndCleared",
+  "title_fa": "قسمت دوم (پایان): افشای خیانت همسر رئیس در دوربین مداربسته!",
+  "title_en": "Honest Miner & 5 Gold Bars Part 2",
+  "source_video": "${SRC}\\10_DeP4jfHST2J_emotionalgroceries.mp4",
+  "source_start_offset": 74,
+  "story_summary_fa": "همسر رئیس تقصیر سرقت شمش‌های طلا را گردن بالتازار می‌اندازد، اما همکار معدنچی شهادت می‌دهد و رئیس با بررسی دوربین مداربسته حقیقت را می‌فهمد و بالتازار را مدیر جدید معدن می‌کند!",
+  "fallback_to_source_on_visual_fail": false,
+  "tight_speech_trim": true,
+  "variables": {
+    "BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series16-honest-miner-gold-bars-farsi",
+    "S2_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi",
+    "CHEF_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\ugly-face-chef-farsi",
+    "SRC": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\emotionalgroceries"
+  },
+  "clips_dir": "${BASE}\\part2\\flow_clips",
+  "out_dir": "${BASE}\\05_final_masters\\part2",
+  "font_path": "${CHEF_BASE}\\03_farsi_audio_tts\\Vazirmatn-Bold.ttf",
+  "cta_video": "${S2_BASE}\\part1\\flow_clips\\cta_kelidbox_s2.mp4",
+  "cta_speaker": "MINER_AVOCADO",
+  "cta_subtitles": [
+    {
+      "start": 0.15,
+      "end": 3.55,
+      "text": "برای دیدن داستان‌های جذاب بعدی همین الان پیج رو فالو کن!"
+    },
+    {
+      "start": 3.65,
+      "end": 7.6,
+      "text": "راستی کل این انیمیشن با اکانت‌های هوش مصنوعی سایت کلیدباکس ساخته شده!"
+    }
+  ],
+  "speakers": {
+    "MINER_AVOCADO": [
+      165,
+      255,
+      145
+    ],
+    "BOSS_POMEGRANATE": [
+      255,
+      150,
+      150
+    ],
+    "WIFE_APPLE": [
+      255,
+      185,
+      215
+    ],
+    "WORKER_CUCUMBER": [
+      150,
+      235,
+      255
+    ],
+    "GUARD_GRAPE": [
+      205,
+      175,
+      255
+    ],
+    "BADGE": [
+      255,
+      215,
+      70
+    ]
+  },
+  "clips": [
+    {
+      "id": "clip_01",
+      "file": "clip_01.mp4",
+      "source_span": [
+        74,
+        88
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "In a luxury gold-trimmed mansion room, faceted ruby-red 3D pomegranate BOSS_POMEGRANATE in his burgundy suit questions glamorous red 3D apple woman WIFE_APPLE, who points accusingly toward the door.",
+      "overlays": [
+        {
+          "speaker": "BADGE",
+          "text": "قسمت آخر: افشای خیانت در دوربین مداربسته!",
+          "start": 0.1,
+          "end": 3.4,
+          "position": "top",
+          "font_size": 21
+        }
+      ],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "WIFE_APPLE",
+          "شمش‌های طلا؟ نه عزیزم، کسی چیزی نیاورد! ولی دیشب دیدم بالتازار یه کیسه‌ی سنگین رو دزدکی برد!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_01.jpg",
+      "expected_speakers": [
+        "WIFE_APPLE"
+      ],
+      "beat_ids": [
+        "beat_1"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[HM2_C01] Stylized 3D CGI cartoon animation matching the exact 3D non-human fruit characters and outfits in the reference image, static medium two-shot keeping both characters in frame the entire time (no camera cuts), in a luxury gold-trimmed mansion room the glamorous glossy red 3D apple woman in an evening gown gestures deceitfully while speaking to her husband the ruby-red 3D pomegranate boss in a burgundy suit (strictly NO human faces), as the red apple woman speaks in native Persian (Farsi) with exact vowel pronunciation and a deceitful dramatic female voice: «شِمْش‌هایِ طَلا؟ نَه عَزِیزَم، کَسِی چِیزِی نَیاوُرْد! وَلِی دِیشَب دِیدَم بالتازار یِه کِیسِه‌یِ سَنْگِین رُو دُزْدَکِی بُرْد!» Zero on-screen subtitles."
+    },
+    {
+      "id": "clip_02",
+      "file": "clip_02.mp4",
+      "source_span": [
+        88,
+        102
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "Inside the wood-paneled executive office, furious ruby-red 3D pomegranate BOSS_POMEGRANATE points angrily at shocked green 3D avocado miner MINER_AVOCADO while two purple 3D grape guards GUARD_GRAPE stand behind them.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "BOSS_POMEGRANATE",
+          "بالتازار، بعد از این همه سال به من خیانت کردی؟! نگهبان‌ها، همین الان بندازیدش توی بازداشتگاه!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_02.jpg",
+      "expected_speakers": [
+        "BOSS_POMEGRANATE"
+      ],
+      "beat_ids": [
+        "beat_2"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[HM2_C02] Stylized 3D CGI cartoon animation matching the exact 3D non-human fruit characters and outfits in the reference image, static medium shot keeping the characters in frame the entire time (no camera cuts), inside the executive office the furious faceted ruby-red 3D pomegranate boss in a burgundy suit points accusingly at the small green 3D avocado miner in a yellow hard-hat while purple 3D grape-cluster security guards in navy uniforms stand behind them (strictly NO human faces), as the red pomegranate boss shouts in native Persian (Farsi) with exact vowel pronunciation and an angry booming male voice: «بالتازار، بَعْد اَز اِین هَمِه سال بِه مَن خِیانَت کَرْدِی؟! نِگَهْبان‌ها، هَمِین اَلان بِنْدازِیدِش تُویِ بازْداشْتْگاه!» Zero on-screen subtitles."
+    },
+    {
+      "id": "clip_03",
+      "file": "clip_03.mp4",
+      "source_span": [
+        102,
+        114
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "In the executive office, tearful green 3D avocado miner MINER_AVOCADO raises both hands pleading his innocence to ruby-red 3D pomegranate BOSS_POMEGRANATE.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "MINER_AVOCADO",
+          "به خدا قسم من بی‌گناهم رئیس! من هر پنج تا شمش طلا رو تحویل همسر خودتون دادم!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_03.jpg",
+      "expected_speakers": [
+        "MINER_AVOCADO"
+      ],
+      "beat_ids": [
+        "beat_3"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[HM2_C03] Stylized 3D CGI cartoon animation matching the exact 3D non-human fruit characters and outfits in the reference image, static medium two-shot keeping both characters in frame the entire time (no camera cuts), in the executive office the tearful green 3D avocado miner in his yellow mining hard-hat and brown overalls raises both hands pleading his innocence to the stern ruby-red 3D pomegranate boss in a burgundy suit (strictly NO human faces), as the green avocado miner speaks in native Persian (Farsi) with exact vowel pronunciation and a tearful pleading male voice: «بِه خُدا قَسَم مَن بِی‌گُناهَم رَئِیس! مَن هَر پَنْج تا شِمْشِ طَلا رُو تَحْوِیلِ هَمْسَرِ خُودِتُون دادَم!» Zero on-screen subtitles."
+    },
+    {
+      "id": "clip_04",
+      "file": "clip_04.mp4",
+      "source_span": [
+        114,
+        126
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "At the mahogany desk in the executive office, tall slender green 3D cucumber worker WORKER_CUCUMBER in a yellow hard-hat gestures earnestly as he reveals the truth to ruby-red 3D pomegranate BOSS_POMEGRANATE.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "WORKER_CUCUMBER",
+          "قربان، بالتازار راست می‌گه! من دیشب با چشم‌های خودم دیدم همسرتون کیسه‌ی شمش‌ها رو گذاشت توی چمدونش!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_04.jpg",
+      "expected_speakers": [
+        "WORKER_CUCUMBER"
+      ],
+      "beat_ids": [
+        "beat_4"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[HM2_C04] Stylized 3D CGI cartoon animation matching the exact 3D non-human fruit characters and outfits in the reference image, static medium two-shot keeping both characters in frame the entire time (no camera cuts), at the mahogany desk in the executive office the tall slender green 3D cucumber mine worker in a yellow hard-hat and khaki overalls gestures earnestly while speaking to the ruby-red 3D pomegranate boss in a burgundy suit (strictly NO human faces), as the green cucumber worker speaks in native Persian (Farsi) with exact vowel pronunciation and an urgent honest male voice: «قُرْبان، بالتازار راسْت مِی‌گِه! مَن دِیشَب با چَشْم‌هایِ خُودَم دِیدَم هَمْسَرِتُون کِیسِه‌یِ شِمْش‌ها رُو گُذاشْت تُویِ چَمِدُونِش!» Zero on-screen subtitles."
+    },
+    {
+      "id": "clip_05",
+      "file": "clip_05.mp4",
+      "source_span": [
+        126,
+        136
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "Leaning over his executive desk with security camera monitors glowing in front of him, ruby-red 3D pomegranate BOSS_POMEGRANATE clenches his fists in shock and anger while WORKER_CUCUMBER watches.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "BOSS_POMEGRANATE",
+          "باورم نمی‌شه! توی دوربین مداربسته همه‌چیز مشخصه! همسرم طلاها رو دزدیده و به بهترین کارگرم تهمت زده!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_05.jpg",
+      "expected_speakers": [
+        "BOSS_POMEGRANATE"
+      ],
+      "beat_ids": [
+        "beat_5"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[HM2_C05] Stylized 3D CGI cartoon animation matching the exact 3D non-human fruit characters and outfits in the reference image, static medium shot keeping the characters in frame the entire time (no camera cuts), leaning over his executive desk with a security monitor on the table the faceted ruby-red 3D pomegranate boss in a burgundy suit clenches his fists in stunned realization while the tall green 3D cucumber worker stands behind him (strictly NO human faces), as the red pomegranate boss speaks in native Persian (Farsi) with exact vowel pronunciation and a shocked furious male voice: «باوَرَم نِمِی‌شِه! تُویِ دُورْبِینِ مَدارْبَسْتِه هَمِه‌چِیز مُشَخَّصِه! هَمْسَرَم طَلاها رُو دُزْدِیدِه وُ بِه بِهْتَرِین کارْگَرَم تُهْمَت زَدِه!» Zero on-screen subtitles."
+    },
+    {
+      "id": "clip_06",
+      "file": "clip_06.mp4",
+      "source_span": [
+        136,
+        146.1
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "In the bright headquarters lobby, ruby-red 3D pomegranate BOSS_POMEGRANATE warmly hands the sack of five gold bars to smiling green 3D avocado miner MINER_AVOCADO while purple grape guard GUARD_GRAPE escorts crying WIFE_APPLE out in the background.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "BOSS_POMEGRANATE",
+          "بالتازار عزیز، من رو ببخش! به خاطر درستکاریت، تو مدیر جدید معدنی و این شمش‌ها پاداش توئه!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_06.jpg",
+      "expected_speakers": [
+        "BOSS_POMEGRANATE"
+      ],
+      "beat_ids": [
+        "beat_6"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[HM2_C06] Stylized 3D CGI cartoon animation matching the exact 3D non-human fruit characters and outfits in the reference image, static medium shot keeping the characters in frame the entire time (no camera cuts), in the bright headquarters lobby the ruby-red 3D pomegranate boss in a burgundy suit warmly hands the burlap sack of five gleaming gold bars to the smiling green 3D avocado miner while a purple grape guard escorts the crying red apple woman away in the background (strictly NO human faces), as the red pomegranate boss speaks in native Persian (Farsi) with exact vowel pronunciation and a warm proud male voice: «بالتازارِ عَزِیز، مَن رُو بِبَخْش! بِه خاطِرِ دُرُسْتْکارِیت، تُو مُدِیرِ جَدِیدِ مَعْدَنِی وُ اِین شِمْش‌ها پاداشِ تُوئِه!» Zero on-screen subtitles."
+    }
+  ],
+  "voices": {
+    "MINER_AVOCADO": {
+      "name_fa": "MINER_AVOCADO",
+      "color": [
+        165,
+        255,
+        145
+      ],
+      "source": "google_flow_native"
+    },
+    "BOSS_POMEGRANATE": {
+      "name_fa": "BOSS_POMEGRANATE",
+      "color": [
+        255,
+        150,
+        150
+      ],
+      "source": "google_flow_native"
+    },
+    "WIFE_APPLE": {
+      "name_fa": "WIFE_APPLE",
+      "color": [
+        255,
+        185,
+        215
+      ],
+      "source": "google_flow_native"
+    },
+    "WORKER_CUCUMBER": {
+      "name_fa": "WORKER_CUCUMBER",
+      "color": [
+        150,
+        235,
+        255
+      ],
+      "source": "google_flow_native"
+    },
+    "GUARD_GRAPE": {
+      "name_fa": "GUARD_GRAPE",
+      "color": [
+        205,
+        175,
+        255
+      ],
+      "source": "google_flow_native"
+    }
+  },
+  "video": {
+    "width": 720,
+    "height": 1280,
+    "fps": 24,
+    "crf": 18,
+    "preset": "fast",
+    "scale_mode": "fill"
+  },
+  "audio": {
+    "loudnorm": "loudnorm=I=-14:TP=-1.5:LRA=11",
+    "sample_rate": 48000,
+    "channels": 2,
+    "bitrate": "192k"
+  },
+  "speech": {
+    "speech_safe": "auto_expand",
+    "threshold_dbfs": -38,
+    "pre_handle": 0.2,
+    "post_handle": 0.35,
+    "splice_crossfade": 0.02
+  },
+  "subtitle_style": {
+    "time_base": "trim_local",
+    "y_ratio": 0.84,
+    "font_size": 27,
+    "min_font_size": 16,
+    "max_text_margin": 84,
+    "max_lines": 2
+  },
+  "outputs": {
+    "per_clip_location": "both",
+    "base_mode": "timeline",
+    "cta_burn_subtitles": true,
+    "cta_loudnorm": true,
+    "publish_caption_fa": "قسمت دوم (پایان): افشای خیانت همسر رئیس در دوربین مداربسته!"
+  },
+  "character_references": [
+    "${BASE}\\character_sheets\\FLOW_SHEET_SERIES16_CHARACTERS.jpg"
+  ],
+  "content_edits": [],
+  "story_plan": {
+    "summary": "همسر رئیس تقصیر سرقت شمش‌های طلا را گردن بالتازار می‌اندازد، اما همکار معدنچی شهادت می‌دهد و رئیس با بررسی دوربین مداربسته حقیقت را می‌فهمد و بالتازار را مدیر جدید معدن می‌کند!",
+    "ending": "The pomegranate boss checks the security cameras, exposes his wife’s theft, and rewards honest miner Balthazar with the gold bars and management of the mine.",
+    "required_beats": [
+      "beat_1",
+      "beat_2",
+      "beat_3",
+      "beat_4",
+      "beat_5",
+      "beat_6"
+    ]
+  },
+  "visual": {
+    "keyframe_threshold": 38,
+    "jump_threshold": 32,
+    "contamination_margin": 5
+  }
+}

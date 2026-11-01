@@ -1,0 +1,363 @@
+{
+  "_comment": "Series 15 (@emotionalgroceries) Part 2 - 100% Google Flow native Farsi voice with full اعراب‌گذاری.",
+  "schema_version": 1,
+  "speech_review_note": "Full Persian vowel diacritics (اعراب‌گذاری کامل) in Google Flow prompt for 100% accurate native pronunciation.",
+  "episode_id": "Part2_HundredGrandLift",
+  "title_fa": "قسمت دوم (پایان): بلند کردنِ کلِّ دستگاهِ پرس سینه و جایزه‌یِ صد هزار دلاری!",
+  "title_en": "Tiny Apple Janitor Bench Press Part 2 - Lifting The Whole Machine",
+  "source_video": "${SRC}\\09_DeRyWEeuMyj_emotionalgroceries.mp4",
+  "source_start_offset": 50,
+  "story_summary_fa": "در فینال مسابقه پرس سینه، همه به نظافتچی سیب سبز می‌خندند اما او از داور می‌پرسد فقط میله را بلند کند یا کل دستگاه را، و کل دستگاه پرس سینه را بالای سرش می‌برد!",
+  "fallback_to_source_on_visual_fail": false,
+  "tight_speech_trim": true,
+  "variables": {
+    "BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series15-janitor-apple-bench-press-farsi",
+    "S2_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi",
+    "CHEF_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\ugly-face-chef-farsi",
+    "SRC": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\emotionalgroceries"
+  },
+  "clips_dir": "${BASE}\\part2\\flow_clips",
+  "out_dir": "${BASE}\\05_final_masters\\part2",
+  "font_path": "${CHEF_BASE}\\03_farsi_audio_tts\\Vazirmatn-Bold.ttf",
+  "cta_video": "${S2_BASE}\\part1\\flow_clips\\cta_kelidbox_s2.mp4",
+  "cta_speaker": "JANITOR_APPLE",
+  "cta_subtitles": [
+    {
+      "start": 0.15,
+      "end": 3.55,
+      "text": "برای دیدن داستان‌های جذاب بعدی همین الان پیج رو فالو کن!"
+    },
+    {
+      "start": 3.65,
+      "end": 7.6,
+      "text": "راستی کل این انیمیشن با اکانت‌های هوش مصنوعی سایت کلیدباکس ساخته شده!"
+    }
+  ],
+  "speakers": {
+    "JANITOR_APPLE": [
+      155,
+      255,
+      130
+    ],
+    "BOSS_BANANA": [
+      255,
+      235,
+      90
+    ],
+    "GUARD_MELON": [
+      150,
+      225,
+      255
+    ],
+    "CLERK_BERRY": [
+      255,
+      165,
+      205
+    ],
+    "CHAMP_DURIAN": [
+      255,
+      185,
+      115
+    ],
+    "BADGE": [
+      255,
+      215,
+      70
+    ]
+  },
+  "clips": [
+    {
+      "id": "clip_01",
+      "file": "clip_01.mp4",
+      "source_span": [
+        50,
+        58
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "On the bright neon stadium stage, colossal spiky 3D golden-green durian CHAMP_DURIAN lies on the bench press pushing up a heavy barbell loaded with weight plates.",
+      "overlays": [
+        {
+          "speaker": "BADGE",
+          "text": "قسمت آخر: شوکِ صد هزار دلاری!",
+          "start": 0.1,
+          "end": 3.4,
+          "position": "top",
+          "font_size": 21
+        }
+      ],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "CHAMP_DURIAN",
+          "صد و پنجاه کیلوگرم مثل آب خوردن! هیچ‌کس توی این سالن نمی‌تونه رکورد من رو بزنه!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_01.jpg",
+      "expected_speakers": [
+        "CHAMP_DURIAN"
+      ],
+      "beat_ids": [
+        "beat_1"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[JB2_C01] Stylized 3D CGI cartoon animation matching the exact 3D non-human fruit character and outfit in the reference image, static medium shot keeping the character in frame the entire time (no camera cuts), on the bright neon stadium stage the colossal spiky 3D golden-green durian bodybuilder lies on the bench press pushing a heavy steel barbell loaded with weight plates straight up with a triumphant roar (strictly NO human face), speaking in native Persian (Farsi) with exact vowel pronunciation and a booming boastful male voice: «صَد و پَنْجاه کیلُوگِرَم مِثْلِ آبِ خُورْدَن! هیچ‌کَس تُویِ این سالُن نِمی‌تُونه رِکُورْدِ مَن رُو بِزَنه!» Zero on-screen subtitles."
+    },
+    {
+      "id": "clip_02",
+      "file": "clip_02.mp4",
+      "source_span": [
+        58,
+        66
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "In the stadium front row seats, muscular 3D yellow banana BOSS_BANANA sits beside GUARD_MELON pointing and laughing at the stage.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "BOSS_BANANA",
+          "نگاهش کنید، دستش حتی به میله‌ی هالتر هم نمی‌رسه! الآن زیر وزنه له می‌شه!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_02.jpg",
+      "expected_speakers": [
+        "BOSS_BANANA"
+      ],
+      "beat_ids": [
+        "beat_2"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[JB2_C02] Stylized 3D CGI cartoon animation matching the exact 3D non-human fruit characters and outfits in the reference image, static medium two-shot keeping both characters in frame the entire time (no camera cuts), sitting in the front row seats of the stadium the muscular 3D yellow banana gym boss in black shorts points and laughs beside the 3D green watermelon security officer (strictly NO human faces), as the yellow banana boss speaks in native Persian (Farsi) with exact vowel pronunciation and a mocking laughing male voice: «نِگاهِش کُنید، دَسْتِش حَتّی بِه میلِه‌یِ هالْتِر هَم نِمی‌رِسه! اَلآن زیرِ وَزْنه لِه می‌شه!» Zero on-screen subtitles."
+    },
+    {
+      "id": "clip_03",
+      "file": "clip_03.mp4",
+      "source_span": [
+        66,
+        75
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "On the stadium stage next to the loaded bench-press rack, tiny 3D green apple JANITOR_APPLE in his white tank top and yellow gloves speaks calmly to the 3D orange fruit referee holding a microphone.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "JANITOR_APPLE",
+          "آقای داور یک سؤال دارم... فقط میله‌ی هالتر رو بلند کنم یا کل دستگاه رو با هم؟!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_03.jpg",
+      "expected_speakers": [
+        "JANITOR_APPLE"
+      ],
+      "beat_ids": [
+        "beat_3"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[JB2_C03] Stylized 3D CGI cartoon animation matching the exact 3D non-human fruit characters and outfits in the reference image, static medium two-shot keeping both characters in frame the entire time (no camera cuts), on the stadium stage next to the heavy loaded bench-press rack the tiny 3D green apple janitor in a white tank top and yellow gloves speaks calmly to the 3D round orange fruit announcer in a turquoise tuxedo holding a microphone (strictly NO human faces), as the green apple janitor speaks in native Persian (Farsi) with exact vowel pronunciation and a calm deadpan young male voice: «آقایِ داوَر یِک سُؤال دارَم... فَقَط میلِه‌یِ هالْتِر رُو بُلَنْد کُنَم یا کُلِّ دَسْتْگاه رُو با هَم؟!» Zero on-screen subtitles."
+    },
+    {
+      "id": "clip_04",
+      "file": "clip_04.mp4",
+      "source_span": [
+        75,
+        83
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "In the front row of the stadium, muscular 3D yellow banana BOSS_BANANA jumps up from his seat shouting in panic while GUARD_MELON smiles beside him.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "BOSS_BANANA",
+          "صبر کنید، نذارید دست به پایه‌های فلزی دستگاه بزنه! من می‌دونم این فسقلی چقدر زور داره!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_04.jpg",
+      "expected_speakers": [
+        "BOSS_BANANA"
+      ],
+      "beat_ids": [
+        "beat_4"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[JB2_C04] Stylized 3D CGI cartoon animation matching the exact 3D non-human fruit characters and outfits in the reference image, static medium two-shot keeping both characters in frame the entire time (no camera cuts), in the stadium front row the muscular 3D yellow banana gym boss jumps up from his seat shouting in wide-eyed panic while the 3D green watermelon officer smirks beside him (strictly NO human faces), as the yellow banana boss shouts in native Persian (Farsi) with exact vowel pronunciation and a panicked male voice: «صَبْر کُنید، نَذارید دَسْت بِه پایِه‌هایِ فِلِزّیِ دَسْتْگاه بِزَنه! مَن می‌دُونَم این فِسْقِلی چِقَدْر زُور داره!» Zero on-screen subtitles."
+    },
+    {
+      "id": "clip_05",
+      "file": "clip_05.mp4",
+      "source_span": [
+        83,
+        92
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "On the neon stadium stage, tiny 3D green apple JANITOR_APPLE effortlessly lifts the ENTIRE steel bench-press rack and loaded barbell high above his head while CHAMP_DURIAN stares in shock.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "JANITOR_APPLE",
+          "گفتم که، بلند کردن کل دستگاه با نیمکتش برای من از جابه‌جا کردن سطل آب هم راحت‌تره!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_05.jpg",
+      "expected_speakers": [
+        "JANITOR_APPLE"
+      ],
+      "beat_ids": [
+        "beat_5"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[JB2_C05] Stylized 3D CGI cartoon animation matching the exact 3D non-human fruit characters and outfits in the reference image, static medium shot keeping the characters in frame the entire time (no camera cuts), on the neon stadium stage the tiny 3D green apple janitor in a white tank top and yellow gloves effortlessly lifts the ENTIRE steel bench-press frame, bench, and loaded barbell high above his head while the spiky 3D durian bodybuilder stares in shock (strictly NO human faces), as the green apple janitor speaks in native Persian (Farsi) with exact vowel pronunciation and a cheerful confident young male voice: «گُفْتَم کِه، بُلَنْد کَرْدَنِ کُلِّ دَسْتْگاه با نیمْکَتِش بَرایِ مَن اَز جابِه‌جا کَرْدَنِ سَطْلِ آب هَم راحَت‌تره!» Zero on-screen subtitles."
+    },
+    {
+      "id": "clip_06",
+      "file": "clip_06.mp4",
+      "source_span": [
+        92,
+        99.5
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "On the stadium stage under falling gold confetti, tiny 3D green apple JANITOR_APPLE holds a gleaming golden championship trophy in one hand and his wooden mop in the other while BOSS_BANANA looks defeated.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "JANITOR_APPLE",
+          "این جایزه‌ی بزرگ مال منه! رئیس عزیز، حالا خودت بیا با این طی کف باشگاهت رو تمیز کن!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_06.jpg",
+      "expected_speakers": [
+        "JANITOR_APPLE"
+      ],
+      "beat_ids": [
+        "beat_6"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[JB2_C06] Stylized 3D CGI cartoon animation matching the exact 3D non-human fruit characters and outfits in the reference image, static medium shot keeping the characters in frame the entire time (no camera cuts), on the stadium stage under falling gold confetti the tiny 3D green apple janitor holds a gleaming golden championship trophy in one hand and his wooden mop in the other smiling at the stunned 3D yellow banana boss (strictly NO human faces), as the green apple janitor speaks in native Persian (Farsi) with exact vowel pronunciation and a triumphant witty young male voice: «این جایْزِه‌یِ بُزُرْگ مالِ مَنه! رَئیسِ عَزیز، حالا خُودِت بِیا با این طِی کَفِ باشْگاهِت رُو تَمیز کُن!» Zero on-screen subtitles."
+    }
+  ],
+  "voices": {
+    "JANITOR_APPLE": {
+      "name_fa": "JANITOR_APPLE",
+      "color": [
+        155,
+        255,
+        130
+      ],
+      "source": "google_flow_native"
+    },
+    "BOSS_BANANA": {
+      "name_fa": "BOSS_BANANA",
+      "color": [
+        255,
+        235,
+        90
+      ],
+      "source": "google_flow_native"
+    },
+    "GUARD_MELON": {
+      "name_fa": "GUARD_MELON",
+      "color": [
+        150,
+        225,
+        255
+      ],
+      "source": "google_flow_native"
+    },
+    "CLERK_BERRY": {
+      "name_fa": "CLERK_BERRY",
+      "color": [
+        255,
+        165,
+        205
+      ],
+      "source": "google_flow_native"
+    },
+    "CHAMP_DURIAN": {
+      "name_fa": "CHAMP_DURIAN",
+      "color": [
+        255,
+        185,
+        115
+      ],
+      "source": "google_flow_native"
+    }
+  },
+  "video": {
+    "width": 720,
+    "height": 1280,
+    "fps": 24,
+    "crf": 18,
+    "preset": "fast",
+    "scale_mode": "fill"
+  },
+  "audio": {
+    "loudnorm": "loudnorm=I=-14:TP=-1.5:LRA=11",
+    "sample_rate": 48000,
+    "channels": 2,
+    "bitrate": "192k"
+  },
+  "speech": {
+    "speech_safe": "auto_expand",
+    "threshold_dbfs": -38,
+    "pre_handle": 0.2,
+    "post_handle": 0.35,
+    "splice_crossfade": 0.02
+  },
+  "subtitle_style": {
+    "time_base": "trim_local",
+    "y_ratio": 0.84,
+    "font_size": 27,
+    "min_font_size": 16,
+    "max_text_margin": 84,
+    "max_lines": 2
+  },
+  "outputs": {
+    "per_clip_location": "both",
+    "base_mode": "timeline",
+    "cta_burn_subtitles": true,
+    "cta_loudnorm": true,
+    "publish_caption_fa": "قسمت دوم (پایان): بلند کردنِ کلِّ دستگاهِ پرس سینه و جایزه‌یِ صد هزار دلاری!"
+  },
+  "character_references": [
+    "${BASE}\\character_sheets\\FLOW_SHEET_SERIES15_CHARACTERS.jpg"
+  ],
+  "content_edits": [],
+  "story_plan": {
+    "summary": "در فینال مسابقه پرس سینه، همه به نظافتچی سیب سبز می‌خندند اما او از داور می‌پرسد فقط میله را بلند کند یا کل دستگاه را، و کل دستگاه پرس سینه را بالای سرش می‌برد!",
+    "ending": "Tiny green apple janitor lifts the entire bench-press frame overhead, wins the championship trophy, and hands his mop to the stunned banana gym boss.",
+    "required_beats": [
+      "beat_1",
+      "beat_2",
+      "beat_3",
+      "beat_4",
+      "beat_5",
+      "beat_6"
+    ]
+  },
+  "visual": {
+    "keyframe_threshold": 38,
+    "contamination_margin": 5,
+    "jump_threshold": 32
+  }
+}

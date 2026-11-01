@@ -1,0 +1,10 @@
+{
+  "preserve_content": true,
+  "allow_source_replacement": false,
+  "allowed_content_edits": [],
+  "speech_budget": {
+    "reference_duration_sec": 8,
+    "max_words": 18,
+    "max_chars": 105
+  }
+}

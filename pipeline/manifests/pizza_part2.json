@@ -1,0 +1,276 @@
+{
+  "_comment": "Series 7 (@emotionalgroceries Pizza Billionaire) Part 2 - 100% Google Flow native Farsi voice with full اعراب‌گذاری.",
+  "schema_version": 1,
+  "speech_review_note": "Full Persian vowel diacritics (اعراب‌گذاری کامل) in Google Flow prompt for 100% accurate native pronunciation.",
+  "episode_id": "Part2_BillionaireSecret",
+  "title_fa": "قسمت دوم: اخراج از رستوران و رازِ میلیاردرِ مخفی!",
+  "title_en": "Emotional Groceries Pizza Billionaire Part 2 - Kicked Out & Billionaire Secret",
+  "source_video": "${EG_SRC}\\05_DeX4iyqOBp4_emotionalgroceries.mp4",
+  "source_start_offset": 42.4,
+  "story_summary_fa": "وقتی پسرک اسفنجی برای تشکر برمی‌گرده، رئیس طمع‌کار با تحقیر از رستوران بیرونش می‌ندازه! اما سارا توی کوچه با پول خودش بهش پیتزا می‌ده، بی‌خبر از اینکه این پسرک در واقع یک میلیاردر مخفیه و صاحب یک پنت‌هاوس لوکسه!",
+  "fallback_to_source_on_visual_fail": false,
+  "tight_speech_trim": true,
+  "variables": {
+    "BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series7-sponge-pizza-billionaire-farsi",
+    "S2_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi",
+    "CHEF_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\ugly-face-chef-farsi",
+    "EG_SRC": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\emotionalgroceries"
+  },
+  "clips_dir": "${BASE}\\part2\\flow_clips",
+  "out_dir": "${BASE}\\05_final_masters\\part2",
+  "font_path": "${CHEF_BASE}\\03_farsi_audio_tts\\Vazirmatn-Bold.ttf",
+  "cta_video": "${S2_BASE}\\part1\\flow_clips\\cta_kelidbox_s2.mp4",
+  "cta_speaker": "SANDY",
+  "cta_subtitles": [
+    {
+      "start": 0.25,
+      "end": 3.35,
+      "text": "برای دیدن قسمت بعدی این داستان همین الان پیج رو فالو کن!"
+    },
+    {
+      "start": 3.5,
+      "end": 7.85,
+      "text": "راستی کل این انیمیشن با اکانت‌های هوش مصنوعی سایت کلیدباکس ساخته شده!"
+    }
+  ],
+  "video": {
+    "width": 720,
+    "height": 1280,
+    "fps": 24,
+    "crf": 18,
+    "preset": "fast",
+    "scale_mode": "fill"
+  },
+  "audio": {
+    "loudnorm": "loudnorm=I=-14:TP=-1.5:LRA=11",
+    "sample_rate": 48000,
+    "channels": 2,
+    "bitrate": "192k"
+  },
+  "speech": {
+    "speech_safe": "auto_expand",
+    "threshold_dbfs": -38.0,
+    "pre_handle": 0.2,
+    "post_handle": 0.35,
+    "splice_crossfade": 0.02
+  },
+  "subtitle_style": {
+    "time_base": "trim_local",
+    "y_ratio": 0.84,
+    "font_size": 27,
+    "min_font_size": 16,
+    "max_text_margin": 84,
+    "max_lines": 2
+  },
+  "badge": {
+    "text": "قسمت دوم: رازِ میلیاردرِ مخفی لو رفت!",
+    "start": 0.0,
+    "end": 3.5,
+    "y_center": 130,
+    "font_size": 28,
+    "color": [
+      140,
+      235,
+      255
+    ],
+    "clip_index": 1
+  },
+  "outputs": {
+    "per_clip_location": "both",
+    "base_mode": "timeline",
+    "cta_burn_subtitles": true,
+    "cta_loudnorm": true,
+    "publish_caption_fa": "رئیس طمع‌کار به جرم گدایی از رستوران بیرونش انداخت، اما نمی‌دونست اون پسرک در واقع یک میلیاردر مخفیه! 😱🏢💰\nقسمت دوم داستان وایرال پیتزافروشی (@emotionalgroceries)!\nتو قسمت سوم و پایانی ببینید چطور کل رستوران رو می‌خره! فالو یادت نره 👇🔥"
+  },
+  "voices": {
+    "KUH": {
+      "name_fa": "کوچولو (اسفنج سیاه میلیاردر مخفی)",
+      "color": [
+        140,
+        235,
+        255
+      ],
+      "source": "google_flow_native"
+    },
+    "SANDY": {
+      "name_fa": "سارا (صندوقدار مهربان پیتزافروشی)",
+      "color": [
+        255,
+        175,
+        220
+      ],
+      "source": "google_flow_native"
+    },
+    "BOSS": {
+      "name_fa": "رئیس قرمز (مدیر طمع‌کار رستوران)",
+      "color": [
+        255,
+        130,
+        130
+      ],
+      "source": "google_flow_native"
+    },
+    "COWORKER": {
+      "name_fa": "هومن (همکار مهربان آشپزخانه)",
+      "color": [
+        255,
+        225,
+        120
+      ],
+      "source": "google_flow_native"
+    }
+  },
+  "clips": [
+    {
+      "id": "clip_01",
+      "file": "clip_01.mp4",
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_01.jpg",
+      "expected_speakers": [
+        "SANDY"
+      ],
+      "story_beat": "In the restaurant kitchen, the kind squirrel cashier cries with her hands on her cheeks while her friendly tall pink coworker in a green pizza shirt listens in sympathy",
+      "source_span": [
+        42.4,
+        47.9
+      ],
+      "trim_in": 0.0,
+      "trim_out": 9.85,
+      "speech_fa_vocalized": "هُومَن بَدْبَخْت شُدَم! رَئیس پُولِ پیتْزا رُو اَز حُقُوقَم کَم کَرْد و گُفْت اِخْراجَم می‌کُنه!",
+      "subtitles": [
+        [
+          0.1,
+          9.5,
+          "SANDY",
+          "هومن بدبخت شدم! رئیس پول پیتزا رو از حقوقم کم کرد و گفت اخراجم می‌کنه!"
+        ]
+      ]
+    },
+    {
+      "id": "clip_02",
+      "file": "clip_02.mp4",
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_02.jpg",
+      "expected_speakers": [
+        "COWORKER"
+      ],
+      "story_beat": "In the kitchen, the friendly tall pink coworker in a green pizza shirt places a comforting hand on the crying squirrel cashier's shoulder",
+      "source_span": [
+        47.9,
+        52.4
+      ],
+      "trim_in": 0.0,
+      "trim_out": 9.85,
+      "speech_fa_vocalized": "آرُوم باش آبْجی، غُصّه نَخُور! اُون رَئیسِ طَمَع‌کار اَصْلاً قَلْب تُو سینَش نیسْت!",
+      "subtitles": [
+        [
+          0.1,
+          9.5,
+          "COWORKER",
+          "آروم باش آبجی، غصه نخور! اون رئیس طمع‌کار اصلاً قلب تو سینش نیست!"
+        ]
+      ]
+    },
+    {
+      "id": "clip_03",
+      "file": "clip_03.mp4",
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_03.jpg",
+      "expected_speakers": [
+        "KUH",
+        "SANDY"
+      ],
+      "story_beat": "Poor dark charcoal sponge boy returns to the pizza cash register smiling gratefully at the kind squirrel cashier, who looks worriedly toward the office",
+      "source_span": [
+        52.4,
+        63.2
+      ],
+      "trim_in": 0.0,
+      "trim_out": 9.85,
+      "speech_fa_vocalized": "خانُم، اُومَدَم دُوباره تَشَکُّر کُنَم، اُون پیتْزا جُونَم رُو نِجات داد! خْواهِش می‌کُنَم، وَلی رَئیسَم بَفَهْمه بَد می‌شه!",
+      "subtitles": [
+        [
+          0.1,
+          4.8,
+          "KUH",
+          "خانم، اومدم دوباره تشکر کنم، اون پیتزا جونم رو نجات داد!"
+        ],
+        [
+          4.9,
+          9.5,
+          "SANDY",
+          "خواهش می‌کنم، ولی رئیسم بفهمه بد می‌شه!"
+        ]
+      ]
+    },
+    {
+      "id": "clip_04",
+      "file": "clip_04.mp4",
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_04.jpg",
+      "expected_speakers": [
+        "BOSS"
+      ],
+      "story_beat": "Angry red crab manager in his white shirt and tie shoves the poor dark charcoal sponge boy in the torn shirt out through the glass front doors of the pizza parlor",
+      "source_span": [
+        63.2,
+        68.7
+      ],
+      "trim_in": 0.0,
+      "trim_out": 9.85,
+      "speech_fa_vocalized": "گُمْ‌شُو بیرُون گِدایِ بی‌مَصْرَف! یِک‌بارِ دیگه طَرَفِ رِسْتُورانِ مَن پِیْدات بِشه، پُلیس خَبَر می‌کُنَم!",
+      "subtitles": [
+        [
+          0.1,
+          9.5,
+          "BOSS",
+          "گم‌شو بیرون گدای بی‌مصرف! یک‌بار دیگه طرف رستوران من پیدات بشه، پلیس خبر می‌کنم!"
+        ]
+      ]
+    },
+    {
+      "id": "clip_05",
+      "file": "clip_05.mp4",
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_05.jpg",
+      "expected_speakers": [
+        "SANDY"
+      ],
+      "story_beat": "Outside in the dim brick alley beside the restaurant, the kind squirrel cashier hands a warm plate with a slice of pizza to the sad dark charcoal sponge boy sitting on the curb",
+      "source_span": [
+        68.7,
+        75.4
+      ],
+      "trim_in": 0.0,
+      "trim_out": 9.85,
+      "speech_fa_vocalized": "بِبَخْشید کِه رَئیسَم باهاتُون بَد رَفْتار کَرْد! بِیا، این پیتْزا رُو با پُولِ خُودَم بَراتُون خَریدَم!",
+      "subtitles": [
+        [
+          0.1,
+          9.5,
+          "SANDY",
+          "ببخشید که رئیسم باهاتون بد رفتار کرد! بیا، این پیتزا رو با پول خودم براتون خریدم!"
+        ]
+      ]
+    },
+    {
+      "id": "clip_06",
+      "file": "clip_06.mp4",
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_06.jpg",
+      "expected_speakers": [
+        "KUH"
+      ],
+      "story_beat": "The dark charcoal sponge boy walks across the marble floor of his ultra-luxury high-rise glass penthouse overlooking the city skyline at sunset",
+      "source_span": [
+        75.4,
+        86.9
+      ],
+      "trim_in": 0.0,
+      "trim_out": 9.85,
+      "speech_fa_vocalized": "اُون رَئیسِ مَغْرُور نِمی‌دُونه مَن کی هَسْتَم! وَقْتِشه یِک زَنْگ بِزَنَم و صاحِبِ کُلِّ این رِسْتُوران بِشَم!",
+      "subtitles": [
+        [
+          0.1,
+          9.5,
+          "KUH",
+          "اون رئیس مغرور نمی‌دونه من کی هستم! وقتشه یک زنگ بزنم و صاحب کل این رستوران بشم!"
+        ]
+      ]
+    }
+  ]
+}

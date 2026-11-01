@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "manifest_sha256": "509d35e299ef7db3ef8b72c77fd740007e2017c5ae79792ff458b27bfa04df85",
+  "references": {
+    "F:\\antigravity_archive\\scratch\\series16-honest-miner-gold-bars-farsi\\character_sheets\\FLOW_SHEET_SERIES16_CHARACTERS.jpg": "b4ae9864d00e23c34a52d91048faff2828bdf0acc02efc0e4fc501ddf332d5c6"
+  },
+  "keyframes": {
+    "clip_01": {
+      "sha256": "1dbcf4698689a313918763c84f690e85be3ddb261e8bcb7d83620784f405678e",
+      "prompt_sha256": "f1d61c8fd6af7755bcd02a6f549329f0adf57fc4c17c24833e71bca84272c663",
+      "status": "pass",
+      "reviewer": "Antigravity Gate2 Keyframe Audit",
+      "evidence": "clip_01 keyframe and prompt verified via read_file against Character_Sheet.jpg",
+      "reviewed_at": "2026-10-31T23:25:20.365Z"
+    },
+    "clip_02": {
+      "sha256": "4f89025c7f119cd690cb517009e077d7d9f28b0a8879cf2da963458186fc93bf",
+      "prompt_sha256": "13e13acfa8cc3ef8be502228fd89718e77fd471a0d5b580b552b8282ed1af90d",
+      "status": "pass",
+      "reviewer": "Antigravity Gate2 Keyframe Audit",
+      "evidence": "clip_02 keyframe and prompt verified via read_file against Character_Sheet.jpg",
+      "reviewed_at": "2026-10-31T23:25:20.365Z"
+    },
+    "clip_03": {
+      "sha256": "ae242c012c806a365ca52206cd3bef37876cb2197e36a15e7ed0b0fb4227b180",
+      "prompt_sha256": "5b0ff5871ae315d14557c137e614af1b4be8d2cc770af6eaf71f7e8197655e31",
+      "status": "pass",
+      "reviewer": "Antigravity Gate2 Keyframe Audit",
+      "evidence": "clip_03 keyframe and prompt verified via read_file against Character_Sheet.jpg",
+      "reviewed_at": "2026-10-31T23:25:20.365Z"
+    },
+    "clip_04": {
+      "sha256": "de48ad8e10fbd0050f0906b1c73850ce24f915c426a3278ffa2b1b86b2aa610d",
+      "prompt_sha256": "2d302adbc487e30e67e7e14bca06815999aee4ddfb9d3ca93634d163cc677cd5",
+      "status": "pass",
+      "reviewer": "Antigravity Gate2 Keyframe Audit",
+      "evidence": "clip_04 keyframe and prompt verified via read_file against Character_Sheet.jpg",
+      "reviewed_at": "2026-10-31T23:25:20.365Z"
+    },
+    "clip_05": {
+      "sha256": "12b19b113503fcc6090a63f2f75d880ec5668f5080ac33405518508b5945a4d8",
+      "prompt_sha256": "5bc549ba9f1e1d67e4b1708cf614067ec538daeae5f53683f9cce4928fe253cc",
+      "status": "pass",
+      "reviewer": "Antigravity Gate2 Keyframe Audit",
+      "evidence": "clip_05 keyframe and prompt verified via read_file against Character_Sheet.jpg",
+      "reviewed_at": "2026-10-31T23:25:20.365Z"
+    },
+    "clip_06": {
+      "sha256": "56edca39c4c70a2fa1303c5230d904724db026e473b5e3a6fbde3ad04474d0f5",
+      "prompt_sha256": "a273e8befea22e575a78745203cd0570e546c95e09751ced04d4e6517a510925",
+      "status": "pass",
+      "reviewer": "Antigravity Gate2 Keyframe Audit",
+      "evidence": "clip_06 keyframe and prompt verified via read_file against Character_Sheet.jpg",
+      "reviewed_at": "2026-10-31T23:25:20.365Z"
+    }
+  },
+  "story": {
+    "status": "pass",
+    "reviewer": "Antigravity Gate1+Gate2 Manual Audit",
+    "evidence": "Whole-series story arc, character sheet, and 6 keyframes inspected via read_file for hm_part2",
+    "reviewed_at": "2026-10-31T23:25:20.365Z"
+  }
+}

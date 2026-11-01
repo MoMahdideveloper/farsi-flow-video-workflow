@@ -1,0 +1,292 @@
+{
+  "_comment": "Series 13 (@emotionalgroceries) Part 2 - 100% Google Flow native Farsi voice with full اعراب‌گذاری.",
+  "schema_version": 1,
+  "speech_review_note": "Full Persian vowel diacritics (اعراب‌گذاری کامل) in Google Flow prompt for 100% accurate native pronunciation.",
+  "episode_id": "Part2_ChoppedHairRegret",
+  "title_fa": "قسمت دوم (پایان): موهایِ کوتاه‌شده و رازِ کلاه‌گیسِ سندی!",
+  "title_en": "Red Wig Copycat Trap Part 2 - The Wig Reveal",
+  "source_video": "${SRC}\\08_DeU3lqdypjE_emotionalgroceries.mp4",
+  "source_start_offset": 36,
+  "story_summary_fa": "لیلا موهای بلندش را از ته قیچی و قرمز و فرفری می‌کند و با غرور پیش سندی می‌رود، اما می‌بیند موهای بلند سندی سر جایش است و آن موی قرمز فقط یک کلاه‌گیس بوده!",
+  "fallback_to_source_on_visual_fail": false,
+  "tight_speech_trim": true,
+  "variables": {
+    "BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series13-red-wig-copycat-trap-farsi",
+    "S2_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi",
+    "CHEF_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\ugly-face-chef-farsi",
+    "SRC": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\emotionalgroceries"
+  },
+  "clips_dir": "${BASE}\\part2\\flow_clips",
+  "out_dir": "${BASE}\\05_final_masters\\part2",
+  "font_path": "${CHEF_BASE}\\03_farsi_audio_tts\\Vazirmatn-Bold.ttf",
+  "cta_video": "${S2_BASE}\\part1\\flow_clips\\cta_kelidbox_s2.mp4",
+  "cta_speaker": "SANDY",
+  "cta_subtitles": [
+    {
+      "start": 0.15,
+      "end": 3.55,
+      "text": "برای دیدن داستان‌های جذاب بعدی همین الان پیج رو فالو کن!"
+    },
+    {
+      "start": 3.65,
+      "end": 7.6,
+      "text": "راستی کل این انیمیشن با اکانت‌های هوش مصنوعی سایت کلیدباکس ساخته شده!"
+    }
+  ],
+  "speakers": {
+    "SANDY": [
+      255,
+      195,
+      135
+    ],
+    "LEILA": [
+      255,
+      240,
+      95
+    ],
+    "SPONGE_STYLIST": [
+      150,
+      235,
+      255
+    ],
+    "PEAR_STYLIST": [
+      255,
+      165,
+      215
+    ],
+    "BADGE": [
+      255,
+      215,
+      70
+    ]
+  },
+  "clips": [
+    {
+      "id": "clip_01",
+      "file": "clip_01.mp4",
+      "source_span": [
+        36,
+        42
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "In the salon chair, LEILA (3D yellow lemon girl now sporting a giant crimson-red curly afro, her long braids gone) touches her new hair proudly while PEAR_STYLIST smiles behind her.",
+      "overlays": [
+        {
+          "speaker": "BADGE",
+          "text": "قسمت آخر: شوکِ کلاه‌گیسِ فرفری!",
+          "start": 0.1,
+          "end": 3.4,
+          "position": "top",
+          "font_size": 21
+        }
+      ],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "LEILA",
+          "واو، محشر شد! حالا می‌رم به سندی نشون بدم که مویِ قرمز به من خیلی بیشتر میاد!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_01.jpg",
+      "expected_speakers": [
+        "LEILA"
+      ]
+    },
+    {
+      "id": "clip_02",
+      "file": "clip_02.mp4",
+      "source_span": [
+        42,
+        48
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "On the sunny wooden front porch, LEILA in a colorful floral shirt and jeans struts up showing off her giant red curly afro to SANDY.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "LEILA",
+          "سلام سندی! ببین من هم موهام رو مثلِ تو کوتاه و قرمز کردم، به من بیشتر میاد نه؟!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_02.jpg",
+      "expected_speakers": [
+        "LEILA"
+      ]
+    },
+    {
+      "id": "clip_03",
+      "file": "clip_03.mp4",
+      "source_span": [
+        48,
+        54
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "On the porch, LEILA freezes in wide-eyed shock looking at SANDY, who has her long sleek black hair flowing over her shoulders while holding the red curly wig in her hands.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "LEILA",
+          "صبر کن ببینم... پس موهایِ قرمزت کو؟! چرا موهایِ مشکی و بلندت سرِ جاشه؟!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_03.jpg",
+      "expected_speakers": [
+        "LEILA"
+      ]
+    },
+    {
+      "id": "clip_04",
+      "file": "clip_04.mp4",
+      "source_span": [
+        54,
+        60
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "On the porch, SANDY laughs holding out the detached red curly afro wig in her hand while LEILA touches her chopped red hair in disbelief.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "SANDY",
+          "دنبالِ این می‌گردی؟! اون موهایِ قرمز فقط یک کلاه‌گیس بود، من اصلاً موهام رو کوتاه نکردم!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_04.jpg",
+      "expected_speakers": [
+        "SANDY"
+      ]
+    },
+    {
+      "id": "clip_05",
+      "file": "clip_05.mp4",
+      "source_span": [
+        60,
+        66
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "On the porch, LEILA shouts in frustration with cartoon tears in her eyes as the red wig rests on the wooden floor beside calm SANDY.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "LEILA",
+          "تو از قصد سرِ من کلاه گذاشتی! به خاطرِ تو زدم موهایِ بلند و واقعیم رو نابود کردم!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_05.jpg",
+      "expected_speakers": [
+        "LEILA"
+      ]
+    },
+    {
+      "id": "clip_06",
+      "file": "clip_06.mp4",
+      "source_span": [
+        66,
+        73.3
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "On the porch, SANDY gestures with a confident smile while LEILA turns away clutching her giant red curly hair in regret.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "SANDY",
+          "تقصیرِ من نیست، کسی مجبورت نکرد از من تقلید کنی! سعی کن خودت باشی!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_06.jpg",
+      "expected_speakers": [
+        "SANDY"
+      ]
+    }
+  ],
+  "voices": {
+    "SANDY": {
+      "name_fa": "SANDY",
+      "color": [
+        255,
+        195,
+        135
+      ],
+      "source": "google_flow_native"
+    },
+    "LEILA": {
+      "name_fa": "LEILA",
+      "color": [
+        255,
+        240,
+        95
+      ],
+      "source": "google_flow_native"
+    },
+    "SPONGE_STYLIST": {
+      "name_fa": "SPONGE_STYLIST",
+      "color": [
+        150,
+        235,
+        255
+      ],
+      "source": "google_flow_native"
+    },
+    "PEAR_STYLIST": {
+      "name_fa": "PEAR_STYLIST",
+      "color": [
+        255,
+        165,
+        215
+      ],
+      "source": "google_flow_native"
+    }
+  },
+  "video": {
+    "width": 720,
+    "height": 1280,
+    "fps": 24,
+    "crf": 18,
+    "preset": "fast",
+    "scale_mode": "fill"
+  },
+  "audio": {
+    "loudnorm": "loudnorm=I=-14:TP=-1.5:LRA=11",
+    "sample_rate": 48000,
+    "channels": 2,
+    "bitrate": "192k"
+  },
+  "speech": {
+    "speech_safe": "auto_expand",
+    "threshold_dbfs": -38,
+    "pre_handle": 0.2,
+    "post_handle": 0.35,
+    "splice_crossfade": 0.02
+  },
+  "subtitle_style": {
+    "time_base": "trim_local",
+    "y_ratio": 0.84,
+    "font_size": 27,
+    "min_font_size": 16,
+    "max_text_margin": 84,
+    "max_lines": 2
+  },
+  "outputs": {
+    "per_clip_location": "both",
+    "base_mode": "timeline",
+    "cta_burn_subtitles": true,
+    "cta_loudnorm": true,
+    "publish_caption_fa": "قسمت دوم (پایان): موهایِ کوتاه‌شده و رازِ کلاه‌گیسِ سندی!"
+  }
+}

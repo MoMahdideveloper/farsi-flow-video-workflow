@@ -1,0 +1,363 @@
+{
+  "_comment": "Part1_PrisonDisguiseSwap - 100% Google Flow native Farsi voice with full اعراب‌گذاری.",
+  "schema_version": 1,
+  "speech_review_note": "Full Persian vowel diacritics (اعراب‌گذاری کامل) in Google Flow prompt for 100% accurate native pronunciation.",
+  "episode_id": "Part1_PrisonDisguiseSwap",
+  "title_fa": "قسمت اول: سرقت نقاب و کارت آزادی در شب آخر زندان!",
+  "title_en": "Prison Disguise Swap Part 1",
+  "source_video": "${SRC}\\07_DeViSqizRxK_emotionalgroceries.mp4",
+  "source_start_offset": 0,
+  "story_summary_fa": "زندانی اختاپوس که سی سال حبس دارد، شبانه نقاب و کارت آزادی هم‌سلولی اسفنج خود را که فقط یک روز تا آزادی فاصله دارد می‌دزدد و جای خودش را با او عوض می‌کند!",
+  "fallback_to_source_on_visual_fail": false,
+  "tight_speech_trim": true,
+  "variables": {
+    "BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series17-prison-number-swap-farsi",
+    "S2_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi",
+    "CHEF_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\ugly-face-chef-farsi",
+    "SRC": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\emotionalgroceries"
+  },
+  "clips_dir": "${BASE}\\part1\\flow_clips",
+  "out_dir": "${BASE}\\05_final_masters\\part1",
+  "font_path": "${CHEF_BASE}\\03_farsi_audio_tts\\Vazirmatn-Bold.ttf",
+  "cta_video": "${S2_BASE}\\part1\\flow_clips\\cta_kelidbox_s2.mp4",
+  "cta_speaker": "SPONGE_INMATE",
+  "cta_subtitles": [
+    {
+      "start": 0.15,
+      "end": 3.55,
+      "text": "برای دیدن قسمت بعدی این داستان همین الان پیج رو فالو کن!"
+    },
+    {
+      "start": 3.65,
+      "end": 7.6,
+      "text": "راستی کل این انیمیشن با اکانت‌های هوش مصنوعی سایت کلیدباکس ساخته شده!"
+    }
+  ],
+  "speakers": {
+    "SQUID_INMATE": [
+      145,
+      235,
+      255
+    ],
+    "SPONGE_INMATE": [
+      255,
+      225,
+      130
+    ],
+    "FISH_INMATE": [
+      165,
+      255,
+      165
+    ],
+    "STAR_INMATE": [
+      255,
+      175,
+      210
+    ],
+    "CRAB_WARDEN": [
+      255,
+      155,
+      145
+    ],
+    "BADGE": [
+      255,
+      215,
+      70
+    ]
+  },
+  "clips": [
+    {
+      "id": "clip_01",
+      "file": "clip_01.mp4",
+      "source_span": [
+        0,
+        9
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "Inside a dimly lit stone prison cell at night, tall turquoise-blue 3D squid inmate SQUID_INMATE with black dreadlocks in a navy prison jumpsuit glares down jealously at porous charcoal-black 3D sponge inmate SPONGE_INMATE sleeping on the lower bunk.",
+      "overlays": [
+        {
+          "speaker": "BADGE",
+          "text": "قسمت اول: سرقت نقاب و کارت آزادی در زندان!",
+          "start": 0.1,
+          "end": 3.4,
+          "position": "top",
+          "font_size": 21
+        }
+      ],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "SQUID_INMATE",
+          "تو فردا آزاد می‌شی و من باید سی سال دیگه اینجا بمونم؟! چرا تو، چرا من نه؟!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_01.jpg",
+      "expected_speakers": [
+        "SQUID_INMATE"
+      ],
+      "beat_ids": [
+        "beat_1"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[PN1_C01] Stylized 3D CGI cartoon animation matching the exact 3D non-human sea-creature characters and outfits in the reference image, static medium shot keeping both characters in frame the entire time (no camera cuts), inside a dimly lit stone prison cell at night the tall turquoise-blue 3D squid inmate with a bulbous head, drooping nose, and black dreadlocks in a navy-blue prison jumpsuit glares jealously at the porous charcoal-black 3D sponge inmate sleeping peacefully on the bunk bed (strictly NO human faces), as the turquoise squid inmate speaks in native Persian (Farsi) with exact vowel pronunciation and a bitter jealous male voice: «تُو فَرْدا آزاد مِی‌شِی وُ مَن بایَد سِی سالِ دِیگِه اِینْجا بِمُونَم؟! چِرا تُو، چِرا مَن نَه؟!» Zero on-screen subtitles."
+    },
+    {
+      "id": "clip_02",
+      "file": "clip_02.mp4",
+      "source_span": [
+        9,
+        18
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "In the dark prison cell, turquoise-blue 3D squid inmate SQUID_INMATE leans over sleeping SPONGE_INMATE, swapping a turquoise squid disguise mask onto the sleeper and taking the charcoal-sponge disguise mask and golden release badge.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "SQUID_INMATE",
+          "ببخشید رفیق، من توی این قفس نمی‌مونم! امشب جای من و تو با هم عوض می‌شه!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_02.jpg",
+      "expected_speakers": [
+        "SQUID_INMATE"
+      ],
+      "beat_ids": [
+        "beat_2"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[PN1_C02] Stylized 3D CGI cartoon animation matching the exact 3D non-human characters and outfits in the reference image, static medium shot keeping the characters in frame the entire time (no camera cuts), inside the dark prison cell the scheming inmate wearing the porous charcoal-black 3D sponge disguise helmet with black dreadlocks smirks over the sleeping inmate wearing the turquoise-blue squid mask on the bunk bed (strictly NO human faces), speaking in native Persian (Farsi) with exact vowel pronunciation and a low scheming male voice: «بِبَخْشِید رَفِیق، مَن تُویِ اِین قَفَس نِمِی‌مُونَم! اِمْشَب جایِ مَن وُ تُو با هَم عَوَض مِی‌شِه!» Zero on-screen subtitles."
+    },
+    {
+      "id": "clip_03",
+      "file": "clip_03.mp4",
+      "source_span": [
+        18,
+        27
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "Sitting on the prison bunk in a navy jumpsuit, the impostor wearing the porous charcoal-black 3D sponge head and black dreadlocks adjusts his golden release badge and grins triumphantly.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "SQUID_INMATE",
+          "حالا با این نقاب و کارت آزادی، برای نگهبان‌ها من همون اسفنجی‌ام که حکمش تموم شده!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_03.jpg",
+      "expected_speakers": [
+        "SQUID_INMATE"
+      ],
+      "beat_ids": [
+        "beat_3"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[PN1_C03] Stylized 3D CGI cartoon animation matching the exact 3D non-human character and outfit in the reference image, static medium shot keeping the character in frame the entire time (no camera cuts), sitting on the prison bunk bed in a navy-blue prison jumpsuit the impostor wearing the porous charcoal-black 3D sponge head with black dreadlocks points proudly to his collar and grins triumphantly (strictly NO human face), speaking in native Persian (Farsi) with exact vowel pronunciation and a smug triumphant male voice: «حالا با اِین نِقاب وُ کارْتِ آزادِی، بَرایِ نِگَهْبان‌ها مَن هَمُون اِسْفَنْجِی‌اَم کِه حُکْمِش تَمُوم شُدِه!» Zero on-screen subtitles."
+    },
+    {
+      "id": "clip_04",
+      "file": "clip_04.mp4",
+      "source_span": [
+        27,
+        36
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "In the sunny concrete prison yard with guard towers in the background, the disguised charcoal-black 3D sponge inmate SPONGE_INMATE in a navy jumpsuit walks and brags cheerfully beside green 3D fish inmate FISH_INMATE.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "SQUID_INMATE",
+          "بالآخره روز بزرگ رسید! امروز آخرین روز زندان منه و امشب قراره بیرون یه شام واقعی بخورم!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_04.jpg",
+      "expected_speakers": [
+        "SQUID_INMATE"
+      ],
+      "beat_ids": [
+        "beat_4"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[PN1_C04] Stylized 3D CGI cartoon animation matching the exact 3D non-human characters and outfits in the reference image, static medium two-shot keeping both characters in frame the entire time (no camera cuts), in the sunny concrete prison courtyard surrounded by high walls and guard towers the porous charcoal-black 3D sponge inmate with black dreadlocks in a navy jumpsuit gestures cheerfully beside the green 3D fish inmate in a navy jumpsuit (strictly NO human faces), as the charcoal-black sponge inmate speaks in native Persian (Farsi) with exact vowel pronunciation and an excited boastful male voice: «بِالآخَرِه رُوزِ بُزُرْگ رَسِید! اِمْرُوز آخَرِین رُوزِ زِنْدانِ مَنِه وُ اِمْشَب قَرارِه بِیرُون یِه شامِ واقِعِی بُخُورَم!» Zero on-screen subtitles."
+    },
+    {
+      "id": "clip_05",
+      "file": "clip_05.mp4",
+      "source_span": [
+        36,
+        43
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "In the bright prison cafeteria line, the disguised charcoal-black 3D sponge inmate in a navy jumpsuit holds out a metal food tray with a wide grin.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "SQUID_INMATE",
+          "سینی غذای من رو حسابی پر کن رفیق! این آخرین وعده‌ی غذایی من قبل از آزادیه!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_05.jpg",
+      "expected_speakers": [
+        "SQUID_INMATE"
+      ],
+      "beat_ids": [
+        "beat_5"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[PN1_C05] Stylized 3D CGI cartoon animation matching the exact 3D non-human character and outfit in the reference image, static medium shot keeping the character in frame the entire time (no camera cuts), at the stainless-steel counter of the prison cafeteria the porous charcoal-black 3D sponge inmate with black dreadlocks in a navy jumpsuit holds out a metal meal tray with a wide cocky grin (strictly NO human face), speaking in native Persian (Farsi) with exact vowel pronunciation and a cheerful cocky male voice: «سِینِیِ غَذایِ مَن رُو حِسابِی پُر کُن رَفِیق! اِین آخَرِین وَعْدِه‌یِ غَذایِیِ مَن قَبْل اَز آزادِیِه!» Zero on-screen subtitles."
+    },
+    {
+      "id": "clip_06",
+      "file": "clip_06.mp4",
+      "source_span": [
+        43,
+        50
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "Out in the prison yard by the barbed-wire fence, the real SPONGE_INMATE—trapped inside the turquoise-blue 3D squid mask and hands—stares at his blue hands in horror beside plump pink 3D sea-star inmate STAR_INMATE.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "SPONGE_INMATE",
+          "چی شده؟! چرا دست‌ها و صورتم آبی شده؟! کارت آزادی من کجاست؟ چه بلایی سرم اومده؟!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_06.jpg",
+      "expected_speakers": [
+        "SPONGE_INMATE"
+      ],
+      "beat_ids": [
+        "beat_6"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[PN1_C06] Stylized 3D CGI cartoon animation matching the exact 3D non-human sea-creature characters and outfits in the reference image, static medium two-shot keeping both characters in frame the entire time (no camera cuts), in the prison courtyard by the wire fence the tall turquoise-blue 3D squid inmate with black dreadlocks in a navy jumpsuit stares at his own turquoise-blue hands in shock beside the plump pink 3D sea-star inmate in a navy jumpsuit (strictly NO human faces), as the turquoise squid character speaks in native Persian (Farsi) with exact vowel pronunciation and a panicked shocked young male voice: «چِی شُدِه؟! چِرا دَسْت‌ها وُ صُورَتَم آبِی شُدِه؟! کارْتِ آزادِیِ مَن کُجاسْت؟ چِه بَلایِی سَرَم اُومَدِه؟!» Zero on-screen subtitles."
+    }
+  ],
+  "voices": {
+    "SQUID_INMATE": {
+      "name_fa": "SQUID_INMATE",
+      "color": [
+        145,
+        235,
+        255
+      ],
+      "source": "google_flow_native"
+    },
+    "SPONGE_INMATE": {
+      "name_fa": "SPONGE_INMATE",
+      "color": [
+        255,
+        225,
+        130
+      ],
+      "source": "google_flow_native"
+    },
+    "FISH_INMATE": {
+      "name_fa": "FISH_INMATE",
+      "color": [
+        165,
+        255,
+        165
+      ],
+      "source": "google_flow_native"
+    },
+    "STAR_INMATE": {
+      "name_fa": "STAR_INMATE",
+      "color": [
+        255,
+        175,
+        210
+      ],
+      "source": "google_flow_native"
+    },
+    "CRAB_WARDEN": {
+      "name_fa": "CRAB_WARDEN",
+      "color": [
+        255,
+        155,
+        145
+      ],
+      "source": "google_flow_native"
+    }
+  },
+  "video": {
+    "width": 720,
+    "height": 1280,
+    "fps": 24,
+    "crf": 18,
+    "preset": "fast",
+    "scale_mode": "fill"
+  },
+  "audio": {
+    "loudnorm": "loudnorm=I=-14:TP=-1.5:LRA=11",
+    "sample_rate": 48000,
+    "channels": 2,
+    "bitrate": "192k"
+  },
+  "speech": {
+    "speech_safe": "auto_expand",
+    "threshold_dbfs": -38,
+    "pre_handle": 0.2,
+    "post_handle": 0.35,
+    "splice_crossfade": 0.02
+  },
+  "subtitle_style": {
+    "time_base": "trim_local",
+    "y_ratio": 0.84,
+    "font_size": 27,
+    "min_font_size": 16,
+    "max_text_margin": 84,
+    "max_lines": 2
+  },
+  "outputs": {
+    "per_clip_location": "both",
+    "base_mode": "timeline",
+    "cta_burn_subtitles": true,
+    "cta_loudnorm": true,
+    "publish_caption_fa": "قسمت اول: سرقت نقاب و کارت آزادی در شب آخر زندان!"
+  },
+  "character_references": [
+    "${BASE}\\character_sheets\\FLOW_SHEET_SERIES17_CHARACTERS.jpg"
+  ],
+  "content_edits": [],
+  "story_plan": {
+    "summary": "زندانی اختاپوس که سی سال حبس دارد، شبانه نقاب و کارت آزادی هم‌سلولی اسفنج خود را که فقط یک روز تا آزادی فاصله دارد می‌دزدد و جای خودش را با او عوض می‌کند!",
+    "ending": "The real sponge inmate wakes up in the prison yard wearing the turquoise squid disguise and 30-year sentence badge while the impostor prepares to walk free.",
+    "required_beats": [
+      "beat_1",
+      "beat_2",
+      "beat_3",
+      "beat_4",
+      "beat_5",
+      "beat_6"
+    ]
+  },
+  "visual": {
+    "keyframe_threshold": 38,
+    "jump_threshold": 32,
+    "contamination_margin": 5
+  }
+}

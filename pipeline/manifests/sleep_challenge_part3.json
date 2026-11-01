@@ -1,0 +1,306 @@
+{
+  "_comment": "Series 9 (@emotionalgroceries) Part 3 - 100% Google Flow native Farsi voice with full اعراب‌گذاری.",
+  "schema_version": 1,
+  "speech_review_note": "Full Persian vowel diacritics (اعراب‌گذاری کامل) in Google Flow prompt for 100% accurate native pronunciation.",
+  "episode_id": "Part3_MillionDollarSnooze",
+  "title_fa": "قسمت سوم (فینال): بوقِ فراصوتی و برنده‌یِ یک میلیون دلاری در خواب!",
+  "title_en": "Sleep Challenge Millionaire Part 3 - Ultrasonic Horn & $1M Winner",
+  "source_video": "${SRC}\\03_DenLf2DhM9V_emotionalgroceries.mp4",
+  "source_start_offset": 80,
+  "story_summary_fa": "در مرحله نهایی، بوق فراصوتی غول‌پیکر بالای سر شرکت‌کننده‌ها روشن می‌شه. رقیب عضلانی از شدت صدا فرار می‌کنه، اما کوهیار همچنان توی خواب عمیقه و برنده چک یک میلیون دلاری می‌شه!",
+  "fallback_to_source_on_visual_fail": false,
+  "tight_speech_trim": true,
+  "variables": {
+    "BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series9-sleep-challenge-millionaire-farsi",
+    "S2_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi",
+    "CHEF_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\ugly-face-chef-farsi",
+    "SRC": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\emotionalgroceries"
+  },
+  "clips_dir": "${BASE}\\part3\\flow_clips",
+  "out_dir": "${BASE}\\05_final_masters\\part3",
+  "font_path": "${CHEF_BASE}\\03_farsi_audio_tts\\Vazirmatn-Bold.ttf",
+  "cta_video": "${S2_BASE}\\part1\\flow_clips\\cta_kelidbox_s2.mp4",
+  "cta_speaker": "SLEEPY",
+  "cta_subtitles": [
+    {
+      "start": 0.15,
+      "end": 3.55,
+      "text": "برای دیدن داستان‌های بعدی همین الان پیج رو فالو کن!"
+    },
+    {
+      "start": 3.65,
+      "end": 7.6,
+      "text": "راستی کل این انیمیشن با اکانت‌های هوش مصنوعی سایت کلیدباکس ساخته شده!"
+    }
+  ],
+  "speakers": {
+    "SLEEPY": [
+      255,
+      230,
+      110
+    ],
+    "MOM": [
+      255,
+      185,
+      220
+    ],
+    "HOST": [
+      165,
+      255,
+      185
+    ],
+    "CLERK": [
+      165,
+      230,
+      255
+    ],
+    "PASSERBY": [
+      255,
+      165,
+      140
+    ],
+    "BADGE": [
+      255,
+      215,
+      70
+    ]
+  },
+  "clips": [
+    {
+      "id": "clip_01",
+      "file": "clip_01.mp4",
+      "source_span": [
+        80,
+        86
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "A colossal black steel ultrasonic horn lowers on chains above SLEEPY (Kouhyar) and the muscular green fish contestant's beds as HOST announces Round 2.",
+      "overlays": [
+        {
+          "speaker": "BADGE",
+          "text": "قسمت سوم (پایان): سلطانِ خوابِ یک میلیون دلاری!",
+          "start": 0.1,
+          "end": 3.4,
+          "position": "top",
+          "font_size": 21
+        }
+      ],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "HOST",
+          "مرحله دوم، بوقِ فراصوتیِ غول‌پیکر! هیچ موجودی نمی‌تونه با این صدا بخوابه!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part3\\keyframes\\KF_01.jpg",
+      "expected_speakers": [
+        "HOST"
+      ]
+    },
+    {
+      "id": "clip_02",
+      "file": "clip_02.mp4",
+      "source_span": [
+        86,
+        93
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "The giant overhead ultrasonic horn blasts a blinding white sonic shockwave down toward the stage beds.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "HOST",
+          "حداکثرِ قدرتِ صوتی! ببینیم کدوم یکی از این دو تا دوام می‌یارن!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part3\\keyframes\\KF_02.jpg",
+      "expected_speakers": [
+        "HOST"
+      ]
+    },
+    {
+      "id": "clip_03",
+      "file": "clip_03.mp4",
+      "source_span": [
+        93,
+        100
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "The muscular green fish contestant leaps out of bed covering his ears in agony while SLEEPY (Kouhyar) stays fast asleep.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "HOST",
+          "گوش‌هام سوت کشید! شرکت‌کننده عضلانی هم تسلیم شد و حذف شد!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part3\\keyframes\\KF_03.jpg",
+      "expected_speakers": [
+        "HOST"
+      ]
+    },
+    {
+      "id": "clip_04",
+      "file": "clip_04.mp4",
+      "source_span": [
+        100,
+        108
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "In the stadium stands, MOM (Maman Marjan) cheers and claps joyfully as golden confetti rains down.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "MOM",
+          "این پسرِ منه! همین‌طوری بخواب عزیزِ دلم و اون یک میلیون دلار رو برامون بیار خونه!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part3\\keyframes\\KF_04.jpg",
+      "expected_speakers": [
+        "MOM"
+      ]
+    },
+    {
+      "id": "clip_05",
+      "file": "clip_05.mp4",
+      "source_span": [
+        108,
+        114
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "On the sunlit spotlight stage, HOST (Green Host) holds a giant $1,000,000 check beside SLEEPY (Kouhyar) still snoring in bed.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "HOST",
+          "و برنده جایزه بزرگِ یک میلیون دلاری کسی نیست جز... سلطانِ خوابِ جهان!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part3\\keyframes\\KF_05.jpg",
+      "expected_speakers": [
+        "HOST"
+      ]
+    },
+    {
+      "id": "clip_06",
+      "file": "clip_06.mp4",
+      "source_span": [
+        114,
+        118.2
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "Close-up of SLEEPY (Kouhyar) in his yellow smiley pajamas snoring blissfully with a sleep bubble as golden confetti falls over his bed.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "SLEEPY",
+          "آخیش... چه خوابِ شیرین و یک میلیون دلاری‌ای! بچه‌ها شبتون بخیر!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part3\\keyframes\\KF_06.jpg",
+      "expected_speakers": [
+        "SLEEPY"
+      ]
+    }
+  ],
+  "voices": {
+    "SLEEPY": {
+      "name_fa": "SLEEPY",
+      "color": [
+        255,
+        230,
+        110
+      ],
+      "source": "google_flow_native"
+    },
+    "MOM": {
+      "name_fa": "MOM",
+      "color": [
+        255,
+        185,
+        220
+      ],
+      "source": "google_flow_native"
+    },
+    "HOST": {
+      "name_fa": "HOST",
+      "color": [
+        165,
+        255,
+        185
+      ],
+      "source": "google_flow_native"
+    },
+    "CLERK": {
+      "name_fa": "CLERK",
+      "color": [
+        165,
+        230,
+        255
+      ],
+      "source": "google_flow_native"
+    },
+    "PASSERBY": {
+      "name_fa": "PASSERBY",
+      "color": [
+        255,
+        165,
+        140
+      ],
+      "source": "google_flow_native"
+    }
+  },
+  "video": {
+    "width": 720,
+    "height": 1280,
+    "fps": 24,
+    "crf": 18,
+    "preset": "fast",
+    "scale_mode": "fill"
+  },
+  "audio": {
+    "loudnorm": "loudnorm=I=-14:TP=-1.5:LRA=11",
+    "sample_rate": 48000,
+    "channels": 2,
+    "bitrate": "192k"
+  },
+  "speech": {
+    "speech_safe": "auto_expand",
+    "threshold_dbfs": -38,
+    "pre_handle": 0.2,
+    "post_handle": 0.35,
+    "splice_crossfade": 0.02
+  },
+  "subtitle_style": {
+    "time_base": "trim_local",
+    "y_ratio": 0.84,
+    "font_size": 27,
+    "min_font_size": 16,
+    "max_text_margin": 84,
+    "max_lines": 2
+  },
+  "outputs": {
+    "per_clip_location": "both",
+    "base_mode": "timeline",
+    "cta_burn_subtitles": true,
+    "cta_loudnorm": true,
+    "publish_caption_fa": "قسمت سوم (فینال): بوقِ فراصوتی و برنده‌یِ یک میلیون دلاری در خواب!"
+  }
+}

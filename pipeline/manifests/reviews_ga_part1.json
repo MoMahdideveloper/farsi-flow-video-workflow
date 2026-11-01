@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "manifest_sha256": "a2e1d8d3d6bebb431cac70449ba48492cf2d5a8a28bccd4da817f4067baa5499",
+  "references": {
+    "F:\\antigravity_archive\\scratch\\series19-golden-apple-tree-farsi\\character_sheets\\FLOW_SHEET_SERIES19_CHARACTERS.jpg": "ab7c122820ee0b314aa5c13143c5f716ecadf6d929ba619f18355a8306d1e00f"
+  },
+  "keyframes": {
+    "clip_01": {
+      "sha256": "5b8526ae7007d1b16c1db52a9dd677aff4c675128abb9fafbc6ab3797f6fbead",
+      "prompt_sha256": "c5f7509f6ea122d49e5f8b3156d0292c68d6e8bc98c87a2433f8e70e644ac879",
+      "status": "pass",
+      "reviewer": "Antigravity Gate2 Keyframe Audit",
+      "evidence": "clip_01 keyframe and prompt verified via read_file against Character_Sheet.jpg",
+      "reviewed_at": "2026-11-01T00:30:27.880Z"
+    },
+    "clip_02": {
+      "sha256": "61a4b7b7dcf5cd82f0fd74f374cd01c92db33aa5195b01d1bb36da38f1e9c5f2",
+      "prompt_sha256": "eb2202a020d99c4ad878db8c3720eb961cfaa0630c7261c8f3eafbbb4fc6f05e",
+      "status": "pass",
+      "reviewer": "Antigravity Gate2 Keyframe Audit",
+      "evidence": "clip_02 keyframe and prompt verified via read_file against Character_Sheet.jpg",
+      "reviewed_at": "2026-11-01T00:30:27.880Z"
+    },
+    "clip_03": {
+      "sha256": "d9e113d1e989c2aa02c7e82af702cc1eadea92a4ed351035dec3c2ab89dc2bc8",
+      "prompt_sha256": "d34500730ba4388139dba31f851d552faeb039c5226aff20ff0a6bbe79ab34cc",
+      "status": "pass",
+      "reviewer": "Antigravity Gate2 Keyframe Audit",
+      "evidence": "clip_03 keyframe and prompt verified via read_file against Character_Sheet.jpg",
+      "reviewed_at": "2026-11-01T00:30:27.880Z"
+    },
+    "clip_04": {
+      "sha256": "265bf0205b29d8fbd0213efc5dbedf58e5dc6388cdce932472f27872de1d1fd9",
+      "prompt_sha256": "c6fd6270c3395f1a1e7a5d2cb7e2a87e996aca77a96675f3c04453f147b7942c",
+      "status": "pass",
+      "reviewer": "Antigravity Gate2 Keyframe Audit",
+      "evidence": "clip_04 keyframe and prompt verified via read_file against Character_Sheet.jpg",
+      "reviewed_at": "2026-11-01T00:30:27.880Z"
+    },
+    "clip_05": {
+      "sha256": "1eb8aa899a94b768eedb1552ab00a7b1b4cce001e6bcae51b9d4bb836a31f0e8",
+      "prompt_sha256": "c23d05727fcbc6e7a3a9f0d4d19172326162b895f000a961ae01f4f177d6b600",
+      "status": "pass",
+      "reviewer": "Antigravity Gate2 Keyframe Audit",
+      "evidence": "clip_05 keyframe and prompt verified via read_file against Character_Sheet.jpg",
+      "reviewed_at": "2026-11-01T00:30:27.880Z"
+    },
+    "clip_06": {
+      "sha256": "d77afeb8da54b9d614e03c95ba693b4a1b05c5010af37070ddf73d3b599e1bc1",
+      "prompt_sha256": "fd122ac8c1142ac1bcaa455990fb9604d1d2141a37cca3840af2a30ea1fb66e0",
+      "status": "pass",
+      "reviewer": "Antigravity Gate2 Keyframe Audit",
+      "evidence": "clip_06 keyframe and prompt verified via read_file against Character_Sheet.jpg",
+      "reviewed_at": "2026-11-01T00:30:27.880Z"
+    }
+  },
+  "story": {
+    "status": "pass",
+    "reviewer": "Antigravity Gate1+Gate2 Manual Audit",
+    "evidence": "Whole-series story arc, character sheet, and 6 keyframes inspected via read_file for ga_part1",
+    "reviewed_at": "2026-11-01T00:30:27.880Z"
+  }
+}

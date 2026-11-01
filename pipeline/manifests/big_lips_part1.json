@@ -1,0 +1,306 @@
+{
+  "_comment": "Series 11 (@emotionalgroceries) Part 1 - 100% Google Flow native Farsi voice with full اعراب‌گذاری.",
+  "schema_version": 1,
+  "speech_review_note": "Full Persian vowel diacritics (اعراب‌گذاری کامل) in Google Flow prompt for 100% accurate native pronunciation.",
+  "episode_id": "Part1_BigLipsMask",
+  "title_fa": "قسمت اول: تمسخرِ لب‌هایِ غول‌پیکر و پنهان شدن پشتِ ماسک!",
+  "title_en": "Big Lips Pear Part 1 - Hiding Behind The Mask",
+  "source_video": "${SRC}\\04_DefvrgGSzXP_emotionalgroceries.mp4",
+  "source_start_offset": 0,
+  "story_summary_fa": "کامران، پسر گلابی با لب‌های غول‌پیکر، هر جا می‌رود مسخره می‌شود تا اینکه تصمیم می‌گیرد صورتش را پشت یک ماسک مشکی پنهان کند. اما در زمین بسکتبال هم راحتش نمی‌گذارند!",
+  "fallback_to_source_on_visual_fail": false,
+  "tight_speech_trim": true,
+  "variables": {
+    "BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series11-big-lips-pear-farsi",
+    "S2_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi",
+    "CHEF_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\ugly-face-chef-farsi",
+    "SRC": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\emotionalgroceries"
+  },
+  "clips_dir": "${BASE}\\part1\\flow_clips",
+  "out_dir": "${BASE}\\05_final_masters\\part1",
+  "font_path": "${CHEF_BASE}\\03_farsi_audio_tts\\Vazirmatn-Bold.ttf",
+  "cta_video": "${S2_BASE}\\part1\\flow_clips\\cta_kelidbox_s2.mp4",
+  "cta_speaker": "PEAR_BOY",
+  "cta_subtitles": [
+    {
+      "start": 0.15,
+      "end": 3.55,
+      "text": "برای دیدن قسمت بعدی این داستان همین الان پیج رو فالو کن!"
+    },
+    {
+      "start": 3.65,
+      "end": 7.6,
+      "text": "راستی کل این انیمیشن با اکانت‌های هوش مصنوعی سایت کلیدباکس ساخته شده!"
+    }
+  ],
+  "speakers": {
+    "PEAR_BOY": [
+      180,
+      255,
+      140
+    ],
+    "DRAGONFRUIT_GIRL": [
+      255,
+      165,
+      215
+    ],
+    "ORANGE_CLERK": [
+      255,
+      190,
+      110
+    ],
+    "APPLE_BULLY": [
+      255,
+      135,
+      135
+    ],
+    "PINEAPPLE_JOCK": [
+      255,
+      235,
+      110
+    ],
+    "BADGE": [
+      255,
+      215,
+      70
+    ]
+  },
+  "clips": [
+    {
+      "id": "clip_01",
+      "file": "clip_01.mp4",
+      "source_span": [
+        0,
+        5
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "At the grocery checkout counter, ORANGE_CLERK points in shock at PEAR_BOY (Kamran, 3D green-yellow pear boy with giant puffy pink cartoon lips) holding a bag of chips.",
+      "overlays": [
+        {
+          "speaker": "BADGE",
+          "text": "قسمت اول: رازِ پشتِ ماسکِ مشکی!",
+          "start": 0.1,
+          "end": 3.4,
+          "position": "top",
+          "font_size": 21
+        }
+      ],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "ORANGE_CLERK",
+          "بچه‌ها لب‌هایِ این یارو رو ببینید! انگار دو تا قایقِ بادیِ بزرگ به صورتش چسبونده!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_01.jpg",
+      "expected_speakers": [
+        "ORANGE_CLERK"
+      ]
+    },
+    {
+      "id": "clip_02",
+      "file": "clip_02.mp4",
+      "source_span": [
+        5,
+        10
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "At the checkout counter, ORANGE_CLERK laughs clutching his stomach while PEAR_BOY glares in annoyance.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "PEAR_BOY",
+          "چرا می‌خندی آقا؟! من فقط اومدم یک بسته چیپس بخرم، لب‌هایِ من چه ربطی به تو داره؟!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_02.jpg",
+      "expected_speakers": [
+        "PEAR_BOY"
+      ]
+    },
+    {
+      "id": "clip_03",
+      "file": "clip_03.mp4",
+      "source_span": [
+        10,
+        15
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "In the snack aisle, APPLE_BULLY in a green hoodie doubles over laughing and pointing while PEAR_BOY throws his hands up in frustration.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "APPLE_BULLY",
+          "مراقب باشید! الان با یک نفسِ عمیق کلِ هوایِ فروشگاه رو قورت می‌ده!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_03.jpg",
+      "expected_speakers": [
+        "APPLE_BULLY"
+      ]
+    },
+    {
+      "id": "clip_04",
+      "file": "clip_04.mp4",
+      "source_span": [
+        15,
+        20
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "In front of his bathroom mirror, PEAR_BOY squishes his giant pink lips with tears in his eyes while holding a black cloth face mask.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "PEAR_BOY",
+          "خسته شدم از بس همه مسخره‌م مسخره‌م کردن! دیگه نمی‌خوام هیچ‌کس صورتِ من رو ببینه!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_04.jpg",
+      "expected_speakers": [
+        "PEAR_BOY"
+      ]
+    },
+    {
+      "id": "clip_05",
+      "file": "clip_05.mp4",
+      "source_span": [
+        20,
+        25
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "In his bedroom, PEAR_BOY wears the black fabric half-mask concealing his giant lips with a relieved expression.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "PEAR_BOY",
+          "با این ماسکِ مشکی لب‌هام کاملاً قایم می‌شه و دیگه هیچ‌کس نمی‌تونه مسخره‌م کنه!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_05.jpg",
+      "expected_speakers": [
+        "PEAR_BOY"
+      ]
+    },
+    {
+      "id": "clip_06",
+      "file": "clip_06.mp4",
+      "source_span": [
+        25,
+        30
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "At the outdoor basketball court fence at dusk, PINEAPPLE_JOCK in a red-and-white varsity jacket points and laughs at masked PEAR_BOY.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "PINEAPPLE_JOCK",
+          "تویِ این گرما چرا ماسک زدی رفیق؟! نکنه می‌ترسی قیافه‌یِ عجیب و غریبت رو ببینیم؟!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_06.jpg",
+      "expected_speakers": [
+        "PINEAPPLE_JOCK"
+      ]
+    }
+  ],
+  "voices": {
+    "PEAR_BOY": {
+      "name_fa": "PEAR_BOY",
+      "color": [
+        180,
+        255,
+        140
+      ],
+      "source": "google_flow_native"
+    },
+    "DRAGONFRUIT_GIRL": {
+      "name_fa": "DRAGONFRUIT_GIRL",
+      "color": [
+        255,
+        165,
+        215
+      ],
+      "source": "google_flow_native"
+    },
+    "ORANGE_CLERK": {
+      "name_fa": "ORANGE_CLERK",
+      "color": [
+        255,
+        190,
+        110
+      ],
+      "source": "google_flow_native"
+    },
+    "APPLE_BULLY": {
+      "name_fa": "APPLE_BULLY",
+      "color": [
+        255,
+        135,
+        135
+      ],
+      "source": "google_flow_native"
+    },
+    "PINEAPPLE_JOCK": {
+      "name_fa": "PINEAPPLE_JOCK",
+      "color": [
+        255,
+        235,
+        110
+      ],
+      "source": "google_flow_native"
+    }
+  },
+  "video": {
+    "width": 720,
+    "height": 1280,
+    "fps": 24,
+    "crf": 18,
+    "preset": "fast",
+    "scale_mode": "fill"
+  },
+  "audio": {
+    "loudnorm": "loudnorm=I=-14:TP=-1.5:LRA=11",
+    "sample_rate": 48000,
+    "channels": 2,
+    "bitrate": "192k"
+  },
+  "speech": {
+    "speech_safe": "auto_expand",
+    "threshold_dbfs": -38,
+    "pre_handle": 0.2,
+    "post_handle": 0.35,
+    "splice_crossfade": 0.02
+  },
+  "subtitle_style": {
+    "time_base": "trim_local",
+    "y_ratio": 0.84,
+    "font_size": 27,
+    "min_font_size": 16,
+    "max_text_margin": 84,
+    "max_lines": 2
+  },
+  "outputs": {
+    "per_clip_location": "both",
+    "base_mode": "timeline",
+    "cta_burn_subtitles": true,
+    "cta_loudnorm": true,
+    "publish_caption_fa": "قسمت اول: تمسخرِ لب‌هایِ غول‌پیکر و پنهان شدن پشتِ ماسک!"
+  }
+}

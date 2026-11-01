@@ -1,0 +1,344 @@
+{
+  "_comment": "Series 14 (@emotionalgroceries) Part 2 - 100% Google Flow native Farsi voice with full اعراب‌گذاری.",
+  "schema_version": 1,
+  "speech_review_note": "Full Persian vowel diacritics (اعراب‌گذاری کامل) in Google Flow prompt for 100% accurate native pronunciation.",
+  "episode_id": "Part2_CEODaughterKarma",
+  "title_fa": "قسمت دوم (پایان): پنج سال بعد؛ تماسِ پدر با دخترِ مدیرعامل!",
+  "title_en": "Rap Career Son vs CEO Daughter Part 2 - CEO Karma",
+  "source_video": "${SRC}\\12_DeHjYDXOfDh_emotionalgroceries.mp4",
+  "source_start_offset": 56,
+  "story_summary_fa": "سندی با وجود گرفتن بالاترین نمره دانشگاه از خانه بیرون می‌رود تا خودش خرج تحصیلش را بدهد، و پنج سال بعد وقتی مدیرعامل بزرگ‌ترین شرکت شهر می‌شود، پدرش به او زنگ می‌زند!",
+  "fallback_to_source_on_visual_fail": false,
+  "tight_speech_trim": true,
+  "variables": {
+    "BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series14-rap-son-ceo-daughter-farsi",
+    "S2_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi",
+    "CHEF_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\ugly-face-chef-farsi",
+    "SRC": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\emotionalgroceries"
+  },
+  "clips_dir": "${BASE}\\part2\\flow_clips",
+  "out_dir": "${BASE}\\05_final_masters\\part2",
+  "font_path": "${CHEF_BASE}\\03_farsi_audio_tts\\Vazirmatn-Bold.ttf",
+  "cta_video": "${S2_BASE}\\part1\\flow_clips\\cta_kelidbox_s2.mp4",
+  "cta_speaker": "SANDY",
+  "cta_subtitles": [
+    {
+      "start": 0.15,
+      "end": 3.55,
+      "text": "برای دیدن داستان‌های جذاب بعدی همین الان پیج رو فالو کن!"
+    },
+    {
+      "start": 3.65,
+      "end": 7.6,
+      "text": "راستی کل این انیمیشن با اکانت‌های هوش مصنوعی سایت کلیدباکس ساخته شده!"
+    }
+  ],
+  "speakers": {
+    "DAD_SPONGE": [
+      170,
+      225,
+      255
+    ],
+    "RICO_SPONGE": [
+      255,
+      175,
+      120
+    ],
+    "SANDY": [
+      255,
+      240,
+      95
+    ],
+    "PROF_CRAB": [
+      150,
+      255,
+      180
+    ],
+    "BADGE": [
+      255,
+      215,
+      70
+    ]
+  },
+  "clips": [
+    {
+      "id": "clip_01",
+      "file": "clip_01.mp4",
+      "source_span": [
+        56,
+        65
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "In a university classroom, PROF_CRAB (3D bright-red crustacean professor in a brown tweed suit and glasses) hands a glowing exam paper to smiling SANDY sitting at her desk.",
+      "overlays": [
+        {
+          "speaker": "BADGE",
+          "text": "قسمت آخر: کارمایِ پنج سال بعد!",
+          "start": 0.1,
+          "end": 3.4,
+          "position": "top",
+          "font_size": 21
+        }
+      ],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "PROF_CRAB",
+          "آفرین سندی! بالاترین نمره‌ی دانشگاه! تو باهوش‌ترین دانشجوی ده سال اخیری!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_01.jpg",
+      "expected_speakers": [
+        "PROF_CRAB"
+      ],
+      "beat_ids": [
+        "beat_1"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[RS2_C01] Stylized 3D CGI cartoon animation matching the exact 3D non-human characters and outfits in the reference image, static medium two-shot keeping both characters in frame the entire time (no camera cuts), in a university classroom the 3D bright-red crustacean professor in round glasses and a brown tweed suit hands an exam paper to the smiling 3D brown woodland squirrel girl in a navy hoodie sitting at her desk (strictly NO human faces), as the red crustacean professor speaks in native Persian (Farsi) with exact vowel pronunciation and a warm proud academic male voice: «آفَرین سَنْدی! بالاتَرین نُمْرِه‌یِ دانِشْگاه! تُو باهُوش‌ترین دانِشْجُویِ دَه سالِ اَخیری!» Zero on-screen subtitles."
+    },
+    {
+      "id": "clip_02",
+      "file": "clip_02.mp4",
+      "source_span": [
+        65,
+        74
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "In the living room, SANDY holds up her exam paper excitedly to DAD_SPONGE sitting on the armchair, who waves her out of the way of the TV screen.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "DAD_SPONGE",
+          "برو کنار سندی، جلوی تلویزیون رو گرفتی! دارم موزیک‌ویدیوی برادرت رو می‌بینم!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_02.jpg",
+      "expected_speakers": [
+        "DAD_SPONGE"
+      ],
+      "beat_ids": [
+        "beat_2"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[RS2_C02] Stylized 3D CGI cartoon animation matching the exact 3D non-human characters and outfits in the reference image, static medium two-shot keeping both characters in frame the entire time (no camera cuts), in the living room the 3D brown woodland squirrel girl in a navy hoodie holds up her exam paper toward the 3D dark charcoal porous sponge father sitting on the sofa who waves her away annoyed to watch the TV (strictly NO human faces), as the dark sponge father speaks in native Persian (Farsi) with exact vowel pronunciation and an annoyed dismissive male voice: «بُرُو کِنار سَنْدی، جُلُویِ تِلِویزْیُون رُو گِرِفْتی! دارَم مُوزیک‌ویدِیُویِ بَرادَرِت رُو می‌بینَم!» Zero on-screen subtitles."
+    },
+    {
+      "id": "clip_03",
+      "file": "clip_03.mp4",
+      "source_span": [
+        74,
+        84
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "In the kitchen, tearful SANDY holds her tuition paper while DAD_SPONGE hands a stack of cash to RICO_SPONGE sitting at the table.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "SANDY",
+          "بابا، بیست هزار دلار به اون می‌دی، ولی پونصد دلار برای شهریه‌ی دانشگاه من نداری؟!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_03.jpg",
+      "expected_speakers": [
+        "SANDY"
+      ],
+      "beat_ids": [
+        "beat_3"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[RS2_C03] Stylized 3D CGI cartoon animation matching the exact 3D non-human characters and outfits in the reference image, static medium shot keeping the characters in frame the entire time (no camera cuts), in the kitchen the 3D brown woodland squirrel girl in a navy hoodie holds a tuition bill with cartoon tears in her eyes while the 3D dark charcoal porous sponge father hands a thick bundle of cash to the 3D dark charcoal sponge teen son (strictly NO human faces), as the squirrel girl speaks in native Persian (Farsi) with exact vowel pronunciation and a heartbroken young female voice: «بابا، بیسْت هِزار دُلار بِه اُون می‌دی، وَلی پُونْصَد دُلار بَرایِ شَهْرِیِه‌یِ دانِشْگاهِ مَن نَداری؟!» Zero on-screen subtitles."
+    },
+    {
+      "id": "clip_04",
+      "file": "clip_04.mp4",
+      "source_span": [
+        84,
+        94
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "At the foot of the house stairs by the front door, SANDY stands with her blue suitcase and backpack facing DAD_SPONGE and RICO_SPONGE.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "SANDY",
+          "دیگه یک دلار هم ازتون نمی‌خوام! خودم تنهایی هم کار می‌کنم و هم درسم رو تموم می‌کنم!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_04.jpg",
+      "expected_speakers": [
+        "SANDY"
+      ],
+      "beat_ids": [
+        "beat_4"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[RS2_C04] Stylized 3D CGI cartoon animation matching the exact 3D non-human characters and outfits in the reference image, static medium shot keeping the characters in frame the entire time (no camera cuts), by the front hallway stairs the 3D brown woodland squirrel girl in a navy hoodie and backpack stands firmly holding a blue rolling suitcase facing the 3D dark charcoal porous sponge father and teen son (strictly NO human faces), as the squirrel girl speaks in native Persian (Farsi) with exact vowel pronunciation and a firm resolute young female voice: «دیگه یِک دُلار هَم اَزَتُون نِمی‌خْوام! خُودَم تَنْهایی هَم کار می‌کُنَم و هَم دَرْسَم رُو تَمُوم می‌کُنَم!» Zero on-screen subtitles."
+    },
+    {
+      "id": "clip_05",
+      "file": "clip_05.mp4",
+      "source_span": [
+        94,
+        103
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "Five years later, in a luxury glass skyscraper penthouse office overlooking the city skyline, SANDY in a tailored black executive suit stands proudly by her desk as her smartphone rings.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "SANDY",
+          "پنج سال گذشت و حالا مدیرعامل بزرگ‌ترین شرکت شهرم... عجب، بابا داره زنگ می‌زنه!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_05.jpg",
+      "expected_speakers": [
+        "SANDY"
+      ],
+      "beat_ids": [
+        "beat_5"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[RS2_C05] Stylized 3D CGI cartoon animation matching the exact 3D non-human squirrel character and outfit in the reference image, static medium shot keeping the character in frame the entire time (no camera cuts), inside a gleaming glass skyscraper executive office overlooking a sunny city skyline the 3D brown woodland squirrel woman wearing a sharp tailored black executive business suit stands beside her mahogany desk looking at her ringing smartphone with a confident smile (strictly NO human face), speaking in native Persian (Farsi) with exact vowel pronunciation and a poised confident young female voice: «پَنْج سال گُذَشْت و حالا مُدیرْعامِلِ بُزُرْگ‌ترین شِرْکَتِ شَهْرَم... عَجَب، بابا داره زَنْگ می‌زَنه!» Zero on-screen subtitles."
+    },
+    {
+      "id": "clip_06",
+      "file": "clip_06.mp4",
+      "source_span": [
+        103,
+        111.9
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "In the luxury skyscraper executive office, SANDY in her black CEO suit holds her smartphone to her ear with a calm confident smile.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "SANDY",
+          "الو بابا؟ پسرت کل پول‌هات رو به باد داد و حالا از من کتاب‌خون کمک می‌خوای؟!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_06.jpg",
+      "expected_speakers": [
+        "SANDY"
+      ],
+      "beat_ids": [
+        "beat_6"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[RS2_C06] Stylized 3D CGI cartoon animation matching the exact 3D non-human squirrel character and outfit in the reference image, static medium close-up keeping the character in frame the entire time (no camera cuts), inside the glass skyscraper executive office the 3D brown woodland squirrel CEO in a tailored black business suit holds her smartphone to her ear with a calm victorious smile (strictly NO human face), speaking in native Persian (Farsi) with exact vowel pronunciation and a witty confident young female voice: «اَلُو بابا؟ پِسَرِت کُلِّ پُولْ‌هات رُو بِه باد داد و حالا اَز مَنِ کِتاب‌خُون کُمَک می‌خْوای؟!» Zero on-screen subtitles."
+    }
+  ],
+  "voices": {
+    "DAD_SPONGE": {
+      "name_fa": "DAD_SPONGE",
+      "color": [
+        170,
+        225,
+        255
+      ],
+      "source": "google_flow_native"
+    },
+    "RICO_SPONGE": {
+      "name_fa": "RICO_SPONGE",
+      "color": [
+        255,
+        175,
+        120
+      ],
+      "source": "google_flow_native"
+    },
+    "SANDY": {
+      "name_fa": "SANDY",
+      "color": [
+        255,
+        240,
+        95
+      ],
+      "source": "google_flow_native"
+    },
+    "PROF_CRAB": {
+      "name_fa": "PROF_CRAB",
+      "color": [
+        150,
+        255,
+        180
+      ],
+      "source": "google_flow_native"
+    }
+  },
+  "video": {
+    "width": 720,
+    "height": 1280,
+    "fps": 24,
+    "crf": 18,
+    "preset": "fast",
+    "scale_mode": "fill"
+  },
+  "audio": {
+    "loudnorm": "loudnorm=I=-14:TP=-1.5:LRA=11",
+    "sample_rate": 48000,
+    "channels": 2,
+    "bitrate": "192k"
+  },
+  "speech": {
+    "speech_safe": "auto_expand",
+    "threshold_dbfs": -38,
+    "pre_handle": 0.2,
+    "post_handle": 0.35,
+    "splice_crossfade": 0.02
+  },
+  "subtitle_style": {
+    "time_base": "trim_local",
+    "y_ratio": 0.84,
+    "font_size": 27,
+    "min_font_size": 16,
+    "max_text_margin": 84,
+    "max_lines": 2
+  },
+  "outputs": {
+    "per_clip_location": "both",
+    "base_mode": "timeline",
+    "cta_burn_subtitles": true,
+    "cta_loudnorm": true,
+    "publish_caption_fa": "قسمت دوم (پایان): پنج سال بعد؛ تماسِ پدر با دخترِ مدیرعامل!"
+  },
+  "character_references": [
+    "${BASE}\\character_sheets\\FLOW_SHEET_SERIES14_CHARACTERS.jpg"
+  ],
+  "content_edits": [],
+  "story_plan": {
+    "summary": "سندی با وجود گرفتن بالاترین نمره دانشگاه از خانه بیرون می‌رود تا خودش خرج تحصیلش را بدهد، و پنج سال بعد وقتی مدیرعامل بزرگ‌ترین شرکت شهر می‌شود، پدرش به او زنگ می‌زند!",
+    "ending": "Five years later, CEO Sandy answers her bankrupt father phone call from her skyscraper penthouse office.",
+    "required_beats": [
+      "beat_1",
+      "beat_2",
+      "beat_3",
+      "beat_4",
+      "beat_5",
+      "beat_6"
+    ]
+  }
+}

@@ -1,0 +1,254 @@
+{
+  "_comment": "Series 12 (@emotionalgroceries) Part 1 - 100% Google Flow native Farsi voice with full اعراب‌گذاری.",
+  "schema_version": 1,
+  "speech_review_note": "Full Persian vowel diacritics (اعراب‌گذاری کامل) in Google Flow prompt for 100% accurate native pronunciation.",
+  "episode_id": "Part1_HeavyChildhood",
+  "title_fa": "قسمت اول: جلیقه‌یِ آهنیِ بیست کیلویی برایِ بچه‌یِ سه ساله!",
+  "title_en": "Weighted Vest Sponge Part 1 - 20KG Vest at Age 3",
+  "source_video": "${SRC}\\01_DfFSazoOhDI_emotionalgroceries.mp4",
+  "source_start_offset": 0,
+  "story_summary_fa": "بهرام، پدر سخت‌گیر اسفنجی، از سه سالگی یک جلیقه و وزنه‌های سنگین بیست کیلویی به تن پسرش سهراب می‌بندد و اجازه نمی‌دهد تا هجده سالگی آن‌ها را دربیاورد!",
+  "fallback_to_source_on_visual_fail": false,
+  "tight_speech_trim": true,
+  "variables": {
+    "BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series12-weighted-vest-sponge-farsi",
+    "S2_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi",
+    "CHEF_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\ugly-face-chef-farsi",
+    "SRC": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\emotionalgroceries"
+  },
+  "clips_dir": "${BASE}\\part1\\flow_clips",
+  "out_dir": "${BASE}\\05_final_masters\\part1",
+  "font_path": "${CHEF_BASE}\\03_farsi_audio_tts\\Vazirmatn-Bold.ttf",
+  "cta_video": "${S2_BASE}\\part1\\flow_clips\\cta_kelidbox_s2.mp4",
+  "cta_speaker": "SPONGE_SON",
+  "cta_subtitles": [
+    {
+      "start": 0.15,
+      "end": 3.55,
+      "text": "برای دیدن قسمت بعدی این داستان همین الان پیج رو فالو کن!"
+    },
+    {
+      "start": 3.65,
+      "end": 7.6,
+      "text": "راستی کل این انیمیشن با اکانت‌های هوش مصنوعی سایت کلیدباکس ساخته شده!"
+    }
+  ],
+  "speakers": {
+    "DAD_SPONGE": [
+      170,
+      225,
+      255
+    ],
+    "MOM_SQUIRREL": [
+      255,
+      195,
+      140
+    ],
+    "SPONGE_SON": [
+      255,
+      240,
+      95
+    ],
+    "BADGE": [
+      255,
+      215,
+      70
+    ]
+  },
+  "clips": [
+    {
+      "id": "clip_03",
+      "file": "clip_03.mp4",
+      "source_span": [
+        0,
+        10
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "In the nursery, MOM_SQUIRREL points her finger angrily at DAD_SPONGE, demanding he remove the heavy vest from the toddler.",
+      "overlays": [
+        {
+          "speaker": "BADGE",
+          "text": "قسمت اول: تمرینِ بی‌رحمانه از سه سالگی!",
+          "start": 0.1,
+          "end": 3.4,
+          "position": "top",
+          "font_size": 21
+        }
+      ],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "MOM_SQUIRREL",
+          "اون جلیقه‌یِ سنگین رو از تنش دربیار! این بچه تازه سه سالشه، الان فقط باید راه بره!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_03.jpg",
+      "expected_speakers": [
+        "MOM_SQUIRREL"
+      ]
+    },
+    {
+      "id": "clip_02",
+      "file": "clip_02.mp4",
+      "source_span": [
+        10,
+        20.5
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "In the nursery, DAD_SPONGE grins confidently holding the heavy black weighted vest over toddler SPONGE_SON while MOM_SQUIRREL watches anxiously.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "DAD_SPONGE",
+          "نگران نباش خانوم، بذار کارم رو بکنم! پسرم وقتی بزرگ بشه خودش ازم تشکر می‌کنه!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_02.jpg",
+      "expected_speakers": [
+        "DAD_SPONGE"
+      ]
+    },
+    {
+      "id": "clip_04",
+      "file": "clip_04.mp4",
+      "source_span": [
+        20.5,
+        27
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "In the nursery, muscular DAD_SPONGE glares sternly with his chest puffed out in his white tank top.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "DAD_SPONGE",
+          "حرف نباشه خانوم! من خودم می‌دونم چطور یک قهرمانِ واقعی تربیت کنم، دخالت نکن!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_04.jpg",
+      "expected_speakers": [
+        "DAD_SPONGE"
+      ]
+    },
+    {
+      "id": "clip_05",
+      "file": "clip_05.mp4",
+      "source_span": [
+        27,
+        34
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "In the sunny living room, 10-year-old SPONGE_SON wearing a heavy black weighted vest and ankle/wrist weight cuffs collapses on the rug trying to do a push-up while DAD_SPONGE points down at him angrily.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "DAD_SPONGE",
+          "این چه وضعشه سهراب؟! ده سالت شده و هنوز نمی‌تونی با این وزنه‌ها حتی یک دونه شنا بری؟!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_05.jpg",
+      "expected_speakers": [
+        "DAD_SPONGE"
+      ]
+    },
+    {
+      "id": "clip_06",
+      "file": "clip_06.mp4",
+      "source_span": [
+        34,
+        40
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "In the living room, DAD_SPONGE bends down fastening heavy black wrist and ankle weights onto sad 10-year-old SPONGE_SON.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "DAD_SPONGE",
+          "به خاطرِ همین تنبلی، تا هجده سالگی حق نداری این جلیقه و وزنه‌ها رو از تنت دربیاری!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_06.jpg",
+      "expected_speakers": [
+        "DAD_SPONGE"
+      ]
+    }
+  ],
+  "voices": {
+    "DAD_SPONGE": {
+      "name_fa": "DAD_SPONGE",
+      "color": [
+        170,
+        225,
+        255
+      ],
+      "source": "google_flow_native"
+    },
+    "MOM_SQUIRREL": {
+      "name_fa": "MOM_SQUIRREL",
+      "color": [
+        255,
+        195,
+        140
+      ],
+      "source": "google_flow_native"
+    },
+    "SPONGE_SON": {
+      "name_fa": "SPONGE_SON",
+      "color": [
+        255,
+        240,
+        95
+      ],
+      "source": "google_flow_native"
+    }
+  },
+  "video": {
+    "width": 720,
+    "height": 1280,
+    "fps": 24,
+    "crf": 18,
+    "preset": "fast",
+    "scale_mode": "fill"
+  },
+  "audio": {
+    "loudnorm": "loudnorm=I=-14:TP=-1.5:LRA=11",
+    "sample_rate": 48000,
+    "channels": 2,
+    "bitrate": "192k"
+  },
+  "speech": {
+    "speech_safe": "auto_expand",
+    "threshold_dbfs": -38,
+    "pre_handle": 0.2,
+    "post_handle": 0.35,
+    "splice_crossfade": 0.02
+  },
+  "subtitle_style": {
+    "time_base": "trim_local",
+    "y_ratio": 0.84,
+    "font_size": 27,
+    "min_font_size": 16,
+    "max_text_margin": 84,
+    "max_lines": 2
+  },
+  "outputs": {
+    "per_clip_location": "both",
+    "base_mode": "timeline",
+    "cta_burn_subtitles": true,
+    "cta_loudnorm": true,
+    "publish_caption_fa": "قسمت اول: جلیقه‌یِ آهنیِ بیست کیلویی برایِ بچه‌یِ سه ساله!"
+  }
+}

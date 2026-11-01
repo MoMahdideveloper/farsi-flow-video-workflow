@@ -1,0 +1,292 @@
+{
+  "_comment": "Series 6 (@emotionalgroceries) Part 1 - 100% Google Flow native Farsi voice with full اعراب‌گذاری.",
+  "schema_version": 1,
+  "speech_review_note": "Full Persian vowel diacritics (اعراب‌گذاری کامل) in Google Flow prompt for 100% accurate native pronunciation.",
+  "episode_id": "Part1_HospitalSecret",
+  "title_fa": "قسمت اول: رازِ بیمارستان و دوقلوهایِ اسفنجی!",
+  "title_en": "Emotional Groceries Part 1 - The Hospital Secret & Sponge Twins",
+  "source_video": "${SRC}\\04_Dd3_e7bO_Vt_emotionalgroceries.mp4",
+  "source_start_offset": 0.0,
+  "story_summary_fa": "بابک اسفنجی فقیر عدد یک میلیون دلار رو با کرم‌پودر روی پیشونیش می‌کشه تا همسر ثروتمندش سندی نفهمه فقیره! توی بیمارستان، دکتر فلفل دلمه‌ای اعلام می‌کنه دوقلو دارن: یکی با پانصد هزار دلار و یکی فقط با پنج دلار! بابک طمع‌کار در حالی که سندی بی‌هوشه هر دو نوزاد رو می‌بره و قلِ پنج دلاری رو توی زیرزمین تاریک زندانی می‌کنه!",
+  "fallback_to_source_on_visual_fail": false,
+  "tight_speech_trim": true,
+  "variables": {
+    "BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series6-emotional-groceries-farsi",
+    "S2_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi",
+    "CHEF_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\ugly-face-chef-farsi",
+    "SRC": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\selected_6_stories"
+  },
+  "clips_dir": "${BASE}\\part1\\flow_clips",
+  "out_dir": "${BASE}\\05_final_masters\\part1",
+  "font_path": "${CHEF_BASE}\\03_farsi_audio_tts\\Vazirmatn-Bold.ttf",
+  "cta_video": "${S2_BASE}\\part1\\flow_clips\\cta_kelidbox_s2.mp4",
+  "cta_speaker": "MOM",
+  "cta_subtitles": [
+    {
+      "start": 0.25,
+      "end": 3.35,
+      "text": "برای دیدن قسمت بعدی این داستان همین الان پیج رو فالو کن!"
+    },
+    {
+      "start": 3.5,
+      "end": 7.85,
+      "text": "راستی کل این انیمیشن با اکانت‌های هوش مصنوعی سایت کلیدباکس ساخته شده!"
+    }
+  ],
+  "video": {
+    "width": 720,
+    "height": 1280,
+    "fps": 24,
+    "crf": 18,
+    "preset": "fast",
+    "scale_mode": "fill"
+  },
+  "audio": {
+    "loudnorm": "loudnorm=I=-14:TP=-1.5:LRA=11",
+    "sample_rate": 48000,
+    "channels": 2,
+    "bitrate": "192k"
+  },
+  "speech": {
+    "speech_safe": "auto_expand",
+    "threshold_dbfs": -38.0,
+    "pre_handle": 0.2,
+    "post_handle": 0.35,
+    "splice_crossfade": 0.02
+  },
+  "subtitle_style": {
+    "time_base": "trim_local",
+    "y_ratio": 0.84,
+    "font_size": 27,
+    "min_font_size": 16,
+    "max_text_margin": 84,
+    "max_lines": 2
+  },
+  "badge": {
+    "text": "قسمت اول: رازِ دوقلوهایِ اسفنجی در بیمارستان!",
+    "start": 0.0,
+    "end": 3.5,
+    "y_center": 130,
+    "font_size": 28,
+    "color": [
+      255,
+      225,
+      110
+    ],
+    "clip_index": 1
+  },
+  "outputs": {
+    "per_clip_location": "both",
+    "base_mode": "timeline",
+    "cta_burn_subtitles": true,
+    "cta_loudnorm": true,
+    "publish_caption_fa": "پدر طمع‌کار عدد یک میلیون دلار رو با گریم روی پیشونیش کشید و نوزاد ۵ دلاریش رو توی زیرزمین زندانی کرد! 😱🧽💰\nقسمت اول داستان وایرال دوقلوهای اسفنجی (@emotionalgroceries) با صدای فارسی و اعراب‌گذاری دقیق!\nبرای دیدن قسمت دوم (۸ سال بعد در زیرزمین) حتماً پیج رو فالو کن 👇🔥"
+  },
+  "voices": {
+    "DAD": {
+      "name_fa": "بابک اسفنجی (پدر طمع‌کار)",
+      "color": [
+        255,
+        215,
+        110
+      ],
+      "source": "google_flow_native"
+    },
+    "DOC": {
+      "name_fa": "دکتر فلفل دلمه‌ای",
+      "color": [
+        255,
+        140,
+        140
+      ],
+      "source": "google_flow_native"
+    },
+    "MOM": {
+      "name_fa": "سندی سنجاب (مادر ثروتمند)",
+      "color": [
+        255,
+        165,
+        215
+      ],
+      "source": "google_flow_native"
+    },
+    "RICH_TWIN": {
+      "name_fa": "طلا (قلِ پانصد هزار دلاری)",
+      "color": [
+        255,
+        235,
+        130
+      ],
+      "source": "google_flow_native"
+    },
+    "POOR_TWIN": {
+      "name_fa": "کوچولو (قلِ پنج دلاری)",
+      "color": [
+        140,
+        235,
+        255
+      ],
+      "source": "google_flow_native"
+    }
+  },
+  "clips": [
+    {
+      "id": "clip_01",
+      "file": "clip_01.mp4",
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_01.jpg",
+      "expected_speakers": [
+        "DAD"
+      ],
+      "story_beat": "Yellow sponge father Babak sits in his car painting 1,000,000 on his forehead with makeup in the rearview mirror so nobody knows he is poor",
+      "source_span": [
+        0.0,
+        9.3
+      ],
+      "trim_in": 0.0,
+      "trim_out": 9.85,
+      "speech_fa_vocalized": "اِمْرُوز زَنَم زایْمان می‌کُنه! با کِرِم‌پُودْر رُو پیشُونیم می‌نِویسَم یِک میلْیُون، تا نَفَهْمَن فَقیرَم!",
+      "subtitles": [
+        [
+          0.1,
+          9.5,
+          "DAD",
+          "امروز زنم زایمان می‌کنه! با کرم‌پودر رو پیشونیم می‌نویسم یک میلیون، تا نفهمن فقیرم!"
+        ]
+      ]
+    },
+    {
+      "id": "clip_02",
+      "file": "clip_02.mp4",
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_02.jpg",
+      "expected_speakers": [
+        "DAD",
+        "DOC"
+      ],
+      "story_beat": "Yellow sponge father Babak rushes up to the hospital reception desk where the Red Bell Pepper Doctor points urgently down the hallway toward room 407",
+      "source_span": [
+        9.3,
+        18.8
+      ],
+      "trim_in": 0.0,
+      "trim_out": 9.85,
+      "speech_fa_vocalized": "خانُمَم تُویِ کُدُوم اُتاق داره زایْمان می‌کُنه دُکْتُر؟ بُدُو اُتاقِ چَهارْصَد و هَفْت، بَچّه‌ها مُنْتَظِر نِمی‌مُونَن!",
+      "subtitles": [
+        [
+          0.1,
+          4.2,
+          "DAD",
+          "خانمم توی کدوم اتاق داره زایمان می‌کنه دکتر؟"
+        ],
+        [
+          4.3,
+          9.5,
+          "DOC",
+          "بدو اتاق چهارصد و هفت، بچه‌ها منتظر نمی‌مونن!"
+        ]
+      ]
+    },
+    {
+      "id": "clip_03",
+      "file": "clip_03.mp4",
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_03.jpg",
+      "expected_speakers": [
+        "DOC"
+      ],
+      "story_beat": "Inside hospital room 407, the Red Bell Pepper Doctor holds two swaddled sponge twin babies: one dark charcoal sponge baby with 5 on his forehead and one bright yellow sponge baby with 500,000 on his forehead",
+      "source_span": [
+        18.8,
+        25.5
+      ],
+      "trim_in": 0.0,
+      "trim_out": 9.85,
+      "speech_fa_vocalized": "تَبْریک می‌گَم آقا، دُوقُلُو دارید! قُلِ سِیاه فَقَط پَنْج دُلاریه، اَمّا قُلِ زَرْد پانْصَد هِزار دُلاریه!",
+      "subtitles": [
+        [
+          0.1,
+          9.5,
+          "DOC",
+          "تبریک می‌گم آقا، دوقلو دارید! قل سیاه فقط پنج دلاریه، اما قل زرد پانصد هزار دلاریه!"
+        ]
+      ]
+    },
+    {
+      "id": "clip_04",
+      "file": "clip_04.mp4",
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_04.jpg",
+      "expected_speakers": [
+        "DAD",
+        "DOC"
+      ],
+      "story_beat": "Yellow sponge father Babak grabs both twin baby cradles in a hurry while Squirrel Mom Sandy lies unconscious on the hospital bed behind them and the Red Bell Pepper Doctor raises a hand in alarm",
+      "source_span": [
+        25.5,
+        32.0
+      ],
+      "trim_in": 0.0,
+      "trim_out": 9.85,
+      "speech_fa_vocalized": "هَمین اَلان هَر دُو تا بَچّه رُو می‌بَرَم! صَبْر کُنید آقا، هَمْسَرِتُون هَنُوز بِه هُوش نَیُومَده!",
+      "subtitles": [
+        [
+          0.1,
+          3.8,
+          "DAD",
+          "همین الان هر دو تا بچه رو می‌برم!"
+        ],
+        [
+          3.9,
+          9.4,
+          "DOC",
+          "صبر کنید آقا، همسرتون هنوز به هوش نیومده!"
+        ]
+      ]
+    },
+    {
+      "id": "clip_05",
+      "file": "clip_05.mp4",
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_05.jpg",
+      "expected_speakers": [
+        "DAD"
+      ],
+      "story_beat": "Yellow sponge father Babak sneaks down the dark stone stairs toward the mansion basement at night carrying the dark charcoal sponge baby with 5 on his forehead",
+      "source_span": [
+        32.0,
+        39.6
+      ],
+      "trim_in": 0.0,
+      "trim_out": 9.85,
+      "speech_fa_vocalized": "چِه بِهْتَر کِه سَنْدی بی‌هُوشه! این بَچّه پَنْج دُلاری رُو قایِم می‌کُنَم تا آبِرُوم نَره!",
+      "subtitles": [
+        [
+          0.1,
+          9.5,
+          "DAD",
+          "چه بهتر که سندی بی‌هوشه! این بچه پنج دلاری رو قایم می‌کنم تا آبروم نره!"
+        ]
+      ]
+    },
+    {
+      "id": "clip_06",
+      "file": "clip_06.mp4",
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_06.jpg",
+      "expected_speakers": [
+        "DAD"
+      ],
+      "story_beat": "Inside the dark dusty basement, yellow sponge father Babak places the crying dark charcoal sponge baby with 5 on his forehead inside a wooden crate under a dim bulb and points a warning finger",
+      "source_span": [
+        39.6,
+        46.5
+      ],
+      "trim_in": 0.0,
+      "trim_out": 9.85,
+      "speech_fa_vocalized": "هَمین پایین تُو تاریکی می‌مُونی! اَگه مادَرِت اُون پَنْج دُلارِ پیشُونیت رُو بِبینه، کارِمُون تَمُومه!",
+      "subtitles": [
+        [
+          0.1,
+          9.5,
+          "DAD",
+          "همین پایین تو تاریکی می‌مونی! اگه مادرت اون پنج دلار پیشونیت رو ببینه، کارمون تمومه!"
+        ]
+      ]
+    }
+  ]
+}

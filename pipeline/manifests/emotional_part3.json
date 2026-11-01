@@ -1,0 +1,285 @@
+{
+  "_comment": "Series 6 (@emotionalgroceries) Part 3 - 100% Google Flow native Farsi voice with full اعراب‌گذاری.",
+  "schema_version": 1,
+  "speech_review_note": "Full Persian vowel diacritics (اعراب‌گذاری کامل) in Google Flow prompt for 100% accurate native pronunciation.",
+  "episode_id": "Part3_MotherRevenge",
+  "title_fa": "قسمت سوم (فینال): فیلمِ دوربینِ مخفی و انتقامِ مادر!",
+  "title_en": "Emotional Groceries Part 3 - Security Footage & Mother's Revenge",
+  "source_video": "${SRC}\\04_Dd3_e7bO_Vt_emotionalgroceries.mp4",
+  "source_start_offset": 92.0,
+  "story_summary_fa": "دکتر فلفل دلمه‌ای بعد از هشت سال فیلم دوربین مداربسته بیمارستان رو پیدا می‌کنه و به سندی زنگ می‌زنه! سندی با عصبانیت درِ زیرزمین رو می‌شکنه، پسر پنج دلاریش رو در آغوش می‌گیره، پدر دروغگو رو بیرون می‌کنه و تمام ثروت عمارت رو به پسر مهربونش می‌ده!",
+  "fallback_to_source_on_visual_fail": false,
+  "tight_speech_trim": true,
+  "variables": {
+    "BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series6-emotional-groceries-farsi",
+    "S2_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi",
+    "CHEF_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\ugly-face-chef-farsi",
+    "SRC": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\selected_6_stories"
+  },
+  "clips_dir": "${BASE}\\part3\\flow_clips",
+  "out_dir": "${BASE}\\05_final_masters\\part3",
+  "font_path": "${CHEF_BASE}\\03_farsi_audio_tts\\Vazirmatn-Bold.ttf",
+  "cta_video": "${S2_BASE}\\part1\\flow_clips\\cta_kelidbox_s2.mp4",
+  "cta_speaker": "MOM",
+  "cta_subtitles": [
+    {
+      "start": 0.25,
+      "end": 3.35,
+      "text": "برای دیدن قسمت بعدی این داستان همین الان پیج رو فالو کن!"
+    },
+    {
+      "start": 3.5,
+      "end": 7.85,
+      "text": "راستی کل این انیمیشن با اکانت‌های هوش مصنوعی سایت کلیدباکس ساخته شده!"
+    }
+  ],
+  "video": {
+    "width": 720,
+    "height": 1280,
+    "fps": 24,
+    "crf": 18,
+    "preset": "fast",
+    "scale_mode": "fill"
+  },
+  "audio": {
+    "loudnorm": "loudnorm=I=-14:TP=-1.5:LRA=11",
+    "sample_rate": 48000,
+    "channels": 2,
+    "bitrate": "192k"
+  },
+  "speech": {
+    "speech_safe": "auto_expand",
+    "threshold_dbfs": -38.0,
+    "pre_handle": 0.2,
+    "post_handle": 0.35,
+    "splice_crossfade": 0.02
+  },
+  "subtitle_style": {
+    "time_base": "trim_local",
+    "y_ratio": 0.84,
+    "font_size": 27,
+    "min_font_size": 16,
+    "max_text_margin": 84,
+    "max_lines": 2
+  },
+  "badge": {
+    "text": "قسمت سوم (پایان): لو رفتنِ رازِ زیرزمین!",
+    "start": 0.0,
+    "end": 3.5,
+    "y_center": 130,
+    "font_size": 28,
+    "color": [
+      255,
+      165,
+      215
+    ],
+    "clip_index": 1
+  },
+  "outputs": {
+    "per_clip_location": "both",
+    "base_mode": "timeline",
+    "cta_burn_subtitles": true,
+    "cta_loudnorm": true,
+    "publish_caption_fa": "بعد از ۸ سال، فیلم دوربین مداربسته بیمارستان راز پدر طمع‌کار رو لو داد! 😱📹🔥\nقسمت سوم و پایانی داستان دوقلوهای اسفنجی (@emotionalgroceries)!\nکل این انیمیشن با اکانت‌های هوش مصنوعی سایت «کلیدباکس» ساخته شده 🔑✨"
+  },
+  "voices": {
+    "DAD": {
+      "name_fa": "بابک اسفنجی (پدر طمع‌کار)",
+      "color": [
+        255,
+        215,
+        110
+      ],
+      "source": "google_flow_native"
+    },
+    "DOC": {
+      "name_fa": "دکتر فلفل دلمه‌ای",
+      "color": [
+        255,
+        140,
+        140
+      ],
+      "source": "google_flow_native"
+    },
+    "MOM": {
+      "name_fa": "سندی سنجاب (مادر ثروتمند)",
+      "color": [
+        255,
+        165,
+        215
+      ],
+      "source": "google_flow_native"
+    },
+    "RICH_TWIN": {
+      "name_fa": "طلا (قلِ پانصد هزار دلاری)",
+      "color": [
+        255,
+        235,
+        130
+      ],
+      "source": "google_flow_native"
+    },
+    "POOR_TWIN": {
+      "name_fa": "کوچولو (قلِ پنج دلاری)",
+      "color": [
+        140,
+        235,
+        255
+      ],
+      "source": "google_flow_native"
+    }
+  },
+  "clips": [
+    {
+      "id": "clip_01",
+      "file": "clip_01.mp4",
+      "keyframe": "${BASE}\\part3\\keyframes\\KF_01.jpg",
+      "expected_speakers": [
+        "DOC"
+      ],
+      "story_beat": "In the hospital security room, Red Bell Pepper Doctor adjusts his glasses in shock as he watches an 8-year-old CCTV monitor showing Yellow Sponge Dad Babak stealing both twin babies",
+      "source_span": [
+        92.0,
+        98.3
+      ],
+      "trim_in": 0.0,
+      "trim_out": 9.85,
+      "speech_fa_vocalized": "این فیلْمِ دُورْبینِ مَدارْبَسْته رُو بِبین! بابَک هَر دُو تا نُوزاد رُو دُزْدیده و سَنْدی خَبَر نَداره!",
+      "subtitles": [
+        [
+          0.1,
+          9.5,
+          "DOC",
+          "این فیلم دوربین مداربسته رو ببین! بابک هر دو تا نوزاد رو دزدیده و سندی خبر نداره!"
+        ]
+      ]
+    },
+    {
+      "id": "clip_02",
+      "file": "clip_02.mp4",
+      "keyframe": "${BASE}\\part3\\keyframes\\KF_02.jpg",
+      "expected_speakers": [
+        "DOC"
+      ],
+      "story_beat": "Red Bell Pepper Doctor holds his smartphone urgently to his ear in his hospital office calling Squirrel Mom Sandy with the security footage glowing on his computer screen",
+      "source_span": [
+        98.3,
+        104.0
+      ],
+      "trim_in": 0.0,
+      "trim_out": 9.85,
+      "speech_fa_vocalized": "اَلُو خانُمِ سَنْدی! شُما هَشْت سالِ پیش دُوقُلُو زایْمان کَرْدید، شُوهَرِتُون قُلِ دُوُّم رُو قایِم کَرْده!",
+      "subtitles": [
+        [
+          0.1,
+          9.5,
+          "DOC",
+          "الو خانم سندی! شما هشت سال پیش دوقلو زایمان کردید، شوهرتون قل دوم رو قایم کرده!"
+        ]
+      ]
+    },
+    {
+      "id": "clip_03",
+      "file": "clip_03.mp4",
+      "keyframe": "${BASE}\\part3\\keyframes\\KF_03.jpg",
+      "expected_speakers": [
+        "MOM"
+      ],
+      "story_beat": "Inside the mansion hallway, Squirrel Mom Sandy clutches her phone with fiery tears in her eyes and storms furiously toward the locked wooden basement door",
+      "source_span": [
+        104.0,
+        109.5
+      ],
+      "trim_in": 0.0,
+      "trim_out": 9.85,
+      "speech_fa_vocalized": "دُوقُلُو داشْتَم؟! یَعْنی هَشْت سالِ تَمام بِه مَن دُرُوغ گُفْته؟! اِمْرُوز حِسابِش رُو کَفِ دَسْتِش می‌ذارَم!",
+      "subtitles": [
+        [
+          0.1,
+          9.5,
+          "MOM",
+          "دوقلو داشتم؟! یعنی هشت سال تمام به من دروغ گفته؟! امروز حسابش رو کف دستش می‌ذارم!"
+        ]
+      ]
+    },
+    {
+      "id": "clip_04",
+      "file": "clip_04.mp4",
+      "keyframe": "${BASE}\\part3\\keyframes\\KF_04.jpg",
+      "expected_speakers": [
+        "MOM",
+        "POOR_TWIN"
+      ],
+      "story_beat": "Squirrel Mom Sandy throws open the dark basement door and gasps in shock as she sees trembling little Charcoal Sponge boy Kouchoulou with 5 on his forehead in a tattered grey shirt sitting on the floor",
+      "source_span": [
+        109.5,
+        113.5
+      ],
+      "trim_in": 0.0,
+      "trim_out": 9.85,
+      "speech_fa_vocalized": "خُدایِ مَن، تُو کی هَسْتی تُو زیرْزَمینِ مَن؟! بِبَخْشید خانُم، بابام گُفْته اِجازه نَدارَم بِیام بالا!",
+      "subtitles": [
+        [
+          0.1,
+          4.3,
+          "MOM",
+          "خدای من، تو کی هستی تو زیرزمین من؟!"
+        ],
+        [
+          4.4,
+          9.5,
+          "POOR_TWIN",
+          "ببخشید خانم، بابام گفته اجازه ندارم بیام بالا!"
+        ]
+      ]
+    },
+    {
+      "id": "clip_05",
+      "file": "clip_05.mp4",
+      "keyframe": "${BASE}\\part3\\keyframes\\KF_05.jpg",
+      "expected_speakers": [
+        "MOM"
+      ],
+      "story_beat": "Squirrel Mom Sandy drops to her knees on the basement floor wrapping poor little Charcoal Sponge boy Kouchoulou with 5 on his forehead in a warm tearful embrace as golden light streams down the open stairs",
+      "source_span": [
+        113.5,
+        116.68
+      ],
+      "trim_in": 0.0,
+      "trim_out": 9.85,
+      "speech_fa_vocalized": "گِرْیه نَکُن جِگَرْگُوشِه مَن! مَن مادَرِتَم عَزیزَم، دیگه هیچ‌وَقْت نِمی‌ذارَم تُو تاریکی تَنْها بِمُونی!",
+      "subtitles": [
+        [
+          0.1,
+          9.5,
+          "MOM",
+          "گریه نکن جگرگوشه من! من مادرتم عزیزم، دیگه هیچ‌وقت نمی‌ذارم تو تاریکی تنها بمونی!"
+        ]
+      ]
+    },
+    {
+      "id": "clip_06",
+      "file": "clip_06.mp4",
+      "keyframe": "${BASE}\\part3\\keyframes\\KF_06.jpg",
+      "expected_speakers": [
+        "MOM"
+      ],
+      "story_beat": "Outside the sunny mansion gates, Squirrel Mom Sandy stands proudly holding Charcoal Sponge boy Kouchoulou in a royal blue jacket with 5,000,000 shining on his forehead while disgraced Yellow Sponge Dad Babak with 0 on his forehead is kicked out with his suitcase",
+      "source_span": [
+        116.0,
+        116.68
+      ],
+      "trim_in": 0.0,
+      "trim_out": 9.85,
+      "speech_fa_vocalized": "پِدَرِ دُرُوغْگُوت رُو بیرُون کَرْدَم پِسَرَم! اَز اِمْرُوز تَمامِ این عِمارَت و ثِرْوَت مالِ تُوئه!",
+      "subtitles": [
+        [
+          0.1,
+          9.5,
+          "MOM",
+          "پدر دروغگوت رو بیرون کردم پسرم! از امروز تمام این عمارت و ثروت مال توئه!"
+        ]
+      ]
+    }
+  ]
+}

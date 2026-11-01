@@ -1,0 +1,262 @@
+{
+  "_comment": "Story 5 (DeovrS3sm5f - Tung Tung Sahur & The Avocado Guacamole Curse - 100% Google Flow native Farsi voice).",
+  "schema_version": 1,
+  "speech_review_note": "Curated trim windows with auto_expand speech-safe protection.",
+  "episode_id": "Story5_AvocadoCurse",
+  "title_fa": "داستان پنجم: راز سس آووکادو و نفرین رستوران مکزیکی!",
+  "title_en": "Tung Tung Sahur and the Avocado Business",
+  "source_video": "${SRC}\\05_DeovrS3sm5f_robstrai.mp4",
+  "story_summary_fa": "مدیر گلابی و تونگ‌تونگ ساهور توی رستوران مکزیکی سس گواکاموله ویژه‌ای می‌فروشن که مشتری‌ها رو عاشق طعمش می‌کنه؛ اما فردا صبح مشتری‌ها می‌بینن دارن تبدیل به آووکادو می‌شن! وقتی از رستوران شکایت می‌کنن، توی بیمارستان دکتر چوبی شرط عجیبی برای درمانشون می‌ذاره!",
+  "fallback_to_source_on_visual_fail": false,
+  "tight_speech_trim": true,
+  "variables": {
+    "BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series4-viral-6-stories-farsi",
+    "S2_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi",
+    "CHEF_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\ugly-face-chef-farsi",
+    "SRC": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\selected_6_stories"
+  },
+  "clips_dir": "${BASE}\\story5\\flow_clips",
+  "out_dir": "${BASE}\\05_final_masters\\story5",
+  "font_path": "${CHEF_BASE}\\03_farsi_audio_tts\\Vazirmatn-Bold.ttf",
+  "cta_video": "${S2_BASE}\\part1\\flow_clips\\cta_kelidbox_s2.mp4",
+  "cta_speaker": "PEAR",
+  "cta_subtitles": [
+    {
+      "start": 0.25,
+      "end": 3.35,
+      "text": "برای دیدن داستان‌های وایرال بعدی همین الان پیج رو فالو کن!"
+    },
+    {
+      "start": 3.5,
+      "end": 7.85,
+      "text": "راستی کل این انیمیشن با اکانت‌های هوش مصنوعی سایت کلیدباکس ساخته شده!"
+    }
+  ],
+  "video": {
+    "width": 720,
+    "height": 1280,
+    "fps": 24,
+    "crf": 18,
+    "preset": "fast",
+    "scale_mode": "fill"
+  },
+  "audio": {
+    "loudnorm": "loudnorm=I=-14:TP=-1.5:LRA=11",
+    "sample_rate": 48000,
+    "channels": 2,
+    "bitrate": "192k"
+  },
+  "speech": {
+    "speech_safe": "auto_expand",
+    "threshold_dbfs": -38.0,
+    "pre_handle": 0.2,
+    "post_handle": 0.35,
+    "splice_crossfade": 0.02
+  },
+  "subtitle_style": {
+    "time_base": "trim_local",
+    "y_ratio": 0.84,
+    "font_size": 27,
+    "min_font_size": 16,
+    "max_text_margin": 84,
+    "max_lines": 2
+  },
+  "badge": {
+    "text": "داستان پنجم: راز سس آووکادو و نفرین رستوران مکزیکی!",
+    "start": 0.0,
+    "end": 3.5,
+    "y_center": 130,
+    "font_size": 28,
+    "color": [
+      255,
+      225,
+      110
+    ],
+    "clip_index": 1
+  },
+  "outputs": {
+    "per_clip_location": "both",
+    "base_mode": "timeline",
+    "cta_burn_subtitles": true,
+    "cta_loudnorm": true,
+    "publish_caption_fa": "بعد از خوردن سس آووکادوی این رستوران، صبح روز بعد تبدیل به آووکادو شدن! 🥑😱🔥\nوقتی مشتری‌ها سس گواکاموله ویژه مدیر گلابی و تونگ‌تونگ ساهور رو خوردن، فکرش رو هم نمی‌کردن فردا صبح کل بدنشون سبز بشه... اما سورپرایز اصلی وقتی بود که دکتر چوبی توی بیمارستان بالای سرشون اومد! 🪵🏥"
+  },
+  "voices": {
+    "PEAR": {
+      "name_fa": "مدیر گلابی",
+      "color": [
+        155,
+        245,
+        165
+      ],
+      "source": "google_flow_native"
+    },
+    "CUST": {
+      "name_fa": "مشتری آووکادویی",
+      "color": [
+        255,
+        215,
+        115
+      ],
+      "source": "google_flow_native"
+    },
+    "COP": {
+      "name_fa": "افسر خیار",
+      "color": [
+        140,
+        220,
+        255
+      ],
+      "source": "google_flow_native"
+    },
+    "SAHUR": {
+      "name_fa": "دکتر چوبی (تونگ‌تونگ ساهور)",
+      "color": [
+        255,
+        175,
+        130
+      ],
+      "source": "google_flow_native"
+    }
+  },
+  "clips": [
+    {
+      "id": "clip_01",
+      "file": "clip_01.mp4",
+      "keyframe": "${BASE}\\story5\\keyframes\\KF_01.jpg",
+      "expected_speakers": [
+        "PEAR"
+      ],
+      "story_beat": "Pear manager packs tubs of glowing green guacamole in the kitchen with wooden log Tung Tung Sahur",
+      "source_span": [
+        0.0,
+        18.0
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.95,
+      "subtitles": [
+        [
+          0.1,
+          7.9,
+          "PEAR",
+          "با این سس آووکادوی مخفی که تونگ‌تونگ ساهور پخته، فروش رستورانمون رکورد شهر رو شکسته!"
+        ]
+      ]
+    },
+    {
+      "id": "clip_02",
+      "file": "clip_02.mp4",
+      "keyframe": "${BASE}\\story5\\keyframes\\KF_02.jpg",
+      "expected_speakers": [
+        "CUST"
+      ],
+      "story_beat": "At the Mexican taco counter, fruit customers happily eat bowls of rich green guacamole and nachos",
+      "source_span": [
+        18.0,
+        34.0
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.95,
+      "subtitles": [
+        [
+          0.1,
+          7.9,
+          "CUST",
+          "دو پرس ناچو با سس گواکاموله دوبل بدید! وای چه طعم تند و بی‌نظیری داره!"
+        ]
+      ]
+    },
+    {
+      "id": "clip_03",
+      "file": "clip_03.mp4",
+      "keyframe": "${BASE}\\story5\\keyframes\\KF_03.jpg",
+      "expected_speakers": [
+        "CUST"
+      ],
+      "story_beat": "Next morning in bed, the customer gasps in horror as their skin and head have mutated into bumpy green avocados",
+      "source_span": [
+        34.0,
+        43.7
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.95,
+      "subtitles": [
+        [
+          0.1,
+          7.9,
+          "CUST",
+          "وای خدایا چه بلایی سرمون اومده؟! داریم تبدیل به آووکادو می‌شیم! تقصیر غذای اون رستورانه!"
+        ]
+      ]
+    },
+    {
+      "id": "clip_04",
+      "file": "clip_04.mp4",
+      "keyframe": "${BASE}\\story5\\keyframes\\KF_04.jpg",
+      "expected_speakers": [
+        "PEAR"
+      ],
+      "story_beat": "Inside the restaurant, Pear manager sweats in panic as the mutated avocado customers and Cucumber Police confront him",
+      "source_span": [
+        43.7,
+        50.6
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.95,
+      "subtitles": [
+        [
+          0.1,
+          7.9,
+          "PEAR",
+          "به خدا تقصیر من نبود! این سس گواکاموله رو تونگ‌تونگ ساهور توی آشپزخونه پخته بود!"
+        ]
+      ]
+    },
+    {
+      "id": "clip_05",
+      "file": "clip_05.mp4",
+      "keyframe": "${BASE}\\story5\\keyframes\\KF_05.jpg",
+      "expected_speakers": [
+        "COP"
+      ],
+      "story_beat": "Cucumber Police officer inspects the empty kitchen back door after Tung Tung Sahur slips away",
+      "source_span": [
+        50.6,
+        57.1
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.95,
+      "subtitles": [
+        [
+          0.1,
+          7.9,
+          "COP",
+          "انگار تونگ‌تونگ ساهور خیلی زرنگ شده و قبل از رسیدن پلیس از درِ پشتی فرار کرده!"
+        ]
+      ]
+    },
+    {
+      "id": "clip_06",
+      "file": "clip_06.mp4",
+      "keyframe": "${BASE}\\story5\\keyframes\\KF_06.jpg",
+      "expected_speakers": [
+        "SAHUR"
+      ],
+      "story_beat": "In the hospital ward, tall wooden log Tung Tung Sahur disguised in a white doctor coat and head mirror speaks to the avocado patients",
+      "source_span": [
+        57.1,
+        67.0
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.95,
+      "subtitles": [
+        [
+          0.1,
+          7.9,
+          "SAHUR",
+          "من پادزهرش رو دارم و درمانتون می‌کنم... فقط به یک شرط: همین الان شکایتتون رو پس بگیرید!"
+        ]
+      ]
+    }
+  ]
+}

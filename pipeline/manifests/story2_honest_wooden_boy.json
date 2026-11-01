@@ -1,0 +1,317 @@
+{
+  "_comment": "Story 2 (DeLbLGHAPc3 - Tung Tung Sahur & The $50,000 Diamond Ring - 8-clip complete story, 100% Google Flow native Farsi voice).",
+  "schema_version": 1,
+  "speech_review_note": "Curated trim windows with auto_expand speech-safe protection and 8-clip complete source coverage.",
+  "episode_id": "Story2_HonestWoodenBoy",
+  "title_fa": "داستان دوم: پسر چوبی فقیر و حلقه الماس پنجاه هزار دلاری!",
+  "title_en": "Tung Tung Sahur & The $50,000 Diamond Ring",
+  "source_video": "${SRC}\\02_DeLbLGHAPc3_creativebrainrotdiy.mp4",
+  "story_summary_fa": "لئو، پسرک چوبی فقیر، توی برف و سرما ماشین آقای ری رو تمیز می‌کنه و صد دلار انعام می‌گیره. وقتی جعبه حلقه الماس ۵۰ هزار دلاری آقای ری توی برف می‌افته و پذیرش بیمارستان می‌گه ۱۰۰ دلار برای عمل مادرش کافی نیست، طلافروش ۲۰ هزار دلار نقد بهش پیشنهاد می‌ده؛ اما لئو به خاطر نصیحت مادرش حلقه رو نمی‌فروشه و تحویل پرستار پذیرش می‌ده، غافل از اینکه پرستار طمع‌کار حلقه رو بالا می‌کشه و توی صورت آقای ری دروغ می‌گه!",
+  "fallback_to_source_on_visual_fail": false,
+  "tight_speech_trim": true,
+  "variables": {
+    "BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series4-viral-6-stories-farsi",
+    "S2_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi",
+    "CHEF_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\ugly-face-chef-farsi",
+    "SRC": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\selected_6_stories"
+  },
+  "clips_dir": "${BASE}\\story2\\flow_clips",
+  "out_dir": "${BASE}\\05_final_masters\\story2",
+  "font_path": "${CHEF_BASE}\\03_farsi_audio_tts\\Vazirmatn-Bold.ttf",
+  "cta_video": "${S2_BASE}\\part1\\flow_clips\\cta_kelidbox_s2.mp4",
+  "cta_speaker": "LEO",
+  "cta_subtitles": [
+    {
+      "start": 0.25,
+      "end": 3.35,
+      "text": "برای دیدن داستان‌های وایرال بعدی همین الان پیج رو فالو کن!"
+    },
+    {
+      "start": 3.5,
+      "end": 7.85,
+      "text": "راستی کل این انیمیشن با اکانت‌های هوش مصنوعی سایت کلیدباکس ساخته شده!"
+    }
+  ],
+  "video": {
+    "width": 720,
+    "height": 1280,
+    "fps": 24,
+    "crf": 18,
+    "preset": "fast",
+    "scale_mode": "fill"
+  },
+  "audio": {
+    "loudnorm": "loudnorm=I=-14:TP=-1.5:LRA=11",
+    "sample_rate": 48000,
+    "channels": 2,
+    "bitrate": "192k"
+  },
+  "speech": {
+    "speech_safe": "auto_expand",
+    "threshold_dbfs": -38.0,
+    "pre_handle": 0.2,
+    "post_handle": 0.35,
+    "splice_crossfade": 0.02
+  },
+  "subtitle_style": {
+    "time_base": "trim_local",
+    "y_ratio": 0.84,
+    "font_size": 27,
+    "min_font_size": 16,
+    "max_text_margin": 84,
+    "max_lines": 2
+  },
+  "badge": {
+    "text": "داستان دوم: پسر چوبی فقیر و حلقه الماس پنجاه هزار دلاری!",
+    "start": 0.0,
+    "end": 3.5,
+    "y_center": 130,
+    "font_size": 28,
+    "color": [
+      255,
+      225,
+      110
+    ],
+    "clip_index": 1
+  },
+  "outputs": {
+    "per_clip_location": "both",
+    "base_mode": "timeline",
+    "cta_burn_subtitles": true,
+    "cta_loudnorm": true,
+    "publish_caption_fa": "پسرک چوبی فقیر و راز حلقه الماس ۵۰ هزار دلاری! 🪵💎😭\nلئو توی برف و سرما برف ماشین آقای ری رو پاک کرد و صد دلار انعام گرفت، اما پذیرش بیمارستان گفت برای عمل مادرش کافی نیست... وقتی لئو جعبه حلقه الماس آقای ری رو توی برف پیدا کرد، طلافروش ۲۰ هزار دلار پول نقد جلوش گذاشت، اما لئو به خاطر نصیحت مادرش دست به مال حرام نزد و حلقه رو به پرستار بیمارستان داد... ولی ببینید پرستار طمع‌کار چطور حلقه رو بالا کشید و توی صورت آقای ری دروغ گفت! 😱🔥"
+  },
+  "voices": {
+    "RAY": {
+      "name_fa": "آقای ری",
+      "color": [
+        160,
+        230,
+        255
+      ],
+      "source": "google_flow_native"
+    },
+    "LEO": {
+      "name_fa": "لئو (پسرک چوبی)",
+      "color": [
+        255,
+        215,
+        115
+      ],
+      "source": "google_flow_native"
+    },
+    "MOM": {
+      "name_fa": "مادر چوبی",
+      "color": [
+        255,
+        170,
+        210
+      ],
+      "source": "google_flow_native"
+    },
+    "BROKER": {
+      "name_fa": "طلافروش",
+      "color": [
+        150,
+        245,
+        185
+      ],
+      "source": "google_flow_native"
+    },
+    "NURSE": {
+      "name_fa": "پرستار طمع‌کار",
+      "color": [
+        180,
+        220,
+        255
+      ],
+      "source": "google_flow_native"
+    }
+  },
+  "clips": [
+    {
+      "id": "clip_01",
+      "file": "clip_01.mp4",
+      "keyframe": "${BASE}\\story2\\keyframes\\KF_01.jpg",
+      "expected_speakers": [
+        "RAY"
+      ],
+      "story_beat": "Wealthy wooden man Mr. Ray praises little wooden boy Leo for brushing snow off his SUV in the hospital parking lot, introduces himself as Ray, and gives him a $100 bill",
+      "source_span": [
+        0.0,
+        22.0
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.95,
+      "subtitles": [
+        [
+          0.1,
+          7.9,
+          "RAY",
+          "آفرین پسر، برف ماشینم رو عالی پاک کردی! اسم من ری هست، این صد دلار مال تو!"
+        ]
+      ]
+    },
+    {
+      "id": "clip_02",
+      "file": "clip_02.mp4",
+      "keyframe": "${BASE}\\story2\\keyframes\\KF_02.jpg",
+      "expected_speakers": [
+        "LEO"
+      ],
+      "story_beat": "As Mr. Ray drives off, little wooden boy Leo spots the purple velvet diamond ring box that fell from Mr. Ray's pocket into the snow",
+      "source_span": [
+        22.0,
+        44.0
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.95,
+      "subtitles": [
+        [
+          0.1,
+          7.9,
+          "LEO",
+          "وای صبر کنید! آقای ری موقع رفتن این جعبه حلقه الماس رو توی برف انداخت!"
+        ]
+      ]
+    },
+    {
+      "id": "clip_03",
+      "file": "clip_03.mp4",
+      "keyframe": "${BASE}\\story2\\keyframes\\KF_03.jpg",
+      "expected_speakers": [
+        "NURSE"
+      ],
+      "story_beat": "At the hospital billing counter, the receptionist tells Leo that $100 is not enough and the full surgery deposit is due by tomorrow",
+      "source_span": [
+        44.0,
+        57.0
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.95,
+      "subtitles": [
+        [
+          0.1,
+          7.9,
+          "NURSE",
+          "پسرجون صد دلار کافی نیست! تا فردا باید کل هزینه عمل مادرت رو نقد بیاری!"
+        ]
+      ]
+    },
+    {
+      "id": "clip_04",
+      "file": "clip_04.mp4",
+      "keyframe": "${BASE}\\story2\\keyframes\\KF_04.jpg",
+      "expected_speakers": [
+        "MOM"
+      ],
+      "story_beat": "Inside the hospital room, sick wooden mother holds Leo's hand and warns him never to do anything dishonest",
+      "source_span": [
+        57.0,
+        76.0
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.95,
+      "subtitles": [
+        [
+          0.1,
+          7.9,
+          "MOM",
+          "لئو پسرم، هیچ‌وقت دست به کار خلاف نزن! پول میاد و می‌ره، اما شرافتت خریدنی نیست!"
+        ]
+      ]
+    },
+    {
+      "id": "clip_05",
+      "file": "clip_05.mp4",
+      "keyframe": "${BASE}\\story2\\keyframes\\KF_05.jpg",
+      "expected_speakers": [
+        "BROKER"
+      ],
+      "story_beat": "At the pawn shop counter, the jeweler examines the diamond ring and places $20,000 cash on the marble counter",
+      "source_span": [
+        76.0,
+        100.0
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.95,
+      "subtitles": [
+        [
+          0.1,
+          7.9,
+          "BROKER",
+          "این الماس اصله و پنجاه هزار دلار می‌ارزه! همین الان بیست هزار دلار پول نقد بهت می‌دم، بردار و برو!"
+        ]
+      ]
+    },
+    {
+      "id": "clip_06",
+      "file": "clip_06.mp4",
+      "keyframe": "${BASE}\\story2\\keyframes\\KF_06.jpg",
+      "expected_speakers": [
+        "LEO"
+      ],
+      "story_beat": "Leo pushes the stack of cash back across the counter and takes the purple ring box to return it to its owner",
+      "source_span": [
+        100.0,
+        117.0
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.95,
+      "subtitles": [
+        [
+          0.1,
+          7.9,
+          "LEO",
+          "نه آقا، من نمی‌تونم! این حلقه مال من نیست و مامانم بهم یاد داده هیچ‌وقت مال مردم رو برندارم!"
+        ]
+      ]
+    },
+    {
+      "id": "clip_07",
+      "file": "clip_07.mp4",
+      "keyframe": "${BASE}\\story2\\keyframes\\KF_07.jpg",
+      "expected_speakers": [
+        "LEO"
+      ],
+      "story_beat": "Leo hands the purple velvet diamond ring box to the hospital reception nurse to give back to Mr. Ray",
+      "source_span": [
+        117.0,
+        137.0
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.95,
+      "subtitles": [
+        [
+          0.1,
+          7.9,
+          "LEO",
+          "خانم پرستار، آقای ری این حلقه الماس رو توی پارکینگ انداخته بود! لطفاً همین الان به دستش برسونید!"
+        ]
+      ]
+    },
+    {
+      "id": "clip_08",
+      "file": "clip_08.mp4",
+      "keyframe": "${BASE}\\story2\\keyframes\\KF_08.jpg",
+      "expected_speakers": [
+        "NURSE"
+      ],
+      "story_beat": "The greedy nurse hides the diamond ring in her purse behind the desk while Mr. Ray stands at the counter and she lies straight to his face that no kid came by",
+      "source_span": [
+        137.0,
+        153.0
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.95,
+      "subtitles": [
+        [
+          0.1,
+          7.9,
+          "NURSE",
+          "پنجاه هزار دلار افتاد تو کیفم! نه آقای ری، امروز هیچ بچه‌ای هیچ جعبه‌ای اینجا نیاورده!"
+        ]
+      ]
+    }
+  ]
+}

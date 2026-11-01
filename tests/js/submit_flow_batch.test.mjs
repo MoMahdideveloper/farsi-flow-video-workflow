@@ -18,6 +18,22 @@ test('one pasted keyframe = 1 chip (img + its cancel icon count once)', () => {
 test('leftover chip + new paste = 2 chips (contamination)', () => {
   assert.equal(countIngredientChips(snap(img('e1'), cancel('e2'), img('e3'), cancel('e4'))), 2);
 });
+test('Oct 2026 Flow UI role=button name="Ingredient" counts composer chips but ignores feed tiles', () => {
+  const feedAndComposer = snap(
+    { role: 'button', name: 'Ingredient', ref: 'feed1' },
+    { role: 'generic', text: 'Created Oct 28, 2026', ref: 'date1' },
+    { role: 'button', name: 'Ingredient', ref: 'comp1' },
+    { role: 'button', name: 'Clear prompt', ref: 'clear' },
+    { role: 'textbox', name: 'What do you want to create?', ref: 'prompt' }
+  );
+  assert.equal(countIngredientChips(feedAndComposer), 1);
+  const feedOnly = snap(
+    { role: 'button', name: 'Ingredient', ref: 'feed1' },
+    { role: 'generic', text: 'Created Oct 28, 2026', ref: 'date1' },
+    { role: 'textbox', name: 'What do you want to create?', ref: 'prompt' }
+  );
+  assert.equal(countIngredientChips(feedOnly), 0);
+});
 test('fop_part1..5 use their own clean KF_01..06, one per clip', () => {
   for (let p = 1; p <= 5; p++) {
     const b = BATCHES[`fop_part${p}`];
@@ -122,4 +138,10 @@ test('malformed snapshots cannot prove an empty composer', () => {
 
 test('trace write failures fail closed instead of silently losing evidence', () => {
   assert.throws(() => trace('test', {}, '/nonexistent-parent/flow_submission_trace.jsonl'));
+});
+
+test('over-long Farsi dialogue (>18 words) fails closed before browser paste', async (t) => {
+  const longPrompt = 'Scene prompt speaking in native Persian (Farsi): «توی این برف و سرما دارم کار می‌کنم تا پول بیمارستان مامانم جور بشه وای آقای ری این جعبه حلقه الماس رو انداخت» Zero on-screen subtitles.';
+  const {calls} = await exercise(t, [], {prompt: longPrompt}, /timing budget/);
+  assert.equal(calls.length, 0);
 });

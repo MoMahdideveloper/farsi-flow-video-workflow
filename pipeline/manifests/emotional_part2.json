@@ -1,0 +1,299 @@
+{
+  "_comment": "Series 6 (@emotionalgroceries) Part 2 - 100% Google Flow native Farsi voice with full اعراب‌گذاری.",
+  "schema_version": 1,
+  "speech_review_note": "Full Persian vowel diacritics (اعراب‌گذاری کامل) in Google Flow prompt for 100% accurate native pronunciation.",
+  "episode_id": "Part2_BasementSecret",
+  "title_fa": "قسمت دوم: هشت سال در زیرزمینِ تاریک!",
+  "title_en": "Emotional Groceries Part 2 - Eight Years in the Dark Basement",
+  "source_video": "${SRC}\\04_Dd3_e7bO_Vt_emotionalgroceries.mp4",
+  "source_start_offset": 46.5,
+  "story_summary_fa": "هشت سال بعد، بابک فقط پسر زرد پانصد هزار دلاری (طلا) رو توی قصر طلایی بزرگ می‌کنه و قلِ سیاه پنج دلاری (کوچولو) رو مجبور می‌کنه توی زیرزمین تاریک برنج خالی بخوره و از پشت پنجره حسرت آغوش مادرش سندی رو بکشه!",
+  "fallback_to_source_on_visual_fail": false,
+  "tight_speech_trim": true,
+  "variables": {
+    "BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series6-emotional-groceries-farsi",
+    "S2_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi",
+    "CHEF_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\ugly-face-chef-farsi",
+    "SRC": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\selected_6_stories"
+  },
+  "clips_dir": "${BASE}\\part2\\flow_clips",
+  "out_dir": "${BASE}\\05_final_masters\\part2",
+  "font_path": "${CHEF_BASE}\\03_farsi_audio_tts\\Vazirmatn-Bold.ttf",
+  "cta_video": "${S2_BASE}\\part1\\flow_clips\\cta_kelidbox_s2.mp4",
+  "cta_speaker": "MOM",
+  "cta_subtitles": [
+    {
+      "start": 0.25,
+      "end": 3.35,
+      "text": "برای دیدن قسمت بعدی این داستان همین الان پیج رو فالو کن!"
+    },
+    {
+      "start": 3.5,
+      "end": 7.85,
+      "text": "راستی کل این انیمیشن با اکانت‌های هوش مصنوعی سایت کلیدباکس ساخته شده!"
+    }
+  ],
+  "video": {
+    "width": 720,
+    "height": 1280,
+    "fps": 24,
+    "crf": 18,
+    "preset": "fast",
+    "scale_mode": "fill"
+  },
+  "audio": {
+    "loudnorm": "loudnorm=I=-14:TP=-1.5:LRA=11",
+    "sample_rate": 48000,
+    "channels": 2,
+    "bitrate": "192k"
+  },
+  "speech": {
+    "speech_safe": "auto_expand",
+    "threshold_dbfs": -38.0,
+    "pre_handle": 0.2,
+    "post_handle": 0.35,
+    "splice_crossfade": 0.02
+  },
+  "subtitle_style": {
+    "time_base": "trim_local",
+    "y_ratio": 0.84,
+    "font_size": 27,
+    "min_font_size": 16,
+    "max_text_margin": 84,
+    "max_lines": 2
+  },
+  "badge": {
+    "text": "قسمت دوم: هشت سال حبس در زیرزمینِ تاریک!",
+    "start": 0.0,
+    "end": 3.5,
+    "y_center": 130,
+    "font_size": 28,
+    "color": [
+      140,
+      235,
+      255
+    ],
+    "clip_index": 1
+  },
+  "outputs": {
+    "per_clip_location": "both",
+    "base_mode": "timeline",
+    "cta_burn_subtitles": true,
+    "cta_loudnorm": true,
+    "publish_caption_fa": "هشت سال تمام توی زیرزمین تاریک فقط برنج خالی خورد و از پشت پنجره مادرش رو تماشا کرد! 😢🧽💔\nقسمت دوم داستان وایرال دوقلوهای اسفنجی (@emotionalgroceries)!\nبه نظرتون مادرش سندی می‌فهمه یه پسر دیگه هم داره؟ قسمت سوم (فینال) رو از دست نده 👇🔥"
+  },
+  "voices": {
+    "DAD": {
+      "name_fa": "بابک اسفنجی (پدر طمع‌کار)",
+      "color": [
+        255,
+        215,
+        110
+      ],
+      "source": "google_flow_native"
+    },
+    "DOC": {
+      "name_fa": "دکتر فلفل دلمه‌ای",
+      "color": [
+        255,
+        140,
+        140
+      ],
+      "source": "google_flow_native"
+    },
+    "MOM": {
+      "name_fa": "سندی سنجاب (مادر ثروتمند)",
+      "color": [
+        255,
+        165,
+        215
+      ],
+      "source": "google_flow_native"
+    },
+    "RICH_TWIN": {
+      "name_fa": "طلا (قلِ پانصد هزار دلاری)",
+      "color": [
+        255,
+        235,
+        130
+      ],
+      "source": "google_flow_native"
+    },
+    "POOR_TWIN": {
+      "name_fa": "کوچولو (قلِ پنج دلاری)",
+      "color": [
+        140,
+        235,
+        255
+      ],
+      "source": "google_flow_native"
+    }
+  },
+  "clips": [
+    {
+      "id": "clip_01",
+      "file": "clip_01.mp4",
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_01.jpg",
+      "expected_speakers": [
+        "MOM",
+        "DAD"
+      ],
+      "story_beat": "In the sunlit luxury mansion bedroom, Squirrel Mom Sandy wakes up on a velvet bed while Yellow Sponge Dad Babak proudly presents only the single Yellow Sponge baby with 500,000 on his forehead",
+      "source_span": [
+        46.5,
+        56.0
+      ],
+      "trim_in": 0.0,
+      "trim_out": 9.85,
+      "speech_fa_vocalized": "آخ سَرَم، چی شُد؟ اِسْتِراحَت کُن عِشْقَم، بِبین پِسَرِ تَک‌فَرْزَنْدِمُون با پانْصَد هِزار دُلار دُنْیا اُومَده!",
+      "subtitles": [
+        [
+          0.1,
+          2.5,
+          "MOM",
+          "آخ سرم، چی شد؟"
+        ],
+        [
+          2.6,
+          9.5,
+          "DAD",
+          "استراحت کن عشقم، ببین پسر تک‌فرزندمون با پانصد هزار دلار دنیا اومده!"
+        ]
+      ]
+    },
+    {
+      "id": "clip_02",
+      "file": "clip_02.mp4",
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_02.jpg",
+      "expected_speakers": [
+        "DAD",
+        "RICH_TWIN"
+      ],
+      "story_beat": "Eight years later in the golden mansion dining room, Yellow Sponge Dad Babak and 8-year-old Rich Yellow Sponge boy Tala with 500,000 on his forehead toast arrogantly with golden goblets",
+      "source_span": [
+        56.0,
+        66.8
+      ],
+      "trim_in": 0.0,
+      "trim_out": 9.85,
+      "speech_fa_vocalized": "پانْصَد هِزار دُلار رُویِ پیشُونی، یَعْنی اِصالَت و ثِرْوَت! دُرُسْته پِدَر، تُو این خُونه فَقَط پُولْدارها جان!",
+      "subtitles": [
+        [
+          0.1,
+          4.5,
+          "DAD",
+          "پانصد هزار دلار روی پیشونی، یعنی اصالت و ثروت!"
+        ],
+        [
+          4.6,
+          9.5,
+          "RICH_TWIN",
+          "درسته پدر، تو این خونه فقط پولدارها جان!"
+        ]
+      ]
+    },
+    {
+      "id": "clip_03",
+      "file": "clip_03.mp4",
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_03.jpg",
+      "expected_speakers": [
+        "POOR_TWIN"
+      ],
+      "story_beat": "Down in the dark damp basement, 8-year-old poor Charcoal Sponge boy Kouchoulou with 5 on his forehead in a tattered grey shirt looks up at the locked wooden door with teary eyes",
+      "source_span": [
+        66.8,
+        73.0
+      ],
+      "trim_in": 0.0,
+      "trim_out": 9.85,
+      "speech_fa_vocalized": "بابا جُون، چِرا مَن اِجازه نَدارَم بِیام طَبَقِه بالا؟ کِی می‌تُونَم مادَرَم رُو بِبینَم؟",
+      "subtitles": [
+        [
+          0.1,
+          9.5,
+          "POOR_TWIN",
+          "بابا جون، چرا من اجازه ندارم بیام طبقه بالا؟ کی می‌تونم مادرم رو ببینم؟"
+        ]
+      ]
+    },
+    {
+      "id": "clip_04",
+      "file": "clip_04.mp4",
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_04.jpg",
+      "expected_speakers": [
+        "DAD"
+      ],
+      "story_beat": "Yellow Sponge Dad Babak stands on the basement stairs shoving a small bowl of plain white rice toward poor Charcoal Sponge boy Kouchoulou and glaring coldly",
+      "source_span": [
+        73.0,
+        79.0
+      ],
+      "trim_in": 0.0,
+      "trim_out": 9.85,
+      "speech_fa_vocalized": "با پَنْج دُلار کُدُوم قَبْض رُو می‌شه داد؟ بِرِنْجِت رُو بُخُور و هَمین پایین ساکِت بِمُون!",
+      "subtitles": [
+        [
+          0.1,
+          9.5,
+          "DAD",
+          "با پنج دلار کدوم قبض رو می‌شه داد؟ برنجت رو بخور و همین پایین ساکت بمون!"
+        ]
+      ]
+    },
+    {
+      "id": "clip_05",
+      "file": "clip_05.mp4",
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_05.jpg",
+      "expected_speakers": [
+        "MOM",
+        "RICH_TWIN"
+      ],
+      "story_beat": "Outside the sunny mansion porch, Squirrel Mom Sandy in her pink luxury dress hugs Rich Yellow Sponge boy Tala with 500,000 on his forehead wearing a golden backpack before school",
+      "source_span": [
+        79.0,
+        86.5
+      ],
+      "trim_in": 0.0,
+      "trim_out": 9.85,
+      "speech_fa_vocalized": "اِمْرُوز تُویِ مَدْرِسه باعِثِ اِفْتِخارَم باش پِسَرَم! نِگَران نَباش مامان، اِمْرُوز کُلِّ مَدْرِسه رُو می‌خَرَم!",
+      "subtitles": [
+        [
+          0.1,
+          4.3,
+          "MOM",
+          "امروز توی مدرسه باعث افتخارم باش پسرم!"
+        ],
+        [
+          4.4,
+          9.5,
+          "RICH_TWIN",
+          "نگران نباش مامان، امروز کل مدرسه رو می‌خرم!"
+        ]
+      ]
+    },
+    {
+      "id": "clip_06",
+      "file": "clip_06.mp4",
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_06.jpg",
+      "expected_speakers": [
+        "POOR_TWIN"
+      ],
+      "story_beat": "Poor little Charcoal Sponge boy Kouchoulou with 5 on his forehead peers through the dusty barred basement window at ground level watching Squirrel Mom Sandy from afar with tears rolling down his cheeks",
+      "source_span": [
+        86.5,
+        92.0
+      ],
+      "trim_in": 0.0,
+      "trim_out": 9.85,
+      "speech_fa_vocalized": "مامان چِقَدْر مِهْرَبُونه... اِی کاش می‌دُونِسْت مَنَم زِنْدِه‌اَم و فَقَط یِک‌بار مَنُو بَغَل می‌کَرْد!",
+      "subtitles": [
+        [
+          0.1,
+          9.5,
+          "POOR_TWIN",
+          "مامان چقدر مهربونه... ای کاش می‌دونست منم زنده‌ام و فقط یک‌بار منو بغل می‌کرد!"
+        ]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,340 @@
+{
+  "_comment": "Part2_StolenTreeKarma - 100% Google Flow native Farsi voice with full اعراب‌گذاری.",
+  "schema_version": 1,
+  "speech_review_note": "Full Persian vowel diacritics (اعراب‌گذاری کامل) in Google Flow prompt for 100% accurate native pronunciation.",
+  "episode_id": "Part2_StolenTreeKarma",
+  "title_fa": "قسمت دوم (پایان): قطع کردن درخت جادویی و تاوان حسادت!",
+  "title_en": "Golden Apple Tree Part 2",
+  "source_video": "${SRC}\\33_2026-10-10_DeTMUV9KPrV.mp4",
+  "source_start_offset": 40,
+  "story_summary_fa": "هلو شبانه با تبر درخت سیب طلایی موز را قطع می‌کند و به خانه خودش می‌برد؛ اما درخت بریده‌شده بدون ریشه هیچ سیب طلایی نمی‌دهد و به جای طلا، آب گل‌آلود به صورت هلو می‌پاشد!",
+  "fallback_to_source_on_visual_fail": false,
+  "tight_speech_trim": true,
+  "variables": {
+    "BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series19-golden-apple-tree-farsi",
+    "S2_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi",
+    "CHEF_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\ugly-face-chef-farsi",
+    "SRC": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\straw.berryjammin"
+  },
+  "clips_dir": "${BASE}\\part2\\flow_clips",
+  "out_dir": "${BASE}\\05_final_masters\\part2",
+  "font_path": "${CHEF_BASE}\\03_farsi_audio_tts\\Vazirmatn-Bold.ttf",
+  "cta_video": "${S2_BASE}\\part1\\flow_clips\\cta_kelidbox_s2.mp4",
+  "cta_speaker": "BANANA_SELLER",
+  "cta_subtitles": [
+    {
+      "start": 0.15,
+      "end": 3.55,
+      "text": "برای دیدن داستان‌های جذاب بعدی همین الان پیج رو فالو کن!"
+    },
+    {
+      "start": 3.65,
+      "end": 7.6,
+      "text": "راستی کل این انیمیشن با اکانت‌های هوش مصنوعی سایت کلیدباکس ساخته شده!"
+    }
+  ],
+  "speakers": {
+    "PEACH_SELLER": [
+      255,
+      185,
+      165
+    ],
+    "BANANA_SELLER": [
+      255,
+      235,
+      130
+    ],
+    "APPLE_KID": [
+      165,
+      255,
+      155
+    ],
+    "BADGE": [
+      255,
+      215,
+      70
+    ]
+  },
+  "clips": [
+    {
+      "id": "clip_01",
+      "file": "clip_01.mp4",
+      "source_span": [
+        40,
+        47
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "At night in the lantern-lit yard, jealous 3D peach woman PEACH_SELLER in her white t-shirt and black skirt holds a steel axe beside the trunk of the glowing Golden Apple Tree.",
+      "overlays": [
+        {
+          "speaker": "BADGE",
+          "text": "قسمت آخر: قطع کردن درخت جادویی و تاوان حسادت!",
+          "start": 0.1,
+          "end": 3.4,
+          "position": "top",
+          "font_size": 21
+        }
+      ],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "PEACH_SELLER",
+          "الان با این تبر تنه‌ی درخت رو قطع می‌کنم و می‌برمش توی خونه‌ی خودم!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_01.jpg",
+      "expected_speakers": [
+        "PEACH_SELLER"
+      ],
+      "beat_ids": [
+        "beat_1"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[GA2_C01] Stylized 3D CGI cartoon animation matching the exact 3D non-human fruit character and outfit in the reference image, static medium shot keeping the character in frame the entire time (no camera cuts), at night in the lantern-lit cottage yard the angry round pink-orange 3D peach-headed woman in a white t-shirt and black mini skirt grips a wooden-handled axe beside the trunk of the glowing golden apple tree (strictly NO human face), speaking in native Persian (Farsi) with exact vowel pronunciation and a fierce scheming female voice: «اَلان با اِین تَبَر تَنِه‌یِ دِرَخْت رُو قَطْع مِی‌کُنَم وُ مِی‌بَرَمِش تُویِ خُونِه‌یِ خُودَم!» Zero on-screen subtitles."
+    },
+    {
+      "id": "clip_02",
+      "file": "clip_02.mp4",
+      "source_span": [
+        47,
+        54
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "Standing in her yard beside the cut wooden tree stump surrounded by withered brown apples, tall yellow 3D banana woman BANANA_SELLER in her blue denim overall dress gasps in heartbreak.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "BANANA_SELLER",
+          "وای خدای من، چه کسی درخت سیب طلایی من رو بریده؟! چرا این ظلم رو کردن؟!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_02.jpg",
+      "expected_speakers": [
+        "BANANA_SELLER"
+      ],
+      "beat_ids": [
+        "beat_2"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[GA2_C02] Stylized 3D CGI cartoon animation matching the exact 3D non-human fruit characters and outfits in the reference image, static medium two-shot keeping both characters in frame the entire time (no camera cuts), in the cottage yard beside a chopped wooden tree stump surrounded by withered apples the tall yellow fruit character on the right holds her cheeks in shock and sorrow while the round pink-orange 3D peach character watches from the left (strictly NO human faces), as the tall yellow fruit character speaks in native Persian (Farsi) with exact vowel pronunciation and a heartbroken tearful female voice: «وای خُدایِ مَن، چِه کَسِی دِرَخْتِ سِیبِ طَلایِیِ مَن رُو بُرِیدِه؟! چِرا اِین ظُلْم رُو کَرْدَن؟!» Zero on-screen subtitles."
+    },
+    {
+      "id": "clip_03",
+      "file": "clip_03.mp4",
+      "source_span": [
+        54,
+        61
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "In the sunny village market street, 3D peach woman PEACH_SELLER crosses her arms with a smug smirk beside sad yellow 3D banana woman BANANA_SELLER standing behind her empty wooden table.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "PEACH_SELLER",
+          "چی شده موز؟ چرا امروز حجره رو بستی و دیگه سیب طلایی برای فروش نداری؟!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_03.jpg",
+      "expected_speakers": [
+        "PEACH_SELLER"
+      ],
+      "beat_ids": [
+        "beat_3"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[GA2_C03] Stylized 3D CGI cartoon animation matching the exact 3D non-human fruit characters and outfits in the reference image, static medium two-shot keeping both characters in frame the entire time (no camera cuts), in the sunny wooden market street the round pink-orange 3D peach-headed woman in a white t-shirt and black skirt crosses her arms with a smug gloating smirk beside the sad tall yellow 3D banana-headed woman behind her empty wooden table (strictly NO human faces), as the 3D peach woman speaks in native Persian (Farsi) with exact vowel pronunciation and a mocking arrogant female voice: «چِی شُدِه مُوز؟ چِرا اِمْرُوز حُجْرِه رُو بَسْتِی وُ دِیگِه سِیبِ طَلایِی بَرایِ فُرُوش نَدارِی؟!» Zero on-screen subtitles."
+    },
+    {
+      "id": "clip_04",
+      "file": "clip_04.mp4",
+      "source_span": [
+        61,
+        68
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "Inside her wooden barn room, 3D peach woman PEACH_SELLER kneels beside the stolen apple tree trunk planted in the floor and pours water from a metal bucket onto its base with a greedy grin.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "PEACH_SELLER",
+          "حالا این درخت جادویی مال منه! بهش آب می‌دم تا پر از سیب‌های طلایی بشه!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_04.jpg",
+      "expected_speakers": [
+        "PEACH_SELLER"
+      ],
+      "beat_ids": [
+        "beat_4"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[GA2_C04] Stylized 3D CGI cartoon animation matching the exact 3D non-human fruit character and outfit in the reference image, static medium shot keeping the character in frame the entire time (no camera cuts), inside a rustic wooden room the round pink-orange 3D peach-headed woman in a white t-shirt and black mini skirt kneels beside the stolen tree trunk pouring water from a metal bucket with a greedy smile (strictly NO human face), speaking in native Persian (Farsi) with exact vowel pronunciation and an excited greedy female voice: «حالا اِین دِرَخْتِ جادُویِی مالِ مَنِه! بِهِش آب مِی‌دَم تا پُر اَز سِیب‌هایِ طَلایِی بِشِه!» Zero on-screen subtitles."
+    },
+    {
+      "id": "clip_05",
+      "file": "clip_05.mp4",
+      "source_span": [
+        68,
+        74
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "Inside the wooden barn room, 3D peach woman PEACH_SELLER glares up at the bare green branches of the stolen tree where zero apples have grown and shouts in frustration.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "PEACH_SELLER",
+          "چرا حتی یه دونه سیب طلایی هم درنمی‌آد؟! زود باش به من طلا بده درخت لعنتی!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_05.jpg",
+      "expected_speakers": [
+        "PEACH_SELLER"
+      ],
+      "beat_ids": [
+        "beat_5"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[GA2_C05] Stylized 3D CGI cartoon animation matching the exact 3D non-human fruit character and outfit in the reference image, static medium shot keeping the character in frame the entire time (no camera cuts), inside the rustic wooden room the angry round pink-orange 3D peach-headed woman in a white t-shirt and black mini skirt glares at the fruitless green tree trunk with clenched fists (strictly NO human face), shouting in native Persian (Farsi) with exact vowel pronunciation and a furious impatient female voice: «چِرا حَتّی یِه دُونِه سِیبِ طَلایِی هَم دَرْنِمِی‌آد؟! زُود باش بِه مَن طَلا بِدِه دِرَخْتِ لَعْنَتِی!» Zero on-screen subtitles."
+    },
+    {
+      "id": "clip_06",
+      "file": "clip_06.mp4",
+      "source_span": [
+        74,
+        79.48
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "Inside the wooden barn room, muddy water splashes out of a hole in the dead tree trunk right onto 3D peach woman PEACH_SELLER as she stumbles back soaked and crying.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "PEACH_SELLER",
+          "آخ صورتم! درخت بدون ریشه خشک شد و به جای طلا، آب گل‌آلود پاشید توی صورتم!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_06.jpg",
+      "expected_speakers": [
+        "PEACH_SELLER"
+      ],
+      "beat_ids": [
+        "beat_6"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[GA2_C06] Stylized 3D CGI cartoon animation matching the exact 3D non-human fruit character and outfit in the reference image, static medium shot keeping the character in frame the entire time (no camera cuts), inside the rustic wooden room muddy water splashes out of the dead tree trunk onto the face of the round pink-orange 3D peach-headed woman in a white t-shirt and black mini skirt as she recoils in shock and regret (strictly NO human face), speaking in native Persian (Farsi) with exact vowel pronunciation and a crying regretful female voice: «آخ صُورَتَم! دِرَخْت بِدُونِ رِیشِه خُشْک شُد وُ بِه جایِ طَلا، آبِ گِل‌آلُود پاشِید تُویِ صُورَتَم!» Zero on-screen subtitles."
+    }
+  ],
+  "voices": {
+    "PEACH_SELLER": {
+      "name_fa": "PEACH_SELLER",
+      "color": [
+        255,
+        185,
+        165
+      ],
+      "source": "google_flow_native"
+    },
+    "BANANA_SELLER": {
+      "name_fa": "BANANA_SELLER",
+      "color": [
+        255,
+        235,
+        130
+      ],
+      "source": "google_flow_native"
+    },
+    "APPLE_KID": {
+      "name_fa": "APPLE_KID",
+      "color": [
+        165,
+        255,
+        155
+      ],
+      "source": "google_flow_native"
+    }
+  },
+  "video": {
+    "width": 720,
+    "height": 1280,
+    "fps": 24,
+    "crf": 18,
+    "preset": "fast",
+    "scale_mode": "fill"
+  },
+  "audio": {
+    "loudnorm": "loudnorm=I=-14:TP=-1.5:LRA=11",
+    "sample_rate": 48000,
+    "channels": 2,
+    "bitrate": "192k"
+  },
+  "speech": {
+    "speech_safe": "auto_expand",
+    "threshold_dbfs": -38,
+    "pre_handle": 0.2,
+    "post_handle": 0.35,
+    "splice_crossfade": 0.02
+  },
+  "subtitle_style": {
+    "time_base": "trim_local",
+    "y_ratio": 0.84,
+    "font_size": 27,
+    "min_font_size": 16,
+    "max_text_margin": 84,
+    "max_lines": 2
+  },
+  "outputs": {
+    "per_clip_location": "both",
+    "base_mode": "timeline",
+    "cta_burn_subtitles": true,
+    "cta_loudnorm": true,
+    "publish_caption_fa": "قسمت دوم (پایان): قطع کردن درخت جادویی و تاوان حسادت!"
+  },
+  "character_references": [
+    "${BASE}\\character_sheets\\FLOW_SHEET_SERIES19_CHARACTERS.jpg"
+  ],
+  "content_edits": [],
+  "story_plan": {
+    "summary": "هلو شبانه با تبر درخت سیب طلایی موز را قطع می‌کند و به خانه خودش می‌برد؛ اما درخت بریده‌شده بدون ریشه هیچ سیب طلایی نمی‌دهد و به جای طلا، آب گل‌آلود به صورت هلو می‌پاشد!",
+    "ending": "Jealous Peach chops down and steals the Golden Apple Tree, but the rootless trunk withers in her barn and sprays muddy water in her face instead of bearing gold.",
+    "required_beats": [
+      "beat_1",
+      "beat_2",
+      "beat_3",
+      "beat_4",
+      "beat_5",
+      "beat_6"
+    ]
+  },
+  "visual": {
+    "keyframe_threshold": 38,
+    "jump_threshold": 38,
+    "contamination_margin": 5
+  },
+  "visual_gate": {
+    "keyframe_threshold": 38,
+    "jump_threshold": 38,
+    "contamination_margin": 5
+  }
+}

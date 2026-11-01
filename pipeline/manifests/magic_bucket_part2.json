@@ -1,0 +1,340 @@
+{
+  "_comment": "Part2_GreedyBananaBucketTrap - 100% Google Flow native Farsi voice with full اعراب‌گذاری.",
+  "schema_version": 1,
+  "speech_review_note": "Full Persian vowel diacritics (اعراب‌گذاری کامل) in Google Flow prompt for 100% accurate native pronunciation.",
+  "episode_id": "Part2_GreedyBananaBucketTrap",
+  "title_fa": "قسمت دوم (پایان): سرقت سطل جادویی و عاقبت طمع!",
+  "title_en": "Magic Duplicating Bucket Part 2",
+  "source_video": "${SRC}\\44_2026-10-04_DeDoiQaq-bB.mp4",
+  "source_start_offset": 43,
+  "story_summary_fa": "موز حسود از پنجره ویلای جدید هلو راز سطل قرمز جادویی را می‌بیند، مخفیانه وارد عمارت می‌شود تا پول‌هایش را کپی کند اما سطل جادویی پول او را می‌بلعد و خودش هم داخل سطل گیر می‌افتد!",
+  "fallback_to_source_on_visual_fail": false,
+  "tight_speech_trim": true,
+  "variables": {
+    "BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series18-magic-duplicating-bucket-farsi",
+    "S2_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi",
+    "CHEF_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\ugly-face-chef-farsi",
+    "SRC": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\straw.berryjammin"
+  },
+  "clips_dir": "${BASE}\\part2\\flow_clips",
+  "out_dir": "${BASE}\\05_final_masters\\part2",
+  "font_path": "${CHEF_BASE}\\03_farsi_audio_tts\\Vazirmatn-Bold.ttf",
+  "cta_video": "${S2_BASE}\\part1\\flow_clips\\cta_kelidbox_s2.mp4",
+  "cta_speaker": "PEACH_GIRL",
+  "cta_subtitles": [
+    {
+      "start": 0.15,
+      "end": 3.55,
+      "text": "برای دیدن داستان‌های جذاب بعدی همین الان پیج رو فالو کن!"
+    },
+    {
+      "start": 3.65,
+      "end": 7.6,
+      "text": "راستی کل این انیمیشن با اکانت‌های هوش مصنوعی سایت کلیدباکس ساخته شده!"
+    }
+  ],
+  "speakers": {
+    "PEACH_GIRL": [
+      255,
+      195,
+      160
+    ],
+    "APPLE_DEALER": [
+      255,
+      225,
+      120
+    ],
+    "BANANA_NEIGHBOR": [
+      255,
+      240,
+      130
+    ],
+    "BADGE": [
+      255,
+      215,
+      70
+    ]
+  },
+  "clips": [
+    {
+      "id": "clip_01",
+      "file": "clip_01.mp4",
+      "source_span": [
+        43,
+        50
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "Standing in front of her grand white Mediterranean villa, 3D peach girl PEACH_GIRL in her black sequin evening gown holds up a golden house key with a proud smile.",
+      "overlays": [
+        {
+          "speaker": "BADGE",
+          "text": "قسمت آخر: سرقت سطل جادویی و عاقبت طمع!",
+          "start": 0.1,
+          "end": 3.4,
+          "position": "top",
+          "font_size": 21
+        }
+      ],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "PEACH_GIRL",
+          "این ویلای مجلل رو نقد خریدم! از امروز دیگه خداحافظ فقر و روزهای سخت!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_01.jpg",
+      "expected_speakers": [
+        "PEACH_GIRL"
+      ],
+      "beat_ids": [
+        "beat_1"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[MB2_C01] Stylized 3D CGI cartoon animation matching the exact 3D non-human fruit character and outfit in the reference image, static medium shot keeping the character in frame the entire time (no camera cuts), standing in front of a grand white Mediterranean mansion with manicured gardens the round pink-orange 3D peach-headed girl with a green top leaf in a black sequin evening dress holds up a golden key with a proud smile (strictly NO human face), speaking in native Persian (Farsi) with exact vowel pronunciation and a proud happy female voice: «اِین وِیلایِ مُجَلَّل رُو نَقْد خَرِیدَم! اَز اِمْرُوز دِیگِه خُداحافِظ فَقْر وُ رُوزْهایِ سَخْت!» Zero on-screen subtitles."
+    },
+    {
+      "id": "clip_02",
+      "file": "clip_02.mp4",
+      "source_span": [
+        50,
+        56
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "Standing outside the tall white wrought-iron gates of the villa, tall yellow 3D banana woman BANANA_NEIGHBOR in a tattered blue dress stares inside with burning envy.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "BANANA_NEIGHBOR",
+          "این دختره تا دیروز نون خشک می‌خورد! چطوری یهو صاحب این ویلای میلیاردی شده؟!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_02.jpg",
+      "expected_speakers": [
+        "BANANA_NEIGHBOR"
+      ],
+      "beat_ids": [
+        "beat_2"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[MB2_C02] Stylized 3D CGI cartoon animation matching the exact 3D non-human fruit character and outfit in the reference image, static medium shot keeping the character in frame the entire time (no camera cuts), standing outside the tall white wrought-iron gates of a luxury mansion the round green-apple-headed 3D fruit woman with a green top leaf gestures in disbelief and envy (strictly NO human face), speaking in native Persian (Farsi) with exact vowel pronunciation and a jealous scheming female voice: «اِین دُخْتَرِه تا دِیرُوز نُونِ خُشْک مِی‌خُورْد! چِطُورِی یِهُو صاحِبِ اِین وِیلایِ مِیلْیارْدِی شُدِه؟!» Zero on-screen subtitles."
+    },
+    {
+      "id": "clip_03",
+      "file": "clip_03.mp4",
+      "source_span": [
+        56,
+        63
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "Peeking through the wooden shutters of the villa window, round green-apple 3D fruit woman BANANA_NEIGHBOR spots the bright red plastic bucket inside the chandelier room and grins wickedly.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "BANANA_NEIGHBOR",
+          "آهان، پس رازش اون سطل قرمزه که هر چیزی رو کپی می‌کنه! باید بدزدمش!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_03.jpg",
+      "expected_speakers": [
+        "BANANA_NEIGHBOR"
+      ],
+      "beat_ids": [
+        "beat_3"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[MB2_C03] Stylized 3D CGI cartoon animation matching the exact 3D non-human fruit character and outfit in the reference image, static medium shot keeping the character in frame the entire time (no camera cuts), by the open wooden shutters of a sunny villa window the round green-apple-headed 3D fruit woman with a green top leaf points inside at the red bucket and grins wickedly (strictly NO human face), speaking in native Persian (Farsi) with exact vowel pronunciation and a sly whispering female voice: «آهان، پَس رازِش اُون سَطْلِ قِرْمِزِه کِه هَر چِیزِی رُو کُپِی مِی‌کُنِه! بایَد بِدُزْدَمِش!» Zero on-screen subtitles."
+    },
+    {
+      "id": "clip_04",
+      "file": "clip_04.mp4",
+      "source_span": [
+        63,
+        70
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "Inside the grand marble living room of the villa under a crystal chandelier, round green-apple 3D fruit woman BANANA_NEIGHBOR holds up a banknote over the bright red plastic bucket with a greedy laugh.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "BANANA_NEIGHBOR",
+          "الان این اسکناس رو می‌ندازم توی سطل قرمز و از اون دختره هم پولدارتر می‌شم!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_04.jpg",
+      "expected_speakers": [
+        "BANANA_NEIGHBOR"
+      ],
+      "beat_ids": [
+        "beat_4"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[MB2_C04] Stylized 3D CGI cartoon animation matching the exact 3D non-human fruit character and outfit in the reference image, static medium shot keeping the character in frame the entire time (no camera cuts), inside a luxury mansion living room with a crystal chandelier the round green-apple-headed 3D fruit woman with a green top leaf holds up a banknote over the bright red plastic bucket with a greedy laugh (strictly NO human face), speaking in native Persian (Farsi) with exact vowel pronunciation and a greedy triumphant female voice: «اَلان اِین اِسْکِناس رُو مِی‌نْدازَم تُویِ سَطْلِ قِرْمِز وُ اَز اُون دُخْتَرِه هَم پُولْدارْتَر مِی‌شَم!» Zero on-screen subtitles."
+    },
+    {
+      "id": "clip_05",
+      "file": "clip_05.mp4",
+      "source_span": [
+        70,
+        76
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "Inside the mansion living room, round green-apple 3D fruit woman BANANA_NEIGHBOR bends deep over the bright red plastic bucket, reaching both hands inside with an angry scowl.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "BANANA_NEIGHBOR",
+          "ای بابا، پس پول‌های من کجا رفت؟! چرا این سطل واسه من کار نمی‌کنه؟!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_05.jpg",
+      "expected_speakers": [
+        "BANANA_NEIGHBOR"
+      ],
+      "beat_ids": [
+        "beat_5"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[MB2_C05] Stylized 3D CGI cartoon animation matching the exact 3D non-human fruit character and outfit in the reference image, static medium shot keeping the character in frame the entire time (no camera cuts), inside the mansion living room the round green-apple-headed 3D fruit woman with a green top leaf leans over the bright red plastic bucket reaching her hands inside with an angry frustrated scowl (strictly NO human face), speaking in native Persian (Farsi) with exact vowel pronunciation and an angry frustrated female voice: «اِی بابا، پَس پُول‌هایِ مَن کُجا رَفْت؟! چِرا اِین سَطْل واسِه مَن کار نِمِی‌کُنِه؟!» Zero on-screen subtitles."
+    },
+    {
+      "id": "clip_06",
+      "file": "clip_06.mp4",
+      "source_span": [
+        76,
+        81.17
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "Inside the mansion living room, 3D peach girl PEACH_GIRL in her black sequin gown crosses her arms triumphantly beside the bright red plastic bucket where greedy round green-apple BANANA_NEIGHBOR is stuck inside up to her waist.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "PEACH_GIRL",
+          "سطل جادویی آدم‌های دزد و طمعکار رو قورت می‌ده! این هم سزای حسادت توئه!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_06.jpg",
+      "expected_speakers": [
+        "PEACH_GIRL"
+      ],
+      "beat_ids": [
+        "beat_6"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[MB2_C06] Stylized 3D CGI cartoon animation matching the exact 3D non-human fruit characters and outfits in the reference image, static medium two-shot keeping both characters in frame the entire time (no camera cuts), inside the luxury mansion living room the round pink-orange 3D peach-headed girl in a black sequin evening dress crosses her arms triumphantly beside the bright red plastic bucket where the round green-apple-headed 3D fruit woman with a green top leaf is stuck wedged inside the bucket in shock (strictly NO human faces), as the 3D peach girl speaks in native Persian (Farsi) with exact vowel pronunciation and a confident righteous female voice: «سَطْلِ جادُویِی آدَم‌هایِ دُزْد وُ طَمَعْکار رُو قُورْت مِی‌دِه! اِین هَم سَزایِ حَسادَتِ تُوئِه!» Zero on-screen subtitles."
+    }
+  ],
+  "voices": {
+    "PEACH_GIRL": {
+      "name_fa": "PEACH_GIRL",
+      "color": [
+        255,
+        195,
+        160
+      ],
+      "source": "google_flow_native"
+    },
+    "APPLE_DEALER": {
+      "name_fa": "APPLE_DEALER",
+      "color": [
+        255,
+        225,
+        120
+      ],
+      "source": "google_flow_native"
+    },
+    "BANANA_NEIGHBOR": {
+      "name_fa": "BANANA_NEIGHBOR",
+      "color": [
+        255,
+        240,
+        130
+      ],
+      "source": "google_flow_native"
+    }
+  },
+  "video": {
+    "width": 720,
+    "height": 1280,
+    "fps": 24,
+    "crf": 18,
+    "preset": "fast",
+    "scale_mode": "fill"
+  },
+  "audio": {
+    "loudnorm": "loudnorm=I=-14:TP=-1.5:LRA=11",
+    "sample_rate": 48000,
+    "channels": 2,
+    "bitrate": "192k"
+  },
+  "speech": {
+    "speech_safe": "auto_expand",
+    "threshold_dbfs": -38,
+    "pre_handle": 0.2,
+    "post_handle": 0.35,
+    "splice_crossfade": 0.02
+  },
+  "subtitle_style": {
+    "time_base": "trim_local",
+    "y_ratio": 0.84,
+    "font_size": 27,
+    "min_font_size": 16,
+    "max_text_margin": 84,
+    "max_lines": 2
+  },
+  "outputs": {
+    "per_clip_location": "both",
+    "base_mode": "timeline",
+    "cta_burn_subtitles": true,
+    "cta_loudnorm": true,
+    "publish_caption_fa": "قسمت دوم (پایان): سرقت سطل جادویی و عاقبت طمع!"
+  },
+  "character_references": [
+    "${BASE}\\character_sheets\\FLOW_SHEET_SERIES18_CHARACTERS.jpg"
+  ],
+  "content_edits": [],
+  "story_plan": {
+    "summary": "موز حسود از پنجره ویلای جدید هلو راز سطل قرمز جادویی را می‌بیند، مخفیانه وارد عمارت می‌شود تا پول‌هایش را کپی کند اما سطل جادویی پول او را می‌بلعد و خودش هم داخل سطل گیر می‌افتد!",
+    "ending": "Greedy Banana sneaks into Peach’s mansion to use the duplicating red bucket, loses her money inside it, and gets wedged inside the bucket as Peach catches her.",
+    "required_beats": [
+      "beat_1",
+      "beat_2",
+      "beat_3",
+      "beat_4",
+      "beat_5",
+      "beat_6"
+    ]
+  },
+  "visual": {
+    "keyframe_threshold": 38,
+    "jump_threshold": 38,
+    "contamination_margin": 5
+  },
+  "visual_gate": {
+    "keyframe_threshold": 38,
+    "jump_threshold": 38,
+    "contamination_margin": 5
+  }
+}

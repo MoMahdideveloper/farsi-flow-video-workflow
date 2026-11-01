@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "manifest_sha256": "ac9ac6241a068c012aba55fba4f0e863ede96c43cb7c65762b45534d55066bf7",
+  "references": {
+    "F:\\antigravity_archive\\scratch\\series15-janitor-apple-bench-press-farsi\\character_sheets\\FLOW_SHEET_SERIES15_CHARACTERS.jpg": "fa07e40fb3cf599a22798597a0d5372fe6c56809229698e73c5f6a4c2cecc01b"
+  },
+  "keyframes": {
+    "clip_01": {
+      "sha256": "831c9e3aee45a825d3c5bf769b06eead99d18df71f9e888f9acfedd4949c5164",
+      "prompt_sha256": "71976193db708e094fa178f72c682486ecf0ca187c193add205542eb78c5d841",
+      "status": "pass",
+      "reviewer": "Antigravity Gate 2 Visual Audit",
+      "evidence": "Inspected via read_file: 9:16 portrait 3D CGI non-human characters, zero text/letters/numbers, zero human faces, consistent anatomy and wardrobe.",
+      "reviewed_at": "2026-10-31T21:50:20.328Z"
+    },
+    "clip_02": {
+      "sha256": "ace2cc46bc41533631e2bb8522d49b5839e5d6a795d4c695535c24c37feca43b",
+      "prompt_sha256": "39b159c8da098744585a94f69cd6b9a80ba86e34c6f3df49c559458ec8e8a460",
+      "status": "pass",
+      "reviewer": "Antigravity Gate 2 Visual Audit",
+      "evidence": "Inspected via read_file: 9:16 portrait 3D CGI non-human characters, zero text/letters/numbers, zero human faces, consistent anatomy and wardrobe.",
+      "reviewed_at": "2026-10-31T21:50:20.328Z"
+    },
+    "clip_03": {
+      "sha256": "98f9f23ea9f69df721d66046cbe3940324144d419d72b6427dbfb7482591f5d4",
+      "prompt_sha256": "2429790c411a279e5bf01ba96296551a779e85ea5566704fc59034bed01d1dbb",
+      "status": "pass",
+      "reviewer": "Antigravity Gate 2 Visual Audit",
+      "evidence": "Inspected via read_file: 9:16 portrait 3D CGI non-human characters, zero text/letters/numbers, zero human faces, consistent anatomy and wardrobe.",
+      "reviewed_at": "2026-10-31T21:50:20.328Z"
+    },
+    "clip_04": {
+      "sha256": "01a0662be74ff9c6b12c3bb6d5d6c55c26ba83d4f8a64ab6a1b4c40d6c152ecd",
+      "prompt_sha256": "0659affb9d7753178d73eaabbe534c93374e0e672f3d74e0ff8d71c7756a101c",
+      "status": "pass",
+      "reviewer": "Antigravity Gate 2 Visual Audit",
+      "evidence": "Inspected via read_file: 9:16 portrait 3D CGI non-human characters, zero text/letters/numbers, zero human faces, consistent anatomy and wardrobe.",
+      "reviewed_at": "2026-10-31T21:50:20.328Z"
+    },
+    "clip_05": {
+      "sha256": "27b6fea6268a295c480c6dec233233461a7593bf4e6e98c7b4779aabaaf74fb8",
+      "prompt_sha256": "21b345aa08bd43ea29c155a67b6e17215afc0dee148c94853581a048d9c209a0",
+      "status": "pass",
+      "reviewer": "Antigravity Gate 2 Visual Audit",
+      "evidence": "Inspected via read_file: 9:16 portrait 3D CGI non-human characters, zero text/letters/numbers, zero human faces, consistent anatomy and wardrobe.",
+      "reviewed_at": "2026-10-31T21:50:20.328Z"
+    },
+    "clip_06": {
+      "sha256": "da6c59ed75f1a37f01adaa17ead9550d92656c90125662992c17d3c5ba93c353",
+      "prompt_sha256": "23e245da2f6fc5e8b60b5e13444884c7ce1fd275485c93ff3e0ae8107e26039d",
+      "status": "pass",
+      "reviewer": "Antigravity Gate 2 Visual Audit",
+      "evidence": "Inspected via read_file: 9:16 portrait 3D CGI non-human characters, zero text/letters/numbers, zero human faces, consistent anatomy and wardrobe.",
+      "reviewed_at": "2026-10-31T21:50:20.328Z"
+    }
+  },
+  "story": {
+    "status": "pass",
+    "reviewer": "Antigravity Gate 1 & Gate 2 Audit",
+    "evidence": "Audited full source video contact sheet and audio; verified 6-clip story arc and character bible.",
+    "reviewed_at": "2026-10-31T21:50:20.328Z"
+  }
+}

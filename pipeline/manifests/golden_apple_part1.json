@@ -1,0 +1,342 @@
+{
+  "_comment": "Part1_GoldenAppleTreeSecret - 100% Google Flow native Farsi voice with full اعراب‌گذاری.",
+  "schema_version": 1,
+  "speech_review_note": "Full Persian vowel diacritics (اعراب‌گذاری کامل) in Google Flow prompt for 100% accurate native pronunciation.",
+  "episode_id": "Part1_GoldenAppleTreeSecret",
+  "title_fa": "قسمت اول: رقابت در بازار و راز درخت سیب طلایی!",
+  "title_en": "Golden Apple Tree Part 1",
+  "source_video": "${SRC}\\33_2026-10-10_DeTMUV9KPrV.mp4",
+  "source_start_offset": 0,
+  "story_summary_fa": "در بازار شهر، هلو سیب معمولی می‌فروشد اما موز مهربان سیب‌های طلایی را فقط یک دلار می‌فروشد و به کودکان فقیر رایگان سیب طلایی می‌دهد؛ هلو شبانه او را تعقیب می‌کند و درخت سیب طلایی را کشف می‌کند!",
+  "fallback_to_source_on_visual_fail": false,
+  "tight_speech_trim": true,
+  "variables": {
+    "BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series19-golden-apple-tree-farsi",
+    "S2_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi",
+    "CHEF_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\ugly-face-chef-farsi",
+    "SRC": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\straw.berryjammin"
+  },
+  "clips_dir": "${BASE}\\part1\\flow_clips",
+  "out_dir": "${BASE}\\05_final_masters\\part1",
+  "font_path": "${CHEF_BASE}\\03_farsi_audio_tts\\Vazirmatn-Bold.ttf",
+  "cta_video": "${S2_BASE}\\part1\\flow_clips\\cta_kelidbox_s2.mp4",
+  "cta_speaker": "BANANA_SELLER",
+  "cta_subtitles": [
+    {
+      "start": 0.15,
+      "end": 3.55,
+      "text": "برای دیدن قسمت بعدی این داستان همین الان پیج رو فالو کن!"
+    },
+    {
+      "start": 3.65,
+      "end": 7.6,
+      "text": "راستی کل این انیمیشن با اکانت‌های هوش مصنوعی سایت کلیدباکس ساخته شده!"
+    }
+  ],
+  "speakers": {
+    "PEACH_SELLER": [
+      255,
+      185,
+      165
+    ],
+    "BANANA_SELLER": [
+      255,
+      235,
+      130
+    ],
+    "APPLE_KID": [
+      165,
+      255,
+      155
+    ],
+    "BADGE": [
+      255,
+      215,
+      70
+    ]
+  },
+  "clips": [
+    {
+      "id": "clip_01",
+      "file": "clip_01.mp4",
+      "source_span": [
+        0,
+        7
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "In a rustic wooden-front market street, jealous 3D peach woman PEACH_SELLER in a white t-shirt and black mini skirt stands behind a wooden table stacked with red apples.",
+      "overlays": [
+        {
+          "speaker": "BADGE",
+          "text": "قسمت اول: رقابت در بازار و راز درخت سیب طلایی!",
+          "start": 0.1,
+          "end": 3.4,
+          "position": "top",
+          "font_size": 21
+        }
+      ],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "PEACH_SELLER",
+          "بیایید سیب‌های قرمز و شیرین فقط یک دلار! چرا هیچ‌کس از بساط من خرید نمی‌کنه؟!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_01.jpg",
+      "expected_speakers": [
+        "PEACH_SELLER"
+      ],
+      "beat_ids": [
+        "beat_1"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[GA1_C01] Stylized 3D CGI cartoon animation matching the exact 3D non-human fruit character and outfit in the reference image, static medium shot keeping the character in frame the entire time (no camera cuts), in a sunny rustic market street the round pink-orange 3D peach-headed woman with a single green leaf on top of her head wearing a white t-shirt and black mini skirt stands behind a wooden table piled with red apples and complains (strictly NO human face), speaking in native Persian (Farsi) with exact vowel pronunciation and an annoyed loud female voice: «بِیایِید سِیب‌هایِ قِرْمِز وُ شِیرِین فَقَط یِک دُلار! چِرا هِیچ‌کَس اَز بَساطِ مَن خَرِید نِمِی‌کُنِه؟!» Zero on-screen subtitles."
+    },
+    {
+      "id": "clip_02",
+      "file": "clip_02.mp4",
+      "source_span": [
+        7,
+        14
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "At the market stall next door, kind tall yellow 3D banana woman BANANA_SELLER in a blue denim overall dress smiles warmly behind a wooden table piled high with shining solid-gold apples.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "BANANA_SELLER",
+          "هل ندید دوستان، به همه‌تون می‌رسه! سیب‌های طلایی درخشان و تازه، دانه‌ای فقط یک دلار!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_02.jpg",
+      "expected_speakers": [
+        "BANANA_SELLER"
+      ],
+      "beat_ids": [
+        "beat_2"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[GA1_C02] Stylized 3D CGI cartoon animation matching the exact 3D non-human fruit character and outfit in the reference image, static medium shot keeping the character in frame the entire time (no camera cuts), in the sunny market street the tall bright-yellow 3D banana-headed woman wearing a blue denim overall dress over a blue t-shirt gestures warmly behind a wooden table piled with gleaming golden apples (strictly NO human face), speaking in native Persian (Farsi) with exact vowel pronunciation and a cheerful kind female voice: «هُل نَدِید دُوسْتان، بِه هَمِه‌تُون مِی‌رِسِه! سِیب‌هایِ طَلایِیِ دِرَخْشان وُ تازِه، دانِه‌ای فَقَط یِک دُلار!» Zero on-screen subtitles."
+    },
+    {
+      "id": "clip_03",
+      "file": "clip_03.mp4",
+      "source_span": [
+        14,
+        21
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "At the wooden market table, kind tall yellow 3D banana woman BANANA_SELLER in her blue denim overall dress hands a large gleaming golden apple to poor small green-apple child APPLE_KID in patched overalls.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "BANANA_SELLER",
+          "غصه نخور کوچولو، پول نداری عیبی نداره! این بزرگترین سیب طلایی رو رایگان ببر!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_03.jpg",
+      "expected_speakers": [
+        "BANANA_SELLER"
+      ],
+      "beat_ids": [
+        "beat_3"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[GA1_C03] Stylized 3D CGI cartoon animation matching the exact 3D non-human fruit characters and outfits in the reference image, static medium two-shot keeping both characters in frame the entire time (no camera cuts), at the wooden market stall the tall bright-yellow 3D banana-headed woman in a blue denim overall dress kindly hands a giant gleaming golden apple to the small scruffy green-apple-headed child in patched denim overalls (strictly NO human faces), as the yellow banana woman speaks in native Persian (Farsi) with exact vowel pronunciation and a gentle compassionate female voice: «غُصِّه نَخُور کُوچُولُو، پُول نَدارِی عِیْبِی نَدارِه! اِین بُزُرْگْتَرِین سِیبِ طَلایِی رُو رایْگان بِبَر!» Zero on-screen subtitles."
+    },
+    {
+      "id": "clip_04",
+      "file": "clip_04.mp4",
+      "source_span": [
+        21,
+        28
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "Beside the wooden market table, angry 3D peach woman PEACH_SELLER in her white t-shirt and black skirt confronts calm yellow 3D banana woman BANANA_SELLER with clenched fists.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "PEACH_SELLER",
+          "هی موز، تو تمام مشتری‌های من رو دزدیدی! این سیب‌های طلایی رو از کجا می‌آری؟!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_04.jpg",
+      "expected_speakers": [
+        "PEACH_SELLER"
+      ],
+      "beat_ids": [
+        "beat_4"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[GA1_C04] Stylized 3D CGI cartoon animation matching the exact 3D non-human fruit characters and outfits in the reference image, static medium two-shot keeping both characters in frame the entire time (no camera cuts), beside the wooden market table the angry round pink-orange 3D peach-headed woman in a white t-shirt and black skirt shouts furiously at the calm tall yellow 3D banana-headed woman in a blue denim overall dress (strictly NO human faces), as the 3D peach woman speaks in native Persian (Farsi) with exact vowel pronunciation and a furious jealous female voice: «هِی مُوز، تُو تَمامِ مُشْتَرِی‌هایِ مَن رُو دُزْدِیدِی! اِین سِیب‌هایِ طَلایِی رُو اَز کُجا مِی‌آرِی؟!» Zero on-screen subtitles."
+    },
+    {
+      "id": "clip_05",
+      "file": "clip_05.mp4",
+      "source_span": [
+        28,
+        34
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "At night in her lantern-lit cottage garden, tall yellow 3D banana woman BANANA_SELLER holds a wicker basket beside a magical tree whose branches glow with dozens of shining golden apples.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "BANANA_SELLER",
+          "خدایا شکرت بابت این درخت شگفت‌انگیز! هر چقدر سیب طلایی به مردم می‌دم، بیشتر بار می‌ده!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_05.jpg",
+      "expected_speakers": [
+        "BANANA_SELLER"
+      ],
+      "beat_ids": [
+        "beat_5"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[GA1_C05] Stylized 3D CGI cartoon animation matching the exact 3D non-human fruit character and outfit in the reference image, static medium shot keeping the character in frame the entire time (no camera cuts), at night in a lantern-lit cottage yard the tall bright-yellow 3D banana-headed woman in a blue denim overall dress holds a wicker basket beside a lush tree glowing with golden apples and baskets of gold apples on the ground (strictly NO human face), speaking in native Persian (Farsi) with exact vowel pronunciation and a grateful warm female voice: «خُدایا شُکْرِت بابَتِ اِین دِرَخْتِ شِگِفْت‌اَنْگِیز! هَر چِقَدْر سِیبِ طَلایِی بِه مَرْدُم مِی‌دَم، بِیشْتَر بار مِی‌دِه!» Zero on-screen subtitles."
+    },
+    {
+      "id": "clip_06",
+      "file": "clip_06.mp4",
+      "source_span": [
+        34,
+        40
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "Peeking from behind a wooden fence at night outside the cottage garden, jealous 3D peach woman PEACH_SELLER in her white t-shirt and black skirt glares with a wicked scheming grin.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "PEACH_SELLER",
+          "پس رازش این درخت سیب طلاییه! امشب این درخت رو می‌برم تا کاروبارش نابود بشه!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_06.jpg",
+      "expected_speakers": [
+        "PEACH_SELLER"
+      ],
+      "beat_ids": [
+        "beat_6"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[GA1_C06] Stylized 3D CGI cartoon animation matching the exact 3D non-human fruit character and outfit in the reference image, static medium shot keeping the character in frame the entire time (no camera cuts), standing behind a wooden picket fence at night under lantern light the round pink-orange 3D peach-headed woman in a white t-shirt and black mini skirt clenches her fists with a wicked scheming scowl (strictly NO human face), speaking in native Persian (Farsi) with exact vowel pronunciation and a scheming vengeful female voice: «پَس رازِش اِین دِرَخْتِ سِیبِ طَلایِیِه! اِمْشَب اِین دِرَخْت رُو مِی‌بُرَم تا کارُوبارِش نابُود بِشِه!» Zero on-screen subtitles."
+    }
+  ],
+  "voices": {
+    "PEACH_SELLER": {
+      "name_fa": "PEACH_SELLER",
+      "color": [
+        255,
+        185,
+        165
+      ],
+      "source": "google_flow_native"
+    },
+    "BANANA_SELLER": {
+      "name_fa": "BANANA_SELLER",
+      "color": [
+        255,
+        235,
+        130
+      ],
+      "source": "google_flow_native"
+    },
+    "APPLE_KID": {
+      "name_fa": "APPLE_KID",
+      "color": [
+        165,
+        255,
+        155
+      ],
+      "source": "google_flow_native"
+    }
+  },
+  "video": {
+    "width": 720,
+    "height": 1280,
+    "fps": 24,
+    "crf": 18,
+    "preset": "fast",
+    "scale_mode": "fill"
+  },
+  "audio": {
+    "loudnorm": "loudnorm=I=-14:TP=-1.5:LRA=11",
+    "sample_rate": 48000,
+    "channels": 2,
+    "bitrate": "192k"
+  },
+  "speech": {
+    "speech_safe": "auto_expand",
+    "threshold_dbfs": -38,
+    "pre_handle": 0.2,
+    "post_handle": 0.35,
+    "splice_crossfade": 0.02
+  },
+  "subtitle_style": {
+    "time_base": "trim_local",
+    "y_ratio": 0.84,
+    "font_size": 27,
+    "min_font_size": 16,
+    "max_text_margin": 84,
+    "max_lines": 2
+  },
+  "outputs": {
+    "per_clip_location": "both",
+    "base_mode": "timeline",
+    "cta_burn_subtitles": true,
+    "cta_loudnorm": true,
+    "publish_caption_fa": "قسمت اول: رقابت در بازار و راز درخت سیب طلایی!"
+  },
+  "character_references": [
+    "${BASE}\\character_sheets\\FLOW_SHEET_SERIES19_CHARACTERS.jpg"
+  ],
+  "content_edits": [],
+  "story_plan": {
+    "summary": "در بازار شهر، هلو سیب معمولی می‌فروشد اما موز مهربان سیب‌های طلایی را فقط یک دلار می‌فروشد و به کودکان فقیر رایگان سیب طلایی می‌دهد؛ هلو شبانه او را تعقیب می‌کند و درخت سیب طلایی را کشف می‌کند!",
+    "ending": "Jealous Peach follows kind Banana home at night, discovers her miraculous Golden Apple Tree, and plots to chop it down and steal it.",
+    "required_beats": [
+      "beat_1",
+      "beat_2",
+      "beat_3",
+      "beat_4",
+      "beat_5",
+      "beat_6"
+    ]
+  },
+  "visual": {
+    "keyframe_threshold": 45,
+    "max_keyframe_l1": 45,
+    "jump_threshold": 38,
+    "contamination_margin": 5
+  },
+  "visual_gate": {
+    "keyframe_threshold": 45,
+    "max_keyframe_l1": 45,
+    "jump_threshold": 38,
+    "contamination_margin": 5
+  }
+}

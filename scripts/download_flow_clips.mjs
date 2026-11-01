@@ -160,13 +160,46 @@ async function downloadOne(mcp, profileId, tabId, matchSubstr, outPath) {
         typeof n.name === 'string' &&
         n.name.toLowerCase().includes(matchSubstr.toLowerCase())
     );
+    let directDownloadBtn = null;
+    if (idx === -1) {
+      // Match by prompt text node (e.g. "[S7_C06] 3D Pixar...") and locate the adjacent Download button
+      const textNodeIdx = nodes.findIndex(
+        (n) => typeof n.text === 'string' && n.text.toLowerCase().includes(matchSubstr.toLowerCase())
+      );
+      if (textNodeIdx !== -1) {
+        for (let k = Math.max(0, textNodeIdx - 10); k <= Math.min(nodes.length - 1, textNodeIdx + 6); k++) {
+          const cand = nodes[k];
+          if (cand.ref && cand.role === 'button' && (cand.name === 'Download' || cand.name === 'بارگیری')) {
+            directDownloadBtn = cand;
+            idx = interactive.findIndex((x) => x.ref === cand.ref);
+            break;
+          }
+        }
+        if (!directDownloadBtn) {
+          if (typeof downloadOne._waitCount !== 'number') downloadOne._waitCount = 0;
+          if (++downloadOne._waitCount <= 15) {
+            console.log(`  [wait ${downloadOne._waitCount}/15] Prompt "${matchSubstr}" found on page but Download button not ready yet (still generating), waiting 8s...`);
+            await sleep(8000);
+            scrollTry--;
+            continue;
+          }
+        } else {
+          downloadOne._waitCount = 0;
+        }
+      }
+    }
     if (idx !== -1) break;
-    console.log(`  [scroll ${scrollTry + 1}] Tile not in current viewport, pressing PageDown...`);
-    await mcp.callTool('browser_press_key', {
-      profileId,
-      tabId,
-      key: 'PageDown',
-    });
+    const gridNode = [...interactive].reverse().find((n) => n.name === 'Trash batch' || n.name === 'Favorite' || n.name === 'Reuse prompt');
+    console.log(`  [scroll ${scrollTry + 1}] Tile not in current viewport, scrolling down on ${gridNode?.ref || 'page'}...`);
+    try {
+      await mcp.callTool('browser_press_key', {
+        profileId,
+        tabId,
+        key: 'PageDown',
+      });
+    } catch (err) {
+      console.log(`  [scroll] ignoring PageDown error (${err.message.slice(0, 60)}), re-observing...`);
+    }
     await sleep(1200);
   }
   if (idx === -1) {
@@ -183,14 +216,30 @@ async function downloadOne(mcp, profileId, tabId, matchSubstr, outPath) {
   console.log(`  [1/3] Found tile [${tile.ref}] "${tile.name}"`);
   const beforeMap = listMp4Files();
 
-  // Check if one of the next interactive buttons is direct "Download" or "بارگیری" (Row view)
-  const nextBtn = interactive
-    .slice(idx + 1, idx + 4)
-    .find((b) => b && (b.name === 'Download' || b.name === 'بارگیری'));
+  // Check if tile itself or one of the next interactive buttons is direct "Download" or "بارگیری" (Row view)
+  const nextBtn =
+    (tile.name === 'Download' || tile.name === 'بارگیری' ? tile : null) ||
+    interactive
+      .slice(idx + 1, idx + 4)
+      .find((b) => b && (b.name === 'Download' || b.name === 'بارگیری'));
   const prevBtn = interactive[idx - 1];
   if (nextBtn) {
     console.log(`  [2/3] Clicking direct Download button [${nextBtn.ref}]...`);
     await mcp.callTool('browser_click', { profileId, tabId, ref: nextBtn.ref });
+    await sleep(1100);
+    const subSnap = await mcp.callTool('browser_observe_page', { profileId, tabId });
+    const allSubNodes = flattenNodes(subSnap.frames?.[0]?.tree);
+    const res720 = [...allSubNodes].reverse().find(
+      (n) =>
+        n.role === 'menuitem' &&
+        flattenNodes(n).some(
+          (c) => typeof c.text === 'string' && (c.text.includes('720') || c.text.includes('۷۲۰') || c.text.includes('Original'))
+        )
+    );
+    if (res720 && res720.ref) {
+      console.log(`  [2b/3] Clicking 720p submenu option [${res720.ref}]...`);
+      await mcp.callTool('browser_click', { profileId, tabId, ref: res720.ref });
+    }
   } else if (prevBtn && (prevBtn.name === 'More options' || prevBtn.name === 'گزینه‌های بیشتر')) {
     console.log(`  [2/3] Clicking More options [${prevBtn.ref}]...`);
     await mcp.callTool('browser_click', { profileId, tabId, ref: prevBtn.ref });
@@ -236,13 +285,17 @@ async function downloadOne(mcp, profileId, tabId, matchSubstr, outPath) {
 async function main() {
   const argv = process.argv.slice(2);
   let profileId = '731e6d16-b95b-480f-a245-cb443411400d';
-  let tabId = 612095035;
+  let tabId = 612097030;
   let listOnly = false;
+  let searchQuery = null;
   const pairs = [];
+  const trashMatches = [];
   for (let i = 0; i < argv.length; i++) {
     if (argv[i] === '--profile' && argv[i + 1]) profileId = argv[++i];
     else if (argv[i] === '--tab' && argv[i + 1]) tabId = Number(argv[++i]);
     else if (argv[i] === '--list') listOnly = true;
+    else if (argv[i] === '--trash' && argv[i + 1]) trashMatches.push(argv[++i]);
+    else if (argv[i] === '--search' && argv[i + 1]) searchQuery = argv[++i];
     else if (argv[i] === '--match' && argv[i + 1]) {
       const match = argv[++i];
       if (argv[i + 1] === '--out' && argv[i + 2]) {
@@ -263,17 +316,35 @@ async function main() {
   const mcp = new McpClient();
   try {
     await mcp.init();
-    const initSnap = await mcp.callTool('browser_observe_page', { profileId, tabId });
-    const initNodes = flattenNodes(initSnap.frames?.[0]?.tree);
-    const videosTab = initNodes.find(
-      (n) =>
-        n.role === 'button' &&
-        typeof n.name === 'string' &&
-        (n.name.includes('videocam Videos') || n.name.includes('videocam ویدیوها'))
-    );
-    if (videosTab) {
-      await mcp.callTool('browser_click', { profileId, tabId, ref: videosTab.ref });
-      await sleep(1200);
+    await mcp.callTool('browser_press_key', { profileId, tabId, key: 'Escape' });
+    await sleep(600);
+    for (let tabTry = 1; tabTry <= 4; tabTry++) {
+      const initSnap = await mcp.callTool('browser_observe_page', { profileId, tabId });
+      const initNodes = flattenNodes(initSnap.frames?.[0]?.tree);
+      const hasImageTiles = initNodes.some((n) => n.role === 'button' && n.name === 'image.png');
+      if (!hasImageTiles) break;
+      const videosTab = initNodes.find(
+        (n) =>
+          n.role === 'button' &&
+          typeof n.name === 'string' &&
+          (n.name.includes('videocam Videos') || n.name.includes('videocam ویدیوها'))
+      );
+      if (videosTab && (hasImageTiles || tabTry === 1)) {
+        await mcp.callTool('browser_click', { profileId, tabId, ref: videosTab.ref });
+        await sleep(1800);
+      } else {
+        break;
+      }
+    }
+    if (searchQuery !== null) {
+      const sSnap = await mcp.callTool('browser_observe_page', { profileId, tabId });
+      const sNodes = flattenNodes(sSnap.frames?.[0]?.tree);
+      const searchBox = sNodes.find((n) => n.ref && n.role === 'textbox' && n.name === 'Search');
+      if (searchBox) {
+        await mcp.callTool('browser_fill', { profileId, tabId, ref: searchBox.ref, value: searchQuery });
+        await mcp.callTool('browser_press_key', { profileId, tabId, key: 'Enter' });
+        await sleep(1800);
+      }
     }
     await cleanFailedTiles(mcp, profileId, tabId);
     if (listOnly) {
@@ -298,6 +369,32 @@ async function main() {
         console.log(`  Saved ${downloadedFile} -> ${p.out} (${fs.statSync(p.out).size} bytes)`);
       } else {
         await downloadOne(mcp, profileId, tabId, p.match, p.out);
+      }
+    }
+    for (const tm of trashMatches) {
+      const tSnap = await mcp.callTool('browser_observe_page', { profileId, tabId });
+      const allTNodes = flattenNodes(tSnap.frames?.[0]?.tree);
+      const tNodes = allTNodes.filter((n) => n.ref && n.interactive);
+      let tIdx = tNodes.findIndex((n) => n.role === 'button' && typeof n.name === 'string' && n.name.toLowerCase().includes(tm.toLowerCase()));
+      if (tIdx === -1) {
+        const txtIdx = allTNodes.findIndex((n) => typeof n.text === 'string' && n.text.toLowerCase().includes(tm.toLowerCase()));
+        if (txtIdx !== -1) {
+          for (let k = txtIdx - 1; k >= Math.max(0, txtIdx - 15); k--) {
+            const cand = allTNodes[k];
+            if (cand.ref && cand.role === 'button' && cand.name && !['Download', 'بارگیری', 'Reuse prompt', 'Trash batch', 'Favorite', 'More options'].includes(cand.name)) {
+              tIdx = tNodes.findIndex((x) => x.ref === cand.ref);
+              break;
+            }
+          }
+        }
+      }
+      if (tIdx !== -1) {
+        const trashBtn = tNodes.slice(tIdx + 1, tIdx + 6).find((b) => b && (b.name === 'Trash batch' || b.name === 'Delete'));
+        if (trashBtn) {
+          console.log(`  [trash] Trashing already-downloaded tile "${tNodes[tIdx].name}" [${trashBtn.ref}]...`);
+          await mcp.callTool('browser_click', { profileId, tabId, ref: trashBtn.ref });
+          await sleep(1200);
+        }
       }
     }
   } finally {

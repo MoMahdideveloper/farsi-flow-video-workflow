@@ -1,0 +1,283 @@
+{
+  "_comment": "Series 7 (@emotionalgroceries Pizza Billionaire) Part 1 - 100% Google Flow native Farsi voice with full اعراب‌گذاری.",
+  "schema_version": 1,
+  "speech_review_note": "Full Persian vowel diacritics (اعراب‌گذاری کامل) in Google Flow prompt for 100% accurate native pronunciation.",
+  "episode_id": "Part1_FreePizza",
+  "title_fa": "قسمت اول: گدایِ گرسنه و یک تکه پیتزا!",
+  "title_en": "Emotional Groceries Pizza Billionaire Part 1 - The Free Slice of Pizza",
+  "source_video": "${EG_SRC}\\05_DeX4iyqOBp4_emotionalgroceries.mp4",
+  "source_start_offset": 0.0,
+  "story_summary_fa": "پسرک اسفنجی سیاه با لباس پاره وارد پیتزافروشی می‌شه و می‌گه دو روزه هیچی نخورده! صندوقدار مهربان (سارا) دلش می‌سوزه و بهش یک تکه پیتزای گرم می‌ده، اما رئیس طمع‌کار رستوران متوجه می‌شه و پول پیتزا رو از حقوق سارا کم می‌کنه و تهدید به اخراجش می‌کنه!",
+  "fallback_to_source_on_visual_fail": false,
+  "tight_speech_trim": true,
+  "variables": {
+    "BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series7-sponge-pizza-billionaire-farsi",
+    "S2_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi",
+    "CHEF_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\ugly-face-chef-farsi",
+    "EG_SRC": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\emotionalgroceries"
+  },
+  "clips_dir": "${BASE}\\part1\\flow_clips",
+  "out_dir": "${BASE}\\05_final_masters\\part1",
+  "font_path": "${CHEF_BASE}\\03_farsi_audio_tts\\Vazirmatn-Bold.ttf",
+  "cta_video": "${S2_BASE}\\part1\\flow_clips\\cta_kelidbox_s2.mp4",
+  "cta_speaker": "SANDY",
+  "cta_subtitles": [
+    {
+      "start": 0.25,
+      "end": 3.35,
+      "text": "برای دیدن قسمت بعدی این داستان همین الان پیج رو فالو کن!"
+    },
+    {
+      "start": 3.5,
+      "end": 7.85,
+      "text": "راستی کل این انیمیشن با اکانت‌های هوش مصنوعی سایت کلیدباکس ساخته شده!"
+    }
+  ],
+  "video": {
+    "width": 720,
+    "height": 1280,
+    "fps": 24,
+    "crf": 18,
+    "preset": "fast",
+    "scale_mode": "fill"
+  },
+  "audio": {
+    "loudnorm": "loudnorm=I=-14:TP=-1.5:LRA=11",
+    "sample_rate": 48000,
+    "channels": 2,
+    "bitrate": "192k"
+  },
+  "speech": {
+    "speech_safe": "auto_expand",
+    "threshold_dbfs": -38.0,
+    "pre_handle": 0.2,
+    "post_handle": 0.35,
+    "splice_crossfade": 0.02
+  },
+  "subtitle_style": {
+    "time_base": "trim_local",
+    "y_ratio": 0.84,
+    "font_size": 27,
+    "min_font_size": 16,
+    "max_text_margin": 84,
+    "max_lines": 2
+  },
+  "badge": {
+    "text": "قسمت اول: گدایِ گرسنه و رازِ پیتزافروشی!",
+    "start": 0.0,
+    "end": 3.5,
+    "y_center": 130,
+    "font_size": 28,
+    "color": [
+      255,
+      225,
+      110
+    ],
+    "clip_index": 1
+  },
+  "outputs": {
+    "per_clip_location": "both",
+    "base_mode": "timeline",
+    "cta_burn_subtitles": true,
+    "cta_loudnorm": true,
+    "publish_caption_fa": "فقط به خاطر بخشیدن یک تکه پیتزا به پسرک گرسنه، رئیس طمع‌کار حقوقش رو برید و تهدید به اخراجش کرد! 😱🍕💔\nقسمت اول داستان وایرال میلیاردر مخفی در پیتزافروشی (@emotionalgroceries) با صدای فارسی و اعراب‌گذاری دقیق!\nبرای دیدن قسمت دوم (لو رفتن هویت واقعی پسرک!) حتماً پیج رو فالو کن 👇🔥"
+  },
+  "voices": {
+    "KUH": {
+      "name_fa": "کوچولو (اسفنج سیاه میلیاردر مخفی)",
+      "color": [
+        140,
+        235,
+        255
+      ],
+      "source": "google_flow_native"
+    },
+    "SANDY": {
+      "name_fa": "سارا (صندوقدار مهربان پیتزافروشی)",
+      "color": [
+        255,
+        175,
+        220
+      ],
+      "source": "google_flow_native"
+    },
+    "BOSS": {
+      "name_fa": "رئیس قرمز (مدیر طمع‌کار رستوران)",
+      "color": [
+        255,
+        130,
+        130
+      ],
+      "source": "google_flow_native"
+    },
+    "COWORKER": {
+      "name_fa": "هومن (همکار مهربان آشپزخانه)",
+      "color": [
+        255,
+        225,
+        120
+      ],
+      "source": "google_flow_native"
+    }
+  },
+  "clips": [
+    {
+      "id": "clip_01",
+      "file": "clip_01.mp4",
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_01.jpg",
+      "expected_speakers": [
+        "KUH"
+      ],
+      "story_beat": "Poor hungry dark charcoal sponge boy in a tattered shirt and backpack stands at the wooden pizza counter pleading with the kind brown squirrel cashier in a green pizza shirt",
+      "source_span": [
+        0.0,
+        5.2
+      ],
+      "trim_in": 0.0,
+      "trim_out": 9.85,
+      "speech_fa_vocalized": "خانُم، می‌شه فَقَط یِک تِکّه پیتْزا بِه مَن بِدید؟ بِه خُدا دُو رُوزه کِه هیچْ‌چی نَخُورْدَم!",
+      "subtitles": [
+        [
+          0.1,
+          9.5,
+          "KUH",
+          "خانم، می‌شه فقط یک تکه پیتزا به من بدید؟ به خدا دو روزه که هیچ‌چی نخوردم!"
+        ]
+      ]
+    },
+    {
+      "id": "clip_02",
+      "file": "clip_02.mp4",
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_02.jpg",
+      "expected_speakers": [
+        "SANDY"
+      ],
+      "story_beat": "Kind brown squirrel cashier in a green pizza parlor polo shirt and white apron opens the warm glass pizza case and hands a fresh slice of pepperoni pizza across the counter",
+      "source_span": [
+        5.2,
+        14.0
+      ],
+      "trim_in": 0.0,
+      "trim_out": 9.85,
+      "speech_fa_vocalized": "آخ عَزیزَم، چِقَدْر گُرْسِنه‌ای! بِیا این تِکّه پیتْزایِ گَرْم رُو بُخُور، وَلی فَقَط هَمین یِک‌باره ها!",
+      "subtitles": [
+        [
+          0.1,
+          9.5,
+          "SANDY",
+          "آخ عزیزم، چقدر گرسنه‌ای! بیا این تکه پیتزای گرم رو بخور، ولی فقط همین یک‌باره ها!"
+        ]
+      ]
+    },
+    {
+      "id": "clip_03",
+      "file": "clip_03.mp4",
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_03.jpg",
+      "expected_speakers": [
+        "KUH",
+        "SANDY"
+      ],
+      "story_beat": "Poor dark charcoal sponge boy holds the warm pizza slice with grateful tears in his eyes while the kind squirrel cashier whispers for him to leave quickly before her boss sees",
+      "source_span": [
+        14.0,
+        22.4
+      ],
+      "trim_in": 0.0,
+      "trim_out": 9.85,
+      "speech_fa_vocalized": "خِیْلی مَمْنُونَم خانُم، هیچ‌وَقْت این لُطْفِتُون رُو فَرامُوش نِمی‌کُنَم! نُوشِ جان، فَقَط زُود بُرُو تا رَئیسَم نَدیده!",
+      "subtitles": [
+        [
+          0.1,
+          4.8,
+          "KUH",
+          "خیلی ممنونم خانم، هیچ‌وقت این لطفتون رو فراموش نمی‌کنم!"
+        ],
+        [
+          4.9,
+          9.5,
+          "SANDY",
+          "نوش جان، فقط زود برو تا رئیسم ندیده!"
+        ]
+      ]
+    },
+    {
+      "id": "clip_04",
+      "file": "clip_04.mp4",
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_04.jpg",
+      "expected_speakers": [
+        "BOSS"
+      ],
+      "story_beat": "Greedy red crab restaurant manager in a white short-sleeve shirt, black tie, and gold manager badge glares angrily from the kitchen doorway with his claws crossed",
+      "source_span": [
+        22.4,
+        29.5
+      ],
+      "trim_in": 0.0,
+      "trim_out": 9.85,
+      "speech_fa_vocalized": "عَجَب! این دُخْتَره هِی داره پیتْزاهایِ مَن رُو مَجّانی می‌ده بِه این گِداها! اَلان حِسابِش رُو می‌رِسَم!",
+      "subtitles": [
+        [
+          0.1,
+          9.5,
+          "BOSS",
+          "عجب! این دختره هی داره پیتزاهای من رو مجانی می‌ده به این گداها! الان حسابش رو می‌رسم!"
+        ]
+      ]
+    },
+    {
+      "id": "clip_05",
+      "file": "clip_05.mp4",
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_05.jpg",
+      "expected_speakers": [
+        "SANDY",
+        "BOSS"
+      ],
+      "story_beat": "Inside the restaurant office, the kind squirrel cashier sits nervously in a chair while the angry red crab manager slams his claw on the desk",
+      "source_span": [
+        29.5,
+        36.5
+      ],
+      "trim_in": 0.0,
+      "trim_out": 9.85,
+      "speech_fa_vocalized": "رَئیس، مَن رُو خْواسْته بُودید؟ بَله! کی بِه تُو اِجازه داده پیتْزایِ رِسْتُورانِ مَن رُو مَجّانی بِبَخْشی؟!",
+      "subtitles": [
+        [
+          0.1,
+          3.2,
+          "SANDY",
+          "رئیس، من رو خواسته بودید؟"
+        ],
+        [
+          3.3,
+          9.5,
+          "BOSS",
+          "بله! کی به تو اجازه داده پیتزای رستوران من رو مجانی ببخشی؟!"
+        ]
+      ]
+    },
+    {
+      "id": "clip_06",
+      "file": "clip_06.mp4",
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_06.jpg",
+      "expected_speakers": [
+        "BOSS"
+      ],
+      "story_beat": "Inside the office, the angry red crab manager leans over his desk pointing a threatening claw right at the worried squirrel cashier",
+      "source_span": [
+        36.5,
+        42.4
+      ],
+      "trim_in": 0.0,
+      "trim_out": 9.85,
+      "speech_fa_vocalized": "پُولِ این پیتْزا رُو اَز حُقُوقِت کَم می‌کُنَم! یِک‌بارِ دیگه بَبینَم، هَمین‌جا اِخْراجی! فَهمیدی؟!",
+      "subtitles": [
+        [
+          0.1,
+          9.5,
+          "BOSS",
+          "پول این پیتزا رو از حقوقت کم می‌کنم! یک‌بار دیگه ببینم، همین‌جا اخراجی! فهمیدی؟!"
+        ]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,262 @@
+{
+  "_comment": "Story 4 (Dd3_e7bO_Vt - What Will Spongecuh Do? The Hidden Twin - 100% Google Flow native Farsi voice).",
+  "schema_version": 1,
+  "speech_review_note": "Curated trim windows with auto_expand speech-safe protection.",
+  "episode_id": "Story4_SpongeTwins",
+  "title_fa": "داستان چهارم: راز دوقلوهای اسفنجی (فرزند پنج دلاری در زیرزمین!)",
+  "title_en": "What Will Spongecuh Do - The Hidden Twin",
+  "source_video": "${SRC}\\04_Dd3_e7bO_Vt_emotionalgroceries.mp4",
+  "story_summary_fa": "پدر اسفنجی فقیر عدد یک میلیون دلار رو با گریم روی پیشونیش می‌کشه تا همسر ثروتمندش نفهمه فقیره! توی بیمارستان، دکتر فلفل دلمه‌ای اعلام می‌کنه دوقلو دارن: یکی با پانصد هزار دلار و یکی فقط با پنج دلار! پدر طمع‌کار قلِ پنج دلاری رو هشت سال توی زیرزمین تاریک قایم می‌کنه تا اینکه دکتر با فیلم دوربین مداربسته راز رو به مادر لو می‌ده!",
+  "fallback_to_source_on_visual_fail": false,
+  "tight_speech_trim": true,
+  "variables": {
+    "BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series4-viral-6-stories-farsi",
+    "S2_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi",
+    "CHEF_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\ugly-face-chef-farsi",
+    "SRC": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\selected_6_stories"
+  },
+  "clips_dir": "${BASE}\\story4\\flow_clips",
+  "out_dir": "${BASE}\\05_final_masters\\story4",
+  "font_path": "${CHEF_BASE}\\03_farsi_audio_tts\\Vazirmatn-Bold.ttf",
+  "cta_video": "${S2_BASE}\\part1\\flow_clips\\cta_kelidbox_s2.mp4",
+  "cta_speaker": "MOM",
+  "cta_subtitles": [
+    {
+      "start": 0.25,
+      "end": 3.35,
+      "text": "برای دیدن داستان‌های وایرال بعدی همین الان پیج رو فالو کن!"
+    },
+    {
+      "start": 3.5,
+      "end": 7.85,
+      "text": "راستی کل این انیمیشن با اکانت‌های هوش مصنوعی سایت کلیدباکس ساخته شده!"
+    }
+  ],
+  "video": {
+    "width": 720,
+    "height": 1280,
+    "fps": 24,
+    "crf": 18,
+    "preset": "fast",
+    "scale_mode": "fill"
+  },
+  "audio": {
+    "loudnorm": "loudnorm=I=-14:TP=-1.5:LRA=11",
+    "sample_rate": 48000,
+    "channels": 2,
+    "bitrate": "192k"
+  },
+  "speech": {
+    "speech_safe": "auto_expand",
+    "threshold_dbfs": -38.0,
+    "pre_handle": 0.2,
+    "post_handle": 0.35,
+    "splice_crossfade": 0.02
+  },
+  "subtitle_style": {
+    "time_base": "trim_local",
+    "y_ratio": 0.84,
+    "font_size": 27,
+    "min_font_size": 16,
+    "max_text_margin": 84,
+    "max_lines": 2
+  },
+  "badge": {
+    "text": "داستان چهارم: راز دوقلوهای اسفنجی (فرزند پنج دلاری در زیرزمین!)",
+    "start": 0.0,
+    "end": 3.5,
+    "y_center": 130,
+    "font_size": 28,
+    "color": [
+      255,
+      225,
+      110
+    ],
+    "clip_index": 1
+  },
+  "outputs": {
+    "per_clip_location": "both",
+    "base_mode": "timeline",
+    "cta_burn_subtitles": true,
+    "cta_loudnorm": true,
+    "publish_caption_fa": "پدر طمع‌کار یکی از دوقلوها رو ۸ سال توی زیرزمین زندانی کرد چون عدد پیشونیش فقط ۵ دلار بود! 😱🧽💰\nوقتی دکتر فلفل دلمه‌ای توی بیمارستان گفت یکی از دوقلوها ۵۰۰ هزار دلاریه و اون یکی ۵ دلاری، پدر بی‌رحم قلِ فقیر رو توی زیرزمین قایم کرد تا همسر ثروتمندش سندی نفهمه... اما ۸ سال بعد فیلم دوربین مداربسته همه‌چیز رو لو داد! 🔥🎬"
+  },
+  "voices": {
+    "DAD": {
+      "name_fa": "پدر اسفنجی",
+      "color": [
+        255,
+        215,
+        110
+      ],
+      "source": "google_flow_native"
+    },
+    "DOC": {
+      "name_fa": "دکتر فلفل دلمه‌ای",
+      "color": [
+        255,
+        140,
+        140
+      ],
+      "source": "google_flow_native"
+    },
+    "POOR_TWIN": {
+      "name_fa": "قلِ پنج دلاری",
+      "color": [
+        150,
+        235,
+        255
+      ],
+      "source": "google_flow_native"
+    },
+    "MOM": {
+      "name_fa": "سندی (مادر ثروتمند)",
+      "color": [
+        255,
+        165,
+        215
+      ],
+      "source": "google_flow_native"
+    }
+  },
+  "clips": [
+    {
+      "id": "clip_01",
+      "file": "clip_01.mp4",
+      "keyframe": "${BASE}\\story4\\keyframes\\KF_01.jpg",
+      "expected_speakers": [
+        "DAD"
+      ],
+      "story_beat": "Sponge Dad sits in his car painting 1,000,000 on his forehead with makeup so nobody knows he is poor",
+      "source_span": [
+        0.0,
+        18.9
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.95,
+      "subtitles": [
+        [
+          0.1,
+          7.9,
+          "DAD",
+          "امروز بچه‌هامون دنیا میان! با گریم روی پیشونیم می‌نویسم یک میلیون دلار تا نگن فقیرم!"
+        ]
+      ]
+    },
+    {
+      "id": "clip_02",
+      "file": "clip_02.mp4",
+      "keyframe": "${BASE}\\story4\\keyframes\\KF_02.jpg",
+      "expected_speakers": [
+        "DOC"
+      ],
+      "story_beat": "In the hospital room, Dr. Red Bell Pepper shows Sponge Dad the twin sponge babies: one with 500,000 and one with 5",
+      "source_span": [
+        18.9,
+        36.0
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.95,
+      "subtitles": [
+        [
+          0.1,
+          7.9,
+          "DOC",
+          "تبریک می‌گم آقا، دوقلو دارید! قلِ زرد پانصد هزار دلاره، اما قلِ تیره پنج دلاره!"
+        ]
+      ]
+    },
+    {
+      "id": "clip_03",
+      "file": "clip_03.mp4",
+      "keyframe": "${BASE}\\story4\\keyframes\\KF_03.jpg",
+      "expected_speakers": [
+        "DAD"
+      ],
+      "story_beat": "Sponge Dad locks the $5 dark sponge twin in the dark brick basement and warns him never to go upstairs",
+      "source_span": [
+        36.0,
+        56.0
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.95,
+      "subtitles": [
+        [
+          0.1,
+          7.9,
+          "DAD",
+          "تو همین پایین توی زیرزمین تاریک می‌مونی! اگه مادرت ببینه پنج دلاری، جفتمون بدبخت می‌شیم!"
+        ]
+      ]
+    },
+    {
+      "id": "clip_04",
+      "file": "clip_04.mp4",
+      "keyframe": "${BASE}\\story4\\keyframes\\KF_04.jpg",
+      "expected_speakers": [
+        "DAD"
+      ],
+      "story_beat": "Upstairs in the luxury mansion, Sponge Dad and billionaire Purple Sponge Grandpa proudly celebrate the $500,000 yellow sponge boy",
+      "source_span": [
+        56.0,
+        78.0
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.95,
+      "subtitles": [
+        [
+          0.1,
+          7.9,
+          "DAD",
+          "ببینید چه تک‌پسر ثروتمندی داریم! پانصد هزار دلاره، توی این عمارت فقط ثروتمندا جا دارن!"
+        ]
+      ]
+    },
+    {
+      "id": "clip_05",
+      "file": "clip_05.mp4",
+      "keyframe": "${BASE}\\story4\\keyframes\\KF_05.jpg",
+      "expected_speakers": [
+        "DOC"
+      ],
+      "story_beat": "Eight years later, Dr. Red Bell Pepper checks hospital security monitors and calls Sandy to reveal the stolen twin",
+      "source_span": [
+        78.0,
+        104.0
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.95,
+      "subtitles": [
+        [
+          0.1,
+          7.9,
+          "DOC",
+          "خانم سندی، فیلم دوربین بیمارستان رو دیدم! شما دوقلو زایمان کردید و شوهرتون یکیشو قایم کرده!"
+        ]
+      ]
+    },
+    {
+      "id": "clip_06",
+      "file": "clip_06.mp4",
+      "keyframe": "${BASE}\\story4\\keyframes\\KF_06.jpg",
+      "expected_speakers": [
+        "MOM"
+      ],
+      "story_beat": "Sandy opens the basement door in shock and embraces her hidden $5 sponge son while promising justice",
+      "source_span": [
+        104.0,
+        116.1
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.95,
+      "subtitles": [
+        [
+          0.1,
+          7.9,
+          "MOM",
+          "هشت سال بهم دروغ گفت و بچه‌م رو توی زیرزمین حبس کرد! نترس عزیزم، پدرت تاوان می‌ده!"
+        ]
+      ]
+    }
+  ]
+}

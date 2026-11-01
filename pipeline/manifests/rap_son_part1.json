@@ -1,0 +1,344 @@
+{
+  "_comment": "Series 14 (@emotionalgroceries) Part 1 - 100% Google Flow native Farsi voice with full اعراب‌گذاری.",
+  "schema_version": 1,
+  "speech_review_note": "Full Persian vowel diacritics (اعراب‌گذاری کامل) in Google Flow prompt for 100% accurate native pronunciation.",
+  "episode_id": "Part1_FavoriteRapperSon",
+  "title_fa": "قسمت اول: ماشینِ لوکس برایِ پسرِ رپر، پیاده‌روی زیرِ بارون برایِ دخترِ درس‌خوان!",
+  "title_en": "Rap Career Son vs CEO Daughter Part 1 - Favorite Son",
+  "source_video": "${SRC}\\12_DeHjYDXOfDh_emotionalgroceries.mp4",
+  "source_start_offset": 0,
+  "story_summary_fa": "پدر برای شروع خوانندگی و استودیوی پسرش و حتی خرید ماشین لوکس پول خرج می‌کند، اما به دختر درس‌خوانش سندی حتی پنجاه دلار پول کتاب دانشگاه نمی‌دهد تا مجبور شود کار کند و زیر باران پیاده برود!",
+  "fallback_to_source_on_visual_fail": false,
+  "tight_speech_trim": true,
+  "variables": {
+    "BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series14-rap-son-ceo-daughter-farsi",
+    "S2_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi",
+    "CHEF_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\ugly-face-chef-farsi",
+    "SRC": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\emotionalgroceries"
+  },
+  "clips_dir": "${BASE}\\part1\\flow_clips",
+  "out_dir": "${BASE}\\05_final_masters\\part1",
+  "font_path": "${CHEF_BASE}\\03_farsi_audio_tts\\Vazirmatn-Bold.ttf",
+  "cta_video": "${S2_BASE}\\part1\\flow_clips\\cta_kelidbox_s2.mp4",
+  "cta_speaker": "SANDY",
+  "cta_subtitles": [
+    {
+      "start": 0.15,
+      "end": 3.55,
+      "text": "برای دیدن قسمت بعدی این داستان همین الان پیج رو فالو کن!"
+    },
+    {
+      "start": 3.65,
+      "end": 7.6,
+      "text": "راستی کل این انیمیشن با اکانت‌های هوش مصنوعی سایت کلیدباکس ساخته شده!"
+    }
+  ],
+  "speakers": {
+    "DAD_SPONGE": [
+      170,
+      225,
+      255
+    ],
+    "RICO_SPONGE": [
+      255,
+      175,
+      120
+    ],
+    "SANDY": [
+      255,
+      240,
+      95
+    ],
+    "PROF_CRAB": [
+      150,
+      255,
+      180
+    ],
+    "BADGE": [
+      255,
+      215,
+      70
+    ]
+  },
+  "clips": [
+    {
+      "id": "clip_01",
+      "file": "clip_01.mp4",
+      "source_span": [
+        0,
+        9
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "At the family dinner table, DAD_SPONGE (3D dark charcoal porous sponge father in white polo shirt and gold chain) happily hands cash to his favorite son RICO_SPONGE (3D dark charcoal sponge teen in black puffer jacket, backwards cap, and headphones) while SANDY watches.",
+      "overlays": [
+        {
+          "speaker": "BADGE",
+          "text": "قسمت اول: پسرِ نورچشمی و دخترِ درس‌خوان!",
+          "start": 0.1,
+          "end": 3.4,
+          "position": "top",
+          "font_size": 21
+        }
+      ],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "DAD_SPONGE",
+          "بیا پسرم، این پنجاه دلار برای شروع خوانندگیت! من به استعدادت ایمان دارم!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_01.jpg",
+      "expected_speakers": [
+        "DAD_SPONGE"
+      ],
+      "beat_ids": [
+        "beat_1"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[RS1_C01] Stylized 3D CGI cartoon animation matching the exact 3D non-human characters and outfits in the reference image, static medium shot keeping the characters in frame the entire time (no camera cuts), at a cozy dining table the 3D dark charcoal-black porous rectangular sponge father in a white polo shirt and gold chain happily hands green cash bills to his 3D dark charcoal porous sponge teen son in a black puffer jacket, backwards cap, and headphones while the 3D brown squirrel girl in a navy hoodie watches (strictly NO human faces), as the dark sponge father speaks in native Persian (Farsi) with exact vowel pronunciation and a warm proud fatherly male voice: «بِیا پِسَرَم، این پَنْجاه دُلار بَرایِ شُرُوعِ خْوانَنْدِگیت! مَن بِه اِسْتِعْدادِت ایمان دارَم!» Zero on-screen subtitles."
+    },
+    {
+      "id": "clip_02",
+      "file": "clip_02.mp4",
+      "source_span": [
+        9,
+        18
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "At the dinner table, DAD_SPONGE glares and yells angrily at SANDY (3D brown woodland squirrel girl in a navy hoodie) when she asks for textbook money.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "DAD_SPONGE",
+          "پول برای کتاب دانشگاه؟! نخیر، مگه من روی گنج نشستم؟! برو خودت کار کن!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_02.jpg",
+      "expected_speakers": [
+        "DAD_SPONGE"
+      ],
+      "beat_ids": [
+        "beat_2"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[RS1_C02] Stylized 3D CGI cartoon animation matching the exact 3D non-human characters and outfits in the reference image, static medium two-shot keeping both characters in frame the entire time (no camera cuts), at the dining table the 3D dark charcoal-black porous rectangular sponge father in a white polo shirt and gold chain waves his hand and shouts dismissively at the sad 3D brown woodland squirrel girl in a navy hoodie (strictly NO human faces), as the dark sponge father speaks in native Persian (Farsi) with exact vowel pronunciation and an angry harsh male voice: «پُول بَرایِ کِتابِ دانِشْگاه؟! نَخِیْر، مَگه مَن رُویِ گَنْج نِشَسْتَم؟! بُرُو خُودِت کار کُن!» Zero on-screen subtitles."
+    },
+    {
+      "id": "clip_03",
+      "file": "clip_03.mp4",
+      "source_span": [
+        18,
+        27
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "In a bright grocery store aisle, SANDY in her navy hoodie holds a stack of boxes and pleads with the 3D coral-pink cone-headed store manager in an orange polo shirt for extra night shifts.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "SANDY",
+          "آقا توروخدا بذارید امشب هم اضافه‌کاری بمونم، باید پول کتاب‌های دانشگاهم رو جور کنم!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_03.jpg",
+      "expected_speakers": [
+        "SANDY"
+      ],
+      "beat_ids": [
+        "beat_3"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[RS1_C03] Stylized 3D CGI cartoon animation matching the exact 3D non-human characters and outfits in the reference image, static medium two-shot keeping both characters in frame the entire time (no camera cuts), in a bright supermarket aisle the 3D brown woodland squirrel girl in a navy hoodie holds cardboard boxes and pleads earnestly with the 3D coral-pink cone-headed store manager in an orange polo shirt (strictly NO human faces), as the squirrel girl speaks in native Persian (Farsi) with exact vowel pronunciation and a pleading earnest young female voice: «آقا تُورُوخُدا بِذارید اِمْشَب هَم اِضافِه‌کاری بِمُونَم، بایَد پُولِ کِتابْ‌هایِ دانِشْگاهَم رُو جُور کُنَم!» Zero on-screen subtitles."
+    },
+    {
+      "id": "clip_04",
+      "file": "clip_04.mp4",
+      "source_span": [
+        27,
+        36
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "Inside a neon purple recording studio, RICO_SPONGE stands at a condenser microphone wearing headphones while DAD_SPONGE proudly holds up a black credit card.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "DAD_SPONGE",
+          "پونصد دلار که چیزی نیست! کل استودیو رو برای پسرم رزرو کنید تا آهنگش رو ضبط کنه!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_04.jpg",
+      "expected_speakers": [
+        "DAD_SPONGE"
+      ],
+      "beat_ids": [
+        "beat_4"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[RS1_C04] Stylized 3D CGI cartoon animation matching the exact 3D non-human sponge characters and outfits in the reference image, static medium two-shot keeping both characters in frame the entire time (no camera cuts), inside a neon purple music recording studio the 3D dark charcoal porous sponge teen in a black puffer jacket and headphones stands at a studio microphone while the 3D dark charcoal porous sponge father in a white polo shirt proudly holds up a black credit card (strictly NO human faces), as the dark sponge father speaks in native Persian (Farsi) with exact vowel pronunciation and a boastful generous male voice: «پُونْصَد دُلار کِه چیزی نیسْت! کُلِّ اِسْتُودِیُو رُو بَرایِ پِسَرَم رِزِرْو کُنید تا آهَنْگِش رُو ضَبْط کُنه!» Zero on-screen subtitles."
+    },
+    {
+      "id": "clip_05",
+      "file": "clip_05.mp4",
+      "source_span": [
+        36,
+        46
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "On the sunny house driveway in front of a glossy black luxury sports car with a red bow on the hood, DAD_SPONGE hands the car keys to jumping RICO_SPONGE.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "DAD_SPONGE",
+          "یک ستاره‌ی موسیقی که نمی‌تونه با اتوبوس بره! این ماشین مدل‌بالا هدیه‌ی من به توئه!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_05.jpg",
+      "expected_speakers": [
+        "DAD_SPONGE"
+      ],
+      "beat_ids": [
+        "beat_5"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[RS1_C05] Stylized 3D CGI cartoon animation matching the exact 3D non-human sponge characters and outfits in the reference image, static medium two-shot keeping both characters in frame the entire time (no camera cuts), on a sunny suburban driveway in front of a shiny black luxury sports car with a giant red ribbon bow on the hood the 3D dark charcoal porous sponge father in a white polo shirt hands car keys to the jumping excited 3D dark charcoal sponge teen in a black puffer jacket (strictly NO human faces), as the dark sponge father speaks in native Persian (Farsi) with exact vowel pronunciation and a proud excited male voice: «یِک سِتارِه‌یِ مُوسیقی کِه نِمی‌تُونه با اُتُوبُوس بِره! این ماشینِ مُدِل‌بالا هِدْیِه‌یِ مَن بِه تُوئه!» Zero on-screen subtitles."
+    },
+    {
+      "id": "clip_06",
+      "file": "clip_06.mp4",
+      "source_span": [
+        46,
+        56
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "On a rainy city sidewalk, drenched SANDY in her navy hoodie and backpack walks in the pouring rain clutching her university books while the black sports car drives away.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "SANDY",
+          "توی این بارون شدید حتی سوارم نکردن... عیب نداره، یه روزی نتیجه‌ی این سختی‌ها رو می‌بینید!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_06.jpg",
+      "expected_speakers": [
+        "SANDY"
+      ],
+      "beat_ids": [
+        "beat_6"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[RS1_C06] Stylized 3D CGI cartoon animation matching the exact 3D non-human squirrel character and outfit in the reference image, static medium shot keeping the character in frame the entire time (no camera cuts), on a rainy city sidewalk the soaked 3D brown woodland squirrel girl in a navy hoodie and backpack walks in the pouring rain hugging her university books with a sad but determined expression as a black sports car drives away in the background (strictly NO human face), speaking in native Persian (Farsi) with exact vowel pronunciation and an emotional determined young female voice: «تُویِ این بارُونِ شَدید حَتّی سَوارَم نَکَرْدَن... عِیْب نَداره، یِه رُوزی نَتیجِه‌یِ این سَخْتی‌ها رُو می‌بینید!» Zero on-screen subtitles."
+    }
+  ],
+  "voices": {
+    "DAD_SPONGE": {
+      "name_fa": "DAD_SPONGE",
+      "color": [
+        170,
+        225,
+        255
+      ],
+      "source": "google_flow_native"
+    },
+    "RICO_SPONGE": {
+      "name_fa": "RICO_SPONGE",
+      "color": [
+        255,
+        175,
+        120
+      ],
+      "source": "google_flow_native"
+    },
+    "SANDY": {
+      "name_fa": "SANDY",
+      "color": [
+        255,
+        240,
+        95
+      ],
+      "source": "google_flow_native"
+    },
+    "PROF_CRAB": {
+      "name_fa": "PROF_CRAB",
+      "color": [
+        150,
+        255,
+        180
+      ],
+      "source": "google_flow_native"
+    }
+  },
+  "video": {
+    "width": 720,
+    "height": 1280,
+    "fps": 24,
+    "crf": 18,
+    "preset": "fast",
+    "scale_mode": "fill"
+  },
+  "audio": {
+    "loudnorm": "loudnorm=I=-14:TP=-1.5:LRA=11",
+    "sample_rate": 48000,
+    "channels": 2,
+    "bitrate": "192k"
+  },
+  "speech": {
+    "speech_safe": "auto_expand",
+    "threshold_dbfs": -38,
+    "pre_handle": 0.2,
+    "post_handle": 0.35,
+    "splice_crossfade": 0.02
+  },
+  "subtitle_style": {
+    "time_base": "trim_local",
+    "y_ratio": 0.84,
+    "font_size": 27,
+    "min_font_size": 16,
+    "max_text_margin": 84,
+    "max_lines": 2
+  },
+  "outputs": {
+    "per_clip_location": "both",
+    "base_mode": "timeline",
+    "cta_burn_subtitles": true,
+    "cta_loudnorm": true,
+    "publish_caption_fa": "قسمت اول: ماشینِ لوکس برایِ پسرِ رپر، پیاده‌روی زیرِ بارون برایِ دخترِ درس‌خوان!"
+  },
+  "character_references": [
+    "${BASE}\\character_sheets\\FLOW_SHEET_SERIES14_CHARACTERS.jpg"
+  ],
+  "content_edits": [],
+  "story_plan": {
+    "summary": "پدر برای شروع خوانندگی و استودیوی پسرش و حتی خرید ماشین لوکس پول خرج می‌کند، اما به دختر درس‌خوانش سندی حتی پنجاه دلار پول کتاب دانشگاه نمی‌دهد تا مجبور شود کار کند و زیر باران پیاده برود!",
+    "ending": "Sandy walks alone in the pouring rain clutching her university textbooks while her father and brother drive away in the luxury sports car.",
+    "required_beats": [
+      "beat_1",
+      "beat_2",
+      "beat_3",
+      "beat_4",
+      "beat_5",
+      "beat_6"
+    ]
+  }
+}

@@ -1,0 +1,262 @@
+{
+  "_comment": "Story 6 (DeztQBkh2-j - Toenail Lemonade Part 1 / Strawberrina's Secret Recipe - 100% Google Flow native Farsi voice).",
+  "schema_version": 1,
+  "speech_review_note": "Curated trim windows with auto_expand speech-safe protection.",
+  "episode_id": "Story6_PinkLemonade",
+  "title_fa": "داستان ششم: راز کثیف لیموناد صورتی توت‌فرنگی!",
+  "title_en": "Strawberrina Secret Recipe Pink Lemonade",
+  "source_video": "${SRC}\\06_DeztQBkh2-j_fruiti_reena.mp4",
+  "story_summary_fa": "غرفه لیموناد صورتی بیست دلاریِ توت‌فرنگی کل شهر میوه‌ها رو دیوونه خودش می‌کنه و صف طولانی جلوی مغازه‌ش تشکیل می‌شه؛ اما وقتی برادران لیمو به همراه بازرس بهداشت سیب سبز مخفیانه وارد آشپزخونه پشتی می‌شن، مچ توت‌فرنگی رو موقع رنده کردن پاشنه پا توی دیگ لیموناد می‌گیرن!",
+  "fallback_to_source_on_visual_fail": false,
+  "tight_speech_trim": true,
+  "variables": {
+    "BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series4-viral-6-stories-farsi",
+    "S2_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi",
+    "CHEF_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\ugly-face-chef-farsi",
+    "SRC": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\selected_6_stories"
+  },
+  "clips_dir": "${BASE}\\story6\\flow_clips",
+  "out_dir": "${BASE}\\05_final_masters\\story6",
+  "font_path": "${CHEF_BASE}\\03_farsi_audio_tts\\Vazirmatn-Bold.ttf",
+  "cta_video": "${S2_BASE}\\part1\\flow_clips\\cta_kelidbox_s2.mp4",
+  "cta_speaker": "STRAW",
+  "cta_subtitles": [
+    {
+      "start": 0.25,
+      "end": 3.35,
+      "text": "برای دیدن داستان‌های وایرال بعدی همین الان پیج رو فالو کن!"
+    },
+    {
+      "start": 3.5,
+      "end": 7.85,
+      "text": "راستی کل این انیمیشن با اکانت‌های هوش مصنوعی سایت کلیدباکس ساخته شده!"
+    }
+  ],
+  "video": {
+    "width": 720,
+    "height": 1280,
+    "fps": 24,
+    "crf": 18,
+    "preset": "fast",
+    "scale_mode": "fill"
+  },
+  "audio": {
+    "loudnorm": "loudnorm=I=-14:TP=-1.5:LRA=11",
+    "sample_rate": 48000,
+    "channels": 2,
+    "bitrate": "192k"
+  },
+  "speech": {
+    "speech_safe": "auto_expand",
+    "threshold_dbfs": -38.0,
+    "pre_handle": 0.2,
+    "post_handle": 0.35,
+    "splice_crossfade": 0.02
+  },
+  "subtitle_style": {
+    "time_base": "trim_local",
+    "y_ratio": 0.84,
+    "font_size": 27,
+    "min_font_size": 16,
+    "max_text_margin": 84,
+    "max_lines": 2
+  },
+  "badge": {
+    "text": "داستان ششم: راز کثیف لیموناد صورتی توت‌فرنگی!",
+    "start": 0.0,
+    "end": 3.5,
+    "y_center": 130,
+    "font_size": 28,
+    "color": [
+      255,
+      225,
+      110
+    ],
+    "clip_index": 1
+  },
+  "outputs": {
+    "per_clip_location": "both",
+    "base_mode": "timeline",
+    "cta_burn_subtitles": true,
+    "cta_loudnorm": true,
+    "publish_caption_fa": "راز لیموناد صورتی ۲۰ دلاری توت‌فرنگی که کل شهر رو صف کشونده بود لو رفت! 🍓🍋🤮\nهمه می‌گفتن خوشمزه‌ترین لیموناد عمرشونه و توت‌فرنگی می‌گفت رازش فقط عشقه... اما وقتی برادران لیمو با بازرس بهداشت سیب سبز رفتن پشت آشپزخونه، دیدن داره چی توی دیگ لیموناد رنده می‌کنه! 😱🔥"
+  },
+  "voices": {
+    "STRAW": {
+      "name_fa": "توت‌فرنگی",
+      "color": [
+        255,
+        150,
+        195
+      ],
+      "source": "google_flow_native"
+    },
+    "BANANA": {
+      "name_fa": "مشتری موز",
+      "color": [
+        255,
+        225,
+        110
+      ],
+      "source": "google_flow_native"
+    },
+    "LEMON": {
+      "name_fa": "برادر لیمو",
+      "color": [
+        255,
+        240,
+        120
+      ],
+      "source": "google_flow_native"
+    },
+    "FDA": {
+      "name_fa": "بازرس سیب سبز",
+      "color": [
+        150,
+        255,
+        175
+      ],
+      "source": "google_flow_native"
+    }
+  },
+  "clips": [
+    {
+      "id": "clip_01",
+      "file": "clip_01.mp4",
+      "keyframe": "${BASE}\\story6\\keyframes\\KF_01.jpg",
+      "expected_speakers": [
+        "BANANA"
+      ],
+      "story_beat": "Banana customer drinks Strawberrina's glowing pink lemonade at her stand and praises the incredible taste",
+      "source_span": [
+        0.0,
+        16.0
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.95,
+      "subtitles": [
+        [
+          0.1,
+          7.9,
+          "BANANA",
+          "وای خدای من، این خوشمزه‌ترین لیموناد صورتیه که تو عمرم خوردم! طعمش واقعاً بی‌نظیره!"
+        ]
+      ]
+    },
+    {
+      "id": "clip_02",
+      "file": "clip_02.mp4",
+      "keyframe": "${BASE}\\story6\\keyframes\\KF_02.jpg",
+      "expected_speakers": [
+        "STRAW"
+      ],
+      "story_beat": "In the dimly lit back kitchen at night, Strawberrina secretly grates pink crystal zest into the boiling lemonade pot",
+      "source_span": [
+        16.0,
+        40.0
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.95,
+      "subtitles": [
+        [
+          0.1,
+          7.9,
+          "STRAW",
+          "هیچ‌کس نباید بفهمه ماده مخفی این لیموناد چیه! تندتر رنده کن تا شهر رو تیغ بزنیم!"
+        ]
+      ]
+    },
+    {
+      "id": "clip_03",
+      "file": "clip_03.mp4",
+      "keyframe": "${BASE}\\story6\\keyframes\\KF_03.jpg",
+      "expected_speakers": [
+        "LEMON"
+      ],
+      "story_beat": "Outside the pink lemonade stall, the Lemon brother watches the huge crowd filming with ring lights in shock",
+      "source_span": [
+        40.0,
+        60.0
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.95,
+      "subtitles": [
+        [
+          0.1,
+          7.9,
+          "LEMON",
+          "باورم نمیشه! لیوانی بیست دلار می‌فروشه و همه جلوی غرفه‌ش صف کشیدن! یه کلکی تو کارشه!"
+        ]
+      ]
+    },
+    {
+      "id": "clip_04",
+      "file": "clip_04.mp4",
+      "keyframe": "${BASE}\\story6\\keyframes\\KF_04.jpg",
+      "expected_speakers": [
+        "STRAW"
+      ],
+      "story_beat": "At the Grand Opening of Strawberrina's Secret Recipe shop, Strawberrina waves to the cheering fruit crowd",
+      "source_span": [
+        60.0,
+        74.0
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.95,
+      "subtitles": [
+        [
+          0.1,
+          7.9,
+          "STRAW",
+          "خوش اومدید به افتتاحیه مغازه من! همه می‌پرسن راز این طعم چیه؟ رازش فقط عشق خالصه!"
+        ]
+      ]
+    },
+    {
+      "id": "clip_05",
+      "file": "clip_05.mp4",
+      "keyframe": "${BASE}\\story6\\keyframes\\KF_05.jpg",
+      "expected_speakers": [
+        "LEMON"
+      ],
+      "story_beat": "The Lemon brother pushes past the crowd into the back kitchen door with the FDA Green Apple inspector",
+      "source_span": [
+        74.0,
+        81.0
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.95,
+      "subtitles": [
+        [
+          0.1,
+          7.9,
+          "LEMON",
+          "کنار برید، بازرس بهداشت همراه منه! می‌ریم توی آشپزخونه پشتی ببینیم چی تو دیگ می‌ریزه!"
+        ]
+      ]
+    },
+    {
+      "id": "clip_06",
+      "file": "clip_06.mp4",
+      "keyframe": "${BASE}\\story6\\keyframes\\KF_06.jpg",
+      "expected_speakers": [
+        "FDA"
+      ],
+      "story_beat": "Inside the kitchen, the stern FDA Green Apple inspector with clipboard confronts Strawberrina beside the steaming pot",
+      "source_span": [
+        81.0,
+        92.0
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.95,
+      "subtitles": [
+        [
+          0.1,
+          7.9,
+          "FDA",
+          "همون‌جا وایسا خانم توت‌فرنگی! این رنده و پودر مشکوک کنار دیگ چیه؟! مغازه‌ت پلمپ می‌شه!"
+        ]
+      ]
+    }
+  ]
+}

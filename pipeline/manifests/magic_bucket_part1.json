@@ -1,0 +1,340 @@
+{
+  "_comment": "Part1_MagicDuplicatingBucket - 100% Google Flow native Farsi voice with full اعراب‌گذاری.",
+  "schema_version": 1,
+  "speech_review_note": "Full Persian vowel diacritics (اعراب‌گذاری کامل) in Google Flow prompt for 100% accurate native pronunciation.",
+  "episode_id": "Part1_MagicDuplicatingBucket",
+  "title_fa": "قسمت اول: راز سطل قرمز جادویی و شمش‌های طلا!",
+  "title_en": "Magic Duplicating Bucket Part 1",
+  "source_video": "${SRC}\\44_2026-10-04_DeDoiQaq-bB.mp4",
+  "source_start_offset": 0,
+  "story_summary_fa": "دختر فقیر هلو سطل قرمز جادویی پیدا می‌کند که هر چیزی را صد برابر می‌کند؛ او آخرین اسکناسش را کپی می‌کند، شمش طلا می‌خرد و با هزار شمش طلا صاحب لباس مجلسی و ماشین کروک می‌شود!",
+  "fallback_to_source_on_visual_fail": false,
+  "tight_speech_trim": true,
+  "variables": {
+    "BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series18-magic-duplicating-bucket-farsi",
+    "S2_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi",
+    "CHEF_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\ugly-face-chef-farsi",
+    "SRC": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\straw.berryjammin"
+  },
+  "clips_dir": "${BASE}\\part1\\flow_clips",
+  "out_dir": "${BASE}\\05_final_masters\\part1",
+  "font_path": "${CHEF_BASE}\\03_farsi_audio_tts\\Vazirmatn-Bold.ttf",
+  "cta_video": "${S2_BASE}\\part1\\flow_clips\\cta_kelidbox_s2.mp4",
+  "cta_speaker": "PEACH_GIRL",
+  "cta_subtitles": [
+    {
+      "start": 0.15,
+      "end": 3.55,
+      "text": "برای دیدن قسمت بعدی این داستان همین الان پیج رو فالو کن!"
+    },
+    {
+      "start": 3.65,
+      "end": 7.6,
+      "text": "راستی کل این انیمیشن با اکانت‌های هوش مصنوعی سایت کلیدباکس ساخته شده!"
+    }
+  ],
+  "speakers": {
+    "PEACH_GIRL": [
+      255,
+      195,
+      160
+    ],
+    "APPLE_DEALER": [
+      255,
+      225,
+      120
+    ],
+    "BANANA_NEIGHBOR": [
+      255,
+      240,
+      130
+    ],
+    "BADGE": [
+      255,
+      215,
+      70
+    ]
+  },
+  "clips": [
+    {
+      "id": "clip_01",
+      "file": "clip_01.mp4",
+      "source_span": [
+        0,
+        8
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "In a rundown alley beside her wooden shack, poor 3D peach girl PEACH_GIRL in a torn grey-white dress watches in amazement as dozens of fresh bread slices burst out of a bright red plastic bucket.",
+      "overlays": [
+        {
+          "speaker": "BADGE",
+          "text": "قسمت اول: راز سطل قرمز جادویی و شمش‌های طلا!",
+          "start": 0.1,
+          "end": 3.4,
+          "position": "top",
+          "font_size": 21
+        }
+      ],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "PEACH_GIRL",
+          "باورم نمی‌شه! این سطل قرمز جادوییه و هر چیزی رو بندازم توش صد برابر می‌کنه!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_01.jpg",
+      "expected_speakers": [
+        "PEACH_GIRL"
+      ],
+      "beat_ids": [
+        "beat_1"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[MB1_C01] Stylized 3D CGI cartoon animation matching the exact 3D non-human fruit character and outfit in the reference image, static medium shot keeping the character in frame the entire time (no camera cuts), in a rundown alley beside a wooden shack the poor round pink-orange 3D peach-headed girl with a single green leaf on top of her head wearing a torn patched grey-white dress gasps in amazement beside a bright red plastic bucket overflowing with bread slices (strictly NO human face), speaking in native Persian (Farsi) with exact vowel pronunciation and an amazed excited young female voice: «باوَرَم نِمِی‌شِه! اِین سَطْلِ قِرْمِز جادُویِیِه وُ هَر چِیزِی رُو بِنْدازَم تُوش صَد بَرابَر مِی‌کُنِه!» Zero on-screen subtitles."
+    },
+    {
+      "id": "clip_02",
+      "file": "clip_02.mp4",
+      "source_span": [
+        8,
+        16
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "Inside her dilapidated wooden shack, 3D peach girl PEACH_GIRL in her torn grey-white dress holds her last green banknote above the bright red plastic bucket with an excited smile.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "PEACH_GIRL",
+          "این آخرین اسکناس توی خونه‌ست! بذار بندازمش توی سطل قرمز ببینم پول رو هم کپی می‌کنه؟"
+        ]
+      ],
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_02.jpg",
+      "expected_speakers": [
+        "PEACH_GIRL"
+      ],
+      "beat_ids": [
+        "beat_2"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[MB1_C02] Stylized 3D CGI cartoon animation matching the exact 3D non-human fruit character and outfit in the reference image, static medium shot keeping the character in frame the entire time (no camera cuts), inside a dilapidated wooden shack the round pink-orange 3D peach-headed girl with a green top leaf in a torn grey-white dress holds up a green banknote over the bright red plastic bucket on the wooden floor (strictly NO human face), speaking in native Persian (Farsi) with exact vowel pronunciation and a hopeful excited female voice: «اِین آخَرِین اِسْکِناسِ تُویِ خُونِه‌سْت! بِذار بِنْدازَمِش تُویِ سَطْلِ قِرْمِز بِبِینَم پُول رُو هَم کُپِی مِی‌کُنِه؟» Zero on-screen subtitles."
+    },
+    {
+      "id": "clip_03",
+      "file": "clip_03.mp4",
+      "source_span": [
+        16,
+        24
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "Inside a luxury glass-counter jewelry shop, 3D peach girl PEACH_GIRL in her torn grey-white dress holds a white sack overflowing with cash in front of golden 3D apple gentleman APPLE_DEALER in a black suit.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "PEACH_GIRL",
+          "آقای طلافروش، لطفاً با کل این کیسه پر از پول، یه شمش طلای خالص بهم بدید!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_03.jpg",
+      "expected_speakers": [
+        "PEACH_GIRL"
+      ],
+      "beat_ids": [
+        "beat_3"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[MB1_C03] Stylized 3D CGI cartoon animation matching the exact 3D non-human fruit characters and outfits in the reference image, static medium two-shot keeping both characters in frame the entire time (no camera cuts), inside a bright luxury glass-counter jewelry shop the round pink-orange 3D peach-headed girl in a torn grey-white dress holds a white cloth sack overflowing with cash across from the golden-yellow 3D apple-headed jeweler in a black suit and tie (strictly NO human faces), as the 3D peach girl speaks in native Persian (Farsi) with exact vowel pronunciation and an eager polite female voice: «آقایِ طَلافُرُوش، لُطْفاً با کُلِّ اِین کِیسِه پُر اَز پُول، یِه شِمْشِ طَلایِ خالِص بِهِم بِدِید!» Zero on-screen subtitles."
+    },
+    {
+      "id": "clip_04",
+      "file": "clip_04.mp4",
+      "source_span": [
+        24,
+        31
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "Behind the glass jewelry display case, golden-yellow 3D apple gentleman APPLE_DEALER in a black suit and tie hands a gleaming solid gold bar to smiling 3D peach girl PEACH_GIRL.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "APPLE_DEALER",
+          "بفرمایید خانم، این هم یک شمش طلای خالص! لطفاً خیلی خوب ازش مراقبت کنید."
+        ]
+      ],
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_04.jpg",
+      "expected_speakers": [
+        "APPLE_DEALER"
+      ],
+      "beat_ids": [
+        "beat_4"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[MB1_C04] Stylized 3D CGI cartoon animation matching the exact 3D non-human fruit characters and outfits in the reference image, static medium two-shot keeping both characters in frame the entire time (no camera cuts), behind a glass jewelry display case the golden-yellow 3D apple-headed gentleman with a gold leaf stem in a black suit and tie hands a shining solid gold bar to the smiling pink-orange 3D peach-headed girl (strictly NO human faces), as the golden apple jeweler speaks in native Persian (Farsi) with exact vowel pronunciation and a polite dignified male voice: «بِفَرْمایِید خانُم، اِین هَم یِک شِمْشِ طَلایِ خالِص! لُطْفاً خِیْلِی خُوب اَزَش مُراقِبَت کُنِید.» Zero on-screen subtitles."
+    },
+    {
+      "id": "clip_05",
+      "file": "clip_05.mp4",
+      "source_span": [
+        31,
+        37
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "Inside a glamorous crystal-chandelier boutique, 3D peach girl PEACH_GIRL wearing a sparkling sleeveless black sequin evening gown and ruby-red heels admires herself in a tall gold-framed mirror.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "PEACH_GIRL",
+          "سطل قرمز شمش طلا رو هزار تا کرد! این لباس مجلسی چقدر به من می‌آد!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_05.jpg",
+      "expected_speakers": [
+        "PEACH_GIRL"
+      ],
+      "beat_ids": [
+        "beat_5"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[MB1_C05] Stylized 3D CGI cartoon animation matching the exact 3D non-human fruit character and outfit in the reference image, static medium shot keeping the character in frame the entire time (no camera cuts), inside a luxury chandelier fashion boutique the round pink-orange 3D peach-headed girl with a green top leaf wearing a sparkling sleeveless black sequin evening gown and red heels poses happily in front of a tall gold-framed mirror (strictly NO human face), speaking in native Persian (Farsi) with exact vowel pronunciation and a joyful glamorous female voice: «سَطْلِ قِرْمِز شِمْشِ طَلا رُو هِزار تا کَرْد! اِین لِباسِ مَجْلِسِی چِقَدْر بِه مَن مِی‌آد!» Zero on-screen subtitles."
+    },
+    {
+      "id": "clip_06",
+      "file": "clip_06.mp4",
+      "source_span": [
+        37,
+        43
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "Driving a glossy red convertible sports car along a palm-lined city street with a pyramid of gleaming gold bars stacked in the back seat, 3D peach girl PEACH_GIRL in her black sequin dress smiles triumphantly.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "PEACH_GIRL",
+          "حالا با این ماشین کروک پر از شمش طلا، می‌رم بزرگترین عمارت شهر رو بخرم!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_06.jpg",
+      "expected_speakers": [
+        "PEACH_GIRL"
+      ],
+      "beat_ids": [
+        "beat_6"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[MB1_C06] Stylized 3D CGI cartoon animation matching the exact 3D non-human fruit character and outfit in the reference image, static medium shot keeping the character in frame the entire time (no camera cuts), sitting at the steering wheel of a glossy red convertible sports car on a palm-lined city boulevard with a stack of shining gold bars in the back seat the pink-orange 3D peach-headed girl in a black sequin dress smiles triumphantly (strictly NO human face), speaking in native Persian (Farsi) with exact vowel pronunciation and a confident triumphant female voice: «حالا با اِین ماشِینِ کُرُوکِ پُر اَز شِمْشِ طَلا، مِی‌رَم بُزُرْگْتَرِین عِمارَتِ شَهْر رُو بَخَرَم!» Zero on-screen subtitles."
+    }
+  ],
+  "voices": {
+    "PEACH_GIRL": {
+      "name_fa": "PEACH_GIRL",
+      "color": [
+        255,
+        195,
+        160
+      ],
+      "source": "google_flow_native"
+    },
+    "APPLE_DEALER": {
+      "name_fa": "APPLE_DEALER",
+      "color": [
+        255,
+        225,
+        120
+      ],
+      "source": "google_flow_native"
+    },
+    "BANANA_NEIGHBOR": {
+      "name_fa": "BANANA_NEIGHBOR",
+      "color": [
+        255,
+        240,
+        130
+      ],
+      "source": "google_flow_native"
+    }
+  },
+  "video": {
+    "width": 720,
+    "height": 1280,
+    "fps": 24,
+    "crf": 18,
+    "preset": "fast",
+    "scale_mode": "fill"
+  },
+  "audio": {
+    "loudnorm": "loudnorm=I=-14:TP=-1.5:LRA=11",
+    "sample_rate": 48000,
+    "channels": 2,
+    "bitrate": "192k"
+  },
+  "speech": {
+    "speech_safe": "auto_expand",
+    "threshold_dbfs": -38,
+    "pre_handle": 0.2,
+    "post_handle": 0.35,
+    "splice_crossfade": 0.02
+  },
+  "subtitle_style": {
+    "time_base": "trim_local",
+    "y_ratio": 0.84,
+    "font_size": 27,
+    "min_font_size": 16,
+    "max_text_margin": 84,
+    "max_lines": 2
+  },
+  "outputs": {
+    "per_clip_location": "both",
+    "base_mode": "timeline",
+    "cta_burn_subtitles": true,
+    "cta_loudnorm": true,
+    "publish_caption_fa": "قسمت اول: راز سطل قرمز جادویی و شمش‌های طلا!"
+  },
+  "character_references": [
+    "${BASE}\\character_sheets\\FLOW_SHEET_SERIES18_CHARACTERS.jpg"
+  ],
+  "content_edits": [],
+  "story_plan": {
+    "summary": "دختر فقیر هلو سطل قرمز جادویی پیدا می‌کند که هر چیزی را صد برابر می‌کند؛ او آخرین اسکناسش را کپی می‌کند، شمش طلا می‌خرد و با هزار شمش طلا صاحب لباس مجلسی و ماشین کروک می‌شود!",
+    "ending": "Poor Peach duplicates a gold bar into a fortune using the magic red bucket and drives off in a red convertible sports car filled with gold bars to buy a mansion.",
+    "required_beats": [
+      "beat_1",
+      "beat_2",
+      "beat_3",
+      "beat_4",
+      "beat_5",
+      "beat_6"
+    ]
+  },
+  "visual": {
+    "keyframe_threshold": 38,
+    "jump_threshold": 38,
+    "contamination_margin": 5
+  },
+  "visual_gate": {
+    "keyframe_threshold": 38,
+    "jump_threshold": 38,
+    "contamination_margin": 5
+  }
+}

@@ -1,0 +1,251 @@
+{
+  "_comment": "Story 7 (Kelidbox ChatGPT Go / Plus / Pro Story - 100% Google Flow native Farsi voice).",
+  "schema_version": 1,
+  "speech_review_note": "Curated trim windows with auto_expand speech-safe protection.",
+  "episode_id": "Story7_ChatGPTPlus",
+  "title_fa": "داستان هفتم: جغد مهندس و قیمت واقعی چت‌جی‌پی‌تی!",
+  "title_en": "Engineer Owl and Real ChatGPT Pricing on Kelidbox",
+  "story_summary_fa": "آرش جغد ساعت دو نصفه‌شب وسط پروژه مهم شرکت با قفل شدن چت‌جی‌پی‌تی رایگان و دردسر خرید دلاری ۸ و ۲۰ دلاری با ویزاکارت روبه‌رو می‌شه؛ اما سینا روباه بهش نشون می‌ده که توی سایت کلیدباکس می‌تونه چت‌جی‌پی‌تی گو رو با ۳ میلیون و ۶۹۰ هزار تومان و چت‌جی‌پی‌تی پلاس رو با ۵ میلیون و ۲۷۰ هزار تومان (حتی ۴ قسطه با گارانتی ۳۰ روزه) بخره و آرش ترفیع می‌گیره!",
+  "fallback_to_source_on_visual_fail": false,
+  "tight_speech_trim": true,
+  "variables": {
+    "BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series4-viral-6-stories-farsi",
+    "S2_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi",
+    "CHEF_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\ugly-face-chef-farsi"
+  },
+  "clips_dir": "${BASE}\\story7\\flow_clips",
+  "out_dir": "${BASE}\\05_final_masters\\story7",
+  "font_path": "${CHEF_BASE}\\03_farsi_audio_tts\\Vazirmatn-Bold.ttf",
+  "cta_video": "${S2_BASE}\\part1\\flow_clips\\cta_kelidbox_s2.mp4",
+  "cta_speaker": "SINA",
+  "cta_subtitles": [
+    {
+      "start": 0.25,
+      "end": 3.35,
+      "text": "برای دیدن داستان‌های وایرال بعدی همین الان پیج رو فالو کن!"
+    },
+    {
+      "start": 3.5,
+      "end": 7.85,
+      "text": "راستی کل این انیمیشن با اکانت‌های هوش مصنوعی سایت کلیدباکس ساخته شده!"
+    }
+  ],
+  "video": {
+    "width": 720,
+    "height": 1280,
+    "fps": 24,
+    "crf": 18,
+    "preset": "fast",
+    "scale_mode": "fill"
+  },
+  "audio": {
+    "loudnorm": "loudnorm=I=-14:TP=-1.5:LRA=11",
+    "sample_rate": 48000,
+    "channels": 2,
+    "bitrate": "192k"
+  },
+  "speech": {
+    "speech_safe": "auto_expand",
+    "threshold_dbfs": -38.0,
+    "pre_handle": 0.2,
+    "post_handle": 0.35,
+    "splice_crossfade": 0.02
+  },
+  "subtitle_style": {
+    "time_base": "trim_local",
+    "y_ratio": 0.84,
+    "font_size": 27,
+    "min_font_size": 16,
+    "max_text_margin": 84,
+    "max_lines": 2
+  },
+  "badge": {
+    "text": "داستان هفتم: جغد مهندس و راز خرید چت‌جی‌پی‌تی!",
+    "start": 0.0,
+    "end": 3.5,
+    "y_center": 130,
+    "font_size": 28,
+    "color": [
+      120,
+      255,
+      200
+    ],
+    "clip_index": 1
+  },
+  "outputs": {
+    "per_clip_location": "both",
+    "base_mode": "timeline",
+    "cta_burn_subtitles": true,
+    "cta_loudnorm": true,
+    "publish_caption_fa": "ساعت ۲ نصفه‌شب وسط پروژه مهم، نسخه رایگان ChatGPT قفل شد و خرید دلاریش ($8 و $20) هم ویزاکارت می‌خواست! 🦉💻😱\nاما توی سایت «کلیدباکس» بدون دردسر ویزاکارت و تحریم:\n✅ پلن ChatGPT Go (۱ ماهه - حساب شخصی با ایمیل): ۳٬۶۹۰٬۰۰۰ تومان\n✅ پلن ChatGPT Plus (۱ ماهه - اکانت خصوصی آماده): ۵٬۲۷۰٬۰۰۰ تومان\n✅ پلن‌های حرفه‌ای ChatGPT Pro 5x و Pro 20x با ۳۰ روز گارانتی تعویض و امکان پرداخت ۴ قسطه با ترب‌پی و دیجی‌پی! 🚀✨\nکلمه «چت» رو کامنت کن تا لینک مستقیم خرید و کد تخفیف WELCOME10 برات ارسال بشه 👇🔑"
+  },
+  "voices": {
+    "ARASH": {
+      "name_fa": "آرش جغد",
+      "color": [
+        135,
+        215,
+        255
+      ],
+      "source": "google_flow_native"
+    },
+    "BOSS": {
+      "name_fa": "رئیس خرس",
+      "color": [
+        255,
+        155,
+        135
+      ],
+      "source": "google_flow_native"
+    },
+    "SINA": {
+      "name_fa": "سینا روباه",
+      "color": [
+        130,
+        255,
+        185
+      ],
+      "source": "google_flow_native"
+    }
+  },
+  "clips": [
+    {
+      "id": "clip_01",
+      "file": "clip_01.mp4",
+      "keyframe": "${BASE}\\story7\\keyframes\\KF_01.jpg",
+      "expected_speakers": [
+        "ARASH"
+      ],
+      "story_beat": "At 2 AM in a cluttered office, tired brown owl Arash in glasses and a blue hoodie clutches his head before a red lock icon on his laptop surrounded by paper stacks",
+      "source_span": [
+        0.0,
+        8.0
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.95,
+      "subtitles": [
+        [
+          0.1,
+          7.9,
+          "ARASH",
+          "ساعت دو نصفه‌شبه و چت‌جی‌پی‌تی رایگانم قفل شد! خرید دلاریش هم ویزاکارت می‌خواد!"
+        ]
+      ]
+    },
+    {
+      "id": "clip_02",
+      "file": "clip_02.mp4",
+      "keyframe": "${BASE}\\story7\\keyframes\\KF_02.jpg",
+      "expected_speakers": [
+        "BOSS"
+      ],
+      "story_beat": "Stern grizzly bear boss in a dark suit and red tie stands beside Arash's desk pointing angrily at his gold wristwatch",
+      "source_span": [
+        8.0,
+        16.0
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.95,
+      "subtitles": [
+        [
+          0.1,
+          7.9,
+          "BOSS",
+          "آرش! اگه تا ساعت هشت صبح گزارش کامل تحلیلی رو تحویل ندی، از شرکت اخراجی!"
+        ]
+      ]
+    },
+    {
+      "id": "clip_03",
+      "file": "clip_03.mp4",
+      "keyframe": "${BASE}\\story7\\keyframes\\KF_03.jpg",
+      "expected_speakers": [
+        "SINA"
+      ],
+      "story_beat": "Smart orange fox friend Sina in a sleek green tech vest smiles beside Arash's desk holding a glowing emerald-and-gold key box",
+      "source_span": [
+        16.0,
+        24.0
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.95,
+      "subtitles": [
+        [
+          0.1,
+          7.9,
+          "SINA",
+          "نگران نباش! از کلیدباکس چت‌جی‌پی‌تی گو رو سه میلیون و ششصد و نود تومن بخر!"
+        ]
+      ]
+    },
+    {
+      "id": "clip_04",
+      "file": "clip_04.mp4",
+      "keyframe": "${BASE}\\story7\\keyframes\\KF_04.jpg",
+      "expected_speakers": [
+        "ARASH"
+      ],
+      "story_beat": "Brown owl Arash beams with excitement as glowing emerald holographic 3D charts and organized golden pages swirl magically out of his laptop",
+      "source_span": [
+        24.0,
+        32.0
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.95,
+      "subtitles": [
+        [
+          0.1,
+          7.9,
+          "ARASH",
+          "عالیه! به‌جای دردسر بیست دلار ویزاکارت، اشتراک چت‌جی‌پی‌تی پلاس رو چهار قسطه با گارانتی گرفتم!"
+        ]
+      ]
+    },
+    {
+      "id": "clip_05",
+      "file": "clip_05.mp4",
+      "keyframe": "${BASE}\\story7\\keyframes\\KF_05.jpg",
+      "expected_speakers": [
+        "BOSS"
+      ],
+      "story_beat": "In the sunny morning boardroom, the grizzly bear boss claps in amazement before a floating 3D holographic chart projection while owl Arash smiles proudly",
+      "source_span": [
+        32.0,
+        40.0
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.95,
+      "subtitles": [
+        [
+          0.1,
+          7.9,
+          "BOSS",
+          "فوق‌العاده‌ست آرش! این دقیق‌ترین گزارشیه که تو عمرم دیدم! همین امروز ترفیع می‌گیری!"
+        ]
+      ]
+    },
+    {
+      "id": "clip_06",
+      "file": "clip_06.mp4",
+      "keyframe": "${BASE}\\story7\\keyframes\\KF_06.jpg",
+      "expected_speakers": [
+        "SINA"
+      ],
+      "story_beat": "Brown owl Arash and orange fox Sina high-five joyfully in the bright modern office beside a glowing golden key emblem on the desk",
+      "source_span": [
+        40.0,
+        48.0
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.95,
+      "subtitles": [
+        [
+          0.1,
+          7.9,
+          "SINA",
+          "برای خرید چت‌جی‌پی‌تی گو، پلاس و پرو با گارانتی سی روزه، همین الان برو کلیدباکس!"
+        ]
+      ]
+    }
+  ]
+}

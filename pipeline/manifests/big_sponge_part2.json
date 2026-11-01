@@ -1,0 +1,320 @@
+{
+  "_comment": "Series 8 (@emotionalgroceries) Part 2 - 100% Google Flow native Farsi voice with full اعراب‌گذاری.",
+  "schema_version": 1,
+  "speech_review_note": "Full Persian vowel diacritics (اعراب‌گذاری کامل) in Google Flow prompt for 100% accurate native pronunciation.",
+  "episode_id": "Part2_FathersPromise",
+  "title_fa": "قسمت دوم: قلبِ شکسته و قولِ پدر در بوتیکِ سلطنتی!",
+  "title_en": "Big Sponge Prom King Part 2 - Heartbreak & Father's Promise",
+  "source_video": "${SRC}\\02_Deo8vLpuxu5_emotionalgroceries.mp4",
+  "source_start_offset": 49.2,
+  "story_summary_fa": "سهراب با قلب شکسته و گل‌های له شده به خونه برمی‌گرده و توی آغوش پدرش گریه می‌کنه. پدرش بهش یادآوری می‌کنه که قد بلندش یک نقطه‌قوته و اون رو پیش خیاط سلطنتی شهر می‌بره!",
+  "fallback_to_source_on_visual_fail": false,
+  "tight_speech_trim": true,
+  "variables": {
+    "BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series8-big-sponge-prom-king-farsi",
+    "S2_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi",
+    "CHEF_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\ugly-face-chef-farsi",
+    "SRC": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\emotionalgroceries"
+  },
+  "clips_dir": "${BASE}\\part2\\flow_clips",
+  "out_dir": "${BASE}\\05_final_masters\\part2",
+  "font_path": "${CHEF_BASE}\\03_farsi_audio_tts\\Vazirmatn-Bold.ttf",
+  "cta_video": "${S2_BASE}\\part1\\flow_clips\\cta_kelidbox_s2.mp4",
+  "cta_speaker": "FATHER",
+  "cta_subtitles": [
+    {
+      "start": 0.15,
+      "end": 3.55,
+      "text": "برای دیدن قسمت بعدی این داستان همین الان پیج رو فالو کن!"
+    },
+    {
+      "start": 3.65,
+      "end": 7.6,
+      "text": "راستی کل این انیمیشن با اکانت‌های هوش مصنوعی سایت کلیدباکس ساخته شده!"
+    }
+  ],
+  "speakers": {
+    "BIG_SPONGE": [
+      255,
+      230,
+      110
+    ],
+    "BULLY": [
+      255,
+      145,
+      145
+    ],
+    "GIRL": [
+      255,
+      185,
+      220
+    ],
+    "FATHER": [
+      165,
+      255,
+      185
+    ],
+    "TAILOR": [
+      165,
+      230,
+      255
+    ],
+    "BADGE": [
+      255,
+      215,
+      70
+    ]
+  },
+  "clips": [
+    {
+      "id": "clip_01",
+      "file": "clip_01.mp4",
+      "source_span": [
+        49.2,
+        56.5
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "Heartbroken towering BIG_SPONGE (Sohrab) leans over a marble counter beside crushed yellow sunflowers, crying bitterly.",
+      "overlays": [
+        {
+          "speaker": "BADGE",
+          "text": "قسمت دوم: اشک‌هایِ سهراب و قولِ پدر!",
+          "start": 0.1,
+          "end": 3.4,
+          "position": "top",
+          "font_size": 21
+        }
+      ],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "BIG_SPONGE",
+          "چقدر ساده بودم! یک لحظه فکر کردم واقعاً دوستم داره، ولی برایِ اون‌ها فقط یک غولِ عجیبم!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_01.jpg",
+      "expected_speakers": [
+        "BIG_SPONGE"
+      ]
+    },
+    {
+      "id": "clip_02",
+      "file": "clip_02.mp4",
+      "source_span": [
+        56.5,
+        62.8
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "In the living room, loving red crustacean FATHER (Baba Ghodrat) kneels beside crying BIG_SPONGE (Sohrab) sitting on the sofa holding wilted sunflowers.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          3.3,
+          "FATHER",
+          "پسرم نگاهم کن! کی اشکت رو درآورده؟"
+        ],
+        [
+          3.4,
+          7.85,
+          "BIG_SPONGE",
+          "گفتن هیچ‌کس عاشقم نمی‌شه چون غول‌پیکرم!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_02.jpg",
+      "expected_speakers": [
+        "FATHER",
+        "BIG_SPONGE"
+      ]
+    },
+    {
+      "id": "clip_03",
+      "file": "clip_03.mp4",
+      "source_span": [
+        62.8,
+        67.5
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "FATHER (Baba Ghodrat) places his red pincer hand firmly on BIG_SPONGE's shoulder to comfort and inspire him.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "FATHER",
+          "تو زیادی بزرگ نیستی پسرم! آدم‌هایِ حقیر می‌خوان تو رو کوچیک کنن تا خودشون بزرگ به نظر بیان!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_03.jpg",
+      "expected_speakers": [
+        "FATHER"
+      ]
+    },
+    {
+      "id": "clip_04",
+      "file": "clip_04.mp4",
+      "source_span": [
+        67.5,
+        72.4
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "Inside a luxury high-rise fashion boutique at night, FATHER (Baba Ghodrat) introduces towering BIG_SPONGE (Sohrab) to master designer TAILOR (Monsieur Hashtpa).",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "FATHER",
+          "به پسرم گفتن قدش خیلی بلنده و دیگه حتی نمی‌تونه تویِ آینه به خودش نگاه کنه!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_04.jpg",
+      "expected_speakers": [
+        "FATHER"
+      ]
+    },
+    {
+      "id": "clip_05",
+      "file": "clip_05.mp4",
+      "source_span": [
+        72.4,
+        76.4
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "TAILOR (Monsieur Hashtpa, turquoise squid designer in glasses and black suit) looks up in admiration at towering BIG_SPONGE (Sohrab).",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "TAILOR",
+          "خیلی بلند؟! پسر، با این قد و هیکل، تو برایِ قایم شدن دنیا نیومدی، تو سلطانِ استایلی!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_05.jpg",
+      "expected_speakers": [
+        "TAILOR"
+      ]
+    },
+    {
+      "id": "clip_06",
+      "file": "clip_06.mp4",
+      "source_span": [
+        76.4,
+        80.5
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "Towering BIG_SPONGE (Sohrab) looks down hopefully at TAILOR (Monsieur Hashtpa) and FATHER (Baba Ghodrat) in the glittering luxury boutique.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          4.6,
+          "BIG_SPONGE",
+          "من؟! یعنی با این قدِ بلند می‌تونم شیک بپوشم؟"
+        ],
+        [
+          4.7,
+          7.85,
+          "TAILOR",
+          "الان لباسی برات می‌دوزم که همه مات و مبهوت بمونن!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_06.jpg",
+      "expected_speakers": [
+        "BIG_SPONGE",
+        "TAILOR"
+      ]
+    }
+  ],
+  "voices": {
+    "BIG_SPONGE": {
+      "name_fa": "BIG_SPONGE",
+      "color": [
+        255,
+        230,
+        110
+      ],
+      "source": "google_flow_native"
+    },
+    "BULLY": {
+      "name_fa": "BULLY",
+      "color": [
+        255,
+        145,
+        145
+      ],
+      "source": "google_flow_native"
+    },
+    "GIRL": {
+      "name_fa": "GIRL",
+      "color": [
+        255,
+        185,
+        220
+      ],
+      "source": "google_flow_native"
+    },
+    "FATHER": {
+      "name_fa": "FATHER",
+      "color": [
+        165,
+        255,
+        185
+      ],
+      "source": "google_flow_native"
+    },
+    "TAILOR": {
+      "name_fa": "TAILOR",
+      "color": [
+        165,
+        230,
+        255
+      ],
+      "source": "google_flow_native"
+    }
+  },
+  "video": {
+    "width": 720,
+    "height": 1280,
+    "fps": 24,
+    "crf": 18,
+    "preset": "fast",
+    "scale_mode": "fill"
+  },
+  "audio": {
+    "loudnorm": "loudnorm=I=-14:TP=-1.5:LRA=11",
+    "sample_rate": 48000,
+    "channels": 2,
+    "bitrate": "192k"
+  },
+  "speech": {
+    "speech_safe": "auto_expand",
+    "threshold_dbfs": -38,
+    "pre_handle": 0.2,
+    "post_handle": 0.35,
+    "splice_crossfade": 0.02
+  },
+  "subtitle_style": {
+    "time_base": "trim_local",
+    "y_ratio": 0.84,
+    "font_size": 27,
+    "min_font_size": 16,
+    "max_text_margin": 84,
+    "max_lines": 2
+  },
+  "outputs": {
+    "per_clip_location": "both",
+    "base_mode": "timeline",
+    "cta_burn_subtitles": true,
+    "cta_loudnorm": true,
+    "publish_caption_fa": "قسمت دوم: قلبِ شکسته و قولِ پدر در بوتیکِ سلطنتی!"
+  }
+}

@@ -1,0 +1,368 @@
+{
+  "_comment": "Part2_StolenFreedomEscape - 100% Google Flow native Farsi voice with full اعراب‌گذاری.",
+  "schema_version": 1,
+  "speech_review_note": "Full Persian vowel diacritics (اعراب‌گذاری کامل) in Google Flow prompt for 100% accurate native pronunciation.",
+  "episode_id": "Part2_StolenFreedomEscape",
+  "title_fa": "قسمت دوم (پایان): فرار با هویت دزدی از دروازه زندان!",
+  "title_en": "Prison Disguise Swap Part 2",
+  "source_video": "${SRC}\\07_DeViSqizRxK_emotionalgroceries.mp4",
+  "source_start_offset": 50,
+  "story_summary_fa": "زندانی واقعی از پشت میله‌های پنجره فریاد می‌زند که هویتش دزدیده شده، اما زندانی متقلب برگه ترخیص را امضا می‌کند و جلوی چشم او از دروازه زندان خارج می‌شود!",
+  "fallback_to_source_on_visual_fail": false,
+  "tight_speech_trim": true,
+  "variables": {
+    "BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series17-prison-number-swap-farsi",
+    "S2_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi",
+    "CHEF_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\ugly-face-chef-farsi",
+    "SRC": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\emotionalgroceries"
+  },
+  "clips_dir": "${BASE}\\part2\\flow_clips",
+  "out_dir": "${BASE}\\05_final_masters\\part2",
+  "font_path": "${CHEF_BASE}\\03_farsi_audio_tts\\Vazirmatn-Bold.ttf",
+  "cta_video": "${S2_BASE}\\part1\\flow_clips\\cta_kelidbox_s2.mp4",
+  "cta_speaker": "SPONGE_INMATE",
+  "cta_subtitles": [
+    {
+      "start": 0.15,
+      "end": 3.55,
+      "text": "برای دیدن داستان‌های جذاب بعدی همین الان پیج رو فالو کن!"
+    },
+    {
+      "start": 3.65,
+      "end": 7.6,
+      "text": "راستی کل این انیمیشن با اکانت‌های هوش مصنوعی سایت کلیدباکس ساخته شده!"
+    }
+  ],
+  "speakers": {
+    "SQUID_INMATE": [
+      145,
+      235,
+      255
+    ],
+    "SPONGE_INMATE": [
+      255,
+      225,
+      130
+    ],
+    "FISH_INMATE": [
+      165,
+      255,
+      165
+    ],
+    "STAR_INMATE": [
+      255,
+      175,
+      210
+    ],
+    "CRAB_WARDEN": [
+      255,
+      155,
+      145
+    ],
+    "BADGE": [
+      255,
+      215,
+      70
+    ]
+  },
+  "clips": [
+    {
+      "id": "clip_01",
+      "file": "clip_01.mp4",
+      "source_span": [
+        50,
+        60
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "In the prison yard, plump pink 3D sea-star inmate STAR_INMATE in a navy jumpsuit looks sympathetically at the turquoise-blue 3D squid inmate with black dreadlocks.",
+      "overlays": [
+        {
+          "speaker": "BADGE",
+          "text": "قسمت آخر: فرار با هویت دزدی و قول انتقام!",
+          "start": 0.1,
+          "end": 3.4,
+          "position": "top",
+          "font_size": 21
+        }
+      ],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "STAR_INMATE",
+          "رفیق، روی پرونده‌ت نوشته سی سال حبس داری! چیکار کردی که این همه سال افتادی توی زندان؟!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_01.jpg",
+      "expected_speakers": [
+        "STAR_INMATE"
+      ],
+      "beat_ids": [
+        "beat_1"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[PN2_C01] Stylized 3D CGI cartoon animation matching the exact 3D non-human sea-creature characters and outfits in the reference image, static medium two-shot keeping both characters in frame the entire time (no camera cuts), in the concrete prison yard the plump pink 3D sea-star inmate in a navy jumpsuit speaks in surprise to the dejected turquoise-blue 3D squid inmate with black dreadlocks in a navy jumpsuit (strictly NO human faces), as the pink sea-star inmate speaks in native Persian (Farsi) with exact vowel pronunciation and a surprised deep male voice: «رَفِیق، رُویِ پَرْوَنْدِه‌ت نِوِشْتِه سِی سال حَبْس دارِی! چِیکار کَرْدِی کِه اِین هَمِه سال اُفْتادِی تُویِ زِنْدان؟!» Zero on-screen subtitles."
+    },
+    {
+      "id": "clip_02",
+      "file": "clip_02.mp4",
+      "source_span": [
+        60,
+        70
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "Inside the prison cafeteria, the turquoise-blue 3D squid inmate with black dreadlocks shouts in realization and points toward the exit while an old yellow sponge inmate sits at the table.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "SPONGE_INMATE",
+          "من که امروز آزادیم بود! اون هم‌سلولیم موقع خواب نقابش رو زده به من و فرار کرده!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_02.jpg",
+      "expected_speakers": [
+        "SPONGE_INMATE"
+      ],
+      "beat_ids": [
+        "beat_2"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[PN2_C02] Stylized 3D CGI cartoon animation matching the exact 3D non-human characters and outfits in the reference image, static medium two-shot keeping both characters in frame the entire time (no camera cuts), inside the prison cafeteria the turquoise-blue 3D squid inmate with black dreadlocks in a navy jumpsuit points furiously while speaking to an old bearded yellow 3D sponge inmate sitting at the metal cafeteria table (strictly NO human faces), as the turquoise squid character shouts in native Persian (Farsi) with exact vowel pronunciation and a frantic angry young male voice: «مَن کِه اِمْرُوز آزادِیم بُود! اُون هَم‌سِلُولِیم مُوقِعِ خْواب نِقابِش رُو زَدِه بِه مَن وُ فَرار کَرْدِه!» Zero on-screen subtitles."
+    },
+    {
+      "id": "clip_03",
+      "file": "clip_03.mp4",
+      "source_span": [
+        70,
+        80
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "From the barred second-floor prison window overlooking the outdoor release desk, the turquoise-blue 3D squid inmate reaches through the bars pointing down at the disguised charcoal-black 3D sponge inmate sitting beside red 3D crustacean officer CRAB_WARDEN.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "SPONGE_INMATE",
+          "آقای نگهبان صبر کنید! اون نقاب و کارت من رو دزدیده تا به جای من آزاد بشه!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_03.jpg",
+      "expected_speakers": [
+        "SPONGE_INMATE"
+      ],
+      "beat_ids": [
+        "beat_3"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[PN2_C03] Stylized 3D CGI cartoon animation matching the exact 3D non-human characters and outfits in the reference image, static wide-medium shot keeping the characters in frame the entire time (no camera cuts), leaning out of the barred upper prison window the turquoise-blue 3D squid inmate points desperately down at the disguised charcoal-black 3D sponge inmate sitting at the outdoor release desk beside the red 3D crustacean prison officer holding a clipboard (strictly NO human faces), as the turquoise squid character shouts in native Persian (Farsi) with exact vowel pronunciation and a desperate shouting male voice: «آقایِ نِگَهْبان صَبْر کُنِید! اُون نِقاب وُ کارْتِ مَن رُو دُزْدِیدِه تا بِه جایِ مَن آزاد بِشِه!» Zero on-screen subtitles."
+    },
+    {
+      "id": "clip_04",
+      "file": "clip_04.mp4",
+      "source_span": [
+        80,
+        88
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "Sitting calmly at the outdoor metal release table, the disguised charcoal-black 3D sponge inmate with black dreadlocks signs the release form while speaking to red 3D crustacean officer CRAB_WARDEN.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "SQUID_INMATE",
+          "به حرف‌هاش گوش ندید قربان! از وقتی فهمیده من امروز آزاد می‌شم، از حسادت دیوونه شده!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_04.jpg",
+      "expected_speakers": [
+        "SQUID_INMATE"
+      ],
+      "beat_ids": [
+        "beat_4"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[PN2_C04] Stylized 3D CGI cartoon animation matching the exact 3D non-human characters and outfits in the reference image, static medium shot keeping the characters in frame the entire time (no camera cuts), sitting at the outdoor metal release desk the disguised porous charcoal-black 3D sponge inmate with black dreadlocks signs the release papers and speaks calmly to the red 3D crustacean prison officer in a navy uniform holding a clipboard (strictly NO human faces), as the charcoal-black sponge inmate speaks in native Persian (Farsi) with exact vowel pronunciation and a smooth smug male voice: «بِه حَرْف‌هاش گُوش نَدِید قُرْبان! اَز وَقْتِی فَهْمِیدِه مَن اِمْرُوز آزاد مِی‌شَم، اَز حَسادَت دِیوُونِه شُدِه!» Zero on-screen subtitles."
+    },
+    {
+      "id": "clip_05",
+      "file": "clip_05.mp4",
+      "source_span": [
+        88,
+        95
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "At the outdoor prison release desk, red 3D crustacean officer CRAB_WARDEN in his navy cap and uniform holds up the signed clipboard and motions toward the exit gate for the disguised charcoal-black 3D sponge inmate.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "CRAB_WARDEN",
+          "بفرما، این هم امضای آخر! دوران محکومیتت تموم شد، وسایلت رو بردار و برو بیرون!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_05.jpg",
+      "expected_speakers": [
+        "CRAB_WARDEN"
+      ],
+      "beat_ids": [
+        "beat_5"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[PN2_C05] Stylized 3D CGI cartoon animation matching the exact 3D non-human characters and outfits in the reference image, static medium two-shot keeping both characters in frame the entire time (no camera cuts), at the outdoor prison release table the red 3D crustacean prison officer with tall eyestalks in a navy police uniform and cap holds the clipboard and gestures toward the exit for the charcoal-black 3D sponge inmate sitting at the desk (strictly NO human faces), as the red crustacean officer speaks in native Persian (Farsi) with exact vowel pronunciation and a stern authoritative male voice: «بِفَرْما، اِین هَم اِمْضایِ آخَر! دُورانِ مَحْکُومِیَّتِت تَمُوم شُد، وَسایِلِت رُو بَرْدار وُ بُرُو بِیرُون!» Zero on-screen subtitles."
+    },
+    {
+      "id": "clip_06",
+      "file": "clip_06.mp4",
+      "source_span": [
+        95,
+        101.13
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "Outside the heavy iron prison gate under barbed wire, the disguised charcoal-black 3D sponge character wearing a black leather jacket,shoulder bag, and white sneakers walks out smirking while the turquoise squid inmate watches from the barred window.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "SQUID_INMATE",
+          "ممنون بابت کارت آزادیت رفیق! سی سال حبس رو با یه نقاب حل کردم، خداحافظ زندان!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_06.jpg",
+      "expected_speakers": [
+        "SQUID_INMATE"
+      ],
+      "beat_ids": [
+        "beat_6"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[PN2_C06] Stylized 3D CGI cartoon animation matching the exact 3D non-human characters and outfits in the reference image, static medium shot keeping the character in frame the entire time (no camera cuts), walking outside the iron prison gate in sunlight the porous charcoal-black 3D sponge character with black dreadlocks wearing a black leather jacket, dark jeans, and white sneakers smirks triumphantly while the turquoise squid inmate watches from the barred window behind him (strictly NO human faces), as the charcoal-black sponge character speaks in native Persian (Farsi) with exact vowel pronunciation and a gloating victorious male voice: «مَمْنُون بابَتِ کارْتِ آزادِیت رَفِیق! سِی سال حَبْس رُو با یِه نِقاب حَل کَرْدَم، خُداحافِظ زِنْدان!» Zero on-screen subtitles."
+    }
+  ],
+  "voices": {
+    "SQUID_INMATE": {
+      "name_fa": "SQUID_INMATE",
+      "color": [
+        145,
+        235,
+        255
+      ],
+      "source": "google_flow_native"
+    },
+    "SPONGE_INMATE": {
+      "name_fa": "SPONGE_INMATE",
+      "color": [
+        255,
+        225,
+        130
+      ],
+      "source": "google_flow_native"
+    },
+    "FISH_INMATE": {
+      "name_fa": "FISH_INMATE",
+      "color": [
+        165,
+        255,
+        165
+      ],
+      "source": "google_flow_native"
+    },
+    "STAR_INMATE": {
+      "name_fa": "STAR_INMATE",
+      "color": [
+        255,
+        175,
+        210
+      ],
+      "source": "google_flow_native"
+    },
+    "CRAB_WARDEN": {
+      "name_fa": "CRAB_WARDEN",
+      "color": [
+        255,
+        155,
+        145
+      ],
+      "source": "google_flow_native"
+    }
+  },
+  "video": {
+    "width": 720,
+    "height": 1280,
+    "fps": 24,
+    "crf": 18,
+    "preset": "fast",
+    "scale_mode": "fill"
+  },
+  "audio": {
+    "loudnorm": "loudnorm=I=-14:TP=-1.5:LRA=11",
+    "sample_rate": 48000,
+    "channels": 2,
+    "bitrate": "192k"
+  },
+  "speech": {
+    "speech_safe": "auto_expand",
+    "threshold_dbfs": -38,
+    "pre_handle": 0.2,
+    "post_handle": 0.35,
+    "splice_crossfade": 0.02
+  },
+  "subtitle_style": {
+    "time_base": "trim_local",
+    "y_ratio": 0.84,
+    "font_size": 27,
+    "min_font_size": 16,
+    "max_text_margin": 84,
+    "max_lines": 2
+  },
+  "outputs": {
+    "per_clip_location": "both",
+    "base_mode": "timeline",
+    "cta_burn_subtitles": true,
+    "cta_loudnorm": true,
+    "publish_caption_fa": "قسمت دوم (پایان): فرار با هویت دزدی از دروازه زندان!"
+  },
+  "character_references": [
+    "${BASE}\\character_sheets\\FLOW_SHEET_SERIES17_CHARACTERS.jpg"
+  ],
+  "content_edits": [],
+  "story_plan": {
+    "summary": "زندانی واقعی از پشت میله‌های پنجره فریاد می‌زند که هویتش دزدیده شده، اما زندانی متقلب برگه ترخیص را امضا می‌کند و جلوی چشم او از دروازه زندان خارج می‌شود!",
+    "ending": "The disguised impostor signs the release papers and walks out the prison exit gate in a leather jacket while the real inmate vows revenge from the barred window.",
+    "required_beats": [
+      "beat_1",
+      "beat_2",
+      "beat_3",
+      "beat_4",
+      "beat_5",
+      "beat_6"
+    ]
+  },
+  "visual": {
+    "keyframe_threshold": 38,
+    "jump_threshold": 32,
+    "contamination_margin": 5
+  },
+  "visual_gate": {
+    "keyframe_threshold": 55.0,
+    "jump_threshold": 32.0,
+    "contamination_margin": 5.0
+  }
+}

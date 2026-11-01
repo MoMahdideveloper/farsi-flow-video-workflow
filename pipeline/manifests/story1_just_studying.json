@@ -1,0 +1,253 @@
+{
+  "_comment": "Story 1 (DdY8cCgj_Dr - She Said They Were Just Studying - 100% Google Flow native Farsi voice).",
+  "schema_version": 1,
+  "speech_review_note": "Curated trim windows with auto_expand speech-safe protection.",
+  "episode_id": "Story1_JustStudying",
+  "title_fa": "داستان اول: فقط داشتیم درس می‌خوندیم! (راز عدد روی پیشونی)",
+  "title_en": "She Said They Were Just Studying",
+  "source_video": "${SRC}\\01_DdY8cCgj_Dr_genstoryhub.mp4",
+  "story_summary_fa": "دختر هلو سه تا از هم‌کلاسی‌های غول‌پیکر و بدنسازش رو میاره خونه تا با هم زیست‌شناسی بخونن! پدر گلابی که به سر و صداهای طبقه بالا مشکوک شده، وقتی سه تا پسر عضلانی رو موقع فرار روی پله‌ها می‌بینه، وارد اتاق دخترش می‌شه و عدد ۳ روی پیشونی دخترش رو کشف می‌کنه!",
+  "fallback_to_source_on_visual_fail": false,
+  "tight_speech_trim": true,
+  "variables": {
+    "BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series4-viral-6-stories-farsi",
+    "S2_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi",
+    "CHEF_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\ugly-face-chef-farsi",
+    "SRC": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\selected_6_stories"
+  },
+  "clips_dir": "${BASE}\\story1\\flow_clips",
+  "out_dir": "${BASE}\\05_final_masters\\story1",
+  "font_path": "${CHEF_BASE}\\03_farsi_audio_tts\\Vazirmatn-Bold.ttf",
+  "cta_video": "${S2_BASE}\\part1\\flow_clips\\cta_kelidbox_s2.mp4",
+  "cta_speaker": "DAD",
+  "cta_subtitles": [
+    {
+      "start": 0.25,
+      "end": 3.35,
+      "text": "برای دیدن داستان‌های وایرال بعدی همین الان پیج رو فالو کن!"
+    },
+    {
+      "start": 3.5,
+      "end": 7.85,
+      "text": "راستی کل این انیمیشن با اکانت‌های هوش مصنوعی سایت کلیدباکس ساخته شده!"
+    }
+  ],
+  "video": {
+    "width": 720,
+    "height": 1280,
+    "fps": 24,
+    "crf": 18,
+    "preset": "fast",
+    "scale_mode": "fill"
+  },
+  "audio": {
+    "loudnorm": "loudnorm=I=-14:TP=-1.5:LRA=11",
+    "sample_rate": 48000,
+    "channels": 2,
+    "bitrate": "192k"
+  },
+  "speech": {
+    "speech_safe": "auto_expand",
+    "threshold_dbfs": -38.0,
+    "pre_handle": 0.2,
+    "post_handle": 0.35,
+    "splice_crossfade": 0.02
+  },
+  "subtitle_style": {
+    "time_base": "trim_local",
+    "y_ratio": 0.84,
+    "font_size": 27,
+    "min_font_size": 16,
+    "max_text_margin": 84,
+    "max_lines": 2
+  },
+  "badge": {
+    "text": "داستان اول: فقط داشتیم درس می‌خوندیم! (راز عدد روی پیشونی)",
+    "start": 0.0,
+    "end": 3.5,
+    "y_center": 130,
+    "font_size": 28,
+    "color": [
+      255,
+      225,
+      110
+    ],
+    "clip_index": 1
+  },
+  "outputs": {
+    "per_clip_location": "both",
+    "base_mode": "timeline",
+    "cta_burn_subtitles": true,
+    "cta_loudnorm": true,
+    "publish_caption_fa": "گفت فقط داریم با هم زیست‌شناسی می‌خونیم بابا! 😳📚🔥\nوقتی دختر هلو سه تا از پسرهای بدنساز و غول‌پیکر دانشگاه رو آورد خونه تا مثلاً برای امتحان درس بخونن، پدر گلابی از سر و صداهای طبقه بالا مشکوک شد... اما وقتی رفت توی اتاق، عدد روی پیشونی دختر هلو همه‌چیز رو لو داد! 😱🍐🍑🍉"
+  },
+  "voices": {
+    "DAD": {
+      "name_fa": "پدر گلابی",
+      "color": [
+        255,
+        215,
+        110
+      ],
+      "source": "google_flow_native"
+    },
+    "PEACH": {
+      "name_fa": "دختر هلو",
+      "color": [
+        255,
+        155,
+        205
+      ],
+      "source": "google_flow_native"
+    },
+    "BROS": {
+      "name_fa": "پسرهای بدنساز / هم‌کلاسی‌ها",
+      "color": [
+        140,
+        245,
+        185
+      ],
+      "source": "google_flow_native"
+    }
+  },
+  "clips": [
+    {
+      "id": "clip_01",
+      "file": "clip_01.mp4",
+      "keyframe": "${BASE}\\story1\\keyframes\\KF_01.jpg",
+      "expected_speakers": [
+        "DAD"
+      ],
+      "story_beat": "Pear Dad looks shocked as Peach daughter brings three giant muscular gym-bro fruits home to study",
+      "source_span": [
+        0.0,
+        10.3
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.95,
+      "subtitles": [
+        [
+          0.1,
+          7.9,
+          "DAD",
+          "صبر کن ببینم دخترم! این سه تا غولِ بدنساز کین آوردی خونه؟! واقعاً می‌خوای با اینا درس بخونی؟!"
+        ]
+      ]
+    },
+    {
+      "id": "clip_02",
+      "file": "clip_02.mp4",
+      "keyframe": "${BASE}\\story1\\keyframes\\KF_02.jpg",
+      "expected_speakers": [
+        "PEACH"
+      ],
+      "story_beat": "Peach daughter pleads with her skeptical Pear Dad while the three muscular gym-bro fruits stand behind her",
+      "source_span": [
+        12.5,
+        29.3
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.95,
+      "subtitles": [
+        [
+          0.1,
+          7.9,
+          "PEACH",
+          "بابا جون این بچه‌ها توی زیست‌شناسی عالین! اگه صدای عجیبی هم از بالا اومد نیا تو اتاق، فقط داریم درس می‌خونیم!"
+        ]
+      ]
+    },
+    {
+      "id": "clip_03",
+      "file": "clip_03.mp4",
+      "keyframe": "${BASE}\\story1\\keyframes\\KF_03.jpg",
+      "expected_speakers": [
+        "BROS"
+      ],
+      "story_beat": "Upstairs in the bedroom, the three muscular gym-bro fruits sit around Peach daughter on the bed to start studying",
+      "source_span": [
+        33.5,
+        37.5
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.95,
+      "subtitles": [
+        [
+          0.1,
+          7.9,
+          "BROS",
+          "خب بچه‌ها، درِ اتاق رو ببندید! وقتشه سنگین‌ترین تمرین عملی زیست‌شناسی رو همین الان با هم شروع کنیم!"
+        ]
+      ]
+    },
+    {
+      "id": "clip_04",
+      "file": "clip_04.mp4",
+      "keyframe": "${BASE}\\story1\\keyframes\\KF_04.jpg",
+      "expected_speakers": [
+        "DAD"
+      ],
+      "story_beat": "Downstairs chandelier shakes from upstairs noise and Pear Dad jumps up in fury",
+      "source_span": [
+        39.2,
+        44.0
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.95,
+      "subtitles": [
+        [
+          0.1,
+          7.9,
+          "DAD",
+          "این دیگه چه سر و صداییه از طبقه بالا میاد؟! سقف خونه داره می‌ریزه، الان می‌رم بالا مچشون رو می‌گیرم!"
+        ]
+      ]
+    },
+    {
+      "id": "clip_05",
+      "file": "clip_05.mp4",
+      "keyframe": "${BASE}\\story1\\keyframes\\KF_05.jpg",
+      "expected_speakers": [
+        "BROS"
+      ],
+      "story_beat": "The three exhausted gym-bro fruits walk down the stairs wiping sweat as Pear Dad confronts them",
+      "source_span": [
+        44.5,
+        50.8
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.95,
+      "subtitles": [
+        [
+          0.1,
+          7.9,
+          "BROS",
+          "نگران نباشید عموجون، درسمون دیگه تموم شد! تمام فصل زیست‌شناسی رو با انرژی کامل مرور کردیم، خداحافظ!"
+        ]
+      ]
+    },
+    {
+      "id": "clip_06",
+      "file": "clip_06.mp4",
+      "keyframe": "${BASE}\\story1\\keyframes\\KF_06.jpg",
+      "expected_speakers": [
+        "DAD"
+      ],
+      "story_beat": "Pear Dad opens the bedroom door and sees the glowing number 3 on his daughter's forehead",
+      "source_span": [
+        56.7,
+        64.5
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.95,
+      "subtitles": [
+        [
+          0.1,
+          7.9,
+          "DAD",
+          "صبر کن ببینم، واقعاً فقط داشتید درس می‌خوندید؟! پس چرا عدد روی پیشونیت یکهو شده سه؟!"
+        ]
+      ]
+    }
+  ]
+}
