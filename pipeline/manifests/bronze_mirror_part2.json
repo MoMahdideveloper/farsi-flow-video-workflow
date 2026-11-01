@@ -1,0 +1,354 @@
+{
+  "_comment": "Part2_BronzeMirrorGoldFortune - 100% Google Flow native Farsi voice with full اعراب‌گذاری.",
+  "schema_version": 1,
+  "speech_review_note": "Full Persian vowel diacritics (اعراب‌گذاری کامل) in Google Flow prompt for 100% accurate native pronunciation.",
+  "episode_id": "Part2_BronzeMirrorGoldFortune",
+  "title_fa": "قسمت دوم (پایان): راز طلا شدن اشیا و حسرت همسایه طمعکار!",
+  "title_en": "Secret of the Bronze Mirror Part 2",
+  "source_video": "${SRC}\\30_2026-10-12_DeYLXd6qeAK.mp4",
+  "source_start_offset": 48,
+  "story_summary_fa": "هلو آینه برنزی دور انداخته‌شده را در جاده پیدا می‌کند؛ آینه در دست او دوباره می‌درخشد و میز، کاسه و تخم غاز را به طلای خالص تبدیل می‌کند و هلو در طلافروشی صاحب یک چمدان پر از پول می‌شود!",
+  "fallback_to_source_on_visual_fail": false,
+  "tight_speech_trim": true,
+  "variables": {
+    "BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series21-secret-bronze-mirror-farsi",
+    "S2_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi",
+    "CHEF_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\ugly-face-chef-farsi",
+    "SRC": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\straw.berryjammin"
+  },
+  "clips_dir": "${BASE}\\part2\\flow_clips",
+  "out_dir": "${BASE}\\05_final_masters\\part2",
+  "font_path": "${CHEF_BASE}\\03_farsi_audio_tts\\Vazirmatn-Bold.ttf",
+  "cta_video": "${S2_BASE}\\part1\\flow_clips\\cta_kelidbox_s2.mp4",
+  "cta_speaker": "PEACH_GIRL",
+  "cta_subtitles": [
+    {
+      "start": 0.15,
+      "end": 3.55,
+      "text": "برای دیدن داستان‌های جذاب بعدی همین الان پیج رو فالو کن!"
+    },
+    {
+      "start": 3.6,
+      "end": 7.55,
+      "text": "راستی، کل این انیمیشن با اکانت‌های هوش مصنوعی سایت کلیدباکس ساخته شده!"
+    }
+  ],
+  "speakers": {
+    "PEACH_GIRL": [
+      255,
+      195,
+      160
+    ],
+    "PLUM_RIVAL": [
+      215,
+      165,
+      255
+    ],
+    "JEWELER_APPLE": [
+      165,
+      255,
+      155
+    ],
+    "BADGE": [
+      255,
+      215,
+      70
+    ]
+  },
+  "voices": {
+    "PEACH_GIRL": {
+      "name_fa": "PEACH_GIRL",
+      "color": [
+        255,
+        195,
+        160
+      ],
+      "source": "google_flow_native"
+    },
+    "PLUM_RIVAL": {
+      "name_fa": "PLUM_RIVAL",
+      "color": [
+        215,
+        165,
+        255
+      ],
+      "source": "google_flow_native"
+    },
+    "JEWELER_APPLE": {
+      "name_fa": "JEWELER_APPLE",
+      "color": [
+        165,
+        255,
+        155
+      ],
+      "source": "google_flow_native"
+    }
+  },
+  "clips": [
+    {
+      "id": "clip_01",
+      "file": "clip_01.mp4",
+      "source_span": [
+        48,
+        56
+      ],
+      "trim_in": 0,
+      "trim_out": 7.9,
+      "story_beat": "Walking along a country dirt road, 3D peach girl PEACH_GIRL spots the discarded bronze mirror lying on the ground and picks it up in surprise.",
+      "overlays": [
+        {
+          "speaker": "BADGE",
+          "text": "قسمت دوم (پایان): راز طلا شدن اشیا و حسرت همسایه طمعکار!",
+          "start": 0.1,
+          "end": 3.4,
+          "position": "top",
+          "font_size": 20
+        }
+      ],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "PEACH_GIRL",
+          "عه! این همون آینه برنزیه که ازم قاپیده بود! چرا انداختش کنار جاده؟ می‌برمش خونه خودم!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_01.jpg",
+      "expected_speakers": [
+        "PEACH_GIRL"
+      ],
+      "beat_ids": [
+        "beat_1"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[BM2_C01] Stylized 3D CGI cartoon animation matching the exact 3D non-human fruit character and outfit in the reference image, static medium shot keeping the character in frame the entire time (no camera cuts), standing on a sunny country dirt road beside a brick wall the round pink-orange 3D peach-headed girl with a green top leaf in a patched cream dress holds the antique bronze mirror in surprise (strictly NO human face), speaking in native Persian (Farsi) with exact vowel pronunciation and a surprised hopeful female voice: «عِه! اِین هَمُون آیِنِه بُرُنْزِیِه کِه اَزَم قاپِیدِه بُود! چِرا اَنْداخْتِش کِنارِ جادِّه؟ مِی‌بَرَمِش خُونِه خُودَم!» Zero on-screen subtitles.",
+      "speech_text": "عِه! اِین هَمُون آیِنِه بُرُنْزِیِه کِه اَزَم قاپِیدِه بُود! چِرا اَنْداخْتِش کِنارِ جادِّه؟ مِی‌بَرَمِش خُونِه خُودَم!"
+    },
+    {
+      "id": "clip_02",
+      "file": "clip_02.mp4",
+      "source_span": [
+        56,
+        64
+      ],
+      "trim_in": 0,
+      "trim_out": 7.9,
+      "story_beat": "Inside her humble cottage living room, 3D peach girl PEACH_GIRL holds the bronze mirror as its golden beam bursts back to life and turns her wooden table into solid gleaming gold.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "PEACH_GIRL",
+          "باورم نمی‌شه! توی دست من دوباره نور طلایی آینه روشن شد و میز رو طلا کرد!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_02.jpg",
+      "expected_speakers": [
+        "PEACH_GIRL"
+      ],
+      "beat_ids": [
+        "beat_2"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[BM2_C02] Stylized 3D CGI cartoon animation matching the exact 3D non-human fruit character and outfit in the reference image, static medium shot keeping the character in frame the entire time (no camera cuts), sitting on a worn sofa in her cottage the round pink-orange 3D peach-headed girl in a patched cream dress holds the brightly glowing golden bronze mirror as its golden beam turns the table in front of her into solid gleaming gold (strictly NO human face), speaking in native Persian (Farsi) with exact vowel pronunciation and an amazed joyful female voice: «باوَرَم نِمِی‌شِه! تُویِ دَسْتِ مَن دُوبارِه نُورِ طَلایِیِ آیِنِه رُوشَن شُد وُ مِیز رُو طَلا کَرْد!» Zero on-screen subtitles.",
+      "speech_text": "باوَرَم نِمِی‌شِه! تُویِ دَسْتِ مَن دُوبارِه نُورِ طَلایِیِ آیِنِه رُوشَن شُد وُ مِیز رُو طَلا کَرْد!"
+    },
+    {
+      "id": "clip_03",
+      "file": "clip_03.mp4",
+      "source_span": [
+        64,
+        72
+      ],
+      "trim_in": 0,
+      "trim_out": 7.9,
+      "story_beat": "In her cottage kitchen, 3D peach girl PEACH_GIRL shines the glowing bronze mirror onto a ceramic bowl and a large goose egg, turning both into pure 24-karat solid gold.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "PEACH_GIRL",
+          "حالا نور آینه رو می‌تابونم به این کاسه و تخم غاز! هر دو طلای خالص شدن!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_03.jpg",
+      "expected_speakers": [
+        "PEACH_GIRL"
+      ],
+      "beat_ids": [
+        "beat_3"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[BM2_C03] Stylized 3D CGI cartoon animation matching the exact 3D non-human fruit character and outfit in the reference image, static medium shot keeping the character in frame the entire time (no camera cuts), standing in her rustic kitchen the round pink-orange 3D peach-headed girl in a patched cream dress holds the glowing golden bronze mirror above a solid-gold bowl containing a large solid-gold egg on the counter (strictly NO human face), speaking in native Persian (Farsi) with exact vowel pronunciation and a delighted excited female voice: «حالا نُورِ آیِنِه رُو مِی‌تابُونَم بِه اِین کاسِه وُ تُخْمِ غاز! هَر دُو طَلایِ خالِص شُدَن!» Zero on-screen subtitles.",
+      "speech_text": "حالا نُورِ آیِنِه رُو مِی‌تابُونَم بِه اِین کاسِه وُ تُخْمِ غاز! هَر دُو طَلایِ خالِص شُدَن!"
+    },
+    {
+      "id": "clip_04",
+      "file": "clip_04.mp4",
+      "source_span": [
+        72,
+        80
+      ],
+      "trim_in": 0,
+      "trim_out": 7.9,
+      "story_beat": "Inside a luxury glass-counter jewelry shop, 3D peach girl PEACH_GIRL presents the solid-gold bowl and giant golden egg to astonished green-apple jeweler JEWELER_APPLE in a black suit.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "JEWELER_APPLE",
+          "توی عمرم همچین کاسه و تخم طلای خالصی ندیده بودم! الان پولش رو تقدیم می‌کنم!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_04.jpg",
+      "expected_speakers": [
+        "JEWELER_APPLE"
+      ],
+      "beat_ids": [
+        "beat_4"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[BM2_C04] Stylized 3D CGI cartoon animation matching the exact 3D non-human fruit characters and outfits in the reference image, static medium two-shot keeping both characters in frame the entire time (no camera cuts), inside a bright luxury glass-counter jewelry shop the round pink-orange 3D peach-headed girl hands a solid-gold bowl holding a giant golden egg to the astonished green 3D apple-headed jeweler in a black suit and tie (strictly NO human faces), as the green-apple jeweler speaks in native Persian (Farsi) with exact vowel pronunciation and an amazed respectful male voice: «تُویِ عُمْرَم هَمْچِین کاسِه وُ تُخْمِ طَلایِ خالِصِی نَدِیدِه بُودَم! اَلان پُولِش رُو تَقْدِیم مِی‌کُنَم!» Zero on-screen subtitles.",
+      "speech_text": "تُویِ عُمْرَم هَمْچِین کاسِه وُ تُخْمِ طَلایِ خالِصِی نَدِیدِه بُودَم! اَلان پُولِش رُو تَقْدِیم مِی‌کُنَم!"
+    },
+    {
+      "id": "clip_05",
+      "file": "clip_05.mp4",
+      "source_span": [
+        80,
+        88
+      ],
+      "trim_in": 0,
+      "trim_out": 7.9,
+      "story_beat": "Inside the jewelry shop, green-apple jeweler JEWELER_APPLE hands an open briefcase packed with banknotes to happy 3D peach girl PEACH_GIRL.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "PEACH_GIRL",
+          "ممنونم آقای طلافروش! با این چمدان پر از پول، از فقر نجات پیدا کردم!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_05.jpg",
+      "expected_speakers": [
+        "PEACH_GIRL"
+      ],
+      "beat_ids": [
+        "beat_5"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[BM2_C05] Stylized 3D CGI cartoon animation matching the exact 3D non-human fruit characters and outfits in the reference image, static medium two-shot keeping both characters in frame the entire time (no camera cuts), inside the luxury jewelry shop the green 3D apple-headed jeweler in a black suit holds out an open black briefcase overflowing with stacks of banknotes to the joyful round pink-orange 3D peach-headed girl (strictly NO human faces), as the 3D peach girl speaks in native Persian (Farsi) with exact vowel pronunciation and a grateful overjoyed female voice: «مَمْنُونَم آقایِ طَلافُرُوش! با اِین چَمِدانِ پُر اَز پُول، اَز فَقْر نِجات پِیْدا کَرْدَم!» Zero on-screen subtitles.",
+      "speech_text": "مَمْنُونَم آقایِ طَلافُرُوش! با اِین چَمِدانِ پُر اَز پُول، اَز فَقْر نِجات پِیْدا کَرْدَم!"
+    },
+    {
+      "id": "clip_06",
+      "file": "clip_06.mp4",
+      "source_span": [
+        88,
+        95.6
+      ],
+      "trim_in": 0,
+      "trim_out": 7.9,
+      "story_beat": "Outside the luxury jewelry shop window on the city street, envious 3D purple-plum girl PLUM_RIVAL in her tattered dress stares in shock as PEACH_GIRL steps out wearing an emerald gown and holding the briefcase of cash.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "PLUM_RIVAL",
+          "باورم نمی‌شه! همون آینه‌ای که من دور انداختم هلو رو میلیاردر کرد و من فقیر موندم!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_06.jpg",
+      "expected_speakers": [
+        "PLUM_RIVAL"
+      ],
+      "beat_ids": [
+        "beat_6"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[BM2_C06] Stylized 3D CGI cartoon animation matching the exact 3D non-human fruit characters and outfits in the reference image, static medium two-shot keeping both characters in frame the entire time (no camera cuts), outside the glass window of the luxury jewelry store on a city street the round dark-purple 3D plum-headed girl in a tattered grey dress stares in bitter regret as the round pink-orange 3D peach-headed girl holds a briefcase full of cash and the glowing bronze mirror (strictly NO human faces), as the 3D purple plum girl speaks in native Persian (Farsi) with exact vowel pronunciation and a regretful shocked female voice: «باوَرَم نِمِی‌شِه! هَمُون آیِنِه‌ای کِه مَن دُور اَنْداخْتَم هُلُو رُو مِیلْیارْدِر کَرْد وُ مَن فَقِیر مُونْدَم!» Zero on-screen subtitles.",
+      "speech_text": "باوَرَم نِمِی‌شِه! هَمُون آیِنِه‌ای کِه مَن دُور اَنْداخْتَم هُلُو رُو مِیلْیارْدِر کَرْد وُ مَن فَقِیر مُونْدَم!"
+    }
+  ],
+  "video": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 24,
+    "crf": 18,
+    "preset": "fast",
+    "scale_mode": "fill"
+  },
+  "audio": {
+    "loudnorm": "loudnorm=I=-14:TP=-1.5:LRA=11",
+    "sample_rate": 48000,
+    "channels": 2,
+    "bitrate": "192k"
+  },
+  "speech": {
+    "speech_safe": "auto_expand",
+    "threshold_dbfs": -38,
+    "pre_handle": 0.2,
+    "post_handle": 0.35,
+    "splice_crossfade": 0.02
+  },
+  "subtitle_style": {
+    "time_base": "trim_local",
+    "y_ratio": 0.84,
+    "font_size": 27,
+    "min_font_size": 16,
+    "max_text_margin": 84,
+    "max_lines": 2
+  },
+  "outputs": {
+    "per_clip_location": "both",
+    "base_mode": "timeline",
+    "cta_burn_subtitles": true,
+    "cta_loudnorm": true,
+    "publish_caption_fa": "قسمت دوم (پایان): راز طلا شدن اشیا و حسرت همسایه طمعکار!"
+  },
+  "character_references": [
+    "${BASE}\\character_sheets\\FLOW_SHEET_SERIES21_CHARACTERS.jpg"
+  ],
+  "content_edits": [],
+  "story_plan": {
+    "summary": "هلو آینه برنزی دور انداخته‌شده را در جاده پیدا می‌کند؛ آینه در دست او دوباره می‌درخشد و میز، کاسه و تخم غاز را به طلای خالص تبدیل می‌کند و هلو در طلافروشی صاحب یک چمدان پر از پول می‌شود!",
+    "ending": "Peach recovers the discarded bronze mirror, turns a bowl and goose egg into pure gold, and receives a briefcase of cash at the jewelry store while greedy Plum watches in bitter regret.",
+    "required_beats": [
+      "beat_1",
+      "beat_2",
+      "beat_3",
+      "beat_4",
+      "beat_5",
+      "beat_6"
+    ]
+  },
+  "visual": {
+    "keyframe_threshold": 65,
+    "jump_threshold": 38,
+    "contamination_margin": 1
+  },
+  "visual_gate": {
+    "keyframe_threshold": 65,
+    "jump_threshold": 38,
+    "contamination_margin": 1
+  },
+  "generation_settings": {
+    "model": "Omni 1.1 Flash",
+    "duration_sec": 8,
+    "aspect": "9:16",
+    "outputs": 1,
+    "resolution": "720p",
+    "video_type": "Ingredients"
+  }
+}

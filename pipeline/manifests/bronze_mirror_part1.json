@@ -1,0 +1,354 @@
+{
+  "_comment": "Part1_SecretBronzeMirror - 100% Google Flow native Farsi voice with full اعراب‌گذاری.",
+  "schema_version": 1,
+  "speech_review_note": "Full Persian vowel diacritics (اعراب‌گذاری کامل) in Google Flow prompt for 100% accurate native pronunciation.",
+  "episode_id": "Part1_SecretBronzeMirror",
+  "title_fa": "قسمت اول: کشف آینه برنزی جادویی در خانه متروکه!",
+  "title_en": "Secret of the Bronze Mirror Part 1",
+  "source_video": "${SRC}\\30_2026-10-12_DeYLXd6qeAK.mp4",
+  "source_start_offset": 0,
+  "story_summary_fa": "هلو و آلو وارد یک خانه متروکه می‌شوند؛ هلو یک آینه برنزی درخشان پیدا می‌کند اما آلو طمعکار آینه را به زور از دست او می‌قاپد؛ ولی نور آینه در دست فرد طمعکار خاموش می‌شود و آلو آن را از پنجره بیرون می‌اندازد!",
+  "fallback_to_source_on_visual_fail": false,
+  "tight_speech_trim": true,
+  "variables": {
+    "BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series21-secret-bronze-mirror-farsi",
+    "S2_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi",
+    "CHEF_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\ugly-face-chef-farsi",
+    "SRC": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\straw.berryjammin"
+  },
+  "clips_dir": "${BASE}\\part1\\flow_clips",
+  "out_dir": "${BASE}\\05_final_masters\\part1",
+  "font_path": "${CHEF_BASE}\\03_farsi_audio_tts\\Vazirmatn-Bold.ttf",
+  "cta_video": "${S2_BASE}\\part1\\flow_clips\\cta_kelidbox_s2.mp4",
+  "cta_speaker": "PEACH_GIRL",
+  "cta_subtitles": [
+    {
+      "start": 0.15,
+      "end": 3.55,
+      "text": "برای دیدن قسمت بعدی این داستان همین الان پیج رو فالو کن!"
+    },
+    {
+      "start": 3.6,
+      "end": 7.55,
+      "text": "راستی، کل این انیمیشن با اکانت‌های هوش مصنوعی سایت کلیدباکس ساخته شده!"
+    }
+  ],
+  "speakers": {
+    "PEACH_GIRL": [
+      255,
+      195,
+      160
+    ],
+    "PLUM_RIVAL": [
+      215,
+      165,
+      255
+    ],
+    "JEWELER_APPLE": [
+      165,
+      255,
+      155
+    ],
+    "BADGE": [
+      255,
+      215,
+      70
+    ]
+  },
+  "voices": {
+    "PEACH_GIRL": {
+      "name_fa": "PEACH_GIRL",
+      "color": [
+        255,
+        195,
+        160
+      ],
+      "source": "google_flow_native"
+    },
+    "PLUM_RIVAL": {
+      "name_fa": "PLUM_RIVAL",
+      "color": [
+        215,
+        165,
+        255
+      ],
+      "source": "google_flow_native"
+    },
+    "JEWELER_APPLE": {
+      "name_fa": "JEWELER_APPLE",
+      "color": [
+        165,
+        255,
+        155
+      ],
+      "source": "google_flow_native"
+    }
+  },
+  "clips": [
+    {
+      "id": "clip_01",
+      "file": "clip_01.mp4",
+      "source_span": [
+        0,
+        8
+      ],
+      "trim_in": 0,
+      "trim_out": 7.9,
+      "story_beat": "Outside an old abandoned wooden house in the countryside, greedy 3D purple-plum girl PLUM_RIVAL in a tattered grey dress urges timid 3D peach girl PEACH_GIRL in a patched cream dress to go inside and hunt for treasure.",
+      "overlays": [
+        {
+          "speaker": "BADGE",
+          "text": "قسمت اول: کشف آینه برنزی جادویی در خانه متروکه!",
+          "start": 0.1,
+          "end": 3.4,
+          "position": "top",
+          "font_size": 21
+        }
+      ],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "PLUM_RIVAL",
+          "هلو، بیا بریم داخل این خونه قدیمی بگردیم؛ مطمئنم کلی گنج و طلای پنهون توش پیدا می‌کنیم!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_01.jpg",
+      "expected_speakers": [
+        "PLUM_RIVAL"
+      ],
+      "beat_ids": [
+        "beat_1"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[BM1_C01] Stylized 3D CGI cartoon animation matching the exact 3D non-human fruit characters and outfits in the reference image, static medium two-shot keeping both characters in frame the entire time (no camera cuts), outside a weathered wooden house the round dark-purple 3D plum-headed girl with a green top leaf in a tattered grey dress points eagerly toward the wooden door beside the round pink-orange 3D peach-headed girl in a patched cream dress (strictly NO human faces), as the 3D purple plum girl speaks in native Persian (Farsi) with exact vowel pronunciation and an eager greedy female voice: «هُلُو، بِیا بِرِیم داخِلِ اِین خُونِه قَدِیمِی بِگَرْدِیم؛ مُطْمَئِنَّم کُلِّی گَنْج وُ طَلایِ پِنْهُون تُوش پِیْدا مِی‌کُنِیم!» Zero on-screen subtitles.",
+      "speech_text": "هُلُو، بِیا بِرِیم داخِلِ اِین خُونِه قَدِیمِی بِگَرْدِیم؛ مُطْمَئِنَّم کُلِّی گَنْج وُ طَلایِ پِنْهُون تُوش پِیْدا مِی‌کُنِیم!"
+    },
+    {
+      "id": "clip_02",
+      "file": "clip_02.mp4",
+      "source_span": [
+        8,
+        16
+      ],
+      "trim_in": 0,
+      "trim_out": 7.9,
+      "story_beat": "Inside the cobwebbed wooden house, 3D purple-plum girl PLUM_RIVAL opens a large wooden chest expecting gold, but frowns as she pulls out only a torn rag.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "PLUM_RIVAL",
+          "این صندوق چوبی این‌قدر بزرگ بود، اما توش فقط یه تیکه پارچه کهنه و بی‌ارزش پیدا شد!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_02.jpg",
+      "expected_speakers": [
+        "PLUM_RIVAL"
+      ],
+      "beat_ids": [
+        "beat_2"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[BM1_C02] Stylized 3D CGI cartoon animation matching the exact 3D non-human fruit character and outfit in the reference image, static medium shot keeping the character in frame the entire time (no camera cuts), inside a dusty cobwebbed wooden room the round dark-purple 3D plum-headed girl with a green top leaf in a tattered grey dress stands beside an open wooden trunk holding a torn cloth rag with a disappointed scowl (strictly NO human face), speaking in native Persian (Farsi) with exact vowel pronunciation and a frustrated annoyed female voice: «اِین صَنْدُوقِ چُوبِی اِین‌قَدْر بُزُرْگ بُود، اَمّا تُوش فَقَط یِه تِیکِه پارْچِه کُهْنِه وُ بِی‌اَرْزِش پِیْدا شُد!» Zero on-screen subtitles.",
+      "speech_text": "اِین صَنْدُوقِ چُوبِی اِین‌قَدْر بُزُرْگ بُود، اَمّا تُوش فَقَط یِه تِیکِه پارْچِه کُهْنِه وُ بِی‌اَرْزِش پِیْدا شُد!"
+    },
+    {
+      "id": "clip_03",
+      "file": "clip_03.mp4",
+      "source_span": [
+        16,
+        24
+      ],
+      "trim_in": 0,
+      "trim_out": 7.9,
+      "story_beat": "In the other corner of the dusty wooden house, 3D peach girl PEACH_GIRL opens a glowing wooden cabinet and discovers a round bronze mirror radiating warm golden light.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "PEACH_GIRL",
+          "وای، از داخل این کمد قدیمی یه آینه برنزی جادویی پیدا کردم!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_03.jpg",
+      "expected_speakers": [
+        "PEACH_GIRL"
+      ],
+      "beat_ids": [
+        "beat_3"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[BM1_C03] Stylized 3D CGI cartoon animation matching the exact 3D non-human fruit character and outfit in the reference image, static medium shot keeping the character in frame the entire time (no camera cuts), inside the dusty wooden room the round pink-orange 3D peach-headed girl with a green top leaf in a patched cream dress opens a tall wooden cabinet as warm golden light shines from a round antique bronze mirror onto her amazed face (strictly NO human face), speaking in native Persian (Farsi) with exact vowel pronunciation and an enchanted amazed female voice: «وای، اَز داخِلِ اِین کُمُدِ قَدِیمِی یِه آیِنِه بُرُنْزِیِ جادُویِی پِیْدا کَرْدَم!» Zero on-screen subtitles.",
+      "speech_text": "وای، اَز داخِلِ اِین کُمُدِ قَدِیمِی یِه آیِنِه بُرُنْزِیِ جادُویِی پِیْدا کَرْدَم!"
+    },
+    {
+      "id": "clip_04",
+      "file": "clip_04.mp4",
+      "source_span": [
+        24,
+        32
+      ],
+      "trim_in": 0,
+      "trim_out": 7.9,
+      "story_beat": "Inside the wooden house, 3D peach girl PEACH_GIRL holds the glowing round bronze mirror while greedy 3D purple-plum girl PLUM_RIVAL reaches out demanding that she hand it over.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "PLUM_RIVAL",
+          "هلو، زود باش اون آینه برنزی رو بده به من! این گنج فقط مال منه!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_04.jpg",
+      "expected_speakers": [
+        "PLUM_RIVAL"
+      ],
+      "beat_ids": [
+        "beat_4"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[BM1_C04] Stylized 3D CGI cartoon animation matching the exact 3D non-human fruit characters and outfits in the reference image, static medium two-shot keeping both characters in frame the entire time (no camera cuts), inside the wooden room the round pink-orange 3D peach-headed girl holds a glowing golden-rimmed bronze mirror while the round dark-purple 3D plum-headed girl in a tattered grey dress reaches out greedily to grab it (strictly NO human faces), as the 3D purple plum girl speaks in native Persian (Farsi) with exact vowel pronunciation and a demanding bossy female voice: «هُلُو، زُود باش اُون آیِنِه بُرُنْزِی رُو بِدِه بِه مَن! اِین گَنْج فَقَط مالِ مَنِه!» Zero on-screen subtitles.",
+      "speech_text": "هُلُو، زُود باش اُون آیِنِه بُرُنْزِی رُو بِدِه بِه مَن! اِین گَنْج فَقَط مالِ مَنِه!"
+    },
+    {
+      "id": "clip_05",
+      "file": "clip_05.mp4",
+      "source_span": [
+        32,
+        40
+      ],
+      "trim_in": 0,
+      "trim_out": 7.9,
+      "story_beat": "Sitting on the dusty wooden floor after PLUM_RIVAL snatched the mirror and ran off, 3D peach girl PEACH_GIRL frowns in frustration and sadness.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "PEACH_GIRL",
+          "چقدر بی‌انصافی! آینه برنزی رو که من پیدا کرده بودم به زور از دستم قاپید و برد!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_05.jpg",
+      "expected_speakers": [
+        "PEACH_GIRL"
+      ],
+      "beat_ids": [
+        "beat_5"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[BM1_C05] Stylized 3D CGI cartoon animation matching the exact 3D non-human fruit character and outfit in the reference image, static medium shot keeping the character in frame the entire time (no camera cuts), sitting on the dusty wooden floor of the old room the round pink-orange 3D peach-headed girl with a green top leaf in a patched cream dress looks upset and indignant (strictly NO human face), speaking in native Persian (Farsi) with exact vowel pronunciation and a hurt indignant female voice: «چِقَدْر بِی‌اِنْصافِی! آیِنِه بُرُنْزِی رُو کِه مَن پِیْدا کَرْدِه بُودَم بِه زُور اَز دَسْتَم قاپِید وُ بُرْد!» Zero on-screen subtitles.",
+      "speech_text": "چِقَدْر بِی‌اِنْصافِی! آیِنِه بُرُنْزِی رُو کِه مَن پِیْدا کَرْدِه بُودَم بِه زُور اَز دَسْتَم قاپِید وُ بُرْد!"
+    },
+    {
+      "id": "clip_06",
+      "file": "clip_06.mp4",
+      "source_span": [
+        40,
+        48
+      ],
+      "trim_in": 0,
+      "trim_out": 7.9,
+      "story_beat": "Standing by an open window, greedy 3D purple-plum girl PLUM_RIVAL sees that the bronze mirror has lost all its golden light and turned dull, so she angrily prepares to toss it outside.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "PLUM_RIVAL",
+          "اه، چرا نور طلاییش خاموش شد؟ این که فقط یه آینه زنگ‌زده و بی‌ارزشه، میندازمش بیرون!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_06.jpg",
+      "expected_speakers": [
+        "PLUM_RIVAL"
+      ],
+      "beat_ids": [
+        "beat_6"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[BM1_C06] Stylized 3D CGI cartoon animation matching the exact 3D non-human fruit character and outfit in the reference image, static medium shot keeping the character in frame the entire time (no camera cuts), standing beside an open wooden window the round dark-purple 3D plum-headed girl with a green top leaf in a tattered grey dress glares at a dull dark unlit bronze ring mirror in her hand with disgust (strictly NO human face), speaking in native Persian (Farsi) with exact vowel pronunciation and an angry disgusted female voice: «اَه، چِرا نُورِ طَلایِیش خامُوش شُد؟ اِین کِه فَقَط یِه آیِنِه زَنْگ‌زَدِه وُ بِی‌اَرْزِشِه، مِیْنْدازَمِش بِیرُون!» Zero on-screen subtitles.",
+      "speech_text": "اَه، چِرا نُورِ طَلایِیش خامُوش شُد؟ اِین کِه فَقَط یِه آیِنِه زَنْگ‌زَدِه وُ بِی‌اَرْزِشِه، مِیْنْدازَمِش بِیرُون!"
+    }
+  ],
+  "video": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 24,
+    "crf": 18,
+    "preset": "fast",
+    "scale_mode": "fill"
+  },
+  "audio": {
+    "loudnorm": "loudnorm=I=-14:TP=-1.5:LRA=11",
+    "sample_rate": 48000,
+    "channels": 2,
+    "bitrate": "192k"
+  },
+  "speech": {
+    "speech_safe": "auto_expand",
+    "threshold_dbfs": -38,
+    "pre_handle": 0.2,
+    "post_handle": 0.35,
+    "splice_crossfade": 0.02
+  },
+  "subtitle_style": {
+    "time_base": "trim_local",
+    "y_ratio": 0.84,
+    "font_size": 27,
+    "min_font_size": 16,
+    "max_text_margin": 84,
+    "max_lines": 2
+  },
+  "outputs": {
+    "per_clip_location": "both",
+    "base_mode": "timeline",
+    "cta_burn_subtitles": true,
+    "cta_loudnorm": true,
+    "publish_caption_fa": "قسمت اول: کشف آینه برنزی جادویی در خانه متروکه!"
+  },
+  "character_references": [
+    "${BASE}\\character_sheets\\FLOW_SHEET_SERIES21_CHARACTERS.jpg"
+  ],
+  "content_edits": [],
+  "story_plan": {
+    "summary": "هلو و آلو وارد یک خانه متروکه می‌شوند؛ هلو یک آینه برنزی درخشان پیدا می‌کند اما آلو طمعکار آینه را به زور از دست او می‌قاپد؛ ولی نور آینه در دست فرد طمعکار خاموش می‌شود و آلو آن را از پنجره بیرون می‌اندازد!",
+    "ending": "Greedy Plum snatches the glowing bronze mirror from Peach, but the mirror loses its golden light in her greedy hands and she throws it out the window.",
+    "required_beats": [
+      "beat_1",
+      "beat_2",
+      "beat_3",
+      "beat_4",
+      "beat_5",
+      "beat_6"
+    ]
+  },
+  "visual": {
+    "keyframe_threshold": 65,
+    "jump_threshold": 38,
+    "contamination_margin": 1
+  },
+  "visual_gate": {
+    "keyframe_threshold": 65,
+    "jump_threshold": 38,
+    "contamination_margin": 1
+  },
+  "generation_settings": {
+    "model": "Omni 1.1 Flash",
+    "duration_sec": 8,
+    "aspect": "9:16",
+    "outputs": 1,
+    "resolution": "720p",
+    "video_type": "Ingredients"
+  }
+}

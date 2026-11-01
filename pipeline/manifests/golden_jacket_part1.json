@@ -1,0 +1,354 @@
+{
+  "_comment": "Part1_LightningGoldenJacket - 100% Google Flow native Farsi voice with full اعراب‌گذاری.",
+  "schema_version": 1,
+  "speech_review_note": "Full Persian vowel diacritics (اعراب‌گذاری کامل) in Google Flow prompt for 100% accurate native pronunciation.",
+  "episode_id": "Part1_LightningGoldenJacket",
+  "title_fa": "قسمت اول: کت کهنه صاعقه‌خورده و راز طلا شدن اشیا!",
+  "title_en": "Golden Lightning Jacket Part 1",
+  "source_video": "${SRC}\\31_2026-10-11_DeXASXpq1Lh.mp4",
+  "source_start_offset": 0,
+  "story_summary_fa": "در میدان ضایعات، سیب قرمز طمعکار کیف پر از پول برادرش سیب سبز را می‌قاپد و یک کت کهنه به او می‌دهد؛ اما صاعقه کت کهنه سیب سبز را به کت طلایی جادویی تبدیل می‌کند که هر شیئی را به طلای خالص تبدیل می‌کند!",
+  "fallback_to_source_on_visual_fail": false,
+  "tight_speech_trim": true,
+  "variables": {
+    "BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series20-golden-lightning-jacket-farsi",
+    "S2_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi",
+    "CHEF_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\ugly-face-chef-farsi",
+    "SRC": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\straw.berryjammin"
+  },
+  "clips_dir": "${BASE}\\part1\\flow_clips",
+  "out_dir": "${BASE}\\05_final_masters\\part1",
+  "font_path": "${CHEF_BASE}\\03_farsi_audio_tts\\Vazirmatn-Bold.ttf",
+  "cta_video": "${S2_BASE}\\part1\\flow_clips\\cta_kelidbox_s2.mp4",
+  "cta_speaker": "GREEN_APPLE",
+  "cta_subtitles": [
+    {
+      "start": 0.15,
+      "end": 3.55,
+      "text": "برای دیدن قسمت بعدی این داستان همین الان پیج رو فالو کن!"
+    },
+    {
+      "start": 3.6,
+      "end": 7.55,
+      "text": "راستی، کل این انیمیشن با اکانت‌های هوش مصنوعی سایت کلیدباکس ساخته شده!"
+    }
+  ],
+  "speakers": {
+    "GREEN_APPLE": [
+      165,
+      255,
+      155
+    ],
+    "RED_APPLE": [
+      255,
+      155,
+      155
+    ],
+    "JEWELER_APPLE": [
+      255,
+      225,
+      120
+    ],
+    "BADGE": [
+      255,
+      215,
+      70
+    ]
+  },
+  "voices": {
+    "GREEN_APPLE": {
+      "name_fa": "GREEN_APPLE",
+      "color": [
+        165,
+        255,
+        155
+      ],
+      "source": "google_flow_native"
+    },
+    "RED_APPLE": {
+      "name_fa": "RED_APPLE",
+      "color": [
+        255,
+        155,
+        155
+      ],
+      "source": "google_flow_native"
+    },
+    "JEWELER_APPLE": {
+      "name_fa": "JEWELER_APPLE",
+      "color": [
+        255,
+        225,
+        120
+      ],
+      "source": "google_flow_native"
+    }
+  },
+  "clips": [
+    {
+      "id": "clip_01",
+      "file": "clip_01.mp4",
+      "source_span": [
+        0,
+        9
+      ],
+      "trim_in": 0,
+      "trim_out": 7.9,
+      "story_beat": "In a sprawling outdoor scrapyard filled with old boxes, 3D red-apple brother RED_APPLE in a torn white shirt tells his kind 3D green-apple brother GREEN_APPLE in a worn blue t-shirt to split up and search for treasure.",
+      "overlays": [
+        {
+          "speaker": "BADGE",
+          "text": "قسمت اول: کت کهنه صاعقه‌خورده و راز طلا شدن اشیا!",
+          "start": 0.1,
+          "end": 3.4,
+          "position": "top",
+          "font_size": 21
+        }
+      ],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "RED_APPLE",
+          "برادر کوچیکه، بیا بگردیم ببینیم توی این جعبه‌ها چیز باارزشی پیدا می‌کنیم یا نه!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_01.jpg",
+      "expected_speakers": [
+        "RED_APPLE"
+      ],
+      "beat_ids": [
+        "beat_1"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[GJ1_C01] Stylized 3D CGI cartoon animation matching the exact 3D non-human fruit characters and outfits in the reference image, static medium two-shot keeping both characters in frame the entire time (no camera cuts), in a sunny outdoor scrapyard piled with cardboard boxes the glossy crimson-red 3D apple-headed brother in a torn white t-shirt and black track pants gestures toward the boxes beside his glossy green 3D apple-headed brother in a worn blue t-shirt and patched jeans (strictly NO human faces), as the 3D red apple speaks in native Persian (Farsi) with exact vowel pronunciation and a bossy energetic male voice: «بَرادَر کُوچِیکِه، بِیا بِگَرْدِیم بِبِینِیم تُویِ اِین جَعْبِه‌ها چِیزِ بااَرْزِشِی پِیْدا مِی‌کُنِیم یا نَه!» Zero on-screen subtitles.",
+      "speech_text": "بَرادَر کُوچِیکِه، بِیا بِگَرْدِیم بِبِینِیم تُویِ اِین جَعْبِه‌ها چِیزِ بااَرْزِشِی پِیْدا مِی‌کُنِیم یا نَه!"
+    },
+    {
+      "id": "clip_02",
+      "file": "clip_02.mp4",
+      "source_span": [
+        9,
+        18
+      ],
+      "trim_in": 0,
+      "trim_out": 7.9,
+      "story_beat": "In the scrapyard, 3D red-apple brother RED_APPLE angrily pulls a dusty brown jacket out of a red box while 3D green-apple brother GREEN_APPLE excitedly holds up a leather wallet full of banknotes.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "RED_APPLE",
+          "اه، توی این جعبه فقط یه کت کهنه بود، ولی تو یه کیف پر از پول پیدا کردی!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_02.jpg",
+      "expected_speakers": [
+        "RED_APPLE"
+      ],
+      "beat_ids": [
+        "beat_2"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[GJ1_C02] Stylized 3D CGI cartoon animation matching the exact 3D non-human fruit characters and outfits in the reference image, static medium two-shot keeping both characters in frame the entire time (no camera cuts), in the scrapyard the angry crimson-red 3D apple-headed brother in a torn white t-shirt holds up a dusty brown jacket from an open red box while looking enviously at the green 3D apple-headed brother holding a black leather wallet stuffed with cash (strictly NO human faces), as the 3D red apple speaks in native Persian (Farsi) with exact vowel pronunciation and an annoyed envious male voice: «اَه، تُویِ اِین جَعْبِه فَقَط یِه کُتِ کُهْنِه بُود، وَلِی تُو یِه کِیفِ پُر اَز پُول پِیْدا کَرْدِی!» Zero on-screen subtitles.",
+      "speech_text": "اَه، تُویِ اِین جَعْبِه فَقَط یِه کُتِ کُهْنِه بُود، وَلِی تُو یِه کِیفِ پُر اَز پُول پِیْدا کَرْدِی!"
+    },
+    {
+      "id": "clip_03",
+      "file": "clip_03.mp4",
+      "source_span": [
+        18,
+        27
+      ],
+      "trim_in": 0,
+      "trim_out": 7.9,
+      "story_beat": "Under dark storm clouds in the scrapyard, greedy 3D red-apple brother RED_APPLE snatches the cash-filled wallet from GREEN_APPLE and tosses the old brown jacket onto him.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "RED_APPLE",
+          "اون کیف پر از پول مال منه! این کت کهنه رو بردار واسه خودت!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_03.jpg",
+      "expected_speakers": [
+        "RED_APPLE"
+      ],
+      "beat_ids": [
+        "beat_3"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[GJ1_C03] Stylized 3D CGI cartoon animation matching the exact 3D non-human fruit characters and outfits in the reference image, static medium two-shot keeping both characters in frame the entire time (no camera cuts), under gathering storm clouds in the scrapyard the greedy crimson-red 3D apple-headed brother clutches the stolen black wallet full of cash and smirks while the sad green 3D apple-headed brother sits on the ground holding the old brown jacket (strictly NO human faces), as the 3D red apple speaks in native Persian (Farsi) with exact vowel pronunciation and a mocking greedy male voice: «اُون کِیفِ پُر اَز پُول مالِ مَنِه! اِین کُتِ کُهْنِه رُو بَرْدار واسِه خُودِت!» Zero on-screen subtitles.",
+      "speech_text": "اُون کِیفِ پُر اَز پُول مالِ مَنِه! اِین کُتِ کُهْنِه رُو بَرْدار واسِه خُودِت!"
+    },
+    {
+      "id": "clip_04",
+      "file": "clip_04.mp4",
+      "source_span": [
+        27,
+        36
+      ],
+      "trim_in": 0,
+      "trim_out": 7.9,
+      "story_beat": "Sitting in the rain in the scrapyard, 3D green-apple brother GREEN_APPLE looks in amazement as lightning strikes the old jacket he is wearing and transforms it into a glowing metallic golden blazer.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "GREEN_APPLE",
+          "خدای من! صاعقه به این کت خورد اما من سالمم و کل کت طلای درخشان شد!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_04.jpg",
+      "expected_speakers": [
+        "GREEN_APPLE"
+      ],
+      "beat_ids": [
+        "beat_4"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[GJ1_C04] Stylized 3D CGI cartoon animation matching the exact 3D non-human fruit character and outfit in the reference image, static medium shot keeping the character in frame the entire time (no camera cuts), sitting in the rainy scrapyard the glossy green 3D apple-headed brother with a brown stem and green leaf stares at his sleeves in awe as the jacket he wears gleams as a radiant metallic 24-karat golden blazer with golden sparks (strictly NO human face), speaking in native Persian (Farsi) with exact vowel pronunciation and an astonished grateful male voice: «خُدایِ مَن! صاعِقِه بِه اِین کُت خُورْد اَمّا مَن سالِمَم وُ کُلِّ کُت طَلایِ دِرَخْشان شُد!» Zero on-screen subtitles.",
+      "speech_text": "خُدایِ مَن! صاعِقِه بِه اِین کُت خُورْد اَمّا مَن سالِمَم وُ کُلِّ کُت طَلایِ دِرَخْشان شُد!"
+    },
+    {
+      "id": "clip_05",
+      "file": "clip_05.mp4",
+      "source_span": [
+        36,
+        45
+      ],
+      "trim_in": 0,
+      "trim_out": 7.9,
+      "story_beat": "Inside his rundown living room, 3D green-apple brother GREEN_APPLE wearing the glowing golden blazer touches a ceramic bowl and the coffee table, turning both into solid gleaming gold.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "GREEN_APPLE",
+          "باورم نمی‌شه! با این کت طلایی به کاسه و میز دست زدم و هر دو طلا شدن!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_05.jpg",
+      "expected_speakers": [
+        "GREEN_APPLE"
+      ],
+      "beat_ids": [
+        "beat_5"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[GJ1_C05] Stylized 3D CGI cartoon animation matching the exact 3D non-human fruit character and outfit in the reference image, static medium shot keeping the character in frame the entire time (no camera cuts), sitting on a worn sofa in a rundown living room the glossy green 3D apple-headed brother wearing the shimmering metallic golden blazer holds a gleaming solid-gold bowl above a solid-gold coffee table in wide-eyed amazement (strictly NO human face), speaking in native Persian (Farsi) with exact vowel pronunciation and an excited amazed male voice: «باوَرَم نِمِی‌شِه! با اِین کُتِ طَلایِی بِه کاسِه وُ مِیز دَسْت زَدَم وُ هَر دُو طَلا شُدَن!» Zero on-screen subtitles.",
+      "speech_text": "باوَرَم نِمِی‌شِه! با اِین کُتِ طَلایِی بِه کاسِه وُ مِیز دَسْت زَدَم وُ هَر دُو طَلا شُدَن!"
+    },
+    {
+      "id": "clip_06",
+      "file": "clip_06.mp4",
+      "source_span": [
+        45,
+        54
+      ],
+      "trim_in": 0,
+      "trim_out": 7.9,
+      "story_beat": "In his rustic kitchen, 3D green-apple brother GREEN_APPLE wearing the metallic golden blazer touches a tray of eggs on the counter, turning the entire tray of eggs into solid shining gold.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "GREEN_APPLE",
+          "پس رازش مال همین کت طلاییه! الان کل این شانه تخممرغ رو طلا می‌کنم و می‌برم طلافروشی!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_06.jpg",
+      "expected_speakers": [
+        "GREEN_APPLE"
+      ],
+      "beat_ids": [
+        "beat_6"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[GJ1_C06] Stylized 3D CGI cartoon animation matching the exact 3D non-human fruit character and outfit in the reference image, static medium shot keeping the character in frame the entire time (no camera cuts), standing in a rustic kitchen the glossy green 3D apple-headed brother wearing the radiant metallic golden blazer smiles triumphantly as a tray of eggs on the table gleams as solid 24-karat gold eggs (strictly NO human face), speaking in native Persian (Farsi) with exact vowel pronunciation and a joyful confident male voice: «پَس رازِش مالِ هَمِین کُتِ طَلایِیِه! اَلان کُلِّ اِین شانِه تُخْمِمُرْغ رُو طَلا مِی‌کُنَم وُ مِی‌بَرَم طَلافُرُوشِی!» Zero on-screen subtitles.",
+      "speech_text": "پَس رازِش مالِ هَمِین کُتِ طَلایِیِه! اَلان کُلِّ اِین شانِه تُخْمِمُرْغ رُو طَلا مِی‌کُنَم وُ مِی‌بَرَم طَلافُرُوشِی!"
+    }
+  ],
+  "video": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 24,
+    "crf": 18,
+    "preset": "fast",
+    "scale_mode": "fill"
+  },
+  "audio": {
+    "loudnorm": "loudnorm=I=-14:TP=-1.5:LRA=11",
+    "sample_rate": 48000,
+    "channels": 2,
+    "bitrate": "192k"
+  },
+  "speech": {
+    "speech_safe": "auto_expand",
+    "threshold_dbfs": -38,
+    "pre_handle": 0.2,
+    "post_handle": 0.35,
+    "splice_crossfade": 0.02
+  },
+  "subtitle_style": {
+    "time_base": "trim_local",
+    "y_ratio": 0.84,
+    "font_size": 27,
+    "min_font_size": 16,
+    "max_text_margin": 84,
+    "max_lines": 2
+  },
+  "outputs": {
+    "per_clip_location": "both",
+    "base_mode": "timeline",
+    "cta_burn_subtitles": true,
+    "cta_loudnorm": true,
+    "publish_caption_fa": "قسمت اول: کت کهنه صاعقه‌خورده و راز طلا شدن اشیا!"
+  },
+  "character_references": [
+    "${BASE}\\character_sheets\\FLOW_SHEET_SERIES20_CHARACTERS.jpg"
+  ],
+  "content_edits": [],
+  "story_plan": {
+    "summary": "در میدان ضایعات، سیب قرمز طمعکار کیف پر از پول برادرش سیب سبز را می‌قاپد و یک کت کهنه به او می‌دهد؛ اما صاعقه کت کهنه سیب سبز را به کت طلایی جادویی تبدیل می‌کند که هر شیئی را به طلای خالص تبدیل می‌کند!",
+    "ending": "Lightning strikes Green Apple’s discarded jacket and turns it into a magical golden blazer that transforms his bowl, table, and eggs into solid 24-karat gold.",
+    "required_beats": [
+      "beat_1",
+      "beat_2",
+      "beat_3",
+      "beat_4",
+      "beat_5",
+      "beat_6"
+    ]
+  },
+  "visual": {
+    "keyframe_threshold": 65,
+    "jump_threshold": 38,
+    "contamination_margin": 1
+  },
+  "visual_gate": {
+    "keyframe_threshold": 65,
+    "jump_threshold": 38,
+    "contamination_margin": 1
+  },
+  "generation_settings": {
+    "model": "Omni 1.1 Flash",
+    "duration_sec": 8,
+    "aspect": "9:16",
+    "outputs": 1,
+    "resolution": "720p",
+    "video_type": "Ingredients"
+  }
+}
