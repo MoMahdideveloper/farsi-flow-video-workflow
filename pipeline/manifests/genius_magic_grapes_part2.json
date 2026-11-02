@@ -1,0 +1,354 @@
+{
+  "_comment": "Part2_GeniusMagicGrapes - 100% Google Flow native Farsi voice with full اعراب‌گذاری.",
+  "schema_version": 1,
+  "speech_review_note": "Full Persian vowel diacritics (اعراب‌گذاری کامل) in Google Flow prompt for 100% accurate native pronunciation.",
+  "episode_id": "Part2_GeniusMagicGrapes",
+  "title_fa": "قسمت دوم (پایان): راز تلخ انگورهای جادویی و فداکاری بزرگ!",
+  "title_en": "Genius Magic Grapes Part 2",
+  "source_video": "${SRC}\\43_2026-10-04_DeE9ZmDKoPv.mp4",
+  "source_start_offset": 50,
+  "story_summary_fa": "آوا انگور با عشق حبه‌های انگور خود را به مانی انبه تقدیم می‌کند تا او استاد دانشگاه شود؛ اما دکتر سیب‌سرخ فاش می‌کند که هر حبه انگور بخشی از جان و نشاط آوا بوده و مانی همه چیزش را برای بازگرداندن لبخند آوا فدا می‌کند!",
+  "fallback_to_source_on_visual_fail": false,
+  "tight_speech_trim": true,
+  "variables": {
+    "BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series22-genius-magic-grapes-farsi",
+    "S2_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi",
+    "CHEF_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\ugly-face-chef-farsi",
+    "SRC": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\straw.berryjammin"
+  },
+  "clips_dir": "${BASE}\\part2\\flow_clips",
+  "out_dir": "${BASE}\\05_final_masters\\part2",
+  "font_path": "${CHEF_BASE}\\03_farsi_audio_tts\\Vazirmatn-Bold.ttf",
+  "cta_video": "${S2_BASE}\\part1\\flow_clips\\cta_kelidbox_s2.mp4",
+  "cta_speaker": "MANGO_BOY",
+  "cta_subtitles": [
+    {
+      "start": 0.15,
+      "end": 3.55,
+      "text": "برای دیدن داستان‌های جذاب بعدی همین الان پیج رو فالو کن!"
+    },
+    {
+      "start": 3.6,
+      "end": 7.55,
+      "text": "راستی، کل این انیمیشن با اکانت‌های هوش مصنوعی سایت کلیدباکس ساخته شده!"
+    }
+  ],
+  "speakers": {
+    "MANGO_BOY": [
+      255,
+      200,
+      110
+    ],
+    "GRAPE_GIRL": [
+      220,
+      170,
+      255
+    ],
+    "APPLE_DOCTOR": [
+      255,
+      155,
+      155
+    ],
+    "BADGE": [
+      255,
+      215,
+      70
+    ]
+  },
+  "voices": {
+    "MANGO_BOY": {
+      "name_fa": "MANGO_BOY",
+      "color": [
+        255,
+        200,
+        110
+      ],
+      "source": "google_flow_native"
+    },
+    "GRAPE_GIRL": {
+      "name_fa": "GRAPE_GIRL",
+      "color": [
+        220,
+        170,
+        255
+      ],
+      "source": "google_flow_native"
+    },
+    "APPLE_DOCTOR": {
+      "name_fa": "APPLE_DOCTOR",
+      "color": [
+        255,
+        155,
+        155
+      ],
+      "source": "google_flow_native"
+    }
+  },
+  "clips": [
+    {
+      "id": "clip_01",
+      "file": "clip_01.mp4",
+      "source_span": [
+        50,
+        58
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "At a cozy sunlit cafe counter, 3D purple grape girl GRAPE_GIRL gently hands a glowing purple grape berry to MANGO_BOY with a tender reassuring smile.",
+      "overlays": [
+        {
+          "speaker": "BADGE",
+          "text": "قسمت دوم (پایان): راز تلخ انگورهای جادویی و فداکاری بزرگ!",
+          "start": 0.1,
+          "end": 3.4,
+          "position": "top",
+          "font_size": 20
+        }
+      ],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "GRAPE_GIRL",
+          "لازم نیست خجالت بکشی مانی، اگه انگورهای من تو رو به آرزوت می‌رسونه، تقدیمت می‌کنم!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_01.jpg",
+      "expected_speakers": [
+        "GRAPE_GIRL"
+      ],
+      "beat_ids": [
+        "beat_1"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[MG2_C01] Stylized 3D CGI cartoon animation matching the exact 3D non-human fruit characters and outfits in the reference image, static medium two-shot keeping both characters in frame the entire time (no camera cuts), at a cozy sunlit cafe counter the 3D round purple grape-cluster girl in a lilac sweater and cream apron gently hands a glowing purple grape berry to the 3D golden-orange mango student in a light gray hoodie (strictly NO human faces), as the purple grape girl speaks in native Persian (Farsi) with exact vowel pronunciation and a warm reassuring young female voice: «لازِم نِیسْت خِجالَت بِکِشِی مانِی، اَگِه اَنْگُورهایِ مَن تُو رُو بِه آرِزُوت مِی‌رِسُونِه، تَقْدِیمِت مِی‌کُنَم!» Zero on-screen subtitles.",
+      "speech_text": "لازِم نِیسْت خِجالَت بِکِشِی مانِی، اَگِه اَنْگُورهایِ مَن تُو رُو بِه آرِزُوت مِی‌رِسُونِه، تَقْدِیمِت مِی‌کُنَم!"
+    },
+    {
+      "id": "clip_02",
+      "file": "clip_02.mp4",
+      "source_span": [
+        58,
+        66
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "Sitting at a sunlit study desk stacked with exam binders, MANGO_BOY holds a single purple grape berry with a solemn emotional expression and vows to repay her sacrifice.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "MANGO_BOY",
+          "معذرت می‌خوام آوا... قول می‌دم این فداکاری بزرگت رو یه روزی جبران کنم!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_02.jpg",
+      "expected_speakers": [
+        "MANGO_BOY"
+      ],
+      "beat_ids": [
+        "beat_2"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[MG2_C02] Stylized 3D CGI cartoon animation matching the exact 3D non-human fruit character and outfit in the reference image, static medium close-up shot keeping the character in frame the entire time (no camera cuts), sitting at a sunlit study desk stacked with exam binders the 3D round golden-orange mango student with a green leaf on his head in a light gray hoodie holds a single purple grape berry with a solemn emotional expression (strictly NO human face), speaking in native Persian (Farsi) with exact vowel pronunciation and an emotional grateful young male voice: «مَعْذِرَت مِی‌خْوام آوا... قُول مِی‌دَم اِین فِداکارِیِ بُزُرْگِت رُو یِه رُوزِی جُبْران کُنَم!» Zero on-screen subtitles.",
+      "speech_text": "مَعْذِرَت مِی‌خْوام آوا... قُول مِی‌دَم اِین فِداکارِیِ بُزُرْگِت رُو یِه رُوزِی جُبْران کُنَم!"
+    },
+    {
+      "id": "clip_03",
+      "file": "clip_03.mp4",
+      "source_span": [
+        66,
+        74
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "On a grand sunlit university auditorium stage before cheering 3D fruit students, an elderly apple dean shakes hands with MANGO_BOY in a brown professor blazer.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "MANGO_BOY",
+          "بلاخره موفق شدم! تمام عمرم آرزوی استادی این دانشگاه بزرگ رو داشتم!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_03.jpg",
+      "expected_speakers": [
+        "MANGO_BOY"
+      ],
+      "beat_ids": [
+        "beat_3"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[MG2_C03] Stylized 3D CGI cartoon animation matching the exact 3D non-human fruit characters and outfits in the reference image, static medium two-shot keeping both characters in frame the entire time (no camera cuts), on a grand sunlit university auditorium stage before cheering fruit students an elderly 3D red apple dean in academic robes shakes hands with the 3D golden-orange mango professor in a brown blazer and cream vest (strictly NO human faces), as the mango professor speaks in native Persian (Farsi) with exact vowel pronunciation and a proud joyful young male voice: «بَلاخَرِه مُوَفَّق شُدَم! تَمامِ عُمْرَم آرِزُویِ اُسْتادِیِ اِین دانِشْگاهِ بُزُرْگ رُو داشْتَم!» Zero on-screen subtitles.",
+      "speech_text": "بَلاخَرِه مُوَفَّق شُدَم! تَمامِ عُمْرَم آرِزُویِ اُسْتادِیِ اِین دانِشْگاهِ بُزُرْگ رُو داشْتَم!"
+    },
+    {
+      "id": "clip_04",
+      "file": "clip_04.mp4",
+      "source_span": [
+        74,
+        81
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "Inside the warm sunlit cafe, tired GRAPE_GIRL carries a tray of soup bowls with bare vine stems on her head where only two purple grapes remain.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "GRAPE_GIRL",
+          "حالم خوبه، فقط یه کم خسته‌م... باید به کارم ادامه بدم تا مانی موفق بشه!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_04.jpg",
+      "expected_speakers": [
+        "GRAPE_GIRL"
+      ],
+      "beat_ids": [
+        "beat_4"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[MG2_C04] Stylized 3D CGI cartoon animation matching the exact 3D non-human fruit character and outfit in the reference image, static medium shot keeping the character in frame the entire time (no camera cuts), inside a warm sunlit cafe the tired 3D round purple grape girl in a lilac sweater and cream apron carries a tray of soup bowls with bare vine stems on her head where only two purple grapes remain (strictly NO human face), speaking in native Persian (Farsi) with exact vowel pronunciation and a soft tired young female voice: «حالَم خُوبِه، فَقَط یِه کَم خَسْتِه‌م... بایَد بِه کارَم اِدامِه بِدَم تا مانِی مُوَفَّق بِشِه!» Zero on-screen subtitles.",
+      "speech_text": "حالَم خُوبِه، فَقَط یِه کَم خَسْتِه‌م... بایَد بِه کارَم اِدامِه بِدَم تا مانِی مُوَفَّق بِشِه!"
+    },
+    {
+      "id": "clip_05",
+      "file": "clip_05.mp4",
+      "source_span": [
+        81,
+        88
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "In a bright medical clinic office, 3D red apple doctor APPLE_DOCTOR in a white lab coat points to a botanical chart of purple grapes while MANGO_BOY gasps in shock.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "APPLE_DOCTOR",
+          "اون حبه‌ها انگور معمولی نبودن؛ هر کدومشون بخشی از جان و نشاط همسرت رو می‌برد!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_05.jpg",
+      "expected_speakers": [
+        "APPLE_DOCTOR"
+      ],
+      "beat_ids": [
+        "beat_5"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[MG2_C05] Stylized 3D CGI cartoon animation matching the exact 3D non-human fruit characters and outfits in the reference image, static medium two-shot keeping both characters in frame the entire time (no camera cuts), in a bright medical clinic office the 3D round crimson-red apple doctor in a white lab coat and green scrubs points to a botanical chart of purple grapes while the 3D golden-orange mango in a gray hoodie gasps in shock (strictly NO human faces), as the red apple doctor speaks in native Persian (Farsi) with exact vowel pronunciation and a serious compassionate male doctor voice: «اُون حَبِّه‌ها اَنْگُورِ مَعْمُولِی نَبُودَن؛ هَر کُدُومِشُون بَخْشِی اَز جان وُ نَشاطِ هَمْسَرِت رُو مِی‌بُرْد!» Zero on-screen subtitles.",
+      "speech_text": "اُون حَبِّه‌ها اَنْگُورِ مَعْمُولِی نَبُودَن؛ هَر کُدُومِشُون بَخْشِی اَز جان وُ نَشاطِ هَمْسَرِت رُو مِی‌بُرْد!"
+    },
+    {
+      "id": "clip_06",
+      "file": "clip_06.mp4",
+      "source_span": [
+        88,
+        95.08
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "In a bright sunlit room with a framed diploma and flower bouquet on the floor, MANGO_BOY kneels holding GRAPE_GIRL’s hands in a cozy armchair as a fresh purple grape sprout glows on her crown.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "MANGO_BOY",
+          "من رو ببخش آوا، نمی‌دونستم هر حبه انگور جانت رو می‌گیره؛ همه چیزم مال تو!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_06.jpg",
+      "expected_speakers": [
+        "MANGO_BOY"
+      ],
+      "beat_ids": [
+        "beat_6"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[MG2_C06] Stylized 3D CGI cartoon animation matching the exact 3D non-human fruit characters and outfits in the reference image, static medium two-shot keeping both characters in frame the entire time (no camera cuts), in a bright sunlit room with a framed diploma and flower bouquet on the floor the 3D golden-orange mango in a gray hoodie kneels holding the hands of the 3D purple grape girl sitting in a cozy armchair as a fresh purple grape sprout glows on her crown (strictly NO human faces), as the mango speaks in native Persian (Farsi) with exact vowel pronunciation and a tearful devoted young male voice: «مَن رُو بِبَخْش آوا، نِمِی‌دُونِسْتَم هَر حَبِّه اَنْگُور جانِت رُو مِی‌گِیرِه؛ هَمِه چِیزَم مالِ تُو!» Zero on-screen subtitles.",
+      "speech_text": "مَن رُو بِبَخْش آوا، نِمِی‌دُونِسْتَم هَر حَبِّه اَنْگُور جانِت رُو مِی‌گِیرِه؛ هَمِه چِیزَم مالِ تُو!"
+    }
+  ],
+  "video": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 24,
+    "crf": 18,
+    "preset": "fast",
+    "scale_mode": "fill"
+  },
+  "audio": {
+    "loudnorm": "loudnorm=I=-14:TP=-1.5:LRA=11",
+    "sample_rate": 48000,
+    "channels": 2,
+    "bitrate": "192k"
+  },
+  "speech": {
+    "speech_safe": "auto_expand",
+    "threshold_dbfs": -38,
+    "pre_handle": 0.2,
+    "post_handle": 0.35,
+    "splice_crossfade": 0.02
+  },
+  "subtitle_style": {
+    "time_base": "trim_local",
+    "y_ratio": 0.84,
+    "font_size": 27,
+    "min_font_size": 16,
+    "max_text_margin": 84,
+    "max_lines": 2
+  },
+  "outputs": {
+    "per_clip_location": "both",
+    "base_mode": "timeline",
+    "cta_burn_subtitles": true,
+    "cta_loudnorm": true,
+    "publish_caption_fa": "قسمت دوم (پایان): راز تلخ انگورهای جادویی و فداکاری بزرگ!"
+  },
+  "character_references": [
+    "${BASE}\\character_sheets\\FLOW_SHEET_SERIES22_CHARACTERS.jpg"
+  ],
+  "content_edits": [],
+  "story_plan": {
+    "summary": "آوا انگور با عشق حبه‌های انگور خود را به مانی انبه تقدیم می‌کند تا او استاد دانشگاه شود؛ اما دکتر سیب‌سرخ فاش می‌کند که هر حبه انگور بخشی از جان و نشاط آوا بوده و مانی همه چیزش را برای بازگرداندن لبخند آوا فدا می‌کند!",
+    "ending": "After Ava sacrifices her purple grapes so Mani can become Professor Mango, Doktor Sib-Sorkh reveals each grape carried her life energy, and Mani lays down his diploma to restore her vitality.",
+    "required_beats": [
+      "beat_1",
+      "beat_2",
+      "beat_3",
+      "beat_4",
+      "beat_5",
+      "beat_6"
+    ]
+  },
+  "visual": {
+    "keyframe_threshold": 65,
+    "jump_threshold": 38,
+    "contamination_margin": 1
+  },
+  "visual_gate": {
+    "keyframe_threshold": 65,
+    "jump_threshold": 38,
+    "contamination_margin": 1
+  },
+  "generation_settings": {
+    "model": "Omni 1.1 Flash",
+    "duration_sec": 8,
+    "aspect": "9:16",
+    "outputs": 1,
+    "resolution": "720p",
+    "video_type": "Ingredients"
+  }
+}

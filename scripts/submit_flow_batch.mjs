@@ -1312,6 +1312,113 @@ function findNode(snapshot, predicate) {
   return null;
 }
 
+/** Check observable settings; hidden values require a recent, target-bound operator review. */
+export function verifyLiveSettings(snapshot, expected, attestation, target = {}, now = Date.now()) {
+  const fields = ['model', 'duration_sec', 'aspect', 'outputs', 'video_type'];
+  if (!expected || fields.some(k => expected[k] === undefined || expected[k] === '')) {
+    throw new Error('SETTINGS_UNVERIFIABLE: manifest generation_settings needs model, duration_sec, aspect, outputs and video_type');
+  }
+  if (expected.resolution) fields.push('resolution');
+  const normalized = (key, value) => ['duration_sec', 'outputs'].includes(key) ? Number(value) :
+    String(value ?? '').replace(/[–—]/g, '-').replace(/\s+/g, ' ').trim().toLowerCase();
+  if (!Number.isFinite(Number(expected.duration_sec)) || Number(expected.duration_sec) <= 0 ||
+      !Number.isInteger(Number(expected.outputs)) || Number(expected.outputs) <= 0 ||
+      !['frames', 'ingredients'].includes(normalized('video_type', expected.video_type))) {
+    throw new Error('SETTINGS_UNVERIFIABLE: invalid duration, output count or video_type in manifest');
+  }
+  const nodes = (snapshot?.frames || []).flatMap(f => flattenNodes(f.tree)).filter(n => n.visible !== false);
+  const label = n => String(n.name || n.text || '').trim();
+  const observed = {};
+  const set = (key, value) => {
+    if (observed[key] !== undefined && normalized(key, observed[key]) !== normalized(key, value)) {
+      throw new Error(`SETTINGS_UNVERIFIABLE: ambiguous live ${key}; close extra settings panels and inspect Flow`);
+    }
+    observed[key] = value;
+  };
+  // This compact composer summary reflects the active output configuration, unlike menu options.
+  for (const n of nodes) {
+    const match = label(n).match(/^Video\s*[·•]\s*(\d+p)\s*[·•]\s*(\d+(?:\.\d+)?)s\s*x(\d+)$/i);
+    if (match) { set('resolution', match[1]); set('duration_sec', Number(match[2])); set('outputs', Number(match[3])); }
+    const checked = n.checked === true || n.selected === true || n.attributes?.['aria-checked'] === 'true';
+    if (checked && ['radio', 'option', 'menuitemradio'].includes(n.role)) {
+      const name = label(n);
+      if (/^(Frames|Ingredients)$/i.test(name)) set('video_type', name);
+      if (/^\d+:\d+$/.test(name)) set('aspect', name);
+      if (/^(Veo|Omni)\b/i.test(name)) set('model', name);
+    }
+  }
+  if (observed.duration_sec === undefined) throw new Error('SETTINGS_UNVERIFIABLE: active Video duration/output summary missing; inspect Flow settings before submission');
+  if (nodes.some(n => n.role === 'button' && ['Start', 'Swap first and last frames'].includes(label(n))) &&
+      nodes.some(n => n.role === 'button' && label(n) === 'End')) {
+    set('video_type', 'Frames');
+  }
+  const modelControl = nodes.find(n => n.role === 'button' && label(n) === 'Select model family');
+  for (const n of flattenNodes(modelControl)) if (/^(Veo|Omni)\b/i.test(label(n))) set('model', label(n));
+  const settingsControl = nodes.find(n => n.role === 'button' && label(n) === 'Settings trigger');
+  const aspects = new Set(flattenNodes(settingsControl).filter(n => n.visible !== false).map(label).filter(v => /^crop_\d+_\d+$/.test(v)));
+  if (observed.aspect === undefined && aspects.size === 1) set('aspect', [...aspects][0].slice(5).replace('_', ':'));
+  for (const key of fields) {
+    if (observed[key] !== undefined && normalized(key, observed[key]) !== normalized(key, expected[key])) {
+      throw new Error(`SETTINGS_MISMATCH: ${key} mismatch (live ${observed[key]}, reviewed ${expected[key]}); correct Flow settings before submission`);
+    }
+  }
+  const missing = fields.filter(key => observed[key] === undefined);
+  if (missing.length) {
+    const age = now - Date.parse(attestation?.reviewed_at);
+    const valid = attestation?.status === 'pass' && ['reviewer', 'evidence'].every(k => typeof attestation[k] === 'string' && attestation[k].trim()) &&
+      /(?:Z|[+-]\d\d:\d\d)$/.test(attestation?.reviewed_at || '') && age >= 0 && age <= 15 * 60 * 1000 &&
+      target.profileId && target.tabId && target.manifestSha256 &&
+      ['profileId', 'tabId', 'manifestSha256'].every(k => attestation[k] === target[k]) &&
+      fields.every(k => normalized(k, attestation.settings?.[k]) === normalized(k, expected[k]));
+    if (!valid) throw new Error(`SETTINGS_UNVERIFIABLE: ${missing.join(', ')} unverifiable; inspect settings and record reviews.flow_settings with status pass, actual settings, reviewer, evidence, reviewed_at (within 15 minutes), profileId, tabId and manifestSha256`);
+  }
+  return {observed, manually_attested: missing};
+}
+
+function composerImageButtons(snapshot) {
+  return (snapshot?.frames || []).flatMap(frame => {
+    const nodes = flattenNodes(frame.tree).filter(n => n.visible !== false);
+    const end = nodes.findIndex(n => n.role === 'textbox' &&
+      ['What do you want to create?', 'چه چیزی می‌خواهید بسازید؟'].includes(n.name));
+    if (end < 0) return [];
+    let lastFeed = -1;
+    for (let i = 0; i < end; i++) {
+      const n = nodes[i], text = String(n.text || '').trim(), name = String(n.name || '').trim();
+      if (/^Created |^\d+%$/.test(text) ||
+          (n.role === 'button' && /^(Trash batch|Recycle|Reuse prompt|Delete|حذف|image\.png)$/i.test(name))) lastFeed = i;
+    }
+    return nodes.slice(lastFeed + 1, end).filter(n => n.role === 'button' && /^(Ingredient|Image ingredient|ماده اولیه)$/i.test(String(n.name || '').trim()));
+  });
+}
+
+function assertFrameUploadVerifiable(snapshot) {
+  if (composerImageButtons(snapshot).some(n => /^Image ingredient$/i.test(n.name))) {
+    // Flow exposes the same button while its preview is a blank placeholder.
+    // Counting a frame is not evidence that its image finished loading.
+    throw new Error('UPLOAD_UNVERIFIABLE: Frames image upload readiness unverifiable; inspect the loaded frame preview before manual generation. Automatic submission stopped');
+  }
+}
+
+/** Verify the full composer, never a matching prefix in a previous job card. */
+export function verifyPromptText(snapshot, expected) {
+  const box = findNode(snapshot, isPromptTextbox);
+  if (!box) throw new Error('PROMPT_UNVERIFIABLE: prompt textbox is missing');
+  const normalize = value => String(value).normalize('NFC').replace(/\s+/gu, ' ').trim();
+  const childText = node => {
+    if (!node || node.role === 'button' || node.tag === 'button' || node.tag === 'mat-icon' || node.role === 'img') return '';
+    if (typeof node.text === 'string' && node.text.trim()) return node.text;
+    return (node.children || []).map(childText).filter(Boolean).join(' ');
+  };
+  const actual = normalize(typeof box.value === 'string' && box.value.trim() ? box.value : childText(box));
+  const wanted = normalize(expected);
+  if (!actual) return false; // Rendering may lag trusted typing; observe again without appending.
+  if (actual === wanted || (actual.length >= 150 && wanted.startsWith(actual))) return true;
+  if (wanted.startsWith(actual)) {
+    throw new Error('PROMPT_UNVERIFIABLE: snapshot exposes only a prompt prefix; inspect the full composer before manual submission');
+  }
+  throw new Error('PROMPT_MISMATCH: composer differs from reviewed prompt; clear contamination before submission');
+}
+
 /**
  * Count image "ingredient" chips currently attached to the Flow composer.
  * A chip is an attached image tile: its remove control is a `cancel` mat-icon
@@ -1321,7 +1428,7 @@ function findNode(snapshot, predicate) {
  */
 export function countIngredientChips(snapshot) {
   // Each attached image chip exposes a thumbnail, a remove ("cancel") control,
-  // or (in the Oct 2026 Flow UI) a role="button" name="Ingredient" inside the composer
+  // or (in the Oct 2026 Flow UI) a role="button" name="Ingredient"/"Image ingredient" inside the composer
   // (located after all media-feed tile footers like "Created ..." and before the prompt textbox).
   if (!Array.isArray(snapshot?.frames) || snapshot.frames.length === 0 ||
       snapshot.frames.some((f) => !f.tree || typeof f.tree !== 'object')) {
@@ -1329,11 +1436,9 @@ export function countIngredientChips(snapshot) {
   }
   let imgs = 0;
   let removers = 0;
-  let composerIngredientBtns = 0;
+  const composerIngredientBtns = composerImageButtons(snapshot).length;
   for (const frame of snapshot?.frames || []) {
     const nodes = flattenNodes(frame.tree);
-    let lastFeedIdx = -1;
-    let textboxIdx = nodes.length;
     for (let i = 0; i < nodes.length; i++) {
       const n = nodes[i];
       const name = String(n.name || '');
@@ -1344,26 +1449,6 @@ export function countIngredientChips(snapshot) {
         (n.role === 'button' && /^(remove|delete) (image|ingredient)|حذف (تصویر|عکس)/i.test(name))
       )
         removers++;
-      if (
-        /^Created /i.test(text) ||
-        /^\d+%$/.test(text) ||
-        (n.role === 'button' && /^(Trash batch|Recycle|Reuse prompt|Delete|حذف|image\.png)$/i.test(name.trim()))
-      ) {
-        lastFeedIdx = i;
-      }
-      if (
-        textboxIdx === nodes.length &&
-        n.role === 'textbox' &&
-        (name === 'What do you want to create?' || name === 'چه چیزی می‌خواهید بسازید؟')
-      ) {
-        textboxIdx = i;
-      }
-    }
-    for (let i = lastFeedIdx + 1; i < textboxIdx; i++) {
-      const n = nodes[i];
-      if (n.role === 'button' && /^(Ingredient|ماده اولیه)$/i.test(String(n.name || '').trim())) {
-        composerIngredientBtns++;
-      }
     }
   }
   return Math.max(imgs, removers, composerIngredientBtns);
@@ -1436,10 +1521,25 @@ async function submitSingleClipImpl(mcp, item, ctx = {}) {
     base.kf_sha256 = sha256File(item.kf); // read-only fingerprint; keyframe is never modified
   }
   checkSpeechBudget(item.prompt, item.duration || 8);
+  if (typeof ctx.verifyReview !== 'function') throw new Error('REVIEW_STALE: per-clip reviewed-manifest verification required before submission');
+  ctx.verifyReview();
+  const assertKeyframeUnchanged = () => {
+    if (!skipImage && sha256File(item.kf) !== base.kf_sha256) throw new Error(`REVIEW_STALE: clip ${item.clip} keyframe changed during upload; review again`);
+  };
+  const verifySettings = snapshot => {
+    const result = verifyLiveSettings(snapshot, ctx.generationSettings, ctx.settingsAttestation, {
+      profileId: PROFILE_ID, tabId: TAB_ID, manifestSha256: ctx.manifestSha256,
+    });
+    if (Number(item.duration || 8) !== Number(ctx.generationSettings.duration_sec)) {
+      throw new Error('SETTINGS_MISMATCH: clip duration differs from reviewed generation_settings.duration_sec');
+    }
+    record('settings_verified', { ...base, ...result });
+  };
   record('start', { ...base, mode: skipImage ? 'text_to_video_explicit' : 'image_to_video', prompt_chars: item.prompt.length });
   console.log(`\n=== Submitting Clip ${item.clip}: ${skipImage ? '(TEXT-ONLY, explicit)' : item.kf} ===`);
   if (!skipImage) {
     copyImage(item.kf);
+    assertKeyframeUnchanged();
     record('clipboard_image', base);
     console.log(`  [1/5] Copied image to clipboard: ${item.kf}`);
   }
@@ -1470,6 +1570,7 @@ async function submitSingleClipImpl(mcp, item, ctx = {}) {
         });
       }
     }
+    verifySettings(snap);
     chipsBefore = countIngredientChips(snap);
     const leftoverClear = findNode(snap, isClearButton);
     if (!leftoverClear && chipsBefore === 0) break;
@@ -1547,6 +1648,7 @@ async function submitSingleClipImpl(mcp, item, ctx = {}) {
         const clearBtn = findNode(s, isClearButton);
         const cancelIcon = findNode(s, (n) => n.tag === 'mat-icon' && n.text === 'cancel');
         const chips = countIngredientChips(s);
+        assertFrameUploadVerifiable(s);
         if ((clearBtn || cancelIcon) && chips >= 1) {
           let curS = s;
           let curChips = chips;
@@ -1589,7 +1691,7 @@ async function submitSingleClipImpl(mcp, item, ctx = {}) {
       throw new Error('Could not find prompt textbox after image upload');
     }
 
-    await mcp.callTool('browser_type', {
+    if (typeTry === 1) await mcp.callTool('browser_type', {
       profileId: PROFILE_ID,
       tabId: TAB_ID,
       ref: updatedPromptBox.ref,
@@ -1604,16 +1706,11 @@ async function submitSingleClipImpl(mcp, item, ctx = {}) {
       profileId: PROFILE_ID,
       tabId: TAB_ID,
     });
-    const promptPrefix = item.prompt.slice(0, 45);
-    const hasPromptText = findNode(
-      checkSnap,
-      (n) => typeof n.text === 'string' && n.text.includes(promptPrefix)
-    );
-    if (hasPromptText) {
+    if (verifyPromptText(checkSnap, item.prompt)) {
       readySnap = checkSnap;
       break;
     }
-    console.log(`  [!] Prompt text not yet detected in textbox, retrying type...`);
+    console.log(`  [wait] Prompt text not yet visible; observing again without retyping...`);
   }
   if (!readySnap) {
     throw new Error(`Failed to verify typed prompt text for Clip ${item.clip}`);
@@ -1678,6 +1775,12 @@ async function submitSingleClipImpl(mcp, item, ctx = {}) {
       throw new Error('Could not find "Start generation" button');
     }
 
+    assertKeyframeUnchanged();
+    if (!verifyPromptText(curSnap, item.prompt)) throw new Error('PROMPT_UNVERIFIABLE: composer is empty before submission');
+    assertFrameUploadVerifiable(curSnap);
+    ctx.verifyReview();
+    verifySettings(curSnap);
+    record('submit_attempt', { ...base, try: submitTry });
     await mcp.callTool('browser_click', {
       profileId: PROFILE_ID,
       tabId: TAB_ID,
@@ -1696,7 +1799,7 @@ async function submitSingleClipImpl(mcp, item, ctx = {}) {
       record('submitted', { ...base, try: submitTry });
       return true;
     }
-    console.log(`  [!] Prompt still has Clear button after click (try ${submitTry}), retrying...`);
+    throw new Error(`Clip ${item.clip}: submission outcome unknown; inspect the Flow job before any retry`);
   }
   record('fail', { ...base, reason: 'submission not confirmed after 3 tries' });
   throw new Error(`Clip ${item.clip}: submission not confirmed`);
@@ -1704,12 +1807,17 @@ async function submitSingleClipImpl(mcp, item, ctx = {}) {
 
 export async function submitSingleClip(mcp, item, ctx = {}) {
   const maxClipTries = ctx.sleep ? 1 : 3;
+  let submissionAttempted = false;
+  const guardedContext = { ...ctx, trace: (event, data) => {
+    if (event === 'submit_attempt') submissionAttempted = true;
+    (ctx.trace || trace)(event, data);
+  }};
   for (let clipTry = 1; clipTry <= maxClipTries; clipTry++) {
     try {
-      return await submitSingleClipImpl(mcp, item, ctx);
+      return await submitSingleClipImpl(mcp, item, guardedContext);
     } catch (error) {
       console.warn(`  [!] Clip ${item.clip} attempt ${clipTry}/3 failed: ${error.message}`);
-      if (clipTry === maxClipTries) {
+      if (submissionAttempted || /OUTCOME_UNKNOWN|SITE_BLOCKED|PERMISSION|QUARANTIN|REVIEW_STALE|SETTINGS_|UPLOAD_UNVERIFIABLE|PROMPT_/i.test(error.message) || clipTry === maxClipTries) {
         (ctx.trace || trace)('fail', { part: ctx.part, clip: item.clip, reason: error.message });
         throw error;
       }
@@ -1753,13 +1861,17 @@ async function main() {
 
   if (clipSet && items.length !== clipSet.size) throw new Error('Selected clip IDs absent from manifest/batch');
   if (templatePath) {
-    writeFileSync(templatePath, JSON.stringify(generationTemplate(manifestPath, items), null, 2), { flag: 'wx' });
+    const template = generationTemplate(manifestPath, items);
+    template.flow_settings = {status: 'pending', profileId: PROFILE_ID, tabId: TAB_ID,
+      manifestSha256: template.manifest_sha256, settings: {}, reviewer: '', evidence: '', reviewed_at: ''};
+    writeFileSync(templatePath, JSON.stringify(template, null, 2), { flag: 'wx' });
     console.log(`Pending generation review template: ${templatePath}`);
     return;
   }
   const reviews = reviewsPath ? JSON.parse(readFileSync(reviewsPath, 'utf8').replace(/^\uFEFF/, '')) : null;
   const preflight = preflightBatch(manifestPath, items, reviews);
   if (preflightOnly) { console.log(JSON.stringify(preflight)); return; }
+  const generationSettings = JSON.parse(readFileSync(manifestPath, 'utf8').replace(/^\uFEFF/, '')).generation_settings;
   if (!PROFILE_ID || !Number.isInteger(TAB_ID) || TAB_ID <= 0) {
     throw new Error('Discover connected profiles/tabs, then explicitly supply --profile and --tab');
   }
@@ -1790,7 +1902,13 @@ async function main() {
     }
     // Never delete tiles automatically
     for (const item of items) {
-      await submitSingleClip(mcp, item, { part });
+      await submitSingleClip(mcp, item, { part, generationSettings, settingsAttestation: reviews.flow_settings,
+        manifestSha256: reviews.manifest_sha256,
+        verifyReview: () => {
+          try { preflightBatch(manifestPath, [item], reviews); }
+          catch (error) { throw new Error(`REVIEW_STALE: ${error.message}`); }
+        },
+      });
     }
     trace('batch_done', { part, submitted: items.length });
     console.log(`\nALL ${items.length} CLIPS FOR ${part} SUBMITTED SUCCESSFULLY!`);

@@ -1,0 +1,354 @@
+{
+  "_comment": "Part1_GeniusMagicGrapes - 100% Google Flow native Farsi voice with full اعراب‌گذاری.",
+  "schema_version": 1,
+  "speech_review_note": "Full Persian vowel diacritics (اعراب‌گذاری کامل) in Google Flow prompt for 100% accurate native pronunciation.",
+  "episode_id": "Part1_GeniusMagicGrapes",
+  "title_fa": "قسمت اول: انگورهای جادویی نابغه و راز قبولی در دانشگاه!",
+  "title_en": "Genius Magic Grapes Part 1",
+  "source_video": "${SRC}\\43_2026-10-04_DeE9ZmDKoPv.mp4",
+  "source_start_offset": 0,
+  "story_summary_fa": "مانی انبه متوجه می‌شود که خوردن یک حبه از انگورهای بنفش همسر فداکارش آوا انگور، او را به یک نابغه تبدیل می‌کند که جواب تمام سؤالات دانشگاه را می‌داند؛ اما بدون انگور جادویی در کتابخانه درمانده می‌شود!",
+  "fallback_to_source_on_visual_fail": false,
+  "tight_speech_trim": true,
+  "variables": {
+    "BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series22-genius-magic-grapes-farsi",
+    "S2_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi",
+    "CHEF_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\ugly-face-chef-farsi",
+    "SRC": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\straw.berryjammin"
+  },
+  "clips_dir": "${BASE}\\part1\\flow_clips",
+  "out_dir": "${BASE}\\05_final_masters\\part1",
+  "font_path": "${CHEF_BASE}\\03_farsi_audio_tts\\Vazirmatn-Bold.ttf",
+  "cta_video": "${S2_BASE}\\part1\\flow_clips\\cta_kelidbox_s2.mp4",
+  "cta_speaker": "MANGO_BOY",
+  "cta_subtitles": [
+    {
+      "start": 0.15,
+      "end": 3.55,
+      "text": "برای دیدن قسمت بعدی این داستان همین الان پیج رو فالو کن!"
+    },
+    {
+      "start": 3.6,
+      "end": 7.55,
+      "text": "راستی، کل این انیمیشن با اکانت‌های هوش مصنوعی سایت کلیدباکس ساخته شده!"
+    }
+  ],
+  "speakers": {
+    "MANGO_BOY": [
+      255,
+      200,
+      110
+    ],
+    "GRAPE_GIRL": [
+      220,
+      170,
+      255
+    ],
+    "APPLE_DOCTOR": [
+      255,
+      155,
+      155
+    ],
+    "BADGE": [
+      255,
+      215,
+      70
+    ]
+  },
+  "voices": {
+    "MANGO_BOY": {
+      "name_fa": "MANGO_BOY",
+      "color": [
+        255,
+        200,
+        110
+      ],
+      "source": "google_flow_native"
+    },
+    "GRAPE_GIRL": {
+      "name_fa": "GRAPE_GIRL",
+      "color": [
+        220,
+        170,
+        255
+      ],
+      "source": "google_flow_native"
+    },
+    "APPLE_DOCTOR": {
+      "name_fa": "APPLE_DOCTOR",
+      "color": [
+        255,
+        155,
+        155
+      ],
+      "source": "google_flow_native"
+    }
+  },
+  "clips": [
+    {
+      "id": "clip_01",
+      "file": "clip_01.mp4",
+      "source_span": [
+        0,
+        8
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "In a warm sunlit study room surrounded by stacks of textbooks and exam papers on the floor, 3D mango student MANGO_BOY in a light gray hoodie glows with golden genius energy and beams in amazement.",
+      "overlays": [
+        {
+          "speaker": "BADGE",
+          "text": "قسمت اول: انگورهای جادویی نابغه و راز قبولی در دانشگاه!",
+          "start": 0.1,
+          "end": 3.4,
+          "position": "top",
+          "font_size": 21
+        }
+      ],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "MANGO_BOY",
+          "باورم نمی‌شه! انگورهای تو من رو یه نابغه می‌کنه، همه جواب‌ها رو دقیق بلدم!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_01.jpg",
+      "expected_speakers": [
+        "MANGO_BOY"
+      ],
+      "beat_ids": [
+        "beat_1"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[MG1_C01] Stylized 3D CGI cartoon animation matching the exact 3D non-human fruit character and outfit in the reference image, static medium shot keeping the character in frame the entire time (no camera cuts), in a warm sunlit study room surrounded by stacks of textbooks and exam papers on the floor the 3D round golden-orange mango student with a green leaf on his head in a light gray hoodie glows with warm golden genius light and beams in amazement (strictly NO human face), speaking in native Persian (Farsi) with exact vowel pronunciation and an amazed excited young male voice: «باوَرَم نِمِی‌شِه! اَنْگُورهایِ تُو مَن رُو یِه نابِغِه مِی‌کُنِه، هَمِه جَواب‌ها رُو دَقِیق بَلَدَم!» Zero on-screen subtitles.",
+      "speech_text": "باوَرَم نِمِی‌شِه! اَنْگُورهایِ تُو مَن رُو یِه نابِغِه مِی‌کُنِه، هَمِه جَواب‌ها رُو دَقِیق بَلَدَم!"
+    },
+    {
+      "id": "clip_02",
+      "file": "clip_02.mp4",
+      "source_span": [
+        8,
+        16
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "At a cozy wooden cafe table with a warm bowl of soup, 3D purple grape girl GRAPE_GIRL in a lilac sweater and cream apron smiles lovingly toward MANGO_BOY.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "GRAPE_GIRL",
+          "اگه فقط یه کم بیشتر تلاش کنم، مانی یه فرصت دیگه برای قبولی پیدا می‌کنه!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_02.jpg",
+      "expected_speakers": [
+        "GRAPE_GIRL"
+      ],
+      "beat_ids": [
+        "beat_2"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[MG1_C02] Stylized 3D CGI cartoon animation matching the exact 3D non-human fruit characters and outfits in the reference image, static medium two-shot keeping both characters in frame the entire time (no camera cuts), at a cozy wooden cafe table with a warm bowl of soup the 3D round purple grape-cluster girl with glossy purple grapes on her head in a lilac sweater and cream apron smiles lovingly at the 3D golden-orange mango student in a gray hoodie (strictly NO human faces), as the purple grape girl speaks in native Persian (Farsi) with exact vowel pronunciation and a gentle loving young female voice: «اَگِه فَقَط یِه کَم بِیشْتَر تَلاش کُنَم، مانِی یِه فُرْصَتِ دِیگِه بَرایِ قَبُولِی پِیْدا مِی‌کُنِه!» Zero on-screen subtitles.",
+      "speech_text": "اَگِه فَقَط یِه کَم بِیشْتَر تَلاش کُنَم، مانِی یِه فُرْصَتِ دِیگِه بَرایِ قَبُولِی پِیْدا مِی‌کُنِه!"
+    },
+    {
+      "id": "clip_03",
+      "file": "clip_03.mp4",
+      "source_span": [
+        16,
+        25
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "At a wooden study desk, 3D mango student MANGO_BOY picks up a single fallen glossy purple grape berry from the tabletop and examines it curiously.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "MANGO_BOY",
+          "چرا یکی از حبه‌های انگور آوا روی میز افتاده؟ شاید فقط یه دونه طوری نشه!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_03.jpg",
+      "expected_speakers": [
+        "MANGO_BOY"
+      ],
+      "beat_ids": [
+        "beat_3"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[MG1_C03] Stylized 3D CGI cartoon animation matching the exact 3D non-human fruit character and outfit in the reference image, static medium close-up shot keeping the character in frame the entire time (no camera cuts), at a wooden study desk the 3D round golden-orange mango student with a green leaf on his head in a light gray hoodie picks up a single glowing glossy purple grape berry from the wooden tabletop and examines it curiously (strictly NO human face), speaking in native Persian (Farsi) with exact vowel pronunciation and a curious hesitant young male voice: «چِرا یِکِی اَز حَبِّه‌هایِ اَنْگُورِ آوا رُویِ مِیز اُفْتادِه؟ شایَد فَقَط یِه دُونِه طُورِی نَشِه!» Zero on-screen subtitles.",
+      "speech_text": "چِرا یِکِی اَز حَبِّه‌هایِ اَنْگُورِ آوا رُویِ مِیز اُفْتادِه؟ شایَد فَقَط یِه دُونِه طُورِی نَشِه!"
+    },
+    {
+      "id": "clip_04",
+      "file": "clip_04.mp4",
+      "source_span": [
+        25,
+        33
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "Sitting at a wooden desk in a bright university lecture hall surrounded by 3D fruit students, MANGO_BOY writes rapidly on his exam sheet in joyful shock.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "MANGO_BOY",
+          "من واقعاً جواب تمام سؤال‌ها رو بلدم! تا حالا همچین اتفاقی برام نیفتاده بود!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_04.jpg",
+      "expected_speakers": [
+        "MANGO_BOY"
+      ],
+      "beat_ids": [
+        "beat_4"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[MG1_C04] Stylized 3D CGI cartoon animation matching the exact 3D non-human fruit characters and outfits in the reference image, static medium shot keeping the characters in frame the entire time (no camera cuts), sitting at a wooden desk in a bright university lecture hall surrounded by 3D fruit classmates the 3D round golden-orange mango student in a light gray hoodie looks at his exam sheet in joyful shock while holding a pencil (strictly NO human faces), speaking in native Persian (Farsi) with exact vowel pronunciation and an amazed thrilled young male voice: «مَن واقِعاً جَوابِ تَمامِ سُؤال‌ها رُو بَلَدَم! تا حالا هَمْچِین اِتِّفاقِی بَرام نَیُفْتادِه بُود!» Zero on-screen subtitles.",
+      "speech_text": "مَن واقِعاً جَوابِ تَمامِ سُؤال‌ها رُو بَلَدَم! تا حالا هَمْچِین اِتِّفاقِی بَرام نَیُفْتادِه بُود!"
+    },
+    {
+      "id": "clip_05",
+      "file": "clip_05.mp4",
+      "source_span": [
+        33,
+        41
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "In a warm sunlit hallway, MANGO_BOY holds up his top-score exam paper while GRAPE_GIRL smiles warmly beside him and offers him as many grapes as he needs.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "GRAPE_GIRL",
+          "اگه به رسیدن به آرزوت کمک می‌کنه، هر چند تا انگور که لازم داری بردار عزیزم!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_05.jpg",
+      "expected_speakers": [
+        "GRAPE_GIRL"
+      ],
+      "beat_ids": [
+        "beat_5"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[MG1_C05] Stylized 3D CGI cartoon animation matching the exact 3D non-human fruit characters and outfits in the reference image, static medium two-shot keeping both characters in frame the entire time (no camera cuts), in a warm sunlit hallway the 3D round golden-orange mango student in a light gray hoodie holds up his top-score exam paper while the 3D round purple grape-cluster girl in a lilac sweater and cream apron smiles warmly beside him (strictly NO human faces), as the purple grape girl speaks in native Persian (Farsi) with exact vowel pronunciation and a kind generous young female voice: «اَگِه بِه رِسِیدَن بِه آرِزُوت کُمَک مِی‌کُنِه، هَر چَنْد تا اَنْگُور کِه لازِم دارِی بَرْدار عَزِیزَم!» Zero on-screen subtitles.",
+      "speech_text": "اَگِه بِه رِسِیدَن بِه آرِزُوت کُمَک مِی‌کُنِه، هَر چَنْد تا اَنْگُور کِه لازِم دارِی بَرْدار عَزِیزَم!"
+    },
+    {
+      "id": "clip_06",
+      "file": "clip_06.mp4",
+      "source_span": [
+        41,
+        50
+      ],
+      "trim_in": 0,
+      "trim_out": 7.95,
+      "story_beat": "Sitting at a wooden library desk at night surrounded by open notebooks and coffee cups, exhausted MANGO_BOY holds his head as glowing purple grape visions float above him.",
+      "overlays": [],
+      "subtitles": [
+        [
+          0.2,
+          7.85,
+          "MANGO_BOY",
+          "قول دادم روی پای خودم بایستم، ولی بدون انگور جادویی هیچی یادم نمی‌آد!"
+        ]
+      ],
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_06.jpg",
+      "expected_speakers": [
+        "MANGO_BOY"
+      ],
+      "beat_ids": [
+        "beat_6"
+      ],
+      "shot_type": "dialogue",
+      "generation_duration_sec": 8,
+      "generation_prompt": "[MG1_C06] Stylized 3D CGI cartoon animation matching the exact 3D non-human fruit character and outfit in the reference image, static medium shot keeping the character in frame the entire time (no camera cuts), sitting at a wooden library desk at night surrounded by open notebooks and coffee cups the exhausted 3D round golden-orange mango student in a light gray hoodie holds his head as glowing purple grape clusters float above him (strictly NO human face), speaking in native Persian (Farsi) with exact vowel pronunciation and a stressed conflicted young male voice: «قُول دادَم رُویِ پایِ خُودَم بایِسْتَم، وَلِی بِدُونِ اَنْگُورِ جادُویِی هِیچِی یادَم نِمِی‌آد!» Zero on-screen subtitles.",
+      "speech_text": "قُول دادَم رُویِ پایِ خُودَم بایِسْتَم، وَلِی بِدُونِ اَنْگُورِ جادُویِی هِیچِی یادَم نِمِی‌آد!"
+    }
+  ],
+  "video": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 24,
+    "crf": 18,
+    "preset": "fast",
+    "scale_mode": "fill"
+  },
+  "audio": {
+    "loudnorm": "loudnorm=I=-14:TP=-1.5:LRA=11",
+    "sample_rate": 48000,
+    "channels": 2,
+    "bitrate": "192k"
+  },
+  "speech": {
+    "speech_safe": "auto_expand",
+    "threshold_dbfs": -38,
+    "pre_handle": 0.2,
+    "post_handle": 0.35,
+    "splice_crossfade": 0.02
+  },
+  "subtitle_style": {
+    "time_base": "trim_local",
+    "y_ratio": 0.84,
+    "font_size": 27,
+    "min_font_size": 16,
+    "max_text_margin": 84,
+    "max_lines": 2
+  },
+  "outputs": {
+    "per_clip_location": "both",
+    "base_mode": "timeline",
+    "cta_burn_subtitles": true,
+    "cta_loudnorm": true,
+    "publish_caption_fa": "قسمت اول: انگورهای جادویی نابغه و راز قبولی در دانشگاه!"
+  },
+  "character_references": [
+    "${BASE}\\character_sheets\\FLOW_SHEET_SERIES22_CHARACTERS.jpg"
+  ],
+  "content_edits": [],
+  "story_plan": {
+    "summary": "مانی انبه متوجه می‌شود که خوردن یک حبه از انگورهای بنفش همسر فداکارش آوا انگور، او را به یک نابغه تبدیل می‌کند که جواب تمام سؤالات دانشگاه را می‌داند؛ اما بدون انگور جادویی در کتابخانه درمانده می‌شود!",
+    "ending": "Mani Anbeh discovers that eating a purple grape from his loving partner Ava Angoor gives him genius exam recall, leaving him torn and craving another grape in the library at night.",
+    "required_beats": [
+      "beat_1",
+      "beat_2",
+      "beat_3",
+      "beat_4",
+      "beat_5",
+      "beat_6"
+    ]
+  },
+  "visual": {
+    "keyframe_threshold": 65,
+    "jump_threshold": 38,
+    "contamination_margin": 1
+  },
+  "visual_gate": {
+    "keyframe_threshold": 65,
+    "jump_threshold": 38,
+    "contamination_margin": 1
+  },
+  "generation_settings": {
+    "model": "Omni 1.1 Flash",
+    "duration_sec": 8,
+    "aspect": "9:16",
+    "outputs": 1,
+    "resolution": "720p",
+    "video_type": "Ingredients"
+  }
+}
