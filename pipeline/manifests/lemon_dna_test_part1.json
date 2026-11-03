@@ -1,0 +1,410 @@
+{
+  "_comment": "Part1_LemonDnaTest - 100% Google Flow native Farsi voice with full اعراب‌گذاری.",
+  "schema_version": 1,
+  "speech_review_note": "Full Persian vowel diacritics (اعراب‌گذاری کامل) in Google Flow prompt for 100% accurate native pronunciation.",
+  "episode_id": "Part1_LemonDnaTest",
+  "title_fa": "قسمت اول: راز بچه‌های لیمویی و آزمایش پنهانی دی‌ان‌ای!",
+  "title_en": "Lemon Kids DNA Test Part 1",
+  "source_video": "${SRC}\\42_2026-10-05_DeGItYFKtVq.mp4",
+  "source_start_offset": 0,
+  "story_summary_fa": "سهراب سیب‌سرخ که به ظاهرِ لیموییِ دو فرزندش مشکوک شده، صبح زود به بهانه خانه پدربزرگ آن‌ها را یواشکی به آزمایشگاه دی‌ان‌ای می‌برد؛ اما وقتی به خانه برمی‌گردد، همسرش نازنین از قرار مرموزی با دوستش خبر می‌دهد!",
+  "fallback_to_source_on_visual_fail": false,
+  "tight_speech_trim": true,
+  "variables": {
+    "BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series23-lemon-kids-dna-test-farsi",
+    "S2_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi",
+    "CHEF_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\ugly-face-chef-farsi",
+    "SRC": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\straw.berryjammin"
+  },
+  "clips_dir": "${BASE}\\part1\\flow_clips",
+  "out_dir": "${BASE}\\05_final_masters\\part1",
+  "font_path": "${CHEF_BASE}\\03_farsi_audio_tts\\Vazirmatn-Bold.ttf",
+  "cta_video": "${S2_BASE}\\part1\\flow_clips\\cta_kelidbox_s2.mp4",
+  "cta_speaker": "SOHRAB_APPLE",
+  "cta_subtitles": [
+    {
+      "start": 0.15,
+      "end": 3.55,
+      "text": "برای دیدن قسمت بعدی این داستان همین الان پیج رو فالو کن!"
+    },
+    {
+      "start": 3.6,
+      "end": 7.55,
+      "text": "راستی، کل این انیمیشن با اکانت‌های هوش مصنوعی سایت کلیدباکس ساخته شده!"
+    }
+  ],
+  "character_references": [
+    "${BASE}\\00_character_sheet\\CHARACTER_SHEET.png",
+    "${BASE}\\01_story_and_manifests\\FLOW_SHEET_01_SOHRAB.jpg",
+    "${BASE}\\01_story_and_manifests\\FLOW_SHEET_02_NAZANIN.jpg",
+    "${BASE}\\01_story_and_manifests\\FLOW_SHEET_03_BAHRAM.jpg"
+  ],
+  "location_references": [
+    "${BASE}\\01_story_and_manifests\\FLOW_LOC_01_CLINIC.jpg",
+    "${BASE}\\01_story_and_manifests\\FLOW_LOC_02_SALON.jpg"
+  ],
+  "speakers": {
+    "SOHRAB_APPLE": [
+      255,
+      165,
+      165
+    ],
+    "NAZANIN_APPLE": [
+      175,
+      255,
+      185
+    ],
+    "BAHRAM_BANANA": [
+      255,
+      235,
+      130
+    ],
+    "DR_SIB": [
+      165,
+      235,
+      255
+    ],
+    "BADGE": [
+      255,
+      235,
+      140
+    ]
+  },
+  "voices": {
+    "SOHRAB_APPLE": {
+      "voice": "fa-IR-FaridNeural",
+      "rate": "+6%",
+      "pitch": "+4Hz",
+      "color": [
+        255,
+        165,
+        165
+      ],
+      "source": "google_flow_native",
+      "name_fa": "SOHRAB_APPLE"
+    },
+    "NAZANIN_APPLE": {
+      "voice": "fa-IR-DilaraNeural",
+      "rate": "+6%",
+      "pitch": "+6Hz",
+      "color": [
+        175,
+        255,
+        185
+      ],
+      "source": "google_flow_native",
+      "name_fa": "NAZANIN_APPLE"
+    },
+    "BAHRAM_BANANA": {
+      "voice": "fa-IR-FaridNeural",
+      "rate": "+2%",
+      "pitch": "-8Hz",
+      "color": [
+        255,
+        235,
+        130
+      ],
+      "source": "google_flow_native",
+      "name_fa": "BAHRAM_BANANA"
+    },
+    "DR_SIB": {
+      "voice": "fa-IR-DilaraNeural",
+      "rate": "+4%",
+      "pitch": "+2Hz",
+      "color": [
+        165,
+        235,
+        255
+      ],
+      "source": "google_flow_native",
+      "name_fa": "DR_SIB"
+    },
+    "BADGE": {
+      "voice": "fa-IR-FaridNeural",
+      "rate": "+0%",
+      "pitch": "+0Hz",
+      "color": [
+        255,
+        235,
+        140
+      ],
+      "source": "google_flow_native",
+      "name_fa": "BADGE"
+    }
+  },
+  "clips": [
+    {
+      "id": "clip_01",
+      "source": "clip_01.mp4",
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_01.jpg",
+      "source_span": [
+        0.0,
+        4.5
+      ],
+      "shot_type": "dialogue",
+      "speaker": "NAZANIN_APPLE",
+      "trim_in": 0.0,
+      "trim_out": 7.89,
+      "require_visual_qa": false,
+      "story_beat": "در ایوان خانه در صبح زود، نازنین سیب‌سبز با لیوان چای از همسرش سهراب سیب‌سرخ می‌پرسد چرا دو بچه لیمویی‌شان را این‌قدر زود بیرون می‌برد.",
+      "speech_text": "سُهْرابْ جانْ! اینْ صُبْحِ به اینْ زودیْ بَچّه‌ها رو کُجا می‌بَریْ؟ هَنوزْ خَواب‌آلودَنْ!",
+      "generation_prompt": "[LD1_C01] Stylized 3D CGI cartoon animation matching the exact 3D non-human fruit characters and outfits in the reference image, static medium-wide two-shot on a sunny suburban front porch at sunrise keeping every character in frame. On the left, the 3D smooth bright-green apple-headed wife in pastel-pink loungewear holding a pink ceramic mug speaks in a warm, curious young female voice in native Persian (Farsi) with clear natural articulation and lip-sync to the 3D glossy crimson-red apple-headed father holding the hands of the two small 3D bright-yellow lemon-headed children: «سُهْرابْ جانْ! اینْ صُبْحِ به اینْ زودیْ بَچّه‌ها رو کُجا می‌بَریْ؟ هَنوزْ خَواب‌آلودَنْ!» Soft morning birdsong, zero background music, no on-screen text or subtitles.",
+      "overlays": [
+        {
+          "start": 0.1,
+          "end": 3.4,
+          "text": "قسمت اول: راز بچه‌های لیمویی!",
+          "speaker": "BADGE",
+          "y": 135,
+          "font_size": 21,
+          "box_alpha": 200
+        }
+      ],
+      "subtitles": [
+        {
+          "start": 0.25,
+          "end": 7.65,
+          "speaker": "NAZANIN_APPLE",
+          "text": "سهراب جان! این صبح به این زودی بچه‌ها رو کجا می‌بری؟ هنوز خواب‌آلودن!"
+        }
+      ],
+      "beat_ids": [
+        "beat_01"
+      ],
+      "file": "clip_01.mp4",
+      "expected_speakers": [
+        "NAZANIN_APPLE"
+      ]
+    },
+    {
+      "id": "clip_02",
+      "source": "clip_02.mp4",
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_02.jpg",
+      "source_span": [
+        4.5,
+        9.2
+      ],
+      "shot_type": "dialogue",
+      "speaker": "SOHRAB_APPLE",
+      "trim_in": 0.0,
+      "trim_out": 7.89,
+      "require_visual_qa": false,
+      "story_beat": "سهراب سیب‌سرخ با تردید به دو بچه لیمویی زرد نگاه می‌کند و به نازنین می‌گوید آن‌ها را به خانه پدربزرگ و مادربزرگ می‌برد.",
+      "speech_text": "می‌بَرَمِشونْ خونهٔ پِدَرْبُزُرْگْ و مادَرْبُزُرْگِشونْ عَزیزَمْ، تا غُروبْ بَرْمی‌گَرْدیمْ خونه!",
+      "generation_prompt": "[LD1_C02] Stylized 3D CGI cartoon animation matching the exact 3D non-human fruit characters and outfits in the reference image, static medium shot on the sunny suburban front porch steps keeping every character in frame. The 3D glossy crimson-red apple-headed father in a navy zip jacket over a blue plaid flannel shirt holds the hands of the two small 3D bright-yellow lemon-headed children and speaks in a calm but nervous young male voice in native Persian (Farsi) with clear natural articulation and lip-sync: «می‌بَرَمِشونْ خونهٔ پِدَرْبُزُرْگْ و مادَرْبُزُرْگِشونْ عَزیزَمْ، تا غُروبْ بَرْمی‌گَرْدیمْ خونه!» Gentle outdoor breeze, zero background music, no on-screen text or subtitles.",
+      "overlays": [],
+      "subtitles": [
+        {
+          "start": 0.25,
+          "end": 7.65,
+          "speaker": "SOHRAB_APPLE",
+          "text": "می‌برمشون خونهٔ پدربزرگ و مادربزرگشون عزیزم، تا غروب برمی‌گردیم خونه!"
+        }
+      ],
+      "beat_ids": [
+        "beat_02"
+      ],
+      "file": "clip_02.mp4",
+      "expected_speakers": [
+        "SOHRAB_APPLE"
+      ]
+    },
+    {
+      "id": "clip_03",
+      "source": "clip_03.mp4",
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_03.jpg",
+      "source_span": [
+        9.2,
+        19.2
+      ],
+      "shot_type": "dialogue",
+      "speaker": "SOHRAB_APPLE",
+      "trim_in": 0.0,
+      "trim_out": 5.1,
+      "require_visual_qa": false,
+      "story_beat": "سهراب سیب‌سرخ در پذیرش آزمایشگاه پزشکی، دو بچه لیمویی را نشان خانم دکتر سیب‌سبز می‌دهد و درخواست آزمایش فوری دی‌ان‌ای می‌کند.",
+      "speech_text": "خانُمْ دُکْتُرْ، می‌خوامْ بَرایِ هَرْ دویِ اینْ بَچّه‌ها یِه آزْمایِشِ دی‌اِنْ‌اِیِ فوریْ اَنْجامْ بِدیمْ!",
+      "generation_prompt": "[LD1_C03] Stylized 3D CGI cartoon animation matching the exact 3D non-human fruit characters and outfits in the reference image, static medium two-shot inside a bright modern medical clinic reception lobby keeping every character in frame. On the left, the 3D glossy crimson-red apple-headed father stands with the two small 3D bright-yellow lemon-headed children and hands a sample tube across the counter to the 3D green apple-headed female doctor in round gold eyeglasses and a white lab coat, speaking in a serious, anxious young male voice in native Persian (Farsi) with clear natural articulation and lip-sync: «خانُمْ دُکْتُرْ، می‌خوامْ بَرایِ هَرْ دویِ اینْ بَچّه‌ها یِه آزْمایِشِ دی‌اِنْ‌اِیِ فوریْ اَنْجامْ بِدیمْ!» Subtle clinic room tone, zero background music, no on-screen text or subtitles.",
+      "overlays": [],
+      "subtitles": [
+        {
+          "start": 0.25,
+          "end": 4.95,
+          "speaker": "SOHRAB_APPLE",
+          "text": "خانم دکتر، می‌خوام برای هر دوی این بچه‌ها یه آزمایش دی‌ان‌ای فوری انجام بدیم!"
+        }
+      ],
+      "beat_ids": [
+        "beat_03"
+      ],
+      "file": "clip_03.mp4",
+      "expected_speakers": [
+        "SOHRAB_APPLE"
+      ]
+    },
+    {
+      "id": "clip_04",
+      "source": "clip_04.mp4",
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_04.jpg",
+      "source_span": [
+        19.2,
+        24.3
+      ],
+      "shot_type": "dialogue",
+      "speaker": "SOHRAB_APPLE",
+      "trim_in": 0.0,
+      "trim_out": 5.9,
+      "require_visual_qa": false,
+      "story_beat": "در کافه، سهراب سیب‌سرخ با نگرانی از دوست صمیمی‌اش بهرام موز می‌پرسد کی جواب آزمایش دی‌ان‌ای حاضر می‌شود چون دیگر طاقت ندارد.",
+      "speech_text": "بَهرام جانْ، پَسْ جَوابِ اینْ آزْمایِشِ دی‌اِنْ‌اِیْ کِیْ می‌آدْ؟ دیگِه طاقَتْ نَدارَمْ رَفیقْ!",
+      "generation_prompt": "[LD1_C04] Stylized 3D CGI cartoon animation matching the exact 3D non-human fruit characters and outfits in the reference image, static medium two-shot at a warm cozy wooden cafe table keeping both characters in frame. On the left, the 3D glossy crimson-red apple-headed man in a navy zip jacket leans forward anxiously toward the 3D tall bright-yellow banana-headed man on the right, speaking in a stressed, impatient young male voice in native Persian (Farsi) with clear natural articulation and lip-sync: «بَهرام جانْ، پَسْ جَوابِ اینْ آزْمایِشِ دی‌اِنْ‌اِیْ کِیْ می‌آدْ؟ دیگِه طاقَتْ نَدارَمْ رَفیقْ!» Soft cafe ambience, zero background music, no on-screen text or subtitles.",
+      "overlays": [],
+      "subtitles": [
+        {
+          "start": 0.25,
+          "end": 5.75,
+          "speaker": "SOHRAB_APPLE",
+          "text": "بهرام جان، پس جواب این آزمایش دی‌ان‌ای کی می‌آد؟ دیگه طاقت ندارم رفیق!"
+        }
+      ],
+      "beat_ids": [
+        "beat_04"
+      ],
+      "file": "clip_04.mp4",
+      "expected_speakers": [
+        "SOHRAB_APPLE"
+      ]
+    },
+    {
+      "id": "clip_05",
+      "source": "clip_05.mp4",
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_05.jpg",
+      "source_span": [
+        24.3,
+        29.2
+      ],
+      "shot_type": "dialogue",
+      "speaker": "BAHRAM_BANANA",
+      "trim_in": 0.0,
+      "trim_out": 7.89,
+      "require_visual_qa": false,
+      "story_beat": "بهرام موز با آرامش به کیک شکلاتی روی میز اشاره می‌کند و به سهراب می‌گوید چند روز طول می‌کشد پس آرام بگیرد.",
+      "speech_text": "چَنْدْ روزْ طولْ می‌کِشِه داداشْ! فِعْلاً یِه کَمْ کِیکْ بُخورْ وُ ذِهْنِتْ رو آرومْ نِگَهْ دارْ!",
+      "generation_prompt": "[LD1_C05] Stylized 3D CGI cartoon animation matching the exact 3D non-human fruit characters and outfits in the reference image, static medium close-up at a warm wooden cafe table keeping the character in frame. The 3D tall curved bright-yellow banana-headed man in an olive-green crew-neck t-shirt holds a silver fork beside a slice of chocolate cake and speaks in a relaxed, reassuring baritone male voice in native Persian (Farsi) with clear natural articulation and lip-sync: «چَنْدْ روزْ طولْ می‌کِشِه داداشْ! فِعْلاً یِه کَمْ کِیکْ بُخورْ وُ ذِهْنِتْ رو آرومْ نِگَهْ دارْ!» Gentle porcelain plate clink, zero background music, no on-screen text or subtitles.",
+      "overlays": [],
+      "subtitles": [
+        {
+          "start": 0.25,
+          "end": 7.65,
+          "speaker": "BAHRAM_BANANA",
+          "text": "چند روز طول می‌کشه داداش! فعلاً یه کم کیک بخور و ذهنت رو آروم نگه دار!"
+        }
+      ],
+      "beat_ids": [
+        "beat_05"
+      ],
+      "file": "clip_05.mp4",
+      "expected_speakers": [
+        "BAHRAM_BANANA"
+      ]
+    },
+    {
+      "id": "clip_06",
+      "source": "clip_06.mp4",
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_06.jpg",
+      "source_span": [
+        29.2,
+        38.0
+      ],
+      "shot_type": "dialogue",
+      "speaker": "NAZANIN_APPLE",
+      "trim_in": 0.0,
+      "trim_out": 7.89,
+      "require_visual_qa": false,
+      "story_beat": "سر میز ناهار خانه، نازنین سیب‌سبز با لبخند مرموزی فنجان چای را برمی‌دارد و می‌گوید امروز عصر برای دیدن دوستش بیرون می‌رود.",
+      "speech_text": "خوبْ کاریْ کَرْدیْ بَچّه‌ها رو گُذاشْتیْ خونهٔ مادَرِتْ؛ مَنَمْ یِه کَمْ دیگِه می‌رَمْ دوسْتَمْ رو بِبینَمْ!",
+      "generation_prompt": "[LD1_C06] Stylized 3D CGI cartoon animation matching the exact 3D non-human fruit characters and outfits in the reference image, static medium two-shot at a sunlit wooden home dining table keeping both characters in frame. On the right, the 3D smooth bright-green apple-headed wife in a crisp white collared blouse holds a porcelain teacup with a mysterious smile and speaks in a calm, cheerful young female voice in native Persian (Farsi) with clear natural articulation and lip-sync while the 3D crimson-red apple-headed husband on the left watches suspiciously: «خوبْ کاریْ کَرْدیْ بَچّه‌ها رو گُذاشْتیْ خونهٔ مادَرِتْ؛ مَنَمْ یِه کَمْ دیگِه می‌رَمْ دوسْتَمْ رو بِبینَمْ!» Soft teacup clink, zero background music, no on-screen text or subtitles.",
+      "overlays": [],
+      "subtitles": [
+        {
+          "start": 0.25,
+          "end": 7.65,
+          "speaker": "NAZANIN_APPLE",
+          "text": "خوب کاری کردی بچه‌ها رو گذاشتی خونهٔ مادرت؛ منم یه کم دیگه می‌رم دوستم رو ببینم!"
+        }
+      ],
+      "beat_ids": [
+        "beat_06"
+      ],
+      "file": "clip_06.mp4",
+      "expected_speakers": [
+        "NAZANIN_APPLE"
+      ]
+    }
+  ],
+  "generation_settings": {
+    "model": "Veo 3.1 - Fast",
+    "duration_sec": 8,
+    "aspect": "9:16",
+    "outputs": 1,
+    "video_type": "Ingredients"
+  },
+  "story_plan": {
+    "summary": "سهراب سیب‌سرخ که به ظاهرِ لیموییِ دو فرزندش مشکوک شده، صبح زود به بهانه خانه پدربزرگ آن‌ها را یواشکی به آزمایشگاه دی‌ان‌ای می‌برد؛ اما وقتی به خانه برمی‌گردد، همسرش نازنین از قرار مرموزی با دوستش خبر می‌دهد!",
+    "ending": "سر میز ناهار خانه، نازنین سیب‌سبز با لبخند مرموزی فنجان چای را برمی‌دارد و می‌گوید امروز عصر برای دیدن دوستش بیرون می‌رود.",
+    "required_beats": [
+      "beat_01",
+      "beat_02",
+      "beat_03",
+      "beat_04",
+      "beat_05",
+      "beat_06"
+    ]
+  },
+  "video": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 24,
+    "crf": 18,
+    "preset": "fast",
+    "scale_mode": "fill"
+  },
+  "audio": {
+    "loudnorm": "loudnorm=I=-14:TP=-1.5:LRA=11",
+    "sample_rate": 48000,
+    "channels": 2,
+    "bitrate": "192k"
+  },
+  "speech": {
+    "speech_safe": "auto_expand",
+    "threshold_dbfs": -38,
+    "pre_handle": 0.2,
+    "post_handle": 0.35,
+    "splice_crossfade": 0.02
+  },
+  "subtitle_style": {
+    "time_base": "trim_local",
+    "y_ratio": 0.84,
+    "font_size": 27,
+    "min_font_size": 16,
+    "max_text_margin": 84,
+    "max_lines": 2
+  },
+  "outputs": {
+    "per_clip_location": "both",
+    "base_mode": "timeline",
+    "cta_burn_subtitles": true,
+    "cta_loudnorm": true,
+    "publish_caption_fa": "قسمت اول: راز بچه‌های لیمویی و آزمایش پنهانی دی‌ان‌ای!"
+  },
+  "visual": {
+    "keyframe_threshold": 65,
+    "jump_threshold": 38,
+    "contamination_margin": 1
+  },
+  "visual_gate": {
+    "keyframe_threshold": 65,
+    "jump_threshold": 38,
+    "contamination_margin": 1
+  }
+}

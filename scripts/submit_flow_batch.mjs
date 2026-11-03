@@ -1336,25 +1336,32 @@ export function verifyLiveSettings(snapshot, expected, attestation, target = {},
     observed[key] = value;
   };
   // This compact composer summary reflects the active output configuration, unlike menu options.
+  const toAsciiDigits = s => String(s).replace(/[\u200e\u200f\u202a-\u202e]/g, '').replace(/[۰-۹]/g, d => String(d.charCodeAt(0) - 0x06f0));
   for (const n of nodes) {
-    const match = label(n).match(/^Video\s*[·•]\s*(\d+p)\s*[·•]\s*(\d+(?:\.\d+)?)s\s*x(\d+)$/i);
-    if (match) { set('resolution', match[1]); set('duration_sec', Number(match[2])); set('outputs', Number(match[3])); }
+    const clean = toAsciiDigits(label(n));
+    const match = clean.match(/^Video\s*[·•]\s*(\d+p)\s*[·•]\s*(\d+(?:\.\d+)?)s\s*x(\d+)$/i) ||
+      clean.match(/^ویدیو\s*[·•]\s*(?:(\d+)\s*پیکسل\s*[·•]\s*)?(\d+(?:\.\d+)?)\s*ث\s*x(\d+)$/i);
+    if (match) {
+      if (match[1]) set('resolution', match[1].endsWith('p') ? match[1] : `${match[1]}p`);
+      set('duration_sec', Number(match[2]));
+      set('outputs', Number(match[3]));
+    }
     const checked = n.checked === true || n.selected === true || n.attributes?.['aria-checked'] === 'true';
     if (checked && ['radio', 'option', 'menuitemradio'].includes(n.role)) {
       const name = label(n);
-      if (/^(Frames|Ingredients)$/i.test(name)) set('video_type', name);
+      if (/^(Frames|Ingredients|قاب‌ها|عناصر)$/i.test(name)) set('video_type', /^(Frames|قاب‌ها)$/i.test(name) ? 'Frames' : 'Ingredients');
       if (/^\d+:\d+$/.test(name)) set('aspect', name);
       if (/^(Veo|Omni)\b/i.test(name)) set('model', name);
     }
   }
   if (observed.duration_sec === undefined) throw new Error('SETTINGS_UNVERIFIABLE: active Video duration/output summary missing; inspect Flow settings before submission');
-  if (nodes.some(n => n.role === 'button' && ['Start', 'Swap first and last frames'].includes(label(n))) &&
-      nodes.some(n => n.role === 'button' && label(n) === 'End')) {
+  if (nodes.some(n => n.role === 'button' && ['Start', 'Swap first and last frames', 'شروع'].includes(label(n))) &&
+      nodes.some(n => n.role === 'button' && ['End', 'پایان'].includes(label(n)))) {
     set('video_type', 'Frames');
   }
-  const modelControl = nodes.find(n => n.role === 'button' && label(n) === 'Select model family');
+  const modelControl = nodes.find(n => n.role === 'button' && ['Select model family', 'انتخاب کردن خانواده مدل'].includes(label(n)));
   for (const n of flattenNodes(modelControl)) if (/^(Veo|Omni)\b/i.test(label(n))) set('model', label(n));
-  const settingsControl = nodes.find(n => n.role === 'button' && label(n) === 'Settings trigger');
+  const settingsControl = nodes.find(n => n.role === 'button' && ['Settings trigger', 'راه‌انداز تنظیمات'].includes(label(n)));
   const aspects = new Set(flattenNodes(settingsControl).filter(n => n.visible !== false).map(label).filter(v => /^crop_\d+_\d+$/.test(v)));
   if (observed.aspect === undefined && aspects.size === 1) set('aspect', [...aspects][0].slice(5).replace('_', ':'));
   for (const key of fields) {
@@ -1384,10 +1391,10 @@ function composerImageButtons(snapshot) {
     let lastFeed = -1;
     for (let i = 0; i < end; i++) {
       const n = nodes[i], text = String(n.text || '').trim(), name = String(n.name || '').trim();
-      if (/^Created |^\d+%$/.test(text) ||
-          (n.role === 'button' && /^(Trash batch|Recycle|Reuse prompt|Delete|حذف|image\.png)$/i.test(name))) lastFeed = i;
+      if (/^Created |^تاریخ ایجاد:|^ایجاد|^ساخته|^\d+%$/.test(text) ||
+          (n.role === 'button' && /^(Trash batch|Recycle|Reuse prompt|Delete|حذف|حذف دسته|انتقال گروهی به حذف‌شده‌ها|استفاده مجدد از پیام‌واره|بارگیری|امتحان مجدد|تلاش مجدد|image\.png)$/i.test(name))) lastFeed = i;
     }
-    return nodes.slice(lastFeed + 1, end).filter(n => n.role === 'button' && /^(Ingredient|Image ingredient|ماده اولیه)$/i.test(String(n.name || '').trim()));
+    return nodes.slice(lastFeed + 1, end).filter(n => n.role === 'button' && /^(Ingredient|Image ingredient|ماده اولیه|عنصر|عنصر تصویر)$/i.test(String(n.name || '').trim()));
   });
 }
 
@@ -1552,8 +1559,8 @@ async function submitSingleClipImpl(mcp, item, ctx = {}) {
       profileId: PROFILE_ID,
       tabId: TAB_ID,
     });
-    const settingsTrigger = findNode(snap, (n) => n.role === 'button' && n.name === 'Settings trigger');
-    const agentInstr = findNode(snap, (n) => n.role === 'button' && n.name === 'Agent instructions');
+    const settingsTrigger = findNode(snap, (n) => n.role === 'button' && (n.name === 'Settings trigger' || n.name === 'راه‌انداز تنظیمات'));
+    const agentInstr = findNode(snap, (n) => n.role === 'button' && (n.name === 'Agent instructions' || n.name === 'دستورالعمل‌های کنشگر'));
     if (!settingsTrigger || agentInstr) {
       const agentToggle = findNode(snap, (n) => n.role === 'button' && n.name === 'Agent');
       if (agentToggle) {
@@ -1895,7 +1902,7 @@ async function main() {
     await sleep(600);
     const navSnap = await mcp.callTool('browser_observe_page', { profileId: PROFILE_ID, tabId: TAB_ID });
     const hasImg = findNode(navSnap, (n) => n.role === 'button' && n.name === 'image.png');
-    const allMediaBtn = findNode(navSnap, (n) => n.ref && n.role === 'button' && typeof n.name === 'string' && n.name.includes('All media'));
+    const allMediaBtn = findNode(navSnap, (n) => n.ref && n.role === 'button' && typeof n.name === 'string' && (n.name.includes('All media') || n.name.includes('همه رسانه')));
     if (allMediaBtn && !hasImg) {
       await mcp.callTool('browser_click', { profileId: PROFILE_ID, tabId: TAB_ID, ref: allMediaBtn.ref });
       await sleep(1200);

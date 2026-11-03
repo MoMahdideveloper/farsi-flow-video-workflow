@@ -1,0 +1,410 @@
+{
+  "_comment": "Part2_LemonDnaTest - 100% Google Flow native Farsi voice with full اعراب‌گذاری.",
+  "schema_version": 1,
+  "speech_review_note": "Full Persian vowel diacritics (اعراب‌گذاری کامل) in Google Flow prompt for 100% accurate native pronunciation.",
+  "episode_id": "Part2_LemonDnaTest",
+  "title_fa": "قسمت آخر: جواب آزمایش دی‌ان‌ای و تعقیب تا سالن زیبایی!",
+  "title_en": "Lemon Kids DNA Test Part 2",
+  "source_video": "${SRC}\\42_2026-10-05_DeGItYFKtVq.mp4",
+  "source_start_offset": 0,
+  "story_summary_fa": "سهراب از شدت استرس تا صبح بیدار می‌ماند تا اینکه پاکت محرمانه آزمایش دی‌ان‌ای می‌رسد و هم‌زمان نازنین با لباس مجلسی قرمز بیرون می‌رود؛ سهراب و بهرام موز با موتورسیکلت او را تا سالن زیبایی تعقیب می‌کنند و حقیقت باورنکردنی پاکت فاش می‌شود!",
+  "fallback_to_source_on_visual_fail": false,
+  "tight_speech_trim": true,
+  "variables": {
+    "BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series23-lemon-kids-dna-test-farsi",
+    "S2_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi",
+    "CHEF_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\ugly-face-chef-farsi",
+    "SRC": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\straw.berryjammin"
+  },
+  "clips_dir": "${BASE}\\part2\\flow_clips",
+  "out_dir": "${BASE}\\05_final_masters\\part2",
+  "font_path": "${CHEF_BASE}\\03_farsi_audio_tts\\Vazirmatn-Bold.ttf",
+  "cta_video": "${S2_BASE}\\part1\\flow_clips\\cta_kelidbox_s2.mp4",
+  "cta_speaker": "SOHRAB_APPLE",
+  "cta_subtitles": [
+    {
+      "start": 0.15,
+      "end": 3.55,
+      "text": "برای دیدن قسمت بعدی این داستان همین الان پیج رو فالو کن!"
+    },
+    {
+      "start": 3.6,
+      "end": 7.55,
+      "text": "راستی، کل این انیمیشن با اکانت‌های هوش مصنوعی سایت کلیدباکس ساخته شده!"
+    }
+  ],
+  "character_references": [
+    "${BASE}\\00_character_sheet\\CHARACTER_SHEET.png",
+    "${BASE}\\01_story_and_manifests\\FLOW_SHEET_01_SOHRAB.jpg",
+    "${BASE}\\01_story_and_manifests\\FLOW_SHEET_02_NAZANIN.jpg",
+    "${BASE}\\01_story_and_manifests\\FLOW_SHEET_03_BAHRAM.jpg"
+  ],
+  "location_references": [
+    "${BASE}\\01_story_and_manifests\\FLOW_LOC_01_CLINIC.jpg",
+    "${BASE}\\01_story_and_manifests\\FLOW_LOC_02_SALON.jpg"
+  ],
+  "speakers": {
+    "SOHRAB_APPLE": [
+      255,
+      165,
+      165
+    ],
+    "NAZANIN_APPLE": [
+      175,
+      255,
+      185
+    ],
+    "BAHRAM_BANANA": [
+      255,
+      235,
+      130
+    ],
+    "DR_SIB": [
+      165,
+      235,
+      255
+    ],
+    "BADGE": [
+      255,
+      235,
+      140
+    ]
+  },
+  "voices": {
+    "SOHRAB_APPLE": {
+      "voice": "fa-IR-FaridNeural",
+      "rate": "+6%",
+      "pitch": "+4Hz",
+      "color": [
+        255,
+        165,
+        165
+      ],
+      "source": "google_flow_native",
+      "name_fa": "SOHRAB_APPLE"
+    },
+    "NAZANIN_APPLE": {
+      "voice": "fa-IR-DilaraNeural",
+      "rate": "+6%",
+      "pitch": "+6Hz",
+      "color": [
+        175,
+        255,
+        185
+      ],
+      "source": "google_flow_native",
+      "name_fa": "NAZANIN_APPLE"
+    },
+    "BAHRAM_BANANA": {
+      "voice": "fa-IR-FaridNeural",
+      "rate": "+2%",
+      "pitch": "-8Hz",
+      "color": [
+        255,
+        235,
+        130
+      ],
+      "source": "google_flow_native",
+      "name_fa": "BAHRAM_BANANA"
+    },
+    "DR_SIB": {
+      "voice": "fa-IR-DilaraNeural",
+      "rate": "+4%",
+      "pitch": "+2Hz",
+      "color": [
+        165,
+        235,
+        255
+      ],
+      "source": "google_flow_native",
+      "name_fa": "DR_SIB"
+    },
+    "BADGE": {
+      "voice": "fa-IR-FaridNeural",
+      "rate": "+0%",
+      "pitch": "+0Hz",
+      "color": [
+        255,
+        235,
+        140
+      ],
+      "source": "google_flow_native",
+      "name_fa": "BADGE"
+    }
+  },
+  "clips": [
+    {
+      "id": "clip_01",
+      "source": "clip_01.mp4",
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_01.jpg",
+      "source_span": [
+        38.0,
+        43.7
+      ],
+      "shot_type": "dialogue",
+      "speaker": "NAZANIN_APPLE",
+      "trim_in": 0.0,
+      "trim_out": 7.89,
+      "require_visual_qa": false,
+      "story_beat": "نیمه‌شب در پذیرایی تاریک، نازنین سیب‌سبز با لباس خواب کنار آباژور می‌ایستد و از سهراب می‌پرسد چرا به اتاق خواب نمی‌آید.",
+      "speech_text": "سُهْرابْ جانْ، صِدایِ مَنْ رو می‌شْنَویْ؟ چِرا اِمْشَبْ نِمی‌آیْ تویِ اُتاقْ بُخوابیْ عَزیزَمْ؟",
+      "generation_prompt": "[LD2_C01] Stylized 3D CGI cartoon animation matching the exact 3D non-human fruit characters and outfits in the reference image, static medium-wide two-shot in a dimly lit cozy living room at night keeping both characters in frame. On the left near a warm floor lamp, the 3D smooth bright-green apple-headed wife in a soft mint-green bathrobe speaks in a gentle, concerned young female voice in native Persian (Farsi) with clear natural articulation and lip-sync to the 3D glossy crimson-red apple-headed husband sitting slumped on the sofa in navy pajamas: «سُهْرابْ جانْ، صِدایِ مَنْ رو می‌شْنَویْ؟ چِرا اِمْشَبْ نِمی‌آیْ تویِ اُتاقْ بُخوابیْ عَزیزَمْ؟» Quiet nighttime room ambience, zero background music, no on-screen text or subtitles.",
+      "overlays": [
+        {
+          "start": 0.1,
+          "end": 3.4,
+          "text": "قسمت آخر: جواب آزمایش دی‌ان‌ای!",
+          "speaker": "BADGE",
+          "y": 135,
+          "font_size": 21,
+          "box_alpha": 200
+        }
+      ],
+      "subtitles": [
+        {
+          "start": 0.25,
+          "end": 7.65,
+          "speaker": "NAZANIN_APPLE",
+          "text": "سهراب جان، صدای من رو می‌شنوی؟ چرا امشب نمی‌آی توی اتاق بخوابی عزیزم؟"
+        }
+      ],
+      "beat_ids": [
+        "beat_01"
+      ],
+      "file": "clip_01.mp4",
+      "expected_speakers": [
+        "NAZANIN_APPLE"
+      ]
+    },
+    {
+      "id": "clip_02",
+      "source": "clip_02.mp4",
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_02.jpg",
+      "source_span": [
+        43.7,
+        49.2
+      ],
+      "shot_type": "dialogue",
+      "speaker": "SOHRAB_APPLE",
+      "trim_in": 0.0,
+      "trim_out": 7.89,
+      "require_visual_qa": false,
+      "story_beat": "سهراب سیب‌سرخ با چشمان خسته روی مبل نشسته و می‌گوید از فکر و خیال خوابش نمی‌برد و منتظر صبح فرداست.",
+      "speech_text": "اَصْلاً خوابَمْ نِمی‌بَرِه نازَنینْ... تو بُرو بُخوابْ، فِکْرَمْ خِیْلیْ مَشْغولِه!",
+      "generation_prompt": "[LD2_C02] Stylized 3D CGI cartoon animation matching the exact 3D non-human fruit character and outfit in the reference image, static medium close-up in a dimly lit living room at night keeping the character in frame. The 3D glossy crimson-red apple-headed husband in navy-blue silk pajamas sits distressed on the sofa staring at his smartphone on the table and speaks in a tired, anxious young male voice in native Persian (Farsi) with clear natural articulation and lip-sync: «اَصْلاً خوابَمْ نِمی‌بَرِه نازَنینْ... تو بُرو بُخوابْ، فِکْرَمْ خِیْلیْ مَشْغولِه!» Soft clock ticking sound, zero background music, no on-screen text or subtitles.",
+      "overlays": [],
+      "subtitles": [
+        {
+          "start": 0.25,
+          "end": 7.65,
+          "speaker": "SOHRAB_APPLE",
+          "text": "اصلاً خوابم نمی‌بره نازنین... تو برو بخواب، فکرم خیلی مشغوله!"
+        }
+      ],
+      "beat_ids": [
+        "beat_02"
+      ],
+      "file": "clip_02.mp4",
+      "expected_speakers": [
+        "SOHRAB_APPLE"
+      ]
+    },
+    {
+      "id": "clip_03",
+      "source": "clip_03.mp4",
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_03.jpg",
+      "source_span": [
+        49.2,
+        54.6
+      ],
+      "shot_type": "dialogue",
+      "speaker": "NAZANIN_APPLE",
+      "trim_in": 0.0,
+      "trim_out": 7.89,
+      "require_visual_qa": false,
+      "story_beat": "فردا صبح، درست وقتی پاکت آزمایش دی‌ان‌ای به دست سهراب می‌رسد، نازنین با لباس مجلسی قرمز خداحافظی می‌کند تا به دیدن دوستش برود.",
+      "speech_text": "سُهْرابْ جانْ، مَنْ دارَمْ می‌رَمْ بازَمْ هَمونْ دوسْتَمْ رو بِبینَمْ؛ زودْ بَرْمی‌گَرْدَمْ!",
+      "generation_prompt": "[LD2_C03] Stylized 3D CGI cartoon animation matching the exact 3D non-human fruit characters and outfits in the reference image, static medium two-shot near the front door in daylight keeping both characters in frame. On the right, the 3D smooth bright-green apple-headed wife in a glamorous crimson-red dress waves goodbye and speaks in a cheerful young female voice in native Persian (Farsi) with clear natural articulation and lip-sync while on the left the 3D glossy crimson-red apple-headed husband holds a sealed brown paper envelope: «سُهْرابْ جانْ، مَنْ دارَمْ می‌رَمْ بازَمْ هَمونْ دوسْتَمْ رو بِبینَمْ؛ زودْ بَرْمی‌گَرْدَمْ!» Soft footsteps and door sound, zero background music, no on-screen text or subtitles.",
+      "overlays": [],
+      "subtitles": [
+        {
+          "start": 0.25,
+          "end": 7.65,
+          "speaker": "NAZANIN_APPLE",
+          "text": "سهراب جان، من دارم می‌رم بازم همون دوستم رو ببینم؛ زود برمی‌گردم!"
+        }
+      ],
+      "beat_ids": [
+        "beat_03"
+      ],
+      "file": "clip_03.mp4",
+      "expected_speakers": [
+        "NAZANIN_APPLE"
+      ]
+    },
+    {
+      "id": "clip_04",
+      "source": "clip_04.mp4",
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_04.jpg",
+      "source_span": [
+        54.6,
+        59.2
+      ],
+      "shot_type": "dialogue",
+      "speaker": "SOHRAB_APPLE",
+      "trim_in": 0.0,
+      "trim_out": 7.89,
+      "require_visual_qa": false,
+      "story_beat": "سهراب سیب‌سرخ با خشم پاکت قهوه‌ای آزمایش دی‌ان‌ای را در دست می‌فشارد و تصمیم می‌گیرد همین الان نازنین را تعقیب کند.",
+      "speech_text": "بازمْ می‌رِه پیشِ هَمونْ دوسْتِشْ؟ الانْ با اینْ پاکَتِ دی‌اِنْ‌اِیْ مَعْلومْ می‌شِه رازِشْ چیه!",
+      "generation_prompt": "[LD2_C04] Stylized 3D CGI cartoon animation matching the exact 3D non-human fruit character and outfit in the reference image, static medium close-up at the open front doorway in daylight keeping the character in frame. The 3D glossy crimson-red apple-headed husband in a dark denim jacket clutches the plain brown paper envelope tightly with furrowed brows and speaks in a determined, suspicious young male voice in native Persian (Farsi) with clear natural articulation and lip-sync: «بازمْ می‌رِه پیشِ هَمونْ دوسْتِشْ؟ الانْ با اینْ پاکَتِ دی‌اِنْ‌اِیْ مَعْلومْ می‌شِه رازِشْ چیه!» Crisp paper rustle, zero background music, no on-screen text or subtitles.",
+      "overlays": [],
+      "subtitles": [
+        {
+          "start": 0.25,
+          "end": 7.65,
+          "speaker": "SOHRAB_APPLE",
+          "text": "بازم می‌ره پیش همون دوستش؟ الان با این پاکت دی‌ان‌ای معلوم می‌شه رازش چیه!"
+        }
+      ],
+      "beat_ids": [
+        "beat_04"
+      ],
+      "file": "clip_04.mp4",
+      "expected_speakers": [
+        "SOHRAB_APPLE"
+      ]
+    },
+    {
+      "id": "clip_05",
+      "source": "clip_05.mp4",
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_05.jpg",
+      "source_span": [
+        59.2,
+        69.2
+      ],
+      "shot_type": "dialogue",
+      "speaker": "BAHRAM_BANANA",
+      "trim_in": 0.0,
+      "trim_out": 7.89,
+      "require_visual_qa": false,
+      "story_beat": "مقابل سالن زیبایی، سهراب روی موتورسیکلت قرمز نشسته و بهرام موز در حالی که بسته چیپس آبی‌اش را دو دستی چسبیده، ترک موتور می‌نشیند.",
+      "speech_text": "صَبْرْ کُنْ داداشْ بِنْشینَمْ! پولِ زیادیْ پایِ اینْ بَسْتِه چیپْسْ دادَمْ، نِمی‌ریزمِشْ دورْ!",
+      "generation_prompt": "[LD2_C05] Stylized 3D CGI cartoon animation matching the exact 3D non-human fruit characters and outfits in the reference image, static medium-wide two-shot on a city sidewalk outside a glowing glass-front beauty salon keeping both characters in frame. The 3D glossy crimson-red apple-headed husband sits on a shiny red motorcycle while the 3D tall bright-yellow banana-headed friend climbs onto the back seat clutching a blue potato chip bag, speaking in a funny, flustered baritone male voice in native Persian (Farsi) with clear natural articulation and lip-sync: «صَبْرْ کُنْ داداشْ بِنْشینَمْ! پولِ زیادیْ پایِ اینْ بَسْتِه چیپْسْ دادَمْ، نِمی‌ریزمِشْ دورْ!» Soft motorcycle idle and chip bag crinkle, zero background music, no on-screen text or subtitles.",
+      "overlays": [],
+      "subtitles": [
+        {
+          "start": 0.25,
+          "end": 7.65,
+          "speaker": "BAHRAM_BANANA",
+          "text": "صبر کن داداش بنشینم! پول زیادی پای این بسته چیپس دادم، نمی‌ریزمش دور!"
+        }
+      ],
+      "beat_ids": [
+        "beat_05"
+      ],
+      "file": "clip_05.mp4",
+      "expected_speakers": [
+        "BAHRAM_BANANA"
+      ]
+    },
+    {
+      "id": "clip_06",
+      "source": "clip_06.mp4",
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_06.jpg",
+      "source_span": [
+        69.2,
+        75.88
+      ],
+      "shot_type": "dialogue",
+      "speaker": "BAHRAM_BANANA",
+      "trim_in": 0.0,
+      "trim_out": 7.89,
+      "require_visual_qa": false,
+      "story_beat": "مقابل در شیشه‌ای سالن زیبایی، بهرام موز برگه آزمایش دی‌ان‌ای را می‌خواند و با خنده می‌گوید بچه‌ها صددرصد مال خودت هستند و نازنین برای خرید هدیه سالگردتان در سالن کار می‌کرده!",
+      "speech_text": "سُهْرابْ، بَچّه‌ها صَدْدَرْصَدْ مالِ خُودِتَنْ! نازَنینْ اینْجا کارْ می‌کَرْدِه تا کادویِ سالْگَرْدِتونْ رو بَخَرِه!",
+      "generation_prompt": "[LD2_C06] Stylized 3D CGI cartoon animation matching the exact 3D non-human fruit characters and outfits in the reference image, static medium two-shot outside the glowing glass doors of the beauty salon keeping both characters in frame. On the right, the 3D tall bright-yellow banana-headed friend holds the open white report sheet and his blue chip bag with a big grin, speaking in a joyful baritone male voice in native Persian (Farsi) with clear natural articulation and lip-sync while the 3D crimson-red apple-headed husband on the left smiles with relief: «سُهْرابْ، بَچّه‌ها صَدْدَرْصَدْ مالِ خُودِتَنْ! نازَنینْ اینْجا کارْ می‌کَرْدِه تا کادویِ سالْگَرْدِتونْ رو بَخَرِه!» Warm cheerful chime, zero background music, no on-screen text or subtitles.",
+      "overlays": [],
+      "subtitles": [
+        {
+          "start": 0.25,
+          "end": 7.65,
+          "speaker": "BAHRAM_BANANA",
+          "text": "سهراب، بچه‌ها صددرصد مال خودتن! نازنین اینجا کار می‌کرده تا کادوی سالگردتون رو بخره!"
+        }
+      ],
+      "beat_ids": [
+        "beat_06"
+      ],
+      "file": "clip_06.mp4",
+      "expected_speakers": [
+        "BAHRAM_BANANA"
+      ]
+    }
+  ],
+  "generation_settings": {
+    "model": "Veo 3.1 - Fast",
+    "duration_sec": 8,
+    "aspect": "9:16",
+    "outputs": 1,
+    "video_type": "Ingredients"
+  },
+  "story_plan": {
+    "summary": "سهراب از شدت استرس تا صبح بیدار می‌ماند تا اینکه پاکت محرمانه آزمایش دی‌ان‌ای می‌رسد و هم‌زمان نازنین با لباس مجلسی قرمز بیرون می‌رود؛ سهراب و بهرام موز با موتورسیکلت او را تا سالن زیبایی تعقیب می‌کنند و حقیقت باورنکردنی پاکت فاش می‌شود!",
+    "ending": "مقابل در شیشه‌ای سالن زیبایی، بهرام موز برگه آزمایش دی‌ان‌ای را می‌خواند و با خنده می‌گوید بچه‌ها صددرصد مال خودت هستند و نازنین برای خرید هدیه سالگردتان در سالن کار می‌کرده!",
+    "required_beats": [
+      "beat_01",
+      "beat_02",
+      "beat_03",
+      "beat_04",
+      "beat_05",
+      "beat_06"
+    ]
+  },
+  "video": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 24,
+    "crf": 18,
+    "preset": "fast",
+    "scale_mode": "fill"
+  },
+  "audio": {
+    "loudnorm": "loudnorm=I=-14:TP=-1.5:LRA=11",
+    "sample_rate": 48000,
+    "channels": 2,
+    "bitrate": "192k"
+  },
+  "speech": {
+    "speech_safe": "auto_expand",
+    "threshold_dbfs": -38,
+    "pre_handle": 0.2,
+    "post_handle": 0.35,
+    "splice_crossfade": 0.02
+  },
+  "subtitle_style": {
+    "time_base": "trim_local",
+    "y_ratio": 0.84,
+    "font_size": 27,
+    "min_font_size": 16,
+    "max_text_margin": 84,
+    "max_lines": 2
+  },
+  "outputs": {
+    "per_clip_location": "both",
+    "base_mode": "timeline",
+    "cta_burn_subtitles": true,
+    "cta_loudnorm": true,
+    "publish_caption_fa": "قسمت آخر: جواب آزمایش دی‌ان‌ای و تعقیب تا سالن زیبایی!"
+  },
+  "visual": {
+    "keyframe_threshold": 65,
+    "jump_threshold": 38,
+    "contamination_margin": 1
+  },
+  "visual_gate": {
+    "keyframe_threshold": 65,
+    "jump_threshold": 38,
+    "contamination_margin": 1
+  }
+}
