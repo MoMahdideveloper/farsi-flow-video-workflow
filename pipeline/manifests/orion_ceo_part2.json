@@ -1,0 +1,450 @@
+{
+  "_comment": "Part2_OrionCeo - 100% Google Flow native Farsi voice with full اعراب‌گذاری and 0.6s physical lead-in.",
+  "schema_version": 1,
+  "speech_review_note": "Full Persian vowel diacritics (اعراب‌گذاری کامل) and 0.6s physical lead-in in Google Flow prompt for 100% accurate native pronunciation.",
+  "episode_id": "Part2_OrionCeo",
+  "title_fa": "قسمت دوم: ربودن نامزد مدیرعامل اوریون و خشم سهراب!",
+  "title_en": "Orion CEO Part 2",
+  "source_video": "${SRC}\\47_2026-10-03_DeA83AjKY_6.mp4",
+  "source_start_offset": 42.8,
+  "story_summary_fa": "کامران به بهرام و افرادش دستور می‌دهد نازنین نامزد سهراب را بدزدند، اما سهراب قسم می‌خورد که تک‌تک آن‌ها تاوان سنگینی پس بدهند!",
+  "fallback_to_source_on_visual_fail": false,
+  "tight_speech_trim": true,
+  "variables": {
+    "BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series26-orion-ceo-farsi",
+    "S2_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi",
+    "CHEF_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\ugly-face-chef-farsi",
+    "SRC": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\straw.berryjammin"
+  },
+  "clips_dir": "${BASE}\\part2\\flow_clips",
+  "out_dir": "${BASE}\\05_final_masters\\part2",
+  "font_path": "${CHEF_BASE}\\03_farsi_audio_tts\\Vazirmatn-Bold.ttf",
+  "cta_video": "${S2_BASE}\\part1\\flow_clips\\cta_kelidbox_s2.mp4",
+  "cta_speaker": "SOHRAB",
+  "cta_subtitles": [
+    {
+      "start": 0.15,
+      "end": 3.55,
+      "text": "برای دیدن قسمت بعدی این داستان همین الان پیج رو فالو کن!"
+    },
+    {
+      "start": 3.6,
+      "end": 7.55,
+      "text": "راستی، کل این انیمیشن با اکانت‌های هوش مصنوعی سایت کلیدباکس ساخته شده!"
+    }
+  ],
+  "character_references": [
+    "${BASE}\\00_character_sheet\\CHARACTER_SHEET.png",
+    "${BASE}\\01_story_and_manifests\\FLOW_SHEET_01_SOHRAB.jpg",
+    "${BASE}\\01_story_and_manifests\\FLOW_SHEET_02_KAMRAN.jpg",
+    "${BASE}\\01_story_and_manifests\\FLOW_SHEET_03_JAMSHID.jpg"
+  ],
+  "location_references": [
+    "${BASE}\\01_story_and_manifests\\FLOW_LOC_01_LIMO.jpg",
+    "${BASE}\\01_story_and_manifests\\FLOW_LOC_02_MANSION.jpg"
+  ],
+  "speakers": {
+    "JAMSHID": [
+      255,
+      230,
+      150
+    ],
+    "KAMRAN": [
+      255,
+      158,
+      100
+    ],
+    "SOHRAB": [
+      125,
+      207,
+      255
+    ],
+    "POOYA": [
+      216,
+      166,
+      255
+    ],
+    "BAHRAM": [
+      255,
+      117,
+      127
+    ],
+    "NAZANIN": [
+      255,
+      179,
+      217
+    ],
+    "BADGE": [
+      255,
+      235,
+      140
+    ]
+  },
+  "voices": {
+    "JAMSHID": {
+      "voice": "Fenrir",
+      "source": "google_flow_native",
+      "name_fa": "JAMSHID",
+      "color": [
+        255,
+        230,
+        150
+      ],
+      "hex": "#FFE696",
+      "role": "Aristocratic Pearl-White Garlic Elder Billionaire"
+    },
+    "KAMRAN": {
+      "voice": "Puck",
+      "source": "google_flow_native",
+      "name_fa": "KAMRAN",
+      "color": [
+        255,
+        158,
+        100
+      ],
+      "hex": "#FF9E64",
+      "role": "Arrogant Golden-Bronze Pineapple Con-Artist"
+    },
+    "SOHRAB": {
+      "voice": "Charon",
+      "source": "google_flow_native",
+      "name_fa": "SOHRAB",
+      "color": [
+        125,
+        207,
+        255
+      ],
+      "hex": "#7DCFFF",
+      "role": "Disguised Crimson Pomegranate Orion CEO"
+    },
+    "POOYA": {
+      "voice": "Puck",
+      "source": "google_flow_native",
+      "name_fa": "POOYA",
+      "color": [
+        216,
+        166,
+        255
+      ],
+      "hex": "#D8A6FF",
+      "role": "Alert Purple Grape Younger Brother"
+    },
+    "BAHRAM": {
+      "voice": "Charon",
+      "source": "google_flow_native",
+      "name_fa": "BAHRAM",
+      "color": [
+        255,
+        117,
+        127
+      ],
+      "hex": "#FF757F",
+      "role": "Gunmetal Spiked Durian Syndicate Enforcer"
+    },
+    "NAZANIN": {
+      "voice": "Aoede",
+      "source": "google_flow_native",
+      "name_fa": "NAZANIN",
+      "color": [
+        255,
+        179,
+        217
+      ],
+      "hex": "#FFB3D9",
+      "role": "Rose-Pink Peach Young Woman & Sohrab's Beloved"
+    },
+    "BADGE": {
+      "name_fa": "BADGE",
+      "color": [
+        255,
+        235,
+        140
+      ],
+      "source": "google_flow_native"
+    }
+  },
+  "clips": [
+    {
+      "id": "clip_01",
+      "source": "clip_01.mp4",
+      "file": "clip_01.mp4",
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_01.jpg",
+      "speaker": "POOYA",
+      "expected_speakers": [
+        "POOYA"
+      ],
+      "source_span": [
+        42.8,
+        50.5
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.85,
+      "generation_duration_sec": 8,
+      "story_beat_fa": "پویا انگور بنفش پشت شمشادهای باغ عمارت نقشه خطرناک کامران برای ربودن خواهرش را می‌شنود.",
+      "speech_text": "می‌دونِسْتَمْ! بِه جونِ مادَرَمْ اینْ کامْرانْ دارِه یِه نَقْشِه خَطَرْناکْ واسِمونْ می‌کِشِه!",
+      "generation_prompt": "[OC2_C01] [V2] 3D Pixar-style animated medium close-up behind a glowing fairy-lit garden hedge outside the mansion at night: alert Pooya Grape (violet-purple grape head, golden-blonde braided stem dreads, charcoal hoodie, silver chain) first parts the leaves silently for 0.6 seconds in shock, then speaks urgently in native Iranian Persian (Farsi) with an energetic young male voice: «می‌دونِسْتَمْ! بِه جونِ مادَرَمْ اینْ کامْرانْ دارِه یِه نَقْشِه خَطَرْناکْ واسِمونْ می‌کِشِه!» Single speaker only, zero background chatter. Zero text or watermarks.",
+      "subtitles": [
+        {
+          "start": 0.15,
+          "end": 7.65,
+          "text": "می‌دونستم! به جون مادرم این کامران داره یه نقشه خطرناک واسمون می‌کشه!",
+          "speaker": "POOYA"
+        }
+      ],
+      "shot_type": "dialogue",
+      "require_visual_qa": false,
+      "story_beat": "پویا انگور بنفش پشت شمشادهای باغ عمارت نقشه خطرناک کامران برای ربودن خواهرش را می‌شنود.",
+      "beat_ids": [
+        "beat_01"
+      ],
+      "overlays": [
+        {
+          "start": 0.1,
+          "end": 3.4,
+          "text": "ربودن نامزد مدیرعامل اوریون! 🚘⚡",
+          "speaker": "BADGE",
+          "y": 135,
+          "font_size": 21,
+          "box_alpha": 200
+        }
+      ]
+    },
+    {
+      "id": "clip_02",
+      "source": "clip_02.mp4",
+      "file": "clip_02.mp4",
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_02.jpg",
+      "speaker": "POOYA",
+      "expected_speakers": [
+        "POOYA"
+      ],
+      "source_span": [
+        50.5,
+        61.5
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.85,
+      "generation_duration_sec": 8,
+      "story_beat_fa": "پویا سراسیمه به پدرش منوچهر هشدار می‌دهد که ماشین‌های سیاه از طرف کامران برای دزدیدن خواهرش آمده‌اند.",
+      "speech_text": "بابا ماشینْ‌هایِ سِیاهْ اومَدَنْ! کامْرانْ فِرِسْتادَتِشونْ تا آبْجی رو بِدُزْدَنْ!",
+      "generation_prompt": "[OC2_C02] [V2] 3D Pixar-style animated medium two-shot on the rainy mansion driveway with black SUV headlights behind them: urgent Pooya Grape (violet-purple grape head, blonde stem dreads, charcoal hoodie) first turns to his father silently for 0.6 seconds, then speaks clearly in native Iranian Persian (Farsi) with an urgent young male voice while Manouchehr Blueberry (cobalt-blue blueberry head, brown walrus mustache, blue-and-yellow argyle sweater vest) listens silently with closed lips without speaking: «بابا ماشینْ‌هایِ سِیاهْ اومَدَنْ! کامْرانْ فِرِسْتادَتِشونْ تا آبْجی رو بِدُزْدَنْ!» Single speaker only, zero reply from listener. Zero text or watermarks.",
+      "subtitles": [
+        {
+          "start": 0.15,
+          "end": 7.65,
+          "text": "بابا ماشین‌های سیاه اومدن! کامران فرستادتشون تا آبجی رو بدزدن!",
+          "speaker": "POOYA"
+        }
+      ],
+      "shot_type": "dialogue",
+      "require_visual_qa": false,
+      "story_beat": "پویا سراسیمه به پدرش منوچهر هشدار می‌دهد که ماشین‌های سیاه از طرف کامران برای دزدیدن خواهرش آمده‌اند.",
+      "beat_ids": [
+        "beat_02"
+      ]
+    },
+    {
+      "id": "clip_03",
+      "source": "clip_03.mp4",
+      "file": "clip_03.mp4",
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_03.jpg",
+      "speaker": "BAHRAM",
+      "expected_speakers": [
+        "BAHRAM"
+      ],
+      "source_span": [
+        61.5,
+        65.5
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.85,
+      "generation_duration_sec": 8,
+      "story_beat_fa": "بهرام دوریان آهنی با افرادش روبه‌روی کامران می‌ایستد و می‌پرسد اول کار کدامشان را یکسره کنند.",
+      "speech_text": "خُبْ رَئیسْ، دَسْتورْ بِدِه اَوَّلْ کارِ کُدومْ‌شونْ رو یِکْسَرِه کُنیمْ؟ فَقَطْ اِشارِه کُنْ!",
+      "generation_prompt": "[OC2_C03] 3D Pixar-style animated medium two-shot on the illuminated mansion steps at night: hulking Bahram Spiked-Durian (dark gunmetal-grey spiked durian head, black sunglasses, black goatee, black suit) first steps forward silently for 0.6 seconds, then speaks in native Iranian Persian (Farsi) with a deep gravelly menacing male voice while Kamran Pineapple listens silently with closed lips without speaking: «خُبْ رَئیسْ، دَسْتورْ بِدِه اَوَّلْ کارِ کُدومْ‌شونْ رو یِکْسَرِه کُنیمْ؟ فَقَطْ اِشارِه کُنْ!» Single speaker only, zero reply from listener. Zero text or watermarks.",
+      "subtitles": [
+        {
+          "start": 0.15,
+          "end": 7.65,
+          "text": "خب رئیس، دستور بده اول کار کدوم‌شون رو یکسره کنیم؟ فقط اشاره کن!",
+          "speaker": "BAHRAM"
+        }
+      ],
+      "shot_type": "dialogue",
+      "require_visual_qa": false,
+      "story_beat": "بهرام دوریان آهنی با افرادش روبه‌روی کامران می‌ایستد و می‌پرسد اول کار کدامشان را یکسره کنند.",
+      "beat_ids": [
+        "beat_03"
+      ]
+    },
+    {
+      "id": "clip_04",
+      "source": "clip_04.mp4",
+      "file": "clip_04.mp4",
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_04.jpg",
+      "speaker": "KAMRAN",
+      "expected_speakers": [
+        "KAMRAN"
+      ],
+      "source_span": [
+        65.5,
+        73.5
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.85,
+      "generation_duration_sec": 8,
+      "story_beat_fa": "کامران با لبخند خبیثانه به بهرام دستور می‌دهد نامزد سهراب را بدزدد تا سهراب با پای خودش به تله بیاید.",
+      "speech_text": "نامْزَدِشْ رو بِدُزْدْ! اونْ شَیّادْ با پایِ خُودِشْ می‌آدْ، بَعْدْ کارِشونْ رو بِسازیدْ!",
+      "generation_prompt": "[OC2_C04] 3D Pixar-style animated medium two-shot on the mansion terrace at night: scheming Kamran Pineapple (golden-bronze pineapple head, burgundy velvet blazer, gold chain) first smirks and raises his hand silently for 0.6 seconds, then speaks in native Iranian Persian (Farsi) with a malicious male voice while Bahram Spiked-Durian (gunmetal spiked durian head, black sunglasses, black suit) listens silently with closed lips without speaking: «نامْزَدِشْ رو بِدُزْدْ! اونْ شَیّادْ با پایِ خُودِشْ می‌آدْ، بَعْدْ کارِشونْ رو بِسازیدْ!» Single speaker only, zero reply from listener. Zero text or watermarks.",
+      "subtitles": [
+        {
+          "start": 0.15,
+          "end": 7.65,
+          "text": "نامزدش رو بدزد! اون شیاد با پای خودش می‌آد، بعد کارشون رو بسازید!",
+          "speaker": "KAMRAN"
+        }
+      ],
+      "shot_type": "dialogue",
+      "require_visual_qa": false,
+      "story_beat": "کامران با لبخند خبیثانه به بهرام دستور می‌دهد نامزد سهراب را بدزدد تا سهراب با پای خودش به تله بیاید.",
+      "beat_ids": [
+        "beat_04"
+      ]
+    },
+    {
+      "id": "clip_05",
+      "source": "clip_05.mp4",
+      "file": "clip_05.mp4",
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_05.jpg",
+      "speaker": "NAZANIN",
+      "expected_speakers": [
+        "NAZANIN"
+      ],
+      "source_span": [
+        73.5,
+        80.5
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.85,
+      "generation_duration_sec": 8,
+      "story_beat_fa": "نازنین هلوی صورتی در حالی که بهرام بازویش را گرفته تا سوار ماشین سیاه کند، با شجاعت فریاد می‌زند که سهراب حسابشان را می‌رسد.",
+      "speech_text": "وِلَمْ کُنیدْ نامَرْدا! سُهْرابْ تَکْ‌تَکِ شُما رو پِیدا می‌کُنِه وُ حِسابِتونْ رو می‌رِسِه!",
+      "generation_prompt": "[OC2_C05] 3D Pixar-style animated medium two-shot beside an open black luxury SUV door in the rain at night: tearful Nazanin Peach (glossy rose-pink peach head, green leaf crown ornament, cream-and-lilac coat) first pulls back her arm silently for 0.6 seconds, then cries out in native Iranian Persian (Farsi) with a fierce emotional female voice while Bahram Spiked-Durian (gunmetal spiked durian head, black sunglasses) holds her arm listening silently with closed lips without speaking: «وِلَمْ کُنیدْ نامَرْدا! سُهْرابْ تَکْ‌تَکِ شُما رو پِیدا می‌کُنِه وُ حِسابِتونْ رو می‌رِسِه!» Single speaker only, zero reply from listener. Zero text or watermarks.",
+      "subtitles": [
+        {
+          "start": 0.15,
+          "end": 7.65,
+          "text": "ولم کنید نامردا! سهراب تک‌تک شما رو پیدا می‌کنه و حسابتون رو می‌رسه!",
+          "speaker": "NAZANIN"
+        }
+      ],
+      "shot_type": "dialogue",
+      "require_visual_qa": false,
+      "story_beat": "نازنین هلوی صورتی در حالی که بهرام بازویش را گرفته تا سوار ماشین سیاه کند، با شجاعت فریاد می‌زند که سهراب حسابشان را می‌رسد.",
+      "beat_ids": [
+        "beat_05"
+      ]
+    },
+    {
+      "id": "clip_06",
+      "source": "clip_06.mp4",
+      "file": "clip_06.mp4",
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_06.jpg",
+      "speaker": "SOHRAB",
+      "expected_speakers": [
+        "SOHRAB"
+      ],
+      "source_span": [
+        80.5,
+        85.63
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.85,
+      "generation_duration_sec": 8,
+      "story_beat_fa": "سهراب مدیرعامل اوریون در باران مشت‌هایش را گره می‌کند و قسم می‌خورد که کامران و آدم‌ربایان تاوان سنگینی خواهند داد.",
+      "speech_text": "نازَنینْ رو دُزْدیدَنْ؟ اینْ کارِ کامْرانِه؛ بِه خُدا تاوانِ سَنْگینی می‌دَنْ!",
+      "generation_prompt": "[OC2_C06] [V2] 3D Pixar-style animated dramatic medium close-up on the rain-slicked mansion driveway as black SUV taillights streak away: furious Sohrab Pomegranate (deep-crimson pomegranate head, glowing fierce eyes, white beard, charcoal wool coat, leather-gloved fists clenched) first clenches his fists silently for 0.6 seconds, then speaks fiercely in native Iranian Persian (Farsi) with a powerful angry baritone voice: «نازَنینْ رو دُزْدیدَنْ؟ اینْ کارِ کامْرانِه؛ بِه خُدا تاوانِ سَنْگینی می‌دَنْ!» Single speaker only, zero background chatter. Zero text or watermarks.",
+      "subtitles": [
+        {
+          "start": 0.15,
+          "end": 7.65,
+          "text": "نازنین رو دزدیدن؟ این کار کامرانه؛ به خدا تاوان سنگینی می‌دن!",
+          "speaker": "SOHRAB"
+        }
+      ],
+      "shot_type": "dialogue",
+      "require_visual_qa": false,
+      "story_beat": "سهراب مدیرعامل اوریون در باران مشت‌هایش را گره می‌کند و قسم می‌خورد که کامران و آدم‌ربایان تاوان سنگینی خواهند داد.",
+      "beat_ids": [
+        "beat_06"
+      ]
+    }
+  ],
+  "video": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 24,
+    "crf": 18,
+    "preset": "fast",
+    "scale_mode": "fill"
+  },
+  "audio": {
+    "loudnorm": "loudnorm=I=-14:TP=-1.5:LRA=11",
+    "sample_rate": 48000,
+    "channels": 2,
+    "bitrate": "192k"
+  },
+  "speech": {
+    "speech_safe": "auto_expand",
+    "threshold_dbfs": -38,
+    "pre_handle": 0.2,
+    "post_handle": 0.35,
+    "splice_crossfade": 0.02
+  },
+  "subtitle_style": {
+    "time_base": "trim_local",
+    "y_ratio": 0.84,
+    "font_size": 27,
+    "min_font_size": 16,
+    "max_text_margin": 84,
+    "max_lines": 2
+  },
+  "outputs": {
+    "per_clip_location": "both",
+    "base_mode": "timeline",
+    "cta_burn_subtitles": true,
+    "cta_loudnorm": true,
+    "publish_caption_fa": "قسمت دوم: ربودن نامزد مدیرعامل اوریون و خشم سهراب!"
+  },
+  "content_edits": [],
+  "story_plan": {
+    "summary": "کامران به بهرام و افرادش دستور می‌دهد نازنین نامزد سهراب را بدزدند، اما سهراب قسم می‌خورد که تک‌تک آن‌ها تاوان سنگینی پس بدهند!",
+    "ending": "Orion CEO Part 2",
+    "required_beats": [
+      "beat_01",
+      "beat_02",
+      "beat_03",
+      "beat_04",
+      "beat_05",
+      "beat_06"
+    ]
+  },
+  "visual": {
+    "keyframe_threshold": 65,
+    "jump_threshold": 38,
+    "contamination_margin": 15
+  },
+  "visual_gate": {
+    "keyframe_threshold": 65,
+    "jump_threshold": 38,
+    "contamination_margin": 15
+  },
+  "generation_settings": {
+    "model": "Veo 3.1 - Fast",
+    "duration_sec": 8,
+    "aspect": "9:16",
+    "outputs": 1,
+    "resolution": "720p",
+    "video_type": "Ingredients"
+  }
+}

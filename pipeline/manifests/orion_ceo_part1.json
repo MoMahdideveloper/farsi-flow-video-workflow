@@ -1,0 +1,450 @@
+{
+  "_comment": "Part1_OrionCeo - 100% Google Flow native Farsi voice with full اعراب‌گذاری and 0.6s physical lead-in.",
+  "schema_version": 1,
+  "speech_review_note": "Full Persian vowel diacritics (اعراب‌گذاری کامل) and 0.6s physical lead-in in Google Flow prompt for 100% accurate native pronunciation.",
+  "episode_id": "Part1_OrionCeo",
+  "title_fa": "قسمت اول: مدیرعامل مخفی اوریون و امتحان میلیاردر ناشناس!",
+  "title_en": "Orion CEO Part 1",
+  "source_video": "${SRC}\\47_2026-10-03_DeA83AjKY_6.mp4",
+  "source_start_offset": 0.0,
+  "story_summary_fa": "سهراب مدیرعامل مخفی اوریون به صورت ناشناس در برابر کامران مغرور می‌ایستد و کامران بی‌خبر از هویت واقعی او، وی را به آمدن مدیرعامل اوریون تهدید می‌کند!",
+  "fallback_to_source_on_visual_fail": false,
+  "tight_speech_trim": true,
+  "variables": {
+    "BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series26-orion-ceo-farsi",
+    "S2_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi",
+    "CHEF_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\ugly-face-chef-farsi",
+    "SRC": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\straw.berryjammin"
+  },
+  "clips_dir": "${BASE}\\part1\\flow_clips",
+  "out_dir": "${BASE}\\05_final_masters\\part1",
+  "font_path": "${CHEF_BASE}\\03_farsi_audio_tts\\Vazirmatn-Bold.ttf",
+  "cta_video": "${S2_BASE}\\part1\\flow_clips\\cta_kelidbox_s2.mp4",
+  "cta_speaker": "SOHRAB",
+  "cta_subtitles": [
+    {
+      "start": 0.15,
+      "end": 3.55,
+      "text": "برای دیدن قسمت بعدی این داستان همین الان پیج رو فالو کن!"
+    },
+    {
+      "start": 3.6,
+      "end": 7.55,
+      "text": "راستی، کل این انیمیشن با اکانت‌های هوش مصنوعی سایت کلیدباکس ساخته شده!"
+    }
+  ],
+  "character_references": [
+    "${BASE}\\00_character_sheet\\CHARACTER_SHEET.png",
+    "${BASE}\\01_story_and_manifests\\FLOW_SHEET_01_SOHRAB.jpg",
+    "${BASE}\\01_story_and_manifests\\FLOW_SHEET_02_KAMRAN.jpg",
+    "${BASE}\\01_story_and_manifests\\FLOW_SHEET_03_JAMSHID.jpg"
+  ],
+  "location_references": [
+    "${BASE}\\01_story_and_manifests\\FLOW_LOC_01_LIMO.jpg",
+    "${BASE}\\01_story_and_manifests\\FLOW_LOC_02_MANSION.jpg"
+  ],
+  "speakers": {
+    "JAMSHID": [
+      255,
+      230,
+      150
+    ],
+    "KAMRAN": [
+      255,
+      158,
+      100
+    ],
+    "SOHRAB": [
+      125,
+      207,
+      255
+    ],
+    "POOYA": [
+      216,
+      166,
+      255
+    ],
+    "BAHRAM": [
+      255,
+      117,
+      127
+    ],
+    "NAZANIN": [
+      255,
+      179,
+      217
+    ],
+    "BADGE": [
+      255,
+      235,
+      140
+    ]
+  },
+  "voices": {
+    "JAMSHID": {
+      "voice": "Fenrir",
+      "source": "google_flow_native",
+      "name_fa": "JAMSHID",
+      "color": [
+        255,
+        230,
+        150
+      ],
+      "hex": "#FFE696",
+      "role": "Aristocratic Pearl-White Garlic Elder Billionaire"
+    },
+    "KAMRAN": {
+      "voice": "Puck",
+      "source": "google_flow_native",
+      "name_fa": "KAMRAN",
+      "color": [
+        255,
+        158,
+        100
+      ],
+      "hex": "#FF9E64",
+      "role": "Arrogant Golden-Bronze Pineapple Con-Artist"
+    },
+    "SOHRAB": {
+      "voice": "Charon",
+      "source": "google_flow_native",
+      "name_fa": "SOHRAB",
+      "color": [
+        125,
+        207,
+        255
+      ],
+      "hex": "#7DCFFF",
+      "role": "Disguised Crimson Pomegranate Orion CEO"
+    },
+    "POOYA": {
+      "voice": "Puck",
+      "source": "google_flow_native",
+      "name_fa": "POOYA",
+      "color": [
+        216,
+        166,
+        255
+      ],
+      "hex": "#D8A6FF",
+      "role": "Alert Purple Grape Younger Brother"
+    },
+    "BAHRAM": {
+      "voice": "Charon",
+      "source": "google_flow_native",
+      "name_fa": "BAHRAM",
+      "color": [
+        255,
+        117,
+        127
+      ],
+      "hex": "#FF757F",
+      "role": "Gunmetal Spiked Durian Syndicate Enforcer"
+    },
+    "NAZANIN": {
+      "voice": "Aoede",
+      "source": "google_flow_native",
+      "name_fa": "NAZANIN",
+      "color": [
+        255,
+        179,
+        217
+      ],
+      "hex": "#FFB3D9",
+      "role": "Rose-Pink Peach Young Woman & Sohrab's Beloved"
+    },
+    "BADGE": {
+      "name_fa": "BADGE",
+      "color": [
+        255,
+        235,
+        140
+      ],
+      "source": "google_flow_native"
+    }
+  },
+  "clips": [
+    {
+      "id": "clip_01",
+      "source": "clip_01.mp4",
+      "file": "clip_01.mp4",
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_01.jpg",
+      "speaker": "JAMSHID",
+      "expected_speakers": [
+        "JAMSHID"
+      ],
+      "source_span": [
+        0.0,
+        10.5
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.85,
+      "generation_duration_sec": 8,
+      "story_beat_fa": "جمشید خان در لیموزین اشرافی درباره دوست میلیاردرش سهراب که ناشناس به امتحان مردم رفته صحبت می‌کند.",
+      "speech_text": "مَنْ سیصَدْ میلْیارْدْ دارَمْ، وَلی رَفیقَمْ بازْ ناشْناسْ رَفْتِه مَرْدُمْ رو اِمْتِحانْ کُنِه!",
+      "generation_prompt": "[OC1_C01] 3D Pixar-style animated medium shot inside a luxurious walnut-and-leather limousine at night: aristocratic Jamshid Khan (glossy pearl-white garlic-bulb head, round tortoise-shell glasses, white handlebar mustache, cream 3-piece suit with blue silk tie) first takes a 0.6-second silent breath while adjusting his glasses, then speaks in native Iranian Persian (Farsi) with a warm refined elderly male voice: «مَنْ سیصَدْ میلْیارْدْ دارَمْ، وَلی رَفیقَمْ بازْ ناشْناسْ رَفْتِه مَرْدُمْ رو اِمْتِحانْ کُنِه!» Single speaker only, zero background chatter. Zero text or watermarks.",
+      "subtitles": [
+        {
+          "start": 0.15,
+          "end": 7.65,
+          "text": "من سیصد میلیارد دارم، ولی رفیقم باز ناشناس رفته مردم رو امتحان کنه!",
+          "speaker": "JAMSHID"
+        }
+      ],
+      "shot_type": "dialogue",
+      "require_visual_qa": false,
+      "story_beat": "جمشید خان در لیموزین اشرافی درباره دوست میلیاردرش سهراب که ناشناس به امتحان مردم رفته صحبت می‌کند.",
+      "beat_ids": [
+        "beat_01"
+      ],
+      "overlays": [
+        {
+          "start": 0.1,
+          "end": 3.4,
+          "text": "مدیرعامل مخفی اوریون! 💎🔥",
+          "speaker": "BADGE",
+          "y": 135,
+          "font_size": 21,
+          "box_alpha": 200
+        }
+      ]
+    },
+    {
+      "id": "clip_02",
+      "source": "clip_02.mp4",
+      "file": "clip_02.mp4",
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_02.jpg",
+      "speaker": "KAMRAN",
+      "expected_speakers": [
+        "KAMRAN"
+      ],
+      "source_span": [
+        10.5,
+        15.0
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.85,
+      "generation_duration_sec": 8,
+      "story_beat_fa": "کامران آناناس مغرور جلوی عمارت در شب بارانی سهراب را کلاهبردار بی‌پول خطاب می‌کند و تهدیدش می‌کند.",
+      "speech_text": "اینْ آخَرینْ اِشْتِباهِتْ بودْ کُلاهْبَرْدارِ بی‌پولْ؛ دیگِه کارِتْ با مَنْ تَمومِه!",
+      "generation_prompt": "[OC1_C02] 3D Pixar-style animated medium close-up outside a grand illuminated mansion in the rain at night: arrogant Kamran Pineapple (golden-bronze pineapple head, spiky green-bronze crown, burgundy velvet blazer, gold chain) first takes a 0.6-second silent angry step forward, then shouts in native Iranian Persian (Farsi) with a cocky aggressive male voice: «اینْ آخَرینْ اِشْتِباهِتْ بودْ کُلاهْبَرْدارِ بی‌پولْ؛ دیگِه کارِتْ با مَنْ تَمومِه!» Single speaker only, zero background chatter. Zero text or watermarks.",
+      "subtitles": [
+        {
+          "start": 0.15,
+          "end": 7.65,
+          "text": "این آخرین اشتباهت بود کلاهبردار بی‌پول؛ دیگه کارت با من تمومه!",
+          "speaker": "KAMRAN"
+        }
+      ],
+      "shot_type": "dialogue",
+      "require_visual_qa": false,
+      "story_beat": "کامران آناناس مغرور جلوی عمارت در شب بارانی سهراب را کلاهبردار بی‌پول خطاب می‌کند و تهدیدش می‌کند.",
+      "beat_ids": [
+        "beat_02"
+      ]
+    },
+    {
+      "id": "clip_03",
+      "source": "clip_03.mp4",
+      "file": "clip_03.mp4",
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_03.jpg",
+      "speaker": "SOHRAB",
+      "expected_speakers": [
+        "SOHRAB"
+      ],
+      "source_span": [
+        15.0,
+        21.0
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.85,
+      "generation_duration_sec": 8,
+      "story_beat_fa": "سهراب انار سرخ با اقتدار بالای سر کامران که روی زمین خیس زانو زده می‌ایستد و به او هشدار می‌دهد.",
+      "speech_text": "پاشو بِبینَمْ! یِه بارِ دیگِه بِه مَنْ دَسْتْ بِزَنی، تَمامِ زِنْدِگیتْ رو می‌بازی!",
+      "generation_prompt": "[OC1_C03] [V2] 3D Pixar-style animated medium-full two-shot on rain-slicked cobblestones outside the mansion at night: commanding Sohrab Pomegranate (deep-crimson pomegranate head, ruby crown, white beard, charcoal wool overcoat) first pauses silently for 0.6 seconds looking down, then speaks in native Iranian Persian (Farsi) with a deep calm baritone voice while kneeling Kamran Pineapple (anthropomorphic 3D golden-bronze textured pineapple head with spiky green-bronze pineapple crown leaves on top, no human hair, burgundy velvet blazer) listens silently with closed lips without speaking: «پاشو بِبینَمْ! یِه بارِ دیگِه بِه مَنْ دَسْتْ بِزَنی، تَمامِ زِنْدِگیتْ رو می‌بازی!» Single speaker only, zero reply from listener. Zero text or watermarks.",
+      "subtitles": [
+        {
+          "start": 0.15,
+          "end": 7.65,
+          "text": "پاشو ببینم! یه بار دیگه به من دست بزنی، تمام زندگیت رو می‌بازی!",
+          "speaker": "SOHRAB"
+        }
+      ],
+      "shot_type": "dialogue",
+      "require_visual_qa": false,
+      "story_beat": "سهراب انار سرخ با اقتدار بالای سر کامران که روی زمین خیس زانو زده می‌ایستد و به او هشدار می‌دهد.",
+      "beat_ids": [
+        "beat_03"
+      ]
+    },
+    {
+      "id": "clip_04",
+      "source": "clip_04.mp4",
+      "file": "clip_04.mp4",
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_04.jpg",
+      "speaker": "KAMRAN",
+      "expected_speakers": [
+        "KAMRAN"
+      ],
+      "source_span": [
+        21.0,
+        29.0
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.85,
+      "generation_duration_sec": 8,
+      "story_beat_fa": "کامران در حالی که نمی‌داند خود سهراب مدیرعامل اوریون است، او را به آمدن مدیرعامل اصلی اوریون تهدید می‌کند.",
+      "speech_text": "مَنو تَهْدیدْ می‌کُنی؟ صَبْرْ کُنْ مُدیرْعامِلِ اَصْلیِ اورْیونْ بِرِسِه، اونْ‌وَقْتْ کارِتْ تَمومِه!",
+      "generation_prompt": "[OC1_C04] 3D Pixar-style animated medium two-shot on the rainy mansion driveway at night: kneeling Kamran Pineapple (golden-bronze pineapple head, mud-stained burgundy velvet blazer) first raises his hand silently for 0.6 seconds, then speaks in native Iranian Persian (Farsi) with a boasting aggressive male voice while towering Sohrab Pomegranate listens silently with closed lips without speaking: «مَنو تَهْدیدْ می‌کُنی؟ صَبْرْ کُنْ مُدیرْعامِلِ اَصْلیِ اورْیونْ بِرِسِه، اونْ‌وَقْتْ کارِتْ تَمومِه!» Single speaker only, zero reply from listener. Zero text or watermarks.",
+      "subtitles": [
+        {
+          "start": 0.15,
+          "end": 7.65,
+          "text": "منو تهدید می‌کنی؟ صبر کن مدیرعامل اصلی اوریون برسه، اون‌وقت کارت تمومه!",
+          "speaker": "KAMRAN"
+        }
+      ],
+      "shot_type": "dialogue",
+      "require_visual_qa": false,
+      "story_beat": "کامران در حالی که نمی‌داند خود سهراب مدیرعامل اوریون است، او را به آمدن مدیرعامل اصلی اوریون تهدید می‌کند.",
+      "beat_ids": [
+        "beat_04"
+      ]
+    },
+    {
+      "id": "clip_05",
+      "source": "clip_05.mp4",
+      "file": "clip_05.mp4",
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_05.jpg",
+      "speaker": "JAMSHID",
+      "expected_speakers": [
+        "JAMSHID"
+      ],
+      "source_span": [
+        29.0,
+        35.5
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.85,
+      "generation_duration_sec": 8,
+      "story_beat_fa": "جمشید خان در لیموزین احساس خطر می‌کند و می‌گوید باید سریع به سهراب برسند.",
+      "speech_text": "سُهْرابْ قُدْرَتِشْ رو پِنْهانْ می‌کُنِه، وَلی اینْ بارْ تو خَطَرِ بُزُرْگیِه؛ بایَدْ سَریعْ بِرِسیمْ!",
+      "generation_prompt": "[OC1_C05] 3D Pixar-style animated medium shot inside the moving luxury limousine at night: alarmed Jamshid Khan (pearl-white garlic-bulb head, round glasses, white mustache, cream suit, hands resting on a black briefcase) first takes a 0.6-second silent worried breath, then speaks in native Iranian Persian (Farsi) with an urgent elderly male voice: «سُهْرابْ قُدْرَتِشْ رو پِنْهانْ می‌کُنِه، وَلی اینْ بارْ تو خَطَرِ بُزُرْگیِه؛ بایَدْ سَریعْ بِرِسیمْ!» Single speaker only, zero background chatter. Zero text or watermarks.",
+      "subtitles": [
+        {
+          "start": 0.15,
+          "end": 7.65,
+          "text": "سهراب قدرتش رو پنهان می‌کنه، ولی این بار تو خطر بزرگیه؛ باید سریع برسیم!",
+          "speaker": "JAMSHID"
+        }
+      ],
+      "shot_type": "dialogue",
+      "require_visual_qa": false,
+      "story_beat": "جمشید خان در لیموزین احساس خطر می‌کند و می‌گوید باید سریع به سهراب برسند.",
+      "beat_ids": [
+        "beat_05"
+      ]
+    },
+    {
+      "id": "clip_06",
+      "source": "clip_06.mp4",
+      "file": "clip_06.mp4",
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_06.jpg",
+      "speaker": "JAMSHID",
+      "expected_speakers": [
+        "JAMSHID"
+      ],
+      "source_span": [
+        35.5,
+        42.8
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.85,
+      "generation_duration_sec": 8,
+      "story_beat_fa": "جمشید خان به راننده‌اش آقا غلام دستور می‌دهد پایش را روی گاز بگذارد تا قبل از فاجعه برسند.",
+      "speech_text": "گازِشْ رو بِگیرْ غُلامْ! بایَدْ بِرِسیمْ قَبْلْ اینْکِه اونْ طَمَعْ‌کارا هَمِه‌چیزو خَرابْ کُنَنْ!",
+      "generation_prompt": "[OC1_C06] 3D Pixar-style animated medium two-shot inside the luxury limousine at night: Jamshid Khan (pearl-white garlic-bulb head, round glasses, cream suit) first leans forward silently for 0.6 seconds pointing ahead, then commands in native Iranian Persian (Farsi) with an urgent authoritative male voice while chauffeur Gholam Peanut (golden-brown peanut head, black chauffeur cap, white gloves on steering wheel) listens silently with closed lips without speaking: «گازِشْ رو بِگیرْ غُلامْ! بایَدْ بِرِسیمْ قَبْلْ اینْکِه اونْ طَمَعْ‌کارا هَمِه‌چیزو خَرابْ کُنَنْ!» Single speaker only, zero reply from listener. Zero text or watermarks.",
+      "subtitles": [
+        {
+          "start": 0.15,
+          "end": 7.65,
+          "text": "گازش رو بگیر غلام! باید برسیم قبل اینکه اون طمع‌کارا همه‌چیزو خراب کنن!",
+          "speaker": "JAMSHID"
+        }
+      ],
+      "shot_type": "dialogue",
+      "require_visual_qa": false,
+      "story_beat": "جمشید خان به راننده‌اش آقا غلام دستور می‌دهد پایش را روی گاز بگذارد تا قبل از فاجعه برسند.",
+      "beat_ids": [
+        "beat_06"
+      ]
+    }
+  ],
+  "video": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 24,
+    "crf": 18,
+    "preset": "fast",
+    "scale_mode": "fill"
+  },
+  "audio": {
+    "loudnorm": "loudnorm=I=-14:TP=-1.5:LRA=11",
+    "sample_rate": 48000,
+    "channels": 2,
+    "bitrate": "192k"
+  },
+  "speech": {
+    "speech_safe": "auto_expand",
+    "threshold_dbfs": -38,
+    "pre_handle": 0.2,
+    "post_handle": 0.35,
+    "splice_crossfade": 0.02
+  },
+  "subtitle_style": {
+    "time_base": "trim_local",
+    "y_ratio": 0.84,
+    "font_size": 27,
+    "min_font_size": 16,
+    "max_text_margin": 84,
+    "max_lines": 2
+  },
+  "outputs": {
+    "per_clip_location": "both",
+    "base_mode": "timeline",
+    "cta_burn_subtitles": true,
+    "cta_loudnorm": true,
+    "publish_caption_fa": "قسمت اول: مدیرعامل مخفی اوریون و امتحان میلیاردر ناشناس!"
+  },
+  "content_edits": [],
+  "story_plan": {
+    "summary": "سهراب مدیرعامل مخفی اوریون به صورت ناشناس در برابر کامران مغرور می‌ایستد و کامران بی‌خبر از هویت واقعی او، وی را به آمدن مدیرعامل اوریون تهدید می‌کند!",
+    "ending": "Orion CEO Part 1",
+    "required_beats": [
+      "beat_01",
+      "beat_02",
+      "beat_03",
+      "beat_04",
+      "beat_05",
+      "beat_06"
+    ]
+  },
+  "visual": {
+    "keyframe_threshold": 65,
+    "jump_threshold": 38,
+    "contamination_margin": 15
+  },
+  "visual_gate": {
+    "keyframe_threshold": 65,
+    "jump_threshold": 38,
+    "contamination_margin": 15
+  },
+  "generation_settings": {
+    "model": "Veo 3.1 - Fast",
+    "duration_sec": 8,
+    "aspect": "9:16",
+    "outputs": 1,
+    "resolution": "720p",
+    "video_type": "Ingredients"
+  }
+}
