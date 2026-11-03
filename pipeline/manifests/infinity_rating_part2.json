@@ -1,0 +1,473 @@
+{
+  "_comment": "Part2_InfinityRating - 100% Google Flow native Farsi voice with full اعراب‌گذاری and 0.6s physical lead-in.",
+  "schema_version": 1,
+  "speech_review_note": "Full Persian vowel diacritics (اعراب‌گذاری کامل) and 0.6s physical lead-in in Google Flow prompt for 100% accurate native pronunciation.",
+  "episode_id": "Part2_InfinityRating",
+  "title_fa": "قسمت پایانی: پرونده مخفی روز تولد نورا و راز هجده ساله مادر!",
+  "title_en": "Infinity Rating Part 2",
+  "source_video": "${SRC}\\01_2026-10-25_De55xPtqbmp.mp4",
+  "source_start_offset": 40.6,
+  "story_summary_fa": "نورا عکس دکتر روز تولدش را پیدا می‌کند و دکتر پرویز در بیمارستان پرونده مخفی مادرش را به او نشان می‌دهد!",
+  "fallback_to_source_on_visual_fail": false,
+  "tight_speech_trim": true,
+  "variables": {
+    "BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series28-infinity-rating-farsi",
+    "S2_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi",
+    "CHEF_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\ugly-face-chef-farsi",
+    "SRC": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\straw.berryjammin"
+  },
+  "clips_dir": "${BASE}\\part2\\flow_clips",
+  "out_dir": "${BASE}\\05_final_masters\\part2",
+  "font_path": "${CHEF_BASE}\\03_farsi_audio_tts\\Vazirmatn-Bold.ttf",
+  "cta_video": "${S2_BASE}\\part1\\flow_clips\\cta_kelidbox_s2.mp4",
+  "cta_speaker": "NORA",
+  "cta_subtitles": [
+    {
+      "start": 0.15,
+      "end": 3.55,
+      "text": "برای دیدن قسمت بعدی این داستان همین الان پیج رو فالو کن!"
+    },
+    {
+      "start": 3.6,
+      "end": 7.55,
+      "text": "راستی، کل این انیمیشن با اکانت‌های هوش مصنوعی سایت کلیدباکس ساخته شده!"
+    }
+  ],
+  "character_references": [
+    "${BASE}\\00_character_sheet\\CHARACTER_SHEET.png",
+    "${BASE}\\01_story_and_manifests\\FLOW_SHEET_01_NORA.jpg",
+    "${BASE}\\01_story_and_manifests\\FLOW_SHEET_02_BELLA.jpg",
+    "${BASE}\\01_story_and_manifests\\FLOW_SHEET_03_MARJAN.jpg"
+  ],
+  "location_references": [
+    "${BASE}\\01_story_and_manifests\\FLOW_LOC_01_CLINIC.jpg",
+    "${BASE}\\01_story_and_manifests\\FLOW_LOC_02_HOSPITAL.jpg"
+  ],
+  "speakers": {
+    "NORA": [
+      130,
+      255,
+      220
+    ],
+    "BELLA": [
+      255,
+      155,
+      195
+    ],
+    "MARJAN": [
+      215,
+      165,
+      255
+    ],
+    "DR_SINA": [
+      170,
+      210,
+      255
+    ],
+    "TARA": [
+      255,
+      210,
+      140
+    ],
+    "RAMIN": [
+      255,
+      225,
+      110
+    ],
+    "DR_PARVIZ": [
+      150,
+      245,
+      190
+    ],
+    "BADGE": [
+      255,
+      235,
+      140
+    ]
+  },
+  "voices": {
+    "NORA": {
+      "voice": "Aoede",
+      "source": "google_flow_native",
+      "name_fa": "NORA",
+      "color": [
+        130,
+        255,
+        220
+      ],
+      "hex": "#82FFDC",
+      "role": "Emerald-Teal Crystal Berry Girl with Infinite Forehead Gem"
+    },
+    "BELLA": {
+      "voice": "Aoede",
+      "source": "google_flow_native",
+      "name_fa": "BELLA",
+      "color": [
+        255,
+        155,
+        195
+      ],
+      "hex": "#FF9BC3",
+      "role": "Rose-Pink Strawberry Cheerleader Sister (10/10)"
+    },
+    "MARJAN": {
+      "voice": "Aoede",
+      "source": "google_flow_native",
+      "name_fa": "MARJAN",
+      "color": [
+        215,
+        165,
+        255
+      ],
+      "hex": "#D7A5FF",
+      "role": "Royal-Purple Plum Mother"
+    },
+    "DR_SINA": {
+      "voice": "Puck",
+      "source": "google_flow_native",
+      "name_fa": "DR_SINA",
+      "color": [
+        170,
+        210,
+        255
+      ],
+      "hex": "#AAD2FF",
+      "role": "Glossy Violet Turnip Clinic Doctor"
+    },
+    "TARA": {
+      "voice": "Aoede",
+      "source": "google_flow_native",
+      "name_fa": "TARA",
+      "color": [
+        255,
+        210,
+        140
+      ],
+      "hex": "#FFD28C",
+      "role": "Pastel-Peach Fruit School Gossip Girl"
+    },
+    "RAMIN": {
+      "voice": "Puck",
+      "source": "google_flow_native",
+      "name_fa": "RAMIN",
+      "color": [
+        255,
+        225,
+        110
+      ],
+      "hex": "#FFE16E",
+      "role": "Golden-Amber Citrus Varsity Boy"
+    },
+    "DR_PARVIZ": {
+      "voice": "Fenrir",
+      "source": "google_flow_native",
+      "name_fa": "DR_PARVIZ",
+      "color": [
+        150,
+        245,
+        190
+      ],
+      "hex": "#96F5BE",
+      "role": "Elderly Frosted Seafoam-Mint Melon Birth Doctor"
+    },
+    "BADGE": {
+      "name_fa": "BADGE",
+      "color": [
+        255,
+        235,
+        140
+      ],
+      "source": "google_flow_native"
+    }
+  },
+  "clips": [
+    {
+      "id": "clip_01",
+      "source": "clip_01.mp4",
+      "file": "clip_01.mp4",
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_01.jpg",
+      "speaker": "BELLA",
+      "expected_speakers": [
+        "BELLA"
+      ],
+      "source_span": [
+        40.6,
+        47.4
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.85,
+      "generation_duration_sec": 8,
+      "story_beat_fa": "بلا شبانه در اتاقش تنها نشسته و با اشک و حسادت می‌گوید همه او را دختر ده از ده می‌شناختند اما حالا کسی نگاهش هم نمی‌کند.",
+      "speech_text": "هَمِه مَنو دُخْتَرِ دَه اَز دَه می‌شْناخْتَن، حالا دیگِه هیچ‌کَس حَتّی نِگام نِمی‌کُنِه!",
+      "generation_prompt": "[IR2_C01] 3D Pixar-style animated medium close-up in a dimly lit bedroom at night with warm city lights outside the window: tearful Bella Strawberry (3D anthropomorphic glossy rose-pink strawberry head topped with green strawberry calyx leaves and a pink crystal bow, no human hair, red-and-white cheerleader outfit) first looks down at her phone silently for 0.6 seconds, then speaks the entire sentence in one continuous unbroken bitter emotional young female voice in native Iranian Persian (Farsi): «هَمِه مَنو دُخْتَرِ دَه اَز دَه می‌شْناخْتَن، حالا دیگِه هیچ‌کَس حَتّی نِگام نِمی‌کُنِه!» Single speaker only, zero background chatter. Zero text or watermarks.",
+      "subtitles": [
+        {
+          "start": 0.15,
+          "end": 7.65,
+          "text": "همه منو دختر ده از ده می‌شناختن، حالا دیگه هیچ‌کس حتی نگام نمی‌کنه!",
+          "speaker": "BELLA"
+        }
+      ],
+      "shot_type": "dialogue",
+      "require_visual_qa": false,
+      "contamination_margin": 15,
+      "story_beat": "بلا شبانه در اتاقش تنها نشسته و با اشک و حسادت می‌گوید همه او را دختر ده از ده می‌شناختند اما حالا کسی نگاهش هم نمی‌کند.",
+      "beat_ids": [
+        "beat_01"
+      ],
+      "overlays": [
+        {
+          "start": 0.1,
+          "end": 3.4,
+          "text": "پرونده مخفی روز تولد! 📂😱",
+          "speaker": "BADGE",
+          "y": 135,
+          "font_size": 21,
+          "box_alpha": 200
+        }
+      ]
+    },
+    {
+      "id": "clip_02",
+      "source": "clip_02.mp4",
+      "file": "clip_02.mp4",
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_02.jpg",
+      "speaker": "NORA",
+      "expected_speakers": [
+        "NORA"
+      ],
+      "source_span": [
+        47.4,
+        54.2
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.85,
+      "generation_duration_sec": 8,
+      "story_beat_fa": "نورا هنگام غروب روبه‌روی مادرش مرجان می‌ایستد و می‌پرسد چرا هجده سال مجبورش کرده صورت و پیشانی‌اش را بپوشاند.",
+      "speech_text": "مامان تو اَز اَوَّل می‌دونِسْتی! چِرا هِجْدَه سال مَجْبورَم کَرْدی صورَتَم رو بِپوشونَم؟",
+      "generation_prompt": "[IR2_C02] 3D Pixar-style animated medium two-shot in a warm sunset-lit living room: earnest Nora Berry (3D anthropomorphic emerald-teal crystal berry head topped with a copper-amber leaf crown, no human hair, glowing golden forehead gem, cream cable-knit cardigan over green plaid shirt) first steps forward silently for 0.6 seconds, then speaks the entire sentence in one continuous unbroken questioning young female voice in native Iranian Persian (Farsi) while Marjan Plum (3D anthropomorphic royal-purple plum head topped with a dark-green plum leaf stem, no human hair, burgundy cardigan) listens silently with closed lips without speaking: «مامان تو اَز اَوَّل می‌دونِسْتی! چِرا هِجْدَه سال مَجْبورَم کَرْدی صورَتَم رو بِپوشونَم؟» Single speaker only, same voice from first word to last word, zero second speaker. Zero text or watermarks.",
+      "subtitles": [
+        {
+          "start": 0.15,
+          "end": 7.65,
+          "text": "مامان تو از اول می‌دونستی! چرا هجده سال مجبورم کردی صورتم رو بپوشونم؟",
+          "speaker": "NORA"
+        }
+      ],
+      "shot_type": "dialogue",
+      "require_visual_qa": false,
+      "contamination_margin": 15,
+      "story_beat": "نورا هنگام غروب روبه‌روی مادرش مرجان می‌ایستد و می‌پرسد چرا هجده سال مجبورش کرده صورت و پیشانی‌اش را بپوشاند.",
+      "beat_ids": [
+        "beat_02"
+      ]
+    },
+    {
+      "id": "clip_03",
+      "source": "clip_03.mp4",
+      "file": "clip_03.mp4",
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_03.jpg",
+      "speaker": "MARJAN",
+      "expected_speakers": [
+        "MARJAN"
+      ],
+      "source_span": [
+        54.2,
+        61.0
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.85,
+      "generation_duration_sec": 8,
+      "story_beat_fa": "مرجان دست‌هایش را با ترس روی سینه‌اش می‌گذارد و اعتراف می‌کند که هر شب از ترس دیدن این نشانه می‌لرزیده است.",
+      "speech_text": "چون هَر شَب اَز تَرْس می‌لَرْزیدَم کِه مَبادا کَسی نِشانِه‌ات رو بِبینِه دُخْتَرَم!",
+      "generation_prompt": "[IR2_C03] [V2] 3D Pixar-style animated solo medium close-up in the warm sunset-lit living room: fearful Marjan Plum (3D anthropomorphic royal-purple plum head topped with a dark-green plum leaf stem, no human hair, burgundy knit cardigan under a camel coat) first clasps both purple hands over her heart silently for 0.6 seconds, then speaks the entire sentence in one continuous unbroken trembling motherly female voice in native Iranian Persian (Farsi): «چون هَر شَب اَز تَرْس می‌لَرْزیدَم کِه مَبادا کَسی نِشانِه‌ات رو بِبینِه دُخْتَرَم!» Single speaker only, same voice from first word to last word, zero second speaker. Zero text or watermarks.",
+      "subtitles": [
+        {
+          "start": 0.15,
+          "end": 7.65,
+          "text": "چون هر شب از ترس می‌لرزیدم که مبادا کسی نشانه‌ات رو ببینه دخترم!",
+          "speaker": "MARJAN"
+        }
+      ],
+      "shot_type": "dialogue",
+      "require_visual_qa": false,
+      "contamination_margin": 15,
+      "story_beat": "مرجان دست‌هایش را با ترس روی سینه‌اش می‌گذارد و اعتراف می‌کند که هر شب از ترس دیدن این نشانه می‌لرزیده است.",
+      "beat_ids": [
+        "beat_03"
+      ]
+    },
+    {
+      "id": "clip_04",
+      "source": "clip_04.mp4",
+      "file": "clip_04.mp4",
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_04.jpg",
+      "speaker": "NORA",
+      "expected_speakers": [
+        "NORA"
+      ],
+      "source_span": [
+        61.0,
+        67.8
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.85,
+      "generation_duration_sec": 8,
+      "story_beat_fa": "نورا کنار جعبه خاطرات روی زمین عکس روز تولدش را پیدا می‌کند و می‌فهمد دکتر پیر داخل عکس راز مادرش را می‌داند.",
+      "speech_text": "صَبْر کُن، این دُکْتُرِ روزِ تَوَلُّدَمِه! حَتْماً اون رازِ مامان رو می‌دونِه.",
+      "generation_prompt": "[IR2_C04] 3D Pixar-style animated medium shot on a cozy bedroom wooden floor beside an open vintage keepsake box: determined Nora Berry (3D anthropomorphic emerald-teal crystal berry head topped with a copper-amber leaf crown, no human hair, glowing golden forehead gem, cream cable-knit cardigan and blue jeans) first lifts a small framed photograph silently for 0.6 seconds, then speaks the entire sentence in one continuous unbroken intrigued young female voice in native Iranian Persian (Farsi): «صَبْر کُن، این دُکْتُرِ روزِ تَوَلُّدَمِه! حَتْماً اون رازِ مامان رو می‌دونِه.» Single speaker only, zero background chatter. Zero text or watermarks.",
+      "subtitles": [
+        {
+          "start": 0.15,
+          "end": 7.65,
+          "text": "صبر کن، این دکتر روز تولدمه! حتما اون راز مامان رو می‌دونه.",
+          "speaker": "NORA"
+        }
+      ],
+      "shot_type": "dialogue",
+      "require_visual_qa": false,
+      "contamination_margin": 15,
+      "story_beat": "نورا کنار جعبه خاطرات روی زمین عکس روز تولدش را پیدا می‌کند و می‌فهمد دکتر پیر داخل عکس راز مادرش را می‌داند.",
+      "beat_ids": [
+        "beat_04"
+      ]
+    },
+    {
+      "id": "clip_05",
+      "source": "clip_05.mp4",
+      "file": "clip_05.mp4",
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_05.jpg",
+      "speaker": "DR_PARVIZ",
+      "expected_speakers": [
+        "DR_PARVIZ"
+      ],
+      "source_span": [
+        67.8,
+        74.5
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.85,
+      "generation_duration_sec": 8,
+      "story_beat_fa": "در راهروی بیمارستان دکتر پرویز با دیدن نورا پرونده مهر و موم شده را بیرون می‌آورد و می‌گوید مادرش او را قسم داده پرونده را فقط به خودش بدهد.",
+      "speech_text": "باوَرَم نِمی‌شِه خُودِتی! مادَرِت قَسَمَم داد این پَرْوَنْدِه رو فَقَط بِه تو بِدَم.",
+      "generation_prompt": "[IR2_C05] 3D Pixar-style animated medium two-shot in a quiet hospital corridor: elderly Dr. Parviz Melon (3D anthropomorphic frosted seafoam-mint melon head topped with two small green herb leaves, no human hair, sculpted white leafy mustache, round spectacles, white doctor coat over blue vest) first holds up a plain sealed manila folder silently for 0.6 seconds, then speaks the entire sentence in one continuous unbroken solemn elderly male voice in native Iranian Persian (Farsi) while Nora Berry (3D anthropomorphic emerald-teal crystal berry head topped with a copper leaf crown, no human hair, cream cardigan) listens silently with closed lips without speaking: «باوَرَم نِمی‌شِه خُودِتی! مادَرِت قَسَمَم داد این پَرْوَنْدِه رو فَقَط بِه تو بِدَم.» Single speaker only, same voice from first word to last word, zero second speaker. Zero text or watermarks.",
+      "subtitles": [
+        {
+          "start": 0.15,
+          "end": 7.65,
+          "text": "باورم نمی‌شه خودتی! مادرت قسمم داد این پرونده رو فقط به تو بدم.",
+          "speaker": "DR_PARVIZ"
+        }
+      ],
+      "shot_type": "dialogue",
+      "require_visual_qa": false,
+      "contamination_margin": 15,
+      "story_beat": "در راهروی بیمارستان دکتر پرویز با دیدن نورا پرونده مهر و موم شده را بیرون می‌آورد و می‌گوید مادرش او را قسم داده پرونده را فقط به خودش بدهد.",
+      "beat_ids": [
+        "beat_05"
+      ]
+    },
+    {
+      "id": "clip_06",
+      "source": "clip_06.mp4",
+      "file": "clip_06.mp4",
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_06.jpg",
+      "speaker": "DR_PARVIZ",
+      "expected_speakers": [
+        "DR_PARVIZ"
+      ],
+      "source_span": [
+        74.5,
+        81.24
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.85,
+      "generation_duration_sec": 8,
+      "story_beat_fa": "دکتر پرویز پرونده مخفی را به سینه‌اش می‌چسباند و قبل از باز کردنش با نگرانی می‌پرسد آیا خواهرش خبر دارد که او به بیمارستان آمده است.",
+      "speech_text": "قَبْل اَز اینْکِه بازِش کُنَم بِگو بِبینَم، خواهَرِت خَبَر دارِه کِه اومَدی اینْجا؟",
+      "generation_prompt": "[IR2_C06] 3D Pixar-style animated dramatic close two-shot in the hospital corridor: cautious Dr. Parviz Melon (3D anthropomorphic frosted seafoam-mint melon head topped with two small green herb leaves, no human hair, sculpted white leafy mustache, round spectacles, white doctor coat over blue vest) first clutches the plain sealed manila folder to his chest silently for 0.6 seconds, then speaks the entire sentence in one continuous unbroken hushed suspenseful elderly male voice in native Iranian Persian (Farsi) while Nora Berry (3D anthropomorphic emerald-teal crystal berry head topped with a copper leaf crown, no human hair, cream cardigan) listens silently with closed lips without speaking: «قَبْل اَز اینْکِه بازِش کُنَم بِگو بِبینَم، خواهَرِت خَبَر دارِه کِه اومَدی اینْجا؟» Single speaker only, same voice from first word to last word, zero second speaker. Zero text or watermarks.",
+      "subtitles": [
+        {
+          "start": 0.15,
+          "end": 7.65,
+          "text": "قبل از اینکه بازش کنم بگو ببینم، خواهرت خبر داره که اومدی اینجا؟",
+          "speaker": "DR_PARVIZ"
+        }
+      ],
+      "shot_type": "dialogue",
+      "require_visual_qa": false,
+      "contamination_margin": 15,
+      "story_beat": "دکتر پرویز پرونده مخفی را به سینه‌اش می‌چسباند و قبل از باز کردنش با نگرانی می‌پرسد آیا خواهرش خبر دارد که او به بیمارستان آمده است.",
+      "beat_ids": [
+        "beat_06"
+      ]
+    }
+  ],
+  "video": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 24,
+    "crf": 18,
+    "preset": "fast",
+    "scale_mode": "fill"
+  },
+  "audio": {
+    "loudnorm": "loudnorm=I=-14:TP=-1.5:LRA=11",
+    "sample_rate": 48000,
+    "channels": 2,
+    "bitrate": "192k"
+  },
+  "speech": {
+    "speech_safe": "auto_expand",
+    "threshold_dbfs": -38,
+    "pre_handle": 0.2,
+    "post_handle": 0.35,
+    "splice_crossfade": 0.02
+  },
+  "subtitle_style": {
+    "time_base": "trim_local",
+    "y_ratio": 0.84,
+    "font_size": 27,
+    "min_font_size": 16,
+    "max_text_margin": 84,
+    "max_lines": 2
+  },
+  "outputs": {
+    "per_clip_location": "both",
+    "base_mode": "timeline",
+    "cta_burn_subtitles": true,
+    "cta_loudnorm": true,
+    "publish_caption_fa": "قسمت پایانی: پرونده مخفی روز تولد نورا و راز هجده ساله مادر!"
+  },
+  "content_edits": [],
+  "story_plan": {
+    "summary": "نورا عکس دکتر روز تولدش را پیدا می‌کند و دکتر پرویز در بیمارستان پرونده مخفی مادرش را به او نشان می‌دهد!",
+    "ending": "Infinity Rating Part 2",
+    "required_beats": [
+      "beat_01",
+      "beat_02",
+      "beat_03",
+      "beat_04",
+      "beat_05",
+      "beat_06"
+    ]
+  },
+  "visual": {
+    "keyframe_threshold": 65,
+    "jump_threshold": 38,
+    "contamination_margin": 15
+  },
+  "visual_gate": {
+    "keyframe_threshold": 65,
+    "jump_threshold": 38,
+    "contamination_margin": 15
+  },
+  "generation_settings": {
+    "model": "Veo 3.1 - Fast",
+    "duration_sec": 8,
+    "aspect": "9:16",
+    "outputs": 1,
+    "resolution": "720p",
+    "video_type": "Ingredients"
+  }
+}

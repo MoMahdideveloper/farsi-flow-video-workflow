@@ -1,0 +1,473 @@
+{
+  "_comment": "Part1_InfinityRating - 100% Google Flow native Farsi voice with full اعراب‌گذاری and 0.6s physical lead-in.",
+  "schema_version": 1,
+  "speech_review_note": "Full Persian vowel diacritics (اعراب‌گذاری کامل) and 0.6s physical lead-in in Google Flow prompt for 100% accurate native pronunciation.",
+  "episode_id": "Part1_InfinityRating",
+  "title_fa": "قسمت اول: راز امتیاز بی‌نهایت روی پیشانی نورا و ترکیدن اسکنر دکتر!",
+  "title_en": "Infinity Rating Part 1",
+  "source_video": "${SRC}\\01_2026-10-25_De55xPtqbmp.mp4",
+  "source_start_offset": 0.0,
+  "story_summary_fa": "نورا بعد از هجده سال پوشاندن پیشانی‌اش متوجه نشان بی‌نهایت می‌شود و اسکنر دکتر سینا در مطب جرقه می‌زند!",
+  "fallback_to_source_on_visual_fail": false,
+  "tight_speech_trim": true,
+  "variables": {
+    "BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series28-infinity-rating-farsi",
+    "S2_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi",
+    "CHEF_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\ugly-face-chef-farsi",
+    "SRC": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\straw.berryjammin"
+  },
+  "clips_dir": "${BASE}\\part1\\flow_clips",
+  "out_dir": "${BASE}\\05_final_masters\\part1",
+  "font_path": "${CHEF_BASE}\\03_farsi_audio_tts\\Vazirmatn-Bold.ttf",
+  "cta_video": "${S2_BASE}\\part1\\flow_clips\\cta_kelidbox_s2.mp4",
+  "cta_speaker": "NORA",
+  "cta_subtitles": [
+    {
+      "start": 0.15,
+      "end": 3.55,
+      "text": "برای دیدن قسمت بعدی این داستان همین الان پیج رو فالو کن!"
+    },
+    {
+      "start": 3.6,
+      "end": 7.55,
+      "text": "راستی، کل این انیمیشن با اکانت‌های هوش مصنوعی سایت کلیدباکس ساخته شده!"
+    }
+  ],
+  "character_references": [
+    "${BASE}\\00_character_sheet\\CHARACTER_SHEET.png",
+    "${BASE}\\01_story_and_manifests\\FLOW_SHEET_01_NORA.jpg",
+    "${BASE}\\01_story_and_manifests\\FLOW_SHEET_02_BELLA.jpg",
+    "${BASE}\\01_story_and_manifests\\FLOW_SHEET_03_MARJAN.jpg"
+  ],
+  "location_references": [
+    "${BASE}\\01_story_and_manifests\\FLOW_LOC_01_CLINIC.jpg",
+    "${BASE}\\01_story_and_manifests\\FLOW_LOC_02_HOSPITAL.jpg"
+  ],
+  "speakers": {
+    "NORA": [
+      130,
+      255,
+      220
+    ],
+    "BELLA": [
+      255,
+      155,
+      195
+    ],
+    "MARJAN": [
+      215,
+      165,
+      255
+    ],
+    "DR_SINA": [
+      170,
+      210,
+      255
+    ],
+    "TARA": [
+      255,
+      210,
+      140
+    ],
+    "RAMIN": [
+      255,
+      225,
+      110
+    ],
+    "DR_PARVIZ": [
+      150,
+      245,
+      190
+    ],
+    "BADGE": [
+      255,
+      235,
+      140
+    ]
+  },
+  "voices": {
+    "NORA": {
+      "voice": "Aoede",
+      "source": "google_flow_native",
+      "name_fa": "NORA",
+      "color": [
+        130,
+        255,
+        220
+      ],
+      "hex": "#82FFDC",
+      "role": "Emerald-Teal Crystal Berry Girl with Infinite Forehead Gem"
+    },
+    "BELLA": {
+      "voice": "Aoede",
+      "source": "google_flow_native",
+      "name_fa": "BELLA",
+      "color": [
+        255,
+        155,
+        195
+      ],
+      "hex": "#FF9BC3",
+      "role": "Rose-Pink Strawberry Cheerleader Sister (10/10)"
+    },
+    "MARJAN": {
+      "voice": "Aoede",
+      "source": "google_flow_native",
+      "name_fa": "MARJAN",
+      "color": [
+        215,
+        165,
+        255
+      ],
+      "hex": "#D7A5FF",
+      "role": "Royal-Purple Plum Mother"
+    },
+    "DR_SINA": {
+      "voice": "Puck",
+      "source": "google_flow_native",
+      "name_fa": "DR_SINA",
+      "color": [
+        170,
+        210,
+        255
+      ],
+      "hex": "#AAD2FF",
+      "role": "Glossy Violet Turnip Clinic Doctor"
+    },
+    "TARA": {
+      "voice": "Aoede",
+      "source": "google_flow_native",
+      "name_fa": "TARA",
+      "color": [
+        255,
+        210,
+        140
+      ],
+      "hex": "#FFD28C",
+      "role": "Pastel-Peach Fruit School Gossip Girl"
+    },
+    "RAMIN": {
+      "voice": "Puck",
+      "source": "google_flow_native",
+      "name_fa": "RAMIN",
+      "color": [
+        255,
+        225,
+        110
+      ],
+      "hex": "#FFE16E",
+      "role": "Golden-Amber Citrus Varsity Boy"
+    },
+    "DR_PARVIZ": {
+      "voice": "Fenrir",
+      "source": "google_flow_native",
+      "name_fa": "DR_PARVIZ",
+      "color": [
+        150,
+        245,
+        190
+      ],
+      "hex": "#96F5BE",
+      "role": "Elderly Frosted Seafoam-Mint Melon Birth Doctor"
+    },
+    "BADGE": {
+      "name_fa": "BADGE",
+      "color": [
+        255,
+        235,
+        140
+      ],
+      "source": "google_flow_native"
+    }
+  },
+  "clips": [
+    {
+      "id": "clip_01",
+      "source": "clip_01.mp4",
+      "file": "clip_01.mp4",
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_01.jpg",
+      "speaker": "NORA",
+      "expected_speakers": [
+        "NORA"
+      ],
+      "source_span": [
+        0.0,
+        6.8
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.85,
+      "generation_duration_sec": 8,
+      "story_beat_fa": "نورا بعد از هجده سال پیشانی خود را باز می‌کند و با حیرت می‌بیند نشان ستاره طلایی امتیاز بی‌نهایت روی پیشانی‌اش می‌درخشد.",
+      "speech_text": "هِجْدَه سال صورَتَم رو پوشونْدَم، حالا اِمْتیازَم بی‌نَهایَتِه؟ مَگِه دَه بالاتَرین نَبود؟",
+      "generation_prompt": "[IR1_C01] 3D Pixar-style animated medium close-up in a cozy sunlit bedroom: astonished Nora Berry (3D anthropomorphic emerald-teal crystal berry head topped with a copper-amber autumn leaf calyx crown, no human hair, glowing golden star-crystal gem on her smooth emerald forehead, cream cable-knit cardigan over green plaid shirt) first touches her temples silently for 0.6 seconds with wide emerald eyes, then speaks the entire sentence in one continuous unbroken amazed young female voice in native Iranian Persian (Farsi): «هِجْدَه سال صورَتَم رو پوشونْدَم، حالا اِمْتیازَم بی‌نَهایَتِه؟ مَگِه دَه بالاتَرین نَبود؟» Single speaker only, zero background chatter. Zero text or watermarks.",
+      "subtitles": [
+        {
+          "start": 0.15,
+          "end": 7.65,
+          "text": "هجده سال صورتم رو پوشوندم، حالا امتیازم بی‌نهایته؟ مگه ده بالاترین نبود؟",
+          "speaker": "NORA"
+        }
+      ],
+      "shot_type": "dialogue",
+      "require_visual_qa": false,
+      "contamination_margin": 15,
+      "story_beat": "نورا بعد از هجده سال پیشانی خود را باز می‌کند و با حیرت می‌بیند نشان ستاره طلایی امتیاز بی‌نهایت روی پیشانی‌اش می‌درخشد.",
+      "beat_ids": [
+        "beat_01"
+      ],
+      "overlays": [
+        {
+          "start": 0.1,
+          "end": 3.4,
+          "text": "راز امتیاز بی‌نهایت! ✨🔥",
+          "speaker": "BADGE",
+          "y": 135,
+          "font_size": 21,
+          "box_alpha": 200
+        }
+      ]
+    },
+    {
+      "id": "clip_02",
+      "source": "clip_02.mp4",
+      "file": "clip_02.mp4",
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_02.jpg",
+      "speaker": "BELLA",
+      "expected_speakers": [
+        "BELLA"
+      ],
+      "source_span": [
+        6.8,
+        13.6
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.85,
+      "generation_duration_sec": 8,
+      "story_beat_fa": "بلا خواهر ده از ده و مادرشان مرجان در آستانه در اتاق می‌ایستند و بلا با حسادت و ناباوری به پیشانی نورا اشاره می‌کند.",
+      "speech_text": "اَصْلاً اِمْکان نَدارِه کَسی بالاتَر اَز دَه بِشِه! پَس هَمَش اینو قایِم می‌کَرْدی؟",
+      "generation_prompt": "[IR1_C02] 3D Pixar-style animated medium two-shot at a bedroom doorway: jealous Bella Strawberry (3D anthropomorphic glossy rose-pink strawberry head topped with green strawberry calyx leaves and a pink crystal bow, no human hair, red-and-white cheerleader outfit) first points her hand forward silently for 0.6 seconds, then speaks the entire sentence in one continuous unbroken sharp young female voice in native Iranian Persian (Farsi) while Marjan Plum (3D anthropomorphic royal-purple plum head topped with a dark-green plum leaf stem, no human hair, camel trench coat) listens silently with closed lips without speaking: «اَصْلاً اِمْکان نَدارِه کَسی بالاتَر اَز دَه بِشِه! پَس هَمَش اینو قایِم می‌کَرْدی؟» Single speaker only, same voice from first word to last word, zero second speaker. Zero text or watermarks.",
+      "subtitles": [
+        {
+          "start": 0.15,
+          "end": 7.65,
+          "text": "اصلا امکان نداره کسی بالاتر از ده بشه! پس همش اینو قایم می‌کردی؟",
+          "speaker": "BELLA"
+        }
+      ],
+      "shot_type": "dialogue",
+      "require_visual_qa": false,
+      "contamination_margin": 15,
+      "story_beat": "بلا خواهر ده از ده و مادرشان مرجان در آستانه در اتاق می‌ایستند و بلا با حسادت و ناباوری به پیشانی نورا اشاره می‌کند.",
+      "beat_ids": [
+        "beat_02"
+      ]
+    },
+    {
+      "id": "clip_03",
+      "source": "clip_03.mp4",
+      "file": "clip_03.mp4",
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_03.jpg",
+      "speaker": "MARJAN",
+      "expected_speakers": [
+        "MARJAN"
+      ],
+      "source_span": [
+        13.6,
+        20.3
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.85,
+      "generation_duration_sec": 8,
+      "story_beat_fa": "در مطب دکتر سینا وقتی اسکنر عدد صدها برابر بالاتر از ده را نشان می‌دهد، مرجان با نگرانی می‌گوید دستگاه خراب است.",
+      "speech_text": "صَدْها بَرابَر بالاتَر اَز دَه؟ اِمْکان نَدارِه آقایِ دُکْتُر، دَسْتْگاهِت خَرابِه دوبارِه بِگیر!",
+      "generation_prompt": "[IR1_C03] 3D Pixar-style animated medium shot inside a bright modern medical clinic room: anxious Marjan Plum (3D anthropomorphic royal-purple plum head topped with a dark-green plum leaf stem, no human hair, camel-brown trench coat over burgundy cardigan) first raises her hands silently for 0.6 seconds, then speaks the entire sentence in one continuous unbroken worried motherly female voice in native Iranian Persian (Farsi) while Dr. Sina Turnip (3D anthropomorphic glossy violet turnip head topped with two crisp green leafy stems, no human hair, round silver glasses, white medical coat) and Nora Berry (3D emerald berry head with copper leaf crown, no human hair) listen silently with closed lips without speaking: «صَدْها بَرابَر بالاتَر اَز دَه؟ اِمْکان نَدارِه آقایِ دُکْتُر، دَسْتْگاهِت خَرابِه دوبارِه بِگیر!» Single speaker only, same voice from first word to last word, zero second speaker. Zero text or watermarks.",
+      "subtitles": [
+        {
+          "start": 0.15,
+          "end": 7.65,
+          "text": "صدها برابر بالاتر از ده؟ امکان نداره آقای دکتر، دستگاهت خرابه دوباره بگیر!",
+          "speaker": "MARJAN"
+        }
+      ],
+      "shot_type": "dialogue",
+      "require_visual_qa": false,
+      "contamination_margin": 15,
+      "story_beat": "در مطب دکتر سینا وقتی اسکنر عدد صدها برابر بالاتر از ده را نشان می‌دهد، مرجان با نگرانی می‌گوید دستگاه خراب است.",
+      "beat_ids": [
+        "beat_03"
+      ]
+    },
+    {
+      "id": "clip_04",
+      "source": "clip_04.mp4",
+      "file": "clip_04.mp4",
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_04.jpg",
+      "speaker": "DR_SINA",
+      "expected_speakers": [
+        "DR_SINA"
+      ],
+      "source_span": [
+        20.3,
+        27.1
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.85,
+      "generation_duration_sec": 8,
+      "story_beat_fa": "اسکنر دکتر سینا جرقه می‌زند و دکتر سینا با بهت عینکش را جابه‌جا می‌کند و می‌گوید این نشانه واقعی است و هیچ مرزی ندارد.",
+      "speech_text": "سِه بار اِسْکَن کَرْدَم، دَسْتْگاه هَنْگ کَرْدِه! این نِشانِه واقِعیه، هیچ مَرْزی نَدارِه!",
+      "generation_prompt": "[IR1_C04] 3D Pixar-style animated medium shot inside the bright medical clinic room: stunned Dr. Sina Turnip (3D anthropomorphic glossy violet turnip head topped with two crisp green leafy stems, no human hair, round silver glasses, white lab coat over lavender scrubs, stethoscope) first adjusts his glasses silently for 0.6 seconds as his scanner sparks, then speaks the entire sentence in one continuous unbroken astonished male voice in native Iranian Persian (Farsi) while Nora Berry (3D anthropomorphic emerald-teal crystal berry head topped with a copper leaf crown, no human hair, cream cardigan) listens silently with closed lips without speaking: «سِه بار اِسْکَن کَرْدَم، دَسْتْگاه هَنْگ کَرْدِه! این نِشانِه واقِعیه، هیچ مَرْزی نَدارِه!» Single speaker only, same voice from first word to last word, zero second speaker. Zero text or watermarks.",
+      "subtitles": [
+        {
+          "start": 0.15,
+          "end": 7.65,
+          "text": "سه بار اسکن کردم، دستگاه هنگ کرده! این نشانه واقعیه، هیچ مرزی نداره!",
+          "speaker": "DR_SINA"
+        }
+      ],
+      "shot_type": "dialogue",
+      "require_visual_qa": false,
+      "contamination_margin": 15,
+      "story_beat": "اسکنر دکتر سینا جرقه می‌زند و دکتر سینا با بهت عینکش را جابه‌جا می‌کند و می‌گوید این نشانه واقعی است و هیچ مرزی ندارد.",
+      "beat_ids": [
+        "beat_04"
+      ]
+    },
+    {
+      "id": "clip_05",
+      "source": "clip_05.mp4",
+      "file": "clip_05.mp4",
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_05.jpg",
+      "speaker": "TARA",
+      "expected_speakers": [
+        "TARA"
+      ],
+      "source_span": [
+        27.1,
+        33.8
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.85,
+      "generation_duration_sec": 8,
+      "story_beat_fa": "در راهروی مدرسه تارا گوشی خود را نشان بلا می‌دهد و می‌گوید عکس امتیاز بی‌نهایت خواهرت پخش شده و دیگر دختر شماره یک نیستی.",
+      "speech_text": "عَکْسِ خواهَرِت پَخْش شُد! اِمْتیازِش بی‌نَهایَتِه، دیگِه تو دُخْتَرِ شُمارِه یِک نیسْتی!",
+      "generation_prompt": "[IR1_C05] 3D Pixar-style animated medium two-shot in a colorful high school hallway beside blue lockers: excited Tara Peach (3D anthropomorphic pastel-peach fruit head topped with two green peach leaves, no human hair, light-blue cropped denim jacket and pink plaid skirt) first holds up her pink smartphone silently for 0.6 seconds, then speaks the entire sentence in one continuous unbroken teasing young female voice in native Iranian Persian (Farsi) while Bella Strawberry (3D anthropomorphic glossy rose-pink strawberry head topped with green calyx leaves, no human hair, red-and-white cheer outfit) listens silently with closed lips without speaking: «عَکْسِ خواهَرِت پَخْش شُد! اِمْتیازِش بی‌نَهایَتِه، دیگِه تو دُخْتَرِ شُمارِه یِک نیسْتی!» Single speaker only, same voice from first word to last word, zero second speaker. Zero text or watermarks.",
+      "subtitles": [
+        {
+          "start": 0.15,
+          "end": 7.65,
+          "text": "عکس خواهرت پخش شد! امتیازش بی‌نهایته، دیگه تو دختر شماره یک نیستی!",
+          "speaker": "TARA"
+        }
+      ],
+      "shot_type": "dialogue",
+      "require_visual_qa": false,
+      "contamination_margin": 15,
+      "story_beat": "در راهروی مدرسه تارا گوشی خود را نشان بلا می‌دهد و می‌گوید عکس امتیاز بی‌نهایت خواهرت پخش شده و دیگر دختر شماره یک نیستی.",
+      "beat_ids": [
+        "beat_05"
+      ]
+    },
+    {
+      "id": "clip_06",
+      "source": "clip_06.mp4",
+      "file": "clip_06.mp4",
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_06.jpg",
+      "speaker": "RAMIN",
+      "expected_speakers": [
+        "RAMIN"
+      ],
+      "source_span": [
+        33.8,
+        40.6
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.85,
+      "generation_duration_sec": 8,
+      "story_beat_fa": "در سالن غذاخوری مدرسه رامین با مهربانی به نورا اطمینان می‌دهد که از روز اول هم عدد روی پیشانی‌اش برای او اهمیتی نداشته است.",
+      "speech_text": "نورا، اَز روزِ اَوَّل بِهِت گُفْتَم، عَدَدِ رویِ پیشونیت هیچ اَهَمِّیَّتی بَرام نَدارِه.",
+      "generation_prompt": "[IR1_C06] 3D Pixar-style animated medium two-shot at a sunny school cafeteria table: warm Ramin Citrus (3D anthropomorphic golden-amber citrus head topped with a green citrus leaf stem, no human hair, warm golden eyes, navy-and-cream varsity letterman jacket) first leans forward gently for 0.6 seconds in silence, then speaks the entire sentence in one continuous unbroken kind young male voice in native Iranian Persian (Farsi) while Nora Berry (3D anthropomorphic emerald-teal crystal berry head topped with a copper leaf crown, no human hair, cream cardigan) listens silently with closed lips without speaking: «نورا، اَز روزِ اَوَّل بِهِت گُفْتَم، عَدَدِ رویِ پیشونیت هیچ اَهَمِّیَّتی بَرام نَدارِه.» Single speaker only, same voice from first word to last word, zero second speaker. Zero text or watermarks.",
+      "subtitles": [
+        {
+          "start": 0.15,
+          "end": 7.65,
+          "text": "نورا، از روز اول بهت گفتم، عدد روی پیشونیت هیچ اهمیتی برام نداره.",
+          "speaker": "RAMIN"
+        }
+      ],
+      "shot_type": "dialogue",
+      "require_visual_qa": false,
+      "contamination_margin": 15,
+      "story_beat": "در سالن غذاخوری مدرسه رامین با مهربانی به نورا اطمینان می‌دهد که از روز اول هم عدد روی پیشانی‌اش برای او اهمیتی نداشته است.",
+      "beat_ids": [
+        "beat_06"
+      ]
+    }
+  ],
+  "video": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 24,
+    "crf": 18,
+    "preset": "fast",
+    "scale_mode": "fill"
+  },
+  "audio": {
+    "loudnorm": "loudnorm=I=-14:TP=-1.5:LRA=11",
+    "sample_rate": 48000,
+    "channels": 2,
+    "bitrate": "192k"
+  },
+  "speech": {
+    "speech_safe": "auto_expand",
+    "threshold_dbfs": -38,
+    "pre_handle": 0.2,
+    "post_handle": 0.35,
+    "splice_crossfade": 0.02
+  },
+  "subtitle_style": {
+    "time_base": "trim_local",
+    "y_ratio": 0.84,
+    "font_size": 27,
+    "min_font_size": 16,
+    "max_text_margin": 84,
+    "max_lines": 2
+  },
+  "outputs": {
+    "per_clip_location": "both",
+    "base_mode": "timeline",
+    "cta_burn_subtitles": true,
+    "cta_loudnorm": true,
+    "publish_caption_fa": "قسمت اول: راز امتیاز بی‌نهایت روی پیشانی نورا و ترکیدن اسکنر دکتر!"
+  },
+  "content_edits": [],
+  "story_plan": {
+    "summary": "نورا بعد از هجده سال پوشاندن پیشانی‌اش متوجه نشان بی‌نهایت می‌شود و اسکنر دکتر سینا در مطب جرقه می‌زند!",
+    "ending": "Infinity Rating Part 1",
+    "required_beats": [
+      "beat_01",
+      "beat_02",
+      "beat_03",
+      "beat_04",
+      "beat_05",
+      "beat_06"
+    ]
+  },
+  "visual": {
+    "keyframe_threshold": 65,
+    "jump_threshold": 38,
+    "contamination_margin": 15
+  },
+  "visual_gate": {
+    "keyframe_threshold": 65,
+    "jump_threshold": 38,
+    "contamination_margin": 15
+  },
+  "generation_settings": {
+    "model": "Veo 3.1 - Fast",
+    "duration_sec": 8,
+    "aspect": "9:16",
+    "outputs": 1,
+    "resolution": "720p",
+    "video_type": "Ingredients"
+  }
+}
