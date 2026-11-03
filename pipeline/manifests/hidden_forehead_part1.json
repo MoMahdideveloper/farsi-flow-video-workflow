@@ -1,0 +1,473 @@
+{
+  "_comment": "Part1_HiddenForehead - 100% Google Flow native Farsi voice with full اعراب‌گذاری and 0.6s physical lead-in.",
+  "schema_version": 1,
+  "speech_review_note": "Full Persian vowel diacritics (اعراب‌گذاری کامل) and 0.6s physical lead-in in Google Flow prompt for 100% accurate native pronunciation.",
+  "episode_id": "Part1_HiddenForehead",
+  "title_fa": "قسمت اول: راز پیشانی پوشیده نورا از روز تولد تا دبیرستان!",
+  "title_en": "Hidden Forehead Mark Part 1",
+  "source_video": "${SRC}\\02_2026-10-25_De5YwKLqV92.mp4",
+  "source_start_offset": 0.0,
+  "story_summary_fa": "از روز تولد نورا دکتر پرویز هشدار می‌دهد کسی پیشانی او را تا هجده سالگی نبیند و در دبیرستان رامین به او علاقه‌مند می‌شود!",
+  "fallback_to_source_on_visual_fail": false,
+  "tight_speech_trim": true,
+  "variables": {
+    "BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series29-hidden-forehead-mark-farsi",
+    "S2_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi",
+    "CHEF_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\ugly-face-chef-farsi",
+    "SRC": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\straw.berryjammin"
+  },
+  "clips_dir": "${BASE}\\part1\\flow_clips",
+  "out_dir": "${BASE}\\05_final_masters\\part1",
+  "font_path": "${CHEF_BASE}\\03_farsi_audio_tts\\Vazirmatn-Bold.ttf",
+  "cta_video": "${S2_BASE}\\part1\\flow_clips\\cta_kelidbox_s2.mp4",
+  "cta_speaker": "NORA",
+  "cta_subtitles": [
+    {
+      "start": 0.15,
+      "end": 3.55,
+      "text": "برای دیدن قسمت بعدی این داستان همین الان پیج رو فالو کن!"
+    },
+    {
+      "start": 3.6,
+      "end": 7.55,
+      "text": "راستی، کل این انیمیشن با اکانت‌های هوش مصنوعی سایت کلیدباکس ساخته شده!"
+    }
+  ],
+  "character_references": [
+    "${BASE}\\00_character_sheet\\CHARACTER_SHEET.png",
+    "${BASE}\\01_story_and_manifests\\FLOW_SHEET_01_NORA.jpg",
+    "${BASE}\\01_story_and_manifests\\FLOW_SHEET_02_BELLA.jpg",
+    "${BASE}\\01_story_and_manifests\\FLOW_SHEET_03_MARJAN.jpg"
+  ],
+  "location_references": [
+    "${BASE}\\01_story_and_manifests\\FLOW_LOC_01_NURSERY.jpg",
+    "${BASE}\\01_story_and_manifests\\FLOW_LOC_02_SCHOOL.jpg"
+  ],
+  "speakers": {
+    "NORA": [
+      130,
+      255,
+      220
+    ],
+    "BELLA": [
+      255,
+      155,
+      195
+    ],
+    "MARJAN": [
+      215,
+      165,
+      255
+    ],
+    "DR_PARVIZ": [
+      150,
+      245,
+      190
+    ],
+    "KIAN": [
+      175,
+      240,
+      135
+    ],
+    "RAMIN": [
+      255,
+      225,
+      110
+    ],
+    "TARA": [
+      255,
+      210,
+      140
+    ],
+    "BADGE": [
+      255,
+      235,
+      140
+    ]
+  },
+  "voices": {
+    "NORA": {
+      "voice": "Aoede",
+      "source": "google_flow_native",
+      "name_fa": "NORA",
+      "color": [
+        130,
+        255,
+        220
+      ],
+      "hex": "#82FFDC",
+      "role": "Emerald-Teal Crystal Berry Girl with Autumn Leaf Forehead Veil"
+    },
+    "BELLA": {
+      "voice": "Aoede",
+      "source": "google_flow_native",
+      "name_fa": "BELLA",
+      "color": [
+        255,
+        155,
+        195
+      ],
+      "hex": "#FF9BC3",
+      "role": "Rose-Pink Strawberry Cheerleader Sister (10/10)"
+    },
+    "MARJAN": {
+      "voice": "Aoede",
+      "source": "google_flow_native",
+      "name_fa": "MARJAN",
+      "color": [
+        215,
+        165,
+        255
+      ],
+      "hex": "#D7A5FF",
+      "role": "Royal-Purple Plum Mother"
+    },
+    "DR_PARVIZ": {
+      "voice": "Fenrir",
+      "source": "google_flow_native",
+      "name_fa": "DR_PARVIZ",
+      "color": [
+        150,
+        245,
+        190
+      ],
+      "hex": "#96F5BE",
+      "role": "Elderly Frosted Seafoam-Mint Melon Birth Doctor"
+    },
+    "KIAN": {
+      "voice": "Puck",
+      "source": "google_flow_native",
+      "name_fa": "KIAN",
+      "color": [
+        175,
+        240,
+        135
+      ],
+      "hex": "#AFF087",
+      "role": "Crisp Lime-Green Apple Schoolboy"
+    },
+    "RAMIN": {
+      "voice": "Puck",
+      "source": "google_flow_native",
+      "name_fa": "RAMIN",
+      "color": [
+        255,
+        225,
+        110
+      ],
+      "hex": "#FFE16E",
+      "role": "Golden-Amber Citrus Varsity Boy"
+    },
+    "TARA": {
+      "voice": "Aoede",
+      "source": "google_flow_native",
+      "name_fa": "TARA",
+      "color": [
+        255,
+        210,
+        140
+      ],
+      "hex": "#FFD28C",
+      "role": "Pastel-Peach Fruit School Gossip Girl"
+    },
+    "BADGE": {
+      "name_fa": "BADGE",
+      "color": [
+        255,
+        235,
+        140
+      ],
+      "source": "google_flow_native"
+    }
+  },
+  "clips": [
+    {
+      "id": "clip_01",
+      "source": "clip_01.mp4",
+      "file": "clip_01.mp4",
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_01.jpg",
+      "speaker": "MARJAN",
+      "expected_speakers": [
+        "MARJAN"
+      ],
+      "source_span": [
+        0.0,
+        6.1
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.85,
+      "generation_duration_sec": 8,
+      "story_beat_fa": "در بخش نوزادان بیمارستان، مرجان کنار تخت نوزادان بلا و نورا می‌ایستد و از دکتر پرویز می‌پرسد چرا امتیاز بلا ده شده اما پیشانی نورا زیر برگ پاییزی مخفی است.",
+      "speech_text": "دُکْتُر، اِمْتیازِ بِلا دَه شُد، چِرا پیشونیِ نُورا زیرِ بَرْگْ مَخْفیه؟",
+      "generation_prompt": "[HF1_C01] 3D Pixar-style animated medium shot in a warm hospital maternity nursery: anxious Marjan Plum (3D anthropomorphic royal-purple plum head topped with a dark-green plum leaf stem, no human hair, light-blue maternity gown) first points gently toward the bassinet of sleeping emerald-teal baby Nora silently for 0.6 seconds with closed lips, then speaks the entire sentence in one continuous unbroken worried motherly female voice in native Iranian Persian (Farsi) while Dr. Parviz Melon (3D anthropomorphic frosted seafoam-mint melon head topped with two green herb leaves, no human hair, white leafy mustache, round spectacles, white doctor coat) listens silently with closed lips without speaking: «دُکْتُر، اِمْتیازِ بِلا دَه شُد، چِرا پیشونیِ نُورا زیرِ بَرْگْ مَخْفیه؟» Single speaker only, zero background chatter. Zero text or watermarks.",
+      "subtitles": [
+        {
+          "start": 0.15,
+          "end": 7.65,
+          "text": "دکتر، امتیاز بلا ده شد، چرا پیشونی نورا زیر برگ مخفیه؟",
+          "speaker": "MARJAN"
+        }
+      ],
+      "shot_type": "dialogue",
+      "require_visual_qa": false,
+      "contamination_margin": 15,
+      "story_beat": "در بخش نوزادان بیمارستان، مرجان کنار تخت نوزادان بلا و نورا می‌ایستد و از دکتر پرویز می‌پرسد چرا امتیاز بلا ده شده اما پیشانی نورا زیر برگ پاییزی مخفی است.",
+      "beat_ids": [
+        "beat_01"
+      ],
+      "overlays": [
+        {
+          "start": 0.1,
+          "end": 3.4,
+          "text": "راز پیشانی پوشیده! 🍂✨",
+          "speaker": "BADGE",
+          "y": 135,
+          "font_size": 21,
+          "box_alpha": 200
+        }
+      ]
+    },
+    {
+      "id": "clip_02",
+      "source": "clip_02.mp4",
+      "file": "clip_02.mp4",
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_02.jpg",
+      "speaker": "DR_PARVIZ",
+      "expected_speakers": [
+        "DR_PARVIZ"
+      ],
+      "source_span": [
+        6.1,
+        12.1
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.85,
+      "generation_duration_sec": 8,
+      "story_beat_fa": "دکتر پرویز دستش را با هشدار بالا می‌آورد و به مرجان می‌گوید تا هجده سالگی هیچ‌کس نباید پیشانی نورا را ببیند.",
+      "speech_text": "دَسْتْ نَزَنید خانُم، تا هِجْدَه سالِگی کَسی نَبایَد پیشونیشو بِبینِه!",
+      "generation_prompt": "[HF1_C02] 3D Pixar-style animated close medium two-shot in the hospital maternity nursery: solemn Dr. Parviz Melon (3D anthropomorphic frosted seafoam-mint melon head topped with two green herb leaves, no human hair, white leafy mustache, round spectacles, white doctor coat) first raises his mint hand in a warning gesture silently for 0.6 seconds with closed lips, then speaks the entire sentence in one continuous unbroken wise elderly male voice in native Iranian Persian (Farsi) while Marjan Plum (3D anthropomorphic royal-purple plum head topped with a dark-green plum leaf stem, no human hair) listens silently with closed lips without speaking: «دَسْتْ نَزَنید خانُم، تا هِجْدَه سالِگی کَسی نَبایَد پیشونیشو بِبینِه!» Single speaker only, zero background chatter. Zero text or watermarks.",
+      "subtitles": [
+        {
+          "start": 0.15,
+          "end": 7.65,
+          "text": "دست نزنید خانم، تا هجده سالگی کسی نباید پیشونیشو ببینه!",
+          "speaker": "DR_PARVIZ"
+        }
+      ],
+      "shot_type": "dialogue",
+      "require_visual_qa": false,
+      "contamination_margin": 15,
+      "story_beat": "دکتر پرویز دستش را با هشدار بالا می‌آورد و به مرجان می‌گوید تا هجده سالگی هیچ‌کس نباید پیشانی نورا را ببیند.",
+      "beat_ids": [
+        "beat_02"
+      ]
+    },
+    {
+      "id": "clip_03",
+      "source": "clip_03.mp4",
+      "file": "clip_03.mp4",
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_03.jpg",
+      "speaker": "MARJAN",
+      "expected_speakers": [
+        "MARJAN"
+      ],
+      "source_span": [
+        12.1,
+        18.2
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.85,
+      "generation_duration_sec": 8,
+      "story_beat_fa": "سال‌ها بعد در خانه، مرجان دست‌به‌سینه مقابل نورا می‌ایستد و از بلا تعریف می‌کند و به نورا دستور می‌دهد برگ‌های تاجش را پایین نگه دارد.",
+      "speech_text": "بِلا هَمیشِه عالیِه، تُو فَقَط بَرْگ‌هایِ تاجِت رُو پاییْن نِگَهْ دارْ!",
+      "generation_prompt": "[HF1_C03] 3D Pixar-style animated medium two-shot in a warm modern apartment living room: stern Marjan Plum (3D anthropomorphic royal-purple plum head topped with a dark-green plum leaf stem, no human hair, camel trench coat) first tilts her head sternly toward Nora silently for 0.6 seconds with closed lips, then speaks the entire sentence in one continuous unbroken strict motherly female voice in native Iranian Persian (Farsi) while teenage Nora Berry (3D anthropomorphic emerald-teal crystal berry head with drooping copper-amber autumn leaves hiding her forehead, no human hair, cream cable-knit cardigan) listens silently with closed lips without speaking: «بِلا هَمیشِه عالیِه، تُو فَقَط بَرْگ‌هایِ تاجِت رُو پاییْن نِگَهْ دارْ!» Single speaker only, zero background chatter. Zero text or watermarks.",
+      "subtitles": [
+        {
+          "start": 0.15,
+          "end": 7.65,
+          "text": "بلا همیشه عالیه، تو فقط برگ‌های تاجت رو پایین نگه دار!",
+          "speaker": "MARJAN"
+        }
+      ],
+      "shot_type": "dialogue",
+      "require_visual_qa": false,
+      "contamination_margin": 15,
+      "story_beat": "سال‌ها بعد در خانه، مرجان دست‌به‌سینه مقابل نورا می‌ایستد و از بلا تعریف می‌کند و به نورا دستور می‌دهد برگ‌های تاجش را پایین نگه دارد.",
+      "beat_ids": [
+        "beat_03"
+      ]
+    },
+    {
+      "id": "clip_04",
+      "source": "clip_04.mp4",
+      "file": "clip_04.mp4",
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_04.jpg",
+      "speaker": "BELLA",
+      "expected_speakers": [
+        "BELLA"
+      ],
+      "source_span": [
+        18.2,
+        24.3
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.85,
+      "generation_duration_sec": 8,
+      "story_beat_fa": "در صندلی عقب ماشین، بلا با غرور به نورا اخطار می‌دهد که در مدرسه به کسی نگوید خواهر اوست چون همه او را دختر ده از ده می‌شناسند.",
+      "speech_text": "مَبادا بِه کَسی بِگی خواهَرَمی، هَمِه مَنو دُخْتَرِ دَه اَز دَه می‌شْناسَن!",
+      "generation_prompt": "[HF1_C04] 3D Pixar-style animated medium two-shot in a sunlit car backseat: arrogant Bella Strawberry (3D anthropomorphic glossy rose-pink strawberry head topped with green strawberry calyx leaves and a pink bow, no human hair, plain red-and-white cheerleader outfit) first crosses her arms haughtily in silence for 0.6 seconds with closed lips, then speaks the entire sentence in one continuous unbroken haughty young female voice in native Iranian Persian (Farsi) while Nora Berry (3D anthropomorphic emerald-teal crystal berry head with copper-amber autumn leaves hiding her forehead, no human hair, cream sweater) listens silently with closed lips without speaking: «مَبادا بِه کَسی بِگی خواهَرَمی، هَمِه مَنو دُخْتَرِ دَه اَز دَه می‌شْناسَن!» Single speaker only, zero background chatter. Zero text or watermarks.",
+      "subtitles": [
+        {
+          "start": 0.15,
+          "end": 7.65,
+          "text": "مبادا به کسی بگی خواهرمی، همه منو دختر ده از ده می‌شناسن!",
+          "speaker": "BELLA"
+        }
+      ],
+      "shot_type": "dialogue",
+      "require_visual_qa": false,
+      "contamination_margin": 15,
+      "story_beat": "در صندلی عقب ماشین، بلا با غرور به نورا اخطار می‌دهد که در مدرسه به کسی نگوید خواهر اوست چون همه او را دختر ده از ده می‌شناسند.",
+      "beat_ids": [
+        "beat_04"
+      ]
+    },
+    {
+      "id": "clip_05",
+      "source": "clip_05.mp4",
+      "file": "clip_05.mp4",
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_05.jpg",
+      "speaker": "KIAN",
+      "expected_speakers": [
+        "KIAN"
+      ],
+      "source_span": [
+        24.3,
+        30.3
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.85,
+      "generation_duration_sec": 8,
+      "story_beat_fa": "در راهروی دبیرستان، کیان با تعجب به نورا نگاه می‌کند و می‌پرسد چرا پیشانی‌اش را با برگ پوشانده است.",
+      "speech_text": "بَچِّه‌ها اونْ دُخْتَرِه رُو بِبینید، چِرا پیشونیش رُو با بَرْگْ پوشونْدِه؟",
+      "generation_prompt": "[HF1_C05] 3D Pixar-style animated medium two-shot in a bright high school hallway beside blue lockers: skeptical Kian Apple (3D anthropomorphic crisp lime-green apple head topped with a brown apple stem and single green leaf, no human hair, red-and-black plaid flannel shirt) first leans slightly forward in silence for 0.6 seconds with closed lips, then speaks the entire sentence in one continuous unbroken teasing teenage male voice in native Iranian Persian (Farsi) while Nora Berry (3D anthropomorphic emerald-teal crystal berry head with copper-amber autumn leaves hiding her forehead, no human hair, cream sweater holding a plain blue notebook) listens silently with closed lips without speaking: «بَچِّه‌ها اونْ دُخْتَرِه رُو بِبینید، چِرا پیشونیش رُو با بَرْگْ پوشونْدِه؟» Single speaker only, zero background chatter. Zero text or watermarks.",
+      "subtitles": [
+        {
+          "start": 0.15,
+          "end": 7.65,
+          "text": "بچه‌ها اون دختره رو ببینید، چرا پیشونیش رو با برگ پوشونده؟",
+          "speaker": "KIAN"
+        }
+      ],
+      "shot_type": "dialogue",
+      "require_visual_qa": false,
+      "contamination_margin": 15,
+      "story_beat": "در راهروی دبیرستان، کیان با تعجب به نورا نگاه می‌کند و می‌پرسد چرا پیشانی‌اش را با برگ پوشانده است.",
+      "beat_ids": [
+        "beat_05"
+      ]
+    },
+    {
+      "id": "clip_06",
+      "source": "clip_06.mp4",
+      "file": "clip_06.mp4",
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_06.jpg",
+      "speaker": "RAMIN",
+      "expected_speakers": [
+        "RAMIN"
+      ],
+      "source_span": [
+        30.3,
+        36.4
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.85,
+      "generation_duration_sec": 8,
+      "story_beat_fa": "رامین پسر محبوب مدرسه کنار کمدهای آبی با لبخند گرم به نورا سلام می‌کند و می‌گوید با خود او حرف می‌زند.",
+      "speech_text": "سَلام، تُو هَمون دُخْتَرِ جَدیده‌ای؟ مَعْلومِه با خُودِتْ حَرْف می‌زَنَم!",
+      "generation_prompt": "[HF1_C06] [V2] 3D Pixar-style animated medium two-shot in the bright high school hallway beside blue lockers: warm Ramin Citrus (3D anthropomorphic golden-amber citrus head topped with a green citrus leaf stem, no human hair, plain navy-and-cream varsity jacket) first nods warmly in silence for 0.6 seconds with closed lips, then speaks the entire sentence in one continuous unbroken friendly teenage male voice in native Iranian Persian (Farsi) while Nora Berry (3D anthropomorphic emerald-teal crystal berry head with copper-amber autumn leaves hiding her forehead, no human hair, cream sweater clutching a plain notebook) listens silently with closed lips without speaking: «سَلام، تُو هَمون دُخْتَرِ جَدیده‌ای؟ مَعْلومِه با خُودِتْ حَرْف می‌زَنَم!» Single speaker only, same voice from first word to last word, zero second speaker. Zero speech bubbles, zero text or watermarks.",
+      "subtitles": [
+        {
+          "start": 0.15,
+          "end": 7.65,
+          "text": "سلام، تو همون دختر جدیده‌ای؟ معلومه با خودت حرف می‌زنم!",
+          "speaker": "RAMIN"
+        }
+      ],
+      "shot_type": "dialogue",
+      "require_visual_qa": false,
+      "contamination_margin": 15,
+      "story_beat": "رامین پسر محبوب مدرسه کنار کمدهای آبی با لبخند گرم به نورا سلام می‌کند و می‌گوید با خود او حرف می‌زند.",
+      "beat_ids": [
+        "beat_06"
+      ]
+    }
+  ],
+  "video": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 24,
+    "crf": 18,
+    "preset": "fast",
+    "scale_mode": "fill"
+  },
+  "audio": {
+    "loudnorm": "loudnorm=I=-14:TP=-1.5:LRA=11",
+    "sample_rate": 48000,
+    "channels": 2,
+    "bitrate": "192k"
+  },
+  "speech": {
+    "speech_safe": "auto_expand",
+    "threshold_dbfs": -38,
+    "pre_handle": 0.2,
+    "post_handle": 0.35,
+    "splice_crossfade": 0.02
+  },
+  "subtitle_style": {
+    "time_base": "trim_local",
+    "y_ratio": 0.84,
+    "font_size": 27,
+    "min_font_size": 16,
+    "max_text_margin": 84,
+    "max_lines": 2
+  },
+  "outputs": {
+    "per_clip_location": "both",
+    "base_mode": "timeline",
+    "cta_burn_subtitles": true,
+    "cta_loudnorm": true,
+    "publish_caption_fa": "قسمت اول: راز پیشانی پوشیده نورا از روز تولد تا دبیرستان!"
+  },
+  "content_edits": [],
+  "story_plan": {
+    "summary": "از روز تولد نورا دکتر پرویز هشدار می‌دهد کسی پیشانی او را تا هجده سالگی نبیند و در دبیرستان رامین به او علاقه‌مند می‌شود!",
+    "ending": "Hidden Forehead Mark Part 1",
+    "required_beats": [
+      "beat_01",
+      "beat_02",
+      "beat_03",
+      "beat_04",
+      "beat_05",
+      "beat_06"
+    ]
+  },
+  "visual": {
+    "keyframe_threshold": 65,
+    "jump_threshold": 38,
+    "contamination_margin": 15
+  },
+  "visual_gate": {
+    "keyframe_threshold": 65,
+    "jump_threshold": 38,
+    "contamination_margin": 15
+  },
+  "generation_settings": {
+    "model": "Veo 3.1 - Fast",
+    "duration_sec": 8,
+    "aspect": "9:16",
+    "outputs": 1,
+    "resolution": "720p",
+    "video_type": "Ingredients"
+  }
+}

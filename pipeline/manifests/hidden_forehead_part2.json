@@ -1,0 +1,473 @@
+{
+  "_comment": "Part2_HiddenForehead - 100% Google Flow native Farsi voice with full اعراب‌گذاری and 0.6s physical lead-in.",
+  "schema_version": 1,
+  "speech_review_note": "Full Persian vowel diacritics (اعراب‌گذاری کامل) and 0.6s physical lead-in in Google Flow prompt for 100% accurate native pronunciation.",
+  "episode_id": "Part2_HiddenForehead",
+  "title_fa": "قسمت پایانی: حسادت خواهر ده از ده و رسیدن صبح هجده سالگی نورا!",
+  "title_en": "Hidden Forehead Mark Part 2",
+  "source_video": "${SRC}\\02_2026-10-25_De5YwKLqV92.mp4",
+  "source_start_offset": 36.4,
+  "story_summary_fa": "رامین سر میز ناهار کنار نورا می‌نشیند، بلا از حسادت عصبانی می‌شود و بالاخره صبح تولد هجده سالگی نورا فرا می‌رسد!",
+  "fallback_to_source_on_visual_fail": false,
+  "tight_speech_trim": true,
+  "variables": {
+    "BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series29-hidden-forehead-mark-farsi",
+    "S2_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi",
+    "CHEF_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\ugly-face-chef-farsi",
+    "SRC": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\straw.berryjammin"
+  },
+  "clips_dir": "${BASE}\\part2\\flow_clips",
+  "out_dir": "${BASE}\\05_final_masters\\part2",
+  "font_path": "${CHEF_BASE}\\03_farsi_audio_tts\\Vazirmatn-Bold.ttf",
+  "cta_video": "${S2_BASE}\\part1\\flow_clips\\cta_kelidbox_s2.mp4",
+  "cta_speaker": "NORA",
+  "cta_subtitles": [
+    {
+      "start": 0.15,
+      "end": 3.55,
+      "text": "برای دیدن قسمت بعدی این داستان همین الان پیج رو فالو کن!"
+    },
+    {
+      "start": 3.6,
+      "end": 7.55,
+      "text": "راستی، کل این انیمیشن با اکانت‌های هوش مصنوعی سایت کلیدباکس ساخته شده!"
+    }
+  ],
+  "character_references": [
+    "${BASE}\\00_character_sheet\\CHARACTER_SHEET.png",
+    "${BASE}\\01_story_and_manifests\\FLOW_SHEET_01_NORA.jpg",
+    "${BASE}\\01_story_and_manifests\\FLOW_SHEET_02_BELLA.jpg",
+    "${BASE}\\01_story_and_manifests\\FLOW_SHEET_03_MARJAN.jpg"
+  ],
+  "location_references": [
+    "${BASE}\\01_story_and_manifests\\FLOW_LOC_01_NURSERY.jpg",
+    "${BASE}\\01_story_and_manifests\\FLOW_LOC_02_SCHOOL.jpg"
+  ],
+  "speakers": {
+    "NORA": [
+      130,
+      255,
+      220
+    ],
+    "BELLA": [
+      255,
+      155,
+      195
+    ],
+    "MARJAN": [
+      215,
+      165,
+      255
+    ],
+    "DR_PARVIZ": [
+      150,
+      245,
+      190
+    ],
+    "KIAN": [
+      175,
+      240,
+      135
+    ],
+    "RAMIN": [
+      255,
+      225,
+      110
+    ],
+    "TARA": [
+      255,
+      210,
+      140
+    ],
+    "BADGE": [
+      255,
+      235,
+      140
+    ]
+  },
+  "voices": {
+    "NORA": {
+      "voice": "Aoede",
+      "source": "google_flow_native",
+      "name_fa": "NORA",
+      "color": [
+        130,
+        255,
+        220
+      ],
+      "hex": "#82FFDC",
+      "role": "Emerald-Teal Crystal Berry Girl with Autumn Leaf Forehead Veil"
+    },
+    "BELLA": {
+      "voice": "Aoede",
+      "source": "google_flow_native",
+      "name_fa": "BELLA",
+      "color": [
+        255,
+        155,
+        195
+      ],
+      "hex": "#FF9BC3",
+      "role": "Rose-Pink Strawberry Cheerleader Sister (10/10)"
+    },
+    "MARJAN": {
+      "voice": "Aoede",
+      "source": "google_flow_native",
+      "name_fa": "MARJAN",
+      "color": [
+        215,
+        165,
+        255
+      ],
+      "hex": "#D7A5FF",
+      "role": "Royal-Purple Plum Mother"
+    },
+    "DR_PARVIZ": {
+      "voice": "Fenrir",
+      "source": "google_flow_native",
+      "name_fa": "DR_PARVIZ",
+      "color": [
+        150,
+        245,
+        190
+      ],
+      "hex": "#96F5BE",
+      "role": "Elderly Frosted Seafoam-Mint Melon Birth Doctor"
+    },
+    "KIAN": {
+      "voice": "Puck",
+      "source": "google_flow_native",
+      "name_fa": "KIAN",
+      "color": [
+        175,
+        240,
+        135
+      ],
+      "hex": "#AFF087",
+      "role": "Crisp Lime-Green Apple Schoolboy"
+    },
+    "RAMIN": {
+      "voice": "Puck",
+      "source": "google_flow_native",
+      "name_fa": "RAMIN",
+      "color": [
+        255,
+        225,
+        110
+      ],
+      "hex": "#FFE16E",
+      "role": "Golden-Amber Citrus Varsity Boy"
+    },
+    "TARA": {
+      "voice": "Aoede",
+      "source": "google_flow_native",
+      "name_fa": "TARA",
+      "color": [
+        255,
+        210,
+        140
+      ],
+      "hex": "#FFD28C",
+      "role": "Pastel-Peach Fruit School Gossip Girl"
+    },
+    "BADGE": {
+      "name_fa": "BADGE",
+      "color": [
+        255,
+        235,
+        140
+      ],
+      "source": "google_flow_native"
+    }
+  },
+  "clips": [
+    {
+      "id": "clip_01",
+      "source": "clip_01.mp4",
+      "file": "clip_01.mp4",
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_01.jpg",
+      "speaker": "RAMIN",
+      "expected_speakers": [
+        "RAMIN"
+      ],
+      "source_span": [
+        36.4,
+        42.5
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.85,
+      "generation_duration_sec": 8,
+      "story_beat_fa": "در سالن غذاخوری دبیرستان، رامین سینی ناهارش را روی میز نورا می‌گذارد و با صمیمیت می‌پرسد اجازه دارد کنار او بنشیند.",
+      "speech_text": "می‌شِه پیشِتْ بِشینَمْ؟ جِدّی می‌گَمْ، می‌خوامْ ناهارُو با تُو بُخورَمْ!",
+      "generation_prompt": "[HF2_C01] 3D Pixar-style animated medium two-shot at a sunlit high school cafeteria table: warm Ramin Citrus (3D anthropomorphic golden-amber citrus head topped with a green citrus leaf stem, no human hair, plain navy-and-cream varsity jacket) first gestures kindly toward his lunch tray in silence for 0.6 seconds with closed lips, then speaks the entire sentence in one continuous unbroken warm teenage male voice in native Iranian Persian (Farsi) while Nora Berry (3D anthropomorphic emerald-teal crystal berry head with copper-amber autumn leaves hiding her forehead, no human hair, cream cardigan) listens silently with closed lips without speaking: «می‌شِه پیشِتْ بِشینَمْ؟ جِدّی می‌گَمْ، می‌خوامْ ناهارُو با تُو بُخورَمْ!» Single speaker only, zero background chatter. Zero text or watermarks.",
+      "subtitles": [
+        {
+          "start": 0.15,
+          "end": 7.65,
+          "text": "می‌شه پیشت بشینم؟ جدی می‌گم، می‌خوام ناهارو با تو بخورم!",
+          "speaker": "RAMIN"
+        }
+      ],
+      "shot_type": "dialogue",
+      "require_visual_qa": false,
+      "contamination_margin": 15,
+      "story_beat": "در سالن غذاخوری دبیرستان، رامین سینی ناهارش را روی میز نورا می‌گذارد و با صمیمیت می‌پرسد اجازه دارد کنار او بنشیند.",
+      "beat_ids": [
+        "beat_01"
+      ],
+      "overlays": [
+        {
+          "start": 0.1,
+          "end": 3.4,
+          "text": "صبح تولد ۱۸ سالگی! 🌟🔥",
+          "speaker": "BADGE",
+          "y": 135,
+          "font_size": 21,
+          "box_alpha": 200
+        }
+      ]
+    },
+    {
+      "id": "clip_02",
+      "source": "clip_02.mp4",
+      "file": "clip_02.mp4",
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_02.jpg",
+      "speaker": "TARA",
+      "expected_speakers": [
+        "TARA"
+      ],
+      "source_span": [
+        42.5,
+        48.6
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.85,
+      "generation_duration_sec": 8,
+      "story_beat_fa": "در راهروی مدرسه، تارا گوشی صورتی خود را نگه می‌دارد و به بلا می‌گوید همه درباره نورا حرف می‌زنند و انگار رامین از او خوشش آمده است.",
+      "speech_text": "بِلا هَمِه دَرْبارِه نُورا می‌گَن، اِنْگار رامین اَزَشْ خُوشِش اومَدِه!",
+      "generation_prompt": "[HF2_C02] [V2] 3D Pixar-style animated medium two-shot in the school hallway beside blue lockers: excited Tara Peach (3D anthropomorphic pastel-peach fruit head topped with two green peach leaves, no human hair, light-blue denim jacket and pink plaid skirt holding a plain pink smartphone) first glances at her phone in silence for 0.6 seconds with closed lips, then speaks the entire sentence in one continuous unbroken gossipy young female voice in native Iranian Persian (Farsi) while Bella Strawberry (3D anthropomorphic glossy rose-pink strawberry head topped with green calyx leaves and pink bow, no human hair, plain cheer outfit) listens silently with closed lips without speaking: «بِلا هَمِه دَرْبارِه نُورا می‌گَن، اِنْگار رامین اَزَشْ خُوشِش اومَدِه!» Single speaker only, same voice from first word to last word, zero second speaker. Zero text or watermarks.",
+      "subtitles": [
+        {
+          "start": 0.15,
+          "end": 7.65,
+          "text": "بلا همه درباره نورا می‌گن، انگار رامین ازش خوشش اومده!",
+          "speaker": "TARA"
+        }
+      ],
+      "shot_type": "dialogue",
+      "require_visual_qa": false,
+      "contamination_margin": 15,
+      "story_beat": "در راهروی مدرسه، تارا گوشی صورتی خود را نگه می‌دارد و به بلا می‌گوید همه درباره نورا حرف می‌زنند و انگار رامین از او خوشش آمده است.",
+      "beat_ids": [
+        "beat_02"
+      ]
+    },
+    {
+      "id": "clip_03",
+      "source": "clip_03.mp4",
+      "file": "clip_03.mp4",
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_03.jpg",
+      "speaker": "BELLA",
+      "expected_speakers": [
+        "BELLA"
+      ],
+      "source_span": [
+        48.6,
+        54.6
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.85,
+      "generation_duration_sec": 8,
+      "story_beat_fa": "در صندلی عقب ماشین، بلا با خشم انگشتش را به سمت نورا می‌گیرد و می‌گوید از رامین دور بماند چون کسی نمی‌داند امتیازش چند است.",
+      "speech_text": "جِدّی گُفْتَم اَزَش دور بِمون، چون کَسی نِمی‌دونِه اِمْتیازِت چَنْدِه!",
+      "generation_prompt": "[HF2_C03] 3D Pixar-style animated medium two-shot in the car backseat: furious Bella Strawberry (3D anthropomorphic glossy rose-pink strawberry head topped with green strawberry calyx leaves and pink bow, no human hair, plain red-and-white cheerleader outfit) first points her warning finger toward Nora in silence for 0.6 seconds with closed lips, then speaks the entire sentence in one continuous unbroken angry jealous young female voice in native Iranian Persian (Farsi) while Nora Berry (3D anthropomorphic emerald-teal crystal berry head with copper-amber autumn leaves hiding her forehead, no human hair, cream cardigan) listens silently with closed lips without speaking: «جِدّی گُفْتَم اَزَش دور بِمون، چون کَسی نِمی‌دونِه اِمْتیازِت چَنْدِه!» Single speaker only, zero background chatter. Zero text or watermarks.",
+      "subtitles": [
+        {
+          "start": 0.15,
+          "end": 7.65,
+          "text": "جدی گفتم ازش دور بمون، چون کسی نمی‌دونه امتیازت چنده!",
+          "speaker": "BELLA"
+        }
+      ],
+      "shot_type": "dialogue",
+      "require_visual_qa": false,
+      "contamination_margin": 15,
+      "story_beat": "در صندلی عقب ماشین، بلا با خشم انگشتش را به سمت نورا می‌گیرد و می‌گوید از رامین دور بماند چون کسی نمی‌داند امتیازش چند است.",
+      "beat_ids": [
+        "beat_03"
+      ]
+    },
+    {
+      "id": "clip_04",
+      "source": "clip_04.mp4",
+      "file": "clip_04.mp4",
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_04.jpg",
+      "speaker": "NORA",
+      "expected_speakers": [
+        "NORA"
+      ],
+      "source_span": [
+        54.6,
+        60.7
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.85,
+      "generation_duration_sec": 8,
+      "story_beat_fa": "نورا در صندلی عقب ماشین با آرامش رو به بلا می‌کند و می‌پرسد چرا وقتی بلا امتیاز ده دارد از او می‌ترسد.",
+      "speech_text": "چِرا اَزْ رامینْ دُورْ بِمونَم؟ تُو کِه دَهی، چِرا اَزَمْ می‌تَرْسی؟",
+      "generation_prompt": "[HF2_C04] 3D Pixar-style animated dramatic medium two-shot in the car backseat: calm Nora Berry (3D anthropomorphic emerald-teal crystal berry head with copper-amber autumn leaves hiding her forehead, no human hair, cream cable-knit cardigan over dark-green plaid shirt) first turns her head calmly toward Bella in silence for 0.6 seconds with closed lips, then speaks the entire sentence in one continuous unbroken confident young female voice in native Iranian Persian (Farsi) while Bella Strawberry (3D anthropomorphic glossy rose-pink strawberry head topped with green calyx leaves, no human hair, plain cheer outfit) listens silently with closed lips without speaking: «چِرا اَزْ رامینْ دُورْ بِمونَم؟ تُو کِه دَهی، چِرا اَزَمْ می‌تَرْسی؟» Single speaker only, zero background chatter. Zero text or watermarks.",
+      "subtitles": [
+        {
+          "start": 0.15,
+          "end": 7.65,
+          "text": "چرا از رامین دور بمونم؟ تو که دهی، چرا ازم می‌ترسی؟",
+          "speaker": "NORA"
+        }
+      ],
+      "shot_type": "dialogue",
+      "require_visual_qa": false,
+      "contamination_margin": 15,
+      "story_beat": "نورا در صندلی عقب ماشین با آرامش رو به بلا می‌کند و می‌پرسد چرا وقتی بلا امتیاز ده دارد از او می‌ترسد.",
+      "beat_ids": [
+        "beat_04"
+      ]
+    },
+    {
+      "id": "clip_05",
+      "source": "clip_05.mp4",
+      "file": "clip_05.mp4",
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_05.jpg",
+      "speaker": "NORA",
+      "expected_speakers": [
+        "NORA"
+      ],
+      "source_span": [
+        60.7,
+        66.8
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.85,
+      "generation_duration_sec": 8,
+      "story_beat_fa": "نورا شب قبل از تولدش تنها روی تخت نشسته و با خود می‌گوید فردا هجده ساله‌اش می‌شود و بالاخره راز پیشانی‌اش را می‌بیند.",
+      "speech_text": "نَکُنِه اِمْتیازَم کَمْ باشِه؟ فَرْدا هِجْدَه سالَم می‌شِه رازَمو می‌بینَم!",
+      "generation_prompt": "[HF2_C05] 3D Pixar-style animated solo medium shot in a quiet moonlit bedroom at night: reflective Nora Berry (3D anthropomorphic emerald-teal crystal berry head with copper-amber autumn leaves hiding her forehead, no human hair, cream cable-knit cardigan and blue jeans) first looks down thoughtfully at her emerald hands in silence for 0.6 seconds with closed lips, then speaks the entire sentence in one continuous unbroken hopeful young female voice in native Iranian Persian (Farsi): «نَکُنِه اِمْتیازَم کَمْ باشِه؟ فَرْدا هِجْدَه سالَم می‌شِه رازَمو می‌بینَم!» Single speaker only, zero background chatter. Zero text or watermarks.",
+      "subtitles": [
+        {
+          "start": 0.15,
+          "end": 7.65,
+          "text": "نکنه امتیازم کم باشه؟ فردا هجده سالم می‌شه رازمو می‌بینم!",
+          "speaker": "NORA"
+        }
+      ],
+      "shot_type": "dialogue",
+      "require_visual_qa": false,
+      "contamination_margin": 15,
+      "story_beat": "نورا شب قبل از تولدش تنها روی تخت نشسته و با خود می‌گوید فردا هجده ساله‌اش می‌شود و بالاخره راز پیشانی‌اش را می‌بیند.",
+      "beat_ids": [
+        "beat_05"
+      ]
+    },
+    {
+      "id": "clip_06",
+      "source": "clip_06.mp4",
+      "file": "clip_06.mp4",
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_06.jpg",
+      "speaker": "NORA",
+      "expected_speakers": [
+        "NORA"
+      ],
+      "source_span": [
+        66.8,
+        72.84
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.85,
+      "generation_duration_sec": 8,
+      "story_beat_fa": "صبح روز تولد هجده سالگی، نورا دست‌هایش را به سمت برگ‌های روی پیشانی‌اش می‌برد که نور طلایی از زیر آن می‌درخشد و به هجده سالگی سلام می‌کند.",
+      "speech_text": "سَلام هِجْدَه سالِگی! عُمْرَمْ مُنْتَظِرِ اِمْروز بودَم تا رازَمو بِبینَم!",
+      "generation_prompt": "[HF2_C06] 3D Pixar-style animated solo medium close-up in a warm golden sunlit bedroom in the morning: excited Nora Berry (3D anthropomorphic emerald-teal crystal berry head with copper-amber autumn leaves on her brow and golden starlight glowing softly underneath, no human hair, cream cable-knit cardigan) first raises both emerald hands gently toward her autumn forehead leaves in silence for 0.6 seconds with closed lips, then speaks the entire sentence in one continuous unbroken emotional young female voice in native Iranian Persian (Farsi): «سَلام هِجْدَه سالِگی! عُمْرَمْ مُنْتَظِرِ اِمْروز بودَم تا رازَمو بِبینَم!» Single speaker only, zero background chatter. Zero text or watermarks.",
+      "subtitles": [
+        {
+          "start": 0.15,
+          "end": 7.65,
+          "text": "سلام هجده سالگی! عمرم منتظر امروز بودم تا رازمو ببینم!",
+          "speaker": "NORA"
+        }
+      ],
+      "shot_type": "dialogue",
+      "require_visual_qa": false,
+      "contamination_margin": 15,
+      "story_beat": "صبح روز تولد هجده سالگی، نورا دست‌هایش را به سمت برگ‌های روی پیشانی‌اش می‌برد که نور طلایی از زیر آن می‌درخشد و به هجده سالگی سلام می‌کند.",
+      "beat_ids": [
+        "beat_06"
+      ]
+    }
+  ],
+  "video": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 24,
+    "crf": 18,
+    "preset": "fast",
+    "scale_mode": "fill"
+  },
+  "audio": {
+    "loudnorm": "loudnorm=I=-14:TP=-1.5:LRA=11",
+    "sample_rate": 48000,
+    "channels": 2,
+    "bitrate": "192k"
+  },
+  "speech": {
+    "speech_safe": "auto_expand",
+    "threshold_dbfs": -38,
+    "pre_handle": 0.2,
+    "post_handle": 0.35,
+    "splice_crossfade": 0.02
+  },
+  "subtitle_style": {
+    "time_base": "trim_local",
+    "y_ratio": 0.84,
+    "font_size": 27,
+    "min_font_size": 16,
+    "max_text_margin": 84,
+    "max_lines": 2
+  },
+  "outputs": {
+    "per_clip_location": "both",
+    "base_mode": "timeline",
+    "cta_burn_subtitles": true,
+    "cta_loudnorm": true,
+    "publish_caption_fa": "قسمت پایانی: حسادت خواهر ده از ده و رسیدن صبح هجده سالگی نورا!"
+  },
+  "content_edits": [],
+  "story_plan": {
+    "summary": "رامین سر میز ناهار کنار نورا می‌نشیند، بلا از حسادت عصبانی می‌شود و بالاخره صبح تولد هجده سالگی نورا فرا می‌رسد!",
+    "ending": "Hidden Forehead Mark Part 2",
+    "required_beats": [
+      "beat_01",
+      "beat_02",
+      "beat_03",
+      "beat_04",
+      "beat_05",
+      "beat_06"
+    ]
+  },
+  "visual": {
+    "keyframe_threshold": 65,
+    "jump_threshold": 38,
+    "contamination_margin": 15
+  },
+  "visual_gate": {
+    "keyframe_threshold": 65,
+    "jump_threshold": 38,
+    "contamination_margin": 15
+  },
+  "generation_settings": {
+    "model": "Veo 3.1 - Fast",
+    "duration_sec": 8,
+    "aspect": "9:16",
+    "outputs": 1,
+    "resolution": "720p",
+    "video_type": "Ingredients"
+  }
+}

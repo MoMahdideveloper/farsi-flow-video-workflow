@@ -55,7 +55,7 @@ export function manifestForBatch(batch) {
   const prefixes = { eg: 'emotional', pz: 'pizza', bs: 'big_sponge', sc: 'sleep_challenge',
     ft: 'fake_tattoo', bl: 'big_lips', wv: 'weighted_vest', rw: 'red_wig', rs: 'rap_son', jb: 'janitor_bench',
     hm: 'honest_miner', pn: 'prison_swap', gj: 'golden_jacket', bm: 'bronze_mirror', mg: 'genius_magic_grapes',
-    ld: 'lemon_dna_test', sb: 'blueberry_smoothie', cw: 'cowboy_wife_exchange', oc: 'orion_ceo', qt: 'quantora_ceo', ir: 'infinity_rating' };
+    ld: 'lemon_dna_test', sb: 'blueberry_smoothie', cw: 'cowboy_wife_exchange', oc: 'orion_ceo', qt: 'quantora_ceo', ir: 'infinity_rating', hf: 'hidden_forehead' };
   let file;
   const m = batch.match(/^(\w+)_part(\d+)$/);
   if (m && prefixes[m[1]]) file = `${prefixes[m[1]]}_part${m[2]}.json`;
