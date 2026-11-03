@@ -1,0 +1,490 @@
+{
+  "_comment": "Part1_QuantoraCeo - 100% Google Flow native Farsi voice with full اعراب‌گذاری and 0.6s physical lead-in.",
+  "schema_version": 1,
+  "speech_review_note": "Full Persian vowel diacritics (اعراب‌گذاری کامل) and 0.6s physical lead-in in Google Flow prompt for 100% accurate native pronunciation.",
+  "episode_id": "Part1_QuantoraCeo",
+  "title_fa": "قسمت اول: راز مدیرعامل میلیاردر و ربوده شدن عروس جلوی عمارت!",
+  "title_en": "Quantora CEO Part 1",
+  "source_video": "${SRC}\\46_2026-10-03_DeCWQj5qjio.mp4",
+  "source_start_offset": 0.0,
+  "story_summary_fa": "آرتور مدیرعامل سیصد میلیارد دلاری کوانتورا برای دیدن دوست قدیمی‌اش مدیرعامل اوریون به عمارت می‌آید، اما همزمان کلارا را جلوی عمارت می‌دزدند!",
+  "fallback_to_source_on_visual_fail": false,
+  "tight_speech_trim": true,
+  "variables": {
+    "BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series27-quantora-ceo-farsi",
+    "S2_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi",
+    "CHEF_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\ugly-face-chef-farsi",
+    "SRC": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\straw.berryjammin"
+  },
+  "clips_dir": "${BASE}\\part1\\flow_clips",
+  "out_dir": "${BASE}\\05_final_masters\\part1",
+  "font_path": "${CHEF_BASE}\\03_farsi_audio_tts\\Vazirmatn-Bold.ttf",
+  "cta_video": "${S2_BASE}\\part1\\flow_clips\\cta_kelidbox_s2.mp4",
+  "cta_speaker": "ARTHUR",
+  "cta_subtitles": [
+    {
+      "start": 0.15,
+      "end": 3.55,
+      "text": "برای دیدن قسمت بعدی این داستان همین الان پیج رو فالو کن!"
+    },
+    {
+      "start": 3.6,
+      "end": 7.55,
+      "text": "راستی، کل این انیمیشن با اکانت‌های هوش مصنوعی سایت کلیدباکس ساخته شده!"
+    }
+  ],
+  "character_references": [
+    "${BASE}\\00_character_sheet\\CHARACTER_SHEET.png",
+    "${BASE}\\01_story_and_manifests\\FLOW_SHEET_01_ARTHUR.jpg",
+    "${BASE}\\01_story_and_manifests\\FLOW_SHEET_02_CLARA.jpg",
+    "${BASE}\\01_story_and_manifests\\FLOW_SHEET_03_KEVIN.jpg"
+  ],
+  "location_references": [
+    "${BASE}\\01_story_and_manifests\\FLOW_LOC_01_LIMO.jpg",
+    "${BASE}\\01_story_and_manifests\\FLOW_LOC_02_MANSION.jpg"
+  ],
+  "speakers": {
+    "ARTHUR": [
+      255,
+      235,
+      155
+    ],
+    "CLARA": [
+      165,
+      255,
+      195
+    ],
+    "SPIKE": [
+      255,
+      135,
+      135
+    ],
+    "BARNEY": [
+      135,
+      215,
+      255
+    ],
+    "RUBY": [
+      255,
+      165,
+      190
+    ],
+    "BRUNO": [
+      220,
+      195,
+      150
+    ],
+    "TRIXIE": [
+      225,
+      170,
+      255
+    ],
+    "KEVIN": [
+      255,
+      185,
+      110
+    ],
+    "BADGE": [
+      255,
+      235,
+      140
+    ]
+  },
+  "voices": {
+    "ARTHUR": {
+      "voice": "Fenrir",
+      "source": "google_flow_native",
+      "name_fa": "ARTHUR",
+      "color": [
+        255,
+        235,
+        155
+      ],
+      "hex": "#FFEB9B",
+      "role": "Aristocratic White Garlic-Bulb Quantora CEO ($300B)"
+    },
+    "CLARA": {
+      "voice": "Aoede",
+      "source": "google_flow_native",
+      "name_fa": "CLARA",
+      "color": [
+        165,
+        255,
+        195
+      ],
+      "hex": "#A5FFC3",
+      "role": "Pale-Green Honeydew Melon Bride"
+    },
+    "SPIKE": {
+      "voice": "Charon",
+      "source": "google_flow_native",
+      "name_fa": "SPIKE",
+      "color": [
+        255,
+        135,
+        135
+      ],
+      "hex": "#FF8787",
+      "role": "Dark-Charcoal Spiky Chestnut Kidnapper Thug"
+    },
+    "BARNEY": {
+      "voice": "Puck",
+      "source": "google_flow_native",
+      "name_fa": "BARNEY",
+      "color": [
+        135,
+        215,
+        255
+      ],
+      "hex": "#87D7FF",
+      "role": "Opportunistic Cobalt-Blue Blueberry Uncle"
+    },
+    "RUBY": {
+      "voice": "Aoede",
+      "source": "google_flow_native",
+      "name_fa": "RUBY",
+      "color": [
+        255,
+        165,
+        190
+      ],
+      "hex": "#FFA5BE",
+      "role": "Crimson-Red Pomegranate Executive Assistant"
+    },
+    "BRUNO": {
+      "voice": "Charon",
+      "source": "google_flow_native",
+      "name_fa": "BRUNO",
+      "color": [
+        220,
+        195,
+        150
+      ],
+      "hex": "#DCC396",
+      "role": "Warm-Brown Russet-Potato Limousine Chauffeur"
+    },
+    "TRIXIE": {
+      "voice": "Aoede",
+      "source": "google_flow_native",
+      "name_fa": "TRIXIE",
+      "color": [
+        225,
+        170,
+        255
+      ],
+      "hex": "#E1AAFF",
+      "role": "Vibrant-Purple Eggplant Cousin"
+    },
+    "KEVIN": {
+      "voice": "Puck",
+      "source": "google_flow_native",
+      "name_fa": "KEVIN",
+      "color": [
+        255,
+        185,
+        110
+      ],
+      "hex": "#FFB96E",
+      "role": "Bright-Orange Tangerine Impostor Groom"
+    },
+    "BADGE": {
+      "name_fa": "BADGE",
+      "color": [
+        255,
+        235,
+        140
+      ],
+      "source": "google_flow_native"
+    }
+  },
+  "clips": [
+    {
+      "id": "clip_01",
+      "source": "clip_01.mp4",
+      "file": "clip_01.mp4",
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_01.jpg",
+      "speaker": "ARTHUR",
+      "expected_speakers": [
+        "ARTHUR"
+      ],
+      "source_span": [
+        0.0,
+        7.8
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.85,
+      "generation_duration_sec": 8,
+      "story_beat_fa": "آرتور مدیرعامل سیصد میلیارد دلاری کوانتورا شبانه جلوی عمارت مجلل از لیموزین پیاده می‌شود تا دوست قدیمی‌اش مدیرعامل اوریون را ببیند.",
+      "speech_text": "اِمشَبْ بالاخَرِه رَفیقِ قَدیمیمْ رو می‌بینَمْ، قُدرَتمَندتَرینْ رَئیسِ رویِ زَمینْ هَمینجاستْ!",
+      "generation_prompt": "[QT1_C01] 3D Pixar-style animated medium shot outside a grand illuminated mansion at night on wet glistening pavement: aristocratic Arthur Garlic (3D anthropomorphic plump ridged ivory-white garlic-bulb head, papery silver-white crown tuft on top, no human hair, thick white mustache, round gold-rimmed spectacles, tailored cream three-piece suit, royal-blue silk tie, holding a brown leather briefcase) first takes a 0.6-second silent proud breath beside his black limousine, then speaks in native Iranian Persian (Farsi) with a warm refined elderly male voice: «اِمشَبْ بالاخَرِه رَفیقِ قَدیمیمْ رو می‌بینَمْ، قُدرَتمَندتَرینْ رَئیسِ رویِ زَمینْ هَمینجاستْ!» Single speaker only, zero background chatter. Zero text or watermarks.",
+      "subtitles": [
+        {
+          "start": 0.15,
+          "end": 7.65,
+          "text": "امشب بالاخره رفیق قدیمیم رو می‌بینم، قدرتمندترین رئیس روی زمین همینجاست!",
+          "speaker": "ARTHUR"
+        }
+      ],
+      "shot_type": "dialogue",
+      "require_visual_qa": false,
+      "contamination_margin": 15,
+      "story_beat": "آرتور مدیرعامل سیصد میلیارد دلاری کوانتورا شبانه جلوی عمارت مجلل از لیموزین پیاده می‌شود تا دوست قدیمی‌اش مدیرعامل اوریون را ببیند.",
+      "beat_ids": [
+        "beat_01"
+      ],
+      "overlays": [
+        {
+          "start": 0.1,
+          "end": 3.4,
+          "text": "راز مدیرعامل میلیاردر! 💎🔥",
+          "speaker": "BADGE",
+          "y": 135,
+          "font_size": 21,
+          "box_alpha": 200
+        }
+      ]
+    },
+    {
+      "id": "clip_02",
+      "source": "clip_02.mp4",
+      "file": "clip_02.mp4",
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_02.jpg",
+      "speaker": "CLARA",
+      "expected_speakers": [
+        "CLARA"
+      ],
+      "source_span": [
+        7.8,
+        15.8
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.85,
+      "generation_duration_sec": 8,
+      "story_beat_fa": "افراد اسپایک جلوی عمارت کلارا را می‌گیرند تا بدزدند و کلارا فریاد می‌زند که نامزد میلیاردرش حساب همه‌شان را می‌رسد.",
+      "speech_text": "دَستِتْ رو بِکِشْ کِنارْ! نامزَدَمْ میلیارْدِرِه وَ حِسابِ هَمَه‌تونْ رو می‌رِسِه!",
+      "generation_prompt": "[QT1_C02] 3D Pixar-style animated medium two-shot in the mansion driveway at night: brave Clara Melon (3D anthropomorphic smooth spherical mint-green honeydew melon head, small green leaf crown on top, no human hair, large emerald eyes, white satin bridal jumpsuit) first pulls back her arm silently for 0.6 seconds, then speaks fiercely in native Iranian Persian (Farsi) with a clear emotional female voice while two Spike Chestnut thugs (3D anthropomorphic matte obsidian-black spiky chestnut-shell heads, no human hair, dark angular sunglasses, black leather biker jackets) hold her arms listening silently with closed lips without speaking: «دَستِتْ رو بِکِشْ کِنارْ! نامزَدَمْ میلیارْدِرِه وَ حِسابِ هَمَه‌تونْ رو می‌رِسِه!» Single speaker only, zero reply from listener. Zero text or watermarks.",
+      "subtitles": [
+        {
+          "start": 0.15,
+          "end": 7.65,
+          "text": "دستت رو بکش کنار! نامزدم میلیاردره و حساب همه‌تون رو می‌رسه!",
+          "speaker": "CLARA"
+        }
+      ],
+      "shot_type": "dialogue",
+      "require_visual_qa": false,
+      "contamination_margin": 15,
+      "story_beat": "افراد اسپایک جلوی عمارت کلارا را می‌گیرند تا بدزدند و کلارا فریاد می‌زند که نامزد میلیاردرش حساب همه‌شان را می‌رسد.",
+      "beat_ids": [
+        "beat_02"
+      ]
+    },
+    {
+      "id": "clip_03",
+      "source": "clip_03.mp4",
+      "file": "clip_03.mp4",
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_03.jpg",
+      "speaker": "SPIKE",
+      "expected_speakers": [
+        "SPIKE"
+      ],
+      "source_span": [
+        15.8,
+        23.8
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.85,
+      "generation_duration_sec": 8,
+      "story_beat_fa": "اسپایک با پوزخند کلارا را به سمت شاسی‌بلند سیاه می‌برد و می‌گوید آن شیاد بی‌پول هرگز برای نجاتش نمی‌آید.",
+      "speech_text": "اونْ شَیّادِ بی‌پولْ هیچ‌وَقتْ بَرایِ نِجاتِتْ نِمیادْ خانُمْ، اَصلاً فِکرِشْ رو نَکُنْ!",
+      "generation_prompt": "[QT1_C03] 3D Pixar-style animated medium two-shot beside an open black SUV door at night: menacing Spike Chestnut (3D anthropomorphic matte obsidian-black spiky chestnut-shell head, no human hair, dark angular sunglasses, black leather biker jacket) first smirks silently for 0.6 seconds, then speaks in native Iranian Persian (Farsi) with a rough gravelly male voice while Clara Melon (3D anthropomorphic smooth mint-green honeydew melon head, small green leaf crown on top, no human hair, white bridal jumpsuit) listens silently with closed lips without speaking: «اونْ شَیّادِ بی‌پولْ هیچ‌وَقتْ بَرایِ نِجاتِتْ نِمیادْ خانُمْ، اَصلاً فِکرِشْ رو نَکُنْ!» Single speaker only, zero reply from listener. Zero text or watermarks.",
+      "subtitles": [
+        {
+          "start": 0.15,
+          "end": 7.65,
+          "text": "اون شیاد بی‌پول هیچ‌وقت برای نجاتت نمیاد خانم، اصلا فکرش رو نکن!",
+          "speaker": "SPIKE"
+        }
+      ],
+      "shot_type": "dialogue",
+      "require_visual_qa": false,
+      "contamination_margin": 15,
+      "story_beat": "اسپایک با پوزخند کلارا را به سمت شاسی‌بلند سیاه می‌برد و می‌گوید آن شیاد بی‌پول هرگز برای نجاتش نمی‌آید.",
+      "beat_ids": [
+        "beat_03"
+      ]
+    },
+    {
+      "id": "clip_04",
+      "source": "clip_04.mp4",
+      "file": "clip_04.mp4",
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_04.jpg",
+      "speaker": "BARNEY",
+      "expected_speakers": [
+        "BARNEY"
+      ],
+      "source_span": [
+        23.8,
+        31.8
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.85,
+      "generation_duration_sec": 8,
+      "story_beat_fa": "بارنی روی پله‌های عمارت کنار کوین می‌ایستد و با بی‌تفاوتی می‌گوید این آدم‌ربایی هم بخشی از کلک آن‌هاست.",
+      "speech_text": "داداشْ اینْ آدَم‌رُبایی هَمْ حَتماً بَخشی اَزْ کَلَکِشونِه، بِهتَرِه اَصلاً دِخالَتْ نَکُنیمْ!",
+      "generation_prompt": "[QT1_C04] 3D Pixar-style animated medium two-shot on the illuminated marble entrance steps of the mansion at night: dismissive Barney Blueberry (3D anthropomorphic round textured sapphire-blue blueberry head, small star-shaped berry calyx on top, no human hair, thick brown handlebar mustache, blue-and-yellow argyle sweater vest) first shrugs his shoulders silently for 0.6 seconds, then speaks in native Iranian Persian (Farsi) with a pompous middle-aged male voice while Kevin Tangerine (3D anthropomorphic textured bright-orange tangerine head, spiky green citrus-leaf crown on top, no human hair, metallic silver puffer jacket) listens silently with closed lips without speaking: «داداشْ اینْ آدَم‌رُبایی هَمْ حَتماً بَخشی اَزْ کَلَکِشونِه، بِهتَرِه اَصلاً دِخالَتْ نَکُنیمْ!» Single speaker only, zero reply from listener. Zero text or watermarks.",
+      "subtitles": [
+        {
+          "start": 0.15,
+          "end": 7.65,
+          "text": "داداش این آدم‌ربایی هم حتما بخشی از کلکشونه، بهتره اصلا دخالت نکنیم!",
+          "speaker": "BARNEY"
+        }
+      ],
+      "shot_type": "dialogue",
+      "require_visual_qa": false,
+      "contamination_margin": 15,
+      "story_beat": "بارنی روی پله‌های عمارت کنار کوین می‌ایستد و با بی‌تفاوتی می‌گوید این آدم‌ربایی هم بخشی از کلک آن‌هاست.",
+      "beat_ids": [
+        "beat_04"
+      ]
+    },
+    {
+      "id": "clip_05",
+      "source": "clip_05.mp4",
+      "file": "clip_05.mp4",
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_05.jpg",
+      "speaker": "RUBY",
+      "expected_speakers": [
+        "RUBY"
+      ],
+      "source_span": [
+        31.8,
+        39.8
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.85,
+      "generation_duration_sec": 8,
+      "story_beat_fa": "روبی دستیار وفادار مدیرعامل اوریون مسیر شاسی‌بلند آدم‌ربایان را در بزرگراه شمالی ردیابی می‌کند تا کلارا را نجات دهند.",
+      "speech_text": "ماشینِشونْ دارِه میرِه سَمتِ بُزُرگراهِ شُمالی؛ هَمینْ اَلانْ میریمْ نِجاتِشْ میدیمْ!",
+      "generation_prompt": "[QT1_C05] [V2] 3D Pixar-style animated medium close-up outside in the rain at night beside a sleek dark sports car: determined Ruby Pomegranate (3D anthropomorphic faceted ruby-red pomegranate head, jagged red crown calyx on top, no human hair, sharp amber eyes, black double-breasted blazer with gold star lapel pins) first looks up from her dark tablet silently for 0.6 seconds and points forward, then speaks fluently without hesitation in native Iranian Persian (Farsi) with a crisp confident female voice: «ماشینِشونْ دارِه میرِه سَمتِ بُزُرگراهِ شُمالی؛ هَمینْ اَلانْ میریمْ نِجاتِشْ میدیمْ!» Single speaker only, zero background chatter. Zero text or watermarks.",
+      "subtitles": [
+        {
+          "start": 0.15,
+          "end": 7.65,
+          "text": "ماشینشون داره میره سمت بزرگراه شمالی؛ همین الان میریم نجاتش میدیم!",
+          "speaker": "RUBY"
+        }
+      ],
+      "shot_type": "dialogue",
+      "require_visual_qa": false,
+      "contamination_margin": 15,
+      "story_beat": "روبی دستیار وفادار مدیرعامل اوریون مسیر شاسی‌بلند آدم‌ربایان را در بزرگراه شمالی ردیابی می‌کند تا کلارا را نجات دهند.",
+      "beat_ids": [
+        "beat_05"
+      ]
+    },
+    {
+      "id": "clip_06",
+      "source": "clip_06.mp4",
+      "file": "clip_06.mp4",
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_06.jpg",
+      "speaker": "BRUNO",
+      "expected_speakers": [
+        "BRUNO"
+      ],
+      "source_span": [
+        39.8,
+        47.7
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.85,
+      "generation_duration_sec": 8,
+      "story_beat_fa": "برونو راننده لیموزین خبر فوری آدم‌ربایی جلوی عمارت را به آرتور مدیرعامل کوانتورا اطلاع می‌دهد.",
+      "speech_text": "قُربانْ مُدیرِ بانْکْ گُزارِشِ آدَم‌رُبایی جُلویِ عِمارَتْ دادِه، بایَدْ سَریعْ حَرِکَتْ کُنیمْ!",
+      "generation_prompt": "[QT1_C06] 3D Pixar-style animated medium two-shot inside a wood-trimmed luxury limousine cabin at night: alarmed Bruno Potato (3D anthropomorphic oval textured warm-brown russet-potato head, no human hair, bushy dark mustache, black chauffeur peaked cap, black suit with red tie, white gloves) first turns from the front seat silently for 0.6 seconds holding up a smartphone, then speaks urgently in native Iranian Persian (Farsi) with a respectful male voice while Arthur Garlic (3D anthropomorphic plump ivory-white garlic-bulb head, papery silver-white crown tuft, no human hair, round gold glasses, white mustache, cream suit) listens silently in the back seat with closed lips without speaking: «قُربانْ مُدیرِ بانْکْ گُزارِشِ آدَم‌رُبایی جُلویِ عِمارَتْ دادِه، بایَدْ سَریعْ حَرِکَتْ کُنیمْ!» Single speaker only, zero reply from listener. Zero text or watermarks.",
+      "subtitles": [
+        {
+          "start": 0.15,
+          "end": 7.65,
+          "text": "قربان مدیر بانک گزارش آدم‌ربایی جلوی عمارت داده، باید سریع حرکت کنیم!",
+          "speaker": "BRUNO"
+        }
+      ],
+      "shot_type": "dialogue",
+      "require_visual_qa": false,
+      "contamination_margin": 15,
+      "story_beat": "برونو راننده لیموزین خبر فوری آدم‌ربایی جلوی عمارت را به آرتور مدیرعامل کوانتورا اطلاع می‌دهد.",
+      "beat_ids": [
+        "beat_06"
+      ]
+    }
+  ],
+  "video": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 24,
+    "crf": 18,
+    "preset": "fast",
+    "scale_mode": "fill"
+  },
+  "audio": {
+    "loudnorm": "loudnorm=I=-14:TP=-1.5:LRA=11",
+    "sample_rate": 48000,
+    "channels": 2,
+    "bitrate": "192k"
+  },
+  "speech": {
+    "speech_safe": "auto_expand",
+    "threshold_dbfs": -38,
+    "pre_handle": 0.2,
+    "post_handle": 0.35,
+    "splice_crossfade": 0.02
+  },
+  "subtitle_style": {
+    "time_base": "trim_local",
+    "y_ratio": 0.84,
+    "font_size": 27,
+    "min_font_size": 16,
+    "max_text_margin": 84,
+    "max_lines": 2
+  },
+  "outputs": {
+    "per_clip_location": "both",
+    "base_mode": "timeline",
+    "cta_burn_subtitles": true,
+    "cta_loudnorm": true,
+    "publish_caption_fa": "قسمت اول: راز مدیرعامل میلیاردر و ربوده شدن عروس جلوی عمارت!"
+  },
+  "content_edits": [],
+  "story_plan": {
+    "summary": "آرتور مدیرعامل سیصد میلیارد دلاری کوانتورا برای دیدن دوست قدیمی‌اش مدیرعامل اوریون به عمارت می‌آید، اما همزمان کلارا را جلوی عمارت می‌دزدند!",
+    "ending": "Quantora CEO Part 1",
+    "required_beats": [
+      "beat_01",
+      "beat_02",
+      "beat_03",
+      "beat_04",
+      "beat_05",
+      "beat_06"
+    ]
+  },
+  "visual": {
+    "keyframe_threshold": 65,
+    "jump_threshold": 38,
+    "contamination_margin": 15
+  },
+  "visual_gate": {
+    "keyframe_threshold": 65,
+    "jump_threshold": 38,
+    "contamination_margin": 15
+  },
+  "generation_settings": {
+    "model": "Veo 3.1 - Fast",
+    "duration_sec": 8,
+    "aspect": "9:16",
+    "outputs": 1,
+    "resolution": "720p",
+    "video_type": "Ingredients"
+  }
+}
