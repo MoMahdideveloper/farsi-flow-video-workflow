@@ -1,0 +1,433 @@
+{
+  "_comment": "Part2_CowboyWifeExchange - 100% Google Flow native Farsi voice with full اعراب‌گذاری.",
+  "schema_version": 1,
+  "speech_review_note": "Full Persian vowel diacritics (اعراب‌گذاری کامل) in Google Flow prompt for 100% accurate native pronunciation.",
+  "episode_id": "Part2_CowboyWifeExchange",
+  "title_fa": "قسمت دوم: راز آزمایش ناباروری کلانتر و پشیمانی بزرگ!",
+  "title_en": "Cowboy Wife Exchange Part 2",
+  "source_video": "${SRC}\\45_2026-10-03_DeC2h3lyPYu.mp4",
+  "source_start_offset": 37.0,
+  "story_summary_fa": "یک سال بعد کلانتر سهراب با همسر جدیدش شیرین لیموترش هم بچه‌دار نمی‌شود و آزمایش دکتر گیلاس فاش می‌کند که مقصر اصلی خود کلانتر بوده است!",
+  "fallback_to_source_on_visual_fail": false,
+  "tight_speech_trim": true,
+  "variables": {
+    "BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series25-cowboy-wife-exchange-farsi",
+    "S2_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi",
+    "CHEF_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\ugly-face-chef-farsi",
+    "SRC": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\straw.berryjammin"
+  },
+  "clips_dir": "${BASE}\\part2\\flow_clips",
+  "out_dir": "${BASE}\\05_final_masters\\part2",
+  "font_path": "${CHEF_BASE}\\03_farsi_audio_tts\\Vazirmatn-Bold.ttf",
+  "cta_video": "${S2_BASE}\\part1\\flow_clips\\cta_kelidbox_s2.mp4",
+  "cta_speaker": "SOHRAB_TOMATO",
+  "cta_subtitles": [
+    {
+      "start": 0.15,
+      "end": 3.55,
+      "text": "برای دیدن قسمت بعدی همین الان پیج رو فالو کن!"
+    },
+    {
+      "start": 3.6,
+      "end": 7.55,
+      "text": "راستی، کل این انیمیشن با اکانت‌های هوش مصنوعی سایت کلیدباکس ساخته شده!"
+    }
+  ],
+  "character_references": [
+    "${BASE}\\00_character_sheet\\CHARACTER_SHEET.png",
+    "${BASE}\\01_story_and_manifests\\FLOW_SHEET_01_SOHRAB.jpg",
+    "${BASE}\\01_story_and_manifests\\FLOW_SHEET_02_GOLNAR.jpg",
+    "${BASE}\\01_story_and_manifests\\FLOW_SHEET_03_PARSA.jpg"
+  ],
+  "location_references": [
+    "${BASE}\\01_story_and_manifests\\FLOW_LOC_01_STREET.jpg",
+    "${BASE}\\01_story_and_manifests\\FLOW_LOC_02_CLINIC.jpg"
+  ],
+  "speakers": {
+    "SOHRAB_TOMATO": [
+      255,
+      165,
+      165
+    ],
+    "GOLNAR_YELLOW_TOMATO": [
+      255,
+      225,
+      140
+    ],
+    "PARSA_STRAWBERRY": [
+      165,
+      235,
+      230
+    ],
+    "SHIRIN_LIME": [
+      180,
+      240,
+      200
+    ],
+    "DR_CHERRY": [
+      210,
+      200,
+      255
+    ],
+    "BADGE": [
+      255,
+      235,
+      140
+    ]
+  },
+  "voices": {
+    "SOHRAB_TOMATO": {
+      "voice": "Charon",
+      "source": "google_flow_native",
+      "name_fa": "SOHRAB_TOMATO",
+      "color": [
+        255,
+        165,
+        165
+      ],
+      "hex": "#FFA5A5",
+      "role": "Arrogant Red Tomato Western Sheriff"
+    },
+    "GOLNAR_YELLOW_TOMATO": {
+      "voice": "Aoede",
+      "source": "google_flow_native",
+      "name_fa": "GOLNAR_YELLOW_TOMATO",
+      "color": [
+        255,
+        225,
+        140
+      ],
+      "hex": "#FFE18C",
+      "role": "Loyal Golden-Yellow Tomato Wife"
+    },
+    "PARSA_STRAWBERRY": {
+      "voice": "Puck",
+      "source": "google_flow_native",
+      "name_fa": "PARSA_STRAWBERRY",
+      "color": [
+        165,
+        235,
+        230
+      ],
+      "hex": "#A5EBE6",
+      "role": "Noble Red Strawberry Cowboy"
+    },
+    "SHIRIN_LIME": {
+      "voice": "Kore",
+      "source": "google_flow_native",
+      "name_fa": "SHIRIN_LIME",
+      "color": [
+        180,
+        240,
+        200
+      ],
+      "hex": "#B4F0C8",
+      "role": "Glamorous Green Lime Saloon Woman"
+    },
+    "DR_CHERRY": {
+      "voice": "Fenrir",
+      "source": "google_flow_native",
+      "name_fa": "DR_CHERRY",
+      "color": [
+        210,
+        200,
+        255
+      ],
+      "hex": "#D2C8FF",
+      "role": "Wise Dark-Red Cherry Physician"
+    },
+    "BADGE": {
+      "name_fa": "BADGE",
+      "color": [
+        255,
+        235,
+        140
+      ],
+      "source": "google_flow_native"
+    }
+  },
+  "clips": [
+    {
+      "id": "clip_01",
+      "source": "clip_01.mp4",
+      "file": "clip_01.mp4",
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_01.jpg",
+      "speaker": "SOHRAB_TOMATO",
+      "expected_speakers": [
+        "SOHRAB_TOMATO"
+      ],
+      "source_span": [
+        37.0,
+        43.2
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.85,
+      "generation_duration_sec": 8,
+      "story_beat_fa": "یک سال بعد کلانتر سهراب با عصبانیت سر شیرین لیموترش فریاد می‌زند که چرا هنوز بچه‌دار نشده‌اند.",
+      "speech_text": "یِک سالِ تَمام گُذَشت وُ هَنوز خَبَری اَز بَچِّه نیست! نَکُنِه تو هَم نازایی؟!",
+      "generation_prompt": "[CW2_C01] 3D Pixar-style animated medium two-shot inside the wooden Western mansion parlor: furious Sohrab Tomato (glossy red tomato head, green calyx, thick handlebar mustache, black suit and vest, holding up a gold pocket watch) shouts angrily while Shirin Lime (green lime head, seated in a leather armchair in her emerald-green lace dress) listens silently with closed lips without speaking; only Sohrab Tomato speaks in native Iranian Persian (Farsi) with an angry male voice in this shot: «یِک سالِ تَمام گُذَشت وُ هَنوز خَبَری اَز بَچِّه نیست! نَکُنِه تو هَم نازایی؟!» Single speaker only, zero reply from listener. Zero text or watermarks.",
+      "subtitles": [
+        {
+          "start": 0.15,
+          "end": 7.65,
+          "text": "یک سال تمام گذشت و هنوز خبری از بچه نیست! نکنه تو هم نازایی؟!",
+          "speaker": "SOHRAB_TOMATO"
+        }
+      ],
+      "shot_type": "dialogue",
+      "require_visual_qa": false,
+      "story_beat": "یک سال بعد کلانتر سهراب با عصبانیت سر شیرین لیموترش فریاد می‌زند که چرا هنوز بچه‌دار نشده‌اند.",
+      "beat_ids": [
+        "beat_01"
+      ],
+      "overlays": [
+        {
+          "start": 0.1,
+          "end": 3.4,
+          "text": "جواب شوکه‌کننده آزمایش دکتر! 🍒😱",
+          "speaker": "BADGE",
+          "y": 135,
+          "font_size": 21,
+          "box_alpha": 200
+        }
+      ]
+    },
+    {
+      "id": "clip_02",
+      "source": "clip_02.mp4",
+      "file": "clip_02.mp4",
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_02.jpg",
+      "speaker": "SHIRIN_LIME",
+      "expected_speakers": [
+        "SHIRIN_LIME"
+      ],
+      "source_span": [
+        43.2,
+        48.5
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.85,
+      "generation_duration_sec": 8,
+      "story_beat_fa": "شیرین با خشم از جا بلند می‌شود و کلانتر سهراب را مجبور می‌کند برای آزمایش پیش دکتر بروند.",
+      "speech_text": "جُرات نَکُن سَرِ مَن داد بِزَنی! هَمین اَلان می‌ریم دُکتُر تا مَعلوم بِشِه مُقَصِّر کیه!",
+      "generation_prompt": "[CW2_C02] 3D Pixar-style animated medium two-shot inside the wooden Western parlor: angry Shirin Lime (glossy green lime head, standing up in her emerald-green lace saloon dress, pointing toward the door) speaks fiercely while Sohrab Tomato (glossy red tomato head, handlebar mustache, black suit) listens silently with closed lips without speaking; only Shirin Lime speaks in native Iranian Persian (Farsi) with a fiery female voice in this shot: «جُرات نَکُن سَرِ مَن داد بِزَنی! هَمین اَلان می‌ریم دُکتُر تا مَعلوم بِشِه مُقَصِّر کیه!» Single speaker only, zero reply from listener. Zero text or watermarks.",
+      "subtitles": [
+        {
+          "start": 0.15,
+          "end": 7.65,
+          "text": "جرات نکن سر من داد بزنی! همین الان می‌ریم دکتر تا معلوم بشه مقصر کیه!",
+          "speaker": "SHIRIN_LIME"
+        }
+      ],
+      "shot_type": "dialogue",
+      "require_visual_qa": false,
+      "story_beat": "شیرین با خشم از جا بلند می‌شود و کلانتر سهراب را مجبور می‌کند برای آزمایش پیش دکتر بروند.",
+      "beat_ids": [
+        "beat_02"
+      ]
+    },
+    {
+      "id": "clip_03",
+      "source": "clip_03.mp4",
+      "file": "clip_03.mp4",
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_03.jpg",
+      "speaker": "DR_CHERRY",
+      "expected_speakers": [
+        "DR_CHERRY"
+      ],
+      "source_span": [
+        48.5,
+        55.0
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.85,
+      "generation_duration_sec": 8,
+      "story_beat_fa": "دکتر گیلاس در مطب اعلام می‌کند که خانم شیرین کاملاً سالم است.",
+      "speech_text": "جَوابِ آزمایش‌ها کامِلاً مُشَخَّصِه؛ خانُم شیرین هیچ مُشکِلی بَرایِ بَچِّه‌دار شُدَن نَدارِه!",
+      "generation_prompt": "[CW2_C03] 3D Pixar-style animated medium three-shot inside a warm wooden Western medical office: wise Dr. Cherry (glossy dark-crimson cherry head, green cherry stem, round gold wire-rimmed glasses, white medical coat, holding a blank cream folder) speaks calmly while Sohrab Tomato and Shirin Lime sit across the desk listening silently with closed lips without speaking; only Dr. Cherry speaks in native Iranian Persian (Farsi) with a calm authoritative doctor voice in this shot: «جَوابِ آزمایش‌ها کامِلاً مُشَخَّصِه؛ خانُم شیرین هیچ مُشکِلی بَرایِ بَچِّه‌دار شُدَن نَدارِه!» Single speaker only, zero reply from listener. Zero text or watermarks.",
+      "subtitles": [
+        {
+          "start": 0.15,
+          "end": 7.65,
+          "text": "جواب آزمایش‌ها کاملاً مشخصه؛ خانم شیرین هیچ مشکلی برای بچه‌دار شدن نداره!",
+          "speaker": "DR_CHERRY"
+        }
+      ],
+      "shot_type": "dialogue",
+      "require_visual_qa": false,
+      "story_beat": "دکتر گیلاس در مطب اعلام می‌کند که خانم شیرین کاملاً سالم است.",
+      "beat_ids": [
+        "beat_03"
+      ]
+    },
+    {
+      "id": "clip_04",
+      "source": "clip_04.mp4",
+      "file": "clip_04.mp4",
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_04.jpg",
+      "speaker": "DR_CHERRY",
+      "expected_speakers": [
+        "DR_CHERRY"
+      ],
+      "source_span": [
+        55.0,
+        61.5
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.85,
+      "generation_duration_sec": 8,
+      "story_beat_fa": "دکتر گیلاس حقیقت تکان‌دهنده را به کلانتر سهراب می‌گوید که خود او از اول نابارور بوده است.",
+      "speech_text": "آقایِ کَلانتَر، مُقَصِّرِ اَصلی خُودِ شُما هَستید؛ شُما اَز اَوَّل ناباروَر وُ عَقیم بودید!",
+      "generation_prompt": "[CW2_C04] 3D Pixar-style animated medium close-up two-shot inside the wooden Western clinic: Dr. Cherry (dark-crimson cherry head, gold wire-rimmed glasses, white medical coat) delivers the grave diagnosis while devastated Sohrab Tomato (red tomato head, handlebar mustache, hand clutched over his chest) listens silently with closed lips without speaking; only Dr. Cherry speaks in native Iranian Persian (Farsi) with a serious clinical voice in this shot: «آقایِ کَلانتَر، مُقَصِّرِ اَصلی خُودِ شُما هَستید؛ شُما اَز اَوَّل ناباروَر وُ عَقیم بودید!» Single speaker only, zero reply from listener. Zero text or watermarks.",
+      "subtitles": [
+        {
+          "start": 0.15,
+          "end": 7.65,
+          "text": "آقای کلانتر، مقصر اصلی خود شما هستید؛ شما از اول نابارور و عقیم بودید!",
+          "speaker": "DR_CHERRY"
+        }
+      ],
+      "shot_type": "dialogue",
+      "require_visual_qa": false,
+      "story_beat": "دکتر گیلاس حقیقت تکان‌دهنده را به کلانتر سهراب می‌گوید که خود او از اول نابارور بوده است.",
+      "beat_ids": [
+        "beat_04"
+      ]
+    },
+    {
+      "id": "clip_05",
+      "source": "clip_05.mp4",
+      "file": "clip_05.mp4",
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_05.jpg",
+      "speaker": "SOHRAB_TOMATO",
+      "expected_speakers": [
+        "SOHRAB_TOMATO"
+      ],
+      "source_span": [
+        61.5,
+        68.0
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.85,
+      "generation_duration_sec": 8,
+      "story_beat_fa": "کلانتر سهراب با گریه وسط خیابان به پای گلنار و پارسا که فرزندشان را در آغوش دارند می‌افتد و التماس می‌کند.",
+      "speech_text": "گُلنار توروخُدا مَن رو بِبَخش! غَلَط کَردَم، اِلتِماس می‌کُنَم بَرگَرد بِه خونَه‌مون!",
+      "generation_prompt": "[CW2_C05] 3D Pixar-style animated medium-full shot on the sunlit Wild West street: weeping Sohrab Tomato (glossy red tomato head with tears streaming down, handlebar mustache, kneeling in the dust with his black hat on the ground) pleads desperately while radiant Golnar Yellow Tomato (in a royal golden Western gown) and Parsa Strawberry cowboy (holding their smiling baby golden-tomato child) listen silently with closed lips without speaking; only Sohrab Tomato speaks in native Iranian Persian (Farsi) with a broken crying male voice in this shot: «گُلنار توروخُدا مَن رو بِبَخش! غَلَط کَردَم، اِلتِماس می‌کُنَم بَرگَرد بِه خونَه‌مون!» Single speaker only, zero reply from listener. Zero text or watermarks.",
+      "subtitles": [
+        {
+          "start": 0.15,
+          "end": 7.65,
+          "text": "گلنار توروخدا من رو ببخش! غلط کردم، التماس می‌کنم برگرد به خونه‌مون!",
+          "speaker": "SOHRAB_TOMATO"
+        }
+      ],
+      "shot_type": "dialogue",
+      "require_visual_qa": false,
+      "story_beat": "کلانتر سهراب با گریه وسط خیابان به پای گلنار و پارسا که فرزندشان را در آغوش دارند می‌افتد و التماس می‌کند.",
+      "beat_ids": [
+        "beat_05"
+      ]
+    },
+    {
+      "id": "clip_06",
+      "source": "clip_06.mp4",
+      "file": "clip_06.mp4",
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_06.jpg",
+      "speaker": "GOLNAR_YELLOW_TOMATO",
+      "expected_speakers": [
+        "GOLNAR_YELLOW_TOMATO"
+      ],
+      "source_span": [
+        68.0,
+        74.23
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.85,
+      "generation_duration_sec": 8,
+      "story_beat_fa": "گلنار باوقار کنار همسر فداکارش پارسا و فرزندشان می‌ایستد و برای همیشه با سهراب خداحافظی می‌کند.",
+      "speech_text": "بِه خاطِرِ عِیبِ خُودِت مَن رو دور اَنداختی! حالا یِه خانِوادِه واقِعی دارَم، خُداحافِظ!",
+      "generation_prompt": "[CW2_C06] 3D Pixar-style animated medium three-shot on the sunlit Wild West street: radiant Golnar Yellow Tomato (golden-yellow tomato head, green leafy stem crown, royal golden Western gown) speaks with calm dignity while standing arm-in-arm with Parsa Strawberry cowboy (holding their happy baby golden-tomato child, closed lips) and weeping Sohrab Tomato kneels on the left listening silently with closed lips without speaking; only Golnar Yellow Tomato speaks in native Iranian Persian (Farsi) with a dignified female voice in this shot: «بِه خاطِرِ عِیبِ خُودِت مَن رو دور اَنداختی! حالا یِه خانِوادِه واقِعی دارَم، خُداحافِظ!» Single speaker only, zero reply from listener. Zero text or watermarks.",
+      "subtitles": [
+        {
+          "start": 0.15,
+          "end": 7.65,
+          "text": "به خاطر عیب خودت من رو دور انداختی! حالا یه خانواده واقعی دارم، خداحافظ!",
+          "speaker": "GOLNAR_YELLOW_TOMATO"
+        }
+      ],
+      "shot_type": "dialogue",
+      "require_visual_qa": false,
+      "story_beat": "گلنار باوقار کنار همسر فداکارش پارسا و فرزندشان می‌ایستد و برای همیشه با سهراب خداحافظی می‌کند.",
+      "beat_ids": [
+        "beat_06"
+      ]
+    }
+  ],
+  "video": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 24,
+    "crf": 18,
+    "preset": "fast",
+    "scale_mode": "fill"
+  },
+  "audio": {
+    "loudnorm": "loudnorm=I=-14:TP=-1.5:LRA=11",
+    "sample_rate": 48000,
+    "channels": 2,
+    "bitrate": "192k"
+  },
+  "speech": {
+    "speech_safe": "auto_expand",
+    "threshold_dbfs": -38,
+    "pre_handle": 0.2,
+    "post_handle": 0.35,
+    "splice_crossfade": 0.02
+  },
+  "subtitle_style": {
+    "time_base": "trim_local",
+    "y_ratio": 0.84,
+    "font_size": 27,
+    "min_font_size": 16,
+    "max_text_margin": 84,
+    "max_lines": 2
+  },
+  "outputs": {
+    "per_clip_location": "both",
+    "base_mode": "timeline",
+    "cta_burn_subtitles": true,
+    "cta_loudnorm": true,
+    "publish_caption_fa": "قسمت دوم: راز آزمایش ناباروری کلانتر و پشیمانی بزرگ!"
+  },
+  "content_edits": [],
+  "story_plan": {
+    "summary": "یک سال بعد کلانتر سهراب با همسر جدیدش شیرین لیموترش هم بچه‌دار نمی‌شود و آزمایش دکتر گیلاس فاش می‌کند که مقصر اصلی خود کلانتر بوده است!",
+    "ending": "Cowboy Wife Exchange Part 2",
+    "required_beats": [
+      "beat_01",
+      "beat_02",
+      "beat_03",
+      "beat_04",
+      "beat_05",
+      "beat_06"
+    ]
+  },
+  "visual": {
+    "keyframe_threshold": 65,
+    "jump_threshold": 38,
+    "contamination_margin": 1
+  },
+  "visual_gate": {
+    "keyframe_threshold": 65,
+    "jump_threshold": 38,
+    "contamination_margin": 1
+  },
+  "generation_settings": {
+    "model": "Veo 3.1 - Fast",
+    "duration_sec": 8,
+    "aspect": "9:16",
+    "outputs": 1,
+    "resolution": "720p",
+    "video_type": "Ingredients"
+  }
+}

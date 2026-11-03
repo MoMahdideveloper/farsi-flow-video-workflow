@@ -1,0 +1,433 @@
+{
+  "_comment": "Part1_CowboyWifeExchange - 100% Google Flow native Farsi voice with full اعراب‌گذاری.",
+  "schema_version": 1,
+  "speech_review_note": "Full Persian vowel diacritics (اعراب‌گذاری کامل) in Google Flow prompt for 100% accurate native pronunciation.",
+  "episode_id": "Part1_CowboyWifeExchange",
+  "title_fa": "قسمت اول: راز معاوضه همسر و کلانتر بی‌رحم!",
+  "title_en": "Cowboy Wife Exchange Part 1",
+  "source_video": "${SRC}\\45_2026-10-03_DeC2h3lyPYu.mp4",
+  "source_start_offset": 0.0,
+  "story_summary_fa": "کلانتر سهراب گوجه‌فرنگی همسر وفادارش گلنار را پس از ۱۵ سال به بهانه بچه‌دار نشدن وسط شهر به حراج می‌گذارد، اما پارسا کابوی توت‌فرنگی به دفاع از او برمی‌خیزد!",
+  "fallback_to_source_on_visual_fail": false,
+  "tight_speech_trim": true,
+  "variables": {
+    "BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series25-cowboy-wife-exchange-farsi",
+    "S2_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi",
+    "CHEF_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\ugly-face-chef-farsi",
+    "SRC": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\straw.berryjammin"
+  },
+  "clips_dir": "${BASE}\\part1\\flow_clips",
+  "out_dir": "${BASE}\\05_final_masters\\part1",
+  "font_path": "${CHEF_BASE}\\03_farsi_audio_tts\\Vazirmatn-Bold.ttf",
+  "cta_video": "${S2_BASE}\\part1\\flow_clips\\cta_kelidbox_s2.mp4",
+  "cta_speaker": "SOHRAB_TOMATO",
+  "cta_subtitles": [
+    {
+      "start": 0.15,
+      "end": 3.55,
+      "text": "برای دیدن قسمت بعدی همین الان پیج رو فالو کن!"
+    },
+    {
+      "start": 3.6,
+      "end": 7.55,
+      "text": "راستی، کل این انیمیشن با اکانت‌های هوش مصنوعی سایت کلیدباکس ساخته شده!"
+    }
+  ],
+  "character_references": [
+    "${BASE}\\00_character_sheet\\CHARACTER_SHEET.png",
+    "${BASE}\\01_story_and_manifests\\FLOW_SHEET_01_SOHRAB.jpg",
+    "${BASE}\\01_story_and_manifests\\FLOW_SHEET_02_GOLNAR.jpg",
+    "${BASE}\\01_story_and_manifests\\FLOW_SHEET_03_PARSA.jpg"
+  ],
+  "location_references": [
+    "${BASE}\\01_story_and_manifests\\FLOW_LOC_01_STREET.jpg",
+    "${BASE}\\01_story_and_manifests\\FLOW_LOC_02_CLINIC.jpg"
+  ],
+  "speakers": {
+    "SOHRAB_TOMATO": [
+      255,
+      165,
+      165
+    ],
+    "GOLNAR_YELLOW_TOMATO": [
+      255,
+      225,
+      140
+    ],
+    "PARSA_STRAWBERRY": [
+      165,
+      235,
+      230
+    ],
+    "SHIRIN_LIME": [
+      180,
+      240,
+      200
+    ],
+    "DR_CHERRY": [
+      210,
+      200,
+      255
+    ],
+    "BADGE": [
+      255,
+      235,
+      140
+    ]
+  },
+  "voices": {
+    "SOHRAB_TOMATO": {
+      "voice": "Charon",
+      "source": "google_flow_native",
+      "name_fa": "SOHRAB_TOMATO",
+      "color": [
+        255,
+        165,
+        165
+      ],
+      "hex": "#FFA5A5",
+      "role": "Arrogant Red Tomato Western Sheriff"
+    },
+    "GOLNAR_YELLOW_TOMATO": {
+      "voice": "Aoede",
+      "source": "google_flow_native",
+      "name_fa": "GOLNAR_YELLOW_TOMATO",
+      "color": [
+        255,
+        225,
+        140
+      ],
+      "hex": "#FFE18C",
+      "role": "Loyal Golden-Yellow Tomato Wife"
+    },
+    "PARSA_STRAWBERRY": {
+      "voice": "Puck",
+      "source": "google_flow_native",
+      "name_fa": "PARSA_STRAWBERRY",
+      "color": [
+        165,
+        235,
+        230
+      ],
+      "hex": "#A5EBE6",
+      "role": "Noble Red Strawberry Cowboy"
+    },
+    "SHIRIN_LIME": {
+      "voice": "Kore",
+      "source": "google_flow_native",
+      "name_fa": "SHIRIN_LIME",
+      "color": [
+        180,
+        240,
+        200
+      ],
+      "hex": "#B4F0C8",
+      "role": "Glamorous Green Lime Saloon Woman"
+    },
+    "DR_CHERRY": {
+      "voice": "Fenrir",
+      "source": "google_flow_native",
+      "name_fa": "DR_CHERRY",
+      "color": [
+        210,
+        200,
+        255
+      ],
+      "hex": "#D2C8FF",
+      "role": "Wise Dark-Red Cherry Physician"
+    },
+    "BADGE": {
+      "name_fa": "BADGE",
+      "color": [
+        255,
+        235,
+        140
+      ],
+      "source": "google_flow_native"
+    }
+  },
+  "clips": [
+    {
+      "id": "clip_01",
+      "source": "clip_01.mp4",
+      "file": "clip_01.mp4",
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_01.jpg",
+      "speaker": "SOHRAB_TOMATO",
+      "expected_speakers": [
+        "SOHRAB_TOMATO"
+      ],
+      "source_span": [
+        0.0,
+        6.2
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.85,
+      "generation_duration_sec": 8,
+      "story_beat_fa": "کلانتر سهراب گوجه‌فرنگی وسط خیابان شهر وسترن همسر وفادارش گلنار را به خاطر بچه‌دار نشدن تحقیر می‌کند.",
+      "speech_text": "این زَن پونزدَه سال تو خونَه‌ام پُخت‌وپَز کَرد، وَلی یِه بَچِّه هَم بَرام نَیاوُرد!",
+      "generation_prompt": "[CW1_C01] 3D Pixar-style animated medium-full two-shot on a sunlit Wild West frontier street: arrogant Sohrab Tomato (glossy red tomato head, black cowboy hat, thick dark-brown handlebar mustache, black Western suit coat and vest with gold pocket-watch chain) gestures dismissively while Golnar Yellow Tomato (smooth golden-yellow tomato head, green leafy stem crown, beige pioneer dress) listens silently with closed lips without speaking; only Sohrab Tomato speaks in native Iranian Persian (Farsi) with a booming arrogant male voice in this shot: «این زَن پونزدَه سال تو خونَه‌ام پُخت‌وپَز کَرد، وَلی یِه بَچِّه هَم بَرام نَیاوُرد!» Single speaker only, zero reply from listener. Warm golden-hour lighting, zero text or watermarks.",
+      "subtitles": [
+        {
+          "start": 0.15,
+          "end": 7.65,
+          "text": "این زن پونزده سال تو خونه‌ام پخت‌وپز کرد، ولی یه بچه هم برام نیاورد!",
+          "speaker": "SOHRAB_TOMATO"
+        }
+      ],
+      "shot_type": "dialogue",
+      "require_visual_qa": false,
+      "story_beat": "کلانتر سهراب گوجه‌فرنگی وسط خیابان شهر وسترن همسر وفادارش گلنار را به خاطر بچه‌دار نشدن تحقیر می‌کند.",
+      "beat_ids": [
+        "beat_01"
+      ],
+      "overlays": [
+        {
+          "start": 0.1,
+          "end": 3.4,
+          "text": "معاوضه همسر بعد از ۱۵ سال! 🍅💔",
+          "speaker": "BADGE",
+          "y": 135,
+          "font_size": 21,
+          "box_alpha": 200
+        }
+      ]
+    },
+    {
+      "id": "clip_02",
+      "source": "clip_02.mp4",
+      "file": "clip_02.mp4",
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_02.jpg",
+      "speaker": "PARSA_STRAWBERRY",
+      "expected_speakers": [
+        "PARSA_STRAWBERRY"
+      ],
+      "source_span": [
+        6.2,
+        13.5
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.85,
+      "generation_duration_sec": 8,
+      "story_beat_fa": "پارسا کابوی توت‌فرنگی جلو می‌آید و از گلنار مظلوم در برابر کلانتر سهراب دفاع می‌کند.",
+      "speech_text": "خِجالَت بِکِش کَلانتَر! پونزدَه سال بِه پات ساخت، چِطور دِلِت می‌آد بیرونِش کُنی؟!",
+      "generation_prompt": "[CW1_C02] 3D Pixar-style animated medium two-shot on the Wild West wooden boardwalk: noble Parsa Strawberry cowboy (bright red strawberry head with golden seeds, dark cowboy hat, black embroidered Western shirt, red bandana) steps forward confronting arrogant Sohrab Tomato (glossy red tomato head, black cowboy hat, handlebar mustache, arms crossed) while Sohrab Tomato and Golnar Yellow Tomato listen silently with closed lips without speaking; only Parsa Strawberry speaks in native Iranian Persian (Farsi) with a warm heroic male voice in this shot: «خِجالَت بِکِش کَلانتَر! پونزدَه سال بِه پات ساخت، چِطور دِلِت می‌آد بیرونِش کُنی؟!» Single speaker only, zero reply from listener. Zero text or watermarks.",
+      "subtitles": [
+        {
+          "start": 0.15,
+          "end": 7.65,
+          "text": "خجالت بکش کلانتر! پونزده سال به پات ساخت، چطور دلت می‌آد بیرونش کنی؟!",
+          "speaker": "PARSA_STRAWBERRY"
+        }
+      ],
+      "shot_type": "dialogue",
+      "require_visual_qa": false,
+      "story_beat": "پارسا کابوی توت‌فرنگی جلو می‌آید و از گلنار مظلوم در برابر کلانتر سهراب دفاع می‌کند.",
+      "beat_ids": [
+        "beat_02"
+      ]
+    },
+    {
+      "id": "clip_03",
+      "source": "clip_03.mp4",
+      "file": "clip_03.mp4",
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_03.jpg",
+      "speaker": "SOHRAB_TOMATO",
+      "expected_speakers": [
+        "SOHRAB_TOMATO"
+      ],
+      "source_span": [
+        13.5,
+        21.0
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.85,
+      "generation_duration_sec": 8,
+      "story_beat_fa": "کلانتر سهراب پیشنهاد معاوضه می‌دهد تا شیرین لیموترش جوان را بگیرد و گلنار را رها کند.",
+      "speech_text": "اَگِه اِنقَدر دِلِت بَراش می‌سوزِه، این زَنِ جَوون رو بِدِه وُ اونو بِبَر!",
+      "generation_prompt": "[CW1_C03] 3D Pixar-style animated medium shot on the sunlit Wild West street: arrogant Sohrab Tomato (glossy red tomato head, black cowboy hat, handlebar mustache, black suit) gestures toward glamorous Shirin Lime (green lime head, emerald-green lace saloon dress) while Parsa Strawberry cowboy, Golnar Yellow Tomato, and Shirin Lime listen silently with closed lips without speaking; only Sohrab Tomato speaks in native Iranian Persian (Farsi) with a mocking arrogant male voice in this shot: «اَگِه اِنقَدر دِلِت بَراش می‌سوزِه، این زَنِ جَوون رو بِدِه وُ اونو بِبَر!» Single speaker only, zero reply from listener. Zero text or watermarks.",
+      "subtitles": [
+        {
+          "start": 0.15,
+          "end": 7.65,
+          "text": "اگه انقدر دلت براش می‌سوزه، این زن جوون رو بده و اونو ببر!",
+          "speaker": "SOHRAB_TOMATO"
+        }
+      ],
+      "shot_type": "dialogue",
+      "require_visual_qa": false,
+      "story_beat": "کلانتر سهراب پیشنهاد معاوضه می‌دهد تا شیرین لیموترش جوان را بگیرد و گلنار را رها کند.",
+      "beat_ids": [
+        "beat_03"
+      ]
+    },
+    {
+      "id": "clip_04",
+      "source": "clip_04.mp4",
+      "file": "clip_04.mp4",
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_04.jpg",
+      "speaker": "PARSA_STRAWBERRY",
+      "expected_speakers": [
+        "PARSA_STRAWBERRY"
+      ],
+      "source_span": [
+        21.0,
+        26.8
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.85,
+      "generation_duration_sec": 8,
+      "story_beat_fa": "پارسا توت‌فرنگی با مهربانی دست گلنار را می‌گیرد و به او قول یک زندگی محترمانه می‌دهد.",
+      "speech_text": "بابَتِ تَمامِ سَختی‌هایی کِه کِشیدی مُتِاَسِّفَم؛ اَز اِمروز تو تاجِ سَرِ خونِه مَنی!",
+      "generation_prompt": "[CW1_C04] 3D Pixar-style animated medium two-shot on the sunlit Wild West street: noble Parsa Strawberry cowboy (red strawberry head with golden seeds, dark cowboy hat, black Western shirt, red bandana) gently holds the hands of tearful Golnar Yellow Tomato (golden-yellow tomato head, green leafy stem crown, beige pioneer dress) while Golnar Yellow Tomato listens silently with closed lips without speaking; only Parsa Strawberry speaks in native Iranian Persian (Farsi) with a warm kind male voice in this shot: «بابَتِ تَمامِ سَختی‌هایی کِه کِشیدی مُتِاَسِّفَم؛ اَز اِمروز تو تاجِ سَرِ خونِه مَنی!» Single speaker only, zero reply from listener. Zero text or watermarks.",
+      "subtitles": [
+        {
+          "start": 0.15,
+          "end": 7.65,
+          "text": "بابت تمام سختی‌هایی که کشیدی متاسفم؛ از امروز تو تاج سر خونه منی!",
+          "speaker": "PARSA_STRAWBERRY"
+        }
+      ],
+      "shot_type": "dialogue",
+      "require_visual_qa": false,
+      "story_beat": "پارسا توت‌فرنگی با مهربانی دست گلنار را می‌گیرد و به او قول یک زندگی محترمانه می‌دهد.",
+      "beat_ids": [
+        "beat_04"
+      ]
+    },
+    {
+      "id": "clip_05",
+      "source": "clip_05.mp4",
+      "file": "clip_05.mp4",
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_05.jpg",
+      "speaker": "GOLNAR_YELLOW_TOMATO",
+      "expected_speakers": [
+        "GOLNAR_YELLOW_TOMATO"
+      ],
+      "source_span": [
+        26.8,
+        31.5
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.85,
+      "generation_duration_sec": 8,
+      "story_beat_fa": "گلنار با اشک شوق از پارسا بابت نجات دادنش تشکر می‌کند.",
+      "speech_text": "این هَمِه سال هیچ‌کَس مَظلومیَّتِ مَن رو باوَر نَکَرد؛ مَمنونَم کِه نِجاتَم دادی!",
+      "generation_prompt": "[CW1_C05] 3D Pixar-style animated medium close-up two-shot on the sunlit Wild West street: emotional Golnar Yellow Tomato (golden-yellow tomato head, green leafy stem crown, tear on her cheek, beige pioneer dress) holds the hands of Parsa Strawberry cowboy while Parsa Strawberry listens silently with closed lips without speaking; only Golnar Yellow Tomato speaks in native Iranian Persian (Farsi) with a warm emotional female voice in this shot: «این هَمِه سال هیچ‌کَس مَظلومیَّتِ مَن رو باوَر نَکَرد؛ مَمنونَم کِه نِجاتَم دادی!» Single speaker only, zero reply from listener. Zero text or watermarks.",
+      "subtitles": [
+        {
+          "start": 0.15,
+          "end": 7.65,
+          "text": "این همه سال هیچ‌کس مظلومیت من رو باور نکرد؛ ممنونم که نجاتم دادی!",
+          "speaker": "GOLNAR_YELLOW_TOMATO"
+        }
+      ],
+      "shot_type": "dialogue",
+      "require_visual_qa": false,
+      "story_beat": "گلنار با اشک شوق از پارسا بابت نجات دادنش تشکر می‌کند.",
+      "beat_ids": [
+        "beat_05"
+      ]
+    },
+    {
+      "id": "clip_06",
+      "source": "clip_06.mp4",
+      "file": "clip_06.mp4",
+      "keyframe": "${BASE}\\part1\\keyframes\\KF_06.jpg",
+      "speaker": "SOHRAB_TOMATO",
+      "expected_speakers": [
+        "SOHRAB_TOMATO"
+      ],
+      "source_span": [
+        31.5,
+        37.0
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.85,
+      "generation_duration_sec": 8,
+      "story_beat_fa": "کلانتر سهراب در عمارت مجللش کنار شیرین لیموترش مغرورانه جشن می‌گیرد.",
+      "speech_text": "بِالاخَرِه یِه زَنِ جَوون وُ زیبا گِرِفتَم! حالا صاحِبِ بَچِّه‌ای می‌شَم کِه می‌خواستَم!",
+      "generation_prompt": "[CW1_C06] 3D Pixar-style animated medium two-shot inside a luxurious wooden Western mansion parlor under a crystal chandelier: arrogant Sohrab Tomato (glossy red tomato head, black cowboy hat, handlebar mustache, black suit and vest with gold chain) boasts proudly while glamorous Shirin Lime (green lime head, emerald-green lace saloon dress, holding a brass hand mirror) listens silently with closed lips without speaking; only Sohrab Tomato speaks in native Iranian Persian (Farsi) with a boasting male voice in this shot: «بِالاخَرِه یِه زَنِ جَوون وُ زیبا گِرِفتَم! حالا صاحِبِ بَچِّه‌ای می‌شَم کِه می‌خواستَم!» Single speaker only, zero reply from listener. Zero text or watermarks.",
+      "subtitles": [
+        {
+          "start": 0.15,
+          "end": 7.65,
+          "text": "بالاخره یه زن جوون و زیبا گرفتم! حالا صاحب بچه‌ای می‌شم که می‌خواستم!",
+          "speaker": "SOHRAB_TOMATO"
+        }
+      ],
+      "shot_type": "dialogue",
+      "require_visual_qa": false,
+      "story_beat": "کلانتر سهراب در عمارت مجللش کنار شیرین لیموترش مغرورانه جشن می‌گیرد.",
+      "beat_ids": [
+        "beat_06"
+      ]
+    }
+  ],
+  "video": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 24,
+    "crf": 18,
+    "preset": "fast",
+    "scale_mode": "fill"
+  },
+  "audio": {
+    "loudnorm": "loudnorm=I=-14:TP=-1.5:LRA=11",
+    "sample_rate": 48000,
+    "channels": 2,
+    "bitrate": "192k"
+  },
+  "speech": {
+    "speech_safe": "auto_expand",
+    "threshold_dbfs": -38,
+    "pre_handle": 0.2,
+    "post_handle": 0.35,
+    "splice_crossfade": 0.02
+  },
+  "subtitle_style": {
+    "time_base": "trim_local",
+    "y_ratio": 0.84,
+    "font_size": 27,
+    "min_font_size": 16,
+    "max_text_margin": 84,
+    "max_lines": 2
+  },
+  "outputs": {
+    "per_clip_location": "both",
+    "base_mode": "timeline",
+    "cta_burn_subtitles": true,
+    "cta_loudnorm": true,
+    "publish_caption_fa": "قسمت اول: راز معاوضه همسر و کلانتر بی‌رحم!"
+  },
+  "content_edits": [],
+  "story_plan": {
+    "summary": "کلانتر سهراب گوجه‌فرنگی همسر وفادارش گلنار را پس از ۱۵ سال به بهانه بچه‌دار نشدن وسط شهر به حراج می‌گذارد، اما پارسا کابوی توت‌فرنگی به دفاع از او برمی‌خیزد!",
+    "ending": "Cowboy Wife Exchange Part 1",
+    "required_beats": [
+      "beat_01",
+      "beat_02",
+      "beat_03",
+      "beat_04",
+      "beat_05",
+      "beat_06"
+    ]
+  },
+  "visual": {
+    "keyframe_threshold": 65,
+    "jump_threshold": 38,
+    "contamination_margin": 1
+  },
+  "visual_gate": {
+    "keyframe_threshold": 65,
+    "jump_threshold": 38,
+    "contamination_margin": 1
+  },
+  "generation_settings": {
+    "model": "Veo 3.1 - Fast",
+    "duration_sec": 8,
+    "aspect": "9:16",
+    "outputs": 1,
+    "resolution": "720p",
+    "video_type": "Ingredients"
+  }
+}
