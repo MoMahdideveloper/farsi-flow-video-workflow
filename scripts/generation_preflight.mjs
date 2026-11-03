@@ -10,6 +10,25 @@ export const speechBudget = policy.speech_budget;
 const hash = value => createHash('sha256').update(value).digest('hex');
 const fileHash = path => hash(readFileSync(path));
 const read = path => JSON.parse(readFileSync(path, 'utf8').replace(/^\uFEFF/, ''));
+function pronunciationLexicon(options = {}) {
+  const bytes = readFileSync(options.lexiconPath || resolve(root, 'pipeline/pronunciation_lexicon.json'));
+  const data = JSON.parse(bytes.toString('utf8').replace(/^\uFEFF/, ''));
+  if (data.schema_version !== 1 || !Array.isArray(data.entries) || data.entries.some(e =>
+    !e.id || !e.written || !e.spoken || normalizeDialogue(e.spoken) !== normalizeDialogue(e.written))) {
+    throw new Error('Invalid pronunciation lexicon');
+  }
+  return { entries: data.entries, sha256: hash(bytes) };
+}
+
+function checkPronunciation(prompt, lexicon) {
+  const words = dialogueFromPrompt(prompt).normalize('NFC').match(/[\p{L}\p{N}][\p{L}\p{N}\p{M}\u200c]*/gu) || [];
+  for (const word of words) {
+    const entry = lexicon.entries.find(e => normalizeDialogue(e.written) === normalizeDialogue(word));
+    if (entry && word !== entry.spoken.normalize('NFC')) {
+      throw new Error(`Pronunciation requires ${entry.spoken} in spoken dialogue; found ${word}. Subtitles may retain ${entry.written}`);
+    }
+  }
+}
 export const normalizeDialogue = text => String(text).normalize('NFC').replace(/[\u064B-\u065F\u0670]/g, '')
   .replace(/ي/g, 'ی').replace(/ك/g, 'ک').replace(/\s+/g, ' ').trim();
 export const dialogueFromPrompt = prompt => [...String(prompt).matchAll(/«([^»]*)»/g)].map(m => m[1].trim()).join(' ');
@@ -35,7 +54,8 @@ function expanded(value, data, manifestPath) {
 export function manifestForBatch(batch) {
   const prefixes = { eg: 'emotional', pz: 'pizza', bs: 'big_sponge', sc: 'sleep_challenge',
     ft: 'fake_tattoo', bl: 'big_lips', wv: 'weighted_vest', rw: 'red_wig', rs: 'rap_son', jb: 'janitor_bench',
-    hm: 'honest_miner', pn: 'prison_swap' };
+    hm: 'honest_miner', pn: 'prison_swap', gj: 'golden_jacket', bm: 'bronze_mirror', mg: 'genius_magic_grapes',
+    ld: 'lemon_dna_test', sb: 'blueberry_smoothie' };
   let file;
   const m = batch.match(/^(\w+)_part(\d+)$/);
   if (m && prefixes[m[1]]) file = `${prefixes[m[1]]}_part${m[2]}.json`;
@@ -70,10 +90,19 @@ function snapshot(manifestPath, items) {
   return { schema_version: 1, manifest_sha256: fileHash(manifestPath), references, keyframes };
 }
 
-export function generationTemplate(manifestPath, items) {
+export function generationTemplate(manifestPath, items, options) {
   const result = snapshot(manifestPath, items);
+  result.pronunciation_lexicon_sha256 = pronunciationLexicon(options).sha256;
   const pending = () => ({ status: 'pending', reviewer: '', evidence: '', reviewed_at: '' });
   result.story = pending();
+  result.speech = {};
+  const data = read(manifestPath);
+  for (const id of Object.keys(result.keyframes)) {
+    const clip = (data.clips || []).find(c => c.id === id);
+    if (clip && (clip.shot_type || 'dialogue') === 'dialogue') {
+      result.speech[id] = { sha256: hash(clip.speech_text || ''), scope: 'full_sentence_vowels', ...pending() };
+    }
+  }
   for (const value of Object.values(result.keyframes)) Object.assign(value, pending());
   return result;
 }
@@ -81,8 +110,9 @@ export function generationTemplate(manifestPath, items) {
 const documented = r => r?.status === 'pass' && ['reviewer', 'evidence', 'reviewed_at'].every(k =>
   typeof r[k] === 'string' && r[k].trim()) && Number.isFinite(Date.parse(r.reviewed_at));
 
-export function preflightBatch(manifestPath, items, reviews) {
+export function preflightBatch(manifestPath, items, reviews, options) {
   const data = read(manifestPath);
+  const lexicon = pronunciationLexicon(options);
   if (!items.length) throw new Error('No clips selected');
   if (data.fallback_to_source_on_visual_fail === true) throw new Error('Source-footage replacement prohibited; repair or regenerate the shot');
   if ((data.content_edits || []).length) throw new Error('Content-obscuring edits prohibited; no blur, masks, censorship or sanitization');
@@ -98,6 +128,7 @@ export function preflightBatch(manifestPath, items, reviews) {
     throw new Error('Current documented story review required');
   }
   if (JSON.stringify(reviews.references) !== JSON.stringify(current.references)) throw new Error('Canonical references changed since review');
+  if (reviews.pronunciation_lexicon_sha256 !== lexicon.sha256) throw new Error('Pronunciation lexicon changed or unreviewed; current lexicon review required');
   for (const item of items) {
     const id = item.id || `clip_${String(item.clip).padStart(2, '0')}`;
     const clip = (data.clips || []).find(c => c.id === id);
@@ -108,6 +139,7 @@ export function preflightBatch(manifestPath, items, reviews) {
       throw new Error(`${id}: current keyframe and prompt review required; asset changed or unreviewed`);
     }
     const quoted = normalizeDialogue(dialogueFromPrompt(item.prompt));
+    checkPronunciation(item.prompt, lexicon);
     const expected = normalizeDialogue((clip.subtitles || []).map(s => Array.isArray(s) ? s[3] : s.text).join(' '));
     if (quoted !== expected) throw new Error(`${id}: prompt dialogue differs from manifest`);
     if (clip.generation_prompt && clip.generation_prompt !== item.prompt) throw new Error(`${id}: full prompt differs from manifest`);
@@ -115,6 +147,19 @@ export function preflightBatch(manifestPath, items, reviews) {
     if (!['dialogue', 'action', 'reaction'].includes(type)) throw new Error(`${id}: invalid shot_type`);
     if (type === 'dialogue' && !quoted) throw new Error(`${id}: required dialogue missing`);
     if (type !== 'dialogue' && quoted) throw new Error(`${id}: silent shot contains dialogue`);
+    if (type === 'dialogue') {
+      if (typeof clip.speech_text !== 'string' || !clip.speech_text.trim()) {
+        throw new Error(`${id}: speech_text required; prepare vowel-marked speech separately from subtitles`);
+      }
+      const preserveVowels = text => text.normalize('NFC').replace(/\s+/g, ' ').trim();
+      if (preserveVowels(clip.speech_text) !== preserveVowels(dialogueFromPrompt(item.prompt))) {
+        throw new Error(`${id}: speech_text differs from quoted dialogue; preserve every reviewed vowel mark`);
+      }
+      const review = reviews.speech?.[id];
+      if (!documented(review) || review.scope !== 'full_sentence_vowels' || review.sha256 !== hash(clip.speech_text)) {
+        throw new Error(`${id}: current full-sentence speech vowel review required`);
+      }
+    }
     checkSpeechBudget(item.prompt, clip.generation_duration_sec || item.duration || 8);
   }
   return { passed: true, clips: items.map(i => i.id || i.clip), scope: 'preflight_only_not_generated_media_approval' };

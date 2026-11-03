@@ -1,0 +1,397 @@
+{
+  "_comment": "Part2_BlueberrySmoothie - 100% Google Flow native Farsi voice with full اعراب‌گذاری.",
+  "schema_version": 1,
+  "speech_review_note": "Full Persian vowel diacritics (اعراب‌گذاری کامل) in Google Flow prompt for 100% accurate native pronunciation.",
+  "episode_id": "Part2_BlueberrySmoothie",
+  "title_fa": "قسمت دوم: راز تاریک دستگاه اسموتی و طعم جادویی بلوبری!",
+  "title_en": "Secret Blueberry Smoothie Part 2",
+  "source_video": "${SRC}\\40_2026-10-06_DeKQXQlKVEu.mp4",
+  "source_start_offset": 38.0,
+  "story_summary_fa": "سهراب سیب‌سرخ با نقشه‌ای عجیب آوا بلوبری را برای تمیزکاری به داخل مخزن شیشه‌ای دستگاه بزرگ اسموتی می‌فرستد و با روشن کردن دستگاه، طعم جادویی اسموتی بلوبری را می‌سازد که مغازه‌اش را مشهور می‌کند!",
+  "fallback_to_source_on_visual_fail": false,
+  "tight_speech_trim": true,
+  "variables": {
+    "BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series24-secret-blueberry-smoothie-farsi",
+    "S2_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\series2-fruits-of-power-farsi",
+    "CHEF_BASE": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\ugly-face-chef-farsi",
+    "SRC": "C:\\Users\\LifeCycle\\.gemini\\antigravity\\scratch\\instagram-downloader\\downloads\\straw.berryjammin"
+  },
+  "clips_dir": "${BASE}\\part2\\flow_clips",
+  "out_dir": "${BASE}\\05_final_masters\\part2",
+  "font_path": "${CHEF_BASE}\\03_farsi_audio_tts\\Vazirmatn-Bold.ttf",
+  "cta_video": "${S2_BASE}\\part1\\flow_clips\\cta_kelidbox_s2.mp4",
+  "cta_speaker": "SOHRAB_APPLE",
+  "cta_subtitles": [
+    {
+      "start": 0.15,
+      "end": 3.55,
+      "text": "برای دیدن قسمت بعدی این داستان همین الان پیج رو فالو کن!"
+    },
+    {
+      "start": 3.6,
+      "end": 7.55,
+      "text": "راستی، کل این انیمیشن با اکانت‌های هوش مصنوعی سایت کلیدباکس ساخته شده!"
+    }
+  ],
+  "character_references": [
+    "${BASE}\\00_character_sheet\\CHARACTER_SHEET.png",
+    "${BASE}\\01_story_and_manifests\\FLOW_SHEET_01_SOHRAB.jpg",
+    "${BASE}\\01_story_and_manifests\\FLOW_SHEET_02_AVA.jpg",
+    "${BASE}\\01_story_and_manifests\\FLOW_SHEET_03_BAHRAM.jpg"
+  ],
+  "location_references": [
+    "${BASE}\\01_story_and_manifests\\FLOW_LOC_01_COUNTER.jpg",
+    "${BASE}\\01_story_and_manifests\\FLOW_LOC_02_MACHINE.jpg"
+  ],
+  "speakers": {
+    "SOHRAB_APPLE": [
+      255,
+      165,
+      165
+    ],
+    "AVA_BLUEBERRY": [
+      165,
+      215,
+      255
+    ],
+    "NAZANIN_STRAWBERRY": [
+      255,
+      175,
+      215
+    ],
+    "BAHRAM_ORANGE": [
+      255,
+      210,
+      140
+    ],
+    "BADGE": [
+      255,
+      235,
+      140
+    ]
+  },
+  "voices": {
+    "SOHRAB_APPLE": {
+      "name_fa": "SOHRAB_APPLE",
+      "color": [
+        255,
+        165,
+        165
+      ],
+      "source": "google_flow_native"
+    },
+    "AVA_BLUEBERRY": {
+      "name_fa": "AVA_BLUEBERRY",
+      "color": [
+        165,
+        215,
+        255
+      ],
+      "source": "google_flow_native"
+    },
+    "NAZANIN_STRAWBERRY": {
+      "name_fa": "NAZANIN_STRAWBERRY",
+      "color": [
+        255,
+        175,
+        215
+      ],
+      "source": "google_flow_native"
+    },
+    "BAHRAM_ORANGE": {
+      "name_fa": "BAHRAM_ORANGE",
+      "color": [
+        255,
+        210,
+        140
+      ],
+      "source": "google_flow_native"
+    },
+    "BADGE": {
+      "name_fa": "BADGE",
+      "color": [
+        255,
+        235,
+        140
+      ],
+      "source": "google_flow_native"
+    }
+  },
+  "clips": [
+    {
+      "id": "clip_01",
+      "source": "clip_01.mp4",
+      "file": "clip_01.mp4",
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_01.jpg",
+      "source_span": [
+        38.0,
+        44.5
+      ],
+      "shot_type": "dialogue",
+      "speaker": "SOHRAB_APPLE",
+      "expected_speakers": [
+        "SOHRAB_APPLE"
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.89,
+      "require_visual_qa": false,
+      "story_beat": "سهراب سیب‌سرخ دستش را زیر چانه‌اش می‌گذارد و با لبخند مرموزی می‌گوید فکری دیوانه‌وار به سرش زده که فردا مغازه را معروف می‌کند.",
+      "speech_text": "یهْ فِکْرِ عَجیبْ به سَرَمْ زَدْ! اَگهْ اِمْشَبْ اِمْتحانِشْ کُنَمْ، فَرْدا اینْ مَغازهْ غُوغا می‌کُنهْ!",
+      "generation_prompt": "[SB2_C01] Stylized 3D CGI cartoon animation matching the exact 3D non-human fruit characters and outfits in the reference image, static medium close-up shot next to the stainless-steel smoothie tank keeping the character in frame. Resting one hand on his chin with a cunning smirk, the 3D glossy crimson-red apple-headed owner in a white shirt and plain dark-brown apron speaks in an excited, scheming young male voice in native Persian (Farsi) with clear natural articulation and lip-sync: «یهْ فِکْرِ عَجیبْ به سَرَمْ زَدْ! اَگهْ اِمْشَبْ اِمْتحانِشْ کُنَمْ، فَرْدا اینْ مَغازهْ غُوغا می‌کُنهْ!» Single speaker only, zero reply from listener, zero background music, no on-screen text or subtitles.",
+      "overlays": [
+        {
+          "start": 0.1,
+          "end": 3.4,
+          "text": "قسمت دوم: راز تاریک دستگاه اسموتی!",
+          "speaker": "BADGE",
+          "y": 135,
+          "font_size": 21,
+          "box_alpha": 200
+        }
+      ],
+      "subtitles": [
+        {
+          "start": 0.25,
+          "end": 7.65,
+          "speaker": "SOHRAB_APPLE",
+          "text": "یه فکر عجیب به سرم زد! اگه امشب امتحانش کنم، فردا این مغازه غوغا می‌کنه!"
+        }
+      ],
+      "beat_ids": [
+        "beat_01"
+      ]
+    },
+    {
+      "id": "clip_02",
+      "source": "clip_02.mp4",
+      "file": "clip_02.mp4",
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_02.jpg",
+      "source_span": [
+        44.5,
+        51.0
+      ],
+      "shot_type": "dialogue",
+      "speaker": "SOHRAB_APPLE",
+      "expected_speakers": [
+        "SOHRAB_APPLE"
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.89,
+      "require_visual_qa": false,
+      "story_beat": "سهراب سیب‌سرخ درِ مخزن شیشه‌ای بزرگ دستگاه را نشان آوا بلوبری می‌دهد و از او می‌خواهد داخل مخزن برود و گوشه‌ها را تمیز کند.",
+      "speech_text": "آوا جانْ، بیرُونْ رو وِلْ کُنْ! بُرو داخِلِ مَخْزَنِ شیشه‌ایْ و گوشه‌هایِ سَخْتِ دَسْتْگاهْ رو تَمیزْ کُنْ!",
+      "generation_prompt": "[SB2_C02] Stylized 3D CGI cartoon animation matching the exact 3D non-human fruit characters and outfits in the reference image, static medium two-shot beside the giant cylindrical glass-and-steel smoothie chamber keeping every character in frame. While the 3D indigo-blue blueberry-headed assistant holding a spray bottle and cloth listens silently with closed lips without speaking, the 3D glossy crimson-red apple-headed owner points into the open circular hatch of the glass chamber and speaks in a persuasive young male voice in native Persian (Farsi) with clear natural articulation and lip-sync: «آوا جانْ، بیرُونْ رو وِلْ کُنْ! بُرو داخِلِ مَخْزَنِ شیشه‌ایْ و گوشه‌هایِ سَخْتِ دَسْتْگاهْ رو تَمیزْ کُنْ!» Single speaker only, zero reply from listener, zero background music, no on-screen text or subtitles.",
+      "overlays": [],
+      "subtitles": [
+        {
+          "start": 0.25,
+          "end": 7.65,
+          "speaker": "SOHRAB_APPLE",
+          "text": "آوا جان، بیرون رو ول کن! برو داخل مخزن شیشه‌ای و گوشه‌های سخت دستگاه رو تمیز کن!"
+        }
+      ],
+      "beat_ids": [
+        "beat_02"
+      ]
+    },
+    {
+      "id": "clip_03",
+      "source": "clip_03.mp4",
+      "file": "clip_03.mp4",
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_03.jpg",
+      "source_span": [
+        51.0,
+        57.5
+      ],
+      "shot_type": "dialogue",
+      "speaker": "SOHRAB_APPLE",
+      "expected_speakers": [
+        "SOHRAB_APPLE"
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.89,
+      "require_visual_qa": false,
+      "story_beat": "وقتی آوا بلوبری داخل مخزن شیشه‌ای مشغول تمیزکاری است، سهراب سیب‌سرخ بیرون کنار دکمه‌ها می‌ایستد و می‌گوید حالا طعم واقعی ساخته می‌شود.",
+      "speech_text": "حالا بازیِ اَصْلیْ شُروعْ می‌شهْ! با اینْ طَعْمِ جَدیدْ هَمهٔ مُشْتَری‌ها بَرْمی‌گَرْدَنْ و مَغازهْ پُرْپولْ می‌شهْ!",
+      "generation_prompt": "[SB2_C03] Stylized 3D CGI cartoon animation matching the exact 3D non-human fruit characters and outfits in the reference image, static medium-wide shot of the giant stainless-steel smoothie machine keeping every character in frame. While the 3D indigo-blue blueberry-headed assistant in yellow rubber gloves scrubs silently inside the transparent circular glass chamber with closed lips without speaking, outside at the control panel the 3D glossy crimson-red apple-headed owner smirks darkly and speaks in a dramatic young male voice in native Persian (Farsi) with clear natural articulation and lip-sync: «حالا بازیِ اَصْلیْ شُروعْ می‌شهْ! با اینْ طَعْمِ جَدیدْ هَمهٔ مُشْتَری‌ها بَرْمی‌گَرْدَنْ و مَغازهْ پُرْپولْ می‌شهْ!» Single speaker only, zero reply from listener, zero background music, no on-screen text or subtitles.",
+      "overlays": [],
+      "subtitles": [
+        {
+          "start": 0.25,
+          "end": 7.65,
+          "speaker": "SOHRAB_APPLE",
+          "text": "حالا بازی اصلی شروع می‌شه! با این طعم جدید همهٔ مشتری‌ها برمی‌گردن و مغازه پرپول می‌شه!"
+        }
+      ],
+      "beat_ids": [
+        "beat_03"
+      ]
+    },
+    {
+      "id": "clip_04",
+      "source": "clip_04.mp4",
+      "file": "clip_04.mp4",
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_04.jpg",
+      "source_span": [
+        57.5,
+        63.5
+      ],
+      "shot_type": "dialogue",
+      "speaker": "AVA_BLUEBERRY",
+      "expected_speakers": [
+        "AVA_BLUEBERRY"
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.89,
+      "require_visual_qa": false,
+      "story_beat": "آوا بلوبری داخل مخزن شیشه‌ای بسته شده با وحشت به شیشه می‌کوبد و از سهراب سیب‌سرخ خواهش می‌کند دستگاه را روشن نکند.",
+      "speech_text": "آقا سُهْرابْ کارَمْ تَمومْ شُدْ! توروخُدا دَسْتْگاهْ رو روشَنْ نَکُنیدْ، خواهِشْ می‌کُنَمْ صَبْرْ کُنیدْ!",
+      "generation_prompt": "[SB2_C04] Stylized 3D CGI cartoon animation matching the exact 3D non-human fruit characters and outfits in the reference image, static medium-wide shot of the giant stainless-steel smoothie machine keeping every character in frame. While the 3D crimson-red apple-headed owner stands silently with closed lips at the control console outside without speaking, inside the sealed transparent circular glass chamber the 3D indigo-blue blueberry-headed assistant in yellow rubber gloves presses her hands against the glass and speaks in a panicked, pleading young female voice in native Persian (Farsi) with clear natural articulation and lip-sync: «آقا سُهْرابْ کارَمْ تَمومْ شُدْ! توروخُدا دَسْتْگاهْ رو روشَنْ نَکُنیدْ، خواهِشْ می‌کُنَمْ صَبْرْ کُنیدْ!» Single speaker only, zero reply from listener, zero background music, no on-screen text or subtitles.",
+      "overlays": [],
+      "subtitles": [
+        {
+          "start": 0.25,
+          "end": 7.65,
+          "speaker": "AVA_BLUEBERRY",
+          "text": "آقا سهراب کارم تموم شد! توروخدا دستگاه رو روشن نکنید، خواهش می‌کنم صبر کنید!"
+        }
+      ],
+      "beat_ids": [
+        "beat_04"
+      ]
+    },
+    {
+      "id": "clip_05",
+      "source": "clip_05.mp4",
+      "file": "clip_05.mp4",
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_05.jpg",
+      "source_span": [
+        63.5,
+        70.0
+      ],
+      "shot_type": "dialogue",
+      "speaker": "SOHRAB_APPLE",
+      "expected_speakers": [
+        "SOHRAB_APPLE"
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.89,
+      "require_visual_qa": false,
+      "story_beat": "در حالی که گرداب بنفش درخشان اسموتی بلوبری داخل مخزن شیشه‌ای می‌چرخد، سهراب سیب‌سرخ با هیجان می‌گوید این همان طعم رویایی است.",
+      "speech_text": "خُودِشهْ! اینْ دَقیقاً هَمونْ طَعْمِ جادوییْ بودْ کهْ می‌خواسْتَمْ؛ حالا هَمهْ عاشِقِ مَغازهٔ مَنْ می‌شَنْ!",
+      "generation_prompt": "[SB2_C05] Stylized 3D CGI cartoon animation matching the exact 3D non-human fruit characters and outfits in the reference image, static medium-wide shot beside the giant transparent cylindrical blender chamber filled with a swirling glowing purple-blue blueberry smoothie vortex keeping the character in frame. Standing at the steel control console, the 3D glossy crimson-red apple-headed owner in a white shirt and plain dark-brown apron watches the swirling purple smoothie and speaks in a thrilled, triumphant young male voice in native Persian (Farsi) with clear natural articulation and lip-sync: «خُودِشهْ! اینْ دَقیقاً هَمونْ طَعْمِ جادوییْ بودْ کهْ می‌خواسْتَمْ؛ حالا هَمهْ عاشِقِ مَغازهٔ مَنْ می‌شَنْ!» Single speaker only, zero reply from listener, zero background music, no on-screen text or subtitles.",
+      "overlays": [],
+      "subtitles": [
+        {
+          "start": 0.25,
+          "end": 7.65,
+          "speaker": "SOHRAB_APPLE",
+          "text": "خودشه! این دقیقاً همون طعم جادویی بود که می‌خواستم؛ حالا همه عاشق مغازهٔ من می‌شن!"
+        }
+      ],
+      "beat_ids": [
+        "beat_05"
+      ]
+    },
+    {
+      "id": "clip_06",
+      "source": "clip_06.mp4",
+      "file": "clip_06.mp4",
+      "keyframe": "${BASE}\\part2\\keyframes\\KF_06.jpg",
+      "source_span": [
+        70.0,
+        76.3
+      ],
+      "shot_type": "dialogue",
+      "speaker": "SOHRAB_APPLE",
+      "expected_speakers": [
+        "SOHRAB_APPLE"
+      ],
+      "trim_in": 0.0,
+      "trim_out": 7.89,
+      "require_visual_qa": false,
+      "story_beat": "سهراب سیب‌سرخ لیوان اسموتی بنفش درخشان بلوبری را می‌نوشد و با غرور می‌گوید این اسموتی مشتری‌ها را برمی‌گرداند و مغازه را مشهور می‌کند.",
+      "speech_text": "عَجَبْ طَعْمِ بی‌نَظیریْ شُدهْ! اینْ اِسْموتیِ بُلوبِریْ هَمهٔ مُشْتَری‌ها رو بَرْمی‌گَرْدونهْ و مَغازهْ رو مَشْهورْ می‌کُنهْ!",
+      "generation_prompt": "[SB2_C06] Stylized 3D CGI cartoon animation matching the exact 3D non-human fruit characters and outfits in the reference image, static medium shot in front of the glowing purple smoothie chamber and a crate of fresh blueberries keeping the character in frame. Holding a tall glass of vibrant purple-blue blueberry smoothie, the 3D glossy crimson-red apple-headed owner in a white shirt and plain dark-brown apron tastes the drink and speaks in an amazed, victorious young male voice in native Persian (Farsi) with clear natural articulation and lip-sync: «عَجَبْ طَعْمِ بی‌نَظیریْ شُدهْ! اینْ اِسْموتیِ بُلوبِریْ هَمهٔ مُشْتَری‌ها رو بَرْمی‌گَرْدونهْ و مَغازهْ رو مَشْهورْ می‌کُنهْ!» Single speaker only, zero reply from listener, zero background music, no on-screen text or subtitles.",
+      "overlays": [],
+      "subtitles": [
+        {
+          "start": 0.25,
+          "end": 7.65,
+          "speaker": "SOHRAB_APPLE",
+          "text": "عجب طعم بی‌نظیری شده! این اسموتی بلوبری همهٔ مشتری‌ها رو برمی‌گردونه و مغازه رو مشهور می‌کنه!"
+        }
+      ],
+      "beat_ids": [
+        "beat_06"
+      ]
+    }
+  ],
+  "video": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 24,
+    "crf": 18,
+    "preset": "fast",
+    "scale_mode": "fill"
+  },
+  "audio": {
+    "loudnorm": "loudnorm=I=-14:TP=-1.5:LRA=11",
+    "sample_rate": 48000,
+    "channels": 2,
+    "bitrate": "192k"
+  },
+  "speech": {
+    "speech_safe": "auto_expand",
+    "threshold_dbfs": -38,
+    "pre_handle": 0.2,
+    "post_handle": 0.35,
+    "splice_crossfade": 0.02
+  },
+  "subtitle_style": {
+    "time_base": "trim_local",
+    "y_ratio": 0.84,
+    "font_size": 27,
+    "min_font_size": 16,
+    "max_text_margin": 84,
+    "max_lines": 2
+  },
+  "outputs": {
+    "per_clip_location": "both",
+    "base_mode": "timeline",
+    "cta_burn_subtitles": true,
+    "cta_loudnorm": true,
+    "publish_caption_fa": "قسمت دوم: راز تاریک دستگاه اسموتی و طعم جادویی بلوبری!"
+  },
+  "content_edits": [],
+  "story_plan": {
+    "summary": "سهراب سیب‌سرخ با نقشه‌ای عجیب آوا بلوبری را برای تمیزکاری به داخل مخزن شیشه‌ای دستگاه بزرگ اسموتی می‌فرستد و با روشن کردن دستگاه، طعم جادویی اسموتی بلوبری را می‌سازد که مغازه‌اش را مشهور می‌کند!",
+    "ending": "Sohrab Apple tricks Ava Blueberry into entering the glass smoothie chamber to create the famous purple blueberry smoothie flavor that saves his shop.",
+    "required_beats": [
+      "beat_01",
+      "beat_02",
+      "beat_03",
+      "beat_04",
+      "beat_05",
+      "beat_06"
+    ]
+  },
+  "visual": {
+    "keyframe_threshold": 65,
+    "jump_threshold": 38,
+    "contamination_margin": 1
+  },
+  "visual_gate": {
+    "keyframe_threshold": 65,
+    "jump_threshold": 38,
+    "contamination_margin": 1
+  },
+  "generation_settings": {
+    "model": "Veo 3.1 - Fast",
+    "duration_sec": 8,
+    "aspect": "9:16",
+    "outputs": 1,
+    "resolution": "720p",
+    "video_type": "Ingredients"
+  }
+}
